@@ -1,3 +1,8 @@
+---
+layout: page
+title: Documentation
+---
+
 # Jekyll Separar contenido en diferentes repos:
 http://jry.io/posts/make-your-jekyll-blog-awesome-with-git-submodules/
 
