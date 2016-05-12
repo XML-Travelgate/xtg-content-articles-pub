@@ -1,0 +1,101 @@
+---
+title: GetVehicles
+keywords: transfers, get vehicles, vehicles
+sidebar: mydoc_sidebar
+permalink: /developer-documentation/transfers/DSF/GetVehicles
+---
+
+|
+
+Method Goals
+============
+
+This method aims to retrieve a list of the vehicles that operate the
+transfers.
+
+|
+
+Remarks
+=======
+
+|
+
+GetVehiclesRQ Example
+=====================
+
+    <GetVehiclesRQ>
+        <timeoutMilliseconds>60000</timeoutMilliseconds>
+        <source>
+            <languageCode>en</languageCode>
+        </source>
+        <filterAuditData>
+            <registerTransactions>false</registerTransactions>
+        </filterAuditData>
+        <Configuration codeProvider = "XXXXX">
+            <Credentials user = "" password = "">
+                <UrlGeneric>http://example.com</UrlGeneric>
+            </Credentials>
+            <Attributes/>
+        </Configuration>
+    </GetVehiclesRQ>
+
+|
+
+GetVehiclesRQ Description
+=========================
+
+  -------------------------------------------------------------------------
+  Element     Numbe Type  Description
+              r           
+  ----------- ----- ----- -------------------------------------------------
+  GetVehicles 1           Root node.
+  RQ                      
+  -------------------------------------------------------------------------
+
+|
+
+GetVehiclesRS Example
+=====================
+
+    <GetVehiclesRS>
+        <auditData>
+            <timeStamp>2014-10-30T11:34:03.0050926+00:00</timeStamp>
+            <processTimeMilliseconds>0</processTimeMilliseconds>
+        </auditData>
+        <operationImplemented>true</operationImplemented>
+        <Vehicles>
+            <Vehicle id = "11" name = "Autocar"/>
+            <Vehicle id = "9" name = "Minibus"/>
+            <Vehicle id = "12" name = "Coche de lujo"/>
+            <Vehicle id = "13" name = "Monovolumen"/>
+            <Vehicle id = "10" name = "Microbus"/>
+            <Vehicle id = "7" name = "Coche adaptado"/>
+            <Vehicle id = "6" name = "Coche"/>
+        </Vehicles>
+    </GetVehiclesRS>
+
+|
+
+GetVehiclesRS Description
+=========================
+
+  -------------------------------------------------------------------------
+  Element     Numbe Type  Description
+              r           
+  ----------- ----- ----- -------------------------------------------------
+  GetVehicles 1           Root node.
+  RS                      
+
+  Vehicles    1           List of Vehicles.
+
+  Vehicles/Ve 1           Type of vehicle.
+  hicle                   
+
+  @id         1     Strin Code of the vehicle.
+                    g     
+
+  @name       1     Strin Name of the vehicle.
+                    g     
+  -------------------------------------------------------------------------
+
+|

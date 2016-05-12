@@ -1,0 +1,112 @@
+---
+title: GetSupplierTransferTypes
+...
+
+|
+
+Method Goals
+============
+
+|
+
+Remarks
+=======
+
+|
+
+GetSupplierTransferTypesRQ Example
+==================================
+
+    <GetSupplierTransferTypesRQ>
+        <timeoutMilliseconds>60000</timeoutMilliseconds>
+        <source>
+            <languageCode>en</languageCode>
+        </source>
+        <filterAuditData>
+            <registerTransactions>false</registerTransactions>
+        </filterAuditData>
+        <Configuration codeProvider = "XXXXX">
+            <Credentials user = "" password = "">
+                <UrlGeneric>http://example.com</UrlGeneric>
+            </Credentials>
+            <Attributes/>
+        </Configuration>
+    </GetSupplierTransferTypesRQ>
+
+|
+
+GetSupplierTransferTypesRQ Description
+======================================
+
+  -------------------------------------------------------------------------
+  Element        Numbe Type  Description
+                 r           
+  -------------- ----- ----- ----------------------------------------------
+  GetSupplierTra 1           Root node.
+  nsferTypesRQ               
+  -------------------------------------------------------------------------
+
+|
+
+GetSupplierTransferTypesRS Example
+==================================
+
+    <GetSupplierTransferTypesRS>
+        <auditData>
+            <timeStamp>2014-10-30T11:33:16.7125413+00:00</timeStamp>
+            <processTimeMilliseconds>0</processTimeMilliseconds>
+        </auditData>
+        <operationImplemented>true</operationImplemented>
+        <Suppliers>
+            <Supplier id = "ext-3">
+                <TransferTypes>
+                    <TransferType id = "2" name = "Compartido - Shuttle"/>
+                    <TransferType id = "16" name = "Privado - 13 - 20 Personas"/>
+                    <TransferType id = "17" name = "Privado - 21 - 31 Personas"/>
+                </TransferTypes>
+            </Supplier>
+            <Supplier id = "ext-2">
+                <TransferTypes>
+                    <TransferType id = "2" name = "Compartido - Shuttle"/>
+                    <TransferType id = "5" name = "Privado - VIP"/>
+                </TransferTypes>
+            </Supplier>
+            <Supplier id = "ext-4">
+                <TransferTypes>
+                    <TransferType id = "15" name = "Privado - 9 - 12 Personas"/>
+                    <TransferType id = "16" name = "Privado - 13 - 20 Personas"/>
+                    <TransferType id = "17" name = "Privado - 21 - 31 Personas"/>
+                    <TransferType id = "13" name = "Privado - 1 - 4 Personas"/>
+                    <TransferType id = "14" name = "Privado - 5 - 8 Personas"/>
+                    <TransferType id = "5" name = "Privado - VIP"/>
+                </TransferTypes>
+            </Supplier>
+        </Suppliers>
+    </GetSupplierTransferTypesRS>
+
+|
+
+GetSupplierTransferTypesRS Description
+======================================
+
+  -------------------------------------------------------------------------
+  Element     Numbe Type  Description
+              r           
+  ----------- ----- ----- -------------------------------------------------
+  GetSupplier 1           Root node.
+  Transfer                
+  TypesRS                 
+
+  Suppliers   1           List of supplements.
+
+  Suppliers/  1           Supplement
+  Suppliers               
+
+  @id         1     Strin Code of the supplement. Sole codes.
+                    g     
+
+  @name       1     Strin Name of the supplement.
+                    g     
+  -------------------------------------------------------------------------
+
+|
