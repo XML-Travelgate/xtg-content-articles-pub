@@ -55,6 +55,8 @@ In our system we've three booleans to control restrictions:
 -   ArrivalOpen
 -   DepartureOpen
 
+|
+
 When all booleans are true a booking it's allowed in the specified day.
 
 When MasterOpen is false bookings are not allowed in the specified day.
@@ -130,6 +132,11 @@ DepartureOpen = true
 In our system it’s possible to load different supplements for each kind
 of pax (Baby, Child or Adult).
 
-XML Travelgate - Edificio Europa, Local 1, bajos - ParcBIT,Palma de
-Mallorca, Baleares +34 871 968 181 | http://www.xmltravelgate.com\_ |
-Free URL shortener\_ by XML Travelgate | Copyright 2014
+|
+
+XML Travelgate - Edificio Europa, Local 1, bajos - ParcBIT, Palma de
+Mallorca, Baleares +34 871 968 181   
+
+[http://www.xmltravelgate.com](http://www.xmltravelgate.com)    
+
+Free URL shortener_by XML Travelgate 	    Copyright 2014

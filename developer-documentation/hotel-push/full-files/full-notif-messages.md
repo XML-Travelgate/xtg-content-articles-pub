@@ -10,7 +10,7 @@ permalink: /developer-documentation/hotel-push/full-files/full-notif-messages
 Full HotelRatePlanNotifRQ
 =========================
 
-:
+
 
     <s:Envelope xmlns:s = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10" xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:ns1 = "http://www.opentravel.org/OTA/2003/05">
         <s:Header>
@@ -68,7 +68,7 @@ Full HotelRatePlanNotifRQ
 Full HotelRatePlanNotifRS
 =========================
 
-:
+
 
     <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
        <s:Header>
@@ -93,7 +93,7 @@ Full HotelRatePlanNotifRS
 Full HotelAvailNotifRQ
 ======================
 
-:
+
 
     <s:Envelope xmlns:s = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:u = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
         <s:Header>
@@ -161,7 +161,7 @@ Full HotelAvailNotifRQ
 Full HotelAvailNotifRS
 ======================
 
-:
+
 
     <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
        <s:Header>

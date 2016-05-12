@@ -22,7 +22,7 @@ will return a list of all active rooms and configurations.
 HotelRatePlanInventoryRetrieveRQ
 ================================
 
-:
+
 
     <HotelRatePlanInventoryRetrieve>
       <request PrimaryLangID = "ES">
@@ -45,36 +45,18 @@ HotelRatePlanInventoryRetrieveRQ
       </request>
     </HotelRatePlanInventoryRetrieve>
 
-  -------------------------------------------------------------------------
-  Element     Num Typ Description
-              ber e   
-  ----------- --- --- -----------------------------------------------------
-  HotelRatePl 1       Root Node
-  an/request          
+|
 
-  <*@PrimaryL 1   Str ISO Code Language
-  angID>\*        ing 
-
-  POS/Source/ 0..     Optional, empty only active inventory will be
-  TPA\_Extens 1       recieved.
-  ions                
-
-  Param       1       
-
-  <*@key>\*   1   Str onlyActive
-                  ing 
-
-  <*@value>\* 1   Str 1 - You will recieve all active inventory data. 0 -
-                  ing Active and deactivated inventory will be recieved.
-                      (Same case than wihout TPA\_Extensions node.)
-
-  RatePlans/R 0..     Contains hotel filter
-  atePlan/Hot 1       
-  elRef               
-
-  <*@HotelCod 0.. Str If the hotel is not specified, it returns Rooms and
-  e>\*        1   ing Rates of all user’s hotels.
-  -------------------------------------------------------------------------
+| **Element**			| **Number** | **Type** | **Description**						|
+| ----------------------------- | ---------- | -------- | ------------------------------------------------------------- |
+| HotelRatePlan/request		| 1          | 		| Root Node							|
+| @PrimaryLangID		| 1   	     | String	| ISO Code Language						|
+| POS/Source/TPA_Extensions	| 0..1	     |	     	| Optional, empty only active inventory will be recieved.	|
+| Param       			| 1 	     | 		|								|
+| @key   			| 1   	     | String 	| onlyActive							|
+| @value			| 1  	     | String	| 1 - You will recieve all active inventory data. 0 - Active and deactivated inventory will be recieved. (Same case than wihout TPA_Extensions node.) |
+| RatePlans/RatePlan/HotelRef	| 0..1       | 		| Contains hotel filter						|
+| @HotelCode			| 0..1	     | String	| If the hotel is not specified, it returns Rooms and Rates of all user’s hotels. |
 
 |
 
@@ -83,7 +65,7 @@ HotelRatePlanInventoryRetrieveRS
 
 **Example for RatePlan**
 
-:
+
 
     <HotelRatePlanInventoryRetrieveResponse xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
       <HotelRatePlanInventoryRetrieveResult Version = "0">
@@ -188,7 +170,7 @@ occupancies. STD2 room has 2 possible occupations: 2 adults + 1 child or
 
 **Example for Derived RatePlan**
 
-:
+
 
     <HotelRatePlanInventoryRetrieveResponse xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
         <HotelRatePlanInventoryRetrieveResult Version = "0">
@@ -263,251 +245,76 @@ occupancies. STD2 room has 2 possible occupations: 2 adults + 1 child or
         </HotelRatePlanInventoryRetrieveResult>
     </HotelRatePlanInventoryRetrieveResponse> 
 
-  ------------------------------------------------------------------------
-  Element           Nu Typ Description
-                    mb e   
-                    er     
-  ----------------- -- --- -----------------------------------------------
-  HotelRatePlanResp 1      Root Node
-  onse/HotelRatePla        
-  nResult                  
-
-  Success           0.     Should only be present if it was a successful
-                    .1     response. The Errors node should not be present
-                           if the Success node is present.
-
-  RatePlans         0.     Present when sucess
-                    .1     
-
-  <*@HotelCode>\*   1  Str Hotel code whose information is provided by the
-                       ing method
-
-  <*@HotelName>\*   1  Str Hotel name
-                       ing 
-
-  RatePlans/RatePla 0.     Present when rates exists
-  n                 .n     
-
-  <*@RatePlanCode>\ 1  Str Rate plan code
-  *                    ing 
-
-  <*@RatePlanStatus 1  Str Active or Deactivated
-  Type>\*              ing 
-
-  <*@RatePlanType>\ 0. Int OTA RPT Code (11 - Package)
-  *                 .1 ege 
-                       r   
-
-  <*@YieldableIndic 0. Boo Used to indicate the rate plan is subject to
-  ator>\*           .1 lea yield management logic. When false, the rate
-                       n   plan is not yieldable. When true or it's not
-                           returned, the rate plan is yieldable.
-
-  <*@CurrencyCode>\ 0. Str ISO Currency (EUR). Only null for derived rates
-  *                 .1 ing 
-
-  <*@Start>\*       0. Dat Start date of the rate booking window (Booking
-                    .1 e   Dates for wich the rate will be available).
-
-  <*@End>\*         0. Dat End date of the rate booking window (Booking
-                    .1 e   Dates for wich the rate will be available).
-
-  <*@Duration>\*    0. Str Duration of the rate booking window. Only
-                    .1 ing present if Start and End are not. When present
-                           value is always 0 and means the rate has no
-                           booking window (available all dates).
-
-  \_@BaseRatePlanCo 0. Str Rate plan code of the base rate plan. Only
-  de                .1 ing returned for derived rates.
-
-  \_@RatePlanStatus 1  Str Indicates if the rate plan is active or not for
-  Type                 ing this dates. Possible values: "Active",
-                           "Deactivated".
-
-  RatePlans/RatePla 1      Description of rate.
-  n/Description/Tex        
-  t                        
-
-  RatePlans/Booking 0.     Present if exists booking rules for the given
-  Rules             .1     RatePlan.
-
-  BookingRules/Book 1.     Booking rules.
-  ingRule           .n     
-
-  <*@Code>\*        0. Str Code of the booking rule (empty if are
-                    .1 ing viewships conditions
-
-  BookingRule/Cance 1      Cancel penalties of the current booking rule.
-  lPenalties               
-
-  CancelPenalties/C 1.     Cancel penalty.
-  ancelPenalty      .n     
-
-  <*@NonRefundable> 1  Boo Indicates if the rateplan is refundable or not.
-  \*                   lea 
-                       n   
-
-  CancelPenalty/Dea 1      Contains information about the the deadline of
-  dline                    the cancel penalty.
-
-  <*@OffsetTimeUnit 1  Str Indicates the units of time that apply to the
-  >\*                  ing deadline.
-
-  <*@OffsetUnitMult 1  Int The number of units of DeadlineTimeUnit.
-  iplier>\*            ege 
-                       r   
-
-  <*@OffsetDropTime 1  Str Indicating when the deadline drop time goes
-  >\*                  ing into effect.
-
-  CancelPenalty/Amo 1      Contains information about the the deadline of
-  untPercent               the cancel penalty.
-
-  <*@NmbrOfNights>\ 0. Int Number of nights that will be charged in case
-  *                 .1 ege of cancellation applying the current cancel
-                       r   penalty. NmbrOfNights, Percent or Amount must
-                           be present.
-
-  <*@Percent>\*     0. Dec Percent of the total amount that will be
-                    .1 ima charged in case of cancellation applying the
-                       l   current cancel penalty. NmbrOfNights, Percent
-                           or Amount must be present.
-
-  <*@Amount>\*      0. Dec Amount that will be charged in case of
-                    .1 ima cancellation applying the current cancel
-                       l   penalty. NmbrOfNights, Percent or Amount must
-                           be present.
-
-  <*@CurrencyCode>\ 0. Str Currency code of the amount. Must be present if
-  *                 .1 ing amount is present.
-
-  BookingRule/Viewe 0.     Present if exits viewerships conditions
-  rships            .1     
-
-  BookingRule/Viewe 1.     
-  rships/Viewership .n     
-
-  BookingRule/Viewe 1      One node for each viewership condition
-  rships/Viewership        
-  /LocationCodes           
-
-  <*@LocationCodesI 1  Boo When its true this rate can be request for next
-  nclusive>\*          lea countryCode, when false can not be requested
-                       n   from this country.
-
-  BookingRule/Viewe 0      If is missing, applies to all countryCode again
-  rships/Viewership ..     the other viewership condition.
-  /LocationCodes/Lo 1      
-  cationCode               
-
-  <*@CountryCode>\* 1  Str Country ISO2 code from can or can not be
-                       ing requested this rate.
-
-  RatePlan/Rate     0.     Node that contains information about the rate.
-                    .1     Only null for derived rates
-
-  Rate/AdditionalGu 1      Node that contains static information about
-  estAmounts               additional guests.
-
-  AdditionalGuestAm 1.     Static information about additional guests.
-  ounts/AdditionalG .n     
-  uestAmount               
-
-  <*@AgeQualifyingC 1  Str Age qualifying code of the additional guest.
-  ode>\*               ing 
-
-  <*@MaxAge>\*      1  Int Max age not inclusive of the additional guest.
-                       ege 
-                       r   
-
-  Rate/PaymentPolic 1      Node that contains the accepted payments
-  ies                      information.
-
-  PaymentPolicies/G 1.     Node that contains information about an
-  uaranteePayment   .n     accepted payment.
-
-  @PaymentCode      1      Contains the payment method accepted by the
-                           rate. See Payment Type Codes list in section
-                           7.6.3.
-
-  GuaranteePayment/ 0.     Node that contains the accepted payments
-  AcceptedPayments  .1     information. Only present if PaymentCode is not
-                           "MerchantPayment".
-
-  AcceptedPayments/ 1.     Node that contains the credit card accepted.
-  AcceptedPayment   .n     
-
-  AcceptedPayment/P 1.     Node that contains the credit card accepted.
-  aymentCard        .n     
-
-  @CardCode         1      String Contains the credit card code. See
-                           Credit Card Codes list in section 7.6.4.
-
-  RatePlans/RatePla 0.     Present if board is included with this rate.
-  n/Rates/Rate/Meal .1     
-  sIncluded                
-
-  <*@MealPlanCodes> 1  Int OTA MPT Code.
-  \*                   ege 
-                       r   
-
-  RatePlans/RatePla 0.     List of sellable products. In derived rates, if
-  n/SellableProduct .1     it is not present it applies to all rooms. In
-  s                        other cases, it informs the rooms that applies.
-
-  RatePlans/RatePla 0.     Present if rooms associed with this rate.
-  n/SellableProduct .n     
-  s/SellableProduct        
-
-  <*@InvCode>\*     1  Int Sellable Product Code
-                       ege 
-                       r   
-
-  <*@InvType>\*     1  Int Sellable product type (ROOM)
-                       ege 
-                       r   
-
-  <*@InvStatusType> 1  Str Active or Deactivated
-  \*                   ing 
-
-  <*@InvTypeCode>\* 1  Str Sellers internal Product Code. Channels can
-                       ing ignore.
-
-  RatePlans/RatePla 1.     
-  n/SellableProduct .n     
-  /GuestRoom               
-
-  RatePlans/RatePla 1      
-  n/SellableProduct        
-  /GuestRoom/Quanti        
-  ties                     
-
-  <*@StandardNumBed 1  Int Standard occupation of room
-  s>\*                 ege 
-                       r   
-
-  RatePlans/RatePla 1      
-  n/SellableProduct        
-  /GuestRoom/Occupa        
-  ncy                      
-
-  <*@MinOccupancy>\ 1  Int Min occupation
-  *                    ege 
-                       r   
-
-  <*@MaxOccupancy>\ 1  Int Max occupation
-  *                    ege 
-                       r   
-
-  <*@AgeQualifyingC 1  Int (10 - Adult,8 - Child,7 - Infant)
-  ode>\*               ege 
-                       r   
-
-  RatePlans/RatePla 1  Str Room description
-  n/SellableProduct    ing 
-  /GuestRoom/Descri        
-  ption/Text               
-  ------------------------------------------------------------------------
+|
+
+| **Element**	  			    | **Number** | **Type** |   **Description**					|
+| ----------------------------------------- | ---------- | -------- | ------------------------------------------------- |
+| HotelRatePlanResponse/HotelRatePlanResult | 1     	 |	    | Root Node				  		|
+| Success           			    | 0..1     	 |	    | Should only be present if it was a successful response. The Errors node should not be present if the Success node is present. |
+| RatePlans         			    | 0..1    	 |	    | Present when sucess 				|
+| @HotelCode				    | 1  	 | String   | Hotel code whose information is provided by the method. |
+| @HotelName				    | 1 	 | String   | Hotel name.					|
+| RatePlans/RatePlan			    | 0..n    	 |	    | Present when rates exists.			|
+| @RatePlanCode				    | 1 	 | String   | Rate plan code. 					|
+| @RatePlanStatusType			    | 1		 | String   | Active or Deactivated.				|
+| @RatePlanType				    | 0..1	 | Integer  | OTA RPT Code (11 - Package). 			|
+| @YieldableIndicator			    | 0..1	 | Boolean  | Used to indicate the rate plan is subject to yield management logic. When false, the rate plan is not yieldable. When true or it's not returned, the rate plan is yieldable.|
+| @CurrencyCode				     0..1	 | String   | ISO Currency (EUR). Only null for derived rates. 	|
+| @Start      				    | 0..1 	 | Date	    | Start date of the rate booking window (Booking Dates for wich the rate will be available). |
+| @End        				    | 0..1	 | Date     | End date of the rate booking window (Booking Dates for wich the rate will be available). |
+| @Duration				    | 0..1  	 | String   | Duration of the rate booking window. Only present if Start and End are not. When present value is always 0 and means the rate has no booking window (available all dates). |
+| _@BaseRatePlanCode			    | 0..1 	 | String   | Rate plan code of the base rate plan. Only returned for derived rates. |
+| _@RatePlanStatusType			    | 1 	 | String   | Indicates if the rate plan is active or not for this dates. Possible values: "Active", "Deactivated". |
+| RatePlans/RatePlan/Description/Text	    | 1     	 |	    | Description of rate. 				|
+| RatePlans/BookingRules		    | 0..1       |	    | Present if exists booking rules for the given RatePlan.|
+| BookingRules/BookingRule		    | 1..n       |	    | Booking rules.					|
+| @Code       				    | 0..1	 | String   | Code of the booking rule (empty if are viewships conditions). |
+| BookingRule/CancelPenalties		    | 1          | 	    | Cancel penalties of the current booking rule.	|
+| CancelPenalties/CancelPenalty		    | 1..n       |	    | Cancel penalty.					|
+| @NonRefundable			    | 1 	 | Boolean  | Indicates if the rateplan is refundable or not. 	|
+| CancelPenalty/Deadline 		    | 1          |	    | Contains information about the the deadline of the cancel penalty. |
+| @OffsetTimeUnit			    | 1 	 | String   | Indicates the units of time that apply to the deadline.|
+| @OffsetUnitMultiplier			    | 1 	 | Integer  | The number of units of DeadlineTimeUnit.  	|
+| @OffsetDropTime			    | 1 	 | String   | Indicating when the deadline drop time goes into effect. |
+| CancelPenalty/AmountPercent		    | 1          |	    | Contains information about the the deadline of the cancel penalty. |
+| @NmbrOfNights				    | 0..1	 | Integer  | Number of nights that will be charged in case of cancellation applying the current cancel penalty. NmbrOfNights, Percent or Amount must be present. |
+| @Percent    				    | 0..1	 | Decimal  | Percent of the total amount that will be charged in case of cancellation applying the current cancel penalty. NmbrOfNights, Percent or Amount must be present. |
+| @Amount     				    | 0..1	 | Decimal  | Amount that will be charged in case of cancellation applying the current cancel penalty. NmbrOfNights, Percent or Amount must be present. |
+| @CurrencyCode				    | 0..1	 | String   | Currency code of the amount. Must be present if amount is present. |
+| BookingRule/Viewerships		    | 0..1       |	    | Present if exits viewerships conditions. 		|
+| BookingRule/Viewerships/Viewership	    | 1..n	 |	    |							|
+| BookingRule/Viewerships/Viewership/LocationCodes | 1   |	    | One node for each viewership condition.		|
+| @LocationCodesInclusive		    | 1 	 | Boolean  | When its true this rate can be request for next countryCode, when false can not be requested from this country. |
+| BookingRule/Viewerships/Viewership/LocationCodes/LocationCode | 0..1 |  | If is missing, applies to all countryCode againthe other viewership condition. |
+| @CountryCode				   | 1 		 | String   | Country ISO2 code from can or can not be requested this rate. |
+| RatePlan/Rate    			   | 0..1    	 |	    | Node that contains information about the rate. Only null for derived rates. |
+| Rate/AdditionalGuestAmounts		   | 1     	 |	    | Node that contains static information about additional guests. |
+| AdditionalGuestAmounts/AdditionalGuestAmount | 1..n    |	    | Static information about additional guests. 	|
+| @AgeQualifyingCode			   | 1 		 |	    | String Age qualifying code of the additional guest. |
+| @MaxAge     				   | 1 		 | Integer  | Max age not inclusive of the additional guest. 	|
+| Rate/PaymentPolicies			   | 1     	 |	    | Node that contains the accepted payments information. |
+| PaymentPolicies/GuaranteePayment	   | 1..n    	 |	    | Node that contains information about an accepted payment. |
+| @PaymentCode				   | 1     	 |	    | Contains the payment method accepted by the rate. See Payment Type Codes list in section 7.6.3. |
+| GuaranteePayment/AcceptedPayments	   | 0..1    	 |	    | Node that contains the accepted payments information. Only present if PaymentCode is not "MerchantPayment". |
+| AcceptedPayments/AcceptedPayment	   | 1..n    	 |	    | Node that contains the credit card accepted.	|
+| AcceptedPayment/PaymentCard		   | 1..n    	 |	    | Node that contains the credit card accepted.	|
+| @CardCode        			   | 1     	 | String   | Contains the credit card code. See Credit Card Codes list in section 7.6.4. |
+| RatePlans/RatePlan/Rates/Rate/MealsIncluded | 0..1	 |	    | Present if board is included with this rate.	|
+| @MealPlanCodes			   | 1 		 | Integer  | OTA MPT Code. 					|
+| RatePlans/RatePlan/SellableProducts	   | 0..1    	 |	    | List of sellable products. In derived rates, if it is not present it applies to all rooms. In other cases, it informs the rooms that applies. |
+| RatePlans/RatePlan/SellableProducts/SellableProduct | 0..n |	    | Present if rooms associed with this rate.		|
+| @InvCode    				   | 1 		 | Integer  | Sellable Product Code.				|
+| @InvType    				   | 1 		 | Integer  | Sellable product type (ROOM).			|
+| @InvStatusType			   | 1 	 	 | String   | Active or Deactivated.				|
+| @InvTypeCode				   | 1 		 | String   | Sellers internal Product Code. Channels can ignore. |
+| RatePlans/RatePlan/SellableProduct/GuestRoom | 1..n	 |	    |							|
+| RatePlans/RatePlan/SellableProduct/GuestRoom/Quantities | 1 |	    |     						|
+| @StandardNumBeds			   | 1 		 | Integer  | Standard occupation of room. 			|
+| RatePlans/RatePlan/SellableProduct/GuestRoom/Occupancy | 1 |	    |     						|
+| @MinOccupancy				   | 1 		 | Integer  | Min occupation.					|
+| @MaxOccupancy				   | 1 		 | Integer  | Max occupation.  					|
+| @AgeQualifyingCode			   | 1 		 | Integer  | (10 - Adult,8 - Child,7 - Infant).		|
+| RatePlans/RatePlan/SellableProduct/GuestRoom/Description/Text | 1 | String | Room description.			|
 
 |
 
@@ -523,7 +330,7 @@ rates / rooms.
 HotelRatePlanRetrieveRQ
 =======================
 
-:
+
 
     <HotelRatePlanRetrieve>
       <request>
@@ -550,49 +357,22 @@ HotelRatePlanRetrieveRQ
       </request>
     </HotelRatePlanRetrieve>
 
-  --------------------------------------------------------------------------
-  Element           Num Typ Description
-                    ber e   
-  ----------------- --- --- ------------------------------------------------
-  HotelRatePlanRetr 1       Root Node
-  ieve/request              
+|
 
-  POS/Source/TPA\_E 0..     Optional, empty only active RatePlans/Rooms will
-  xtensions         1       be received.
-
-  Param             1       
-
-  <*@key>\*         1   Str onlyActive
-                        ing 
-
-  <*@value>\*       1   Str 1 - You will receive all active RatePlans/Rooms
-                        ing data. 0 - Active and deactivated RatePlans/Rooms
-                            will be received. (Same case than wihout
-                            TPA\_Extensions node.)
-
-  RatePlans/RatePla 1       Contains date filter
-  n/DateRange               
-
-  <*@Start>\*       1   Dat Start date to search rates
-                        e   
-
-  <*@End>\*         1   Dat End date to search rates
-                        e   
-
-  RatePlans/RatePla 1       Contains hotel filter
-  n/HotelRef                
-
-  <*@HotelCode>\*   1   Str Hotel date to search rates
-                        ing 
-
-  RatePlans/RatePla 0..     Contains rate filter
-  n/RatePlanCandida 1       
-  tes/RatePlanCandi         
-  date                      
-
-  <*@RatePlanCode>\ 1   Str Rate Plan Code to search rates
-  *                     ing 
-  --------------------------------------------------------------------------
+| **Element**			| **Number**	| **Type**	| **Description**					|
+| ----------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| HotelRatePlanRetrieve/request	| 1      	|		| Root Node.						|
+| POS/Source/TPA_Extensions	| 0..1    	|		| Optional, empty only active RatePlans/Rooms will be received. |
+| Param            		| 1       	|		|							|
+| @key        			| 1  		| String	| onlyActive.						|
+| @value      			| 1  		| String	| 1 - You will receive all active RatePlans/Rooms data. 0 - Active and deactivated RatePlans/Rooms will be received. (Same case than wihout TPA_Extensions node). |
+| RatePlans/RatePlan/DateRange	| 1      	|		| Contains date filter.					|
+| @Start      			| 1  		| Date		| Start date to search rates. 				|
+| @End        			| 1  		| Date		| End date to search rates.				|
+| RatePlans/RatePlan/HotelRef	| 1      	| 		| Contains hotel filter.				|
+| @HotelCode  			| 1  		| String	| Hotel date to search rates.				|
+| RatePlans/RatePlan/RatePlanCandidates/RatePlanCandidate | 0..1 |  | Contains rate filter.             		|
+| @RatePlanCode			| 1  		| String	| Rate Plan Code to search rates.			|
 
 |
 
@@ -601,7 +381,7 @@ HotelRatePlanRetrieveRS
 
 **Example for RatePlan**
 
-:
+
 
     <HotelRatePlanRetrieveResponse xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
       <HotelRatePlanRetrieveResult Version = "0">
@@ -769,7 +549,7 @@ RatePlan for each day-room-rate.
 
 **Example for Derived RatePlan**
 
-:
+
 
     <HotelRatePlanRetrieveResponse xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
       <HotelRatePlanRetrieveResult Version = "0">
@@ -821,329 +601,6 @@ RatePlan for each day-room-rate.
 For a derived rate you will not receive the rooms associated. Derived
 rates have associated all the rooms from the base rate plan.
 
-  ------------------------------------------------------------------------
-  Element      N T Description
-               u y 
-               m p 
-               b e 
-               e   
-               r   
-  ------------ - - -------------------------------------------------------
-  HotelRatePla 1   Root Node
-  nRetrieveRes     
-  ponse/HotelR     
-  atePlanRetri     
-  eveResult        
-
-  Success      0   Should only be present if it was a successful response.
-               .   The Errors node should not be present if the Success
-               .   node is present.
-               1   
-
-  RatePlans    0   Present when sucess
-               .   
-               .   
-               1   
-
-  <*@HotelCode 1 S Hotel code whose information is provided by the method
-  >\*            t 
-                 r 
-                 i 
-                 n 
-                 g 
-
-  RatePlans/Ra 0   Present if rate exists
-  tePlan       .   
-               .   
-               1   
-
-  <*@RatePlanT 0 I OTA RPT Code (11 - Package)
-  ype>\*       . n 
-               . t 
-               1 e 
-                 g 
-                 e 
-                 r 
-
-  <*@RatePlanC 1 S Rate code
-  ode>\*         t 
-                 r 
-                 i 
-                 n 
-                 g 
-
-  <*@RatePlanS 1 S Active or Deactivated
-  tatusType>\*   t 
-                 r 
-                 i 
-                 n 
-                 g 
-
-  <*@BaseRateP 0 S Rate code of the base RatePlan. Only used for derived
-  lanCode>\*   . t rates
-               . r 
-               1 i 
-                 n 
-                 g 
-
-  <*@AdjustedP 0 D The percentage off the base rate plan amount used to
-  ercentage>\* . e determine the price of this derived rate plan. Only
-               . c used for derived rates
-               1 i 
-                 m 
-                 a 
-                 l 
-
-  <*@AdjustedA 0 D The amount which should be added to the base rate plan
-  mount>\*     . e to determine the price of this derived rate plan. Only
-               . c used for derived rates
-               1 i 
-                 m 
-                 a 
-                 l 
-
-  <*@AdjustUpI 0 B When true, the adjusted amount or adjusted percentage
-  ndicator>\*  . o is added to the amount specified for the base rate plan
-               . o to determine the derived rate amount. When false, the
-               1 l adjusted amount or adjusted percentage is subtracted
-                 e from the amount specified for the base rate plan to
-                 a determine the derived rate amount. Only used for
-                 n derived rates
-
-  RatePlans/Ra 1   
-  tePlan/Rates     
-  /Rate            
-
-  <*@Start>\*  1 D Start date of rate
-                 a 
-                 t 
-                 e 
-
-  <*@End>\*    1 D Start date of rate
-                 a 
-                 t 
-                 e 
-
-  RatePlans/Ra 0   Not used for derived rates
-  tePlan/Rates .   
-  /Rate/BaseBy .   
-  GuestAmts    1   
-
-  RatePlans/Ra 1   
-  tePlan/Rates .   
-  /Rate/BaseBy .   
-  GuestAmts/Ba n   
-  seByGuestAmt     
-
-  <*@AmountAft 1 D Total amount for @NumberOfGuests by day indicated
-  erTax>\*       e 
-                 c 
-                 i 
-                 m 
-                 a 
-                 l 
-
-  <*@NumberOfG 0 I How many adults are the @AmountAfterTax for day
-  uests>\*     . n indicated. If @NumberOfGuests is not informed then
-               . t @Type must be informed
-               1 e 
-                 g 
-                 e 
-                 r 
-
-  <*@Type>\*   0 I Amounts are per Room or per Occupancy instead of per
-               . n Pax. If @Type=25, price is per room, 1 BaseByGuestAmt
-               . t is returned and @NumberOfGuests and
-               1 e AdditionalGuestAmounts are not returned. If @Type=14,
-                 g price is per occupancy, @Code is returned and
-                 e @NumberOfGuests and AdditionalGuestAmounts are not
-                 r returned.
-
-  <*@Code>\*   0 S Returned if @Type=14. The occupancy code is defined by
-               . t AdultNumber-ChildNumber-InfantNumber. @Code for an
-               . r occupancy of 2 adults, 1 child and 0 babies would be
-               1 i "2-1-0".
-                 n 
-                 g 
-
-  <*@CurrencyC 1 S ISO Currency (EUR)
-  ode>\*         t 
-                 r 
-                 i 
-                 n 
-                 g 
-
-  RatePlans/Ra 0   
-  tePlan/Rates .   
-  /Rate/Additi .   
-  onalGuestAmo 1   
-  unts             
-
-  RatePlans/Ra 1   
-  tePlan/Rates .   
-  /Rate/Additi .   
-  onalGuestAmo n   
-  unts/Additio     
-  nalGuestAmou     
-  nt               
-
-  <*@MaxAdditi 1 I Indicates the number of guest to apply additional
-  onalGuests>\   n price, not is the max of guests, for example, if its 2,
-  *              t is for the second pax not to 2 paxes.
-                 e 
-                 g 
-                 e 
-                 r 
-
-  <*@Type>\*   0 S OTA AmountDeterminationType. If not specified then the
-               . t price is a suplement, if @Type is Exclusive then the
-               . r the price is absolute.
-               1 i 
-                 n 
-                 g 
-
-  <*@AgeQualif 1 I (10 - Adult,8 - Child,7 - Infant)
-  yingCode>\*    n 
-                 t 
-                 e 
-                 g 
-                 e 
-                 r 
-
-  <*@Amount>\* 1 D Price for each additional pax
-                 e 
-                 c 
-                 i 
-                 m 
-                 a 
-                 l 
-
-  <*@CurrencyC 1 S ISO Currency (EUR)
-  ode>\*         t 
-                 r 
-                 i 
-                 n 
-                 g 
-
-  RatePlans/Ra 0   Present if meal included
-  tePlan/Rates .   
-  /Rate/MealsI .   
-  ncluded      1   
-
-  <*@MealPlanC 1 I OTA MPT Code
-  odes>\*        n 
-                 t 
-                 e 
-                 g 
-                 e 
-                 r 
-
-  RatePlans/Ra 0   Present if supplements by board exists
-  tePlan/Suppl .   
-  ements       .   
-               1   
-
-  RatePlans/Ra 1   
-  tePlan/Suppl .   
-  ements/Suppl .   
-  ement        n   
-
-  <*@Start>\*  1 D Start date of this supplement
-                 a 
-                 t 
-                 e 
-
-  <*@End>\*    1 D End date of this supplement
-                 a 
-                 t 
-                 e 
-
-  <*@AgeQualif 0 I Age qualifyingCode which affects this supplement (10 -
-  yingCode>\*  . n Adult,8 - Child,7 - Infant). Not returned if charging
-               . t board supplement by occupancy.
-               1 e 
-                 g 
-                 e 
-                 r 
-
-  <*@ChargeTyp 0 S Indicates the board supplement occupancy. Only returned
-  eCode>\*     . t if charging board supplement by occupancy. The
-               . r occupancy code is defined by
-               1 i AdultNumber-ChildNumber-InfantNumber. @ChargeTypeCode
-                 n for an occupancy of 2 adults, 1 child and 0 babies
-                 g would be "2-1-0".
-
-  <*@CurrencyC 1 S ISO Currency (EUR)
-  ode>\*         t 
-                 r 
-                 i 
-                 n 
-                 g 
-
-  <*@Amount>\* 1 D Amount of supplement
-                 e 
-                 c 
-                 i 
-                 m 
-                 a 
-                 l 
-
-  <*@Supplemen 1 S (Board)
-  tType>\*       t 
-                 r 
-                 i 
-                 n 
-                 g 
-
-  <*@InvCode>\ 1 S OTA MPT Code if @SupplementType is Board
-  *              t 
-                 r 
-                 i 
-                 n 
-                 g 
-
-  RatePlans/Ra 0   List of sellable products. Null for derived rates.
-  tePlan/Sella .   
-  bleProducts  .   
-               1   
-
-  RatePlans/Ra 1   
-  tePlan/Sella .   
-  bleProducts/ .   
-  SellableProd n   
-  uct              
-
-  <*@InvCode>\ 1 I Sellable Product Code
-  *              n 
-                 t 
-                 e 
-                 g 
-                 e 
-                 r 
-
-  <*@InvType>\ 1 I Sellable product type (ROOM)
-  *              n 
-                 t 
-                 e 
-                 g 
-                 e 
-                 r 
-
-  <*@InvStatus 1 S Active or Deactivated
-  Type>\*        t 
-                 r 
-                 i 
-                 n 
-                 g 
-
-  RatePlans/Ra 1 S Rate description
-  tePlan/Descr   t 
-  iption/Text    r 
-                 i 
-                 n 
-                 g 
-  ------------------------------------------------------------------------
-
 |
 
 HotelAvailRetrieve
@@ -1158,7 +615,7 @@ complete break down of availability. XTG will return break down of hotel
 HotelAvailRetrieveRQ
 ====================
 
-:
+
 
     <HotelAvailRetrieve>
       <request>
@@ -1185,39 +642,24 @@ HotelAvailRetrieveRQ
       </request>
     </HotelAvailRetrieve>
 
-+-------------------------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Element | Number | Type | Description
-| +===================================================================+==========+==========+====================================================================================================================================================================+
-| POS/Source/TPA\_Extensions | 0..1 | | Optional, empty only active
-RatePlans/Rooms will be recieved.
-| +-------------------------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Param | 1 | |
-| +-------------------------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <*@key>\* | 1 | String | onlyActive
-| +-------------------------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <*@value>\* | 1 | String | 1 - You will recieve all active
-RatePlans/Rooms data. 0 - Active and deactivated RatePlans/Rooms will be
-recieved. (Same case than wihout TPA\_Extensions node.)
-| +-------------------------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| HotelAvailRetrieve/request/HotelAvailRequests/HotelAvailRequest | 1 |
-| Root Node
-| +-------------------------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| DateRange | 1 | | Contains date filter
-| +-------------------------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <*@Start>\* | 1 | Date | Start date to search rates
-| +-------------------------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <*@End>\* | 1 | Date | End date to search rates
-| +-------------------------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| HotelRef | 1 | | Contains hotel filter
-| +-------------------------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <*@HotelCode>\* | 1 | String | Hotel date to search rates
-| +-------------------------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| RatePlanCandidates | 0..1 | | If exists, contains rate filter
-| +-------------------------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| RatePlanCandidates/RatePlanCandidate | 1..n | |
-| +-------------------------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| <*@RatePlanCode>\* | 1 | String | Rate Plan Code to search rates
-| +-------------------------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|
+
+| **Element**			| **Number**	| **Type**	| **Description**					|
+| ----------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| POS/Source/TPA_Extensions 	| 0..1 		| 		| Optional, empty only active RatePlans/Rooms will be recieved. |
+| Param 			| 1 		| 		|							|
+| @key 				| 1 		| String 	| onlyActive.						|
+| @value			| 1 		| String 	| 1 - You will recieve all active RatePlans/Rooms data. 0 - Active and deactivated RatePlans/Rooms will be recieved. (Same case than wihout TPA_Extensions node). |
+| HotelAvailRetrieve/request/HotelAvailRequests/HotelAvailRequest | 1 |	| Root Node.					|
+| DateRange 			| 1 		| 		| Contains date filter.					|
+| @Start 			| 1 		| Date 		| Start date to search rates.				|
+| @End 				| 1 		| Date 		| End date to search rates.				|
+| HotelRef 			| 1 		| 		| Contains hotel filter.				|
+| @HotelCode 			| 1 		| String 	| Hotel date to search rates.				|
+| RatePlanCandidates 		| 0..1 		| 		| If exists, contains rate filter.			|
+| RatePlanCandidates/RatePlanCandidate | 1..n 	| 		|							|
+| @RatePlanCode 		| 1 		| String 	| Rate Plan Code to search rates.			 1
+
 |
 
 HotelAvailRetrieveRS
@@ -1225,7 +667,7 @@ HotelAvailRetrieveRS
 
 **Example for RatePlan**
 
-:
+
 
     <HotelAvailRetrieveResponse>
       <HotelAvailRetrieveResult>
@@ -1269,7 +711,7 @@ HotelAvailRetrieveRS
 
 **Example for Derived RatePlan**
 
-:
+
 
     <HotelAvailRetrieveResponse xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
       <HotelAvailRetrieveResult Version = "0">
@@ -1287,177 +729,42 @@ HotelAvailRetrieveRS
       </HotelAvailRetrieveResult>
     </HotelAvailRetrieveResponse>
 
-  -------------------------------------------------------------------------
-  Element     N Ty Description
-              u pe 
-              m    
-              b    
-              e    
-              r    
-  ----------- - -- --------------------------------------------------------
-  HotelAvailR 1    Root Node
-  etrieveResp      
-  onse/HotelA      
-  vailRetriev      
-  eResult          
+|
 
-  Success     0    Should only be present if it was a successful response.
-              .    The Errors node should not be present if the Success
-              .    node is present.
-              1    
-
-  AvailStatus 0    Present when success
-  Messages    .    
-              .    
-              1    
-
-  <*@HotelCod 1 St Hotel code whose information is provided by the method
-  e>\*          ri 
-                ng 
-
-  AvailStatus 0    
-  Messages/Av .    
-  ailStatusMe .    
-  ssage       n    
-
-  <*@BookingL 0 In Identifies the number of available rooms per Room &
-  imit>\*     . te RatePlan for the indicated dates. Not mandatory when the
-              . ge @Status is Close or is a derived rate
-              1 r  
-
-  <*@BookingS 0 In Identifies the number of sold rooms per Room & RatePlan
-  old>\*      . te for the indicated dates. This value is reset when a new
-              . ge BookingLimit is charged by an HotelAvailNotif request.
-              1 r  Not mandatory when the @Status is Close or is a derived
-                   rate
-
-  AvailStatus 1    
-  Messages/Av      
-  ailStatusMe      
-  ssage/Statu      
-  sApplicatio      
-  nControl         
-
-  <*@Start>\* 1 Da Start date
-                te 
-
-  <*@End>\*   1 Da End date
-                te 
-
-  <*@RatePlan 1 St Rate Plan Code
-  Code>\*       ri 
-                ng 
-
-  <*@InvCode> 0 St Room Code. Null for derived rates
-  \*          . ri 
-              . ng 
-              1    
-
-  <*@InvType> 0 St Product type (ROOM). Null for derived rates
-  \*          . ri 
-              . ng 
-              1    
-
-  <*@Mon>\*   1 Bo Indicates whether the AvailStatusMessage data applies to
-                ol Mondays
-                ea 
-                n  
-
-  <*@Tue>\*   1 Bo Indicates whether the AvailStatusMessage data applies to
-                ol Tuesdays
-                ea 
-                n  
-
-  <*@Weds>\*  1 Bo Indicates whether the AvailStatusMessage data applies to
-                ol Wednesdays
-                ea 
-                n  
-
-  <*@Thur>\*  1 Bo Indicates whether the AvailStatusMessage data applies to
-                ol Thursdays
-                ea 
-                n  
-
-  <*@Fri>\*   1 Bo Indicates whether the AvailStatusMessage data applies to
-                ol Fridays
-                ea 
-                n  
-
-  <*@Sat>\*   1 Bo Indicates whether the AvailStatusMessage data applies to
-                ol Saturdays
-                ea 
-                n  
-
-  <*@Sun>\*   1 Bo Indicates whether the AvailStatusMessage data applies to
-                ol Sundays
-                ea 
-                n  
-
-  AvailStatus 0    
-  Messages/Av .    
-  ailStatusMe .    
-  ssage/Lengt 1    
-  hsOfStay         
-
-  <*@ArrivalD 0 Bo When its true, the minimum and maximum stay is checked
-  ateBased>\* . ol ONLY the first day of the availability, when false or
-              . ea not indicated, the minimum and maximum stay is checked
-              1 n  all the availability days.
-
-  AvailStatus 1    
-  Messages/Av .    
-  ailStatusMe .    
-  ssage/Lengt 2    
-  hsOfStay/Le      
-  ngthOfStay       
-
-  <*@Time>\*  1 In Indicates the number of @TimeUnit for this stay
-                te 
-                ge 
-                r  
-
-  <*@TimeUnit 1 St Day
-  >\*           ri 
-                ng 
-
-  <*@MinMaxMe 1 St (MinLOS, MaxLOS) Indicates the minimum or maximum stay
-  ssageType>\   ri for his AvailStatusMessage.
-  *             ng 
-
-  AvailStatus 0    
-  Messages/Av .    
-  ailStatusMe .    
-  ssage/Restr 1    
-  ictionStatu      
-  s                
-
-  <*@Status>\ 1 St (Open, Close)
-  *             ri 
-                ng 
-
-  <*@Restrict 0 St Master. This is the master availability. If master
-  ion>\*      . ri availability is ‘Closed’, the product is not bookable if
-              . ng any of the stay dates includes one of the dates
-              1    specified by the Application Control element. If master
-                   availability is ‘Open’, additional restrictions on
-                   arrival and departure may be placed (Master, Arrival,
-                   Departure)
-
-  <*@MinAdvan 0 In Minimum number of days before the check-in date after
-  cedBookingO . te which the product is not available to be booked. This
-  ffset>\*    . ge restriction is usually used to offer discounts on early
-              1 r  bookings
-
-  <*@MaxAdvan 0 In Maximum number of days before the check-in date after
-  cedBookingO . te which the product is not available to be booked. This
-  ffset>\*    . ge restriction is usually used to offer last minute
-              1 r  discounts on unsold inventory.
-
-  <*@SellThro 0 Bo When @Status is open, in this element you can indicate
-  ughOpenIndi . ol this room or room/ratePlan can be sold without limit
-  cator>\*    . ea (like BookingLimit=MaxInteger). Null for derived rates
-              1 n  
-  -------------------------------------------------------------------------
+| **Element**			| **Number**	| **Type**	| **Description**					|
+| ----------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| HotelAvailRetrieveResponse/HotelAvailRetrieveResult | 1 |	| Root Node.						|
+| Success    			| 0..1   	|		| Should only be present if it was a successful response. The Errors node should not be present if the Success node is present. | 
+| AvailStatusMessages		| 0..1   	|		| Present when success.					|
+| @HotelCode			| 1		| String	| Hotel code whose information is provided by the method. |
+| AvailStatusMessages/AvailStatusMessage | 0..n |		| 							|
+| @BookingLimit			| 0..1		| Integer	| Identifies the number of available rooms per Room & RatePlan for the indicated dates. Not mandatory when the @Status is Close or is a derived rate. |
+| @BookingSold			| 0..1		| Integer	| Identifies the number of sold rooms per Room & RatePlan for the indicated dates. This value is reset when a new BookingLimit is charged by an HotelAvailNotif request. Not mandatory when the @Status is Close or is a derived rate. |
+| AvailStatusMessages/AvailStatusMessage/StatusApplicationControl | 1 |	 |						|
+| @Start			| 1		| Date		| Start date.						|
+| @End				| 1 		| Date		| End date.						|
+| @RatePlanCode			| 1		| String	| Rate Plan Code.					|
+| @InvCode			| 0..1		| String	| Room Code. Null for derived rates.  			|
+| @InvType			| 0..1		| String	| Product type (ROOM). Null for derived rates.  	|
+| @Mon  			| 1 		| Boolean	| Indicates whether the AvailStatusMessage data applies to Mondays. |
+| @Tue  			| 1		| Boolean	| Indicates whether the AvailStatusMessage data applies to Tuesdays. |
+| @Weds 			| 1		| Boolean	| Indicates whether the AvailStatusMessage data applies to Wednesdays. |
+| @Thur 			| 1		| Boolean	| Indicates whether the AvailStatusMessage data applies to Thursdays. |
+| @Fri  			| 1		| Boolean	| Indicates whether the AvailStatusMessage data applies to Fridays. |
+| @Sat  			| 1		| Boolean	| Indicates whether the AvailStatusMessage data applies to Saturdays. |
+| @Sun  			| 1		| Boolean	| Indicates whether the AvailStatusMessage data applies to Sundays. |
+| AvailStatusMessages/AvailStatusMessage/LengthsOfStay | 0..1 | |							|
+| @ArrivalDateBased		| 0..1		| Boolean	| When its true, the minimum and maximum stay is checked ONLY the first day of the availability, when false or not indicated, the minimum and maximum stay is checked all the availability days. |
+| AvailStatusMessages/AvailStatusMessage/LengthsOfStay/LengthOfStay | 1..2 | | 						|
+| @Time 			| 1		| Integer	| Indicates the number of @TimeUnit for this stay.	|
+| @TimeUnit			| 1		| String	| Day.							|
+| @MinMaxMessageType		| 1		| String	| (MinLOS, MaxLOS) Indicates the minimum or maximum stay for his AvailStatusMessage. |
+| AvailStatusMessages/AvailStatusMessage/RestrictionStatus | 0..1 | |			 				|
+| @Status			| 1		| String	| (Open, Close).					|
+| @Restriction			| 0..1		| String	| Master. This is the master availability. If master availability is ‘Closed’, the product is not bookable if any of the stay dates includes one of the dates specified by the Application Control element. If master availability is ‘Open’, additional restrictions on arrival and departure may be placed (Master, Arrival, Departure). |
+| @MinAdvancedBookingOffset	| 0..1		| Integer	| Minimum number of days before the check-in date aftere which the product is not available to be booked. This restriction is usually used to offer discounts on early bookings. |
+| @MaxAdvancedBookingOffset	| 0..1		| Integer	| Maximum number of days before the check-in date after which the product is not available to be booked. This restriction is usually used to offer last minute discounts on unsold inventory. |
+| @SellThroughOpenIndicator	| 0..1		| Boolean	| When @Status is open, in this element you can indicate this room or room/ratePlan can be sold without limit (like BookingLimit=MaxInteger). Null for derived rates. |
 
 |
 
@@ -1472,7 +779,7 @@ seller reservations.
 HotelResRetrieveRQ
 ==================
 
-:
+
 
     <HotelResRetrieve>
       <request>
@@ -1496,50 +803,28 @@ HotelResRetrieveRQ
       </request>
     </HotelResRetrieve>
 
-  -------------------------------------------------------------------------
-  Element           Numbe Type  Description
-                    r           
-  ----------------- ----- ----- -------------------------------------------
-  HotelResRetrieve/ 1           Root Node
-  request                       
+|
 
-  UniqueID          0..1        If present filter by UniqueID content
-
-  <*@ID>\*          1     Strin Booking ID
-                          g     
-
-  <*@IDContext>\*   1     Strin (Client, Provider, Internal)
-                          g     
-
-  ReadRequests      0..1        If present filter by its content
-
-  ReadRequests/Hote 1..n        Node containing the read request data.
-  lReadRequest                  
-
-  <*@HotelCode>\*   0..1  Strin Hotel code.
-                          g     
-
-  HotelReadRequest/ 1           
-  SelectionCriteria             
-
-  <*@Start>\*       1     DateT Start date to search bookings. DateTime
-                          ime   Format is yyyy-MM-ddThh:mm:ss Date must be
-                                in UTC
-
-  <*@End>\*         1     DateT End date to search bookings. DateTime
-                          ime   Format is yyyy-MM-ddThh:mm:ss Date must be
-                                in UTC
-
-  <*@DateType>\*    1     Strin (ArrivalDate, CreateDate, DepartureDate,
-                          g     LastUpdateDate)
-  -------------------------------------------------------------------------
+| **Element**			| **Number**	| **Type**	| **Description**					|
+| ----------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| HotelResRetrieve/request	| 1          	|		| Root Node.						|
+| UniqueID         		| 0..1       	|		| If present filter by UniqueID content.		|
+| @ID         			| 1    		| String	| Booking ID.						|
+| @IDContext  			| 1    		| String	| (Client, Provider, Internal).  			|
+| ReadRequests     		| 0..1       	|		| If present filter by its content.			|
+| ReadRequests/HotelReadRequest	| 1..n       	|		| Node containing the read request data.		|
+| @HotelCode  			| 0..1 		| String	| Hotel code.    					|
+| HotelReadRequest/SelectionCriteria | 1        |		|							|
+| @Start      			| 1    		| DateTime	| Start date to search bookings. DateTime Format is yyyy-MM-ddThh:mm:ss Date must be in UTC. |
+| @End        			| 1    		| DateTime	| End date to search bookings. DateTime Format is yyyy-MM-ddThh:mm:ss Date must be in UTC. |
+| @DateType   			| 1    		| String	| (ArrivalDate, CreateDate, DepartureDate, LastUpdateDate). |
 
 |
 
 HotelResRetrieveRS
 ==================
 
-:
+
 
     <HotelResRetrieveResponse xmlns = "http://schemas.xmltravelgate.com/hubpush/client/2012/10">
       <HotelResRetrieveResult Version = "0">
@@ -1668,158 +953,55 @@ HotelResRetrieveRS
       </HotelResRetrieveResult>
     </HotelResRetrieveResponse>
 
-  ------------------------------------------------------------------------
-  Element       Nu Typ Description
-                mb e   
-                er     
-  ------------- -- --- ---------------------------------------------------
-  HotelResRetri 1      Root Node
-  eveResponse          
+| 
 
-  HotelResRetri 1      Contains the result of reservation retrieve.
-  eveResponse/H        
-  otelResRetrie        
-  veResult             
-
-  HotelResRetri 0.     Should only be present if it was a successful
-  eveResult/Suc .1     response. The Errors node should not be present if
-  cess                 the Success node is present.
-
-  HotelResRetri 0.     Node containing the reservation.
-  eveResult/Hot .1     
-  elReservation        
-  s                    
-
-  HotelReservat 1      Node containing information about the reservation.
-  ions/HotelRes        
-  ervation             
-
-  <*@ResStatus> 1  Str Status of the reservation. Possible status are:
-  \*               ing 'Confirmed', 'Requested' and 'Cancelled'
-
-  <*@CreateDate 1  Dat Date and time when the reservation was made.
-  Time>\*          eTi 
-                   me  
-
-  <*@LastModify 0. Dat Date and time when the reservation was modified.
-  DateTime>\*   .1 eTi Should only be present if the reservation status is
-                   me  'Cancelled'.
-
-  HotelReservat 1      Node containing the RoomStays of the reservation.
-  ion/RoomStays        
-
-  RoomStays/Roo 1.     Node containing RoomStay information.
-  mStay         .n     
-
-  RoomStay/Room 1      Node containing information about rooms.
-  Types                
-
-  RoomTypes/Roo 1      Node containing information about one room.
-  mType                
-
-  <*@RoomTypeCo 1  Str Room code.
-  de>\*            ing 
-
-  <*@RoomID>\*  1  Str Id of the room.
-                   ing 
-
-  RoomType/Room 1      Node containing the description of the room.
-  Description          
-
-  RoomDescripti 1  Str Description of the room.
-  on/Text          ing 
-
-  RoomStay/Rate 1      Node containing information about RatePlans.
-  Plans                
-
-  RatePlans/Rat 1      Node containing information about one RatePlan.
-  ePlan                
-
-  <*@RatePlanCo 1      RatePlan code.
-  de>\*                
-
-  RatePlan/Rate 1      Node containing information the RatePlan
-  PlanDescripti        description one RatePlan.
-  on                   
-
-  RatePlanDescr 1  Str Description of the RatePlan.
-  iption/Text      ing 
-
-  RatePlan/Comm 1      Node containing the commission of the RatePlan.
-  ission               
-
-  Percent       1  Dec Commission of the RatePlane.
-                   ima 
-                   l   
-
-  RoomStay/Room 1      Node containing information about RoomRates.
-  Rates                
-
-  RoomRates/Roo 1      Node containing information about one RoomRate.
-  mRate                
-
-  <*@EffectiveD 1  Dat Effective date when the RoomRate start applying.
-  ate>\*           e   
-
-  <*@ExpireDate 1  Dat Expire date when the RoomRate ends applying. Check
-  >\*              e   out night minus 1.
-
-  <*@RoomTypeCo 1  Str Code of the Room.
-  de>\*            ing 
-
-  <*@InvBlockCo 1  Str Inventary block code.
-  de>\*            ing 
-
-  <*@RatePlanCo 1  Str Code of the RatePlan.
-  de>\*            ing 
-
-  RoomRate/Rate 1      Node containing information about the rates.
-  s                    
-
-  Rates/Rate    1      Node containing information about one rate.
-
-  <*@EffectiveD 1  Dat Effective date when the Rate start applying.
-  ate>\*           e   
-
-  <*@ExpireDate 1  Dat Expire date when the Rate ends applying.
-  >\*              e   
-
-  Rate/Base     1      Node containing core information about the rate.
-
-  <*@AmountBefo 0. Dec Amount before tax of the rate.
-  reTax>\*      .1 ima 
-                   l   
-
-  <*@AmountAfte 1  Dec Amount after tax of the rate.
-  rTax>\*          ima 
-                   l   
-
-  <*@CurrencyCo 1  Str Currency code of the rate.
-  de>\*            ing 
-
-  Rate/CancelPo 1      Node containing information about cancel policies
-  licies               which are applied to the rate.
-
-  CancelPolicie 0.     Node containing information about one cancel
-  s/CancelPenal .n     penalty.
-  ty                   
-
-  <*@PolicyCode 1  Str Policy code of the cancel penalty.
-  >\*              ing 
-
-  RoomRate/Tota 1      Node containing information about the total price
-  l                    of the RoomRate.
-
-  <*@AmountBefo 0. Dec Amount before tax of the RoomRate.
-  reTax>\*      .1 ima 
-                   l   
-
-  <*@AmountAfte 1  Dec Amount after tax of the RoomRate.
-  rTax>\*          ima 
-                   l   
-
-  <*@CurrencyCo 1  Str Currency code of the RoomRate.
-  de>\*            ing 
+| **Element**				| **Number**	| **Type**	| **Description**				|
+| ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
+| HotelResRetrieveResponse		| 1     	|		| Root Node.					|
+| HotelResRetrieveResponse/HotelResRetrieveResult | 1   |		| Contains the result of reservation retrieve.	|
+| HotelResRetrieveResult/Success	| 0..1    	|		| Should only be present if it was a successful response. The Errors node should not be present if the Success node is present. |
+| HotelResRetrieveResult/HotelReservations | 0..1   	|		| Node containing the reservation.		|
+| HotelReservations/HotelReservation	| 1     	|		| Node containing information about the reservation.|
+| @ResStatus				| 1 		| String	| Status of the reservation. Possible status are: 'Confirmed', 'Requested' and 'Cancelled'. |
+| @CreateDateTime			| 1 		| DateTime	| Date and time when the reservation was made.	|
+| @LastModifyDateTime			| 0..1		| DateTime	| Date and time when the reservation was modified. Should only be present if the reservation status is 'Cancelled'. |
+| HotelReservation/RoomStays		| 1     	|		| Node containing the RoomStays of the reservation.|
+| RoomStays/RoomStay			| 1..n    	|		| Node containing RoomStay information.		|
+| RoomStay/RoomTypes			| 1     	|		| Node containing information about rooms.	|
+| RoomTypes/RoomType			| 1     	|		| Node containing information about one room.   |
+| @RoomTypeCode				| 1 		| String	| Room code.					|
+| @RoomID				| 1 		| String	|Id of the room.				|
+| RoomType/RoomDescription		| 1     	|		| Node containing the description of the room.	|
+| RoomDescription/Text 			| 1 		| String	| Description of the room.			|
+| RoomStay/RatePlans			| 1     	|		| Node containing information about RatePlans.	|
+| RatePlans/RatePlan			| 1     	|		| Node containing information about one RatePlan.|
+| @RatePlanCode				| 1     	|		| RatePlan code.				|
+| RatePlan/RatePlanDescription		| 1     	|		| Node containing information the RatePlan description one RatePlan. |
+| RatePlanDescription/Text		| 1 		| String	| Description of the RatePlan.			|
+| RatePlan/Commission			| 1     	|		| Node containing the commission of the RatePlan.|
+| Percent      				| 1 		| Decimal	| Commission of the RatePlane. 			|
+| RoomStay/RoomRates			| 1     	|		| Node containing information about RoomRates.	|
+| RoomRates/RoomRate			| 1     	|		| Node containing information about one RoomRate.|
+| @EffectiveDate			| 1 		| Date		| Effective date when the RoomRate start applying.|
+| @ExpireDate				| 1 		| Date		| Expire date when the RoomRate ends applying. Check out night minus 1. |
+| @RoomTypeCode				| 1 		| String	| Code of the Room.				|
+| @InvBlockCode				| 1 		| String	| Inventary block code.				|
+| @RatePlanCode				| 1 		| String	| Code of the RatePlan.				|
+| RoomRate/Rates			| 1     	|		| Node containing information about the rates.	|
+| Rates/Rate    			| 1     	|		| Node containing information about one rate.	|
+| @EffectiveDate			| 1 		| Date		| Effective date when the Rate start applying.	|
+| @ExpireDate				| 1 		| Date		| Expire date when the Rate ends applying.	|
+| Rate/Base    				| 1     	|		| Node containing core information about the rate.|
+| @AmountBeforeTax			| 0..1		| Decimal	| Amount before tax of the rate.		|
+| @AmountAfterTax			| 1 		| Decimal	| Amount after tax of the rate.			|
+| @CurrencyCode				| 1 		| String  	| Currency code of the rate.			|
+| Rate/CancelPolicies			| 1     	|		| Node containing information about cancel policies which are applied to the rate. |
+| CancelPolicies/CancelPenalty		| 0..n   	|		| Node containing information about one cancel penalty. |
+| @PolicyCode				| 1 		| String  	| Policy code of the cancel penalty.		|
+| RoomRate/Total			| 1     	|		| Node containing information about the total price of the RoomRate. |
+| @AmountBeforeTax			| 0..1		| Decimal	| Amount before tax of the RoomRate.		|
+| @AmountAfterTax			| 1 		| Decimal	| Amount after tax of the RoomRate.		|
+| @CurrencyCode				| 1 		| String	| Currency code of the RoomRate.		|
 
   RoomStay/Canc 1      Node containing all cancel penalties of the
   elPenalties          RoomStay.

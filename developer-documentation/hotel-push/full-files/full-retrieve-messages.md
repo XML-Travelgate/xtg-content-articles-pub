@@ -10,7 +10,7 @@ permalink: /developer-documentation/hotel-push/full-files/full-retrieve-messages
 Full HotelRatePlanInventoryRetrieveRQ
 =====================================
 
-:
+
 
     <s:Envelope xmlns:s = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10" xmlns:ns1 = "http://www.opentravel.org/OTA/2003/05" xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
         <s:Header>
@@ -50,7 +50,7 @@ Full HotelRatePlanInventoryRetrieveRQ
 Full HotelRatePlanInventoryRetrieveRS
 =====================================
 
-:
+
 
     <s:Envelope xmlns:s = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:u = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
         <s:Header>
@@ -321,7 +321,7 @@ Full HotelRatePlanInventoryRetrieveRS
 Full HotelRatePlanRetrieveRQ
 ============================
 
-:
+
 
     <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.xmltravelgate.com/hubpush/provider/2012/10" xmlns:ns1="http://www.opentravel.org/OTA/2003/05" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
         <s:Header>
@@ -362,7 +362,7 @@ Full HotelRatePlanRetrieveRQ
 Full HotelRatePlanRetrieveRS
 ============================
 
-:
+
 
     <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
        <s:Header>
@@ -547,7 +547,7 @@ Full HotelRatePlanRetrieveRS
 Full HotelAvailRetrieveRQ
 =========================
 
-:
+
 
     <s:Envelope xmlns:s = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:u = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
         <s:Header>
@@ -588,7 +588,7 @@ Full HotelAvailRetrieveRQ
 Full HotelAvailRetrieveRS
 =========================
 
-:
+
 
     <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
        <s:Header>
