@@ -56,7 +56,7 @@ StaticConfiguration call).
 AvailRQ Example
 ===============
 
-:
+
 
     <OTA_TourActivityAvailRQ
         xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
@@ -85,90 +85,41 @@ AvailRQ Example
 AvailRQ Description
 ===================
 
-  -------------------------------------------------------------------------
-  Element              Numb Type  Description
-                       er         
-  -------------------- ---- ----- -----------------------------------------
-  OTA\_TourActivityAva 1          Root node.
-  ilRQ                            
+|
 
-  @PrimaryLangID       1    Strin Language code (ISO 3166-1 alpha-2)
-                            g     format..
-
-  TourActivityInfo     0..n       Information about specific ticket.
-
-  TourActivityInfo/Bas 0..1       If need search by activity provider code.
-  icInfo                          
-
-  @Name                0..1 Strin Name of ticket.
-                            g     
-
-  @TourActivityID      0..1 Strin Code of ticket, mandatory if need search
-                            g     by activity provider code.
-
-  TourActivityInfo/Sch 1          Information about dates range on which
-  edule                           you can enjoy the activity.
-
-  TourActivityInfo/Sch 1          Information dates range that you apply
-  edule/Summary                   availability.
-
-  @Start               1    Date  Start date that you apply availability.
-
-  @End                 1    Date  End date that you apply availability.
-
-  TourActivityInfo/Cat 0..1       Category of Ticket.
-  egoryAndType/Categor            
-  y                               
-
-  @Code                0..1 Strin A category code from a predefined list,
-                            g     if Extension = "Other" then will be
-                                  provider code.
-
-  @Extension           0..1 Strin Enter a category here if you have
-                            g     selected "Other" from the pre-defined
-                                  list.
-
-  TourActivityInfo/Cat 0..1       Category of Ticket.
-  egoryAndType                    
-
-  TourActivityInfo/Cat 0..1       Category of Ticket.
-  egoryAndType/Categor            
-  y                               
-
-  @Code                0..1 Strin A category code from a predefined list,
-                            g     if Extension = "Other" then will be
-                                  provider code.
-
-  @Extension           0..1       Enter a category here if you have
-                                  selected "Other" from the pre-defined
-                                  list.
-
-  Location             0..1       The location of the tour/ activity.
-
-  Location/Region      0..1       Describes regional information.
-
-  @RegionCode          0..1 Strin Specifies a region code.
-                            g     
-
-  @RegionName          0..1 Strin Specifies the region name.
-                            g     
-
-  ParticipantCount     0..n       Information about participant type,
-                                  specifying age for each participant.
-
-  @Age                 1    Integ Age of participant.
-                            er    
-
-  @Quantity            1    Integ Number of participant with same age.
-                            er    
-  -------------------------------------------------------------------------
+| **Element**				| **Number**	| **Type**	| **Description**				|
+| ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
+| OTA_TourActivityAvailRQ		| 1         	|		| Root node.					|
+| @PrimaryLangID      			| 1   		| String	| Language code (ISO 3166-1 alpha-2) format.	|
+| TourActivityInfo    			| 0..n      	|		| Information about specific ticket.		|
+| TourActivityInfo/BasicInfo		| 0..1      	|		| If need search by activity provider code.	|
+| @Name               			| 0..1		| String	| Name of ticket.				|
+| @TourActivityID     			| 0..1		| String	| Code of ticket, mandatory if need search  by activity provider code. |
+| TourActivityInfo/Schedule		| 1         	|		| Information about dates range on which you can enjoy the activity. |
+| TourActivityInfo/Schedule/Summary	| 1         	|		| Information dates range that you apply availability. |
+| @Start              			| 1   		| Date		| Start date that you apply availability.	|
+| @End                			| 1   		| Date 		| End date that you apply availability.		|
+| TourActivityInfo/CategoryAndType/Category | 0..1      |		| Category of Ticket.				|
+| @Code               			| 0..1		| String	| A category code from a predefined list, if Extension = "Other" then will be provider code. |
+| @Extension          			| 0..1		| String	| Enter a category here if you have selected "Other" from the pre-defined list. |
+| TourActivityInfo/CategoryAndType	| 0..1      	|		| Category of Ticket.				|
+| TourActivityInfo/CategoryAndType/Category | 0..1      |		| Category of Ticket.				|
+| @Code               			| 0..1		| String	| A category code from a predefined list, if Extension = "Other" then will be provider code. |
+| @Extension          			| 0..1      	|		| Enter a category here if you have selected "Other" from the pre-defined list. |
+| Location            			| 0..1      	|		| The location of the tour/ activity.		|
+| Location/Region     			| 0..1      	|		| Describes regional information.		|
+| @RegionCode         			| 0..1		| String	| Specifies a region code.  			|
+| @RegionName         			| 0..1		| String	| Specifies the region name.			|
+| ParticipantCount    			| 0..n      	|		| Information about participant type, specifying age for each participant. |
+| @Age                			| 1   		| Integer	| Age of participant.				|
+| @Quantity           			| 1   		| Integer	| Number of participant with same age.		|
 
 |
 
 AvailRS Example
 ===============
 
-:
+
 
     <OTA_TourActivityAvailRS xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd = "http://www.w3.org/2001/XMLSchema">
         <!--OpenAvailability = false -->
@@ -342,223 +293,73 @@ AvailRS Example
 AvailRS Description
 ===================
 
-  -------------------------------------------------------------------------
-  Element                   Num Typ Description
-                            ber e   
-  ------------------------- --- --- ---------------------------------------
-  OTA TourActivityAvailRS   1       Root node.
+|
 
-  TourActivityInfo          0..     Information about specific ticket.
-                            n       
-
-  TourActivityInfo/BasicInf 0..     Basic Information of ticket.
-  o                         1       
-
-  @Name                     0.. Str Name of ticket.
-                            1   ing 
-
-  @TourActivityID           0.. Str Code of ticket.
-                            1   ing 
-
-  TourActivityInfo/Schedule 1       Information about dates range on which
-                                    you can enjoy the activity.
-
-  TourActivityInfo/Schedule 1       Information dates range that you apply
-  /Summary                          availability.
-
-  @Start                    1   Dat Start date that you apply availability.
-                                e   
-
-  @End                      1   Dat End date that you apply availability.
-                                e   
-
-  TourActivityInfo/Schedule 0..     Information when activity starts and
-  /Detail                   1       attributes that we need send between
-                                    calls.
-
-  TourActivityInfo/Schedule 0..     Information when activity starts.
-  /Detail/OperationTimes    1       
-
-  TourActivityInfo/Schedule 0..     Information when activity starts.
-  /Detail/OperationTimes/Op 1       
-  erationTime                       
-
-  @Start                    0.. Dat Start date activity.
-                            1   e   
-
-  @End                      0.. Dat End date activity.
-                            1   e   
-
-  TourActivityInfo/Schedule 0..     Necessary information that we need send
-  /Detail/TPA\_Extensions   1       between calls.
-
-  TourActivityInfo/Schedule 0..     Attributes that we need send between
-  /Detail/TPA\_Extensions/A 1       calls.
-  ttributes                         
-
-  TourActivityInfo/Schedule 0..     Attributes that we need send between
-  /Detail/TPA\_Extensions/A n       calls.
-  ttributes/Attribute               
-
-  TourActivityInfo/Category 0..     Category of Ticket.
-  AndType                   1       
-
-  TourActivityInfo/Category 0..     Category of Ticket.
-  AndType/Category          1       
-
-  @Code                     0.. Str A category code from a predefined list,
-                            1   ing if Extension = "Other" then will be
-                                    provider code.
-
-  @Extension                0.. Str Enter a category here if you have
-                            1   ing selected "Other" from the pre-defined
-                                    list.
-
-  Location                  1       The location of the tour/ activity.
-
-  Location/Region           1       Describes regional information.
-
-  @RegionCode               1   Str Specifies a region code.
-                                ing 
-
-  @RegionName               1   Str Specifies the region name.
-                                ing 
-
-  Location/Address          0..     Identifies the physical address of the
-                            1       tour departure and/or activity
-                                    location.
-
-  Location/Address/AddressL 0.. Str These lines will contain free form
-  ine                       1   ing address details.
-
-  Location/Address/PostalCo 0.. Str Post Office Code number.
-  de                        1   ing 
-
-  Location/Address/County   0.. Str County or Region Name.
-                            1   ing 
-
-  Description               0..     Images and descriptions of the
-                            1       activity.
-
-  Description/ShortDescript 0.. Str Short description of the activity.
-  ion                       1   ing 
-
-  Description/Multimedia    0..     Information and url images.
-                            1       
-
-  Description/Multimedia/Mu 0..     Information and url images.
-  ltimediaDescription       1       
-
-  Description/Multimedia/Mu 0..     Information and url images.
-  ltimediaDescription/Image 1       
-  Items                             
-
-  Description/Multimedia/Mu 0..     Information for each image.
-  ltimediaDescription/Image n       
-  Items/ImageItem                   
-
-  Description/Multimedia/Mu 0..     Url image.
-  ltimediaDescription/Image 1       
-  Items/ImageItem/ImageForm         
-  at                                
-
-  Description/Multimedia/Mu 0.. Str Access to image url.
-  ltimediaDescription/Image 1   ing 
-  Items/ImageItem/ImageForm         
-  at/URL                            
-
-  Pricing                   1       Price for option if OpenAvailability =
-                                    false and price for each
-                                    participantCategory if OpenAvailability
-                                    = true.
-
-  Pricing/Summary           0..     Summary price for option, this element
-                            1       we return if OpenAvailability = false
-
-  @Amount                   0.. Dec Option price.
-                            1   ima 
-                                l   
-
-  @CurrencyCode             0.. Str Currency code (ISO 4217).
-                            1   ing 
-
-  Pricing/Summary/PricingTy 0.. Str Specifies type of the option price, if
-  pe                        1   ing value = Other then is mandatory specify
-                                    Extension type.
-
-  @Extension                0.. Str Specifies type of the option price.
-                            1   ing 
-
-  Pricing/ParticipantCatego 0.. Str Specifies price and participant
-  ry                        n   ing category.
-
-  @age                      0.. Int Age of participant category.
-                            1   ege 
-                                r   
-
-  Pricing/ParticipantCatego 0.. Str Specifies participant type (Adult,
-  ry/QualifierInfo          1   ing Children or Babie). If value = Other
-                                    then then is mandatory specify
-                                    Extension provider type.
-
-  @Extension                0.. Str Specifies provider code of participant
-                            1   ing category.
-
-  Pricing/ParticipantCatego 1       Specific price for each
-  ry/Price                          participantCategory.
-
-  @Amount                   1   Str ParticipantCategory price.
-                                ing 
-
-  @CurrencyCode             0.. Str Currency code (ISO 4217).
-                            1   ing 
-
-  Pricing/ParticipantCatego 0..     Necessary information that we need send
-  ry/TPA\_Extensions        1       between calls.
-
-  Pricing/ParticipantCatego 0..     Information about location of seat.
-  ry/TPA\_Extensions/Seat   1       
-
-  Pricing/ParticipantCatego 0..     Information about level/floor of seat.
-  ry/TPA\_Extensions/Level  1       
-
-  Pricing/ParticipantCatego 0..     Area where the site is located.
-  ry/TPA\_Extensions/Area   1       
-
-  Pricing/ParticipantCatego 0..     Zone where the site is located.
-  ry/TPA\_Extensions/Zone   1       
-
-  Pricing/ParticipantCatego 0..     Sector where the site is located.
-  ry/TPA\_Extensions/Sector 1       
-
-  Pricing/ParticipantCatego 0..     Specify the interface provider access
-  ry/TPA\_Extensions/UrlSit 1       where client can choose seat.
-  ting                              
-
-  @id                       0.. Str Provider code about location of seat.
-                            1   ing 
-
-  @description              0.. Str Description about location of seat.
-                            1   ing 
-
-  Pricing/ParticipantCatego 0.. Str If openAvailability is true,
-  ry/TPA\_Extensions/Dynami 1   ing dynamicToken will be Nothing/Empty.
-  cToken                            
-
-  Pricing/ParticipantCatego 0..     Contains information about ticket
-  ry/TPA\_Extensions/Issue  1       printing.
-
-  @Mandatory                0.. Boo Specifies if the ticket should be
-                            1   lea printed by the client.
-                                n   
-
-  Pricing/ParticipantCatego 0..     Attributes that we need send between
-  ry/TPA\_Extensions/Attrib 1       calls.
-  utes                              
-
-  Pricing/ParticipantCatego 0..     Attributes that we need send between
-  ry/TPA\_Extensions/Attrib n       calls.
-  utes/Attribute                    
-  -------------------------------------------------------------------------
+| **Element**				| **Number**	| **Type**	| **Description**				|
+| ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
+| OTA TourActivityAvailRS  		| 1      	|		| Root node.					|
+| TourActivityInfo         		| 0..n    	|		| Information about specific ticket.		|
+| TourActivityInfo/BasicInfo		| 0..1    	|		| Basic Information of ticket.			|
+| @Name                   		| 0..1		| String	| Name of ticket.				|
+| @TourActivityID          		| 0..1		| String	| Code of ticket.				|
+| TourActivityInfo/Schedule		| 1      	|		| Information about dates range on which you can enjoy the activity. |
+| TourActivityInfo/Schedule/Summary	| 1      	|		| Information dates range that you apply availability. |
+| @Start                   		| 1  		| Date		| Start date that you apply availability. 	|
+| @End                     		| 1  		| Date		| End date that you apply availability.		|
+| TourActivityInfo/Schedule/Detail	| 0..1    	|		| Information when activity starts and attributes that we need send between calls. |
+| TourActivityInfo/Schedule/Detail/OperationTimes | 0..1 |		| Information when activity starts.		|
+| TourActivityInfo/Schedule/Detail/OperationTimes/OperationTime | 0..1 || Information when activity starts.		|
+| @Start                   		| 0..1		| Date		| Start date activity.				|
+| @End                     		| 0..1		| Date		| End date activity. 				|
+| TourActivityInfo/Schedule/Detail/TPA_Extensions | 0..1 |		| Necessary information that we need send between calls. |
+| TourActivityInfo/Schedule/Detail/TPA_Extensions/Attributes | 0..1 |	| Attributes that we need send between calls.	|
+| TourActivityInfo/Schedule/Detail/TPA_Extensions/Attributes/Attribute | 0..n || Attributes that we need send between calls.|
+| TourActivityInfo/CategoryAndType	| 0..1    	|		| Category of Ticket.				|
+| TourActivityInfo/CategoryAndType/Category | 0..1    	|		| Category of Ticket.				|
+| @Code                    		| 0..1		| String	| A category code from a predefined list, if Extension = "Other" then will be provider code. |
+| @Extension               		| 0..1		| String	| Enter a category here if you have selected "Other" from the pre-defined list. |
+| Location                 		| 1      	|		| The location of the tour/ activity.		|
+| Location/Region          		| 1      	|		| Describes regional information.		|
+| @RegionCode              		| 1  		| String	| Specifies a region code.			|
+| @RegionName              		| 1  		| String	| Specifies the region name.			|
+| Location/Address         		| 0..1    	|		| Identifies the physical address of the tour departure and/or activity location. |
+| Location/Address/AddressLine		| 0..1		| String	| These lines will contain free form address details.|
+| Location/Address/PostalCode		| 0..1		| String	| Post Office Code number.			|
+| Location/Address/County  		| 0..1		| String	| County or Region Name.			|
+| Description              		| 0..1    	|		| Images and descriptions of the activity.	|
+| Description/ShortDescription		| 0..1		| String	| Short description of the activity.		|
+| Description/Multimedia   		| 0..1    	|		| Information and url images. 			|
+| Description/Multimedia/MultimediaDescription | 0..1   | 		| Information and url images.			|
+| Description/Multimedia/MultimediaDescription/ImageItems | 0..1 |   	| Information and url images.			|
+| Description/Multimedia/MultimediaDescription/ImageItems/ImageItem | 0..n || Information for each image.		|
+| Description/Multimedia/MultimediaDescription/ImageItems/ImageItem/ImageFormat | 0..1 || Url image.			|
+| Description/Multimedia/MultimediaDescription/ImageItems/ImageItem/ImageFormat/URL | 0..1 | String | Access to image url.|
+| Pricing                  		| 1      	|		| Price for option if OpenAvailability = false and price for each  participantCategory if OpenAvailability = true. |
+| Pricing/Summary          		| 0..1    	|		| Summary price for option, this element we return if OpenAvailability = false. |
+| @Amount                  		| 0..1		| Decimal	| Option price.					|
+| @CurrencyCode            		| 0..1		| String	| Currency code (ISO 4217).			|
+| Pricing/Summary/PricingType		| 0..1		| String	| Specifies type of the option price, if value = Other then is mandatory specify Extension type. |
+| @Extension               		| 0..1		| String	| Specifies type of the option price.		|
+| Pricing/ParticipantCategory		| 0..n		| String	| Specifies price and participant category.	|
+| @age                     		| 0..1		| Integer	| Age of participant category.			|
+| Pricing/ParticipantCategory/QualifierInfo | 0..1	| String	| Specifies participant type (Adult, Children or Babie). If value = Other then then is mandatory specify Extension provider type. |
+| @Extension               		| 0..1		| String	| Specifies provider code of participant category. |
+| Pricing/ParticipantCategory/Price	| 1      	|		| Specific price for each participantCategory.	|
+| @Amount                  		| 1  		| String	| ParticipantCategory price.			|
+| @CurrencyCode            		| 0..1		| String	| Currency code (ISO 4217).			|
+| Pricing/ParticipantCategory/TPA_Extensions | 0..1    	|		| Necessary information that we need send between calls. |
+| Pricing/ParticipantCategory/TPA_Extensions/Seat | 0..1 |		| Information about location of seat.		|
+| Pricing/ParticipantCategory/TPA_Extensions/Level | 0..1 |		| Information about level/floor of seat.	|
+| Pricing/ParticipantCategory/TPA_Extensions/Area | 0..1 |   		| Area where the site is located.		|
+| Pricing/ParticipantCategory/TPA_Extensions/Zone | 0..1 |    		| Zone where the site is located.		|
+| Pricing/ParticipantCategory/TPA_Extensions/Sector | 0..1 |    	| Sector where the site is located.		|
+| Pricing/ParticipantCategory/TPA_Extensions/UrlSitting | 0..1 |    	| Specify the interface provider access where client can choose seat. |
+| @id                      		| 0..1		| String	| Provider code about location of seat.		|
+| @description             		| 0..1		| String	| Description about location of seat.		|
+| Pricing/ParticipantCategory/TPA_Extensions/DynamicToken | 0..1 | String | If openAvailability is true, dynamicToken will be Nothing/Empty. | 
+| Pricing/ParticipantCategory/TPA_Extensions/Issue | 0..1 |   		| Contains information about ticket printing.	|
+| @Mandatory               		| 0..1		| Boolean	| Specifies if the ticket should be printed by the client. |
+| Pricing/ParticipantCategory/TPA_Extensions/Attributes | 0..1 |   	| Attributes that we need send between calls.	|
+| Pricing/ParticipantCategory/TPA_Extensions/Attributes/Attribute | 0..n | | Attributes that we need send between calls. |
 
 |

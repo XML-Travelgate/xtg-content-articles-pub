@@ -39,7 +39,7 @@ Not implemented by all suppliers
 CancelRQ Example
 ================
 
-:
+
 
     <OTA_TourActivityCancelRQ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PrimaryLangID = "es">
       <Confirmation ID="1283479#1" type="PROVIDER" />
@@ -50,30 +50,22 @@ CancelRQ Example
 CancelRQ Description
 ====================
 
-  --------------------------------------------------------------------------
-  Element              Number  Type    Description
-  -------------------- ------- ------- -------------------------------------
-  OTA\_TourActivityCan 1               Root node.
-  celRQ                                
+|
 
-  @PrimaryLangID       1       String  Language code (ISO 3166-1 alpha-2)
-                                       format.
-
-  Confirmation         1               Contains information of the activity
-                                       booked.
-
-  @ID                  1       String  Activity booked identifier.
-
-  @type                1       String  Activity booked type (Possible
-                                       values: "PROVIDER").
-  --------------------------------------------------------------------------
+| **Element**					| **Number**	| **Type**	| **Description**			|
+| --------------------------------------------- | ------------- | ------------- | ------------------------------------- |
+| OTA_TourActivityCancelRQ			| 1             |		| Root node.				|
+| @PrimaryLangID      				| 1      	| String	| Language code (ISO 3166-1 alpha-2) format. |
+| Confirmation        				| 1             |		| Contains information of the activity booked. |
+| @ID                 				| 1      	| String 	| Activity booked identifier.		|
+| @type               				| 1      	| String 	| Activity booked type (Possible values: "PROVIDER"). |
 
 |
 
 CancelRS Example
 ================
 
-:
+
 
     <OTA_TourActivityCancelRS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
       <operationImplemented>true</operationImplemented>
@@ -94,50 +86,24 @@ CancelRS Example
 CancelRS Description
 ====================
 
-  -------------------------------------------------------------------------
-  Element            Numbe Type   Description
-                     r            
-  ------------------ ----- ------ -----------------------------------------
-  OTA\_TourActivityC 1            Root node.
-  ancelRS                         
-
-  @PrimaryLangID     1     String Language code (ISO 3166-1 alpha-2)
-                                  format.
-
-  Confirmation       1            Contains information of the activity
-                                  booked.
-
-  @ID                1     String Activity booked identifier.
-
-  @type              1     String Activity booked type (Possible values:
-                                  "PROVIDER").
-
-  Reservation        1            Information about reservation status.
-
-  @ResStatus         1     Enum   Information about reservation status
-                                  (Possibles types: "Cancel" or "Unknow").
-
-  CancelConfirmation 1            Contains information of the activity
-                                  booked.
-
-  CancelConfirmation 1            Contains information of the activity
-  /UniqueID                       booked.
-
-  @ID                1     String Activity booked identifier.
-
-  @type              1     String Activity booked type (Possible values:
-                                  "PROVIDER").
-
-  ReservationInfo    1            Information about price after
-                                  cancellation call.
-
-  ReservationInfo/Pr 0..1         Summary price for option, this element we
-  icing/Summary                   return if OpenAvailability = false
-
-  @Amount            0..1  Decima Option price.
-                           l      
-
-  @CurrencyCode      0..1  String Currency code (ISO 4217).
-  -------------------------------------------------------------------------
-
 |
+
+| **Element**				| **Number**	| **Type**	| **Description**				|
+| ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
+| OTA_TourActivityCancelRS		| 1           	|		| Root node.					|
+| @PrimaryLangID    			| 1    		| String	| Language code (ISO 3166-1 alpha-2) format.	|
+| Confirmation      			| 1           	|		| Contains information of the activity booked.	|
+| @ID               			| 1    		| String	| Activity booked identifier.			|
+| @type             			| 1    		| String	| Activity booked type (Possible values: "PROVIDER").|
+| Reservation       			| 1           	|		| Information about reservation status.		|
+| @ResStatus        			| 1    		| Enum  	| Information about reservation status (Possibles types: "Cancel" or "Unknow"). |
+| CancelConfirmation			| 1           	|		| Contains information of the activity booked.	|
+| CancelConfirmation/UniqueID		| 1           	|		| Contains information of the activity booked.	|
+| @ID               			| 1    		| String	| Activity booked identifier.			|
+| @type             			| 1    		| String	| Activity booked type (Possible values: "PROVIDER").|
+| ReservationInfo   			| 1           	|		| Information about price after cancellation call. |
+| ReservationInfo/Pricing/Summary	| 0..1        	|		| Summary price for option, this element we return if OpenAvailability = false. |
+| @Amount           			| 0..1 		| Decimal	| Option price. 				|
+| @CurrencyCode     			| 0..1 		| String 	|Currency code (ISO 4217).			|
+
+

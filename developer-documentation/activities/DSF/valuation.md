@@ -47,89 +47,40 @@ ValuationRQ Example
 ValuationRQ Description
 =======================
 
-  --------------------------------------------------------------------------
-  Element              Num Type Description
-                       ber      
-  -------------------- --- ---- --------------------------------------------
-  OTA\_TourActivityBoo 1        Root node.
-  kRQ                           
+|
 
-  @PrimaryLangID       1   Stri Language code (ISO 3166-1 alpha-2) format..
-                           ng   
-
-  BookingInfo          0..      Information about specific ticket.
-                       1        
-
-  BookingInfo/BasicInf 0..      If need search by activity provider code.
-  o                    1        
-
-  @Name                0.. Stri Name of ticket.
-                       1   ng   
-
-  @TourActivityID      0.. Stri Code of ticket, mandatory if need search by
-                       1   ng   activity provider code.
-
-  BookingInfo/Schedule 1        Information about dates range on which you
-                                can enjoy the activity.
-
-  @StartPeriod         1   Date Start date that you apply availability.
-
-  @EndPeriod           1   Date End date that you apply availability.
-
-  BookingInfo/Category 0..      Category of Ticket.
-  AndType              1        
-
-  BookingInfo/Category 0..      Category of Ticket.
-  AndType/Category     1        
-
-  @Code                0.. Stri A category code from a predefined list, if
-                       1   ng   Extension = "Other" then will be provider
-                                code.
-
-  @Extension           0.. Stri Enter a category here if you have selected
-                       1   ng   "Other" from the pre-defined list.
-
-  ParticipantCategory  0..      Information about participant type,
-                       n        specifying age for each participant.
-
-  @Age                 1   Inte Age of participant.
-                           ger  
-
-  Pricing/ParticipantC 0.. Stri Specifies participant type (Adult, Children
-  ategory/QualifierInf 1   ng   or Baby). If value = Other then then is
-  o                             mandatory specify Extension provider type.
-
-  Pricing/ParticipantC 1        Specific price for each participantCategory.
-  ategory/Price                 
-
-  @Amount              1   Stri ParticipantCategory price.
-                           ng   
-
-  @CurrencyCode        0.. Stri Currency code (ISO 4217).
-                       1   ng   
-
-  Pricing/ParticipantC 0..      Necessary information that we need send
-  ategory/TPA\_Extensi 1        between calls.
-  ons                           
-
-  Pricing/ParticipantC 0.. Stri Inform about the participant types to
-  ategory/TPA\_Extensi 1   ng   valuate (if more than one type, the
-  ons/DynamicToken              participant Types must be separated by ";").
-
-  Pricing/ParticipantC 0..      Contains information about ticket printing.
-  ategory/TPA\_Extensi 1        
-  ons/Issue                     
-
-  @Mandatory           0.. Bool Specifies if the ticket should be printed by
-                       1   ean  the client.
-  --------------------------------------------------------------------------
+| **Element**				| **Number**	| **Type**	| **Description**				|
+| ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
+| OTA_TourActivityBookRQ		| 1       	|		| Root node.					|
+| @PrimaryLangID      			| 1  		| String	| Language code (ISO 3166-1 alpha-2) format.	|
+| BookingInfo         			| 0..1     	|		| Information about specific ticket. 		|
+| BookingInfo/BasicInfo			| 0..1     	|		| If need search by activity provider code.	|
+| @Name               			| 0..1		| String	| Name of ticket.				|
+| @TourActivityID     			| 0..1		| String	| Code of ticket, mandatory if need search by activity provider code. |
+| BookingInfo/Schedule			| 1       	|		| Information about dates range on which you can enjoy the activity. |
+| @StartPeriod        			| 1  		| Date		| Start date that you apply availability.	|
+| @EndPeriod          			| 1  		| Date		| End date that you apply availability.		|
+| BookingInfo/CategoryAndType		| 0..1     	|		| Category of Ticket.				|
+| BookingInfo/CategoryAndType/Category	| 0..1     	|		| Category of Ticket.				|
+| @Code               			| 0..1		| String	| A category code from a predefined list, if Extension = "Other" then will be provider code. |
+| @Extension          			| 0..1		| String	| Enter a category here if you have selected "Other" from the pre-defined list. |
+| ParticipantCategory 			| 0..n     	|		| Information about participant type, specifying age for each participant. |
+| @Age                			| 1  		| Integer	| Age of participant.				|
+| Pricing/ParticipantCategory/QualifierInfo | 0..1	| String	| Specifies participant type (Adult, Children or Baby). If value = Other then then is mandatory specify Extension provider type. |
+| Pricing/ParticipantCategory/Price	| 1       	|		| Specific price for each participantCategory.	|
+| @Amount             			| 1   		| String	| ParticipantCategory price.			|
+| @CurrencyCode       			| 0..1		| String	| Currency code (ISO 4217).			|
+| Pricing/ParticipantCategory/TPA_Extensions | 0..1     |		| Necessary information that we need send between calls. |
+| Pricing/ParticipantCategory/TPA_Extensions/DynamicToken | 0..1 | String | Inform about the participant types to valuate (if more than one type, the participant Types must be separated by ";"). |
+| Pricing/ParticipantCategory/TPA_Extensions/Issue | 0..1 |		| Contains information about ticket printing.	|
+| @Mandatory          			| 0..1		| Boolean	| Specifies if the ticket should be printed by the client. |
 
 |
 
 ValuationRS Example
 ===================
 
-:
+
 
     <OTA_TourActivityBookRS>
         <ReservationDetails>
@@ -174,68 +125,26 @@ ValuationRS Example
 ValuationRS Description
 =======================
 
-  -------------------- -- --- --------------------------------------------
-  @StartPeriod         1  Dat Start date that you apply availability.
-                          e   
+| 
 
-  @EndPeriod           1  Dat End date that you apply availability.
-                          e   
+| **Element**				| **Number**	| **Type**	| **Description**				|
+| ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
+| @StartPeriod        			| 1 		| Date		| Start date that you apply availability.	|
+| @EndPeriod          			| 1 		| Date		| End date that you apply availability.		|
+| BookingInfo/CategoryAndType		| 0..1    	|		| Category of Ticket.				|
+| BookingInfo/CategoryAndType/Category 	| 0..1    	|		| Category of Ticket.				|
+| @Code               			| 0..1		| String	| A category code from a predefined list, if Extension = "Other" then will be provider code. |
+| @Extension          			| 0..1		| String	1 Enter a category here if you have selected "Other" from the pre-defined list. |
+| ReservationDetails/PickupDropoff	| 0..1    	|		| The pickup and/or dropoff information if transportation is provided to/ from the tour/activity location. |
+| @OtherInfo          			| 0..1		| String	| Other instructions pertaining to the pickup/dropoff. |
+| ParticipantCategory 			| 0..n    	|		| Information about participant type, specifying age for each participant. |
+| @Age                			| 1 		| Integer	| Age of participant.				|
+| Pricing/ParticipantCategory/QualifierInfo | 0..1	| String	| Specifies participant type (Adult, Children or Babie). If value = "Other_" then then is mandatory specify Extension provider type. |
+| Pricing/ParticipantCategory/Price	| 1     	|		| Specific price for each participantCategory.	|
+| @Amount             			| 1 		| String	| ParticipantCategory price.			|
+| @CurrencyCode       			| 0..1		| String	| Currency code (ISO 4217).			|
+| Pricing/ParticipantCategory/TPA_Extensions | 0..1     |		| Necessary information that we need send between calls. |
+| Pricing/ParticipantCategory/TPA_Extensions/DynamicToken | 0..1 | String | Inform about the participant types to valuate (if more than one type, the participant Types must be separated by ";"). |
+| Pricing/ParticipantCategory/TPA_Extensions/Issue | 0..1 |   		| Contains information about ticket printing. 	|
+| @Mandatory          			| 0..1		| Boolean	| Specifies if the ticket should be printed by the client. |
 
-  BookingInfo/Category 0.     Category of Ticket.
-  AndType              .1     
-
-  BookingInfo/Category 0.     Category of Ticket.
-  AndType/Category     .1     
-
-  @Code                0. Str A category code from a predefined list, if
-                       .1 ing Extension = "Other" then will be provider
-                              code.
-
-  @Extension           0. Str Enter a category here if you have selected
-                       .1 ing "Other" from the pre-defined list.
-
-  ReservationDetails/P 0.     The pickup and/or dropoff information if
-  ickupDropoff         .1     transportation is provided to/ from the
-                              tour/activity location.
-
-  @OtherInfo           0. Str Other instructions pertaining to the pickup/
-                       .1 ing dropoff.
-
-  ParticipantCategory  0.     Information about participant type,
-                       .n     specifying age for each participant.
-
-  @Age                 1  Int Age of participant.
-                          ege 
-                          r   
-
-  Pricing/ParticipantC 0. Str Specifies participant type (Adult, Children
-  ategory/QualifierInf .1 ing or Babie). If value = "Other\_" then then is
-  o                           mandatory specify Extension provider type.
-
-  Pricing/ParticipantC 1      Specific price for each participantCategory.
-  ategory/Price               
-
-  @Amount              1  Str ParticipantCategory price.
-                          ing 
-
-  @CurrencyCode        0. Str Currency code (ISO 4217).
-                       .1 ing 
-
-  Pricing/ParticipantC 0.     Necessary information that we need send
-  ategory/TPA\_Extensi .1     between calls.
-  ons                         
-
-  Pricing/ParticipantC 0. Str Inform about the participant types to
-  ategory/TPA\_Extensi .1 ing valuate (if more than one type, the
-  ons/DynamicToken            participant Types must be separated by ";").
-
-  Pricing/ParticipantC 0.     Contains information about ticket printing.
-  ategory/TPA\_Extensi .1     
-  ons/Issue                   
-
-  @Mandatory           0. Boo Specifies if the ticket should be printed by
-                       .1 lea the client.
-                          n   
-  -------------------- -- --- --------------------------------------------
-
-|

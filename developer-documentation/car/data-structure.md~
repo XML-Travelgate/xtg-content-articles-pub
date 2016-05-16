@@ -1,45 +1,29 @@
 ---
 title: Data Structure
-...
+keywords: transfers, data structure
+sidebar: mydoc_sidebar
+permalink: /developer-documentation/car/data-structure
+---
 
 This document intends to explain every aspect of this structure and
 their fields.
 
 The integration will have the following methods:
 
-  ------------------------------------------------------------------------
-  Method   Input     Output    Req Description Endpoint
-                               uir 
-                               ed  
-  -------- --------- --------- --- ---------------------------------------
-  OTA\_Veh OTA\_VehA OTA\_VehA Yes Makes a availability call
-  AvailRat vailRateR vailRateR     Car Booking Endpoint\_
-  e        Q         S             
+|
 
-  OTA\_Veh OTA\_VehR OTA\_VehR Yes Makes a pre-booking
-  RateRule ateRuleRQ ateRuleRS     Car Booking Endpoint\_
+| **Method**		| **Input**		| **Output**		| **Required**	| **Description Endpoint**	|
+| --------------------- | --------------------- | --------------------- | ------------- | ----------------------------- |
+| OTA_VehAvailRate	| OTA_VehAvailRateRQ	| OTA_VehAvailRateRS	| Yes 		| Makes a availability call Car Booking Endpoint. |
+| OTA_VehRateRule	| OTA_VehRateRuleRQ	| OTA_VehRateRuleRS 	| Yes		| Makes a pre-booking Car Booking Endpoint |
+| OTA_VehRes		| OTA_VehResRQ		| OTA_VehResRS		| Yes		| Makes a booking Car Booking Endpoint |
+| OTA_VehLocSearch	| OTA_VehLocSearchRQ	| OTA_VehLocSearchRS 	| Yes		| Gets a static offices list Car Batch Endpoint |
+| OTA_VehRetRes		| OTA_VehRetResRQ	| OTA_VehRetResRS	| No	 	| Gets booking details Car Booking Endpoint |
+| OTA_VehCancel		| OTA_VehCancelRQ	| OTA_VehCancelRS	| No	 	| Cancels a booking Car Booking Endpoint |
+| StaticConfiguration	| StaticConfigurationRQ	| StaticConfigurationRS	| Yes	 	| Returns the information related to the configuration of the provider. |
+| RuntimeConfiguration	| RuntimeConfigurationRQ|RuntimeConfigurationRS	| Yes		| Returns information related to the behaviour of the integration. |
 
-  OTA\_Veh OTA\_VehR OTA\_VehR Yes Makes a booking Car Booking Endpoint\_
-  Res      esRQ      esRS          
-
-  OTA\_Veh OTA\_VehL OTA\_VehL Yes Gets a static offices list
-  LocSearc ocSearchR ocSearchR     Car Batch Endpoint\_
-  h        Q         S             
-
-  OTA\_Veh OTA\_VehR OTA\_VehR No  Gets booking details
-  RetRes   etResRQ   etResRS       Car Booking Endpoint\_
-
-  OTA\_Veh OTA\_VehC OTA\_VehC No  Cancels a booking
-  Cancel   ancelRQ   ancelRS       Car Booking Endpoint\_
-
-  StaticCo StaticCon StaticCon Yes Returns the information related to the
-  nfigurat figuratio figuratio     configuration of the provider.
-  ion      nRQ       nRS           Car Batch Endpoint\_
-
-  RuntimeC RuntimeCo RuntimeCo Yes Returns information related to the
-  onfigura nfigurati nfigurati     behaviour of the integration.
-  tion     onRQ      onRS          Car Batch Endpoint\_
-  ------------------------------------------------------------------------
+|
 
 Each request sent to the **service url** requires a node called rqXML .
 Inside this node travels the current method's Input object.

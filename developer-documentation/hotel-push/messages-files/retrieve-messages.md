@@ -1002,280 +1002,92 @@ HotelResRetrieveRS
 | @AmountBeforeTax			| 0..1		| Decimal	| Amount before tax of the RoomRate.		|
 | @AmountAfterTax			| 1 		| Decimal	| Amount after tax of the RoomRate.		|
 | @CurrencyCode				| 1 		| String	| Currency code of the RoomRate.		|
-
-  RoomStay/Canc 1      Node containing all cancel penalties of the
-  elPenalties          RoomStay.
-
-  CancelPenalti 0.     Node containing information about one cancel
-  es/CancelPena .n     penalty.
-  lty                  
-
-  <*@PolicyCode 1  Str Policy code of the cancel penalty.
-  >\*              ing 
-
-  <*@NonRefunda 1  Boo Indicates whether the Rate is refundable or not.
-  ble>\*           lea 
-                   n   
-
-  CancelPenalty 0.     Node containing information about the deadline of
-  /Deadline     .n     the cancel penalty.
-
-  <*@AbsoluteDe 1  Dat Indicates when the absolute deadline.
-  adline>\*        eTi 
-                   me  
-
-  <*@OffsetTime 1  Str Time unit of the offset for the absolute deadline.
-  Unit>\*          ing 
-
-  <*@OffsetUnit 1  Int Number of time units of offset for the absolute
-  Multiplier>\*    ege deadline.
-                   r   
-
-  <*@OffsetDrop 1  Str Indicates when the deadline is applied.
-  Time>\*          ing 
-
-  CancelPenalty 0.     Amount of the cancel penalty.
-  /AmountPercen .n     
-  t                    
-
-  <*@Percent>\* 1  Str Percent of the total charged as a cancel penalty
-                   ing amount. Percent or NmbrOfNights must be present.
-
-  <*@NmbrOfNigh 1  Str Number of nights charged as a cancel penalty
-  ts>\*            ing amount.
-
-  <*@CurrencyCo 1  Str Currency code of the cancel penalty amount.
-  de>\*            ing 
-
-  RoomStay/Basi 1      Node containing basic information of the property.
-  cPropertyInfo        
-
-  RoomStay/Serv 1      Node containing information of the guests of the
-  iceRPHs              room.
-
-  ServiceRPHs/S 1.     Node containing information of a guest of the room.
-  erviceRPH     .n     
-
-  <*@RPH>\*     1  Str Code of a guest of the room. Match with
-                   ing <*@ResGuestRPH>\* at the ResGuests node.
-
-  HotelCode     1  Int Hotel code.
-                   ege 
-                   r   
-
-  HotelName     1  Str Hotel name.
-                   ing 
-
-  HotelReservat 1      Node containing all reservation guests.
-  ion/ResGuests        
-
-  ResGuests/Res 1.     Node containing information about one of the
-  Guest         .n     guests.
-
-  ResGuest/ResG 1.     Node containing information about one of the
-  uest          .n     guests.
-
-  <*@ResGuestRP 1  Int RPH of the guest.
-  H>\*             ege 
-                   r   
-
-  <*@AgeQualify 1  Int Age qualifying code of the guest.
-  ingCode>\*       ege 
-                   r   
-
-  ResGuest/Prof 1      Node containing information about the profiles of
-  iles                 the guest.
-
-  Profiles/Prof 1      Node containing information about the profile of
-  ileInfo              the guest.
-
-  ProfileInfo/C 1      Node containing customer information of the guest.
-  ustomer              
-
-  Customer/Pers 1      Node containing the person name of the guest.
-  onName               
-
-  PersonName/Na 1  Str Prefix/Traitement name of the guest.
-  mePrefix         ing 
-
-  PersonName/Gi 1  Str Given name of the guest.
-  venName          ing 
-
-  PersonName/Su 1  Str Surname of the guest.
-  rname            ing 
-
-  ResGuest/Gues 1      Node containing quantity informations for the
-  tCounts              guest.
-
-  GuestCounts/G 1      Node containing quantity information for the guest.
-  uestCount            
-
-  <*@Age>\*     1  Int Age of the guest.
-                   ege 
-                   r   
-
-  ResGlobalInfo 1      Node containing general information about the
-                       reservation.
-
-  ResGlobalInfo 1      Node containing the total price.
-  /Total               
-
-  <*@AmountBefo 0. Dec Amount before tax of the Reservation.
-  reTax>\*      .1 ima 
-                   l   
-
-  <*@AmountAfte 1  Dec Amount after tax of the Reservation.
-  rTax>\*          ima 
-                   l   
-
-  <*@CurrencyCo 1  Str Currency code of the Reservation.
-  de>\*            ing 
-
-  ResGlobalInfo 0.     Node containing the Guarantee provided with the
-  /Guarantee    .1     reservation.
-
-  <*@PaymentCod 1      Contains the payment method accepted by the rate.
-  e>\*                 See Payment Type Codes list in section 7.6.3.
-
-  Guarantee/Gua 0.     Node containing the Guarantee provided with the
-  ranteesAccept .1     reservation.
-  ed                   
-
-  GuaranteesAcc 1      Node that contains the booking payment details
-  epted/Guarant        accepted.
-  eeAccepted           
-
-  GuaranteeAcce 1      Node that contains the credit card accepted. The
-  pted/PaymentC        credit card information can be a URL with the
-  ard                  information(in TPA\_Extension tag) or the details
-                       in the PaymentCard tags and attributes.
-
-  <*@CardCode>\ 1  Str Contains the credit card code. See Credit Card
-  *                ing Codes list in section 7.6.4.
-
-  <*@ExpireDate 0. Str This is the expiry date of the credit card used for
-  >\*           .1 ing deposit/prepayment. Format MMyy.
-
-  PaymentCard/C 0. Str PaymentCard / CardHolderName
-  ardHolderName .1 ing 
-
-  PaymentCard/C 0. Str This is actual number of the credit card used for
-  ardNumber/Pla .1 ing deposit/prepayment.
-  inText               
-
-  PaymentCard/S 0. Str The SeriesCode attribute is used (Optionally) for
-  eriesCode/Pla .1 ing the security number of the card.
-  inText               
-
-  PaymentCard/T 0.     Optional, contains credit card URL.
-  PA\_Extension .1     
-  s                    
-
-  Param         1      
-
-  <*@key>\*     1  Str URL
-                   ing 
-
-  <*@value>\*   1  Str URL where the Credit card details are stored.
-                   ing 
-
-  ResGlobalInfo 1      Node containing the ids of the reservation.
-  /HotelReserva        
-  tionIDs              
-
-  HotelReservat 2      Node containing information of one reservation id.
-  ionIDs/HotelR        
-  eservationID         
-
-  <*@ResID*>Val 1  Str Value of the id.
-  ue\_             ing 
-
-  <*@ResID*>Sou 1  Str Id context.
-  rceContext\_     ing 
-
-  ResGlobalInfo 1      Node containing information about the profiles of
-  /Profiles            the reservation.
-
-  Profiles/Prof 1      Node containing information about the profile of
-  ileInfo              the reservation.
-
-  ProfileInfo/P 1      Node containing information about the profile of
-  rofile               the reservation.
-
-  Profile/Custo 1      Node containing information about the customer of
-  mer                  the reservation. The customer of the reservation
-                       can be or not a pax of the reservation. If it's a
-                       pax will be present in ResGuests node.
-
-  Customer/Pers 1      Node containing the person name of the customer of
-  onName               the reservation.
-
-  PersonName/Na 1  Str Name prefix of the customer.
-  mePrefix         ing 
-
-  PersonName/Gi 1  Str Given name of the customer.
-  venName          ing 
-
-  PersonName/Su 1  Str Surname of the customer.
-  rname            ing 
-
-  Customer/Tele 1      Node containing information about the telephone of
-  phone                the customer.
-
-  <*@PhoneTechT 1  Str Phone technology type.
-  ype>\*           ing 
-
-  <*@PhoneNumbe 1  Str Phone number.
-  r>\*             ing 
-
-  <*@FormattedI 1  Str Indicates whether associated data is formatted or
-  nd>\*            ing not.
-
-  <*@DefaultInd 1  Str When true, indicates a default value should be
-  >\*              ing used.
-
-  Customer/Emai 1      Node containing information about the email of the
-  l                    customer.
-
-  <*@DefaultInd 1  Str When true, indicates a default value should be
-  >\*              ing used.
-
-  <*@EmailType> 1  Str Indicates the type of the email.
-  \*               ing 
-
-  Value         1  Str Email of the customer.
-                   ing 
-
-  Customer/Addr 1      Node containing information about the address of
-  ess                  the customer.
-
-  Address/Addre 1  Str Address of the customer.
-  ssLine           ing 
-
-  Address/CityN 1  Str City name.
-  ame              ing 
-
-  Address/Posta 1  Str Postal code.
-  lCode            ing 
-
-  Address/State 1  Str Node containing information about the state or the
-  Prov             ing province of the customer.
-
-  <*@StateCode> 1  Str State code.
-  \*               ing 
-
-  Value         1  Str State or province name.
-                   ing 
-
-  Address/Count 1  Str Country name.
-  ryName           ing 
-
-  <*@Code>\*    1  Str Country code.
-                   ing 
-
-  Value         1  Str Country name.
-                   ing 
-  ------------------------------------------------------------------------
+| RoomStay/CancelPenalties		| 1     	|		| Node containing all cancel penalties of the RoomStay. |
+| CancelPenalties/CancelPenalty		| 0..n    	|		| Node containing information about one cancel penalty. |
+| @PolicyCode				| 1 		| String	| Policy code of the cancel penalty.		|
+| @NonRefundable			| 1 		| Boolean	| Indicates whether the Rate is refundable or not. |
+| CancelPenalty/Deadline		| 0..n    	|		| Node containing information about the deadline of the cancel penalty. |
+| @AbsoluteDeadline			| 1 		| DateTime	| Indicates when the absolute deadline.		|
+| @OffsetTimeUnit			| 1 		| String	| Time unit of the offset for the absolute deadline.|
+| @OffsetUnitMultiplier			| 1 		| Integer	| Number of time units of offset for the absolute ege deadline. |
+| @OffsetDropTime			| 1 		| String	| Indicates when the deadline is applied.	|
+| CancelPenalty/AmountPercent		| 0..n    	|		| Amount of the cancel penalty.			|
+| @Percent				| 1 		| String	| Percent of the total charged as a cancel penalty amount. Percent or NmbrOfNights must be present. |
+| @NmbrOfNights				| 1 		| String	| Number of nights charged as a cancel penalty amount. |
+| @CurrencyCode				| 1 		| String	| Currency code of the cancel penalty amount.	|
+| RoomStay/BasicPropertyInfo		| 1     	|		| Node containing basic information of the property.|
+| RoomStay/ServiceRPHs			| 1     	|		| Node containing information of the guests of the room. |
+| ServiceRPHs/ServiceRPH		| 1..n    	|		| Node containing information of a guest of the room.|
+| @RPH    				| 1 		| String	| Code of a guest of the room. Match with @ResGuestRPH at the ResGuests node. |
+| HotelCode    				| 1 		| Integer	| Hotel code.					|
+| HotelName    				| 1 		| String	| Hotel name.					|
+| HotelReservation/ResGuests		| 1     	|		| Node containing all reservation guests.	|
+| ResGuests/ResGuest			| 1..n    	|		| Node containing information about one of the guests. |
+| ResGuest/ResGuest			| 1..n    	|		| Node containing information about one of the guests. |
+| @ResGuestRPH				| 1 		| Integer	| RPH of the guest.				|
+| @AgeQualifyingCode			| 1 		| Integer	| Age qualifying code of the guest.		|
+| ResGuest/Profiles			| 1     	|		| Node containing information about the profiles of the guest. |
+| Profiles/ProfileInfo			| 1     	|		| Node containing information about the profile of the guest. |
+| ProfileInfo/Customer			| 1     	|		| Node containing customer information of the guest. |
+| Customer/PersonName			| 1     	|		| Node containing the person name of the guest.	|
+| PersonName/NamePrefix			| 1 		| String	| Prefix/Traitement name of the guest.		|
+| PersonName/GivenName			| 1 		| String	| Given name of the guest.			|
+| PersonName/Surname			| 1 		| String	| Surname of the guest.				|
+| ResGuest/GuestCounts			| 1     	|		| Node containing quantity informations for the guest. |
+| GuestCounts/GuestCount		| 1     	|		| Node containing quantity information for the guest.|
+| @Age    				| 1 		| Integer	| Age of the guest. 				|
+| ResGlobalInfo				| 1     	|		| Node containing general information about the reservation. |
+| ResGlobalInfo/Total			| 1     	|		| Node containing the total price.		|
+| @AmountBeforeTax			| 0..1		| Decimal	| Amount before tax of the Reservation. 	|
+| @AmountAfterTax			| 1 		| Decimal	| Amount after tax of the Reservation.		|
+| @CurrencyCode				| 1 		| String	| Currency code of the Reservation. 		|
+| ResGlobalInfo/Guarantee		| 0..1    	|		| Node containing the Guarantee provided with the reservation. |
+| @PaymentCode				| 1     	|		| Contains the payment method accepted by the rate.  See Payment Type Codes list in section 7.6.3. |
+| Guarantee/GuaranteesAccepted		| 0..1    	|		| Node containing the Guarantee provided with the reservation. |
+| GuaranteesAccepted/GuaranteeAccepted	| 1     	|		| Node that contains the booking payment details accepted. |
+| GuaranteeAccepted/PaymentCard		| 1     	|		| Node that contains the credit card accepted. The credit card information can be a URL with the information(in TPA_Extension tag) or the details in the PaymentCard tags and attributes. |
+| @CardCode				| 1 		| String	| Contains the credit card code. See Credit Card Codes list in section 7.6.4. |
+| @ExpireDate				| 0..1		| String	| This is the expiry date of the credit card used for deposit/prepayment. Format MMyy. |
+| PaymentCard/CardHolderName		| 0..1		| String	| PaymentCard / CardHolderName.			|
+| PaymentCard/CardNumber/PlainText	| 0..1		| String	| This is actual number of the credit card used for deposit/prepayment. |
+| PaymentCard/SeriesCode/PlainText	| 0..1		| String	| The SeriesCode attribute is used (Optionally) for the security number of the card. |
+| PaymentCard/TPA_Extensions		| 0..1    	|		| Optional, contains credit card URL.		|
+| Param        				| 1      	|		|						|
+| @key    				| 1 		| String	| URL.						|
+| @value  				| 1 		| String	| URL where the Credit card details are stored. |
+| ResGlobalInfo/HotelReservationIDs	| 1     	|		| Node containing the ids of the reservation.	|
+| HotelReservationIDs/HotelReservationID | 2     	|		| Node containing information of one reservation id. |
+| @ResIDValue_				| 1 		| String	| Value of the id.				|
+| @ResIDSourceContext_			| 1 		| String	| Id context.					|
+| ResGlobalInfo/Profiles		| 1     	|		| Node containing information about the profiles of the reservation. |
+| Profiles/ProfileInfo			| 1     	|		| Node containing information about the profile of the reservation. |
+| ProfileInfo/Profile			| 1     	|		| Node containing information about the profile of the reservation. |
+| Profile/Customer			| 1     	|		| Node containing information about the customer of the reservation. The customer of the reservation  can be or not a pax of the reservation. If it's a pax will be present in ResGuests node. |
+| Customer/PersonName			| 1     	|		| Node containing the person name of the customer of the reservation. |
+| PersonName/NamePrefix			| 1 		| String	| Name prefix of the customer.			|
+| PersonName/GivenName			| 1 		| String	| Given name of the customer.			|
+| PersonName/Surname			| 1 		| String	| Surname of the customer.			|
+| Customer/Telephone			| 1     	|		| Node containing information about the telephone of the customer. |
+| @PhoneTechType			| 1 		| String	| Phone technology type.			|
+| @PhoneNumber				| 1 		| String	| Phone number.					|
+| @FormattedInd				| 1 		| String	| Indicates whether associated data is formatted or not. |
+| @DefaultInd				| 1 		| String	| When true, indicates a default value should be used. |
+| Customer/Email			| 1     	|		| Node containing information about the email of the customer. |
+| @DefaultInd				| 1 		| String	| When true, indicates a default value should be used. |
+| @EmailType				| 1 		| String	| Indicates the type of the email.		|
+| Value        				| 1 		| String	| Email of the customer.			|
+| Customer/Address			| 1     	|		| Node containing information about the address of the customer. |
+| Address/AddressLine			| 1 		| String	| Address of the customer.			|
+| Address/CityName			| 1 		| String	| City name.					|
+| Address/PostalCode			| 1 		| String	| Postal code.					|
+| Address/StateProv			| 1 		| String	| Node containing information about the state or the province of the customer. |
+| @StateCode				| 1 		| String	| State code.					|
+| Value        				| 1 		| String	| State or province name.			|
+| Address/CountryName			| 1 		| String	| Country name.					|
+| @Code   				| 1 		| String	| Country code.					|
+| Value        				| 1 		| String	| Country name.					|
+
+|
 
 **Example Guarantee object with credit card details**
 

@@ -34,7 +34,7 @@ type, you obtain different reservation list.
 ReservationsListRQ Example
 ==========================
 
-:
+
 
     <OTA_ReadRQ
         xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
@@ -55,45 +55,25 @@ ReservationsListRQ Example
 ReservationsListRQ Description
 ==============================
 
-  -------------------------------------------------------------------------
-  Element          Num Typ Description
-                   ber e   
-  ---------------- --- --- ------------------------------------------------
-  OTA\_ReadRQ      1       Root node.
+|
 
-  @PrimaryLangID   1   Str Language code (ISO 3166-1 alpha-2) format.
-                       ing 
-
-  ReadRequests     1       Retrieve a activity reservation list when the
-                           booking reference is not known.
-
-  ReadRequests/Tou 1       Retrieve a activity reservation list when the
-  rActivityReadReq         booking reference is not known.
-  uest                     
-
-  ReadRequests/Tou 1       Retrieve a activity reservation list with range
-  rActivityReadReq         date.
-  uest/SelectionCr         
-  iteria                   
-
-  @DateType        1   Enu Specifies the type of date provided in the date
-                       m   time span attributes (Possible values:
-                           "ArrivalDate", "CreateDate", "ArrivalDate",
-                           "DepartureDate", "LastUpdateDate").
-
-  @End             1   Dat End date from which you want to search
-                       e   reservation list.
-
-  @Start           1   Dat Start date from which you want to search
-                       e   reservation list.
-  -------------------------------------------------------------------------
+| **Element**				| **Number**	| **Type**	| **Description**				|
+| ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
+| OTA_ReadRQ     			| 1      	|		| Root node.					|
+| @PrimaryLangID  			| 1  		| String	| Language code (ISO 3166-1 alpha-2) format.	|
+| ReadRequests    			| 1      	|		| Retrieve a activity reservation list when the booking reference is not known. |
+| ReadRequests/TourActivityReadRequest	| 1      	|		| Retrieve a activity reservation list when the booking reference is not known. |
+| ReadRequests/TourActivityReadRequest/SelectionCriteria | 1  |		| Retrieve a activity reservation list with range date.  |
+| @DateType       			| 1  		| Enum		| Specifies the type of date provided in the date time span attributes (Possible values:  "ArrivalDate", "CreateDate", "ArrivalDate", "DepartureDate", "LastUpdateDate"). |
+| @End            			| 1  		| Date		| End date from which you want to search reservation list. |
+| @Start          			| 1  		| Date		| Start date from which you want to search reservation list. |
 
 |
 
 ReservationsListRS Example
 ==========================
 
-:
+
 
     <OTA_TourActivityResRetrieveRS xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd = "http://www.w3.org/2001/XMLSchema">
         <operationImplemented>true</operationImplemented>
@@ -152,120 +132,42 @@ ReservationsListRS Example
 ReservationsListRS Description
 ==============================
 
-  ------------------ ---- --- ---------------------------------------------
-  Element            |Num |Ty |Description|
-                     ber  pe  
-
-  OTA\_TourActivityR 1        Root node.
-  esRetrieveRS                
-
-  Detail             1..n     Information about reservation status and date
-                              time for each reservation activity.
-
-  @ResStatus         1    Enu Information about reservation status
-                          m   (Possibles types: "Confirmed", "Cancel" or
-                              "Unknow").
-
-  @CreateDateTime    1    Dat Information about create reservation date
-                          e   time.
-
-  @LastModifyDateTim 0..1 Dat Information about last modify reservation
-  e                       e   date time. For example, if cancel we return
-                              date time when client cancel this
-                              reservation.
-
-  Detail/BasicInfo   0..1     If need search by activity provider code.
-
-  @Name              0..1 Str Name of ticket.
-                          ing 
-
-  @TourActivityID    0..1 Str Code of ticket.
-                          ing 
-
-  Detail/Confirmatio 1        Contains information of the activity booked.
-  n                           
-
-  @ID                1    Str Activity booked identifier.
-                          ing 
-
-  @type              1    Str Activity booked type (Possible values:
-                          ing "PROVIDER").
-
-  Detail/PaymentInfo 0..1     Payment details that may be associated with
-                              an individual participant, a participant
-                              category and/or a group.
-
-  @Description       0..1 Str A description of the charge.
-                          ing 
-
-  Detail/PickupDropo 0..1 Str The pickup and/or dropoff information if
-  ff                      ing transportation is provided to/ from the
-                              tour/activity location.
-
-  @OtherInfo         0..1 Str Other instructions pertaining to the pickup/
-                          ing dropoff.
-
-  Pricing/Summary    0..1     Summary price for option, this element we
-                              return if OpenAvailability = false
-
-  @Amount            0..1 Dec Option price.
-                          ima 
-                          l   
-
-  @CurrencyCode      0..1 Str Currency code (ISO 4217).
-                          ing 
-
-  Detail/Pricing/Sum 0..1 Str Specifies type of the option price, if value
-  mary/PricingType        ing = Other then is mandatory specify Extension
-                              type.
-
-  @Extension         0..1 Str Specifies type of the option price.
-                          ing 
-
-  Detail/Pricing/Par 0..n Str Specifies price and participant category.
-  ticipantCategory        ing 
-
-  @age               0..1 Int Age of participant category.
-                          ege 
-                          r   
-
-  Detail/Pricing/Par 0..1 Str Specifies participant type (Adult, Children
-  ticipantCategory/Q      ing or Baby). If value = Other then then is
-  ualifierInfo                mandatory specify Extension provider type.
-
-  @Extension         0..1 Str Specifies provider code of participant
-                          ing category.
-
-  Detail/Pricing/Par 1        Specific price for each participantCategory.
-  ticipantCategory/P          
-  rice                        
-
-  @Amount            1    Str ParticipantCategory price.
-                          ing 
-
-  @CurrencyCode      0..1 Str Currency code (ISO 4217).
-                          ing 
-
-  Detail/Schedule    0..1     Information about dates range on which you
-                              can enjoy the activity. The same information
-                              that send in request.
-
-  Detail/Schedule/De 0..1     Information about specify dates on which you
-  tail                        can enjoy the activity.
-
-  Detail/Schedule/De 0..1     Information about specify dates on which you
-  tail/OperationTime          can enjoy the activity.
-  s                           
-
-  Detail/Schedule/De 0..1     Information when activity starts.
-  tail/OperationTime          
-  s/OperationTime             
-
-  @Start             0..1 Dat Start date activity.
-                          e   
-
-  @End               0..1 Dat End date activity.
-                          e   
-  ------------------ ---- --- ---------------------------------------------
-
 |
+
+| **Element**				| **Number**	| **Type**	| **Description**				|
+| ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
+| OTA_TourActivityResRetrieveRS		| 1       	|		| Root node.					|
+| Detail            			| 1..n    	|		| Information about reservation status and date time for each reservation activity. |
+| @ResStatus        			| 1   		| Enum		| Information about reservation status (Possibles types: "Confirmed", "Cancel" or "Unknow"). |
+| @CreateDateTime   			| 1   		| Date		| Information about create reservation date time. |
+| @LastModifyDateTime			| 0..1		| Date		| Information about last modify reservation date time. For example, if cancel we return date time when client cancel this reservation. |
+| Detail/BasicInfo  			| 0..1    	|		| If need search by activity provider code.	|
+| @Name             			| 0..1		| String	| Name of ticket.				|
+| @TourActivityID   			| 0..1		| String	| Code of ticket.				|
+| Detail/Confirmation			| 1       	|		| Contains information of the activity booked.	|
+| @ID               			| 1   		| String	| Activity booked identifier.			|
+| @type             			| 1   		| String	| Activity booked type (Possible values: "PROVIDER").|
+| Detail/PaymentInfo			| 0..1    	|		| Payment details that may be associated with an individual participant, a participant category and/or a group. |
+| @Description      			| 0..1		| String	| A description of the charge.			|
+| Detail/PickupDropoff			| 0..1		| String	| The pickup and/or dropoff information if transportation is provided to/ from the tour/activity location. |
+| @OtherInfo        			| 0..1		| String	| Other instructions pertaining to the pickup/dropoff. |
+| Pricing/Summary   			| 0..1    	|		| Summary price for option, this element we return if OpenAvailability = false. |
+| @Amount           			| 0..1		| Decimal	| Option price.					|
+| @CurrencyCode     			| 0..1		| String	| Currency code (ISO 4217).			|
+| Detail/Pricing/Summary/PricingType	| 0..1		| String	| Specifies type of the option price, if value = Other then is mandatory specify Extension type. |
+| @Extension        			| 0..1		| String	| Specifies type of the option price.		|
+| Detail/Pricing/ParticipantCategory	| 0..n		| String	| Specifies price and participant category.	|
+| @age              			| 0..1		| Integer	| Age of participant category.			|
+| Detail/Pricing/ParticipantCategory/QualifierInfo | 0..1 | String	| Specifies participant type (Adult, Children or Baby). If value = Other then then is mandatory specify Extension provider type. |
+| @Extension        			| 0..1		| String	| Specifies provider code of participant category. |
+| Detail/Pricing/ParticipantCategory/Price | 1  	|		| Specific price for each participantCategory.	|
+| @Amount           			| 1   		| String	| ParticipantCategory price.			|
+| @CurrencyCode     			| 0..1		| String	| Currency code (ISO 4217).			|
+| Detail/Schedule   			| 0..1    	|		| Information about dates range on which you can enjoy the activity. The same information that send in request. |
+| Detail/Schedule/Detail		| 0..1    	|		| Information about specify dates on which you can enjoy the activity. |
+| Detail/Schedule/Detail/OperationTimes	| 0..1    	|		| Information about specify dates on which you can enjoy the activity. |
+| Detail/Schedule/Detail/OperationTimes/OperationTime | 0..1 | 		| Information when activity starts.		|
+| @Start            			| 0..1		| Date		| Start date activity.				|
+| @End              			| 0..1		| Date		| End date activity.				|
+
+

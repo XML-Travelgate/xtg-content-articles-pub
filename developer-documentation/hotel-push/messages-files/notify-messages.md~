@@ -1,6 +1,9 @@
 ---
 title: Notify Messages
-...
+keywords: hotel-push, messages, messages files, notify messages
+sidebar: mydoc_sidebar
+permalink: /developer-documentation/hotel-push/messages-files/notify-messages
+---
 
 Providers sends data to Sellers (Negotiation is started by Providers).
 
@@ -19,7 +22,7 @@ HotelRatePlanNotifRQ
 
 **Example for RatePlan**
 
-:
+
 
     <HotelRatePlanNotif>
       <request>
@@ -93,7 +96,7 @@ HotelRatePlanNotifRQ
 
 **Example for Derived RatePlan**
 
-:
+
 
     <HotelRatePlanNotif>
       <request Version = "0">
@@ -118,283 +121,53 @@ HotelRatePlanNotifRQ
       </request>
     </HotelRatePlanNotif>
 
-  ------------------------------------------------------------------------
-  Element      N T Description
-               u y 
-               m p 
-               b e 
-               e   
-               r   
-  ------------ - - -------------------------------------------------------
-  HotelRatePla 1   Root Node
-  nNotif/reque     
-  st               
+|
 
-  RatePlans    1   
+| **Element**				| **Number** | **Type**	| **Description**					|
+| ------------------------------------- | ---------- | -------- | ----------------------------------------------------- |
+| HotelRatePlanNotif/request		| 1 	     |		| Root Node.						|
+| RatePlans			   	| 1   	     |		|							|
+| @HotelCode				| 1	     | String	| Hotel code whose information is provided by the method. |
+| RatePlans/RatePlan			| 1..n	     |		| Present if rate exists.				|
+| @RatePlanCode				| 1	     | String	| Rate code.						|
+| @RatePlanStatusType			| 0..1	     | String	| Active or Deactivated (You can save prices with initial status deactivated if you want). If this attribute is missing, the price will be saved as active. |
+| @BaseRatePlanCode			| 0..1	     | String	| Rate code of the base RatePlan. Only used for derived rates. |
+| @CurrencyCode				| 0..1	     | String	| ISO Currency (EUR). Not used for derived rates.	|
+| _@SuplementsNotifTypeSpecified	| 0..1	     | Boolean	| Rate code. Not used for derived rates.		|
+| _@SuplementsNotifType			| 0..1	     | String	| Possible values are Overlay or Delta. If not specified or Delta, Supplements will not be overwritten. If Overlay supplements will be overwritten. Not used for derived rates. |
+| RatePlans/RatePlan/Rates/Rate		| 1	     |		|							|
+| @Start 				| 1	     | Date	| Start date of rate.					|
+| @End   				| 1	     | Date	| End date of rate.					|
+| @AdjustedPercentage			| 0..1	     | Decimal	| The percentage off the base rate plan amount used to determine the price of this derived rate plan. Only used for derived rates. |
+| @AdjustedAmount			| 0..1	     | Decimal	| The amount which should be added to the base rate plan to determine the price of this derived rate plan. Only used for derived rates. |
+| @AdjustUpIndicator			| 0..1	     | Boolean	| When true, the adjusted amount or adjusted percentage is added to the amount specified for the base rate plan to determine the derived rate amount. When false, the adjusted amount or adjusted percentage is subtracted from the amount specified for the base rate plan to determine the derived rate amount. Only used for derived rates. |
+| RatePlans/RatePlan/Rates/Rate/BaseByGuestAmts | 0..1 |	|							|
+| RatePlans/RatePlan/Rates/Rate/BaseByGuestAmts/BaseByGuestAmt | 1..n |	|						|
+| @AmountAfterTax			| 1	     | Decimal	| Total amount for @NumberOfGuests by day indicated.	|
+| @NumberOfGuests			| 0..1	     | Integer	| How many adults are the @AmountAfterTax for day indicated. If @NumberOfGuests is not informed then @Type must be informed. The maximum @NumberOfGuests is the standard occupancy of the room. |
+| @Type  				| 0..1	     | Integer	| Amounts are per Room or per Occupancy instead of per Pax. If @Type=25, price is per room, 1 BaseByGuestAmt is allowed and @NumberOfGuests and AdditionalGuestAmounts are not allowed. If @Type=14, price is per occupancy, @Code is mandatory and @NumberOfGuests and AdditionalGuestAmounts are not allowed. |
+| @Code  				| 0..1	     | String	| Mandatory if @Type=14. The occupancy code is defined by AdultNumber-ChildNumber-InfantNumber. @Code for an occupancy of 2 adults, 1 child and 0 babies would be "2-1-0". |
+| RatePlans/RatePlan/Rates/Rate/AdditionalGuestAmounts	| 0..1 | | Not used for derived rates.				|
+| RatePlans/RatePlan/Rates/Rate/AdditionalGuestAmounts/AdditionalGuestAmount | 1..n | | Price and information about the additional pax (children, infants or extra adults). |
+| @MaxAdditionalGuests			| 1	    | Integer	| Number of additional pax, one node for each additional pax, int the above example has one for first child, and one for second. |
+| @Type  				| 0..1	    | String	| OTA AmountDeterminationType. If not specified then the price is a supplement, if @Type is Exclusive then the the price is absolute. |
+| @AgeQualifyingCode			| 1	    | Integer	| (10 - Adult,8 - Child,7 - Infant).			|
+| @Amount				| 1	    | Decimal	| Price for each additional pax.			|
+| RatePlans/Supplements			| 0..1	    | 		|  Present if supplements by board exists. Not used for derived rates. |
+| RatePlans/Supplements/Supplement	| 1..n	    |		|							|
+| @Start 				| 1	    | Date	| Start date of this supplement.			|
+| @End   				| 1	    | Date	| End date of this supplement.				|
+| @AgeQualifyingCode			| 0..1	    | Integer	| Age qualifyingCode which affects this supplement (10 - Adult,8 - Child,7 - Infant). Not allowed if charging board supplement by occupancy. |
+| @ChargeTypeCode			| 0..1	    | String	| Indicates the board supplement occupancy. Only allowed if charging board supplement by occupancy. The occupancy code is defined by AdultNumber-ChildNumber-InfantNumber. @ChargeTypeCode for an occupancy of 2 adults, 1 child and 0 babies would be "2-1-0". |
+| @Amount				| 1	    | Decimal	| Amount of supplement.					|
+| @SupplementType			| 1	    | String	| (Board).						|
+| @InvCode				| 1	    | String	| OTA MPT Code if @SupplementType is Board. 		|
+| RatePlans/RatePlan/SellableProducts	| 0..1	    |		| List of sellable products. Null for derived rates. 	|
+| RatePlans/SellableProducts/SellableProduct | 1..n |		|							|
+| @InvCode				| 1	    | Integer	| Sellable Product Code.				|
+| @InvType				| 1	    | Integer	| Sellable product type (ROOM).				|
 
-  <*@HotelCode 1 S Hotel code whose information is provided by the method
-  >\*            t 
-                 r 
-                 i 
-                 n 
-                 g 
-
-  RatePlans/Ra 1   Present if rate exists
-  tePlan       .   
-               .   
-               n   
-
-  <*@RatePlanC 1 S Rate code
-  ode>\*         t 
-                 r 
-                 i 
-                 n 
-                 g 
-
-  <*@RatePlanS 0 S Active or Deactivated (You can save prices with initial
-  tatusType>\* . t status deactivated if you want.) If this attribute is
-               . r missing, the price will be saved as active.
-               1 i 
-                 n 
-                 g 
-
-  <*@BaseRateP 0 S Rate code of the base RatePlan. Only used for derived
-  lanCode>\*   . t rates
-               . r 
-               1 i 
-                 n 
-                 g 
-
-  <*@CurrencyC 0 S ISO Currency (EUR). Not used for derived rates
-  ode>\*       . t 
-               . r 
-               1 i 
-                 n 
-                 g 
-
-  \_@Suplement 0 B Rate code. Not used for derived rates
-  sNotifTypeSp . o 
-  ecified      . o 
-               1 l 
-                 e 
-                 a 
-                 n 
-
-  \_@Suplement 0 S Possible values are Overlay or Delta. If not specified
-  sNotifType   . t or Delta, Supplements will not be overwritten. If
-               . r Overlay supplements will be overwritten. Not used for
-               1 i derived rates
-                 n 
-                 g 
-
-  RatePlans/Ra 1   
-  tePlan/Rates     
-  /Rate            
-
-  <*@Start>\*  1 D Start date of rate
-                 a 
-                 t 
-                 e 
-
-  <*@End>\*    1 D Start date of rate
-                 a 
-                 t 
-                 e 
-
-  <*@AdjustedP 0 D The percentage off the base rate plan amount used to
-  ercentage>\* . e determine the price of this derived rate plan. Only
-               . c used for derived rates
-               1 i 
-                 m 
-                 a 
-                 l 
-
-  <*@AdjustedA 0 D The amount which should be added to the base rate plan
-  mount>\*     . e to determine the price of this derived rate plan. Only
-               . c used for derived rates
-               1 i 
-                 m 
-                 a 
-                 l 
-
-  <*@AdjustUpI 0 B When true, the adjusted amount or adjusted percentage
-  ndicator>\*  . o is added to the amount specified for the base rate plan
-               . o to determine the derived rate amount. When false, the
-               1 l adjusted amount or adjusted percentage is subtracted
-                 e from the amount specified for the base rate plan to
-                 a determine the derived rate amount. Only used for
-                 n derived rates
-
-  RatePlans/Ra 0   
-  tePlan/Rates .   
-  /Rate/BaseBy .   
-  GuestAmts    1   
-
-  RatePlans/Ra 1   
-  tePlan/Rates .   
-  /Rate/BaseBy .   
-  GuestAmts/Ba n   
-  seByGuestAmt     
-
-  <*@AmountAft 1 D Total amount for @NumberOfGuests by day indicated
-  erTax>\*       e 
-                 c 
-                 i 
-                 m 
-                 a 
-                 l 
-
-  <*@NumberOfG 0 I How many adults are the @AmountAfterTax for day
-  uests>\*     . n indicated. If @NumberOfGuests is not informed then
-               . t @Type must be informed. The maximum @NumberOfGuests is
-               1 e the standard occupancy of the room
-                 g 
-                 e 
-                 r 
-
-  <*@Type>\*   0 I Amounts are per Room or per Occupancy instead of per
-               . n Pax. If @Type=25, price is per room, 1 BaseByGuestAmt
-               . t is allowed and @NumberOfGuests and
-               1 e AdditionalGuestAmounts are not allowed. If @Type=14,
-                 g price is per occupancy, @Code is mandatory and
-                 e @NumberOfGuests and AdditionalGuestAmounts are not
-                 r allowed.
-
-  <*@Code>\*   0 S Mandatory if @Type=14. The occupancy code is defined by
-               . t AdultNumber-ChildNumber-InfantNumber. @Code for an
-               . r occupancy of 2 adults, 1 child and 0 babies would be
-               1 i "2-1-0".
-                 n 
-                 g 
-
-  RatePlans/Ra 0   Not used for derived rates
-  tePlan/Rates .   
-  /Rate/Additi .   
-  onalGuestAmo 1   
-  unts             
-
-  RatePlans/Ra 1   Price and information about the additional pax
-  tePlan/Rates .   (children, infants or extra adults)
-  /Rate/Additi .   
-  onalGuestAmo n   
-  unts/Additio     
-  nalGuestAmou     
-  nt               
-
-  <*@MaxAdditi 1 I Number of additional pax, one node for each additional
-  onalGuests>\   n pax, int the above example has one for first child, and
-  *              t one for second.
-                 e 
-                 g 
-                 e 
-                 r 
-
-  <*@Type>\*   0 S OTA AmountDeterminationType. If not specified then the
-               . t price is a supplement, if @Type is Exclusive then the
-               . r the price is absolute.
-               1 i 
-                 n 
-                 g 
-
-  <*@AgeQualif 1 I (10 - Adult,8 - Child,7 - Infant)
-  yingCode>\*    n 
-                 t 
-                 e 
-                 g 
-                 e 
-                 r 
-
-  <*@Amount>\* 1 D Price for each additional pax
-                 e 
-                 c 
-                 i 
-                 m 
-                 a 
-                 l 
-
-  RatePlans/Su 0   Present if supplements by board exists. Not used for
-  pplements    .   derived rates
-               .   
-               1   
-
-  RatePlans/Su 1   
-  pplements/Su .   
-  pplement     .   
-               n   
-
-  <*@Start>\*  1 D Start date of this supplement
-                 a 
-                 t 
-                 e 
-
-  <*@End>\*    1 D End date of this supplement
-                 a 
-                 t 
-                 e 
-
-  <*@AgeQualif 0 I Age qualifyingCode which affects this supplement (10 -
-  yingCode>\*  . n Adult,8 - Child,7 - Infant). Not allowed if charging
-               . t board supplement by occupancy.
-               1 e 
-                 g 
-                 e 
-                 r 
-
-  <*@ChargeTyp 0 S Indicates the board supplement occupancy. Only allowed
-  eCode>\*     . t if charging board supplement by occupancy. The
-               . r occupancy code is defined by
-               1 i AdultNumber-ChildNumber-InfantNumber. @ChargeTypeCode
-                 n for an occupancy of 2 adults, 1 child and 0 babies
-                 g would be "2-1-0".
-
-  <*@Amount>\* 1 D Amount of supplement
-                 e 
-                 c 
-                 i 
-                 m 
-                 a 
-                 l 
-
-  <*@Supplemen 1 S (Board)
-  tType>\*       t 
-                 r 
-                 i 
-                 n 
-                 g 
-
-  <*@InvCode>\ 1 S OTA MPT Code if @SupplementType is Board
-  *              t 
-                 r 
-                 i 
-                 n 
-                 g 
-
-  RatePlans/Ra 0   List of sellable products. Null for derived rates.
-  tePlan/Sella .   
-  bleProducts  .   
-               1   
-
-  RatePlans/Se 1   
-  llableProduc .   
-  ts/SellableP .   
-  roduct       n   
-
-  <*@InvCode>\ 1 I Sellable Product Code
-  *              n 
-                 t 
-                 e 
-                 g 
-                 e 
-                 r 
-
-  <*@InvType>\ 1 I Sellable product type (ROOM)
-  *              n 
-                 t 
-                 e 
-                 g 
-                 e 
-                 r 
-  ------------------------------------------------------------------------
+|
 
 **Important information:**
 
@@ -405,10 +178,10 @@ HotelRatePlanNotifRQ
 -   The possible Type values in the AdditionalGuestAmount tag are
     Exclusive and not specified.
 
-    > -   If there's no value specified then the price is a relative.
-    >     And it's added to the price of the current pax.
-    > -   If the value is "Exclusive" then the price is absolute. And
-    >     it's the total price of the current pax.
+   > -   If there's no value specified then the price is a relative.
+   >     And it's added to the price of the current pax.
+   > -   If the value is "Exclusive" then the price is absolute. And
+   >     it's the total price of the current pax.
 
 -   If NumberOfGuests is not specified in tag BaseByGuestAmt then
     Type="25" (price per room) or Type="14" (price per occupancy) must
@@ -416,13 +189,17 @@ HotelRatePlanNotifRQ
 -   If the price is per room then all AdditionalGuestAmount must be
     relative.
 
-\* If the price is per occupancy then Type should be 14 and Code should
-be specified. The occupancy code is defined by
+- If the price is per occupancy then Type should be 14 and Code should
+be specified. 
+
+The occupancy code is defined by
 AdultNumber-ChildNumber-InfantNumber, for an occupancy of 2 adults, 1
 child and 0 babies should be "2-1-0".
 
 -   In samples room uses are specified using = AdultNumber -
     ChildNumber - InfantNumber.
+
+|
 
 **Notify amounts by Guests:**
 
@@ -434,7 +211,7 @@ Room uses = 1-0-0, 2-0-0.
 
 We only load the price for standard occupancy.
 
-:
+
 
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
@@ -454,7 +231,7 @@ Room uses = 1-0-0, 2-0-0.
 
 We load the price for standard occupancy and the price for 1 Adult.
 
-:
+
 
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "1" AmountAfterTax="100.00"/>
@@ -477,7 +254,7 @@ Room uses = 1-0-0, 2-0-0, 3-0-0.
 We load the price for standard occupancy and the price for 1 additional
 Adult Type default.
 
-:
+
 
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
@@ -504,7 +281,7 @@ Room uses = 1-0-0, 2-0-0, 3-0-0
 We load the price for standard occupancy and the price for 1 additional
 Adult Type Exclusive.
 
-:
+
 
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
@@ -515,7 +292,7 @@ Adult Type Exclusive.
 
 There is no price for one adult, so it wont be available.
 
-The price of two Adult will be 100 = 2\*(100/2).
+The price of two Adult will be 100 = 2*(100/2).
 
 The price of three Adults will be 140 = (100/2) + (100/2) + 40.
 
@@ -530,7 +307,7 @@ Room uses = 1-0-0, 2-0-0, 1-1-0.
 We load price for standard occupancy and the price for 1 additional
 Child (AgeQualifyingCode = "8") Type default.
 
-:
+
 
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
@@ -541,9 +318,9 @@ Child (AgeQualifyingCode = "8") Type default.
 
 There is no price for one adult, so it wont be available.
 
-The price of two Adult will be 100 = 2\*(100/2).
+The price of two Adult will be 100 = 2*(100/2).
 
-The price of one Adult and one Child will be 100 = 2\*(100/2). All pax
+The price of one Adult and one Child will be 100 = 2*(100/2). All pax
 under standard occupancy are considered as adults.
 
 |
@@ -560,7 +337,7 @@ AgeQualifyingCode = "7".
 We load price for standard occupancy and the price for 1 additional Baby
 (AgeQualifyingCode = "7") Type default.
 
-:
+
 
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
@@ -587,7 +364,7 @@ Room uses = 1-0-0, 2-0-0, 2-1-0.
 We load price for standard occupancy and the price for 1 additional
 Child Type default negative price
 
-:
+
 
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
@@ -598,9 +375,9 @@ Child Type default negative price
 
 There is no price for one adult, so it wont be available.
 
-The price of two Adults will be 100 = 2\*(100/2)
+The price of two Adults will be 100 = 2*(100/2)
 
-The price of one Adult and one Child will be 60 = 2\*(100/2) +
+The price of one Adult and one Child will be 60 = 2*(100/2) +
 ((100/2) -40).
 
 |
@@ -614,7 +391,7 @@ Room uses = 1-0-0, 2-0-0, 3-0-0, 4-0-0.
 We load the price of standard occupancy and the price for 1 additional
 adult and the price for 2 additional adults.
 
-:
+
 
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
@@ -626,7 +403,7 @@ adult and the price for 2 additional adults.
 
 There is no price for one adult, so it wont be available.
 
-The price of two Adults will be 100 = 2\*(100/2).
+The price of two Adults will be 100 = 2*(100/2).
 
 The price of three Adults will be 160 = (100/2) + (100/2) + ((100/2) +
 10).
@@ -645,7 +422,7 @@ Room uses = 1-0-0, 2-0-0, 3-0-0, 4-0-0.
 We load the price of standard occupancy and the price for each
 additional adult (Without specifying MaxAdditionalGuests).
 
-:
+
 
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
@@ -656,7 +433,7 @@ additional adult (Without specifying MaxAdditionalGuests).
 
 There is no price for one adult, so it wont be available.
 
-The price of two Adults will be 100 = 2\*(100/2).
+The price of two Adults will be 100 = 2*(100/2).
 
 The price of three Adults will be 140 = (100/2) + (100/2) +
 ((100/2) -10).
@@ -675,7 +452,7 @@ Room uses = 1-0-0, 2-0-0, 3-0-0, 4-0-0, 5-0-0.
 We load the price of standard occupancy and the price for 1 additional
 adult and the price for 2 additional adults.
 
-:
+
 
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "3" AmountAfterTax="150.00"/>
@@ -709,7 +486,7 @@ Room uses = 1-0-0, 2-0-0, 1-1-0.
 
 We load the price per room Type="25".
 
-:
+
 
     <BaseByGuestAmts>
         <BaseByGuestAmt Type = "25" AmountAfterTax="100.00"/>
@@ -735,7 +512,7 @@ the price for 1 additional child.
 NOTE: the AdditionalGuestAmount Type in price per room has to be
 default. Exclusive type not allowed.
 
-:
+
 
     <BaseByGuestAmts>
         <BaseByGuestAmt Type = "25" AmountAfterTax="100.00"/>
@@ -765,7 +542,7 @@ Room uses = 1-0-0, 2-0-0, 3-0-0, 4-0-0.
 
 We load the price per room but also the price for 1 additional adult.
 
-:
+
 
     <BaseByGuestAmts>
         <BaseByGuestAmt Type = "25" AmountAfterTax="100.00"/>
@@ -792,11 +569,11 @@ Room uses = 1-0-0, 2-0-0, 3-0-0.
 
 We only load price occupancy = 2 adults, 0 child and 0 baby.
 
-:
+
 
     <BaseByGuestAmts>
         <BaseByGuestAmt Type = "14" AmountAfterTax="100.00" Code = "2-0-0"/>
-    </BaseByGuestAmts>  
+    </BaseByGuestAmts> 
 
 Room will not be available for 1 or 3 adults.
 
@@ -811,7 +588,7 @@ Room uses = 2-1-0, 2-0-1.
 We load price occupancy = 2 adults, 1 child and 0 baby; and for
 occupancy = 2 adults, 0 child and 1 baby.
 
-:
+
 
     <BaseByGuestAmts>
         <BaseByGuestAmt Type = "14" AmountAfterTax="95.00" Code = "2-1-0"/>
@@ -829,7 +606,7 @@ HotelRatePlanNotifRS
 
 Success Response
 
-:
+
 
     <HotelRatePlanNotifResponse xmlns="http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
              <HotelRatePlanNotifResult>
@@ -841,7 +618,7 @@ Success Response
 
 Error Response
 
-:
+
 
     <HotelRatePlanNotifResponse xmlns="http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
          <HotelRatePlanNotifResult>
@@ -866,7 +643,7 @@ HotelAvailNotifRQ
 
 **Example for RatePlan**
 
-:
+
 
     <HotelAvailNotif>
       <request>
@@ -914,7 +691,7 @@ HotelAvailNotifRQ
 
 **Example for Derived RatePlan**
 
-:
+
 
     <HotelAvailNotif xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
       <request Version = "0">
@@ -939,224 +716,40 @@ HotelAvailNotifRQ
       </request>
     </HotelAvailNotif>
 
-  -------------------------------------------------------------------------
-  Element     N T Description
-              u y 
-              m p 
-              b e 
-              e   
-              r   
-  ----------- - - ---------------------------------------------------------
-  HotelAvailN 1   Root Node
-  otif/reques     
-  t               
+|
 
-  AvailStatus 1   
-  Messages        
-
-  <*@HotelCod 1 S Hotel code whose information is provided by the method
-  e>\*          t 
-                r 
-                i 
-                n 
-                g 
-
-  AvailStatus 1   
-  Messages/Av .   
-  ailStatusMe .   
-  ssage       n   
-
-  <*@BookingL 0 I Identifies the number of available rooms per Room &
-  imit>\*     . n RatePlan for the indicated dates. Not mandatory when the
-              . t @Status is Close. Not used for derived rates
-              1 e 
-                g 
-                e 
-                r 
-
-  AvailStatus 1   
-  Messages/Av     
-  ailStatusMe     
-  ssage/Statu     
-  sApplicatio     
-  nControl        
-
-  <*@Start>\* 1 D Start date
-                a 
-                t 
-                e 
-
-  <*@End>\*   1 D End date
-                a 
-                t 
-                e 
-
-  <*@RatePlan 0 S Rate Plan Code. If not specified then all rates
-  Code>\*     . t containing @InvCode Room will be updated
-              . r 
-              1 i 
-                n 
-                g 
-
-  <*@InvCode> 0 S Room Code. Not used for derived rates
-  \*          . t 
-              . r 
-              1 i 
-                n 
-                g 
-
-  <*@InvType> 0 S Product type (ROOM). Not used for derived rates
-  \*          . t 
-              . r 
-              1 i 
-                n 
-                g 
-
-  <*@Mon>\*   1 B Indicates whether the AvailStatusMessage data applies to
-                o Mondays
-                o 
-                l 
-                e 
-                a 
-                n 
-
-  <*@Tue>\*   1 B Indicates whether the AvailStatusMessage data applies to
-                o Tuesdays
-                o 
-                l 
-                e 
-                a 
-                n 
-
-  <*@Weds>\*  1 B Indicates whether the AvailStatusMessage data applies to
-                o Wednesdays
-                o 
-                l 
-                e 
-                a 
-                n 
-
-  <*@Thur>\*  1 B Indicates whether the AvailStatusMessage data applies to
-                o Thursdays
-                o 
-                l 
-                e 
-                a 
-                n 
-
-  <*@Fri>\*   1 B Indicates whether the AvailStatusMessage data applies to
-                o Fridays
-                o 
-                l 
-                e 
-                a 
-                n 
-
-  <*@Sat>\*   1 B Indicates whether the AvailStatusMessage data applies to
-                o Saturdays
-                o 
-                l 
-                e 
-                a 
-                n 
-
-  <*@Sun>\*   1 B Indicates whether the AvailStatusMessage data applies to
-                o Sundays
-                o 
-                l 
-                e 
-                a 
-                n 
-
-  AvailStatus 0   
-  Messages/Av .   
-  ailStatusMe .   
-  ssage/Lengt 1   
-  hsOfStay        
-
-  AvailStatus 1   
-  Messages/Av .   
-  ailStatusMe .   
-  ssage/Lengt 2   
-  hsOfStay/Le     
-  ngthOfStay      
-
-  <*@ArrivalD 0 B When its true, the minimum and maximum stay is checked
-  ateBased>\* . o ONLY the first day of the availability, when false or not
-              . o indicated, the minimum and maximum stay is checked all
-              1 l the availability days. If both values are needed two
-                e AvailStatusMessage must be send.
-                a 
-                n 
-
-  <*@Time>\*  1 I Indicates the number of @TimeUnit for this stay
-                n 
-                t 
-                e 
-                g 
-                e 
-                r 
-
-  <*@TimeUnit 1 S Day
-  >\*           t 
-                r 
-                i 
-                n 
-                g 
-
-  <*@MinMaxMe 1 S (MinLOS, MaxLOS) Indicates the minimum or maximum stay
-  ssageType>\   t for his AvailStatusMessage.
-  *             r 
-                i 
-                n 
-                g 
-
-  AvailStatus 0   
-  Messages/Av .   
-  ailStatusMe .   
-  ssage/Restr 1   
-  ictionStatu     
-  s               
-
-  <*@Status>\ 0 S (Open, Close). Not used for derived rates
-  *           . t 
-              . r 
-              1 i 
-                n 
-                g 
-
-  <*@Restrict 0 S Master. This is the master availability. If master
-  ion>\*      . t availability is ‘Closed’, the product is not bookable if
-              . r any of the stay dates includes one of the dates specified
-              1 i by the Application Control element. If master
-                n availability is ‘Open’, additional restrictions on
-                g arrival and departure may be placed (Master, Arrival,
-                  Departure). Not used for derived rates
-
-  <*@MinAdvan 0 I Minimum number of days before the check-in date after
-  cedBookingO . n which the product is not available to be booked. This
-  ffset>\*    . t restriction is usually used to offer discounts on early
-              1 e bookings
-                g 
-                e 
-                r 
-
-  <*@MaxAdvan 0 I Maximum number of days before the check-in date after
-  cedBookingO . n which the product is not available to be booked. This
-  ffset>\*    . t restriction is usually used to offer last minute
-              1 e discounts on unsold inventory.
-                g 
-                e 
-                r 
-
-  <*@SellThro 0 B When @Status is open, in this element you can indicate
-  ughOpenIndi . o this room or room/ratePlan can be sold without limit
-  cator>\*    . o (like BookingLimit=MaxInteger). Not used for derived
-              1 l rates
-                e 
-                a 
-                n 
-  -------------------------------------------------------------------------
+| **Element**				| **Number** | **Type**	| **Description**					|
+| ------------------------------------- | ---------- | -------- | ----------------------------------------------------- |
+| HotelAvailNotif/request		| 1  	     |		| Root Node.						|
+| AvailStatusMessages			| 1   	     |		|							|
+| @HotelCode				| 1	     | String	| Hotel code whose information is provided by the method. |
+| AvailStatusMessages/AvailStatusMessage | 1..n	     |		|							|
+| @BookingLimit				| 0..1	     | Integer	| Identifies the number of available rooms per Room & RatePlan for the indicated dates. Not mandatory when the @Status is Close. Not used for derived rates. |
+| AvailStatusMessages/AvailStatusMessage/StatusApplicationControl | 1 |	 |						|
+| @Start				| 1	     | Date	| Start date.						|
+| @End  				| 1	     | Date	| End date.						|
+| @RatePlanCode				| 0..1	     | String	| Rate Plan Code. If not specified then all rates containing @InvCode Room will be updated. |
+| @InvCode				| 0..1	     | String	| Room Code. Not used for derived rates.		|
+| @InvType				| 0..1	     | String	| Product type (ROOM). Not used for derived rates.	|
+| @Mon  				| 1	     | Boolean	| Indicates whether the AvailStatusMessage data applies to Mondays. |
+| @Tue  				| 1	     | Boolean	| Indicates whether the AvailStatusMessage data applies to Tuesdays. |
+| @Weds 				| 1	     | Boolean	| Indicates whether the AvailStatusMessage data applies to Wednesdays. |
+| @Thur 				| 1	     | Boolean	| Indicates whether the AvailStatusMessage data applies to Thursdays. |
+| @Fri  				| 1	     | Boolean	| Indicates whether the AvailStatusMessage data applies to Fridays. |
+| @Sat  				| 1	     | Boolean	| Indicates whether the AvailStatusMessage data applies to Saturdays. |
+| @Sun  				| 1          | Boolean	| Indicates whether the AvailStatusMessage data applies to Sundays. |
+| AvailStatusMessages/AvailStatusMessage/LengthsOfStay | 0..1 |	|							|
+| AvailStatusMessages/AvailStatusMessage/LengthsOfStay/LengthOfStay | 1..2 | |						|
+| @ArrivalDateBased			| 0..1	     | Boolean	| When its true, the minimum and maximum stay is checked ONLY the first day of the availability, when false or not indicated, the minimum and maximum stay is checked all the availability days. If both values are needed two AvailStatusMessage must be send. |
+| @Time 				| 1	     | Integer	| Indicates the number of @TimeUnit for this stay.	|
+| @TimeUnit				| 1	     | String	| Day.							|
+| @MinMaxMessageType			| 1	     | String	| (MinLOS, MaxLOS) Indicates the minimum or maximum stay for his AvailStatusMessage. |
+| AvailStatusMessages/AvailStatusMessage/RestrictionStatus | 0..1 |  |							|
+| @Status				| 0..1	     | String	| (Open, Close). Not used for derived rates.		|
+| @Restriction				| 0..1	     | String	| Master. This is the master availability. If master availability is ‘Closed’, the product is not bookable if any of the stay dates includes one of the dates specified by the Application Control element. If master availability is ‘Open’, additional restrictions on arrival and departure may be placed (Master, Arrival, Departure). Not used for derived rates. |
+| @MinAdvancedBookingOffset		| 0..1	     | Integer	| Minimum number of days before the check-in date after which the product is not available to be booked. This restriction is usually used to offer discounts on early bookings. |
+| @MaxAdvancedBookingOffset		| 0..1	     | Integer	| Maximum number of days before the check-in date after which the product is not available to be booked. This restriction is usually used to offer last minute discounts on unsold inventory. |
+| @SellThroughOpenIndicator		| 0..1	     | Boolean	| When @Status is open, in this element you can indicate this room or room/ratePlan can be sold without limit(like BookingLimit=MaxInteger). Not used for derived rates. |
 
 |
 
@@ -1165,7 +758,7 @@ HotelAvailNotifRS
 
 Success Response
 
-:
+
 
     <HotelAvailNotifResponse xmlns="http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
       <HotelAvailNotifResult>
@@ -1177,7 +770,7 @@ Success Response
 
 Error Response
 
-:
+
 
     <HotelAvailNotifResponse xmlns="http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
       <HotelAvailNotifResult>
@@ -1192,9 +785,11 @@ Error Response
 Error Codes
 ===========
 
-  ------------------------------------------------------------------------
-  Error Code    Error Description
-  ------------- ----------------------------------------------------------
+|
+
+| **Error Code**	| **Error Description**						|
+| --------------------- | ------------------------------------------------------------- |
+
   -1            Validation error
 
   1             POS credentials not found

@@ -32,7 +32,7 @@ The response contains a list of "atributo".
 RunTimeConfigurationRQ Example
 ==============================
 
-:
+
 
     <RunTimeConfigurationRQ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
       <timeoutMilliseconds>60000</timeoutMilliseconds>
@@ -64,7 +64,7 @@ RunTimeConfiguration Description
 RunTimeConfigurationRS Example
 ==============================
 
-:
+
 
     <RunTimeConfigurationRS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
       <operationImplemented>true</operationImplemented>
