@@ -29,7 +29,7 @@ will do a OTA VehAvailRate again filtered by the selected option.
 OTA VehRateRule RQ Example
 ==========================
 
-:
+
 
     <OTA_VehRateRuleRQ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <timeoutMilliseconds>60000</timeoutMilliseconds>
@@ -88,42 +88,25 @@ The VehRateRule request requires the following information:
     not.
 -   The selected rate for the chosen option.
 
-  -------------------------------------------------------------------------
-  Element         Numb Type      Description
-                  er             
-  --------------- ---- --------- ------------------------------------------
-  OTA\_VehRateRul 1              Root Node
-  eRQ                            
-
-  OTA\_VehRateRul 1    Pos       Contains information of the Point Of Sale.
-  eRQ/POS                        
-
-  OTA\_VehRateRul 1    RentalInf Contains the info related to the rental.
-  eRQ/RentalInfo       o         
-
-  RentalInfo/VehR 1    VehRental Contains the dates and locations of the
-  entalCore            Core      rental.
-
-  RentalInfo/Vehi 1    VehiclePr Contains a list of VehiclePref. A
-  cleInfo              ef        vehiclePref has information related to the
-                                 vehicle model.
-
-  RentalInfo/Rate 1    RateQuali This is the vendor specific code for rate
-  Qualifier            fier      codes (e.g. WES, 2A, DLY00).
-
-  RentalInfo/TPAE 1    TPAExtens Contains an Atributos object.
-  xtensions            ions      
-
-  RentalInfo/Stat 1    eInventor Status of the option. It's possible values
-  us                   yStatus   are Available, OnRequest and All.
-  -------------------------------------------------------------------------
+| 
+  
+| **Element**					| **Number**	| **Type**	| **Description**						|
+| --------------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
+| OTA_VehRateRuleRQ				| 1             |		| Root Node.           						|
+| OTA_VehRateRuleRQ/POS 			| 1   		| Pos      	| Contains information of the Point Of Sale.     		|
+| OTA_VehRateRuleRQ/RentalInfo			| 1   		| RentalInfo	| Contains the info related to the rental.			|
+| RentalInfo/VehRentalCore			| 1   		| VehRentalCore	| Contains the dates and locations of the rental.		|
+| RentalInfo/VehicleInfo			| 1   		| VehiclePref	| Contains a list of VehiclePref. A vehiclePref has information related to the vehicle model.	|
+| RentalInfo/RateQualifier			| 1   		| RateQualifier	| This is the vendor specific code for rate codes (e.g. WES, 2A, DLY00).	|
+| RentalInfo/TPAExtensions			| 1   		| TPAExtensions	| Contains an Atributos object.					|
+| RentalInfo/Status				| 1   		| eInventoryStatus | Status of the option. It's possible values are Available, OnRequest and All.	|
 
 |
 
 OTA VehRateRuleRS Example
 =========================
 
-:
+
 
     <?xml version="1.0"?>
     <OTA_VehRateRuleRS xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -275,121 +258,42 @@ since the selected option at OTA VehAvailRate time will not be available
 in this stage. In this case the integration returns an error code 204
 (ERROR NO RESULTS)( link missing ).
 
-  -------------------------------------------------------------------------
-  Element                 Num Type          Description
-                          ber               
-  ----------------------- --- ------------- -------------------------------
-  OTA\_VehRateRuleRS      1                 Root Node
-
-  OTA\_VehRateRuleRS/VehR 1   VehRentalCore Contains the dates and
-  entalCore                                 locations of the rental.
-
-  OTA\_VehRateRuleRS/Vehi 1   Vehicle       Includes information about the
-  cle                                       vehicle model.
-
-  OTAVehRateRuleRS/Rental 1   OTAVehRateRul Contains information of the
-  Rate                        eRS\_VehicleR allowed distance, the selected
-                              entalRate     rate, and the associated
-                                            charges.
-
-  @OTA*VehRateRuleRS*Vehi 1   eInventorySta Status of the option. It's
-  cleRentalRate/Status        tus           possible values are Available,
-                                            OnRequest and All.
-
-  OTA*VehRateRuleRS*Vehic 1   VehicleRateDi Information about the permitted
-  leRentalRate/RateDistan     stanceGroup   distance for this rate.
-  ce                                        
-
-  OTA*VehRateRuleRS*Vehic 1   RateQualifier Information about the rate.
-  leRentalRate/RateQualif                   
-  ier                                       
-
-  OTA*VehRateRuleRS*Vehic 1   List of       Charges associated to this
-  leRentalRate/VehicleCha     VehicleCharge rate.
-  rges                        Purpose       
-
-  OTA*VehRateRuleRS*Vehic 1.. VehicleCharge Charge associated to this rate.
-  leRentalRate/VehicleCha n   Purpose       
-  rges/VehicleCharge                        
-
-  OTA\_VehRateRuleRS/Tota 1   VehicleTotalC Total cost of the rental.
-  lCharge                     hargeGroup    
-
-  OTA\_VehRateRuleRS/Pric 1   List of       List of equipments for the
-  edEquips                    VehicleEquipm vehicle.
-                              entPriced     
-
-  OTA\_VehRateRuleRS/Pric 1.. VehicleEquipm List of equipments for the
-  edEquips/PricedEquip    n   entPriced     vehicle.
-
-  OTA\_VehRateRuleRS/Fees 1   List of       List of fees related to this
-                              VehicleCharge rental.
-                              Purpose       
-
-  OTA\_VehRateRuleRS/Fees 1.. VehicleCharge Fee related to this rental.
-  /Fee                    n   Purpose       
-
-  OTA\_VehRateRuleRS/Pric 1   PricedCoverag Contains information of the
-  edCoverages                 es            coverages offered by the
-                                            provider.
-
-  PricedCoverages/PricedC 1.. PricedCoverag List that contains the offered
-  overage                 n   e             accident coverages.
-
-  PricedCoverage/Coverage 1   Coverage      Accident coverage offered by
-                                            the provider.
-
-  @Coverage/CoverageType  1   String        Provider's type of coverage.
-
-  @Coverage/Code          1   String        Provider's code of the
-                                            coverage.
-
-  @Coverage/Details       1   Details       Details of the coverage
-                                            returned by the provider.
-
-  Details/Text            1   String        Details.
-
-  PricedCoverage/Charge   1   VehicleCharge Cost of the coverage.
-                              Type          
-
-  OTA\_VehRateRuleRS/Vend 1   VendorMessage Messages received in the
-  orMessages                  s             provider's response.
-
-  OTA\_VehRateRuleRS/Vend 1.. VendorMessage List of messages received in
-  orMessages/VendorMessag n                 the provider's response.
-  e                                         
-
-  @VendorMessage/InfoType 1   eInformationT Indicates the type of
-                              ype           information shown in the
-                                            message.
-
-  VendorMessage/Tittle    1   String        Tittle of the message.
-
-  VendorMessage/Language  1   eLanguageType Indicates the language in which
-                                            the message is written.
-
-  VendorMessage/SubSectio 1   list of       Contains a list of texts that
-  n                           FormattedText compound the message.
-                              SubSection    
-
-  FormattedTextSubSection 1   String        Tittle of the Paragraph.
-  /SubTitle                                 
-
-  FormattedTextSubSection 1.. Paragraph     Contains a list of paragraphs
-  /Paragraph              n                 that compound the message.
-
-  FormattedTextSubSection 1.. FormattedText Contains messages recieved in
-  /Paragraph/ListItem     n   Text          the providers response and it's
-                                            format (plain text or HTML).
-
-  FormattedTextText/TextF 1   eTextFormat   Indicates the format of the
-  ormat                                     text. If it is plain text or
-                                            HTML.
-
-  FormattedTextText/text  1   String        Contains the text.
-
-  OTA*VehRateRuleRS/TPA*E 1   TPA\_Extensio Contains an Atributos object.
-  xtensions                   ns            
-  -------------------------------------------------------------------------
-
 |
+ 
+| **Element**					| **Number**	| **Type**	| **Description**								|
+| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------------------------------- |
+| OTA_VehRateRuleRS     			| 1             |   		| Root Node.								|
+| OTA_VehRateRuleRS/VehRentalCore		| 1  		| VehRentalCore	| Contains the dates and locations of the rental.			|
+| OTA_VehRateRuleRS/Vehicle			| 1  		| Vehicle      	| Includes information about the vehicle model.				|
+| OTAVeh*RateRuleRS*/RentalRate			| 1  		| OTAVehRateRuleRS_ VehicleRentalRate | Contains information of the allowed distance, the selected rate, and the associated charges. 	|
+| @OTAVeh*RateRuleRS*VehicleRentalRate /Status	| 1  		| eInventoryStatus | Status of the option. It's possible values are Available, OnRequest and All.	|
+| OTAVeh*RateRuleRS*VehicleRentalRate /RateDistance | 1  	| VehicleRateDistanceGroup | Information about the permitted distance for this rate.	|
+| OTAVeh*RateRuleRS*VehicleRentalRate /RateQualifier | 1  	| RateQualifier	| Information about the rate.		|
+| OTAVeh*RateRuleRS*VehicleRentalRate /VehicleCharges | 1  	| List of VehicleChargePurpose | Charges associated to this rate.	|
+| OTA*VehRateRuleRS*VehicleRentalRate /VehicleCharges/VehicleCharge | 1..n | VehicleChargePurpose | Charge associated to this rate.	|
+| OTA_VehRateRuleRS/TotalCharge			| 1  		| VehicleTotalChargeGroup | Total cost of the rental.			|
+| OTA_VehRateRuleRS/PricedEquips		| 1  		| List of VehicleEquipmentPriced | List of equipments for the vehicle.              |
+| OTA_VehRateRuleRS/PricedEquips /PricedEquip	| 1..n		| VehicleEquipmentPriced | List of equipments for the vehicle.			|
+| OTA_VehRateRuleRS/Fees			| 1  		| List of VehicleChargePurpose | List of fees related to this rental.		|
+| OTA_VehRateRuleRS/Fees/Fee			| 1..n		| VehicleChargePurpose | Fee related to this rental.      			|
+| OTA_VehRateRuleRS/PricedCoverages		| 1  		| PricedCoverages | Contains information of the coverages offered by the provider.	|
+| PricedCoverages/PricedCoverage		| 1..n		| PricedCoverage | List that contains the offered accident coverages.		|
+| PricedCoverage/Coverage			| 1  		| Coverage 	| Accident coverage offered by the provider.			|
+| @Coverage/CoverageType 			| 1  		| String     	| Provider's type of coverage.				|
+| @Coverage/Code         			| 1  		| String       	| Provider's code of the coverage.			|
+| @Coverage/Details      			| 1  		| Details      	| Details of the coverage returned by the provider.	|
+| Details/Text           			| 1  		| String      	| Details.						|
+| PricedCoverage/Charge  			| 1  		| VehicleChargeType | Cost of the coverage.				|
+| OTA_VehRateRuleRS/VendorMessages		| 1  		| VendorMessages | Messages received in the provider's response.	|
+| OTA_VehRateRuleRS/VendorMessages /VendorMessage | 1..n		| VendorMessage	| List of messages received in the provider's response.		|
+| @VendorMessage/InfoType			| 1  		| eInformationType | Indicates the type of information shown in the message.	|
+| VendorMessage/Tittle   			| 1  		| String       	| Tittle of the message.			|
+| VendorMessage/Language 			| 1  		| eLanguageType	| Indicates the language in which the message is written.	|
+| VendorMessage/SubSection			| 1  		| list of FormattedTextSubSection | Contains a list of texts that compound the message.		|
+| FormattedTextSubSection/SubTitle		| 1  		| String       	| Tittle of the Paragraph.     			|
+| FormattedTextSubSection/Paragraph		| 1..n		| Paragraph    	| Contains a list of paragraphs that compound the message.		|
+| FormattedTextSubSection/Paragraph /ListItem	| 1..n		| FormattedTextText | Contains messages recieved in the providers response and it's format (plain text or HTML).	|
+| FormattedTextText/TextFormat			| 1 		| eTextFormat  	| Indicates the format of the text. If it is plain text or HTML.	|
+| FormattedTextText/text 			| 1  		| String       	| Contains the text.			|
+| OTA*VehRateRuleRS/TPA*Extensions		| 1  		| TPA_Extensions | Contains an Atributos object.		|
+

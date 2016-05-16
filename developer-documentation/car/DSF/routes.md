@@ -26,7 +26,7 @@ in most cases once a month.
 OTA VehLocSearchRQ Example
 ==========================
 
-:
+
 
     <OTA_VehLocSearchRQ>
         <timeoutMilliseconds>999999</timeoutMilliseconds>
@@ -66,46 +66,25 @@ The request requires a POS object. This method also accepts an office
 code in order to retrieve the specific information related to this
 office if the provider allows it.
 
-  ------------------------------------------------------------------------
-  Element         Num Type                   Description
-                  ber                        
-  --------------- --- ---------------------- -----------------------------
-  OTA\_VehLocSear 1                          Root Node
-  chRQ                                       
+|
 
-  OTA\_VehLocSear 1   Pos                    Contains information of the
-  chRQ/POS                                   Point Of Sale.
-
-  OTA\_VehLocSear 1   ItemSearchCriterionTyp Contains the coordinates of
-  chRQ/VehLocSear     e                      the office and a reference
-  chCriterion                                point to locate the office.
-
-  ItemSearchCrite 1   Position               Object that contains the
-  rionType/Positi                            coordinates of the office.
-  on                                         
-
-  Position/Latitu 1   Latitude of the        
-  de                  position of the        
-                      office.                
-
-  Position/Longit 1   Longitude of the       
-  ude                 position of the        
-                      office.                
-
-  ItemSearchCrite 1   This string contains a 
-  rionType/RefPoi     reference point to     
-  nt                  locate the office.     
-
-  OTA\_VehLocSear 1   CompanyName            Identifies the provider who
-  chRQ/Vendor                                owns that office.
-  ------------------------------------------------------------------------
+| **Element**					| **Number**	| **Type**	| **Description**							|
+| --------------------------------------------- | ------------- | ------------- | --------------------------------------------------------------------- |
+| OTA_VehLocSearchRQ				| 1             |            	| Root Node            				|
+| OTA_VehLocSearchRQ/POS			| 1  		| Pos           | Contains information of the Point Of Sale.	|
+| OTA_VehLocSearchRQ/VehLocSearchCriterion	| 1  		| ItemSearch	| CriterionType Contains the coordinates of the office and a reference point to locate the office.	|
+| ItemSearchCriterionType/Position		| 1  		| Position      | Object that contains the coordinates of the office.	|
+| Position/Latitude				| 1  		|		| Latitude of the  position of the office.		|
+| Position/Longitude				| 1  		|		| Longitude of the position of the office.		|
+| ItemSearchCriterionType/RefPoint		| 1  		|		| This string contains a  reference point to locate the office.     	|
+| OTA_VehLocSearchRQ/Vendor			| 1  		| CompanyName   | Identifies the provider who owns that office.		|
 
 |
 
 OTA VehLocSearchRS Example
 ==========================
 
-:
+
 
     <OTA_VehLocSearchRS>
         <auditData>
@@ -192,131 +171,42 @@ OTA VehLocSearchRS Description
 The result returns a list of VehMatchedLoc with the corresponding
 information.
 
-  --------------------------------------------------------------------------
-  Element          Num Type              Description
-                   ber                   
-  ---------------- --- ----------------- -----------------------------------
-  OTA\_VehLocSearc 1                     Root Node
-  hRS                                    
+| 
+  
+| **Element**					| **Number**	| **Type**	| **Description**								|
+| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------------------------------- |
+| OTA_VehLocSearchRS				| 1             |		| Root Node.						|
+| OTA_VehLocSearchRS /VehMatchedLocs		| 1  		| List of VehicleMatchedLocation | List of offices.              	|
+| VehicleMatchedLoc /LocationDetail		| 1  		| Vehicle LocationDetails	| Containts details of the location of the office.	|
+| @VehicleLocationDetails/Code			| 1  		| String        | Code that identifies the office in the provider's system. This code should be used on OTA_VehAvailRateRQ. 	|
+| @VehicleLocationDetails /Name			| 1  		| String        | Name of the office.		|
+| @VehicleLocationDetails /ExtendedLocationCode	| 		| String	| Code that identifies the office in the provider's system.           |
+| @VehicleLocationDetails /AssocAirportLocList	| 		| String	| Associated airport to this office.            |
+| VehicleLocationDetails /Address		| 1  		| AddressInfo   | Indicates the address of the office.		|
+| AddressInfo/AddressLine			| 1  		| List of String | A list that contains 1 or more addresses of the customer.		|
+| AddressInfo/CityName				| 1  		| String        | The name of the city where the customer lives.	|
+| AddressInfo/PostalCode			| 1  		| String        | The postal code of the customer's address.		|
+| AddressInfo/CountryName			| 1  		| CountryName   | This object contains the code of the country of the customer.		|
+| VehicleLocationDetails /Telephone		| 1  		| Telephone InfoGroup | Indicates the telephone number of the office.		|
+| TelephoneInfoGroup /PhoneTechType		| 1  		| ePhoneTechnologyType | Type of technology used by the phone. Possible values: VOICE, DATA, FAX, PAGER ,MOBILE ,TTY,TELEX ,VOICEOVERIP.	|
+| TelephoneInfoGroup /PhoneNumber		| 1   		| String        | Number of the phone.			|
+| VehicleLocationDetails /AdditionalInfo		| 1  		| VehicleLocation AdditionalDetails | Contains the hours of the office and the type of location.	|
+| VehicleLocationAdditionalDetails /ParkLocation	| 1  		| VehicleWhere AtFacilityType | Informs the type of location where the office is located.               |
+| VehicleWhereAtFacilityType /Location		| 1  		| eVecinityCode | Informs the type of location where the office is located.		|
+| VehicleLocationAdditionalDetails /OperationSchedules | 1  	| Operation Schedules | Informs the office hours.       	|
+| OperationSchedules /OperationSchedule		| 1..n		| Operation Schedule | Informs the office hours.		|
+| OperationSchedule/Start			| 1  		| DateTime      | Date in which this operationTimes become valid.		|
+| OperationSchedule/End				| 1  		| 		| Date in which this operationTimes are no longer valid.	|
+| OperationSchedule/OperationTimes		| 1  		| List of operationTime | List of operationTime.		|
+| OperationTimes/OperationTime			| 1..n		| OperationTime | Each OperationTime indicate the office hours and the days of the week subject to these hours.	|
+| @OperationTime/Start				| 1  		| String        | Opening time of the office in hh:mm format.		|
+| @OperationTime/End				| 1  		| String        | Closing time of the office in hh:mm format.		|
+| @OperationTime/Mon				| 1  		| Boolean       | Boolean that indicates if this hours correspond to Mondays.		|
+| @OperationTime/Tue				| 1  		| Boolean       | Boolean that indicates if this hours correspond to Tuesdays.		|
+| @OperationTime/Weds				| 1  		| Boolean       | Boolean that indicates if this hours correspond to Wednesday.		|
+| @OperationTime/Thur				| 1  		| Boolean       | Boolean that indicates if this hours correspond to Thursdays.		|	
+| @OperationTime/Fri				| 1  		| Boolean       | Boolean that indicates if this hours correspond to Fridays.		|
+| @OperationTime/Sat				| 1  		| Boolean       | Boolean that indicates if this hours correspond to Saturdays.		|
+| @OperationTime/Sun				| 1  		| Boolean       | Boolean that indicates if this hours correspond to Sundays.		|
+| VehicleMatchedLocation /VehLocSearchCriterion	| 1  		| Vehicle LocationDetails | Containts details of the location of the office.		| 
 
-  OTA\_VehLocSearc 1   List of           List of offices.
-  hRS/VehMatchedLo     VehicleMatchedLoc 
-  cs                   ation             
-
-  VehicleMatchedLo 1   VehicleLocationDe Containts details of the location
-  c/LocationDetail     tails             of the office.
-
-  @VehicleLocation 1   String            Code that identifies the office in
-  Details/Code                           the provider's system. This code
-                                         should be used on
-                                         OTA\_VehAvailRateRQ.
-
-  @VehicleLocation 1   String            Name of the office.
-  Details/Name                           
-
-  @VehicleLocation Str Code that         
-  Details/Extended ing identifies the    
-  LocationCode         office in the     
-                       provider's        
-                       system.           
-
-  @VehicleLocation Str Associated        
-  Details/AssocAir ing airport to this   
-  portLocList          office.           
-
-  VehicleLocationD 1   AddressInfo       Indicates the address of the
-  etails/Address                         office.
-
-  AddressInfo/Addr 1   List of String    A list that contains 1 or more
-  essLine                                addresses of the customer.
-
-  AddressInfo/City 1   String            The name of the city where the
-  Name                                   customer lives.
-
-  AddressInfo/Post 1   String            The postal code of the customer's
-  alCode                                 address.
-
-  AddressInfo/Coun 1   CountryName       This object contains the code of
-  tryName                                the country of the customer.
-
-  VehicleLocationD 1   TelephoneInfoGrou Indicates the telephone number of
-  etails/Telephone     p                 the office.
-
-  TelephoneInfoGro 1   ePhoneTechnologyT Type of technology used by the
-  up/PhoneTechType     ype               phone. Possible values: VOICE,
-                                         DATA, FAX, PAGER ,MOBILE ,TTY
-                                         ,TELEX ,VOICE*OVER*IP.
-
-  TelephoneInfoGro 1   String            Number of the phone.
-  up/PhoneNumber                         
-
-  VehicleLocationD 1   VehicleLocationAd Contains the hours of the office
-  etails/Additiona     ditionalDetails   and the type of location.
-  lInfo                                  
-
-  VehicleLocationA 1   VehicleWhereAtFac Informs the type of location where
-  dditionalDetails     ilityType         the office is located.
-  /ParkLocation                          
-
-  VehicleWhereAtFa 1   eVecinityCode     Informs the type of location where
-  cilityType/Locat                       the office is located.
-  ion                                    
-
-  VehicleLocationA 1   OperationSchedule Informs the office hours.
-  dditionalDetails     s                 
-  /OperationSchedu                       
-  les                                    
-
-  OperationSchedul 1.. OperationSchedule Informs the office hours.
-  es/OperationSche n                     
-  dule                                   
-
-  OperationSchedul 1   DateTime          Date in which this operationTimes
-  e/Start                                become valid.
-
-  OperationSchedul 1   Date in which     
-  e/End                this              
-                       operationTimes    
-                       are no longer     
-                       valid.            
-
-  OperationSchedul 1   List of           List of operationTime.
-  e/OperationTimes     operationTime     
-
-  OperationTimes/O 1.. OperationTime     Each OperationTime indicate the
-  perationTime     n                     office hours and the days of the
-                                         week subject to these hours.
-
-  @OperationTime/S 1   String            Opening time of the office in hh:mm
-  tart                                   format.
-
-  @OperationTime/E 1   String            Closing time of the office in hh:mm
-  nd                                     format.
-
-  @OperationTime/M 1   Boolean           Boolean that indicates if this
-  on                                     hours correspond to Mondays.
-
-  @OperationTime/T 1   Boolean           Boolean that indicates if this
-  ue                                     hours correspond to Tuesdays.
-
-  @OperationTime/W 1   Boolean           Boolean that indicates if this
-  eds                                    hours correspond to Wednesday.
-
-  @OperationTime/T 1   Boolean           Boolean that indicates if this
-  hur                                    hours correspond to Thursdays.
-
-  @OperationTime/F 1   Boolean           Boolean that indicates if this
-  ri                                     hours correspond to Fridays.
-
-  @OperationTime/S 1   Boolean           Boolean that indicates if this
-  at                                     hours correspond to Saturdays.
-
-  @OperationTime/S 1   Boolean           Boolean that indicates if this
-  un                                     hours correspond to Sundays.
-
-  VehicleMatchedLo 1   VehicleLocationDe Containts details of the location
-  cation/VehLocSea     tails             of the office.
-  rchCriterion                           
-  --------------------------------------------------------------------------
-
-|

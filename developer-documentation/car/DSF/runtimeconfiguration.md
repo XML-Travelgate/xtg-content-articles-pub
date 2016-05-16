@@ -32,7 +32,7 @@ The response contains a list of "attribute".
 RunTimeConfigurationRQ Example
 ==============================
 
-:
+
 
     <RunTimeConfigurationRQ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <timeoutMilliseconds>999999</timeoutMilliseconds>

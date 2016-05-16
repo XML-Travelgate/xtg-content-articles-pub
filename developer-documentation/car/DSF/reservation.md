@@ -22,7 +22,7 @@ Remarks
 OTA VehResRQ Example
 ====================
 
-:
+
 
     <OTA_VehResRQ>
     <timeoutMilliseconds>60000</timeoutMilliseconds>
@@ -87,131 +87,43 @@ The request format works the same way as the OTA VehRateRule request.
 The main difference is that in addition to vehicle information, it is
 also necessary the customer information.
 
-  -------------------------------------------------------------------------
-  Element  Nu Type         Description
-           mb              
-           er              
-  -------- -- ------------ ------------------------------------------------
-  OTA\_Veh 1               Root Node
-  ResRQ                    
+|
 
-  OTA\_Veh 1  Pos          Contains information of the Point Of Sale.
-  ResRQ/PO                 
-  S                        
-
-  OTA\_Veh 1  VehResRQCore Includes information about the customer and the
-  ResRQ/Ve                 rental, such as dates, model, locations.
-  hResRQCo                 
-  re                       
-
-  VehResRQ 1  eInventorySt Status of the option. It's possible values are
-  Core/Sta    atus         Available, OnRequest and All.
-  tus                      
-
-  VehResRQ 1  VehRentalCor Contains the dates and locations of the rental.
-  Core/Veh    e            
-  RentalCo                 
-  re                       
-
-  VehResRQ 1  CustomerPrim Information of the customer.
-  Core/Cus    aryAdditiona 
-  tomer       l            
-
-  VehResRQ 1  CompanyNameP Name of the rental company.
-  Core/Ven    ref          
-  dorPref                  
-
-  VehResRQ 1  Identifies   
-  Core/Ven    the company  
-  dorPref/    that offers  
-  Code        the option.  
-
-  VehResRQ 1  VehiclePref  Information of the rented car.
-  Core/Veh                 
-  Pref                     
-
-  VehResRQ 1  DriverType   Indicates the age of the driver.
-  Core/Dri                 
-  verType                  
-
-  DriverTy 1  Integer      The age of the driver.
-  pe/Age                   
-
-  VehResRQ 1  RateQualifie Information about the selected rate.
-  Core/Rat    r            
-  eQualifi                 
-  er                       
-
-  VehResRQ 1  VehicleTotal Indicates the total cost of the rental.
-  Core/Tot    ChargeGroup  
-  alCharge                 
-
-  VehResRQ 1  UniqueID     It has the UniqueID that identifies the
-  Core/Uni                 reservation for the provider to cancel it.
-  queID                    
-
-  @UniqueI 1  String       ID of the locator that identifies the booking.
-  D/ID                     
-
-  @UniqueI 1  eUniqueIdTyp Type of locator. It's possible values are
-  D/Type      e            CUSTOMER (if sent from a customer agency),
-                           CORPORATIONREPRESENTATIVE (if sent by a third
-                           party company), COMPANY (if sent by the provider
-                           company).
-
-  VehResRQ 1  TPAExtension Contains an Atributos object.
-  Core/TPA    s            
-  Extensio                 
-  ns                       
-
-  OTA\_Veh 1  VehResRQInfo Contains information about the credit card. It's
-  ResRQ/Ve                 only mandatory when a credit card payment is
-  hResRQIn                 needed.
-  fo                       
-
-  VehResRQ 1  ArrivalDetai Currently unused.
-  Info/Arr    ls           
-  ivalDeta                 
-  ils                      
-
-  VehResRQ 1  RentalPaymen Contains information needed if a card is
-  Info/Ren    tPref        required.
-  talPayme                 
-  ntPref                   
-
-  RentalPa 1  PaymentCard  Contains the information of the card for the
-  ymentPre                 payment.
-  f/Paymen                 
-  tCard                    
-
-  PaymentC 1  CardType     Indicates the type of card. It represents if the
-  ard/Card                 card is Credit, Debit of a Central bill.
-  Type                     
-
-  PaymentC 1  String       Card code in the provider's format. Example:
-  ard/Card                 "VI" for Visa.
-  Code                     
-
-  PaymentC 1  String       The number that identifies the card.
-  ard/Card                 
-  Number                   
-
-  PaymentC 1  String       The month and year of expiration of the card in
-  ard/Expi                 mmYY format.
-  reDate                   
-
-  PaymentC 1  The name     Indicates the owner of the reservation.
-  ard/Card    that appears 
-  HolderNa    on the card  
-  me                       
-  -------------------------------------------------------------------------
+| **Element**					| **Number**	| **Type**	| **Description**								|
+| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------------------------------- |
+| OTA_VehResRQ					| 1             |		| Root Node.				|
+| OTA_VehResRQ/POS				| 1 		| Pos         	| Contains information of the Point Of Sale.		|
+| OTA_VehResRQ/VehResRQCore			| 1 		| VehResRQCore	| Includes information about the customer and the rental, such as dates, model, locations.	|
+| VehResRQCore/Status				| 1 		| eInventoryStatus | Status of the option. It's possible values are Available, OnRequest and All.  	|
+| VehResRQCore/VehRentalCore			| 1 		| VehRentalCore	| Contains the dates and locations of the rental. 	|
+| VehResRQCore/Customer				| 1 		| CustomerPrimary Additional | Information of the customer.		|
+| VehResRQCore/VendorPref			| 1 		| CompanyNamePref | Name of the rental company. 			|
+| VehResRQCore/VendorPref/Code			| 1 		|		| Identifies the company that offers the option.  	|
+| VehResRQCore/VehPref				| 1 		| VehiclePref 	| Information of the rented car.			|
+| VehResRQCore/DriverType			| 1 		| DriverType  	| Indicates the age of the driver.			|
+| DriverType/Age				| 1 		| Integer     	| The age of the driver.      				|
+| VehResRQCore/RateQualifier			| 1 		| RateQualifier	| Information about the selected rate.			|
+| VehResRQCore/TotalCharge			| 1 		| VehicleTotal ChargeGroup | Indicates the total cost of the rental.  	|
+| VehResRQCore/UniqueID				| 1 		| UniqueID    	| It has the UniqueID that identifies the reservation for the provider to cancel it.	|
+| @UniqueID/ID					| 1 		| String      	| ID of the locator that identifies the booking. 	|
+| @UniqueID/Type				| 1 		| eUniqueIdType	| Type of locator. It's possible values are CUSTOMER (if sent from a customer agency), CORPORATIONREPRESENTATIVE (if sent by a third party company), COMPANY (if sent by the provider company). 	|
+| VehResRQCore/TPAExtensions			| 1 		| TPAExtensions	| Contains an Atributos object.          	|
+| OTA_VehResRQ/VehResRQInfo			| 1 		| VehResRQInfo	| Contains information about the credit card. It's only mandatory when a credit card payment is needed.  	|
+| VehResRQInfo/ArrivalDetails			| 1 		| ArrivalDetails | Currently unused.			|
+| VehResRQInfo/RentalPaymentPref		| 1 		| RentalPaymentPref | Contains information needed if a card is required.		|
+| RentalPaymentPref/PaymentCard 		| 1 		| PaymentCard 	| Contains the information of the card for the payment.		|
+| PaymentCard/CardType				| 1 		| CardType    	| Indicates the type of card. It represents if the card is Credit, Debit of a Central bill.	|
+| PaymentCard/CardCode				| 1 		| String      	| Card code in the provider's format. Example: "VI" for Visa.	|
+| PaymentCard/CardNumber			| 1 		| String      	| The number that identifies the card.		|
+| PaymentCard/ExpireDate			| 1 		| String      	| The month and year of expiration of the card in mmYY format.		|
+| PaymentCard/CardHolderName			| 1 		| The name that appears on the card | Indicates the owner of the reservation.		|
 
 |
 
 OTA VehResRS Example
 ====================
 
-:
+
 
     <OTA_VehResRS>   
         <auditData>
@@ -249,55 +161,20 @@ The result returns a list of ConfID (booking codes). It can be the
 supplier's or the one sent in the request. It also returns all the
 charges associated to the booking.
 
-  -------------------------------------------------------------------------
-  Element      Nu Type    Description
-               mb         
-               er         
-  ------------ -- ------- -------------------------------------------------
-  OTA\_VehResR 1          Root Node
-  S                       
-
-  OTA\_VehResR 1  VehResR Contains the information of the reservation.
-  S/vehResRSCo    SCore   
-  re                      
-
-  VehResRSCore 1  Vehicle Contains information about the reservation.
-  /VehReservat    Reserva 
-  ion             tion    
-
-  VehicleReser 1  VehSegm Contains the confID that identifies the booking,
-  vation/VehSe    entCore the selected vehicle and the total charge.
-  gmentCore               
-
-  VehicleSegme 1  List of Contains the confID that identifies the booking,
-  ntCore/ConfI    ConfID  the selected vehicle and the total charge.
-  D                       
-
-  @ConfID/ID   1  String  ID of the locator that identifies the booking.
-
-  @ConfID/Type 1  eUnique Type of locator. It's possible values are
-                  Type    CUSTOMER (if sent from a customer agency),
-                          CORPORATIONREPRESENTATIVE (if sent by a third
-                          party company), COMPANY (if sent by the provider
-                          company).
-
-  VehicleSegme 1  Company Indicates the Company that rents the car.
-  ntCore/Vendo    Name    
-  r                       
-
-  VehicleSegme 1  Vehicle Contains information about the vehicle.
-  ntCore/Vehic            
-  le                      
-
-  VehicleSegme 1  Vehicle Indicates the total charge of the rental returned
-  ntCore/Vehic    TotalCh by the provider.
-  leTotalCharg    argeGro 
-  eGroup          up      
-
-  VehicleReser 1  eTransa Indicates the status of the reservation.
-  vation/Reser    ctionSt 
-  vationStatus    atusTyp 
-                  e       
-  -------------------------------------------------------------------------
-
 |
+ 
+| **Element**					| **Number**	| **Type**	| **Description**								|
+| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------------------------------- |
+| OTA_VehResRS					| 1         	|		| Root Node.					|
+| OTA_VehResRS/vehResRSCore			| 1 		| VehResRSCore	| Contains the information of the reservation.          |
+| VehResRSCore/VehReservation			| 1 		| VehicleReservation | Contains information about the reservation.	|
+| VehicleReservation/VehSegmentCore		| 1 		| VehSegmentCore | Contains the confID that identifies the booking, the selected vehicle and the total charge.	|
+| VehicleSegmentCore/ConfID			| 1 		| List of ConfID | Contains the confID that identifies the booking, the selected vehicle and the total charge.	|
+| @ConfID/ID  					| 1  		| String 	| ID of the locator that identifies the booking.	|
+| @ConfID/Type					| 1 		| eUniqueType	| Type of locator. It's possible values are CUSTOMER (if sent from a customer agency), CORPORATIONREPRESENTATIVE (if sent by a third party company), COMPANY (if sent by the provider company). 	|
+| VehicleSegmentCore/Vendor			| 1 		| CompanyName	| Indicates the Company that rents the car.	|
+| VehicleSegmentCore/Vehicle			| 1 		| Vehicle	| Contains information about the vehicle.  	|
+| VehicleSegmentCore/VehicleTotalChargeGroup	| 1 		| VehicleTotal ChargeGroup | Indicates the total charge of the rental returned by the provider.	|
+| VehicleReservation/ReservationStatus		| 1 		| eTransaction StatusType | Indicates the status of the reservation.	|
+       
+

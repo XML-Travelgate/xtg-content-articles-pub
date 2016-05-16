@@ -24,7 +24,7 @@ Some suppliers do not implement this method.
 OTA VehRetResRQ Example
 =======================
 
-:
+
 
     <OTA_VehRetResRQ>
         <POS>
@@ -50,33 +50,20 @@ The request requires the UniqueID (locator) of the reservation and the
 name of the customer to identify the reservation and retrieve its
 information.
 
-  ------------------------------------------------------------------------
-  Element        Numb Type    Description
-                 er           
-  -------------- ---- ------- --------------------------------------------
-  OTA\_VehRetRes 1            Root Node
-  RQ                          
-
-  OTA\_VehRetRes 1    Pos     Contains information of the Point Of Sale.
-  RQ/POS                      
-
-  OTA\_VehRetRes 1    VehRetR Contains the locator and the name of the
-  RQ/VehRetResRQ      esRQCor customer in order to identify and retrieve
-  Core                e       the booking information.
-
-  VehRetResRQCor 1    UniqueI It has the UniqueID that identifies the
-  e/UniqueID          D       reservation for the provider to cancel it.
-
-  VehRetResRQCor 1    PersonN Contains the name of the customer that made
-  e/PersonName        ame     the reservation.
-  ------------------------------------------------------------------------
+| **Element**				| **Number**	| **Type**	| **Description**					|
+| ------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| OTA_VehRetResRQ			| 1           	|		| Root Node. 				|
+| OTA_VehRetResRQ/POS			| 1   		| Pos    	| Contains information of the Point Of Sale.		|
+| OTA_VehRetResRQ /VehRetResRQCore	| 1   		| VehRetResRQCore | Contains the locator and the name of the customer in order to identify and retrieve the booking information.	|
+| VehRetResRQCore/UniqueID		| 1   		| UniqueID	| It has the UniqueID that identifies the reservation for the provider to cancel it.	|
+| VehRetResRQCore/PersonName		| 1   		| PersonName	| Contains the name of the customer that made the reservation.		|
 
 |
 
 OTA\_VehRetResRS Example
 ========================
 
-:
+
 
     <OTA_VehRetResRS>
         <Success/>
@@ -113,17 +100,11 @@ OTA VehRetResRS Description
 The result returns the full details of a booking. It is very similar to
 the OTA VehRes Response.
 
-  -------------------------------------------------------------------------
-  Element                Numbe Type            Description
-                         r                     
-  ---------------------- ----- --------------- ----------------------------
-  OTA\_VehRetResRS       1                     Root Node
-
-  OTA\_VehRetResRS/VehRe 1     VehicleRetrieve Contains the information of
-  tResRSCore                   ResRSCore       the retrieved booking.
-
-  VehicleRetrieveResRSCo 1     VehicleReservat Contains the information of
-  re/VehReservation            ion             the retrieved booking.
-  -------------------------------------------------------------------------
-
 |
+
+| **Element**					| **Number**	| **Type**	| **Description**					|
+| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| OTA_VehRetResRS      				| 1             |       	| Root Node.						|
+| OTA_VehRetResRS /VehRetResRSCore		| 1    		| Vehicle RetrieveResRSCore | Contains the information of the retrieved booking.	|
+| VehicleRetrieveResRSCore /VehReservation	| 1     	| Vehicle Reservation | Contains the information of the retrieved booking.	|
+

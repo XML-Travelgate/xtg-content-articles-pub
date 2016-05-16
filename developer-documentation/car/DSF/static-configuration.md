@@ -33,7 +33,7 @@ configure the integration.
 StaticConfigurationRQ Example
 =============================
 
-:
+
 
     <StaticConfigurationRQ xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
         <timeoutMilliseconds>999999</timeoutMilliseconds>
@@ -66,7 +66,7 @@ StaticConfigurationRQ Description
 StaticConfigurationRS Example
 =============================
 
-:
+
 
     <StaticConfigurationRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
         <operationImplemented>true</operationImplemented>
