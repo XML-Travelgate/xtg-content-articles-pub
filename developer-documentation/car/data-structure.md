@@ -35,44 +35,41 @@ Inside this node travels the current method's Input object.
 Typical use case of message exchange flow between Providers and Sellers
 can be resumed as:
 
+|
+
 1.  **Retrieve and purchase of car rental product**:
 
     > 1.  Agencies retrieve the available product from the provider
-    >     using OTA\_VehAvailRate.
+    >     using OTA_VehAvailRate.
     > 2.  Once the final customer selects an option, a pre-booking must
-    >     be done using OTA\_VehRateRule.
+    >     be done using OTA_VehRateRule.
     > 3.  Finally when the customer agrees purchasing the option, the
-    >     booking is created using OTA\_VehRes.
+    >     booking is created using OTA_VehRes.
 
 2.  **Manage Bookings:**
 
     > 1.  The information related to a booking previously created can be
-    >     retrieved usingOTA\_VehRetRes.
+    >     retrieved usingOTA_VehRetRes.
     > 2.  A previously made reservation can be cancelled
-    >     usingOTA\_VehCancel.
+    >     usingOTA_VehCancel.
 
 3.  **Office Mapping:**
 
     > 1.  Agencies can retrieve the available offices
-    >     usingOTA\_VehLocSearch.
+    >     usingOTA_VehLocSearch.
 
 |
 
 **Data structure content:**
 
-> maxdepth
->
-> :   3
->
-> numbered
->
-> :   
->
-> Common Elements\<./DSF/common-elements.rst\>
-> OTA\_VehAvailRate\<./DSF/avail.rst\>
-> OTA\_VehRateRule\<./DSF/rate-rule.rst\>
-> OTA\_VehRes\<./DSF/reservation.rst\> OTA\_VehLocSearch
-> \<./DSF/routes.rst\> OTA\_VehRetRes\<./DSF/valuation.rst\>
-> OTA\_VehCancel\<./DSF/cancel.rst\> Static configuration
-> \<./DSF/static-configuration.rst\> Run Time Configuration
-> \<./DSF/runtimeconfiguration.rst\> Code Lists \<./DSF/code-lists\>
+1. [Common-Elements](/developer-documentation/car/DSF/common-elements)
+2. [Availability](/developer-documentation/car/DSF/avail)
+3. [Pre-Booking (Rate Rule)](/developer-documentation/car/DSF/rate-rule)
+4. [Booking](/developer-documentation/activities/DSF/reservation)
+5. [Routes (Offices)](/developer-documentation/car/DSF/routes)
+6. [OTA VehRetRes (GetBooking Details)](/developer-documentation/car/DSF/valuation)
+7. [Cancel Booking](/developer-documentation/car/DSF/cancel)
+8. [StaticConfiguration](/developer-documentation/car/DSF/static-configuration)
+9. [RunTimeConfiguration](/developer-documentation/car/DSF/runtimeconfiguration)
+10. [Code List](/developer-documentation/car/DSF/code-lists)
+

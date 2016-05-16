@@ -1,6 +1,9 @@
 ---
-title: 'OTA VehAvailRate (Availability)'
-...
+title: Availability
+keywords: transfers, data structure, availability
+sidebar: mydoc_sidebar
+permalink: /developer-documentation/car/DSF/avail
+---
 
 |
 
@@ -22,7 +25,7 @@ This method **must** be called **before** the OTA VehRateRule method.
 OTA VehAvailRateRQ Example
 ==========================
 
-:
+
 
     <OTA_VehAvailRateRQ>
         <timeoutMilliseconds>60000</timeoutMilliseconds>
@@ -73,26 +76,17 @@ The availability request is very straight forward. It only requires the
 offices (airport ISO code, office code or city code), the required dates
 and a few other optional filters.
 
-  -------------------------------------------------------------------------
-  Element      Nu Type    Description
-               mb         
-               er         
-  ------------ -- ------- -------------------------------------------------
-  OTA\_VehAvai 1          Root Node
-  lRateRQ                 
+|
 
-  OTA\_VehAvai 1  Configu Configuration needed to send the transaction to
-  lRateRQ/Conf    racionP the provider.
-  iguration       roveedo 
-                  r       
+| **Element**				| **Number**	| **Type**	| **Description**				|
+| ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
+| OTA_VehAvailRateRQ			| 1         	|		| Root Node.					|
+| OTA_VehAvailRateRQ/Configuration	| 1 		| ConfiguracionProveedor | Configuration needed to send the transaction to racionP the provider.  |
+| OTA_VehAvailRateRQ/ClientConfiguration | 1		| ConfiguracionCliente | Client configuration information. 	|
 
-  OTA\_VehAvai 1  Configu Client configuration information
-  lRateRQ/Clie    racionC 
-  ntConfigurat    liente  
-  ion                     
 
-  OTA\_VehAvai 1  Pos     Contains information of the Point Of Sale.
-  lRateRQ/POS             
+  OTA_VehAvailRateRQ/POS 1  Pos     Contains information of the Point Of Sale.
+               
 
   OTA\_VehAvai 1. List of Contains a list of SourceOTA
   lRateRQ/Pos/ .n SourceO 
