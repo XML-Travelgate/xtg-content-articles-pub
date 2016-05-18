@@ -27,7 +27,6 @@ provider.
 HotelListRQ Example
 ===================
 
-:
 
     <HotelListRQ xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
         <timeoutMilliseconds>900000</timeoutMilliseconds>
@@ -60,19 +59,16 @@ HotelListRQ Description
 
 The request just contains the elements of BaseRQ.
 
-  ------------------------------------------------------------------------
-  Element             Num Type     Description
-                      ber          
-  ------------------- --- -------- ---------------------------------------
-  HotelListRQ         1            Root node.
-  ------------------------------------------------------------------------
+| **Element**		| **Number**	| **Type**	| **Description**		|
+| --------------------- | ------------- | ------------- | ----------------------------- |
+| HotelListRQ        	| 1           	|		| Root node.			|
 
 |
 
 HotelListRS Example
 ===================
 
-:
+
 
     <HotelListRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
         <auditData>
@@ -119,67 +115,27 @@ destination in the provider's system. Each of the retrieved Hotel
 objects contain a basic information that make possible the corresponding
 mapping on the client's system.
 
-  -------------------------------------------------------------------------
-  Element      Num Type      Description
-               ber           
-  ------------ --- --------- ----------------------------------------------
-  HotelListRS  1             Root Node
-
-  HotelListRS/ 1.. Hotel     Contains a list of hotels. Each hotel provides
-  Hotel        n             a basic information in order to make possible
-                             the mapping.
-
-  @Hotel/code  1   String    Contains the code that must be used in
-                             Availability in order to Search for this
-                             location.
-
-  @Hotel/name  1   String    It is the full name of the Hotel in the
-                             provider's system.
-
-  @Hotel/type  1   String    Indicates the category of the hotel. this
-                             information is specified by the provider
-
-  @Hotel/addre 1   String    Contains the full address of the hotel.
-  ss                         
-
-  @Hotel/town  1   String    Indicates the town where the hotel belongs.
-
-  @Hotel/posta 1   String    Indicates the postal code where the hotel
-  lCode                      belongs.
-
-  @Hotel/ISOCo 1   String    Indicates the country of the hotel in ISO
-  untryCode                  format.
-
-  @Hotel/lat   1   String    Indicates the latitude coordinate of the
-                             hotel.
-
-  @Hotel/log   1   String    Indicates the longitude coordinate of the
-                             hotel.
-
-  @Hotel/Minim 1   MinimumLe Contains information of the lower level
-  umLevelDesti     velDestin destination that contains this hotel as a
-  nation           ation     child. Not always this information is
-                             provided.
-
-  @MinimumLeve 1   String    Indicates the code of the destination.
-  lDestination               
-  /code                      
-
-  @MinimumLeve 1   String    Indicates the name of the destination.
-  lDestination               
-  /name                      
-
-  @Hotel/Conta 1   ContactIn Contains the information necessary to contact
-  ctInfo           fo        the hotel.
-
-  @ContactInfo 1   String    Indicates the email.
-  /email                     
-
-  @ContactInfo 1   String    Indicates the phone number of the hotel.
-  /PhoneNmbr                 
-
-  @ContactInfo 1   String    Indicates the fax of the hotel.
-  /Fax                       
-  -------------------------------------------------------------------------
-
 |
+
+| **Element**				| **Number**	| **Type**	| **Description**						|
+| ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
+| HotelListRS 				| 1            	|		| Root Node.							|
+| HotelListRS/Hotel			| 1..n		| Hotel    	| Contains a list of hotels. Each hotel provides a basic information in order to make possible the mapping.	|
+| @Hotel/code 				| 1  		| String   	| Contains the code that must be used in Availability in order to Search for this location.	|
+| @Hotel/name 				| 1  		| String   	| It is the full name of the Hotel in the provider's system.	|
+| @Hotel/type 				| 1  		| String   	| Indicates the category of the hotel. this information is specified by the provider.	|
+| @Hotel/address			| 1  		| String   	| Contains the full address of the hotel. 			|
+| @Hotel/town 				| 1  		| String   	| Indicates the town where the hotel belongs.			|
+| @Hotel/postalCode			| 1  		| String   	| Indicates the postal code where the hotel belongs.		|
+| @Hotel/ISOCountryCode			| 1  		| String   	| Indicates the country of the hotel in ISO format.		|
+| @Hotel/lat  				| 1  		| String   	| Indicates the latitude coordinate of the hotel.		|
+| @Hotel/log  				| 1  		| String   	| Indicates the longitude coordinate of the hotel.		|
+| @Hotel/MinimumLevelDestination	| 1  		| MinimumLevel Destination | Contains information of the lower level destination that contains this hotel as a child. Not always this information is provided.	|
+| @MinimumLevelDestination/code		| 1  		| String   	| Indicates the code of the destination.			|
+| @MinimumLevelDestination/name		| 1  		| String   	| Indicates the name of the destination.			|
+| @Hotel/ContactInfo			| 1  		| ContactInfo	| Contains the information necessary to contact the hotel.	|
+| @ContactInfo/email			| 1  		| String   	| Indicates the email.						|
+| @ContactInfo/PhoneNmbr		| 1  		| String   	| Indicates the phone number of the hotel.			|
+| @ContactInfo/Fax			| 1  		| String   	| Indicates the fax of the hotel.				|
+                         
+

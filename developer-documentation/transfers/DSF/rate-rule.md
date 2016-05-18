@@ -23,15 +23,14 @@ Remarks
 
 Some suppliers do not provide this method. If this is the case, our
 integration will internally call an Availability method and will filter
-the results in order to refresh the information and produce a RateRuleRS
-.
+the results in order to refresh the information and produce a RateRuleRS.
 
 |
 
 RateRule RQ Example
 ===================
 
-:
+
 
     <RateRuleRQ>
        <timeoutMilliseconds>60000</timeoutMilliseconds>
@@ -128,99 +127,36 @@ The RateRule request requires the following information:
 -   The selected rates with their corresponding selected options.
 -   The passengers of the booking.
 
-  --------------------------------------------------------------------------
-  Element    Nu Type  Description
-             mb       
-             er       
-  ---------- -- ----- ------------------------------------------------------
-  RateRuleRQ 1        Root Node
-
-  RateRuleRQ 1  Selec Contains a list with the selected rates from
-  /SelectedR    tedRa availability response.
-  ates          tes   
-
-  RateRuleRQ 1. Selec Contains a list of SelectedRate.
-  /SelectedR .n tedRa 
-  ates/Selec    te    
-  tedRate             
-
-  @SelectedR 1  Integ This id identifies the rate.
-  ate/id        er    
-
-  @SelectedR 1  Strin Contains the code of the rate if the provider returns
-  ate/code      g     it.
-
-  @SelectedR 1  Strin Contains the code of the provider that offers this
-  ate/provid    g     rate.
-  erCode              
-
-  @SelectedR 1  eRate Indicates if the rate is OW (one-way) or RT (return).
-  ate/rateTy    Type  
-  pe                  
-
-  @SelectedR 1  Selec Contains a list of SelectedOptions that belong to this
-  ate/Select    tedOp rate.
-  edOptions     tions 
-
-  @SelectedR 1. Selec Contains a list of SelectedOption.
-  ate/Select .n tedOp 
-  edOptions/    tion  
-  SelectedOp          
-  tion                
-
-  @SelectedO 1  Strin Indicates the status of the option if the provider
-  ption/stat    g     returns this information. This is a plain text of the
-  us                  status returned by the provider, this means that each
-                      provider may send it's own status codes/messages.
-
-  @SelectedO 1  Integ This code identifies the option.
-  ption/id      er    
-
-  @SelectedO 1  Segme Contains the segment which is served with this option.
-  ption/Segm    nt    
-  ent                 
-
-  @SelectedO 1  Trans Contains a list of different transfers that serve the
-  ption/Tran    fers  segment of this option.
-  sfers               
-
-  @SelectedO 1. Trans Contains a list of transfers which is served with this
-  ption/Tran .n fer   option.
-  sfers/Tran          
-  sfer                
-
-  @SelectedO 1  Param Contains a list of Parameter objects. The parameter
-  ption/Para    eters returned in AvailabilityRS should be received by the
-  meters              integration on RateRuleRQ.
-
-  @SelectedR 1  Price Contains information about the price of this rate. If
-  ate/TotalR          the rate is OW this price correspond to each option
-  ate                 included in this *SelectedRate* object, if the rate is
-                      RT correspond to the pair of options included in this
-                      *SelectedRate* object.
-
-  @SelectedR 1  Cance Contains a list of conditions of the penalties for the
-  ate/Cancel    llati cancellation of the reservation. This object normaly
-  lationPoli    onPol is not used because in this moments the providers not
-  cy            icies return this informacion in *AvailabilityRS*, if there
-                      are any will be returned in *RateRuleRS*.
-
-  RateRuleRQ 1  Passe Contains a list of the passengers that participate in
-  /Passenger    ngers this reservation.
-  s                   
-
-  RateRuleRQ 1. Passe Contains a list of Passenger objects.
-  /Passenger .n nger  
-  s/Passenge          
-  r                   
-  --------------------------------------------------------------------------
+|
+ 
+| **Element**					| **Number**	| **Type**	| **Description**					|
+| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| RateRuleRQ					| 1       	|		| Root Node.						|
+| RateRuleRQ/SelectedRates			| 1 		| SelectedRates	| Contains a list with the selected rates from availability response.	 |
+| RateRuleRQ/SelectedRates/SelectedRate		| 1..n		| SelectedRate	| Contains a list of SelectedRate.			|
+| @SelectedRate/id				| 1	 	| Integer	| This id identifies the rate.				|
+| @SelectedRate/code				| 1 		| String	| Contains the code of the rate if the provider returns it.	|
+| @SelectedRate/providerCode			| 1 		| String	| Contains the code of the provider that offers this rate.	|
+| @SelectedRate/rateType			| 1 		| eRateType	| Indicates if the rate is OW (one-way) or RT (return). |
+| @SelectedRate/SelectedOptions			| 1 		| SelectedOptions | Contains a list of SelectedOptions that belong to this rate.	|
+| @SelectedRate/SelectedOptions/SelectedOption	| 1..n		| SelectedOption | Contains a list of SelectedOption.			|
+| @SelectedOption/status			| 1 		| String	| Indicates the status of the option if the provider returns this information. This is a plain text of the status returned by the provider, this means that each provider may send it's own status codes/messages.	|
+| @SelectedOption/id				| 1 		| Integer	| This code identifies the option.			|
+| @SelectedOption/Segment			| 1 		| Segment	| Contains the segment which is served with this option.	|
+| @SelectedOption/Transfers			| 1 		| Transfers	| Contains a list of different transfers that serve the segment of this option.		|
+| @SelectedOption/Transfers/Transfer		| 1..n		| Transfer	| Contains a list of transfers which is served with this option.	|
+| @SelectedOption/Parameters			| 1 		| Parameters	| Contains a list of Parameter objects. The parameter returned in AvailabilityRS should be received by the integration on RateRuleRQ.	|
+| @SelectedRate/TotalRate			| 1 		| Price		| Contains information about the price of this rate. If the rate is OW this price correspond to each option included in this *SelectedRate* object, if the rate is RT correspond to the pair of options included in this *SelectedRate* object.		|
+| @SelectedRate/CancellationPolicy		| 1 		| CancellationPolicies | Contains a list of conditions of the penalties for the cancellation of the reservation. This object normaly is not used because in this moments the providers not return this informacion in *AvailabilityRS*, if there are any will be returned in *RateRuleRS*.		|
+| RateRuleRQ/Passengers				| 1 		| Passengers	| Contains a list of the passengers that participate in this reservation.	|
+| RateRuleRQ/Passengers/Passenger		| 1..n		| Passenger	| Contains a list of Passenger objects.			|
 
 |
 
 RateRuleRS Example
 ==================
 
-:
+
 
     <RateRuleRS>
         <auditData>
@@ -305,38 +241,16 @@ list of SelectedRate . This object is almost the same as a Rate but it
 contains the transfer information instead of just a reference and it
 contains messages with important information from the provider.
 
-  -------------------------------------------------------------------------
-  Element              Num Type  Description
-                       ber       
-  -------------------- --- ----- ------------------------------------------
-  RateRuleRS           1         Root Node
-
-  RateRuleRS/SelectedR 1   Selec Contains a list of the requested selected
-  ates                     tedRa rates. The information of this rates is
-                           tes   refreshed with the new information
-                                 received from the provider.
-
-  RateRuleRS/SelectedR 1.. Selec Contains a list of SelectedRate.
-  ates/SelectedRate    n   tedRa 
-                           te    
-
-  @SelectedRate/Select 1   InfoT Contains information related to the
-  edOptions/SelectedOp     ransf vehicle that operates the transfer.
-  tion/Transfers/Trans     er    
-  fer/Info                       
-
-  @InfoTransfer/vendor 1.. vendo Contains vendorMessage objects that have
-  Messages             n   rMess important information about the transfer.
-                           age   
-
-  @vendorMessage/Langu 1   Strin Indicates the language in which the text
-  age                      g     is written.
-
-  @vendorMessage/Tittl 1   Strin Tittle of the message
-  e                        g     
-
-  @vendorMessage/Text  1   Strin Contains the text.
-                           g     
-  -------------------------------------------------------------------------
-
 |
+ 
+| **Element**					| **Number**	| **Type**	| **Description**					|
+| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| RateRuleRS          				| 1        	|		| Root Node.						|
+| RateRuleRS/SelectedRates			| 1  		| SelectedRates	| Contains a list of the requested selected rates. The information of this rates is refreshed with the new information received from the provider.	|
+| RateRuleRS/SelectedRates /SelectedRate	| 1..n		| SelectedRate	| Contains a list of SelectedRate.			|
+| @SelectedRate/SelectedOptions /SelectedOption/Transfers /Transfer/Info | 1 | InfoTransfer | Contains information related to the vehicle that operates the transfer.	|
+| @InfoTransfer/vendorMessages			| 1..n		| vendorMessage	| Contains vendorMessage objects that have important information about the transfer.	|
+| @vendorMessage/Language			| 1  		| String	| Indicates the language in which the text is written.	|
+| @vendorMessage/Tittle				| 1  		| String	| Tittle of the message.				|
+| @vendorMessage/Text 				| 1  		| String	| Contains the text.					|
+

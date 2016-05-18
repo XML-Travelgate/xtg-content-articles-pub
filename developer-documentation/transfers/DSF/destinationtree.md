@@ -27,7 +27,7 @@ defined by the provider.
 DestinationsTreeRQ Example
 ==========================
 
-:
+
 
     <DestinationsTreeRQ>
         <timeoutMilliseconds>60000</timeoutMilliseconds>
@@ -58,19 +58,16 @@ DestinationsTreeRQ Description
 
 The request just contains the elements of BaseRQ.
 
-  ------------------------------------------------------------------------
-  Element             Num Type     Description
-                      ber          
-  ------------------- --- -------- ---------------------------------------
-  DestinationsTreeRQ  1            Root node.
-  ------------------------------------------------------------------------
+| **Element**			| **Number**	| **Type**	| **Description**		|
+| ----------------------------- | ------------- | ------------- | ----------------------------- |
+| DestinationsTreeRQ 		| 1           	|		| Root node.			|
 
 |
 
 DestinationsTreeRS Example
 ==========================
 
-:
+
 
     <DestinationsTreeRS>
         <auditData>
@@ -123,49 +120,18 @@ destinations that hang from that "Parent" destination. Usually not all
 Destination are available for booking so we added the boolean avail that
 indicates if this code can be used on the Availability method.
 
-  --------------------------------------------------------------------------
-  Element   Num Type  Description
-            ber       
-  --------- --- ----- ------------------------------------------------------
-  Destinati 1         Root Node
-  onsTreeRS           
-
-  Destinati 1.. Desti Contains a list of Destinations. Each destination
-  onsTreeRS n   natio contains its own information and a list of children
-  /Destinat     n     (destinations of a lower level that belong to this
-  ion                 destination).
-
-  @Destinat 1   Strin Contains the code that must be used in Availability in
-  ion/code      g     order to Search for this location.
-
-  @Destinat 1   Strin It is the full name of the destination in the
-  ion/name      g     provider's system.
-
-  @Destinat 1   eLoca Indicates the type of location. This information must
-  ion/type      tionT be sent in the AvailabilityRQ too. The possible values
-                ype   are: **CTY**; **ZON**; **ARP**; **STA**; **PRT**;
-                      **HOT**; **PDI** and **OTH**.
-
-  @Destinat 1   Boole Indicates if this code can be used on the Availability
-  ion/avail     an    method in order to obtain results.
-
-  @Destinat 0.. Child Contains a list of children (destinations of a lower
-  ion/Child n         level that belong to this destination).
-
-  @Child/co 1   Strin Indicates the destination code of the child. The
-  de            g     information of the child is explained in the specific
-                      destination with this code.
-
-  @Destinat 1   Posit This object contains the geolocation coordinates of
-  ion/Posit     ion   the destination.
-  ion                 
-
-  @Position 1   Strin Indicates latitude value of geolocation.
-  /latitude     g     
-
-  @Position 1   Strin Indicates longitude value of geolocation.
-  /longitud     g     
-  e                   
-  --------------------------------------------------------------------------
-
 |
+
+| **Element**				| **Number**	| **Type**	| **Description**						|
+| ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
+| DestinationsTreeRS			| 1        	|		| Root Node.							|
+| DestinationsTreeRS/Destination	| 1..n		| Destination	| Contains a list of Destinations. Each destination contains its own information and a list of children (destinations of a lower level that belong to this destination).	|
+| @Destination/code			| 1  		| String	| Contains the code that must be used in Availability in order to Search for this location.	|
+| @Destination/name			| 1  		| String	| It is the full name of the destination in the provider's system.	|
+| @Destination/type			| 1  		| eLocationType	| Indicates the type of location. This information must be sent in the AvailabilityRQ too. The possible values are: **CTY**; **ZON**; **ARP**; **STA**; **PRT**; **HOT**; **PDI** and **OTH**.		|
+| @Destination/avail			| 1  		| Boolean	| Indicates if this code can be used on the Availability method in order to obtain results.	|
+| @Destination/Child			| 0..n		| Child		| Contains a list of children (destinations of a lower level that belong to this destination).	|
+| @Child/code				| 1  		| String	| Indicates the destination code of the child. The information of the child is explained in the specific destination with this code.	|
+| @Destination/Position			| 1  		| Position	| This object contains the geolocation coordinates of the destination.	|
+| @Position/latitude			| 1  		| String	| Indicates latitude value of geolocation.			|
+| @Position/longitude			| 1  		| String	| Indicates longitude value of geolocation.			|

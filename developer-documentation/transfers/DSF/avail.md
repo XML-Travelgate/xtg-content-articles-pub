@@ -25,7 +25,7 @@ This method **must** be called **before** the RateRule method.
 AvailabilityRQ Example
 ======================
 
-:
+
 
     <AvailabilityRQ>
         <echoToken>test</echoToken>
@@ -95,124 +95,44 @@ codes and dates. If the segment contains an Hotel destination or an
 Airport destination, extra information must be sent in FlightInfo object
 and HotelInfo object.
 
-  -------------------------------------------------------------------------
-  Element   Nu Type   Description
-            mb        
-            er        
-  --------- -- ------ -----------------------------------------------------
-  Availabil 1         Root Node
-  ityRQ               
+| 
 
-  Availabil 1  Config Configuration needed to send the transaction to the
-  ityRQ/Con    uratio provider.
-  figuratio    nProvi 
-  n            der    
-
-  Availabil 1  Segmen Contains a List of Segment. Each segment represents
-  ityRQ/Seg    ts     the route that a transfer has to do, it contains the
-  ments               origin and destination codes and dates.
-
-  Availabil 1. Segmen Each segment represents the route that a transfer has
-  ityRQ/Seg .n t      to do
-  ments/Seg           
-  ment                
-
-  @Segment/ 1  Intege Integer that contains the ID of the Segment.
-  id           r      
-
-  @Segment/ 1  Locati This location object contains information related to
-  Origin       on     the origin of the transfer.
-
-  @Segment/ 1  Locati This location object contains information related to
-  Destinati    on     the destination of the transfer.
-  on                  
-
-  @Location 1  eLocat Indicates the location type. The possible values are:
-  /type        ionTyp **CTY**(City); **ZON**(Zone); **ARP**(Airport)
-               e      **STA**(Train/Bus station); **PRT**(Port);
-                      **HOT**(Hotel); **PDI**(Point of interest);
-                      **OTH**(Other)
-
-  @Location 1  String Code that identifies the location in the provider's
-  /code               system.
-
-  @Location 1  DateTi Indicates the date associated with this location.
-  /date        me     
-
-  @Location 0. Flight Contains a flight information if this location is an
-  /FlightIn .1 Info   airport.
-  fo                  
-
-  @Location 1  String Indicates the flight number.
-  /FlightIn           
-  fo/flight           
-  Number              
-
-  @Location 1  Termin Contains the information related to the departure
-  /FlightIn    alInfo terminal
-  fo/Depart           
-  ure                 
-
-  @Location 1  Termin Contains the information related to the arrival
-  /FlightIn    alInfo terminal.
-  fo/Arriva           
-  l                   
-
-  @Terminal 1  String Indicates the code that identifies the terminal on
-  Info/term           the providers system.
-  inal                
-
-  @Terminal 1  DateTi Indicates the date in which the customer must arrive
-  Info/date    me     or depart.
-
-  @Location 0. HotelI Contains an hotel information if this location is an
-  /HotelInf .1 nfo    hotel.
-  o                   
-
-  @HotelInf 1  String Indicates the full name of the hotel (as it appears
-  o/name              in the provider's system).
-
-  @HotelInf 1  String Indicates the address of the hotel.
-  o/address           
-
-  Availabil 1  Passen Contains the passengers that are involved in the
-  ityRQ/Pas    gers   reservation.
-  sengers             
-
-  Availabil 1. Passen Contains the passenger information.
-  ityRQ/Pas .n ger    
-  sengers/P           
-  assenger            
-
-  @Passenge 1  Intege This id identifies the passenger.
-  r/id         r      
-
-  @Passenge 1  Intege Indicates the age of the passenger.
-  r/age        r      
-
-  @Passenge 1  RefSeg Contains a list of references to the segments where
-  r/RefSegm    ments  the passenger wants to be transfered.
-  ents                
-
-  @Passenge 1. RefSeg Contains a list of references to segments.
-  r/RefSegm .n ment   
-  ents/RefS           
-  egment              
-
-  @RefSegme 1  Intege This reference represents the id of the segment which
-  nt/refSeg    r      is served with this option.
-  ment                
-
-  @RefSegme 1  Intege Indicates the number of bags carried by the
-  nt/bags      r      passenger.
-  -------------------------------------------------------------------------
+| **Element**					| **Number**	| **Type**	| **Description**					|
+| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| AvailabilityRQ				| 1        	|		| Root Node.						|
+| AvailabilityRQ/Configuration			| 1 		| ConfigurationProvider | Configuration needed to send the transaction to the provider.	|
+| AvailabilityRQ/Segments			| 1 		| Segments	| Contains a List of Segment. Each segment represents the route that a transfer has to do, it contains the origin and destination codes and dates.	|
+| AvailabilityRQ/Segments/Segment		| 1..n		| Segment	| Each segment represents the route that a transfer has to do.	|
+| @Segment/id					| 1 		| Integer	| Integer that contains the ID of the Segment.		|
+| @Segment/Origin				| 1 		| Location	| This location object contains information related to the origin of the transfer.		|
+| @Segment/Destination				| 1 		| Location	| This location object contains information related to the destination of the transfer.	|
+| @Location/type				| 1 		| eLocationType	| Indicates the location type. The possible values are: **CTY**(City); **ZON**(Zone); **ARP**(Airport) **STA**(Train/Bus station); **PRT**(Port); **HOT**(Hotel); **PDI**(Point of interest); **OTH**(Other).	|
+| @Location/code				| 1 		| String	| Code that identifies the location in the provider's system.	|
+| @Location/date				| 1 		| DateTime	| Indicates the date associated with this location.	|
+| @Location/FlightInfo				| 0..1		| FlightInfo	| Contains a flight information if this location is an airport.	|
+| @Location/FlightInfo/flightNumber		| 1 		| String	| Indicates the flight number.				|
+| @Location/FlightInfo/Departure		| 1 		| TerminalInfo	| Contains the information related to the departure terminal.	|
+| @Location/FlightInfo/Arrival 			| 1 		| TerminalInfo	| Contains the information related to the arrival terminal.	|
+| @TerminalInfo/terminal			| 1 		| String	| Indicates the code that identifies the terminal on the providers system.	|
+| @TerminalInfo/date				| 1 		| DateTime	| Indicates the date in which the customer must arrive or depart.	|
+| @Location/HotelInfo				| 0..1		| HotelInfo	| Contains an hotel information if this location is an hotel.	|
+| @HotelInfo/name				| 1 		| String	| Indicates the full name of the hotel (as it appears in the provider's system).	|
+| @HotelInfo/address				| 1 		| String	| Indicates the address of the hotel.			|
+| AvailabilityRQ/Passengers			| 1 		| Passengers	| Contains the passengers that are involved in the reservation.	|
+| AvailabilityRQ/Passengers/Passenger		| 1..n		| Passenger	| Contains the passenger information. 			|
+| @Passenger/id					| 1 		| Integer	| This id identifies the passenger.			|
+| @Passenger/age				| 1 		| Integer	| Indicates the age of the passenger.			|
+| @Passenger/RefSegments			| 1 		| RefSegments	| Contains a list of references to the segments where the passenger wants to be transfered.	|
+| @Passenger/RefSegments/RefSegment		| 1..n		| RefSegment	| Contains a list of references to segments.		|
+| @RefSegment/refSegment			| 1 		| Integer	| This reference represents the id of the segment which is served with this option.	|
+| @RefSegment/bags				| 1 		| Integer	| Indicates the number of bags carried by the passenger.	|
 
 |
 
 AvailabilityRS Example
 ======================
 
-:
+
 
     <AvailabilityRS>
         <auditData>
@@ -316,365 +236,48 @@ received in a rate have the same price. If the rate is OW their options
 are combinable with options of other rates but if the rate is RT, they
 are just combinable with other options of the same rate.
 
-  -------------------------------------------------------------------------
-  Elem N T Description
-  ent  u y 
-       m p 
-       b e 
-       e   
-       r   
-  ---- - - ----------------------------------------------------------------
-  Avai 1   Root Node
-  labi     
-  lity     
-  RS       
-
-  Avai 1 T Contains a list of available transfers with its information.
-  labi   r 
-  lity   a 
-  RS/T   n 
-  rans   s 
-  fers   f 
-         e 
-         r 
-         s 
-
-  Avai 1 T Contains a list of transfers.
-  labi . r 
-  lity . a 
-  RS/T n n 
-  rans   s 
-  fers   f 
-  /Tra   e 
-  nsfe   r 
-  r        
-
-  @Tra 1 I This id identifies the transfer
-  nsfe   n 
-  r/id   t 
-         e 
-         g 
-         e 
-         r 
-
-  @Tra 1 I Contains information related to the vehicle that operates the
-  nsfe   n transfer.
-  r/In   f 
-  fo     o 
-         T 
-         r 
-         a 
-         n 
-         s 
-         f 
-         e 
-         r 
-
-  @Inf 1 e This value classifies the vehicle in the following types:
-  oTra   T **LIM**(Limousine); CAR(Car); **BUS**(Bus); **TAX**(Taxi);
-  nsfe   r **PRV**(Private vehicle).
-  r/ty   a 
-  pe     n 
-         s 
-         f 
-         e 
-         r 
-         T 
-         y 
-         p 
-         e 
-
-  @Inf 1 S Indicates the code of the transfer if the provider returns it.
-  oTra   t 
-  nsfe   r 
-  r/co   i 
-  de     n 
-         g 
-
-  @Inf 1 S Indicates the name of the transfer if the provider returns it.
-  oTra   t 
-  nsfe   r 
-  r/na   i 
-  me     n 
-         g 
-
-  @Inf 1 S Indicates the name of the transfer if the provider returns it.
-  oTra   t 
-  nsfe   r 
-  r/ty   i 
-  peVe   n 
-  h      g 
-
-  @Inf 1 S Indicates the code of the vehicle as it's returned in the
-  oTra   t provider's response.
-  nsfe   r 
-  r/co   i 
-  deVe   n 
-  h      g 
-
-  @Tra 1 L This location object contains information related to the origin
-  nsfe   o of the transfer.
-  r/Lo   c 
-  cOri   a 
-  gin    t 
-         i 
-         o 
-         n 
-
-  @Tra 1 L This location object contains information related to the
-  nsfe   o destination of the transfer.
-  r/Lo   c 
-  cDes   a 
-  tina   t 
-  tion   i 
-         o 
-         n 
-
-  @Tra 0 S This is a code that pairs an origin and a destination ( remark:
-  nsfe . t contamplates the direction of the route ).
-  r/ro . r 
-  uteI 1 i 
-  d      n 
-         g 
-
-  Avai 1 R Contains a list of available rates. From each rate there are
-  labi   a available options and each option references the transfers that
-  lity   t operate them.
-  RS/R   e 
-  ates   s 
-
-  Avai 1 R Contains a list of Rate.
-  labi . a 
-  lity . t 
-  RS/R n e 
-  ates     
-  /Rat     
-  e        
-
-  @Rat 1 I This id identifies the rate.
-  e/id   n 
-         t 
-         e 
-         g 
-         e 
-         r 
-
-  @Rat 1 S Contains the code of the rate if the provider returns it.
-  e/co   t 
-  de     r 
-         i 
-         n 
-         g 
-
-  @Rat 1 S Contains the code of the provider that offers this rate.
-  e/pr   t 
-  ovid   r 
-  erCo   i 
-  de     n 
-         g 
-
-  @Rat 1 e Indicates if the rate is OW (one-way) or RT (return). The
-  e/ra   R One-Way rates are combinable, but the return ones are not
-  teTy   a combinable.
-  pe     t 
-         e 
-         T 
-         y 
-         p 
-         e 
-
-  @Rat 1 O Contains a list of options that belong to this rate.
-  e/Op   p 
-  tion   t 
-  s      i 
-         o 
-         n 
-         s 
-
-  @Opt 1 O Contains a list of OptionRate.
-  ions . p 
-  /Opt . t 
-  ion  n i 
-         o 
-         n 
-         R 
-         a 
-         t 
-         e 
-
-  @Opt 1 S Indicates the status of the option if the provider returns this
-  ionR   t information. This is a plain text of the status returned by the
-  ate/   r provider, this means that each provider may send it's own status
-  stat   i codes/messages.
-  us     n 
-         g 
-
-  @Opt 1 I This code identifies the option.
-  ionR   n 
-  ate/   t 
-  id     e 
-         g 
-         e 
-         r 
-
-  @Opt 1 I This reference represents the id of the segment which is served
-  ionR   n with this option.
-  ate/   t 
-  refS   e 
-  egme   g 
-  nt     e 
-         r 
-
-  @Opt 1 R Contains a list of references of different transfers that serve
-  ionR   e the segment indicated on "refSegment" field
-  ate/   f 
-  RefT   T 
-  rans   r 
-  fers   a 
-         n 
-         s 
-         f 
-         e 
-         r 
-         s 
-
-  @Opt 1 R 
-  ionR . e 
-  ate/ . f 
-  RefT n T 
-  rans   r 
-  fers   a 
-  /Ref   n 
-  Tran   s 
-  sfer   f 
-         e 
-         r 
-
-  @Ref 1 I This reference represents the id of a transfer.
-  Tran   n 
-  sfer   t 
-  /ref   e 
-  Tran   g 
-  sfer   e 
-         r 
-
-  @Ref 1 D Indicates the start date/time of the service.
-  Tran   a 
-  sfer   t 
-  /dat   e 
-  eSta   T 
-  rt     i 
-         m 
-         e 
-
-  @Ref 1 D Indicates the end date/time of the service.
-  Tran   a 
-  sfer   t 
-  /dat   e 
-  eEnd   T 
-         i 
-         m 
-         e 
-
-  @Opt 1 P Contains a list of Parameter objects. These objects contain
-  ionR   a information that the integration needs to proceed with the
-  ate/   r booking process. The information contained in this objects is
-  Para   a not relevant for the agency but is really important to spread it
-  mete   m during the booking process. This means that a parameter returned
-  rs     e in AvailabilityRS should be received by the integration on
-         t RateRuleRQ, returned on RateRuleRS and received by the
-         e integration again on BookRQ. This is very important to ensure
-         r the correct functionality of the integration. One of the most
-         s typical Parameter's use is to spread a sessionID.
-
-  @Opt 1 P This is a list of Parameter objects.
-  ionR . a 
-  ate/ . r 
-  Para n a 
-  mete   m 
-  rs/P   e 
-  aram   t 
-  eter   e 
-         r 
-
-  @Par 1 S This is the key that identifies the parameter.
-  amet   t 
-  er/k   r 
-  ey     i 
-         n 
-         g 
-
-  @Par 1 S This is the value of the parameter.
-  amet   t 
-  er/v   r 
-  alue   i 
-         n 
-         g 
-
-  @Rat 1 P Contains information about the price of this rate.
-  e/To   r 
-  talR   i 
-  ate    c 
-         e 
-
-  @Pri 1 S Indicates the currency in which the amount is represented.
-  ce/c   t 
-  urre   r 
-  ncy    i 
-         n 
-         g 
-
-  @Pri 1 D Indicates the total amount of the reservation. If the rate is OW
-  ce/a   e this price correspond to each option included in this *Rate*
-  moun   c object, if the rate is RT correspond to the pair of options
-  t      i included in this *Rate* object.
-         m 
-         a 
-         l 
-
-  @Pri 1 e Contains the price type. The possible values are: **NET**: The
-  ce/p   P returned price is a net price; **BINDING**: The returned price
-  rice   r is a retail pric; **COMMISSION**: The returned price is
-  Type   i commissionable.
-         c 
-         e 
-         T 
-         y 
-         p 
-         e 
-
-  @Pri 1 D This value indicates the % of commission if the provider returns
-  ce/c   e it.
-  ommi   c 
-  ssio   i 
-  n      m 
-         a 
-         l 
-
-  @Rat 1 R Contains a list of transfer references.
-  e/Re   e 
-  fTra   f 
-  nsfe   T 
-  rs     r 
-         a 
-         n 
-         s 
-         f 
-         e 
-         r 
-         s 
-
-  @Rat 1 R Contains a list of references of different transfers that serve
-  e/Re . e the segment indicated on "refSegment" field
-  fTra . f 
-  nsfe n T 
-  rs/R   r 
-  efTr   a 
-  ansf   n 
-  er     s 
-         f 
-         e 
-         r 
-  -------------------------------------------------------------------------
-
 |
+ 
+| **Element**					| **Number**	| **Type**	| **Description**					|
+| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| AvailabilityRS				| 1  		|		| Root Node.						|
+| AvailabilityRS/Transfers			| 1		| Tranfers	| Contains a list of available transfers with its information.	|
+| AvailabilityRS/Transfers/Transfer		| 1..n		| Transfer	| Contains a list of transfers.
+| @Transfer/id					| 1 		| Integer	| This id identifies the transfer.			|
+| @Transfer/Info				| 1		| InfoTransfer	| Contains information related to the vehicle that operates the transfer.	|
+| @InfoTransfer/type				| 1		| eTransferType	| This value classifies the vehicle in the following types: **LIM**(Limousine); CAR(Car); **BUS**(Bus); **TAX**(Taxi); **PRV**(Private vehicle).	|
+| @InfoTransfer/code				| 1		| String	| Indicates the code of the transfer if the provider returns it.	|
+| @InfoTransfer/name				| 1		| String	| Indicates the name of the transfer if the provider returns it.	|
+| @InfoTransfer/typeVeh				| 1		| String	| Indicates the name of the transfer if the provider returns it.	|
+| @InfoTransfer/codeVeh				| 1		| String	| Indicates the code of the vehicle as it's returned in the provider's response.	|
+| @Transfer/LocOrigin				| 1		| Location	| This location object contains information related to the origin of the transfer.		|
+| @Transfer/LocDestination			| 1		| Location	| This location object contains information related to the destination of the transfer.		|
+| @Transfer/routeId				| 0..1		| String	| This is a code that pairs an origin and a destination ( remark: contamplates the direction of the route ).	|
+| AvailabilityRS/Rates				| 1		| Rates		| Contains a list of available rates. From each rate there are available options and each option references the transfers that operate them.	|
+| AvailabilityRS/Rates/Rate			| 1.n		| Rate		| Contains a list of Rate.				|
+| @Rate/id					| 1		| Integer	| This id identifies the rate.				|
+| @Rate/code					| 1		| String	| Contains the code of the rate if the provider returns it.	|
+| @Rate/providerCode				| 1		| String	| Contains the code of the provider that offers this rate.	|
+| @Rate/rateType				| 1		| eRateType	| Indicates if the rate is OW (one-way) or RT (return). The One-Way rates are combinable, but the return ones are not combinable.	|
+| @Rate/Options					| 1 		| Options	| Contains a list of options that belong to this rate.	|
+| @Options/Option				| 1..n		| OptionRate	| Contains a list of OptionRate.			|
+| @OptionRate/status				| 1		| String	| Indicates the status of the option if the provider returns this information. This is a plain text of the status returned by the provider, this means that each provider may send it's own status codes/messages. 	|
+| @OptionRate/id				| 1		| Integer	| This code identifies the option.			|
+| @OptionRate/refSegment			| 1		| Integer	| This reference represents the id of the segment which is served with this option.	 |
+| @OptionRate/RefTransfers			| 1		| RefTrasfers	| Contains a list of references of different transfers that serve the segment indicated on "refSegment" field.	|
+| @OptionRate/RefTransfers/RefTransfer		| 1..n		| RefTransfer	|							|
+| @RefTransfer/refTransfer			| 1		| Integer	| This reference represents the id of a transfer.	|
+| @RefTransfer/dateStart			| 1		| DateTime	| Indicates the start date/time of the service.		|
+| @RefTransfer/dateEnd				| 1		| DateTime	| Indicates the end date/time of the service.		|
+| @OptionRate/Parameters			| 1		| Parameters	| Contains a list of Parameter objects. These objects contain information that the integration needs to proceed with the booking process. The information contained in this objects is not relevant for the agency but is really important to spread it during the booking process. This means that a parameter returned in AvailabilityRS should be received by the integration on RateRuleRQ, returned on RateRuleRS and received by the integration again on BookRQ. This is very important to ensure the correct functionality of the integration. One of the most typical Parameter's use is to spread a sessionID.		|
+| @OptionRate/Parameters/Parameter		| 1..n		| Parameter	| This is a list of Parameter objects.			|
+| @Parameter/key				| 1		| String	| This is the key that identifies the parameter.	|
+| @Parameter/value				| 1		| String	| This is the value of the parameter.			|
+| @Rate/TotalRate				| 1		| Price		| Contains information about the price of this rate.	|
+| @Price/currency				| 1 		| String	| Indicates the currency in which the amount is represented.	|
+| @Price/amount					| 1		| Decimal	| Indicates the total amount of the reservation. If the rate is OW this price correspond to each option included in this *Rate* object, if the rate is RT correspond to the pair of options included in this *Rate* object.	|
+| @Price/priceType				| 1		| ePriceType	| Contains the price type. The possible values are: **NET**: The returned price is a net price; **BINDING**: The returned price is a retail pric; **COMMISSION**: The returned price is commissionable.	|
+| @Price/commission				| 1		| Decimal	| This value indicates the % of commission if the provider returns it.	|
+| @Rate/RefTransfers				| 1		| RefTransfers	| Contains a list of transfer references.		|
+| @Rate/RefTransfers/RefTransfer		| 1..n		| RefTransfer	| Contains a list of references of different transfers that serve the segment indicated on "refSegment" field.	|
+   

@@ -44,13 +44,11 @@ GetVehiclesRQ Example
 GetVehiclesRQ Description
 =========================
 
-  -------------------------------------------------------------------------
-  Element     Numbe Type  Description
-              r           
-  ----------- ----- ----- -------------------------------------------------
-  GetVehicles 1           Root node.
-  RQ                      
-  -------------------------------------------------------------------------
+|
+
+| **Element**		| **Number**	| **Type**	| **Description**	|
+| --------------------- | ------------- | ------------- | --------------------- |
+| GetVehiclesRQ		| 1          	|		| Root node.		|
 
 |
 
@@ -79,23 +77,13 @@ GetVehiclesRS Example
 GetVehiclesRS Description
 =========================
 
-  -------------------------------------------------------------------------
-  Element     Numbe Type  Description
-              r           
-  ----------- ----- ----- -------------------------------------------------
-  GetVehicles 1           Root node.
-  RS                      
-
-  Vehicles    1           List of Vehicles.
-
-  Vehicles/Ve 1           Type of vehicle.
-  hicle                   
-
-  @id         1     Strin Code of the vehicle.
-                    g     
-
-  @name       1     Strin Name of the vehicle.
-                    g     
-  -------------------------------------------------------------------------
-
 |
+
+| **Element**			| **Number**	| **Type**	| **Description**			|
+| ----------------------------- | ------------- | ------------- | ------------------------------------- |
+| GetVehiclesRS			| 1          	|		| Root node.     			|
+| Vehicles   			| 1          	|		| List of Vehicles.			|
+| Vehicles/Vehicle		| 1          	|		| Type of vehicle.			|
+| @id        			| 1    		| String	| Code of the vehicle. 			|
+| @name      			| 1    		| String	| Name of the vehicle.			|
+

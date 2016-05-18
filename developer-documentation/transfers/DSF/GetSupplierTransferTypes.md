@@ -41,13 +41,11 @@ GetSupplierTransferTypesRQ Example
 GetSupplierTransferTypesRQ Description
 ======================================
 
-  -------------------------------------------------------------------------
-  Element        Numbe Type  Description
-                 r           
-  -------------- ----- ----- ----------------------------------------------
-  GetSupplierTra 1           Root node.
-  nsferTypesRQ               
-  -------------------------------------------------------------------------
+|
+
+| **Element**				| **Number**	| **Type**	| **Description**		|
+| ------------------------------------- | ------------- | ------------- | ----------------------------- |
+| GetSupplierTransferTypesRQ		| 1          	|		| Root node.			|
 
 |
 
@@ -92,24 +90,13 @@ GetSupplierTransferTypesRS Example
 GetSupplierTransferTypesRS Description
 ======================================
 
-  -------------------------------------------------------------------------
-  Element     Numbe Type  Description
-              r           
-  ----------- ----- ----- -------------------------------------------------
-  GetSupplier 1           Root node.
-  Transfer                
-  TypesRS                 
-
-  Suppliers   1           List of supplements.
-
-  Suppliers/  1           Supplement
-  Suppliers               
-
-  @id         1     Strin Code of the supplement. Sole codes.
-                    g     
-
-  @name       1     Strin Name of the supplement.
-                    g     
-  -------------------------------------------------------------------------
-
 |
+
+| **Element**				| **Number**	| **Type**	| **Description**					|
+| ------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| GetSupplierTransferTypesRS		| 1          	|		| Root node.						|
+| Suppliers  				| 1          	|		| List of supplements.					|
+| Suppliers/Suppliers 			| 1          	|		| Supplement.						|
+| @id        				| 1    		| String	| Code of the supplement. Sole codes. 			|
+| @name      				| 1    		| String	| Name of the supplement.				|
+

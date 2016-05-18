@@ -45,12 +45,9 @@ GetRatesRQ Description
 
 The request just contains the elements of BaseRQ.
 
-  -------------------------------------------------------------------------
-  Element     Numbe Type  Description
-              r           
-  ----------- ----- ----- -------------------------------------------------
-  GetRatesRQ  1           Root node.
-  -------------------------------------------------------------------------
+| **Element**		| **Number**	| **Type**	| **Description**		|
+| --------------------- | ------------- | ------------- | ----------------------------- |
+| GetRatesRQ 		| 1          	|		| Root node.			|
 
 |
 
@@ -88,48 +85,21 @@ GetRatesRS Example
 GetRatesRS Description
 ======================
 
-  --------------------------------------------------------------------------
-  Element      Numb Type Description
-               er        
-  ------------ ---- ---- ---------------------------------------------------
-  GetRatesRS   1         Root node.
+| 
 
-  Rates        1         List of rates.
+| **Element**				| **Number**	| **Type**	| **Description**						|
+| ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
+| GetRatesRS  				| 1        	|		| Root node.							|
+| Rates       				| 1        	|		| List of rates.						|
+| Rates/Rate  				| 1         	|		|								|
+| @id         				| 1   		| String	| Code of the rate.						|
+| @name       				| 1   		| String	| Name of the rate.						|
+| TransferTypes				| 1        	|		| Contains a list of TransferType. Each TransferType contains information about the types of transfer that are available for this rate.	|
+| TransferTypes/TransferType		| 1..n     	|		| Contains information related to a type of transfer.		|
+| @id         				| 1   		| String	| Code of the TransferType.					|
+| @name       				| 1   		| String	| Name of the TransferType.  					|
+| TransferType/Vehicles			| 1        	|		| Contains a list of vehicles included in this TransferType category.	|
+| TransferType/Vehicles/Vehicle		| 1..n     	|		| Contains a vehicle name and its id.				|
+| @id         				| 1   		| String	| Code of the vehicle. 						|
+| @name       				| 1   		| String	| Name of the vehicle. 						|
 
-  Rates/Rate   1         
-
-  @id          1    Stri Code of the rate.
-                    ng   
-
-  @name        1    Stri Name of the rate.
-                    ng   
-
-  TransferType 1         Contains a list of TransferType. Each TransferType
-  s                      contains information about the types of transfer
-                         that are available for this rate.
-
-  TransferType 1..n      Contains information related to a type of transfer.
-  s/TransferTy           
-  pe                     
-
-  @id          1    Stri Code of the TransferType.
-                    ng   
-
-  @name        1    Stri Name of the TransferType.
-                    ng   
-
-  TransferType 1         Contains a list of vehicles included in this
-  /Vehicles              TransferType category.
-
-  TransferType 1..n      Contains a vehicle name and its id.
-  /Vehicles/Ve           
-  hicle                  
-
-  @id          1    Stri Code of the vehicle.
-                    ng   
-
-  @name        1    Stri Name of the vehicle.
-                    ng   
-  --------------------------------------------------------------------------
-
-|

@@ -17,7 +17,7 @@ This method aims to Retrieve Booking details.
 RetrieveBookingRQ Example
 =========================
 
-:
+
 
     <RetrieveBookingRQ>
         <timeoutMilliseconds>60000</timeoutMilliseconds>
@@ -51,30 +51,23 @@ RetrieveBookingRQ Description
 The request format works the same way as the Book response. the main
 difference is that only contains the locator of the provider's system.
 
-  ------------------------------------------------------------------------
-  Element           Numbe Type     Description
-                    r              
-  ----------------- ----- -------- ---------------------------------------
-  RetrieveBookingRQ 1              Root Node
-
-  RetrieveBookingRQ 1     Locator  Contains the locator of the provider's
-  /Locator                         system.
-
-  RetrieveBookingRQ 1     String   The code that's identifies the
-  /Locator/id                      reservation in the provider's system.
-
-  RetrieveBookingRQ 1     eLocator Indicates the type of the locator. The
-  /Locator/type           Type     possible values are: **PROVIDER**.
-  ------------------------------------------------------------------------
+|
+ 
+| **Element**				| **Number**	| **Type**	| **Description**						|
+| ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
+| RetrieveBookingRQ			| 1             |		| Root Node.							|
+| RetrieveBookingRQ/Locator		| 1    		| Locator 	| Contains the locator of the provider's system.		|
+| RetrieveBookingRQ /Locator/id		| 1    		| String  	| The code that's identifies the reservation in the provider's system.	|
+| RetrieveBookingRQ /Locator/type	| 1    		| eLocatorType	| Indicates the type of the locator. The possible values are: **PROVIDER**.	|
 
 |
 
 RetrieveBookingRS Example
 =========================
 
-:
 
-    <RetrieveBookingRS>   
+
+    <RetrieveBookingRS> 
         <auditData>
             <transactions>
                 <timeStamp>2014-09-19T13:44:18.716787+01:00</timeStamp>
@@ -155,21 +148,10 @@ RetrieveBookingRS Description
 The response format works the same way as the RateRule reponse. The main
 difference is that we return the ReservationStatus.
 
-  -------------------------------------------------------------------------
-  Element           Numb Type        Description
-                    er               
-  ----------------- ---- ----------- --------------------------------------
-  RetrieveBookingRS 1                Root Node
+| **Element**				| **Number**	| **Type**	| **Description**						|
+| ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
+| RetrieveBookingRS			| 1             |  		| Root Node.							|
+| RetrieveBookingRS /Locator		| 1   		| Locator    	| Contains the locator of the provider's system.		|
+| RetrieveBookingRS /SelectedRates	| 1   		| SelectedRates	| Contains a list of the selectedRates booked.			|
+| RetrieveBookingRS /ReservationStatus	| 1   		| eTransaction StatusType | The possible values are: **UNSUCCESSFUL**; **REQUESTED**; **RESERVED**; **CANCELLED**.	|
 
-  RetrieveBookingRS 1    Locator     Contains the locator of the provider's
-  /Locator                           system.
-
-  RetrieveBookingRS 1    SelectedRat Contains a list of the selectedRates
-  /SelectedRates         es          booked.
-
-  RetrieveBookingRS 1    eTransactio The possible values are:
-  /ReservationStatu      nStatusType **UNSUCCESSFUL**; **REQUESTED**;
-  s                                  **RESERVED**; **CANCELLED**
-  -------------------------------------------------------------------------
-
-|

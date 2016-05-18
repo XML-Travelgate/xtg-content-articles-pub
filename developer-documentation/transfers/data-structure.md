@@ -9,56 +9,25 @@ The structure of the API specification follows a standard. This document
 intends to explain every aspect of this structure and their fields. The
 integration will have the following methods:
 
-  --------------------------------------------------------------------------
-  Method   Input     Output    Requ Description               Endpoint
-                               ired                           
-  -------- --------- --------- ---- ------------------------- --------------
-  Availabi Availabil Availabil Yes  Makes an availability     Transfers Book
-  lity     ityRQ     ityRS          search                    ing Endpoint\_
+| 
 
-  RateRule RateRuleR RateRuleR Yes  Makes a pre-booking       Transfers Book
-           Q         S                                        ing Endpoint\_
-
-  Book     BookRQ    BookRS    Yes  Creates a booking         Transfers Book
-                                                              ing Endpoint\_
-
-  Retrieve RetrieveB RetrieveB No   Retrieves Booking details Transfers Book
-  Booking  ookingRQ  ookingRS                                 ing Endpoint\_
-
-  CancelBo CancelBoo CancelBoo No   Cancels a booking         Transfers Book
-  oking    kingRQ    kingRS                                   ing Endpoint\_
-
-  Destinat Destinati Destinati Yes  Gets a hierarchical list  Transfers Book
-  ionsTree onsTreeRQ onsTreeRS      of destinations.          ing Endpoint\_
-
-  HotelLis HotelList HotelList No   Gets a list of the hotels Transfers Book
-  t        RQ        RS             with a basic information. ing Endpoint\_
-
-  GetRates GetRatesR GetRatesR No   Gets a list of the rates  Transfers Book
-           Q         S              with a basic information. ing Endpoint\_
-
-  GetSuppl GetSupple GetSupple No   Gets a list of the        Transfers Book
-  ements   mentsRQ   mentsRS        supplements with a basic  ing Endpoint\_
-                                    information               
-
-  GetSuppl Getsuppli Getsuppli No   Gets a list of the types  Transfers Book
-  ierRate  erRate    erRate         of suppliers transfers    ing Endpoint\_
-  Transfer Transfers Transfers      rates with a basic        
-  sType    TypeRQ    TypeRS         information.              
-
-  GetSuppl GetSuppli GetSuppli No   Gets a list of the        Transfers Book
-  ier      er        er             suppliers transfers types ing Endpoint\_
-  Transfer Transfers Transfers      with a basic information. 
-  sType    TypeRQ    TypeRS                                   
-
-  GetTrans GetTransf GetTransf No   Gets a list of the        Transfers Book
-  fers     ers       ers            transfers types with a    ing Endpoint\_
-  Types    TypesRQ   TypesRQ        basic information.        
-
-  GetVehic GetVehicl GetVehicl No   Gets a list of the        Transfers Book
-  les      esRQ      esRS           vehicles with a basic     ing Endpoint\_
-                                    information.              
-  --------------------------------------------------------------------------
+| **Method**		| **Input**		| **Output**		|  **Required**	| **Description**				| **Endpoint**					|
+| --------------------- | --------------------- | --------------------- | ------------- | --------------------------------------------- | --------------------------------------------- |
+| Availability		| AvailabilityRQ	| AvailabilityRS	| Yes		| Makes an availability search   		| Transfers Booking Endpoint                    |
+| RateRule		| RateRuleRQ		| RateRuleRS		| Yes 		| Makes a pre-booking      			| Transfers Booking Endpoint			|
+| Book    		| BookRQ   		| BookRS   		| Yes 		| Creates a booking        			| Transfers Booking Endpoint			|
+| RetrieveBooking	| Retrieve BookingRQ	| Retrieve BookingRS	| No  		| Retrieves Booking details			| Transfers Booking Endpoint			|
+| CancelBooking		| Cancel BookingRQ	| Cancel BookingRS	| No  		| Cancels a booking        			| Transfers Booking Endpoint			|
+| Destinations Tree	| Destinations TreeRQ	| Destinations TreeRS	| Yes 		| Gets a hierarchical list of destinations	| Transfers Booking Endpoint			|
+| HotelList		| HotelListRQ		| HotelListRS		| No  		| Gets a list of the hotels with a basic information | Transfers Booking Endpoint		|
+| GetRates		| GetRatesRQ		| GetRatesRS		| No  		| Gets a list of the rates with a basic information | Transfers Booking Endpoint		|
+| GetSupplements	| GetSupplements RQ	| GetSupplements RS	| No  		| Gets a list of the supplements with a basic information | Transfers Booking Endpoint		|
+| GetSupplier RateTransfers Type | Getsupplier RateTransfers TypeRQ | Getsupplier RateTransfers TypeRS | No | Gets a list of the types of suppliers transfers rates with a basicinformation | Transfers Booking Endpoint |
+| GetSupplier TransfersType | GetSupplier TransfersTypeRQ | GetSupplier TransfersTypeRS | No | Gets a list of the suppliers transfers types with a basic information | Transfers Booking Endpoint |
+| GetTransfersTypes  	| GetTransfers TypesRQ	| GetTransfers TypesRQ	| No  		| Gets a list of the transfers types with a basic information | Transfers Booking Endpoint	|
+| GetVehicles     	| GetVehiclesRQ		| GetVehiclesRS		| No  		| Gets a list of the vehicles with a basic information | Transfers Booking Endpoint		|
+                             
+|
 
 Each request sent to the **service url** requires a node called rqXML .
 Inside this node travels the current method's Input object.
@@ -70,22 +39,22 @@ the specific objects related to the operation.
 
 **Data structure content:**
 
-> maxdepth
->
-> :   3
->
-> numbered
->
-> :   
->
-> Common-Elements\<./DSF/common-elements.rst\> Avail\<./DSF/avail.rst\>
-> Rate Rule\<./DSF/rate-rule.rst\> Book \<./DSF/reservation.rst\>
-> Retrieve Booking \<./DSF/retrieve-booking.rst\> Cancel Booking
-> \<./DSF/cancel-booking.rst\> DestinationTree
-> \<./DSF/destinationtree.rst\> HotelList\<./DSF/hotel-list.rst\>
-> GetRates \<./DSF/GetRates.rst\> GetSupplements
-> \<./DSF/GetSupplements.rst\> GetSupplierRateTransferTypes
-> \<./DSF/GetSupplierRateTransferTypes.rst\>
-> GetSupplierTransferTypes\<./DSF/GetSupplierTranferTypes.rst\>
-> GetTransfersTypes\<./DSF/GetTransfersTypes.rst\>
-> GetVehicles\<./DSF/GetVehicles.rst\>
+1. [Common-Elements](/developer-documentation/transfers/DSF/common-elements)
+2. [Avail](/developer-documentation/transfers/DSF/avail)
+3. [Rate Rule](/developer-documentation/transfers/DSF/rate-rule)
+4. [Booking](/developer-documentation/transfers/DSF/reservation)
+5. [Retrieve Booking](/developer-documentation/transfers/DSF/retrieve-booking)
+6. [Cancel Booking](/developer-documentation/transfers/DSF/cancel-booking)
+7. [DestinationTree](/developer-documentation/transfers/DSF/destionationtree)
+8. [HotelList](/developer-documentation/transfers/DSF/hotel-list)
+9. [GetRates](/developer-documentation/transfers/DSF/GetRates)
+10. [GetSupplements](/developer-documentation/transfers/DSF/GetSupplements)
+11. [GetSupplierRateTransferTypes](/developer-documentation/transfers/DSF/GetSupplierRateTransfersTypes)
+12. [GetSupplierTransferTypes](/developer-documentation/transfers/DSF/GetSupplierTransferTypes)
+13. [GetTransferTypes](/developer-documentation/transfers/DSF/GetTransferTypes)
+14. [GetVehicles](/developer-documentation/transfers/DSF/GetVehicles)
+
+
+
+
+

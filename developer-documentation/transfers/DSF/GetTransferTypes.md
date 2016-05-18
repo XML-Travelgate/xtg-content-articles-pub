@@ -41,13 +41,11 @@ GetTransferTypesRQ Example
 GetTransferTypesRQ Description
 ==============================
 
-  -------------------------------------------------------------------------
-  Element     Numbe Type  Description
-              r           
-  ----------- ----- ----- -------------------------------------------------
-  GetTransfer 1           Root node.
-  TypesRQ                 
-  -------------------------------------------------------------------------
+|
+
+| **Element**			| **Number**	| **Type**	| **Description**	|
+| ----------------------------- | ------------- | ------------- | --------------------- |
+| GetTransferTypesRQ		| 1          	|		| Root node.		|
 
 |
 
@@ -77,26 +75,13 @@ GetTransferTypesRS Example
 GetTransferTypesRS Description
 ==============================
 
-  -------------------------------------------------------------------------
-  Element     Numbe Type  Description
-              r           
-  ----------- ----- ----- -------------------------------------------------
-  GetSupplmen 1           Root node.
-  etsRS                   
-
-  TransferTyp 1           List of transfers types.
-  es                      
-
-  TransfersTy 1           Type of transfer
-  pes/                    
-  TransfersTy             
-  pe                      
-
-  @id         1     Strin Code of the supplement. Sole codes.
-                    g     
-
-  @name       1     Strin Name of the supplement.
-                    g     
-  -------------------------------------------------------------------------
-
 |
+
+| **Element**				| **Number**	| **Type**	| **Description**						|
+| ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
+| GetSupplmenetsRS			| 1          	|		| Root node.							|
+| TransferTypes				| 1          	|		| List of transfers types.					|
+| TransfersTypes/TransfersType		| 1          	|		| Type of transfer.						|
+| @id        				| 1    		| String	| Code of the supplement. Sole codes.				|
+| @name      				| 1    		| String	| Name of the supplement.					|
+

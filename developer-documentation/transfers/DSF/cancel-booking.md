@@ -38,26 +38,25 @@ CancelBookingRQ Example
         <Attributes/>
     </Configuration>
     <Locator id = "94" type = "PROVIDER"/>
+    </CancelBookingRQ>
 
-\</CancelBookingRQ\>
 
 |
 
 CancelBookingRQ Description
 ===========================
 
-  -------------------------------------------------------------------------
-  Element     Numbe Type  Description
-              r           
-  ----------- ----- ----- -------------------------------------------------
-  CancelBooki 1           Root node.
-  ngRQ                    
-  -------------------------------------------------------------------------
+|
+
+| **Element**			| **Number**	| **Type**	| **Description**		|
+| ----------------------------- | ------------- | ------------- | ----------------------------- |
+| CancelBookingRQ		| 1          	|		| Root node.			|
 
 |
 
 CancelBookingRS Example
 =======================
+
 
     <CancelBookingRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
     <auditData>
@@ -93,118 +92,37 @@ CancelBookingRS Example
             <CancellationPenalty currency = "EUR" amount = "0" priceType = "NET" commission = "0"/>
         </CanceledRate>
     </CanceledRates>
-    <ReservationStatus>CANCELLED</ReservationStatus>
+    <ReservationStatus>CANCELLED</ReservationStatus></CancelBookingRS>
 
-\</CancelBookingRS\>
 
 |
 
 GetTransferTypesRS Description
 ==============================
 
-  --------------------------------------------------------------------------
-  Element    Nu Type  Description
-             mb       
-             er       
-  ---------- -- ----- ------------------------------------------------------
-  CancelBook 1        Root node.
-  ingRS               
+| **Element**				| **Number**	| **Type**	| **Description**						|
+| ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
+| CancelBookingRS			| 1       	|		| Root node.							|
+| @id       				| 1 		| String	| Code of the supplement. Sole codes. 				|
+| @name     				| 1 		| String	| Name of the supplement.					|
+| CancelBookingRS/Locators		| 0..1		|		|								|
+| CancelBookingRS/Locators /Locator	| 1..n		| Locator	| Contains the locator of the provider's system.		|
+| CancelBookingRS/Locators /Locator/id	| 1 		| String	| The code that's identifies the reservation in the provider's system.	|
+| CancelBookingRS/Locators /Locator/type | 1 		| eLocatorType	| Indicates the type of the locator. The possible values are: **PROVIDER**.	|
+| CancelBookingRS/CanceledRates  	| 0..1		| Rate 		| If the provider returns information related to the cancelled rates, this will be returned.	|
+| CancelBookingRS /CanceledRates/CancelledRate | 1..n	| SelectedRate	| Contains a list of SelectedRate.				|
+| @SelectedRate/id			| 1 		| Integer	| This id identifies the rate.					|
+| @SelectedRate/code			| 1 		| String	| Contains the code of the rate if the provider returns it.	|
+| @SelectedRate/providerCode		| 1 		| String	| Contains the code of the provider that offers this rate.	|
+| @SelectedRate/rateType		| 1 		| eRateType	| Indicates if the rate is OW (one-way) or RT (return).		|
+| @SelectedRate/SelectedOptions		| 1 		| SelectedOptions | Contains a list of SelectedOptions that belong to this rate.	|
+| @SelectedRate /SelectedOptions/SelectedOption | 1..n	| SelectedOption | Contains a list of SelectedOption.				|
+| @SelectedOption/status		| 1 		| String	| Indicates the status of the option if the provider returns this information. This is a plain text of the status returned by the provider, this means that each provider may send it's own status codes/messages.	|
+| @SelectedOption/id			| 1 		| Integer	| This code identifies the option.				|
+| @SelectedOption/Segment		| 1 		| Segment	| Contains the segment which is served with this option.	|
+| @SelectedOption/Transfers		| 1 		| Transfers	| Contains a list of different transfers that serve the segment of this option.	|
+| @SelectedOption/Transfers /Transfer	| 1..n		| Transfer	| Contains a list of transfers which is served with this option.	|
+| @SelectedOption/Parameters 		| 1 		| Parameters	| Contains a list of Parameter objects. The parameter returned in AvailabilityRS should be received by the integration on RateRuleRQ.	|
+| @SelectedRate/TotalRate		| 1 		| Price	| Contains information about the price of this rate. If the rate is OW this price correspond to each option included in this *SelectedRate* object, if the rate is RT correspond to the pair of options included in this *SelectedRate* object.	|
+| @SelectedRate/CancellationPolicy	| 1 		| Cancellation	| Policies 1 Contains a list of conditions of the penalties for the cancellation of the reservation. This object normaly is not used because in this moments the providers not return this informacion in *AvailabilityRS*, if there are any will be returned in *RateRuleRS*.	|
 
-  @id        1  Strin Code of the supplement. Sole codes.
-                g     
-
-  @name      1  Strin Name of the supplement.
-                g     
-
-  CancelBook 0.       
-  ingRS/Loca .1       
-  tors                
-
-  CancelBook 1. Locat Contains the locator of the provider's system.
-  ingRS/Loca .n or    
-  tors/Locat          
-  or                  
-
-  CancelBook 1  Strin The code that's identifies the reservation in the
-  ingRS/Loca    g     provider's system.
-  tors/Locat          
-  or/id               
-
-  CancelBook 1  eLoca Indicates the type of the locator. The possible values
-  ingRS/Loca    torTy are: **PROVIDER**.
-  tors/Locat    pe    
-  or/type             
-
-  CancelBook 0. Rate  If the provider returns information related to the
-  ingRS/Canc .1       cancelled rates, this will be returned.
-  eledRates           
-
-  CancelBook 1. Selec Contains a list of SelectedRate.
-  ingRS/Canc .n tedRa 
-  eledRates/    te    
-  CancelledR          
-  ate                 
-
-  @SelectedR 1  Integ This id identifies the rate.
-  ate/id        er    
-
-  @SelectedR 1  Strin Contains the code of the rate if the provider returns
-  ate/code      g     it.
-
-  @SelectedR 1  Strin Contains the code of the provider that offers this
-  ate/provid    g     rate.
-  erCode              
-
-  @SelectedR 1  eRate Indicates if the rate is OW (one-way) or RT (return).
-  ate/rateTy    Type  
-  pe                  
-
-  @SelectedR 1  Selec Contains a list of SelectedOptions that belong to this
-  ate/Select    tedOp rate.
-  edOptions     tions 
-
-  @SelectedR 1. Selec Contains a list of SelectedOption.
-  ate/Select .n tedOp 
-  edOptions/    tion  
-  SelectedOp          
-  tion                
-
-  @SelectedO 1  Strin Indicates the status of the option if the provider
-  ption/stat    g     returns this information. This is a plain text of the
-  us                  status returned by the provider, this means that each
-                      provider may send it's own status codes/messages.
-
-  @SelectedO 1  Integ This code identifies the option.
-  ption/id      er    
-
-  @SelectedO 1  Segme Contains the segment which is served with this option.
-  ption/Segm    nt    
-  ent                 
-
-  @SelectedO 1  Trans Contains a list of different transfers that serve the
-  ption/Tran    fers  segment of this option.
-  sfers               
-
-  @SelectedO 1. Trans Contains a list of transfers which is served with this
-  ption/Tran .n fer   option.
-  sfers/Tran          
-  sfer                
-
-  @SelectedO 1  Param Contains a list of Parameter objects. The parameter
-  ption/Para    eters returned in AvailabilityRS should be received by the
-  meters              integration on RateRuleRQ.
-
-  @SelectedR 1  Price Contains information about the price of this rate. If
-  ate/TotalR          the rate is OW this price correspond to each option
-  ate                 included in this *SelectedRate* object, if the rate is
-                      RT correspond to the pair of options included in this
-                      *SelectedRate* object.
-
-  @SelectedR 1  Cance Contains a list of conditions of the penalties for the
-  ate/Cancel    llati cancellation of the reservation. This object normaly
-  lationPoli    onPol is not used because in this moments the providers not
-  cy            icies return this informacion in *AvailabilityRS*, if there
-                      are any will be returned in *RateRuleRS*.
-  --------------------------------------------------------------------------
-
-|
