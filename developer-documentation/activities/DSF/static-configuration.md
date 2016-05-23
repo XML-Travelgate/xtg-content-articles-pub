@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/activities/DSF/static-configuration
 ---
 
-|
+
 
 Method Goals
 ============
@@ -13,14 +13,14 @@ Method Goals
 This method returns important information about the behaviour of the
 integration (specific provider).
 
-|
+
 
 Request Format
 ==============
 
 The request only requires the provider code and credentials.
 
-|
+
 
 Response Format
 ===============
@@ -45,7 +45,7 @@ of the integration / provider.
 -   Range = S: Specific date, means that provider return options for
     specific range of dates send in Avail request.
 
-|
+
 
 StaticConfigurationRQ Example
 =============================
@@ -73,12 +73,12 @@ StaticConfigurationRQ Example
       </Configuration>
     </StaticConfigurationRQ>
 
-|
+
 
 StaticConfigurationRQ Description
 =================================
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
@@ -102,7 +102,7 @@ StaticConfigurationRQ Description
 | @key            			| 1    		| String	| Contains the keyword/Id to identify a parameter. |
 | @value          			| 1    		| String	| Contains the value of the parameter.		|
 
-|
+
 
 StaticConfigurationRS Example
 =============================
@@ -125,12 +125,12 @@ StaticConfigurationRS Example
       <NumMaxParticipants>12</NumMaxParticipants>
     </StaticConfigurationRS>
 
-|
+
 
 StaticConfigurationRS Description
 =================================
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |

@@ -10,7 +10,7 @@ intends to explain every aspect of this structure and their fields.
 
 The integration will have the following methods:
 
-|
+
 
 | **Method**		| **Input**		| **Output**		| **Required**	| **Description**		|
 | --------------------- | --------------------- | --------------------- | ------------- | ----------------------------- |
@@ -22,7 +22,7 @@ The integration will have the following methods:
 | Cancel    		| CancelRQ   		| CancelRS   		| No   		| Cancel a reservation		|
 | ReservationsList	| ReservationsListRQ	| ReservationsListRS	| No   		| List of Reservations		|
                        
-|
+
 
 Each request sent to the **service url** requires a node called rqXML .
 Inside this node travels the current method's Input object.
@@ -30,7 +30,7 @@ Inside this node travels the current method's Input object.
 The data structure will always have common elements in all objects and
 the specific objects related to the operation
 
-|
+
 
 **Data structure content:**
 

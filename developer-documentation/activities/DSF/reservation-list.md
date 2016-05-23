@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/activities/DSF/reservation-list
 ---
 
-|
+
 
 Method Goals
 ============
@@ -14,7 +14,7 @@ This method aims to return all the reservation list of each activity
 confirm for a given specific date from which you want to search and Date
 type.
 
-|
+
 
 Request Format
 ==============
@@ -29,7 +29,7 @@ type, you obtain different reservation list.
 -   DepartureDate : The departure date of the reservation.
 -   LastUpdateDate : The date the reservation was last updated.
 
-|
+
 
 ReservationsListRQ Example
 ==========================
@@ -48,14 +48,14 @@ ReservationsListRQ Example
                     Start = "2013-12-18T12:32:15"/>
             </TourActivityReadRequest>
         </ReadRequests>
-    </OTA_ReadRQ>
+    <OTA_ReadRQ>
 
-|
+
 
 ReservationsListRQ Description
 ==============================
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
@@ -68,7 +68,7 @@ ReservationsListRQ Description
 | @End            			| 1  		| Date		| End date from which you want to search reservation list. |
 | @Start          			| 1  		| Date		| Start date from which you want to search reservation list. |
 
-|
+
 
 ReservationsListRS Example
 ==========================
@@ -127,12 +127,12 @@ ReservationsListRS Example
         </Detail>
     </OTA_TourActivityResRetrieveRS>
 
-|
+
 
 ReservationsListRS Description
 ==============================
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |

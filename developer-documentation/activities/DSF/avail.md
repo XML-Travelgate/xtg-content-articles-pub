@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/activities/DSF/avail
 ---
 
-|
+
 
 Method Goals
 ============
@@ -15,7 +15,7 @@ and search type. It does not filter different classes, times or fares.
 It will always return all results returned by the supplier between
 specific date range.
 
-|
+
 
 Request Format
 ==============
@@ -33,7 +33,7 @@ StaticConfiguration call), you need specify passengers.
 -   Category/Code : Specify a provider category code of the desired
     activity category.
 
-|
+
 
 Response Format
 ===============
@@ -51,7 +51,7 @@ StaticConfiguration call).
     that can provide, and you can choose the participants types that you
     are interested.
 
-|
+
 
 AvailRQ Example
 ===============
@@ -78,14 +78,14 @@ AvailRQ Example
             <!--Mandatory specify if OpenAvailability = false-->
             <ParticipantCount Age = "30" Quantity = "1"/>
         </TourActivity>
-    </OTA_TourActivityAvailRQ>
+    <OTA_TourActivityAvailRQ>
 
-|
+
 
 AvailRQ Description
 ===================
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
@@ -114,7 +114,7 @@ AvailRQ Description
 | @Age                			| 1   		| Integer	| Age of participant.				|
 | @Quantity           			| 1   		| Integer	| Number of participant with same age.		|
 
-|
+
 
 AvailRS Example
 ===============
@@ -288,12 +288,12 @@ AvailRS Example
                     .
     </OTA_TourActivityAvailRS>
 
-|
+
 
 AvailRS Description
 ===================
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
@@ -362,4 +362,4 @@ AvailRS Description
 | Pricing/ParticipantCategory/TPA_Extensions/Attributes | 0..1 |   	| Attributes that we need send between calls.	|
 | Pricing/ParticipantCategory/TPA_Extensions/Attributes/Attribute | 0..n | | Attributes that we need send between calls. |
 
-|
+

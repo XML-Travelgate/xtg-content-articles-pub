@@ -5,4 +5,4 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/activities/change-log
 ---
 
-|
+

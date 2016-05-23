@@ -12,7 +12,7 @@ credentials.
 
 The response object contains the operation status and errors if any.
 
-|
+
 
 Common Elements RQ Example
 ==========================
@@ -45,12 +45,12 @@ Common Elements RQ Example
        …
     </TicketBaseRQ>
 
-|
+
 
 Common Elements RQ Description
 ==============================
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
@@ -74,7 +74,7 @@ Common Elements RQ Description
 | @key                 			| 1    		| String	| Contains the keyword/Id to identify a parameter. |
 | @value               			| 1    		| String	| Contains the value of the parameter.		|
 
-|
+
 
 Common Elements RS Example
 ==========================
@@ -99,12 +99,12 @@ Common Elements RS Example
 
     </TicketBaseRS>
 
-|
+
 
 Common Elements RS Description
 ==============================
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
@@ -122,4 +122,4 @@ Common Elements RS Description
 | auditData/transactions/RS		| 1     	| String	| Transaction Response.				|
 | auditData/timeStamp   		| 1     	| Integer	| TimeStamp which response has been generated.	|
 
-|
+

@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/activities/DSF/valuation
 ---
 
-|
+
 
 ValuationRQ Example
 ===================
@@ -42,12 +42,12 @@ ValuationRQ Example
       </BookingInfo>
     </OTA_TourActivityBookRQ>
 
-|
+
 
 ValuationRQ Description
 =======================
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
@@ -75,7 +75,7 @@ ValuationRQ Description
 | Pricing/ParticipantCategory/TPA_Extensions/Issue | 0..1 |		| Contains information about ticket printing.	|
 | @Mandatory          			| 0..1		| Boolean	| Specifies if the ticket should be printed by the client. |
 
-|
+
 
 ValuationRS Example
 ===================
@@ -120,12 +120,12 @@ ValuationRS Example
         </ReservationDetails>
     </OTA_TourActivityBookRS>
 
-|
+
 
 ValuationRS Description
 =======================
 
-| 
+
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |

@@ -5,21 +5,21 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/activities/DSF/reservation-read
 ---
 
-|
+
 
 Method Goals
 ============
 
 This method aims to consult a reservation
 
-|
+
 
 Request Format
 ==============
 
 The request requires the booking code and the name of the customer
 
-|
+
 
 Response Format
 ===============
@@ -27,14 +27,14 @@ Response Format
 The result returns the new status of the reservation and the possible
 cost of the consultation.
 
-|
+
 
 Remarks
 =======
 
 Not implemented by all suppliers
 
-|
+
 
 ReservationReadRQ Example
 =========================
@@ -46,14 +46,14 @@ ReservationReadRQ Example
         xmlns:xsd = "http://www.w3.org/2001/XMLSchema"
         PrimaryLangID = "es">
         <UniqueID ID = "1283712#1" Type = "PROVIDER"/>
-    </OTA_ReadRQ>
+    <OTA_ReadRQ>
 
-|
+
 
 ReservationReadRQ Description
 =============================
 
-|
+
 
 | **Element**			| **Number**	| **Type**	| **Description**				|
 | ----------------------------- | ------------- | ------------- | --------------------------------------------- |
@@ -63,7 +63,7 @@ ReservationReadRQ Description
 | @ID       			| 1    		| String	| Activity booked identifier.			|
 | @type     			| 1    		| String	| Activity booked type (Possible values: "PROVIDER" or "CLIENT"). Usually by provider locator. |
 
-|
+
 
 ReservationReadRS Example
 =========================
@@ -122,12 +122,12 @@ ReservationReadRS Example
         </Detail>
     </OTA_TourActivityResRetrieveRS>
 
-|
+
 
 ReservationReadRS Description
 =============================
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |

@@ -5,21 +5,21 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/activities/DSF/cancel
 ---
 
-|
+
 
 Method Goals
 ============
 
 This method aims to cancel a booking
 
-|
+
 
 Request Format
 ==============
 
 The request requires the booking code and the name of the customer
 
-|
+
 
 Response Format
 ===============
@@ -27,14 +27,14 @@ Response Format
 The result returns the new status of the reservation and the possible
 cost of the cancellation.
 
-|
+
 
 Remarks
 =======
 
 Not implemented by all suppliers
 
-|
+
 
 CancelRQ Example
 ================
@@ -45,12 +45,12 @@ CancelRQ Example
       <Confirmation ID="1283479#1" type="PROVIDER" />
     </OTA_TourActivityCancelRQ>
 
-|
+
 
 CancelRQ Description
 ====================
 
-|
+
 
 | **Element**					| **Number**	| **Type**	| **Description**			|
 | --------------------------------------------- | ------------- | ------------- | ------------------------------------- |
@@ -60,7 +60,7 @@ CancelRQ Description
 | @ID                 				| 1      	| String 	| Activity booked identifier.		|
 | @type               				| 1      	| String 	| Activity booked type (Possible values: "PROVIDER"). |
 
-|
+
 
 CancelRS Example
 ================
@@ -81,12 +81,12 @@ CancelRS Example
       </Reservation>
     </OTA_TourActivityCancelRS>
 
-|
+
 
 CancelRS Description
 ====================
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |

@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/activities/DSF/reservation
 ---
 
-|
+
 
 ReservationRQ Example
 =====================
@@ -54,14 +54,14 @@ ReservationRQ Example
                 </Attributes>
             </TPA_Extensions>
         </BookingInfo>
-    </OTA_TourActivityBookRQ>
+    <OTA_TourActivityBookRQ>
 
-|
+
 
 ReservationRQ Description
 =========================
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
@@ -104,7 +104,7 @@ ReservationRQ Description
 | @idAgrupacion      			| 1  		| String	| In this case, is specific attribute mandatory for IMP. This can obtain in iFRAME, from UrlSitting that we return in availabilityRS, this is for preBook reservation. |
 | @idPago            			| 1  		| String	| In this case, is specific attribute mandatory for IMP. This can obtain in iFRAME, from  UrlSitting that we return in availabilityRS, this is for preBook reservation. |
 
-|
+
 
 ReservationRS Example
 =====================
@@ -142,12 +142,12 @@ ReservationRS Example
         </ReservationDetails>
     </OTA_TourActivityBookRS>
 
-|
+
 
 Reservation RS Description
 ==========================
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
