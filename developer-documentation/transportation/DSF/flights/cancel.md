@@ -52,7 +52,7 @@ CancellationRQ Example
         <Locator>xxx</Locator>
     </CancellationRQ>
 
-|
+
 
 CancellationRQ Description
 ==========================

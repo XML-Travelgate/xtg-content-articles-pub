@@ -307,7 +307,7 @@ ReservationsRS Example
         </Invoice>
     </ReservationsRS>
 
-|
+
 
 ReservationsRS Description
 ==========================

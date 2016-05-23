@@ -147,7 +147,7 @@ RetrieveReservationRS Example
         <commission>0</commission>
     </RetrieveReservationRS>
 
-|
+
 
 RetrieveReservationRS Description
 =================================

@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/transportation/DSF/flights/avail
 ---
 
-|
+
 
 Method Goals
 ============
@@ -14,7 +14,7 @@ This method aims to return all the available options for a given date
 and itinerary. It does not filter different classes, times or fares. It
 will always return all of the results returned by the provider.
 
-|
+
 
 Request Format
 ==============
@@ -23,7 +23,7 @@ The common part of an availability request is very straight forward. It
 only requires the destination/s, the travelling dates, the paxes and the
 indication of the trip type: one way trip or a round trip.
 
-|
+
 
 Response Format
 ===============
@@ -36,7 +36,7 @@ which will be organized by two main nodes:
 A list with all of the Segments including details, returned by the
 supplier, such as dates, number, etc.
 
-|
+
 
 -   Fares:
 
@@ -50,7 +50,7 @@ There will always be one PaxBreakdown per passenger type.
 The price returned is "all inclusive". All fares, taxes and discounts
 are already included in the total price.
 
-|
+
 
 Remarks
 =======
@@ -60,7 +60,7 @@ This method **must** be called **before** the Valuation method.
 The maximum time that our systems permits before closing the connexion
 is of **25000** milliseconds.
 
-|
+
 
 AvailabilityRQ Example
 ======================
