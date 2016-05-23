@@ -12,7 +12,7 @@ credentials.
 
 The response object contains the operation status and errors if any.
 
-|
+
 
 Common Elements RQ Example
 ==========================
@@ -47,12 +47,12 @@ Common Elements RQ Example
        …
     </TransfersBaseRQ>
 
-|
+
 
 Common Elements RQ Description
 ==============================
 
-| 
+ 
 
 | **Element**					| **Number**	| **Type**	| **Description**					|
 | --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
@@ -80,7 +80,7 @@ Common Elements RQ Description
 | @Atributo/key            			| 1            	| String        | Unique key that identifies the value.			|
 | @Atributo/value          			| 1            	| String        | Value of the Attribute.				|
 
-|
+
 
 Common Elements RS Example
 ==========================
@@ -111,12 +111,12 @@ Common Elements RS Example
        …
     </TransfersBaseRS>
 
-|
+
 
 Common Elements RS Description
 ==============================
 
-| 
+ 
   
 | **Element**					| **Number**	| **Type**	| **Description**					|
 | --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |

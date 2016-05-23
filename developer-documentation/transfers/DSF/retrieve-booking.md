@@ -5,14 +5,14 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/transfers/DSF/retrieve-booking
 ---
 
-|
+
 
 Method Goals
 ============
 
 This method aims to Retrieve Booking details.
 
-|
+
 
 RetrieveBookingRQ Example
 =========================
@@ -43,7 +43,7 @@ RetrieveBookingRQ Example
         <Locator id = "XXX" type = "PROVIDER"/>
     </RetrieveBookingRQ>
 
-|
+
 
 RetrieveBookingRQ Description
 =============================
@@ -51,7 +51,7 @@ RetrieveBookingRQ Description
 The request format works the same way as the Book response. the main
 difference is that only contains the locator of the provider's system.
 
-|
+
  
 | **Element**				| **Number**	| **Type**	| **Description**						|
 | ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
@@ -60,7 +60,7 @@ difference is that only contains the locator of the provider's system.
 | RetrieveBookingRQ /Locator/id		| 1    		| String  	| The code that's identifies the reservation in the provider's system.	|
 | RetrieveBookingRQ /Locator/type	| 1    		| eLocatorType	| Indicates the type of the locator. The possible values are: **PROVIDER**.	|
 
-|
+
 
 RetrieveBookingRS Example
 =========================
@@ -140,7 +140,7 @@ RetrieveBookingRS Example
         </Errors>
     </RetrieveBookingRS>
 
-|
+
 
 RetrieveBookingRS Description
 =============================

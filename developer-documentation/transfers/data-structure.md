@@ -9,7 +9,7 @@ The structure of the API specification follows a standard. This document
 intends to explain every aspect of this structure and their fields. The
 integration will have the following methods:
 
-| 
+ 
 
 | **Method**		| **Input**		| **Output**		|  **Required**	| **Description**				| **Endpoint**					|
 | --------------------- | --------------------- | --------------------- | ------------- | --------------------------------------------- | --------------------------------------------- |
@@ -27,7 +27,7 @@ integration will have the following methods:
 | GetTransfersTypes  	| GetTransfers TypesRQ	| GetTransfers TypesRQ	| No  		| Gets a list of the transfers types with a basic information | Transfers Booking Endpoint	|
 | GetVehicles     	| GetVehiclesRQ		| GetVehiclesRS		| No  		| Gets a list of the vehicles with a basic information | Transfers Booking Endpoint		|
                              
-|
+
 
 Each request sent to the **service url** requires a node called rqXML .
 Inside this node travels the current method's Input object.
@@ -35,7 +35,7 @@ Inside this node travels the current method's Input object.
 The data structure will always have common elements in all objects and
 the specific objects related to the operation.
 
-|
+
 
 **Data structure content:**
 

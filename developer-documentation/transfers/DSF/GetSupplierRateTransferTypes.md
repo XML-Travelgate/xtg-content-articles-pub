@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/transfers/DSF/GetSupplierRateTransfersTypes
 ---
 
-|
+
 
 Method Goals
 ============
@@ -13,12 +13,12 @@ Method Goals
 This method aims to retrieve a list of the suppliers including their
 rates.
 
-|
+
 
 Remarks
 =======
 
-|
+
 
 GetSupplierRateTransfersTypesRQ Example
 =======================================
@@ -39,18 +39,18 @@ GetSupplierRateTransfersTypesRQ Example
     </Configuration>
     </GetSupplierRateTransferTypesRQ>
 
-|
+
 
 GetSuppliersRateTransfersTypesRQ Description
 ============================================
 
-|
+
 
 | **Element**					| **Number**	| **Type**	| **Description**		|
 | --------------------------------------------- | ------------- | ------------- | ----------------------------- |
 | GetSupplierRateTransfersTypesRQ		| 1          	|		| Root node.			|
 
-|
+
 
 GetSupplierRateTransfersTypesRS Example
 =======================================
@@ -87,12 +87,12 @@ GetSupplierRateTransfersTypesRS Example
     </Suppliers>
     </GetSupplierRateTransferTypesRS>
 
-|
+
 
 GetSupplierRateTransfersTypesRS Description
 ===========================================
 
-|
+
 
 | **Element**					| **Number**	| **Type**	| **Description**					|
 | --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |

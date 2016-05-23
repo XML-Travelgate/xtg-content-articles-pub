@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/transfers/DSF/avail
 ---
 
-|
+
 
 Method Goals
 ============
@@ -13,14 +13,14 @@ Method Goals
 This method aims to return all the available options for a given dates
 and destinations.
 
-|
+
 
 Remarks
 =======
 
 This method **must** be called **before** the RateRule method.
 
-|
+
 
 AvailabilityRQ Example
 ======================
@@ -83,7 +83,7 @@ AvailabilityRQ Example
         </Passengers>
     </AvailabilityRQ>
 
-|
+
 
 AvailabilityRQ Description
 ==========================
@@ -95,7 +95,7 @@ codes and dates. If the segment contains an Hotel destination or an
 Airport destination, extra information must be sent in FlightInfo object
 and HotelInfo object.
 
-| 
+
 
 | **Element**					| **Number**	| **Type**	| **Description**					|
 | --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
@@ -127,7 +127,7 @@ and HotelInfo object.
 | @RefSegment/refSegment			| 1 		| Integer	| This reference represents the id of the segment which is served with this option.	|
 | @RefSegment/bags				| 1 		| Integer	| Indicates the number of bags carried by the passenger.	|
 
-|
+
 
 AvailabilityRS Example
 ======================
@@ -222,7 +222,7 @@ AvailabilityRS Example
         </Warnings>
     </AvailabilityRS>
 
-|
+
 
 AvailabilityRS Description
 ==========================
@@ -236,7 +236,7 @@ received in a rate have the same price. If the rate is OW their options
 are combinable with options of other rates but if the rate is RT, they
 are just combinable with other options of the same rate.
 
-|
+
  
 | **Element**					| **Number**	| **Type**	| **Description**					|
 | --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |

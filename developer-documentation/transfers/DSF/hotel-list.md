@@ -4,7 +4,7 @@ keywords: transfers, hotel list, list
 sidebar: mydoc_sidebar
 permalink: /developer-documentation/transfers/DSF/hotel-list
 ---
-|
+
 
 Method Goals
 ============
@@ -13,7 +13,7 @@ This method aims to retrieve a list of the hotels that can be used as a
 destination in the provider's system. The information details is
 provided by the provider.
 
-|
+
 
 Remarks
 =======
@@ -22,7 +22,7 @@ This method should be cached internally and only called once a week and
 in most cases once a month. The information details is provided by the
 provider.
 
-|
+
 
 HotelListRQ Example
 ===================
@@ -52,7 +52,7 @@ HotelListRQ Example
         </Configuration>
     </HotelListRQ>
 
-|
+
 
 HotelListRQ Description
 =======================
@@ -63,7 +63,7 @@ The request just contains the elements of BaseRQ.
 | --------------------- | ------------- | ------------- | ----------------------------- |
 | HotelListRQ        	| 1           	|		| Root node.			|
 
-|
+
 
 HotelListRS Example
 ===================
@@ -105,7 +105,7 @@ HotelListRS Example
         ...
     </HotelListRS>
 
-|
+
 
 HotelListRS Description
 =======================
@@ -115,7 +115,7 @@ destination in the provider's system. Each of the retrieved Hotel
 objects contain a basic information that make possible the corresponding
 mapping on the client's system.
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**						|
 | ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |

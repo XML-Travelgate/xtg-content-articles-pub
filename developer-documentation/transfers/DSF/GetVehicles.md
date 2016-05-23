@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/transfers/DSF/GetVehicles
 ---
 
-|
+
 
 Method Goals
 ============
@@ -13,12 +13,12 @@ Method Goals
 This method aims to retrieve a list of the vehicles that operate the
 transfers.
 
-|
+
 
 Remarks
 =======
 
-|
+
 
 GetVehiclesRQ Example
 =====================
@@ -39,18 +39,18 @@ GetVehiclesRQ Example
         </Configuration>
     </GetVehiclesRQ>
 
-|
+
 
 GetVehiclesRQ Description
 =========================
 
-|
+
 
 | **Element**		| **Number**	| **Type**	| **Description**	|
 | --------------------- | ------------- | ------------- | --------------------- |
 | GetVehiclesRQ		| 1          	|		| Root node.		|
 
-|
+
 
 GetVehiclesRS Example
 =====================
@@ -72,12 +72,12 @@ GetVehiclesRS Example
         </Vehicles>
     </GetVehiclesRS>
 
-|
+
 
 GetVehiclesRS Description
 =========================
 
-|
+
 
 | **Element**			| **Number**	| **Type**	| **Description**			|
 | ----------------------------- | ------------- | ------------- | ------------------------------------- |

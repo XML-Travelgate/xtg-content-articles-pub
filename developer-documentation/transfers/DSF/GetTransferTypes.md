@@ -5,17 +5,17 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/transfers/DSF/GetTransferTypes
 ---
 
-|
+
 
 Method Goals
 ============
 
-|
+
 
 Remarks
 =======
 
-|
+
 
 GetTransferTypesRQ Example
 ==========================
@@ -36,18 +36,18 @@ GetTransferTypesRQ Example
         </Configuration>
     </GetTransferTypesRQ>
 
-|
+
 
 GetTransferTypesRQ Description
 ==============================
 
-|
+
 
 | **Element**			| **Number**	| **Type**	| **Description**	|
 | ----------------------------- | ------------- | ------------- | --------------------- |
 | GetTransferTypesRQ		| 1          	|		| Root node.		|
 
-|
+
 
 GetTransferTypesRS Example
 ==========================
@@ -70,12 +70,12 @@ GetTransferTypesRS Example
         </TransferTypes>
     </GetTransferTypesRS>
 
-|
+
 
 GetTransferTypesRS Description
 ==============================
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**						|
 | ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |

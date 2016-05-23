@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/transfers/DSF/rate-rule
 ---
 
-|
+
 
 Method Goals
 ============
@@ -16,7 +16,7 @@ This method aims to return price of the SelectedOptions . This options
 This message allows the partners to know the applied conditions on the
 chosen transfers.
 
-|
+
 
 Remarks
 =======
@@ -25,7 +25,7 @@ Some suppliers do not provide this method. If this is the case, our
 integration will internally call an Availability method and will filter
 the results in order to refresh the information and produce a RateRuleRS.
 
-|
+
 
 RateRule RQ Example
 ===================
@@ -117,7 +117,7 @@ RateRule RQ Example
         </Passengers>
     </RateRuleRQ>
 
-|
+
 
 RateRule RQ Description
 =======================
@@ -127,7 +127,7 @@ The RateRule request requires the following information:
 -   The selected rates with their corresponding selected options.
 -   The passengers of the booking.
 
-|
+
  
 | **Element**					| **Number**	| **Type**	| **Description**					|
 | --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
@@ -151,7 +151,7 @@ The RateRule request requires the following information:
 | RateRuleRQ/Passengers				| 1 		| Passengers	| Contains a list of the passengers that participate in this reservation.	|
 | RateRuleRQ/Passengers/Passenger		| 1..n		| Passenger	| Contains a list of Passenger objects.			|
 
-|
+
 
 RateRuleRS Example
 ==================
@@ -230,7 +230,7 @@ RateRuleRS Example
         </Errors>
      </RateRuleRS>
 
-|
+
 
 RateRuleRS Description
 ======================
@@ -241,7 +241,7 @@ list of SelectedRate . This object is almost the same as a Rate but it
 contains the transfer information instead of just a reference and it
 contains messages with important information from the provider.
 
-|
+
  
 | **Element**					| **Number**	| **Type**	| **Description**					|
 | --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |

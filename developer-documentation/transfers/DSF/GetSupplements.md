@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/transfers/DSF/GetSupplements
 ---
 
-|
+
 
 Method Goals
 ============
@@ -13,12 +13,12 @@ Method Goals
 This method aims to retrieve a list of the supplements that can be added
 to a product.
 
-|
+
 
 Remarks
 =======
 
-|
+
 
 GetSupplementsRQ Example
 ========================
@@ -39,18 +39,18 @@ GetSupplementsRQ Example
         </Configuration>
     </GetSupplementsRQ>
 
-|
+
 
 GetSupplementsRQ Description
 ============================
 
-|
+
 
 | **Element**			| **Number**	| **Type**	| **Description**		|
 | ----------------------------- | ------------- | ------------- | ----------------------------- |
 | GetSupplementsRQ		| 1          	|		| Root node.			|
 
-|
+
 
 GetSupplementsRS Example
 ========================
@@ -71,12 +71,12 @@ GetSupplementsRS Example
         </Supplements>
     </GetSupplementsRS>
 
-|
+
 
 GetSupplementsRS Description
 ============================
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**						|
 | ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |

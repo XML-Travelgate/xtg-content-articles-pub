@@ -5,14 +5,14 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/transfers/DSF/cancel-booking
 ---
 
-|
+
 
 Method Goals
 ============
 
 This method aims to cancel a booking.
 
-|
+
 
 CancelBookingRQ Example
 =======================
@@ -41,18 +41,18 @@ CancelBookingRQ Example
     </CancelBookingRQ>
 
 
-|
+
 
 CancelBookingRQ Description
 ===========================
 
-|
+
 
 | **Element**			| **Number**	| **Type**	| **Description**		|
 | ----------------------------- | ------------- | ------------- | ----------------------------- |
 | CancelBookingRQ		| 1          	|		| Root node.			|
 
-|
+
 
 CancelBookingRS Example
 =======================
@@ -95,7 +95,7 @@ CancelBookingRS Example
     <ReservationStatus>CANCELLED</ReservationStatus></CancelBookingRS>
 
 
-|
+
 
 GetTransferTypesRS Description
 ==============================

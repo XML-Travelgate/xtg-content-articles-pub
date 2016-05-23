@@ -5,14 +5,14 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/transfers/DSF/reservation
 ---
 
-|
+
 
 Method Goals
 ============
 
 This method aims to book the selected options.
 
-|
+
 
 BookRQ Example
 ==============
@@ -88,7 +88,7 @@ BookRQ Example
         <Customer name = "xxx" surname = "XXXX" age = "30" phone = "+34665246787"/>
     </BookRQ>
 
-|
+
 
 BookRQ Description
 ==================
@@ -100,7 +100,7 @@ reservation. This request also contains a locator that identifies the
 reservation in the client system (the types of this locator must be
 always CLIENT).
 
-|
+
  
 | **Element**					| **Number**	| **Type**	| **Description**					|
 | --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
@@ -122,14 +122,14 @@ always CLIENT).
 | BookRQ/Customer/age				| 1  		| Integer	| Contains the age of the customer.			|
 | BookRQ/Customer/phone				| 1  		| String	| Contains the contact phone number of the customer.	|
 
-|
+
 
 BookRS Example
 ==============
 
 
 
-    <BookRS>   
+    <BookRS> 
         <auditData>
             <transactions>
                 <timeStamp>2014-09-19T13:44:18.716787+01:00</timeStamp>
@@ -156,7 +156,7 @@ BookRS Example
         <ReservationStatus>RESERVED</ReservationStatus>
     </BookRS>
 
-|
+
 
 BookRS Description
 ==================
@@ -176,4 +176,4 @@ response.
 | BookRS/TotalPrice				| 1		| Price		| Contains information about the pricing of the reservation.	|
 | BookRS/ReservationStatus			| 1		| eTransaction StatusType | Indicates the status of the reservation. The possible values are: **UNSUCCESSFUL**(There has been an error in the reservation process, Normaly the error is identified in node Errors); **REQUESTED**( The reservation is pending); **RESERVED**; **CANCELLED**.	|
 
-|
+

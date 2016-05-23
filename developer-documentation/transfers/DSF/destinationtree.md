@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/transfers/DSF/destionationtree
 ---
 
-|
+
 
 Method Goals
 ============
@@ -13,7 +13,7 @@ Method Goals
 This method aims to return all the available destinations for the
 selected carrier.
 
-|
+
 
 Remarks
 =======
@@ -22,7 +22,7 @@ This method should be cached internally and only called once a week and
 in most cases once a month. The hierarchically structure of the tree is
 defined by the provider.
 
-|
+
 
 DestinationsTreeRQ Example
 ==========================
@@ -51,7 +51,7 @@ DestinationsTreeRQ Example
         </Configuration>
     </DestinationsTreeRQ>
 
-|
+
 
 DestinationsTreeRQ Description
 ==============================
@@ -62,7 +62,7 @@ The request just contains the elements of BaseRQ.
 | ----------------------------- | ------------- | ------------- | ----------------------------- |
 | DestinationsTreeRQ 		| 1           	|		| Root node.			|
 
-|
+
 
 DestinationsTreeRS Example
 ==========================
@@ -108,7 +108,7 @@ DestinationsTreeRS Example
     ...
     </DestinationsTreeRS>
 
-|
+
 
 DestinationsTreeRS Description
 ==============================
@@ -120,7 +120,7 @@ destinations that hang from that "Parent" destination. Usually not all
 Destination are available for booking so we added the boolean avail that
 indicates if this code can be used on the Availability method.
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**						|
 | ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |

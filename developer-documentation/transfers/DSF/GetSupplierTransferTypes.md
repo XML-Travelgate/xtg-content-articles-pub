@@ -5,17 +5,17 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/transfers/DSF/GetSupplierTransferTypes
 ---
 
-|
+
 
 Method Goals
 ============
 
-|
+
 
 Remarks
 =======
 
-|
+
 
 GetSupplierTransferTypesRQ Example
 ==================================
@@ -36,18 +36,18 @@ GetSupplierTransferTypesRQ Example
         </Configuration>
     </GetSupplierTransferTypesRQ>
 
-|
+
 
 GetSupplierTransferTypesRQ Description
 ======================================
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**		|
 | ------------------------------------- | ------------- | ------------- | ----------------------------- |
 | GetSupplierTransferTypesRQ		| 1          	|		| Root node.			|
 
-|
+
 
 GetSupplierTransferTypesRS Example
 ==================================
@@ -85,12 +85,12 @@ GetSupplierTransferTypesRS Example
         </Suppliers>
     </GetSupplierTransferTypesRS>
 
-|
+
 
 GetSupplierTransferTypesRS Description
 ======================================
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**					|
 | ------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |

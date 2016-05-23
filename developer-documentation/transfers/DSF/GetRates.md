@@ -5,19 +5,19 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/transfers/DSF/GetRates
 ---
 
-|
+
 
 Method Goals
 ============
 
 This method aims to retrieve a list of the rates that can be booked.
 
-|
+
 
 Remarks
 =======
 
-|
+
 
 GetRatesRQ Example
 ==================
@@ -38,7 +38,7 @@ GetRatesRQ Example
         </Configuration>
     </GetRatesRQ>
 
-|
+
 
 GetRatesRQ Description
 ======================
@@ -49,7 +49,7 @@ The request just contains the elements of BaseRQ.
 | --------------------- | ------------- | ------------- | ----------------------------- |
 | GetRatesRQ 		| 1          	|		| Root node.			|
 
-|
+
 
 GetRatesRS Example
 ==================
@@ -80,12 +80,12 @@ GetRatesRS Example
         </Rates>
     </GetRatesRS>
 
-|
+
 
 GetRatesRS Description
 ======================
 
-| 
+ 
 
 | **Element**				| **Number**	| **Type**	| **Description**						|
 | ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
