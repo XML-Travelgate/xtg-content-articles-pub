@@ -7,7 +7,7 @@ permalink: /developer-documentation/hotel-push/messages-files/notify-messages
 
 Providers sends data to Sellers (Negotiation is started by Providers).
 
-|
+
 
 HotelRatePlanNotif
 ==================
@@ -15,7 +15,7 @@ HotelRatePlanNotif
 Provider will send an HotelRatePlanNotifRQ message to push Rates to
 seller. XTG will process data and response with error code if needed.
 
-|
+
 
 HotelRatePlanNotifRQ
 ====================
@@ -121,7 +121,7 @@ HotelRatePlanNotifRQ
       </request>
     </HotelRatePlanNotif>
 
-|
+
 
 | **Element**				| **Number** | **Type**	| **Description**					|
 | ------------------------------------- | ---------- | -------- | ----------------------------------------------------- |
@@ -167,7 +167,7 @@ HotelRatePlanNotifRQ
 | @InvCode				| 1	    | Integer	| Sellable Product Code.				|
 | @InvType				| 1	    | Integer	| Sellable product type (ROOM).				|
 
-|
+
 
 **Important information:**
 
@@ -199,7 +199,7 @@ child and 0 babies should be "2-1-0".
 -   In samples room uses are specified using = AdultNumber -
     ChildNumber - InfantNumber.
 
-|
+
 
 **Notify amounts by Guests:**
 
@@ -221,7 +221,7 @@ There is no price for one adult, so it wont be available.
 
 The price of two adults will be 100 = 2\*(100/2).
 
-|
+
 
 Case 2:
 
@@ -243,7 +243,7 @@ The price of one Adult (Also known as Double Single Use) will be 100 =
 
 The price of two adults will be 130 = 2\*(130/2).
 
-|
+
 
 Case 3:
 
@@ -270,7 +270,7 @@ The price of two Adult will be 100 = 2\*(100/2).
 The price of three Adults will be 190 = (100/2) + (100/2) + ((100/2) +
 (40).
 
-|
+
 
 Case 4:
 
@@ -296,7 +296,7 @@ The price of two Adult will be 100 = 2*(100/2).
 
 The price of three Adults will be 140 = (100/2) + (100/2) + 40.
 
-|
+
 
 Case 5:
 
@@ -323,7 +323,7 @@ The price of two Adult will be 100 = 2*(100/2).
 The price of one Adult and one Child will be 100 = 2*(100/2). All pax
 under standard occupancy are considered as adults.
 
-|
+
 
 Case 5.1:
 
@@ -353,7 +353,7 @@ The price of two Adult will be 100 = 2\*(100/2).
 The price of one Adult and one Child will be 100 = 2\*(100/2). All pax
 under standard occupancy are considered as adults.
 
-|
+
 
 Case 6:
 
@@ -380,7 +380,7 @@ The price of two Adults will be 100 = 2*(100/2)
 The price of one Adult and one Child will be 60 = 2*(100/2) +
 ((100/2) -40).
 
-|
+
 
 Case 7:
 
@@ -411,7 +411,7 @@ The price of three Adults will be 160 = (100/2) + (100/2) + ((100/2) +
 The price of four Adults will be 195 = (100/2) + (100/2) + ((100/2) +
 10) + ((100/2) - 15).
 
-|
+
 
 Case 8:
 
@@ -441,7 +441,7 @@ The price of three Adults will be 140 = (100/2) + (100/2) +
 The price of four Adults will be 180 = (100/2) + (100/2) +
 ((100/2) -10) + ((100/2) - 10).
 
-|
+
 
 Case 9:
 
@@ -474,7 +474,7 @@ The price of four Adults will be 190 = (150/3) + (150/3) + (150/3) +
 The price of five Adults will be 255 = (150/3) + (150/3) + (150/3) +
 ((150/3) - 10) + ((150/3) + 15).
 
-|
+
 
 **Notify amounts with price per room and additional guests**
 
@@ -498,7 +498,7 @@ The price of two Adults will be 100.
 
 The price of one Adult and one Child will be 100.
 
-|
+
 
 Case 2:
 
@@ -532,7 +532,7 @@ The price of one Adult and one Child will be 110 = 100 + 10.
 
 The price of three Adults and one Child will be 130 = 100 + 20 + 10.
 
-|
+
 
 Case 3:
 
@@ -559,7 +559,7 @@ The price of three Adults will be 100.
 
 The price of four Adults will be 120 = 100 + 20.
 
-|
+
 
 **Notify amounts by Occupancy:**
 
@@ -579,7 +579,7 @@ Room will not be available for 1 or 3 adults.
 
 The price of 2 adults, 0 child and 0 baby will be 100.
 
-|
+
 
 Case 2:
 
@@ -599,7 +599,7 @@ The price of 2 adults, 1 child and 0 baby will be 95.
 
 The price of 2 adults, 0 child and 1 baby will be 80.
 
-|
+
 
 HotelRatePlanNotifRS
 ====================
@@ -614,7 +614,7 @@ Success Response
              </HotelRatePlanNotifResult>
     </HotelRatePlanNotifResponse>
 
-|
+
 
 Error Response
 
@@ -628,7 +628,7 @@ Error Response
          </HotelRatePlanNotifResult>
       </HotelRatePlanNotifResponse>
 
-|
+
 
 HotelAvailNotif
 ===============
@@ -636,7 +636,7 @@ HotelAvailNotif
 Provider will send an HotelAvailNotifRQ message to push availabilities
 to seller. XTG will process data and response with error code if needed.
 
-|
+
 
 HotelAvailNotifRQ
 =================
@@ -687,7 +687,7 @@ HotelAvailNotifRQ
       </request>
     </HotelAvailNotif>
 
-|
+
 
 **Example for Derived RatePlan**
 
@@ -716,7 +716,7 @@ HotelAvailNotifRQ
       </request>
     </HotelAvailNotif>
 
-|
+
 
 | **Element**				| **Number** | **Type**	| **Description**					|
 | ------------------------------------- | ---------- | -------- | ----------------------------------------------------- |
@@ -751,7 +751,7 @@ HotelAvailNotifRQ
 | @MaxAdvancedBookingOffset		| 0..1	     | Integer	| Maximum number of days before the check-in date after which the product is not available to be booked. This restriction is usually used to offer last minute discounts on unsold inventory. |
 | @SellThroughOpenIndicator		| 0..1	     | Boolean	| When @Status is open, in this element you can indicate this room or room/ratePlan can be sold without limit(like BookingLimit=MaxInteger). Not used for derived rates. |
 
-|
+
 
 HotelAvailNotifRS
 =================
@@ -766,7 +766,7 @@ Success Response
       </HotelAvailNotifResult>
     </HotelAvailNotifResponse>
 
-|
+
 
 Error Response
 
@@ -780,12 +780,12 @@ Error Response
       </HotelAvailNotifResult>
     </HotelAvailNotifResponse>
 
-|
+
 
 Error Codes
 ===========
 
-|
+
 
 | **Error Code**	| **Error Description**						|
 | --------------------- | ------------------------------------------------------------- |
@@ -799,4 +799,4 @@ Error Codes
 |  8            	| SellableProduct not found					|
 |  9            	| Room not found in SellableProduct				|
 
-|
+

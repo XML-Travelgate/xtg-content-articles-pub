@@ -17,4 +17,4 @@ Public Soap WebService Methods:
 
 Provider should contact with Seller to get its credentials.
 
-|
+

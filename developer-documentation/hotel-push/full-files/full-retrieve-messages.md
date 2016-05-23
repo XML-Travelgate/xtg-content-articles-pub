@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hotel-push/full-files/full-retrieve-messages
 ---
 
-|
+
 
 Full HotelRatePlanInventoryRetrieveRQ
 =====================================
@@ -45,7 +45,7 @@ Full HotelRatePlanInventoryRetrieveRQ
         </s:Body>
     </s:Envelope>
 
-|
+
 
 Full HotelRatePlanInventoryRetrieveRS
 =====================================
@@ -316,7 +316,7 @@ Full HotelRatePlanInventoryRetrieveRS
         </s:Body>
     </s:Envelope>
 
-|
+
 
 Full HotelRatePlanRetrieveRQ
 ============================
@@ -357,7 +357,7 @@ Full HotelRatePlanRetrieveRQ
        </s:Body>
     </s:Envelope>
 
-|
+
 
 Full HotelRatePlanRetrieveRS
 ============================
@@ -542,7 +542,7 @@ Full HotelRatePlanRetrieveRS
        </s:Body>
     </s:Envelope>
 
-|
+
 
 Full HotelAvailRetrieveRQ
 =========================
@@ -583,7 +583,7 @@ Full HotelAvailRetrieveRQ
         </s:Body>
     </s:Envelope>
 
-|
+
 
 Full HotelAvailRetrieveRS
 =========================
@@ -622,4 +622,4 @@ Full HotelAvailRetrieveRS
        </s:Body>
     </s:Envelope>
 
-|
+

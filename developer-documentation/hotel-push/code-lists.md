@@ -5,12 +5,12 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hotel-push/code-lists
 ---
 
-|
+
 
 Error Codes
 ===========
 
-|
+
 
 | **Error Code** | **Error Description**					|
 | -------------- | ------------------------------------------------------------ |
@@ -24,12 +24,12 @@ Error Codes
 |  8             | SellableProduct not found					|
 |  9             | Room not found in SellableProduct				|
 
-|
+
 
 Meal Plan Codes (OTA MPT)
 =========================
 
-|
+
 
 | **Code** | **Description**			|
 | -------- | ---------------------------------- |
@@ -54,12 +54,12 @@ Meal Plan Codes (OTA MPT)
 | 19       | Breakfast				|
 | 20       | Modified				|
 
-|
+
 
 Payment Type Codes
 ==================
 
-| 
+ 
 
 | **Payment Type Code** | **Description**										|
 | --------------------- | --------------------------------------------------------------------------------------------- |
@@ -68,12 +68,12 @@ Payment Type Codes
 | BookingDatePayment	| The client will use a credit-card with the exact amount of the option so he can pay the provider/hotel. The provider will charge the payment on the reservation day. |
 | ArrivalDatePayment	| The client will use a credit-card with the exact amount of the option so he can pay the provider/hotel. The provider will charge the payment on the checking day. |
 
-|
+
 
 Credit Cards
 ============
 
-| 
+ 
 
 | **Codes** | **Names**			|
 | --------- | ------------------------- |
@@ -101,4 +101,4 @@ Credit Cards
 | XS        | access			|
 | O         | others			|
 
-|
+

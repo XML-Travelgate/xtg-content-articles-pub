@@ -34,4 +34,4 @@ can be resumed as:
     >     (Currently this functionality is available only in Seller's
     >     extranet)
 
-|
+

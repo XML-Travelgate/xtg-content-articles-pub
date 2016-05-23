@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hotel-push/full-files/full-notif-messages
 ---
 
-|
+
 
 Full HotelRatePlanNotifRQ
 =========================
@@ -63,7 +63,7 @@ Full HotelRatePlanNotifRQ
         </s:Body>
     </s:Envelope>
 
-|
+
 
 Full HotelRatePlanNotifRS
 =========================
@@ -88,7 +88,7 @@ Full HotelRatePlanNotifRS
        </s:Body>
     </s:Envelope>
 
-|
+
 
 Full HotelAvailNotifRQ
 ======================
@@ -156,7 +156,7 @@ Full HotelAvailNotifRQ
         </s:Body>
     </s:Envelope>
 
-|
+
 
 Full HotelAvailNotifRS
 ======================
@@ -181,4 +181,4 @@ Full HotelAvailNotifRS
        </s:Body>
     </s:Envelope>
 
-|
+

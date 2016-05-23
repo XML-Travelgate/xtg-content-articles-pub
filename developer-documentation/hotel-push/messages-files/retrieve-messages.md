@@ -8,7 +8,7 @@ permalink: /developer-documentation/hotel-push/messages-files/retrieve-messages
 Providers requests Sellers to retrieve data (Negotiation is started by
 Providers).
 
-|
+
 
 HotelRatePlanInventoryRetrieve
 ==============================
@@ -17,7 +17,7 @@ Providers will send an HotelRatePlanInventoryRetrieveRQ message to
 retrieve a list of hotels, rates and rooms and their configurations. XTG
 will return a list of all active rooms and configurations.
 
-|
+
 
 HotelRatePlanInventoryRetrieveRQ
 ================================
@@ -45,7 +45,7 @@ HotelRatePlanInventoryRetrieveRQ
       </request>
     </HotelRatePlanInventoryRetrieve>
 
-|
+
 
 | **Element**			| **Number** | **Type** | **Description**						|
 | ----------------------------- | ---------- | -------- | ------------------------------------------------------------- |
@@ -58,7 +58,7 @@ HotelRatePlanInventoryRetrieveRQ
 | RatePlans/RatePlan/HotelRef	| 0..1       | 		| Contains hotel filter						|
 | @HotelCode			| 0..1	     | String	| If the hotel is not specified, it returns Rooms and Rates of all user’s hotels. |
 
-|
+
 
 HotelRatePlanInventoryRetrieveRS
 ================================
@@ -166,7 +166,7 @@ the rooms appears twice because each appearance sets the different
 occupancies. STD2 room has 2 possible occupations: 2 adults + 1 child or
 2 adults.
 
-|
+
 
 **Example for Derived RatePlan**
 
@@ -245,7 +245,7 @@ occupancies. STD2 room has 2 possible occupations: 2 adults + 1 child or
         </HotelRatePlanInventoryRetrieveResult>
     </HotelRatePlanInventoryRetrieveResponse> 
 
-|
+
 
 | **Element**	  			    | **Number** | **Type** |   **Description**					|
 | ----------------------------------------- | ---------- | -------- | ------------------------------------------------- |
@@ -316,7 +316,7 @@ occupancies. STD2 room has 2 possible occupations: 2 adults + 1 child or
 | @AgeQualifyingCode			   | 1 		 | Integer  | (10 - Adult,8 - Child,7 - Infant).		|
 | RatePlans/RatePlan/SellableProduct/GuestRoom/Description/Text | 1 | String | Room description.			|
 
-|
+
 
 HotelRatePlanRetrieve
 =====================
@@ -325,7 +325,7 @@ Providers will send an HotelRatePlanRetrieveRQ message to retrieve a
 complete break down of rates. XTG will return break down of hotel /
 rates / rooms.
 
-|
+
 
 HotelRatePlanRetrieveRQ
 =======================
@@ -357,7 +357,7 @@ HotelRatePlanRetrieveRQ
       </request>
     </HotelRatePlanRetrieve>
 
-|
+
 
 | **Element**			| **Number**	| **Type**	| **Description**					|
 | ----------------------------- | ------------- | ------------- | ----------------------------------------------------- |
@@ -374,7 +374,7 @@ HotelRatePlanRetrieveRQ
 | RatePlans/RatePlan/RatePlanCandidates/RatePlanCandidate | 0..1 |  | Contains rate filter.             		|
 | @RatePlanCode			| 1  		| String	| Rate Plan Code to search rates.			|
 
-|
+
 
 HotelRatePlanRetrieveRS
 =======================
@@ -545,7 +545,7 @@ Gets the Rate BAR for the Hotel 12 from 2013-12-20 to 2013-12-25. In
 this case, the rate LOWCOST has two rooms associated, you will receive a
 RatePlan for each day-room-rate.
 
-|
+
 
 **Example for Derived RatePlan**
 
@@ -601,7 +601,7 @@ RatePlan for each day-room-rate.
 For a derived rate you will not receive the rooms associated. Derived
 rates have associated all the rooms from the base rate plan.
 
-|
+
 
 HotelAvailRetrieve
 ==================
@@ -610,7 +610,7 @@ Providers will send an HotelAvailRetrieveRQ message to retrieve a
 complete break down of availability. XTG will return break down of hotel
 / rates / rooms.
 
-|
+
 
 HotelAvailRetrieveRQ
 ====================
@@ -642,7 +642,7 @@ HotelAvailRetrieveRQ
       </request>
     </HotelAvailRetrieve>
 
-|
+
 
 | **Element**			| **Number**	| **Type**	| **Description**					|
 | ----------------------------- | ------------- | ------------- | ----------------------------------------------------- |
@@ -660,7 +660,7 @@ HotelAvailRetrieveRQ
 | RatePlanCandidates/RatePlanCandidate | 1..n 	| 		|							|
 | @RatePlanCode 		| 1 		| String 	| Rate Plan Code to search rates.			 1
 
-|
+
 
 HotelAvailRetrieveRS
 ====================
@@ -729,7 +729,7 @@ HotelAvailRetrieveRS
       </HotelAvailRetrieveResult>
     </HotelAvailRetrieveResponse>
 
-|
+
 
 | **Element**			| **Number**	| **Type**	| **Description**					|
 | ----------------------------- | ------------- | ------------- | ----------------------------------------------------- |
@@ -766,7 +766,7 @@ HotelAvailRetrieveRS
 | @MaxAdvancedBookingOffset	| 0..1		| Integer	| Maximum number of days before the check-in date after which the product is not available to be booked. This restriction is usually used to offer last minute discounts on unsold inventory. |
 | @SellThroughOpenIndicator	| 0..1		| Boolean	| When @Status is open, in this element you can indicate this room or room/ratePlan can be sold without limit (like BookingLimit=MaxInteger). Null for derived rates. |
 
-|
+
 
 HotelResRetrieve
 ================
@@ -774,7 +774,7 @@ HotelResRetrieve
 Providers will send an HotelResRetrieveRQ message to retrieve a list of
 seller reservations.
 
-|
+
 
 HotelResRetrieveRQ
 ==================
@@ -803,7 +803,7 @@ HotelResRetrieveRQ
       </request>
     </HotelResRetrieve>
 
-|
+
 
 | **Element**			| **Number**	| **Type**	| **Description**					|
 | ----------------------------- | ------------- | ------------- | ----------------------------------------------------- |
@@ -819,7 +819,7 @@ HotelResRetrieveRQ
 | @End        			| 1    		| DateTime	| End date to search bookings. DateTime Format is yyyy-MM-ddThh:mm:ss Date must be in UTC. |
 | @DateType   			| 1    		| String	| (ArrivalDate, CreateDate, DepartureDate, LastUpdateDate). |
 
-|
+
 
 HotelResRetrieveRS
 ==================
@@ -953,7 +953,7 @@ HotelResRetrieveRS
       </HotelResRetrieveResult>
     </HotelResRetrieveResponse>
 
-| 
+
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
@@ -1087,7 +1087,7 @@ HotelResRetrieveRS
 | @Code   				| 1 		| String	| Country code.					|
 | Value        				| 1 		| String	| Country name.					|
 
-|
+
 
 **Example Guarantee object with credit card details**
 
@@ -1121,4 +1121,4 @@ HotelResRetrieveRS
       </GuaranteesAccepted>
     </Guarantee>
 
-|
+

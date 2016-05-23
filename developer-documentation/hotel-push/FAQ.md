@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hotel-push/FAQ
 ---
 
-|
+
 
 **What is standard occupancy?**
 
@@ -38,14 +38,14 @@ For example, if the standard occupancy is 2. And it’s loaded...
 ... The price of two paxes will be 100, but the price of three paxes
 will be 250
 
-|
+
 
 **What is MaxAdditionalGuests in AdditionalGuestAmount?**
 
 MaxAdditionalGuests is not the maximum number of additional guests. It’s
 just the number of additional guests for which the price is loaded.
 
-|
+
 
 **How to open and close sales correctly?**
 
@@ -55,7 +55,7 @@ In our system we've three booleans to control restrictions:
 -   ArrivalOpen
 -   DepartureOpen
 
-|
+
 
 When all booleans are true a booking it's allowed in the specified day.
 
@@ -125,14 +125,14 @@ ArrivalOpen = true
 
 DepartureOpen = true
 
-|
+
 
 **Why AgeQualifyingCode is specified in supplements?**
 
 In our system it’s possible to load different supplements for each kind
 of pax (Baby, Child or Adult).
 
-|
+
 
 XML Travelgate - Edificio Europa, Local 1, bajos - ParcBIT, Palma de
 Mallorca, Baleares +34 871 968 181   
