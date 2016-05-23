@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/car/DSF/routes
 ---
 
-|
+
 
 Method Goals
 ============
@@ -13,7 +13,7 @@ Method Goals
 This method aims to return all the available offices for the selected
 carrier.
 
-|
+
 
 Remarks
 =======
@@ -21,7 +21,7 @@ Remarks
 This method should be cached internally and only called once a week and
 in most cases once a month.
 
-|
+
 
 OTA VehLocSearchRQ Example
 ==========================
@@ -57,7 +57,7 @@ OTA VehLocSearchRQ Example
         </POS>
     </OTA_VehLocSearchRQ>
 
-|
+
 
 OTA VehLocSearchRQ Description
 ==============================
@@ -66,10 +66,10 @@ The request requires a POS object. This method also accepts an office
 code in order to retrieve the specific information related to this
 office if the provider allows it.
 
-|
 
-| **Element**					| **Number**	| **Type**	| **Description**							|
-| --------------------------------------------- | ------------- | ------------- | --------------------------------------------------------------------- |
+
+| **Element**					| **Number**	| **Type**	| **Description**					|
+| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
 | OTA_VehLocSearchRQ				| 1             |            	| Root Node            				|
 | OTA_VehLocSearchRQ/POS			| 1  		| Pos           | Contains information of the Point Of Sale.	|
 | OTA_VehLocSearchRQ/VehLocSearchCriterion	| 1  		| ItemSearch	| CriterionType Contains the coordinates of the office and a reference point to locate the office.	|
@@ -79,7 +79,7 @@ office if the provider allows it.
 | ItemSearchCriterionType/RefPoint		| 1  		|		| This string contains a  reference point to locate the office.     	|
 | OTA_VehLocSearchRQ/Vendor			| 1  		| CompanyName   | Identifies the provider who owns that office.		|
 
-|
+
 
 OTA VehLocSearchRS Example
 ==========================
@@ -163,7 +163,7 @@ OTA VehLocSearchRS Example
         </VehMatchedLocs>
     </OTA_VehLocSearchRS>
 
-|
+
 
 OTA VehLocSearchRS Description
 ==============================
@@ -171,10 +171,10 @@ OTA VehLocSearchRS Description
 The result returns a list of VehMatchedLoc with the corresponding
 information.
 
-| 
+|
   
-| **Element**					| **Number**	| **Type**	| **Description**								|
-| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------------------------------- |
+| **Element**					| **Number**	| **Type**	| **Description**					|
+| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
 | OTA_VehLocSearchRS				| 1             |		| Root Node.						|
 | OTA_VehLocSearchRS /VehMatchedLocs		| 1  		| List of VehicleMatchedLocation | List of offices.              	|
 | VehicleMatchedLoc /LocationDetail		| 1  		| Vehicle LocationDetails	| Containts details of the location of the office.	|

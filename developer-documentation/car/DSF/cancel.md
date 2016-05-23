@@ -5,21 +5,21 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/car/DSF/cancel
 ---
 
-|
+
 
 Method Goals
 ============
 
 This method aims to cancel a booking
 
-|
+
 
 Remarks
 =======
 
 Not implemented by all suppliers
 
-|
+
 
 OTA VehCancelRQ Example
 =======================
@@ -41,14 +41,14 @@ OTA VehCancelRQ Example
         </VehCancelRQCore>
     </OTA_VehCancelRQ>
 
-|
+
 
 OTA VehCancelRQ Description
 ===========================
 
 The request requires the booking code and the name of the customer.
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**								|
 | ------------------------------------- | ------------- | ------------- | ----------------------------------------------------------------------------- |
@@ -60,7 +60,7 @@ The request requires the booking code and the name of the customer.
 | OTA_VehCancelRQ /VehCancelRQInfo	| 1   		| vehCancel RQInfo	| Contains the dates of the reservation and the selected offices. Most of the providers don't require this information.	|
 | vehCancelRQInfo /RentalInfo		| 1   		| RentalInfo	| Contains the locations and dates of the rental.				|
 
-|
+
 
 OTA VehCancelRS Example
 =======================
@@ -86,7 +86,7 @@ OTA VehCancelRS Example
         </Warnings>
     </OTA_VehCancelRS>
 
-|
+
 
 OTA VehCancelRS Description
 ===========================
@@ -94,7 +94,7 @@ OTA VehCancelRS Description
 The result returns the new status of the reservation and the possible
 cost of the cancellation.
 
-| 
+
  
 | **Element**				| **Number**	| **Type**	| **Description**								|
 | ------------------------------------- | ------------- | ------------- | ----------------------------------------------------------------------------- |

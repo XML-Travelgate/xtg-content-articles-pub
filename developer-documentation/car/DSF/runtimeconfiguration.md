@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/car/DSF/runtimeconfiguration
 ---
 
-|
+
 
 Method Goals
 ============
@@ -13,21 +13,21 @@ Method Goals
 This method returns a list of "atributos" that should be included in
 each request for the selected provider.
 
-|
+
 
 Request Format
 ==============
 
 The request only requires the provider code.
 
-|
+
 
 Response Format
 ===============
 
 The response contains a list of "attribute".
 
-|
+
 
 RunTimeConfigurationRQ Example
 ==============================
@@ -54,17 +54,17 @@ RunTimeConfigurationRQ Example
       <ClientConfiguration agency="testAgency" SellCurrency="EUR" />
     </RunTimeConfigurationRQ>
 
-|
+
 
 RunTimeConfiguration Description
 ================================
 
-|
+
 
 RunTimeConfigurationRS Example
 ==============================
 
-:
+
 
     <RunTimeConfigurationRS xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <operationImplemented>true</operationImplemented>
@@ -96,9 +96,9 @@ RunTimeConfigurationRS Example
       </Configuration>
     </RunTimeConfigurationRS>
 
-|
+
 
 RunTimeConfigurationRS Description
 ==================================
 
-|
+

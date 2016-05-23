@@ -10,7 +10,7 @@ their fields.
 
 The integration will have the following methods:
 
-|
+
 
 | **Method**		| **Input**		| **Output**		| **Required**	| **Description Endpoint**	|
 | --------------------- | --------------------- | --------------------- | ------------- | ----------------------------- |
@@ -23,19 +23,19 @@ The integration will have the following methods:
 | StaticConfiguration	| StaticConfigurationRQ	| StaticConfigurationRS	| Yes	 	| Returns the information related to the configuration of the provider. |
 | RuntimeConfiguration	| RuntimeConfigurationRQ|RuntimeConfigurationRS	| Yes		| Returns information related to the behaviour of the integration. |
 
-|
+
 
 Each request sent to the **service url** requires a node called rqXML .
 Inside this node travels the current method's Input object.
 
-|
+
 
 **Typical Exchange Message Scenario**
 
 Typical use case of message exchange flow between Providers and Sellers
 can be resumed as:
 
-|
+
 
 1.  **Retrieve and purchase of car rental product**:
 
@@ -58,7 +58,7 @@ can be resumed as:
     > 1.  Agencies can retrieve the available offices
     >     usingOTA_VehLocSearch.
 
-|
+
 
 **Data structure content:**
 

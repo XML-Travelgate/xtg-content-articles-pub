@@ -5,21 +5,21 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/car/DSF/valuation
 ---
 
-|
+
 
 Method Goals
 ============
 
 This method aims to retrieve a booking with its full details.
 
-|
+
 
 Remarks
 =======
 
 Some suppliers do not implement this method.
 
-|
+
 
 OTA VehRetResRQ Example
 =======================
@@ -41,9 +41,9 @@ OTA VehRetResRQ Example
         </VehRetResRQCore>
     </OTA_VehRetResRQ>
 
-|
 
-OTA\_VehRetResRQ Description
+
+OTA_VehRetResRQ Description
 ============================
 
 The request requires the UniqueID (locator) of the reservation and the
@@ -58,9 +58,9 @@ information.
 | VehRetResRQCore/UniqueID		| 1   		| UniqueID	| It has the UniqueID that identifies the reservation for the provider to cancel it.	|
 | VehRetResRQCore/PersonName		| 1   		| PersonName	| Contains the name of the customer that made the reservation.		|
 
-|
 
-OTA\_VehRetResRS Example
+
+OTA_VehRetResRS Example
 ========================
 
 
@@ -92,7 +92,7 @@ OTA\_VehRetResRS Example
         </Warnings>
     </OTA_VehRetResRS>
 
-|
+
 
 OTA VehRetResRS Description
 ===========================
@@ -100,7 +100,7 @@ OTA VehRetResRS Description
 The result returns the full details of a booking. It is very similar to
 the OTA VehRes Response.
 
-|
+
 
 | **Element**					| **Number**	| **Type**	| **Description**					|
 | --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |

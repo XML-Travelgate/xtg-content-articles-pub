@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/car/DSF/avail
 ---
 
-|
+
 
 Method Goals
 ============
@@ -13,14 +13,14 @@ Method Goals
 This method aims to return all the available options for a given date
 and offices.
 
-|
+
 
 Remarks
 =======
 
 This method **must** be called **before** the OTA VehRateRule method.
 
-|
+
 
 OTA VehAvailRateRQ Example
 ==========================
@@ -67,7 +67,7 @@ OTA VehAvailRateRQ Example
       </VehAvailRQInfo>
     </OTA_VehAvailRateRQ>
 
-|
+
 
 OTA VehAvailRateRQ Description
 ==============================
@@ -76,7 +76,7 @@ The availability request is very straight forward. It only requires the
 offices (airport ISO code, office code or city code), the required dates
 and a few other optional filters.
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
@@ -139,7 +139,7 @@ and a few other optional filters.
 | @CitizenCountryNameGroup/Code		| 1 		| String 	| The country code of the driver.       	|
 | Primary/birthdate			| 1 		| String 	| Birthdate in ISO 8601 prescribed format (YYYY-MM-DD). |
 
-|
+
 
 OTA VehAvailRateRS Example
 ==========================
@@ -215,7 +215,7 @@ OTA VehAvailRateRS Example
         </VehAvailRSCore>
     </OTA_VehAvailRateRS>
 
-|
+
 
 OTA VehAvailRateRS Description
 ==============================
@@ -225,7 +225,7 @@ vehAvails contains the details of the vehicle. The price returned should
 be "all inclusive". All fares, taxes and discounts are already included
 in the total price.
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |

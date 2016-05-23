@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/car/DSF/static-configuration
 ---
 
-|
+
 
 Method Goals
 ============
@@ -13,14 +13,14 @@ Method Goals
 This method returns important information about the behavior of the
 integration.
 
-|
+
 
 Request Format
 ==============
 
 The request only requires the provider code.
 
-|
+
 
 Response Format
 ===============
@@ -28,7 +28,7 @@ Response Format
 The response contains a list of parameters that will inform how to
 configure the integration.
 
-|
+
 
 StaticConfigurationRQ Example
 =============================
@@ -56,12 +56,12 @@ StaticConfigurationRQ Example
         <ClientConfiguration agency="testAgency" SellCurrency="EUR" />
     </StaticConfigurationRQ>
 
-|
+
 
 StaticConfigurationRQ Description
 =================================
 
-|
+
 
 StaticConfigurationRS Example
 =============================
@@ -81,9 +81,9 @@ StaticConfigurationRS Example
         <MaxReturnIATALocationsPerOTA_VehAvail>1</MaxReturnIATALocationsPerOTA_VehAvail>
     </StaticConfigurationRS>
 
-|
+
 
 StaticConfigurationRS Description
 =================================
 
-|
+

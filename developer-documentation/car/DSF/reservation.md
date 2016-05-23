@@ -5,19 +5,19 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/car/DSF/reservation
 ---
 
-|
+
 
 Method Goals
 ============
 
 This method aims to book the selected vehicle.
 
-|
+
 
 Remarks
 =======
 
-|
+
 
 OTA VehResRQ Example
 ====================
@@ -78,7 +78,7 @@ OTA VehResRQ Example
         </VehResRQCore>
     </OTA_VehResRQ>
 
-|
+
 
 OTA VehResRQ Description
 ========================
@@ -87,10 +87,10 @@ The request format works the same way as the OTA VehRateRule request.
 The main difference is that in addition to vehicle information, it is
 also necessary the customer information.
 
-|
 
-| **Element**					| **Number**	| **Type**	| **Description**								|
-| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------------------------------- |
+
+| **Element**					| **Number**	| **Type**	| **Description**					|
+| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
 | OTA_VehResRQ					| 1             |		| Root Node.				|
 | OTA_VehResRQ/POS				| 1 		| Pos         	| Contains information of the Point Of Sale.		|
 | OTA_VehResRQ/VehResRQCore			| 1 		| VehResRQCore	| Includes information about the customer and the rental, such as dates, model, locations.	|
@@ -118,14 +118,14 @@ also necessary the customer information.
 | PaymentCard/ExpireDate			| 1 		| String      	| The month and year of expiration of the card in mmYY format.		|
 | PaymentCard/CardHolderName			| 1 		| The name that appears on the card | Indicates the owner of the reservation.		|
 
-|
+
 
 OTA VehResRS Example
 ====================
 
 
 
-    <OTA_VehResRS>   
+    <OTA_VehResRS> 
         <auditData>
             <transactions>
                 <timeStamp>2013-06-12T13:30:51.6688071+02:00</timeStamp>
@@ -152,7 +152,7 @@ OTA VehResRS Example
         </VehResRSCore>
     </OTA_VehResRS>
 
-|
+
 
 OTA VehResRS Description
 ========================
@@ -161,10 +161,10 @@ The result returns a list of ConfID (booking codes). It can be the
 supplier's or the one sent in the request. It also returns all the
 charges associated to the booking.
 
-|
+
  
-| **Element**					| **Number**	| **Type**	| **Description**								|
-| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------------------------------- |
+| **Element**					| **Number**	| **Type**	| **Description**					|
+| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
 | OTA_VehResRS					| 1         	|		| Root Node.					|
 | OTA_VehResRS/vehResRSCore			| 1 		| VehResRSCore	| Contains the information of the reservation.          |
 | VehResRSCore/VehReservation			| 1 		| VehicleReservation | Contains information about the reservation.	|
