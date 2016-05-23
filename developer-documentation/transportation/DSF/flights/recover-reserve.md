@@ -5,19 +5,19 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/transportation/DSF/flights/recover-reserve
 ---
 
-|
+
 
 Method Goals
 ============
 
 This method aims to retrieve a booking with its full details.
 
-|
+
 
 RetrieveReservationRQ Example
 =============================
 
-:
+
 
     <RetrieveReservationRQ xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
         <Configuration/>
@@ -25,29 +25,23 @@ RetrieveReservationRQ Example
         <Locator>A3U4NS</Locator>
     </RetrieveReservationRQ>
 
-|
+
 
 RetrieveReservationRQ Description
 =================================
 
-  ------------------------------------------------------------------------
-  Element                        Nu Ty Description
-                                 mb pe 
-                                 er    
-  ------------------------------ -- -- -----------------------------------
-  RetrieveReservationRQ          1     Root node.
+| **Element**				| **Number**	| **Type**	| **Description**					|
+| ------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| RetrieveReservationRQ         	| 1    		|		| Root node.						|
+| Locator                       	| 1 		| String	| Locator.						|
 
-  Locator                        1  St Locator.
-                                    ri 
-                                    ng 
-  ------------------------------------------------------------------------
 
-|
+
 
 RetrieveReservationRS Example
 =============================
 
-:
+
 
     <RetrieveReservationRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
         <auditData>
@@ -158,613 +152,163 @@ RetrieveReservationRS Example
 RetrieveReservationRS Description
 =================================
 
-+--------------------------------+----+----+-------------------------------------+
-| Element                        | Nu | Ty | Description                         |
-|                                | mb | pe |                                     |
-|                                | er |    |                                     |
-+================================+====+====+=====================================+
-| RetrieveReservationRS          | 1  |    | Root node.                          |
-+--------------------------------+----+----+-------------------------------------+
-| Passengers                     | 1  |    | Contains a list of Passengers.      |
-+--------------------------------+----+----+-------------------------------------+
-| Passengers/Passenger           | 1. |    | Contains information of the         |
-|                                | .n |    | Passenger.                          |
-+--------------------------------+----+----+-------------------------------------+
-| <*@passengerType>\*            | 1  | St | Treatment: MR, MRS, CHD and INF.    |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@name>\*                     | 1  | St | Name of the Passenger.              |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@surname>\*                  | 1  | St | Surname/s of the Passenger.         |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@bithDate>\*                 | 1  | St | Date of birth.                      |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@codeDCO>\*                  | 1  | St | Document code.                      |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@documentType>\*             | 1  | St | Documentation type.                 |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@documentId>\*               | 1  | St | Unique identifier of the            |
-|                                |    | ri | documentation.                      |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@documentExpiration>\*       | 1  | St | Expiration date of the              |
-|                                |    | ri | documentation.                      |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@nationality>\*              | 1  | St | Nationality.                        |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Segments                       | 1  |    | Contains a list of Segment.         |
-+--------------------------------+----+----+-------------------------------------+
-| Segments/Segment               | 0. |    | Contains details of the Segment.    |
-|                                | .n |    |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@id>\*                       | 1  | In | Unique identifier of the            |
-|                                |    | te | SegmentInfo.                        |
-|                                |    | ge |                                     |
-|                                |    | r  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@transportationId>\*         | 1  | St | Unique Id of the transportation.    |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@transportationType>\*       | 1  | St | Transport type: V ( Flight ), T (   |
-|                                |    | ri | Train ), B ( Bus ) & F ( Ferry ).   |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@operatinCarrier>\*          | 1  | St | Company which operates the          |
-|                                |    | ri | transportation.                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@marketingCarrier>\*         | 1  | St | Company which commercializes the    |
-|                                |    | ri | transportation.                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@departureTerminal>\*        | 1  | St | Departure terminal.                 |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@arrivalTerminal>\*          | 1  | St | Arrival terminal.                   |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@departureDate>\*            | 1  | Da | Departure date.                     |
-|                                |    | te |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@arrivalDate>\*              | 1  | Da | Arrival date.                       |
-|                                |    | te |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@segmentDuration>\*          | 1  | In | Transport duration ( in minutes ).  |
-|                                |    | te |                                     |
-|                                |    | ge |                                     |
-|                                |    | r  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@planeType>\*                | 1  | St | Plane type. Flights parameter.      |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@maxCheckinDate>\*           | 1  | St | Maximum date to make the check-in.  |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@segmentStatus>\*            | 1  | St | SegmentInfo status: HK (OK), TK     |
-|                                |    | ri | (Change of programming), UC         |
-|                                |    | ng | (Unconfirmed), UN( Unable), NO (No  |
-|                                |    |    | action taken) & UD (Undefined)      |
-+--------------------------------+----+----+-------------------------------------+
-| <*@hasTechnicalStop>\*         | 1  | Bo | If true, the SegmentInfo has a      |
-|                                |    | ol | technical stop.                     |
-|                                |    | ea |                                     |
-|                                |    | n  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@electronicTicket>\*         | 1  | Bo | If true, the SegmentInfo uses a     |
-|                                |    | ol | electronic ticket.                  |
-|                                |    | ea |                                     |
-|                                |    | n  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Segments/Segment /OriginLoc    | 1  |    | Origin location.                    |
-+--------------------------------+----+----+-------------------------------------+
-| <*@type>\*                     | 1  | St | Type of station of the location     |
-|                                |    | ri | indicated with A ( AirPort ), T (   |
-|                                |    | ng | Train Station ) & P ( Port ).       |
-+--------------------------------+----+----+-------------------------------------+
-| <*@code>\*                     | 1  | St | Location code.                      |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@cityCode>\*                 | 1  | Bo | If true, the field code indicates a |
-|                                |    | ol | city code, if false, it will        |
-|                                |    | ea | indicate an airport code.           |
-|                                |    | n  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Segments/Segment/DestinationLo | 1  |    | Destination location.               |
-| c                              |    |    |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@type>\*                     | 1  | St | Type of station of the location     |
-|                                |    | ri | indicated with A ( AirPort ), T (   |
-|                                |    | ng | Train Station ) & P ( Port ).       |
-+--------------------------------+----+----+-------------------------------------+
-| <*@code>\*                     | 1  | St | Location code.                      |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@cityCode>\*                 | 1  | Bo | If true, the field code indicates a |
-|                                |    | ol | city code, if false, it will        |
-|                                |    | ea | indicate an airport code.           |
-|                                |    | n  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Segments/Segment/TechnicalStop | 0. |    | Contains a list of TechnicalStops.  |
-| s                              | .1 |    |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@totalTechnicalStops>\*      | 1  | In | Total number of TechnicalStops.     |
-|                                |    | te |                                     |
-|                                |    | ge |                                     |
-|                                |    | r  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Segments/Segment/TechnicalStop | 1. |    | Contains the details of the         |
-| s/TechnicalStop                | .n |    | TechnicalStop.                      |
-+--------------------------------+----+----+-------------------------------------+
-| <*@location>\*                 | 1  | St | TechnicalStop location.             |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@stopDate>\*                 | 1  | Da | Approx. stop date and time.         |
-|                                |    | te |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@departureDate>\*            | 1  | Da | Approx. departure date and time.    |
-|                                |    | te |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Segments/Segment/SegmentClasse | 0. |    | Contains a list of SegmentClasses.  |
-| s                              | .1 |    |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Segments/Segment/SegmentClasse | 0. |    | Contains details of the             |
-| s/SegmentClass                 | .n |    | SegmentClass.                       |
-+--------------------------------+----+----+-------------------------------------+
-| <*@cabinClass>\*               | 1  | St | Cabin class of the seat: N (Not     |
-|                                |    | ri | specified), Y (Tourist), C          |
-|                                |    | ng | (Business), F (First), CA (Cabin,   |
-|                                |    |    | only for ferries), YP (Tourist      |
-|                                |    |    | Plus)                               |
-+--------------------------------+----+----+-------------------------------------+
-| <*@class>\*                    | 1  | St | Fare class.                         |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@paxRef>\*                   | 1  | In | Reference for the Passenger which   |
-|                                |    | te | is using this fare in the           |
-|                                |    | ge | transport.                          |
-|                                |    | r  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@fareBasis>\*                | 1  | St | Fare basis.                         |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@fareType>\*                 | 1  | St | Fare type: PUB ( Public ), PRI (    |
-|                                |    | ri | Private ), NEGO ( Negotiated ) &    |
-|                                |    | ng | CORP ( Corporate ).                 |
-+--------------------------------+----+----+-------------------------------------+
-| Segments/Segment/ReservationTo | 0. |    | Contains specific attributes of     |
-| ken                            | .1 |    | each provider.                      |
-+--------------------------------+----+----+-------------------------------------+
-| Segments/Segment/ReservationTo | 0. |    | Contains details of the attribute.  |
-| ken/Attribute                  | .n |    |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@id>\*                       | 1  |    | Keyword or id to identify a         |
-|                                |    |    | parameter.                          |
-+--------------------------------+----+----+-------------------------------------+
-| <*@value>\*                    | 1  |    | Value of the parameter.             |
-+--------------------------------+----+----+-------------------------------------+
-| Tickets                        | 1  |    | List of issued tickets.             |
-+--------------------------------+----+----+-------------------------------------+
-| Tickets/retrieveStatus         | 1  | Bo | Indicates whether or not the        |
-|                                |    | ol | reservation had its tickets issued. |
-|                                |    | ea |                                     |
-|                                |    | n  |                                     |
-|                                |    | |  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Tickets/errorRetrieve          | 1  | St | Indicates error in the ticket       |
-|                                |    | ri | retrieval.                          |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Tickets/Ticket                 | 1. |    | Details of issued ticket.           |
-|                                | .n |    |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@id>\*                       | 1  | In | Unique identifier of the ticket.    |
-|                                |    | te |                                     |
-|                                |    | ge |                                     |
-|                                |    | r  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@ticketNum>\*                | 1  | St | Ticket number.                      |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@paxName>\*                  | 1  | St | Name of the passenger associated to |
-|                                |    | ri | the ticket.                         |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@status>\*                   | 1  | St | Current status of the ticket: OPEN, |
-|                                |    | ri | CONFIRMED, VOIDED, REFUNDED         |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| BookingBreakdown               | 1  |    | Contains price information.         |
-+--------------------------------+----+----+-------------------------------------+
-| BookingBreakdown/AmountBreakdo | 1  |    | Total amount information.           |
-| wn                             |    |    |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@currency>\*                 | 1  | St | Currency.                           |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@totalAmount>\*              | 1  | De | Total price.                        |
-|                                |    | ci |                                     |
-|                                |    | ma |                                     |
-|                                |    | l  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Itineraries                    | 1  |    | List of Itineraries.                |
-+--------------------------------+----+----+-------------------------------------+
-| Itineraries/Itinerary          | 1. |    | Details of the Itinerary.           |
-|                                | .n |    |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@id>\*                       | 1  | In | Unique identifier of the Itinerary. |
-|                                |    | te |                                     |
-|                                |    | ge |                                     |
-|                                |    | r  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@fareRef>\*                  | 1  | In | Reference identifier to the         |
-|                                |    | te | original Fare. Flights parameter.   |
-|                                |    | ge |                                     |
-|                                |    | r  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@HasObFees>\*                | 1  | Bo | If true then there is an extra fee  |
-|                                |    | ol | for using credit card.              |
-|                                |    | ea |                                     |
-|                                |    | n  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@carrier>\*                  | 1  | St | Validating carrier. Flights         |
-|                                |    | ri | parameter.                          |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Itineraries/Itinerary/Journeys | 0. |    | Contains a list of Journeys.        |
-|                                | .1 |    |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Itineraries/Itinerary/Journeys | 0. |    | Contains details of the Journeys.   |
-| /Journey                       | .n |    |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@id>\*                       | 1  | In | Unique identifier of the Journey in |
-|                                |    | te | scope.                              |
-|                                |    | ge |                                     |
-|                                |    | r  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@duration>\*                 | 1  | In | Duration of the Journey in minutes. |
-|                                |    | te |                                     |
-|                                |    | ge |                                     |
-|                                |    | r  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Itineraries/Itinerary/Journeys | 0. |    | Contains a list of Segments         |
-| /Journey/Segments              | .1 |    | associated to the Journey.          |
-+--------------------------------+----+----+-------------------------------------+
-| > Itineraries/Itinerary/Journe | 0. |    | Contains details of the             |
-| ys/Journey/Segments/Segment    | .n |    | SegmentInfo.                        |
-+--------------------------------+----+----+-------------------------------------+
-| <*@id>\*                       | 1  | In | Unique SegmentInfo identifier.      |
-|                                |    | te |                                     |
-|                                |    | ge |                                     |
-|                                |    | r  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Itineraries/Itinerary/Journeys | 0. |    | Contains information of the         |
-| /Journey/Segments/Segment/Segm | .n |    | SegmentInfo.                        |
-| entInfo                        |    |    |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@id>\*                       | 1  | In | Unique identifier of the            |
-|                                |    | te | SegmentInfo.                        |
-|                                |    | ge |                                     |
-|                                |    | r  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@transportationId>\*         | 1  | St | Unique Id of the transportation.    |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@transportationType>\*       | 1  | St | Transport type: F ( Flight ), T (   |
-|                                |    | ri | Train ), B ( Bus ) & F ( Ferry ).   |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@operatinCarrier>\*          | 1  | St | Company which operates the          |
-|                                |    | ri | transportation.                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@marketingCarrier>\*         | 1  | St | Company which commercializes the    |
-|                                |    | ri | transportation.                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@departureTerminal>\*        | 1  | St | Departure terminal.                 |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@arrivalTerminal>\*          | 1  | St | Arrival terminal.                   |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@departureDate>\*            | 1  | Da | Departure date.                     |
-|                                |    | te |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@arrivalDate>\*              | 1  | Da | Arrival date.                       |
-|                                |    | te |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@segmentDuration>\*          | 1  | In | Transport duration ( in minutes ).  |
-|                                |    | te |                                     |
-|                                |    | ge |                                     |
-|                                |    | r  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@planeType>\*                | 1  | St | Plane type. Flights parameter.      |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@maxCheckinDate>\*           | 1  | St | Maximum date to make the check-in.  |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@segmentStatus>\*            | 1  | St | SegmentInfo status: HK (OK), TK     |
-|                                |    | ri | (Change of programming), UC         |
-|                                |    | ng | (Unconfirmed), UN( Unable), NO (No  |
-|                                |    |    | action taken) & UD (Undefined)      |
-+--------------------------------+----+----+-------------------------------------+
-| <*@hasTechnicalStop>\*         | 1  | Bo | If true, the SegmentInfo has a      |
-|                                |    | ol | technical stop.                     |
-|                                |    | ea |                                     |
-|                                |    | n  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@electronicTicket>\*         | 1  | Bo | If true, the SegmentInfo uses a     |
-|                                |    | ol | electronic ticket.                  |
-|                                |    | ea |                                     |
-|                                |    | n  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Itineraries/Itinerary/Journeys | 1  |    | Origin location.                    |
-| /Journey/Segments/Segment/Segm |    |    |                                     |
-| entInfo/OriginLoc              |    |    |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@type>\*                     | 1  | St | Type of station of the location     |
-|                                |    | ri | indicated with A ( AirPort ), T (   |
-|                                |    | ng | Train Station ) & P ( Port ).       |
-+--------------------------------+----+----+-------------------------------------+
-| <*@code>\*                     | 1  | St | Location code.                      |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@cityCode>\*                 | 1  | Bo | If true, the field code indicates a |
-|                                |    | ol | city code, if false, it will        |
-|                                |    | ea | indicate an airport code.           |
-|                                |    | n  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Itineraries/Itinerary/Journeys | 1  |    | Destination location.               |
-| /Journey/Segments/Segment/Segm |    |    |                                     |
-| entInfo/DestinationLoc         |    |    |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@type>\*                     | 1  | St | Type of station of the location     |
-|                                |    | ri | indicated with A ( AirPort ), T (   |
-|                                |    | ng | Train Station ) & P ( Port ).       |
-+--------------------------------+----+----+-------------------------------------+
-| <*@code>\*                     | 1  | St | Location code.                      |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@cityCode>\*                 | 1  | Bo | If true, the field code indicates a |
-|                                |    | ol | city code, if false, it will        |
-|                                |    | ea | indicate an airport code.           |
-|                                |    | n  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Transportation/Segments/Segmen | 0. |    | Contains a list of TechnicalStops.  |
-| t/TechnicalStops               | .1 |    |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@totalTechnicalStops>\*      | 1  | In | Total number of TechnicalStops.     |
-|                                |    | te |                                     |
-|                                |    | ge |                                     |
-|                                |    | r  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Transportation/Segments/Segmen | 1. |    | Contains the details of the         |
-| t/TechnicalStops/TechnicalStop | .n |    | TechnicalStop.                      |
-+--------------------------------+----+----+-------------------------------------+
-| <*@location>\*                 | 1  | St | TechnicalStop location.             |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@stopDate>\*                 | 1  | Da | Approx. stop date and time.         |
-|                                |    | te |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@departureDate>\*            | 1  | Da | Approx. departure date and time.    |
-|                                |    | te |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Itineraries/Itinerary/Journeys | 0. |    | Contains a list of SegmentClasses.  |
-| /Journey/Segments/Segment/Segm | .1 |    |                                     |
-| entClasses                     |    |    |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Itineraries/Itinerary/Journeys | 0. |    | Contains details of the             |
-| /Journey/Segments/Segment/Segm | .n |    | SegmentClass.                       |
-| entClasses/SegmentClass        |    |    |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@cabinClass>\*               | 1  | St | Cabin class of the seat: N (Not     |
-|                                |    | ri | specified), Y (Tourist), C          |
-|                                |    | ng | (Business), F (First), CA (Cabin,   |
-|                                |    |    | only for ferries), YP (Tourist      |
-|                                |    |    | Plus)                               |
-+--------------------------------+----+----+-------------------------------------+
-| <*@class>\*                    | 1  | St | Fare class.                         |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@paxRef>\*                   | 1  | In | Reference for the Passenger which   |
-|                                |    | te | is using this fare in the           |
-|                                |    | ge | transport.                          |
-|                                |    | r  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@fareBasis>\*                | 1  | St | Fare basis.                         |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@fareType>\*                 | 1  | St | Fare type: PUB ( Public ), PRI (    |
-|                                |    | ri | Private ), NEGO ( Negotiated ) &    |
-|                                |    | ng | CORP ( Corporate ).                 |
-+--------------------------------+----+----+-------------------------------------+
-| Itineraries/Itinerary/Journeys | 0. |    | Contains specific attributes of     |
-| /Journey/Segments/Segment/Rese | .1 |    | each provider.                      |
-| rvationToken                   |    |    |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Itineraries/Itinerary/Journeys | 0. |    | Contains details of the attribute.  |
-| /Journey/Segments/Segment/Rese | .n |    |                                     |
-| rvationToken/Attribute         |    |    |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@id>\*                       | 1  |    | Keyword or id to identify a         |
-|                                |    |    | parameter.                          |
-+--------------------------------+----+----+-------------------------------------+
-| <*@value>\*                    | 1  |    | Value of the parameter.             |
-+--------------------------------+----+----+-------------------------------------+
-| Itineraries/Itinerary/AmountBr | 1  |    | Contains details of the             |
-| eakdown                        |    |    | AmountBreakdown.                    |
-+--------------------------------+----+----+-------------------------------------+
-| <*@currency>\*                 | 1  | St | Currency code of the fare.          |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@totalAmount>\*              | 1  | De | Total amount. with taxes and other  |
-|                                |    | ci | charges included.                   |
-|                                |    | ma |                                     |
-|                                |    | l  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@notCommissionableAmount>\*  | 1  | De | Total amount that can not be        |
-|                                |    | ci | commissioned.                       |
-|                                |    | ma |                                     |
-|                                |    | l  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@commission>\*               | 1  | De | Commission.                         |
-|                                |    | ci |                                     |
-|                                |    | ma |                                     |
-|                                |    | l  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Itineraries/Itinerary/AmountBr | 0. |    | Contains a list of                  |
-| eakdown/ChargeBreakdowns       | .1 |    | ChargeBreakdowns.                   |
-+--------------------------------+----+----+-------------------------------------+
-| Itineraries/Itinerary/AmountBr | 0. |    | Contains a list of breakdown        |
-| eakdown/PaxBreakdowns          | .1 |    | amounts for each Passenger ( ADT    |
-|                                |    |    | amount, etc. ).                     |
-+--------------------------------+----+----+-------------------------------------+
-| Itineraries/Itinerary/AmountBr | 0. |    | Contains details of breakdown       |
-| eakdown/PaxBreakdowns/PaxBreak | .n |    | amounts for each Passenger.         |
-| down                           |    |    |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@paxType>\*                  | 1  | St | Passenger type: ADT ( Adult ), CHD  |
-|                                |    | ri | ( Child ) & INF ( Infant ).         |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@amount>\*                   | 1  | De | Total amount, with taxes included,  |
-|                                |    | ci | associated to the Passenger.        |
-|                                |    | ma |                                     |
-|                                |    | l  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@taxes>\*                    | 1  | In | If they exist, taxes are applied    |
-|                                |    | te | for this Passenger type.            |
-|                                |    | ge |                                     |
-|                                |    | r  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@tasaDU>\*                   | 1  | In | Deprecated                          |
-|                                |    | te |                                     |
-|                                |    | ge |                                     |
-|                                |    | r  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Itineraries/Itinerary/PaxConfi | 1  |    | Contains a list of                  |
-| gurations                      |    |    | PaxConfigurations.                  |
-+--------------------------------+----+----+-------------------------------------+
-| Itineraries/Itinerary/PaxConfi | 1  |    | Contains details of the             |
-| gurations/PaxConfiguration     |    |    | PaxConfiguration.                   |
-+--------------------------------+----+----+-------------------------------------+
-| <*@id>\*                       | 1  | In | Unique identifier of the            |
-|                                |    | te | PaxConfiguration.                   |
-|                                |    | ge |                                     |
-|                                |    | r  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@paxRef>\*                   | 1  | In | Reference to the Passenger Id from  |
-|                                |    | te | the request.                        |
-|                                |    | ge |                                     |
-|                                |    | r  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@age>\*                      | 1  | In | Age of the Passenger.               |
-|                                |    | te |                                     |
-|                                |    | ge |                                     |
-|                                |    | r  |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@paxType>\*                  | 1  | St | Passenger type based on the age of  |
-|                                |    | ri | the Passenger: ADT (Adult), CHD     |
-|                                |    | ng | (Child), INF (Infant), YOU (Young)  |
-|                                |    |    | and SEN (Senior).                   |
-+--------------------------------+----+----+-------------------------------------+
-| <*@code>\*                     | 1  | St | String with the PTC code.           |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| PaymentMethod                  | 1  |    | Defines the payment method used in  |
-|                                |    |    | the reservation.                    |
-+--------------------------------+----+----+-------------------------------------+
-| <*@paymentType>\*              | 1  | St | Payment type: CASH, CARD and EMIT.  |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| PaymentMethod/PaymentDatas     | 1  |    | List of PaymentData.                |
-+--------------------------------+----+----+-------------------------------------+
-| PaymentMethod/PaymentDatas/Pay | 1. |    | Contains the details of             |
-| mentData                       | .n |    | PaymentData.                        |
-+--------------------------------+----+----+-------------------------------------+
-| <*@paymentType>\*              | 1  | St | Payment type: CASH, CARD and EMIT.  |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| PaymentMethod/PaymentDatas/Pay | 1  |    | Contains details of the credit      |
-| mentData/CardInfo              |    |    | card.                               |
-+--------------------------------+----+----+-------------------------------------+
-| <*@provType>\*                 | 1  | St | Card type.                          |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@holder>\*                   | 1  | St | Holder.                             |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@number>\*                   | 1  | St | Credit card number.                 |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@cvv>\*                      | 1  | St | Verification code.                  |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@expirationMonth>\*          | 1  | St | Expiration month.                   |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| <*@expirationYear>\*           | 1  | St | Expiration year.                    |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Locators                       | 1  |    | Contains a list of locators.        |
-+--------------------------------+----+----+-------------------------------------+
-| Locators/Locator               | 1  |    | Contains details of the locator.    |
-+--------------------------------+----+----+-------------------------------------+
-| Locators/Locator/Id            | 1  | St | Unique identifier of the locator.   |
-|                                |    | ri |                                     |
-|                                |    | ng |                                     |
-+--------------------------------+----+----+-------------------------------------+
-| Locators/Locator/Type          | 1  | St | Locator type: PROVIDER,             |
-|                                |    | ri | TFBOOKINGREFERENCE, UNIVERSAL,      |
-|                                |    | ng | EMISSION and CARRIER.               |
-+--------------------------------+----+----+-------------------------------------+
 
-|
+| **Element**				| **Number**	| **Type**	| **Description**					|
+| ------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| RetrieveReservationRS          	| 1  		|    		| Root node.                          			|
+| Passengers                     	| 1  		|    		| Contains a list of Passengers.      			|
+| Passengers/Passenger           	| 1..n 		|    		| Contains information of the Passenger.         	|
+| @passengerType	            	| 1  		| String 	| Treatment: MR, MRS, CHD and INF.    			|
+| @name                     		| 1  		| String 	| Name of the Passenger.              			|
+| @surname                  		| 1  		| String 	| Surname/s of the Passenger.         			|
+| @bithDate                 		| 1  		| String 	| Date of birth.                      			|
+| @codeDCO                  		| 1  		| String 	| Document code.                      			|
+| @documentType             		| 1  		| String 	| Documentation type.                 			|
+| @documentId               		| 1  		| String 	| Unique identifier of the documentation.           	|
+| @documentExpiration       		| 1  		| String 	| Expiration date of the documentation.              	|
+| @nationality              		| 1  		| String 	| Nationality.                        			|
+| Segments                       	| 1  		|    		| Contains a list of Segment.         			|
+| Segments/Segment               	| 0..n 		|    		| Contains details of the Segment.    			|
+| @id                       		| 1  		| Integer 	| Unique identifier of the SegmentInfo.           	|
+| @transportationId         		| 1  		| String 	| Unique Id of the transportation.    			|
+| @transportationType       		| 1  		| String 	| Transport type: V ( Flight ), T ( Train ), B ( Bus ) & F ( Ferry ).  |
+| @operatinCarrier          		| 1  		| String 	| Company which operates the transportation.         	|
+| @marketingCarrier         		| 1  		| String 	| Company which commercializes the transportation.   	|
+| @departureTerminal        		| 1  		| String 	| Departure terminal.                 			|
+| @arrivalTerminal          		| 1  		| String 	| Arrival terminal.                   			|
+| @departureDate            		| 1  		| Date 		| Departure date.                     			|
+| @arrivalDate              		| 1  		| Date 		| Arrival date.                       			|
+| @segmentDuration          		| 1  		| Integer 	| Transport duration ( in minutes ).  			|
+| @planeType                		| 1  		| String 	| Plane type. Flights parameter.      			|
+| @maxCheckinDate           		| 1  		| String 	| Maximum date to make the check-in.  			|
+| @segmentStatus            		| 1  		| String 	| SegmentInfo status: HK (OK), TK (Change of programming), UC (Unconfirmed), UN( Unable), NO (No action taken) & UD (Undefined).    |
+| @hasTechnicalStop         		| 1  		| Boolean 	| If true, the SegmentInfo has a technical stop.     	|
+| @electronicTicket         		| 1  		| Boolean 	| If true, the SegmentInfo uses a electronic ticket.    |
+| Segments/Segment/OriginLoc    	| 1  		|    		| Origin location.                    			|
+| @type                     		| 1  		| String 	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).    |
+| @code                     		| 1  		| String 	| Location code.                      			|
+| @cityCode                 		| 1  		| Boolean 	| If true, the field code indicates a city code, if false, it will indicate an airport code.	|
+| Segments/Segment/DestinationLoc 	| 1  		|    		| Destination location.               			|
+| @type                     		| 1  		| String 	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).     |
+| @code                     		| 1  		| String 	| Location code.                      			|
+| @cityCode                 		| 1  		| Boolean 	| If true, the field code indicates a city code, if false, it will indicate an airport code. |
+| Segments/Segment/TechnicalStops 	| 0..1 		|    		| Contains a list of TechnicalStops.  			|
+| @totalTechnicalStops      		| 1  		| Integer 	| Total number of TechnicalStops.     			|
+| Segments/Segment/TechnicalStops /TechnicalStop | 1..n |    		| Contains the details of the TechnicalStop.        	|
+| @location                 		| 1  		| String 	| TechnicalStop location.             			|
+| @stopDate                 		| 1  		| Date 		| Approx. stop date and time.         			|
+| @departureDate            		| 1  		| Date 		| Approx. departure date and time.    			|
+| Segments/Segment/SegmentClasses 	| 0..1 		|    		| Contains a list of SegmentClasses.  			|
+| Segments/Segment/SegmentClasses /SegmentClass | 0..n 	|    		| Contains details of the SegmentClass.             	|
+| @cabinClass               		| 1  		| String 	| Cabin class of the seat: N (Not specified), Y (Tourist), C (Business), F (First), CA (Cabin, only for ferries), YP (Tourist Plus).    |
+| @class                    		| 1  		| String 	| Fare class.                         			|
+| @paxRef                   		| 1  		| Integer 	| Reference for the Passenger which is using this fare in the transport.    |
+| @fareBasis                		| 1  		| String 	| Fare basis.                         			|
+| @fareType                 		| 1  		| String 	| Fare type: PUB ( Public ), PRI ( Private ), NEGO ( Negotiated ) & CORP ( Corporate ).    |
+| Segments/Segment/ReservationToken 	| 0..1 		|    		| Contains specific attributes of each provider.    	|
+| Segments/Segment/ReservationToken /Attribute | 0..n 	|    		| Contains details of the attribute.  			|
+| @id                       		| 1  		|    		| Keyword or id to identify a parameter.        	|
+| @value                    		| 1  		|    		| Value of the parameter.             			|
+| Tickets                        	| 1  		|    		| List of issued tickets.             			|
+| Tickets/retrieveStatus         	| 1  		| Boolean 	| Indicates whether or not the reservation had its tickets issued.       |
+| Tickets/errorRetrieve          	| 1  		| String 	| Indicates error in the ticket retrieval.      	|
+| Tickets/Ticket                 	| 1..n 		|    		| Details of issued ticket.           			|
+| @id                       		| 1  		| Integer 	| Unique identifier of the ticket.    			|
+| @ticketNum                		| 1  		| String 	| Ticket number.                      			|
+| @paxName                  		| 1  		| String 	| Name of the passenger associated to the ticket. 	|
+| @status                   		| 1  		| String 	| Current status of the ticket: OPEN, CONFIRMED, VOIDED, REFUNDED. |
+| BookingBreakdown               	| 1  		|    		| Contains price information.         			|
+| BookingBreakdown/AmountBreakdown 	| 1  		|    		| Total amount information.           			|
+| @currency                 		| 1  		| String 	| Currency.                           			|
+| @totalAmount              		| 1  		| Decimal 	| Total price.                        			|
+| Itineraries                    	| 1  		|    		| List of Itineraries.                			|
+| Itineraries/Itinerary          	| 1..n 		|    		| Details of the Itinerary.           			|
+| @id                       		| 1  		| Integer 	| Unique identifier of the Itinerary. 			|
+| @fareRef                  		| 1  		| Integer 	| Reference identifier to the original Fare. Flights parameter.   |
+| @HasObFees                		| 1  		| Boolean 	| If true then there is an extra fee for using credit card.  |
+| @carrier                  		| 1  		| String 	| Validating carrier. Flights parameter.        	|
+| Itineraries/Itinerary/Journeys 	| 0..1 		|    		| Contains a list of Journeys.        			|
+| Itineraries/Itinerary/Journeys /Journey | 0..n 	|    		| Contains details of the Journeys.   			|
+| @id                       		| 1  		| Integer 	| Unique identifier of the Journey in scope.		|
+| @duration                 		| 1  		| Integer 	| Duration of the Journey in minutes. 			|
+| Itineraries/Itinerary/Journeys /Journey/Segments | 0..1 |    		| Contains a list of Segments associated to the Journey.    |
+| Itineraries/Itinerary/Journeys /Journey/Segments/Segment | 0..n |   	| Contains details of the SegmentInfo.             	|
+| @id                       		| 1  		| Integer 	| Unique SegmentInfo identifier.      			|
+| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /SegmentInfo | 0..n |    | Contains information of the SegmentInfo.       |
+| @id                       		| 1  		| Integer 	| Unique identifier of the SegmentInfo.           	|
+| @transportationId         		| 1  		| String 	| Unique Id of the transportation.    			|
+| @transportationType       		| 1  		| String 	| Transport type: F ( Flight ), T ( Train ), B ( Bus ) & F ( Ferry ).|
+| @operatinCarrier          		| 1  		| String 	| Company which operates the transportation.          	|
+| @marketingCarrier         		| 1  		| String 	| Company which commercializes the transportation.   	|
+| @departureTerminal        		| 1  		| String 	| Departure terminal.                 			|
+| @arrivalTerminal          		| 1  		| String 	| Arrival terminal.                   			|
+| @departureDate            		| 1  		| Date 		| Departure date.                     			|
+| @arrivalDate              		| 1  		| Date 		| Arrival date.                       			|
+| @segmentDuration          		| 1  		| Integer 	| Transport duration ( in minutes ).  			|
+| @planeType                		| 1  		| String 	| Plane type. Flights parameter.      			|
+| @maxCheckinDate           		| 1  		| String 	| Maximum date to make the check-in.  			|
+| @segmentStatus            		| 1  		| String 	| SegmentInfo status: HK (OK), TK (Change of programming), UC (Unconfirmed), UN( Unable), NO (No action taken) & UD (Undefined).     |
+| @hasTechnicalStop         		| 1  		| Boolean 	| If true, the SegmentInfo has a technical stop.     	|
+| @electronicTicket         		| 1  		| Boolean 	| If true, the SegmentInfo uses a electronic ticket.    |
+| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /SegmentInfo/OriginLoc | 1  |    | Origin location.                  |
+| @type                     		| 1  		| String 	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).      |
+| @code                     		| 1  		| String 	| Location code.                      			|
+| @cityCode                 		| 1  		| Boolean 	| If true, the field code indicates a city code, if false, it will indicate an airport code. |
+| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /SegmentInfo/DestinationLoc | 1  |    | Destination location.        |
+| @type                     		| 1  		| String 	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).     |
+| @code                     		| 1  		| String 	| Location code.                      			|
+| @cityCode                 		| 1  		| Boolean 	| If true, the field code indicates a city code, if false, it will indicate an airport code.  |
+| Transportation/Segments/Segment /TechnicalStops | 0..1 |    		| Contains a list of TechnicalStops.  			|
+| @totalTechnicalStops      		| 1  		| Integer 	| Total number of TechnicalStops.     			|
+| Transportation/Segments/Segment /TechnicalStops/TechnicalStop | 1..n |    | Contains the details of the TechnicalStop.        |
+| @location                 		| 1  		| String 	| TechnicalStop location.             			|
+| @stopDate                 		| 1  		| Date 		| Approx. stop date and time.         			|
+| @departureDate            		| 1  		| Date 		| Approx. departure date and time.    			|
+| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /SegmentClasses | 0..1 |    | Contains a list of SegmentClasses.  	|
+| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /SegmentClasses/SegmentClass  | 0..n |    | Contains details of the SegmentClass.            |
+| @cabinClass               		| 1  		| String 	| Cabin class of the seat: N (Not specified), Y (Tourist), C (Business), F (First), CA (Cabin, only for ferries), YP (Tourist Plus).    |
+| @class                    		| 1  		| String 	| Fare class.                         			|
+| @paxRef                   		| 1  		| Integer 	| Reference for the Passenger which is using this fare in the transport.   |
+| @fareBasis                		| 1  		| String 	| Fare basis.                         			|
+| @fareType                 		| 1  		| String 	| Fare type: PUB ( Public ), PRI ( Private ), NEGO ( Negotiated ) & CORP ( Corporate ).   |
+| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /ReservationToken | 0..1 |    | Contains specific attributes of each provider.  |
+| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /ReservationToken/Attribute | 0..n |    | Contains details of the attribute.  |
+| @id                       		| 1  		|    		| Keyword or id to identify a parameter.          	|
+| @value                    		| 1  		|    		| Value of the parameter.             			|
+| Itineraries/Itinerary/AmountBreakdown | 1  		|    		| Contains details of the AmountBreakdown.              |
+| @currency                 		| 1  		| String 	| Currency code of the fare.          			|
+| @totalAmount              		| 1  		| Decimal 	| Total amount. with taxes and other charges included. 	|
+| @notCommissionableAmount  		| 1  		| Decimal 	| Total amount that can not be commissioned.       	|
+| @commission               		| 1  		| Decimal 	| Commission.                         			|
+| Itineraries/Itinerary/AmountBreakdown /ChargeBreakdowns  | 0..1 |    	| Contains a list of ChargeBreakdowns.                 	|
+| Itineraries/Itinerary/AmountBreakdown /PaxBreakdowns | 0..1 |    	| Contains a list of breakdown amounts for each Passenger ( ADT amount, etc. ).     |
+| Itineraries/Itinerary/AmountBreakdown /PaxBreakdowns/PaxBreakdown | 0..n |    | Contains details of breakdown amounts for each Passenger.  |
+| @paxType                  		| 1  		| String 	| Passenger type: ADT ( Adult ), CHD ( Child ) & INF ( Infant ). |
+| @amount                   		| 1  		| Decimal 	| Total amount, with taxes included, associated to the Passenger. |
+| @taxes                    		| 1  		| Integer 	| If they exist, taxes are applied for this Passenger type.     |
+| @tasaDU                   		| 1  		| Integer 	| Deprecated                          			|
+| Itineraries/Itinerary/PaxConfigurations | 1  		|    		| Contains a list of PaxConfigurations.                 |
+| Itineraries/Itinerary /PaxConfigurations/PaxConfiguration  | 1  |    	| Contains details of the PaxConfiguration.             |
+| @id                       		| 1  		| Integer 	| Unique identifier of thePaxConfiguration.             |
+| @paxRef                   		| 1  		| Integer 	| Reference to the Passenger Id from the request.  	|
+| @age                      		| 1  		| Integer 	| Age of the Passenger.               			|
+| @paxType                  		| 1  		| String 	| Passenger type based on the age of the Passenger: ADT (Adult), CHD (Child), INF (Infant), YOU (Young) and SEN (Senior). |
+| @code                     		| 1  		| String 	| String with the PTC code.           			|
+| PaymentMethod                  	| 1  		|    		| Defines the payment method used in the reservation. 	|
+| @paymentType              		| 1  		| String 	| Payment type: CASH, CARD and EMIT.  			|
+| PaymentMethod/PaymentDatas     	| 1  		|    		| List of PaymentData.                			|
+| PaymentMethod/PaymentDatas /PaymentData | 1..n 	|    		| Contains the details of PaymentData.            	|
+| @paymentType              		| 1  		| String 	| Payment type: CASH, CARD and EMIT.  			|
+| PaymentMethod/PaymentDatas /PaymentData/CardInfo | 1  |    		| Contains details of the credit card.     		|
+| @provType                 		| 1  		| String 	| Card type.                          			|
+| @holder                   		| 1  		| String 	| Holder.                             			|
+| @number                   		| 1  		| String 	| Credit card number.                 			|
+| @cvv                      		| 1  		| String 	| Verification code.                  			|
+| @expirationMonth          		| 1  		| String 	| Expiration month.                   			|
+| @expirationYear           		| 1  		| String 	| Expiration year.                    			|
+| Locators                       	| 1  		|    		| Contains a list of locators.        			|
+| Locators/Locator               	| 1  		|    		| Contains details of the locator.    			|
+| Locators/Locator/Id            	| 1  		| String 	| Unique identifier of the locator.   			|
+| Locators/Locator/Type          	| 1  		| String 	| Locator type: PROVIDER, TFBOOKINGREFERENCE, UNIVERSAL, EMISSION and CARRIER.     |
+
+

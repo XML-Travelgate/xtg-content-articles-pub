@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/transportation/DSF/flights/recover-reserve-list
 ---
 
-|
+
 
 Method Goals
 ============
@@ -13,12 +13,12 @@ Method Goals
 This method aims to return a list of bookings for a given time period
 being that either booking date or the travelling date.
 
-|
+
 
 RetrieveReservationListRQ Example
 =================================
 
-:
+
 
     <RetrieveReservationListRQ>
         <Configuration/>
@@ -31,49 +31,29 @@ RetrieveReservationListRQ Example
         <AgencyCode></AgencyCode>
     </RetrieveReservationListRQ>
 
-|
+
 
 RetrieveReservationListRQ Description
 =====================================
 
-  ------------------------------------------------------------------------
-  Element                        Nu Ty Description
-                                 mb pe 
-                                 er    
-  ------------------------------ -- -- -----------------------------------
-  RetrieveReservationListRQ      1     Root node.
 
-  ReservationDate                1  St Reservation date.
-                                    ri 
-                                    ng 
+| **Element**				| **Number**	| **Type**	| **Description**						|
+| ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
+| RetrieveReservationListRQ     	| 1    		|		| Root node.							|
+| ReservationDate               	| 1 		| String	| Reservation date.						|
+| DepartureDate                 	| 1 		| String	| Departure date.						|
+| ClientEmail                   	| 1 		| String	| Client's email.						|
+| OriginCode                    	| 1 		| String	| Origin code.							|
+| DestinationCode               	| 1 		| String	| Destination code.						|
+| AgencyCode                    	| 1 		| String	| Contains a list of Passengers.				|
+ 
 
-  DepartureDate                  1  St Departure date.
-                                    ri 
-                                    ng 
 
-  ClientEmail                    1  St Client's email.
-                                    ri 
-                                    ng 
-
-  OriginCode                     1  St Origin code.
-                                    ri 
-                                    ng 
-
-  DestinationCode                1  St Destination code.
-                                    ri 
-                                    ng 
-
-  AgencyCode                     1  St Contains a list of Passengers.
-                                    ri 
-                                    ng 
-  ------------------------------------------------------------------------
-
-|
 
 RetrieveReservationListRS Example
 =================================
 
-:
+
 
     <RetrieveReservationListRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
         <auditData>
@@ -206,64 +186,28 @@ RetrieveReservationListRS Example
         </ReservationList>
     </RetrieveReservationListRS>
 
-|
+
 
 RetrieveReservationListRS Description
 =====================================
 
-  ------------------------------------------------------------------------
-  Element                        Nu Ty Description
-                                 mb pe 
-                                 er    
-  ------------------------------ -- -- -----------------------------------
-  RetrieveReservationListRS      1     Root node.
 
-  ReservationList                1     Contains a list of Reservations.
+| **Element**				| **Number**	| **Type**	| **Description**						|
+| ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
+| RetrieveReservationListRS     	| 1    		|		| Root node.							|
+| ReservationList               	| 1    		|		| Contains a list of Reservations.				|
+| ReservationList/PaymentInfo   	| 1..n   	|		| Contains the information of the payment.			|
+| @locator                 		| 1 		| String	| Unique identifier of the locator.				|
+| @totalAmount             		| 1 		| Decimal	| Total amount. with taxes and other charges included.		|
+| @currency                		| 1 		| String	| Currency code of the fare.					|
+| ReservationList/PaymentInfo /OriginCode | 1 		| String	| Trip origin location code.					|
+| ReservationList/PaymentInfo /DestinationCode | 1 	| String	| Trip destination location code.				|
+| ReservationList/PaymentInfo /ReservationDate | 1 	| Date		| Date on which the reservation was made.			|
+| ReservationList/PaymentInfo /DepartureDate | 1 	| Date		| Departure date.						|
+| ReservationList/PaymentInfo /MainPaxName | 1 		| String	| Name and surname of the main passenger of the reservation.	|
+| ReservationList/PaymentInfo /HolderName | 1 		| String	| Name of the holder of the reservation.			|
+| ReservationList/PaymentInfo /ReservationStatus | 1    |		| Current status of the reservation.				|
+| ReservationList/PaymentInfo /ReservationStatus /ReservationStatusType | 1 | String | Reservation status: CONFIRMED (OK), CANCELLED (Change of programming).	|
 
-  ReservationList/PaymentInfo    1.    Contains the information of the
-                                 .n    payment.
 
-  <*@locator>\*                  1  St Unique identifier of the locator.
-                                    ri 
-                                    ng 
 
-  <*@totalAmount>\*              1  De Total amount. with taxes and other
-                                    ci charges included.
-                                    ma 
-                                    l  
-
-  <*@currency>\*                 1  St Currency code of the fare.
-                                    ri 
-                                    ng 
-
-  ReservationList/PaymentInfo/Or 1  St Trip origin location code.
-  iginCode                          ri 
-                                    ng 
-
-  ReservationList/PaymentInfo/De 1  St Trip destination location code.
-  stinationCode                     ri 
-                                    ng 
-
-  ReservationList/PaymentInfo/Re 1  Da Date on which the reservation was
-  servationDate                     te made.
-
-  ReservationList/PaymentInfo/De 1  Da Departure date.
-  partureDate                       te 
-
-  ReservationList/PaymentInfo/Ma 1  St Name and surname of the main
-  inPaxName                         ri passenger of the reservation.
-                                    ng 
-
-  ReservationList/PaymentInfo/Ho 1  St Name of the holder of the
-  lderName                          ri reservation.
-                                    ng 
-
-  ReservationList/PaymentInfo/Re 1     Current status of the reservation.
-  servationStatus                      
-
-  ReservationList/PaymentInfo/Re 1  St Reservation status: CONFIRMED (OK),
-  servationStatus/ReservationSta    ri CANCELLED (Change of programming)
-  tusType                           ng 
-  ------------------------------------------------------------------------
-
-|

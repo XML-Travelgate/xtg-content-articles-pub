@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/transportation/DSF/ferries/avail
 ---
 
-|
+
 
 Method Goals
 ============
@@ -14,7 +14,7 @@ This method aims to complete the common side of the petition with the
 ferries specifications, if any, and therefore have the complete petition
 for ferries.
 
-|
+
 
 Request Format
 ==============
@@ -22,17 +22,18 @@ Request Format
 The request needs a list of journeys (each one with the desired dates
 and ports), a list of the passengers and an optional vehicle list.
 
-|
+
 
 Response Format
 ===============
 
 The response contains a list of fares with the available options.
 
-|
+
 
 AvailabilityRQ
 ==============
+
 
     <AvailabilityRQ xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" travelType = "RT">
         <Journeys>
@@ -60,118 +61,43 @@ AvailabilityRQ
 AvailabilityRQ Description
 ==========================
 
-  -------------------------------------------------------------------------
-  Element                          Nu Ty Description
-                                   mb pe 
-                                   er    
-  -------------------------------- -- -- ----------------------------------
-  AvailabilityRQ                   1     Root node.
 
-  Journeys                         1     Contains a list of Journeys.
+| **Element**				| **Number**	| **Type**	| **Description**					|
+| ------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| AvailabilityRQ                  	| 1    		|		| Root node.						|
+| Journeys                        	| 1    		|		| Contains a list of Journeys.				|
+| Journeys/Journey                	| 1..n   	|		| Contains the information about the requested Journey in the availability.	|
+| @id                        		| 1  		| Integer	| Unique identifier of the Journey. 			|
+| @departureDate             		| 1 		| String	| Departure date.					|
+| @departureTime             		| 1 		| String	| Departure time.					|
+| Journeys/Journey/OriginLoc      	| 1    		|		| Origin location.					|
+| @type                      		| 1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).	|
+| @code                      		| 1 		| String	| Location code.					|
+| @cityCode                  		| 1 		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code. 	|
+| Journeys/Journey/DestinationLoc 	| 1    		|		| Destination location.					|
+| @type                      		| 1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).	|
+| @code                      		| 1 		| String	| Location code.					|
+| @cityCode                  		| 1 		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.	|
+| Passengers                      	| 1    		|		| Contains a list of Passengers.			|
+| Passengers/Passenger            	| 1..n   	|		| Contains information of the Passenger.		|
+| @id                        		| 1 		| Integer	| Unique identifier of the Passenger. 			|
+| @age                       		| 1 		| Integer	| Age of the Passenger.					|
+| Passengers/Passenger/Bonuses    	| 0..1   	|		| Possible discount or bonuses. 			|
+| @resident                  		| 1 		| String	| Resident discount. 					|
+| @largeFamily               		| 1 		| String	| Family discount.					|
+| @discountCard              		| 1 		| String	| Discount card.					|
+| Passengers/Passenger/Bonuses /PaxTypeCodes | 0..1   	|		| Contains a list of additional passengers types.	|
+| Passengers/Passenger/Bonuses /PaxTypeCodes/PaxTypeCode | 1..n |  	| Contains information of the additional passenger type.  |
+| @code                      		| 1 		| String	| Specific discounts by passenger type in a provider format.  |
+| Vehicles                        	| 0..1   	|		| Contains a list of vehicles.				|
+| AvailabilityVehicle             	| 1..2   	|		| Contains details of the vehicles.			|
+| @id                        		| 1    		|		| Unique identifier of the vehicle.			|
+| @height                    		| 1    		|		| Dimension of the vehicle: height.			|
+| @length                    		| 1    		|		| Dimension of the vehicle: width.			|
+| @type                      		| 1    		|		| Type of vehicle.					|
 
-  Journeys/Journey                 1.    Contains the information about the
-                                   .n    requested Journey in the
-                                         availability.
 
-  <*@id>\*                         1  In Unique identifier of the Journey.
-                                      te 
-                                      ge 
-                                      r  
 
-  <*@departureDate>\*              1  St Departure date.
-                                      ri 
-                                      ng 
-
-  <*@departureTime>\*              1  St Departure time.
-                                      ri 
-                                      ng 
-
-  Journeys/Journey/OriginLoc       1     Origin location.
-
-  <*@type>\*                       1  St Type of station of the location
-                                      ri indicated with A ( AirPort ), T (
-                                      ng Train Station ) & P ( Port ).
-
-  <*@code>\*                       1  St Location code.
-                                      ri 
-                                      ng 
-
-  <*@cityCode>\*                   1  Bo If true, the field code indicates
-                                      ol a city code, if false, it will
-                                      ea indicate an airport code.
-                                      n  
-
-  Journeys/Journey/DestinationLoc  1     Destination location.
-
-  <*@type>\*                       1  St Type of station of the location
-                                      ri indicated with A ( AirPort ), T (
-                                      ng Train Station ) & P ( Port ).
-
-  <*@code>\*                       1  St Location code.
-                                      ri 
-                                      ng 
-
-  <*@cityCode>\*                   1  Bo If true, the field code indicates
-                                      ol a city code, if false, it will
-                                      ea indicate an airport code.
-                                      n  
-
-  Passengers                       1     Contains a list of Passengers.
-
-  Passengers/Passenger             1.    Contains information of the
-                                   .n    Passenger
-
-  <*@id>\*                         1  In Unique identifier of the
-                                      te Passenger.
-                                      ge 
-                                      r  
-
-  <*@age>\*                        1  In Age of the Passenger.
-                                      te 
-                                      ge 
-                                      r  
-
-  Passengers/Passenger/Bonuses     0.    Possible discount or bonuses.
-                                   .1    
-
-  <*@resident>\*                   1  St Resident discount.
-                                      ri 
-                                      ng 
-
-  <*@largeFamily>\*                1  St Family discount.
-                                      ri 
-                                      ng 
-
-  <*@discountCard>\*               1  St Discount card.
-                                      ri 
-                                      ng 
-
-  Passengers/Passenger/Bonuses/Pax 0.    Contains a list of additional
-  TypeCodes                        .1    passengers types.
-
-  Passengers/Passenger/Bonuses/Pax 1.    Contains information of the
-  TypeCodes/PaxTypeCode            .n    additional passenger type.
-
-  <*@code>\*                       1  St Specific discounts by passenger
-                                      ri type in a provider format.
-                                      ng 
-
-  Vehicles                         0.    Contains a list of vehicles.
-                                   .1    
-
-  AvailabilityVehicle              1.    Contains details of the vehicles.
-                                   .2    
-
-  <*@id>\*                         1     Unique identifier of the vehicle.
-
-  <*@height>\*                     1     Dimension of the vehicle: height
-
-  <*@length>\*                     1     Dimension of the vehicle: width
-
-  <*@type>\*                       1     Type of vehicle:
-  -------------------------------------------------------------------------
-
-|
 
 AvailabilityRS
 ==============
@@ -399,394 +325,117 @@ AvailabilityRS
             </Fare>           
         </Fares>
     </Transportation>
+    </AvailabilityRS>
 
-\</AvailabilityRS\>
 
-|
 
 AvailabilityRS Description
 ==========================
 
-  -------------------------------------------------------------------------
-  Element                      Nu Typ Description
-                               mb e   
-                               er     
-  ---------------------------- -- --- -------------------------------------
-  AvailabilityRS               1      Root node.
 
-  Transportation               1      Contains all of the Segments and
-                                      Fares.
+| **Element**					| **Number**	| **Type**	| **Description**					|
+| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| AvailabilityRS              			| 1     	|		| Root node.						|
+| Transportation              			| 1     	|		| Contains all of the Segments and Fares.		|
+| Transportation/Segments     			| 1     	|		| Contains a list of the Segments.			|
+| Transportation/Segments/Segment		| 1..n    	|		| Contains the information of the segment.		|
+| @id                    			| 1 		| Integer	| Unique identifier of the segment.			|
+| @transportationId      			| 1 		| String	| Unique Id of the transportation.			|
+| @transportationType    			| 1 		| String	| Transport type: F ( Flight ), T ( Train ), B ( Bus ) & F ( Ferry).	|
+| @operatingCarrier      			| 1 		| String	| Company which operates the transportation.		|
+| @marketingCarrier      			| 1 		| String	| Company which commercializes the transportation.	|
+| @departureTerminal     			| 1 		| String	| Departure terminal.					|
+| @arrivalTerminal       			| 1 		| String	| Arrival terminal.					|
+| @departureDate         			| 1 		| Date		| Departure date. 					|
+| @arrivalDate           			| 1 		| Date		| Arrival date.						|
+| @segmentDuration       			| 1 		| Integer	| Transport duration ( in minutes ).			|
+| @maxCheckinDate        			| 1 		| String	| Maximum date to make the check-in.			|
+| @transportationName    			| 0..1		| String	| Name of the vessel.					|
+| @transportationCode    			| 0..1		| String	| Code that identifies the vessel. 			|
+| @segmentStatus         			| 1 		| String	| Segment status: HK (OK), TK (Change of programming), UC (Unconfirmed), UN( Unable), NO (No action taken) & UD (Undefined).	|
+| @hasTechnicalStop      			| 1 		| Boolean	| If true, the segment has a technical stop.		|
+| Transportation/Segments/Segment /OriginLoc	| 1     	|		| Origin location.					|
+| @type                  			| 1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).	|
+| @code                  			| 1 		| String	| Location code.					|
+| @cityCode              			| 1 		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.	|
+| Transportation/Segments/Segment /DestinationLoc | 1     	|		| Destination location.					|
+| @type                  			| 1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).	|
+| @code                  			| 1 		| String	| Location code.					|
+| @cityCode              			| 1 		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.	|
+| Transportation/Segments/Segment /TechnicalStops | 0..1    	|		| Contains a list of TechnicalStops.			|
+| @totalTechnicalStops   			| 1 		| Integer	| Total number of TechnicalStops. 			|
+| Transportation/Segments/Segment /TechnicalStops/TechnicalStop | 1..n |   	| Contains the details of the TechnicalStop.		|
+| @location              			| 1 		| String	| TechnicalStop location.				|
+| @stopDate              			| 1 		| Date		| Approx. stop date and time.  				|
+| @departureDate         			| 1 		| Date		| Approx. departure date and time.			|
+| Fares                       			| 1     	|		| Contains a list of Fares.				|
+| Fares/Fare                  			| 1..n    	|		| Contains details of Fare.    				|
+| @id                    			| 1 		| Integer	| Unique identifier of the Fare. 			|
+| @providerCode          			| 1 		| String	| Code of the provider that offers this fare.		|
+| @fareType              			| 1 		| String	| Fare type: OW ( one way ), RT ( round trip ), OJ (Open jaw) & CT ( Circle trip ).	|
+| Fares/Fare/Conditions       			| 1     	|		| Contains a list of Fare Conditions.			|
+| Fares/Fare/Conditions/Condition		| 1..n    	|		| Contains details of the Fare Condition.		|
+| @id                   			| 1 		| String	| Indicates if the conditions are of one way ( with a 0 ) or round trip ( with a 1 ). Ferries parameter.  |
+| @language              			| 1 		| String	| Language.						|
+| Fares/Fare/Conditions /Condition/Text		| 1 		| String	| In Ferries it contains the following: "AccomodationCode#AccomodationName# AccomodationDescription#FareCode#Fa reName#FareDescription".	|
+| Fares/Fare/Options          			| 1     	|		| Contains a list of Fare Options.			|
+| Fares/Fare/Options/Option   			| 1..n    	|		| Contains details of the Fare Options.    		|
+| @id                    			| 1 		| Integer	| Deprecated attribute. 				|
+| @availJourneyRef       			| 1 		| Integer	| Reference number of the availability Journey. 	|
+| @numStopOver           			| 1 		| Integer	| Number of StopOvers. If -1, then we cannot know how many StopOvers via XML.	|
+| @carrier               			| 1 		| String	| Validating carrier.					|
+| Fares/Fare/Options/Option /SegmentReferences	| 1     	|		| Contains a list of SegmentReferences.			|
+| Fares/Fare/Options/Option /SegmentReferences/SegmentReference | 1..n |   	| Contains details of the SegmentReference of each option. |
+| @segmentRef            			| 1 		| Integer	| Reference of the Segment.				|
+| Fares/Fare/Options/Option /SegmentReferences/SegmentReference /SegmentClasses | 1 |  | Contains a list of SegmentClasses.		|
+| Fares/Fare/Options/Option /SegmentReferences/SegmentReference /SegmentClasses/SegmentClass | 1..n | | Contains details of the SegmentClass. |
+| @cabinClass            			| 1 		| String	| Cabin class of the seat: N (Not specified), Y (Tourist), C (Business), F (First), CA (Cabin, only for ferries), YP (Tourist Plus).	|
+| @class                 			| 1 		| String	| Fare class. In ferries indicates the accomodation code.  |
+| @paxRef                			| 1 		| Integer	| Passenger reference. 					|
+| @fareBasis             			| 1 		| String	| Identifier of the fare.				|
+| @fareType              			| 1 		| String	| Fare type: PUB ( Public ), PRI ( Private ), NEGO ( Negotiated ) and CORP ( Corporate ).	|
+| @avail                 			| 1 		| Integer	| Available seats remaining for this class (In flights, the maximum is 9).  |
+| Fares/Fare/Options/Option /SegmentReferences/SegmentReference /ReservationTokens | 0..1 |  | Specific attribute used for each provider.  |
+| Fares/Fare/Options/Option /SegmentReferences/SegmentReference /ReservationTokens/Attribute | 0..n |  | Type of attribute.		|
+| @key                   			| 1 		| String	| Contains the keyword/ Id to identify a parameter.	|
+| @value                 			| 1 		| String	| Contains the value of the parameter.			|
+| Fares/Fare/AmountBreakdown  			| 1     	|		| Breakdown of the fare amount.				|
+| @currency              			| 1 		| String	| Currency code of the fare.				|
+| @totalAmount           			| 1 		| Decimal	| Total amount. with taxes and other charges included.	|
+| @notCommissionableAmount			| 1 		| Decimal	| Total amount that can not be commissioned.		|
+| @commission            			| 1 		| Decimal	| Commission percentage. A -1 value will be returned if the provider doesn't return any comission information.	|
+| Fares/Fare/AmountBreakdown /ChargeBreakdowns	| 0..1    	|		| Contains a list of breakdown amounts ( taxes, mandatory charges.. ).	|
+| Fares/Fare/AmountBreakdown /ChargeBreakdowns/ChargeBreakdown | 1..n |   	| Contains details of the BreakdownAmount.		|
+| @type                  			| 1 		| String	| Charge type.						|
+| @amount                			| 1     	|		| Charge amount.					|
+| Fares/Fare/AmountBreakdown /ChargeBreakdowns/ChargeBreakdown /Concept | 0..1 | | Contains a list of breakdown amounts ( taxes, mandatory charges.. ). 	|
+| @id                    			| 1 		| String	| Indicates if the conditions are of one way ( with a 0 ) or round trip (  with a 1 ). Ferries parameter.  |
+| @language              			| 1 		| String	| Language.						|
+| Fares/Fare/AmountBreakdown /ChargeBreakDowns/ChargeBreakdown /Concept/Text | 1 | String | Remarks.					|
+| Fares/Fare/AmountBreakdown /PaxBreakdown	| 0..1    	|		| Contains a list of breakdown amounts for each passenger ( ADT amount, etc. ).	|
+| Fares/Fare/AmountBreakdown /PaxBreakdowns/PaxBreakdown | 0..n |   		| Contains details of breakdown amounts for each passenger. |
+| @paxType               			| 1 		| String	| Passenger type:ADT ( Adult ), CHD ( Child ) & INF ( Infant). |
+| @amount                			| 1 		| Decimal	| Total amount, with taxes included, associated to the passenger.	|
+| @taxes                 			| 1 		| Integer	| If they exist, taxes are applied for this passenger type.  |
+| Fares/Fare/PaxConfigurations			| 1     	|		| Contains a list of PaxConfiguration.			|
+| Fares/Fare/PaxConfigurations /PaxConfiguration | 1..n    	|		| Contains details of PaxConfiguration.			|
+| @id                    			| 1 		| Integer	| Unique identifier of the PaxConfiguration.		|
+| @paxRef                			| 1 		| Integer	| Reference to the passenger Id from the request.	|
+| @age                   			| 1 		| Integer	| Age of the passenger.					|
+| @paxType               			| 1 		| String	| Passenger type based on the age of the passenger: ADT (Adult), CHD (Child), INF (Infant), YOU (Young) and SEN (Senior).	|
+| Fares/Fare/PaxConfigurations /PaxConfiguration/AppliedBonuses | 0..1 |   	| Applied discounts.					|
+| @resident              			| 1     	|		| Resident discount type: N(None), BP(Balearic Islands resident flying to mainland), BI(Balearic Islands resident flying to another balearic island), DC(Canarian Islands resident flying to another Canarian Island), RC(Canarian Islands resident flying¡ to mainland),RM(Ceuta/Melilla resident), STR(Italian resident  discount), ELB(Italian resident Elba), SDG(Italian resident Sardegna), SCL(Italian resident Sicily).	|
+| @largeFamily           			| 1 		| String	| Family discount type: N(None), F1(Large family), F2 (Special large family).	|
+| @discountCard          			| 1  		| String	| Discount card type (for more details, see information below).|
+| Fares/Fare/PaxConfigurations /PaxConfiguration/AppliedBonuses /PaxTypeCodes | 0..1 |   | Contains a list of PaxTypeCodes.		|
+| Fares/Fare/PaxConfigurations /PaxConfiguration/AppliedBonuses /PaxTypeCodes/PaxTypeCode | 0..n |  | Contains details of the PTC.      |
+| @code                  			| 1 		| String	| String with the PTC code.				|
+| Fares/Fare/VehicleConfigurations		| 0..1    	|		| Contains a list of VehicleConfiguration.		|
+| Fares/Fare/VehicleConfigurations /VehicleConfiguration | 1..2 |   		| Contains details of VehicleConfiguration.		|
+| @vehicleRef            			| 1 		| String	| References the vehicle id of the request.		|
+| @height                			| 1 		| Integer 	| Height of the vehicle.				|
+| @length                			| 1 		| Integer	| Length of the vehicle.				|
+| @type                  			| 1     	|		| Vehicle type: N (None/Unknown), Tourism, 4x4, MPV, MotorbikeMax50 (motorbike with less than 50 cc), MotorbikeMin50Max250 (motorbike with 50 - 250 cc), MotorbikeMin250Max500 (motorbike with 250 - 500 cc), MotorbikeMin500 (motorbike with more than 500 cc), Bicicle, Van, LongVehicleMax6 (vehicle larger than 6 meters), Emission0Vehicle (vehicle with no emissions), Caravan, Trailer.	|
+| @code                  			| 1 		| String	| The code that identifies this type of vehicle in the providers system.	|
+| @name                  			| 0..1		| String	| Name of the vehicle type.				|
 
-  Transportation/Segments      1      Contains a list of the Segments.
-
-  Transportation/Segments/Segm 1.     Contains the information of the
-  ent                          .n     segment.
-
-  <*@id>\*                     1  Int Unique identifier of the segment.
-                                  ege 
-                                  r   
-
-  <*@transportationId>\*       1  Str Unique Id of the transportation.
-                                  ing 
-
-  <*@transportationType>\*     1  Str Transport type: F ( Flight ), T (
-                                  ing Train ), B ( Bus ) & F ( Ferry ).
-
-  <*@operatingCarrier>\*       1  Str Company which operates the
-                                  ing transportation.
-
-  <*@marketingCarrier>\*       1  Str Company which commercializes the
-                                  ing transportation.
-
-  <*@departureTerminal>\*      1  Str Departure terminal.
-                                  ing 
-
-  <*@arrivalTerminal>\*        1  Str Arrival terminal.
-                                  ing 
-
-  <*@departureDate>\*          1  Dat Departure date.
-                                  e   
-
-  <*@arrivalDate>\*            1  Dat Arrival date.
-                                  e   
-
-  <*@segmentDuration>\*        1  Int Transport duration ( in minutes ).
-                                  ege 
-                                  r   
-
-  <*@maxCheckinDate>\*         1  Str Maximum date to make the check-in.
-                                  ing 
-
-  <*@transportationName>\*     0. Str Name of the vessel.
-                               .1 ing 
-
-  <*@transportationCode>\*     0. Str Code that identifies the vessel.
-                               .1 ing 
-
-  <*@segmentStatus>\*          1  Str Segment status: HK (OK), TK (Change
-                                  ing of programming), UC (Unconfirmed),
-                                      UN( Unable), NO (No action taken) &
-                                      UD (Undefined)
-
-  <*@hasTechnicalStop>\*       1  Boo If true, the segment has a technical
-                                  lea stop.
-                                  n   
-
-  Transportation/Segments/Segm 1      Origin location.
-  ent/OriginLoc                       
-
-  <*@type>\*                   1  Str Type of station of the location
-                                  ing indicated with A ( AirPort ), T (
-                                      Train Station ) & P ( Port ).
-
-  <*@code>\*                   1  Str Location code.
-                                  ing 
-
-  <*@cityCode>\*               1  Boo If true, the field code indicates a
-                                  lea city code, if false, it will indicate
-                                  n   an airport code.
-
-  Transportation/Segments/Segm 1      Destination location.
-  ent/DestinationLoc                  
-
-  <*@type>\*                   1  Str Type of station of the location
-                                  ing indicated with A ( AirPort ), T (
-                                      Train Station ) & P ( Port ).
-
-  <*@code>\*                   1  Str Location code.
-                                  ing 
-
-  <*@cityCode>\*               1  Boo If true, the field code indicates a
-                                  lea city code, if false, it will indicate
-                                  n   an airport code.
-
-  Transportation/Segments/Segm 0.     Contains a list of TechnicalStops.
-  ent/TechnicalStops           .1     
-
-  <*@totalTechnicalStops>\*    1  Int Total number of TechnicalStops.
-                                  ege 
-                                  r   
-
-  Transportation/Segments/Segm 1.     Contains the details of the
-  ent/TechnicalStops/Technical .n     TechnicalStop.
-  Stop                                
-
-  <*@location>\*               1  Str TechnicalStop location.
-                                  ing 
-
-  <*@stopDate>\*               1  Dat Approx. stop date and time.
-                                  e   
-
-  <*@departureDate>\*          1  Dat Approx. departure date and time.
-                                  e   
-
-  Fares                        1      Contains a list of Fares.
-
-  Fares/Fare                   1.     Contains details of Fare.
-                               .n     
-
-  <*@id>\*                     1  Int Unique identifier of the Fare.
-                                  ege 
-                                  r   
-
-  <*@providerCode>\*           1  Str Code of the provider that offers this
-                                  ing fare.
-
-  <*@fareType>\*               1  Str Fare type: OW ( one way ), RT ( round
-                                  ing trip ), OJ ( Open jaw ) & CT ( Circle
-                                      trip ).
-
-  Fares/Fare/Conditions        1      Contains a list of Fare Conditions.
-
-  Fares/Fare/Conditions/Condit 1.     Contains details of the Fare
-  ion                          .n     Condition.
-
-  <*@id>\*                     1  Str Indicates if the conditions are of
-                                  ing one way ( with a 0 ) or round trip (
-                                      with a 1 ). Ferries parameter.
-
-  <*@language>\*               1  Str Language.
-                                  ing 
-
-  Fares/Fare/Conditions/Condit 1  Str In Ferries it contains the following:
-  ion/Text                        ing "AccomodationCode\#AccomodationName\#
-                                      AccomodationDescription\#FareCode\#Fa
-                                      reName\#FareDescription".
-
-  Fares/Fare/Options           1      Contains a list of Fare Options.
-
-  Fares/Fare/Options/Option    1.     Contains details of the Fare Options.
-                               .n     
-
-  <*@id>\*                     1  Int Deprecated attribute.
-                                  ege 
-                                  r   
-
-  <*@availJourneyRef>\*        1  Int Reference number of the availability
-                                  ege Journey.
-                                  r   
-
-  <*@numStopOver>\*            1  Int Number of StopOvers. If -1, then we
-                                  ege cannot know how many StopOvers via
-                                  r   XML.
-
-  <*@carrier>\*                1  Str Validating carrier.
-                                  ing 
-
-  Fares/Fare/Options/Option/Se 1      Contains a list of SegmentReferences.
-  gmentReferences                     
-
-  Fares/Fare/Options/Option/Se 1.     Contains details of the
-  gmentReferences/SegmentRefer .n     SegmentReference of each option.
-  ence                                
-
-  <*@segmentRef>\*             1  Int Reference of the Segment.
-                                  ege 
-                                  r   
-
-  Fares/Fare/Options/Option/Se 1      Contains a list of SegmentClasses.
-  gmentReferences/SegmentRefer        
-  ence/SegmentClasses                 
-
-  Fares/Fare/Options/Option/Se 1      Contains details of the SegmentClass.
-  gmentReferences/SegmentRefer ..     
-  ence/SegmentClasses/SegmentC n      
-  lass                                
-
-  <*@cabinClass>\*             1  Str Cabin class of the seat: N (Not
-                                  ing specified), Y (Tourist), C
-                                      (Business), F (First), CA (Cabin,
-                                      only for ferries), YP (Tourist Plus)
-
-  <*@class>\*                  1  Str Fare class. In ferries indicates the
-                                  ing accomodation code.
-
-  <*@paxRef>\*                 1  Int Passenger reference.
-                                  ege 
-                                  r   
-
-  <*@fareBasis>\*              1  Str Identifier of the fare.
-                                  ing 
-
-  <*@fareType>\*               1  Str Fare type: PUB ( Public ), PRI (
-                                  ing Private ), NEGO ( Negotiated ) and
-                                      CORP ( Corporate ).
-
-  <*@avail>\*                  1  Int Available seats remaining for this
-                                  ege class (In flights, the maximum is 9)
-                                  r   
-
-  Fares/Fare/Options/Option/Se 0.     Specific attribute used for each
-  gmentReferences/SegmentRefer .1     provider.
-  ence/ReservationTokens              
-
-  Fares/Fare/Options/Option/Se 0.     Type of attribute.
-  gmentReferences/SegmentRefer .n     
-  ence/ReservationTokens/Attri        
-  bute                                
-
-  <*@key>\*                    1  Str Contains the keyword/ Id to identify
-                                  ing a parameter.
-
-  <*@value>\*                  1  Str Contains the value of the parameter.
-                                  ing 
-
-  Fares/Fare/AmountBreakdown   1      Breakdown of the fare amount.
-
-  <*@currency>\*               1  Str Currency code of the fare.
-                                  ing 
-
-  <*@totalAmount>\*            1  Dec Total amount. with taxes and other
-                                  ima charges included.
-                                  l   
-
-  <*@notCommissionableAmount>\ 1  Dec Total amount that can not be
-  *                               ima commissioned.
-                                  l   
-
-  <*@commission>\*             1  Dec Commission percentage. A -1 value
-                                  ima will be returned if the provider
-                                  l   doesn't return any comission
-                                      information.
-
-  Fares/Fare/AmountBreakdown/C 0.     Contains a list of breakdown amounts
-  hargeBreakdowns              .1     ( taxes, mandatory charges.. ).
-
-  Fares/Fare/AmountBreakdown/C 1.     Contains details of the
-  hargeBreakdowns/ChargeBreakd .n     BreakdownAmount.
-  own                                 
-
-  <*@type>\*                   1  Str Charge type.
-                                  ing 
-
-  <*@amount>\*                 1      Charge amount.
-
-  Fares/Fare/AmountBreakdown/C 0.     Contains a list of breakdown amounts
-  hargeBreakdowns/ChargeBreakd .1     ( taxes, mandatory charges.. ).
-  own/Concept                         
-
-  <*@id>\*                     1  Str Indicates if the conditions are of
-                                  ing one way ( with a 0 ) or round trip (
-                                      with a 1 ). Ferries parameter.
-
-  <*@language>\*               1  Str Language.
-                                  ing 
-
-  Fares/Fare/AmountBreakdown/C 1  Str Remarks.
-  hargeBreakDowns/ChargeBreakd    ing 
-  own/Concept/Text                    
-
-  Fares/Fare/AmountBreakdown/P 0.     Contains a list of breakdown amounts
-  axBreakdown                  .1     for each passenger ( ADT amount, etc.
-                                      ).
-
-  Fares/Fare/AmountBreakdown/P 0.     Contains details of breakdown amounts
-  axBreakdowns/PaxBreakdown    .n     for each passenger.
-
-  <*@paxType>\*                1  Str Passenger type: ADT ( Adult ), CHD (
-                                  ing Child ) & INF ( Infant ).
-
-  <*@amount>\*                 1  Dec Total amount, with taxes included,
-                                  ima associated to the passenger.
-                                  l   
-
-  <*@taxes>\*                  1  Int If they exist, taxes are applied for
-                                  ege this passenger type.
-                                  r   
-
-  Fares/Fare/PaxConfigurations 1      Contains a list of PaxConfiguration.
-
-  Fares/Fare/PaxConfigurations 1.     Contains details of PaxConfiguration.
-  /PaxConfiguration            .n     
-
-  <*@id>\*                     1  Int Unique identifier of the
-                                  ege PaxConfiguration.
-                                  r   
-
-  <*@paxRef>\*                 1  Int Reference to the passenger Id from
-                                  ege the request.
-                                  r   
-
-  <*@age>\*                    1  Int Age of the passenger.
-                                  ege 
-                                  r   
-
-  <*@paxType>\*                1  Str Passenger type based on the age of
-                                  ing the passenger: ADT (Adult), CHD
-                                      (Child), INF (Infant), YOU (Young)
-                                      and SEN (Senior).
-
-  Fares/Fare/PaxConfigurations 0.     Applied discounts.
-  /PaxConfiguration/AppliedBon .1     
-  uses                                
-
-  <*@resident>\*               1      Resident discount type: N(None),
-                                      BP(Balearic Islands resident flying
-                                      to mainland), BI(Balearic Islands
-                                      resident flying to another balearic
-                                      island), DC(Canarian Islands resident
-                                      flying to another Canarian Island),
-                                      RC(Canarian Islands resident flying
-                                      to mainland),RM(Ceuta/Melilla
-                                      resident), STR(Italian resident
-                                      discount), ELB(Italian resident
-                                      Elba), SDG(Italian resident
-                                      Sardegna), SCL(Italian resident
-                                      Sicily)
-
-  <*@largeFamily>\*            1  Str Family discount type: N(None),
-                                  ing F1(Large family), F2 (Special large
-                                      family).
-
-  <*@discountCard>\*           1  Str Discount card type (for more details,
-                                  ing see information below).
-
-  Fares/Fare/PaxConfigurations 0.     Contains a list of PaxTypeCodes.
-  /PaxConfiguration/AppliedBon .1     
-  uses/PaxTypeCodes                   
-
-  Fares/Fare/PaxConfigurations 0.     Contains details of the PTC.
-  /PaxConfiguration/AppliedBon .n     
-  uses/PaxTypeCodes/PaxTypeCod        
-  e                                   
-
-  <*@code>\*                   1  Str String with the PTC code.
-                                  ing 
-
-  Fares/Fare/VehicleConfigurat 0.     Contains a list of
-  ions                         .1     VehicleConfiguration.
-
-  Fares/Fare/VehicleConfigurat 1.     Contains details of
-  ions/VehicleConfiguration    .2     VehicleConfiguration.
-
-  <*@vehicleRef>\*             1  Str References the vehicle id of the
-                                  ing request.
-
-  <*@height>\*                 1  Int Height of the vehicle.
-                                  ege 
-                                  r   
-
-  <*@length>\*                 1  Int Length of the vehicle.
-                                  ege 
-                                  r   
-
-  <*@type>\*                   1      Vehicle type: N (None/Unknown),
-                                      Tourism, 4x4, MPV, MotorbikeMax50
-                                      (motorbike with less than 50 cc),
-                                      MotorbikeMin50Max250 (motorbike with
-                                      50 - 250 cc), MotorbikeMin250Max500
-                                      (motorbike with 250 - 500 cc),
-                                      MotorbikeMin500 (motorbike with more
-                                      than 500 cc), Bicicle, Van,
-                                      LongVehicleMax6 (vehicle larger than
-                                      6 meters), Emission0Vehicle (vehicle
-                                      with no emissions), Caravan, Trailer.
-
-  <*@code>\*                   1  Str The code that identifies this type of
-                                  ing vehicle in the providers system.
-
-  <*@name>\*                   0. Str Name of the vehicle type
-                               .1 ing 
-  -------------------------------------------------------------------------
-
-|

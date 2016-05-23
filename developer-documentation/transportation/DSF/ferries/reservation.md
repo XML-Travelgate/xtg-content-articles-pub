@@ -5,14 +5,14 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/transportation/DSF/ferries/reservation
 ---
 
-|
+
 
 Method Goals
 ============
 
 This method aims to book one or more itineraries.
 
-|
+
 
 Request Format
 ==============
@@ -22,7 +22,7 @@ work with one Itinerary or with two.
 
 This request also holds the passengers and payment data.
 
-|
+
 
 Response Format
 ===============
@@ -31,16 +31,17 @@ The result returns a list of Locator (booking codes). It can be the
 supplier's or the one sent in the request. It also returns all the
 charges associated to the booking.
 
-|
+
 
 Remarks
 =======
 
-|
 
-ReservationRQ ---------
 
-:
+ReservationRQ
+=============
+
+
 
     <ReservationRQ>
     <Itineraries>
@@ -192,482 +193,150 @@ ReservationRQ ---------
         </Locator>
     </Locators>
     <DeltaPrice>0</DeltaPrice>
+    </ReservationRQ>
 
-\</ReservationRQ\>
 
-|
 
 ReservationRQ Description
 =========================
 
-  -------------------------------------------------------------------------
-  Element                      Nu Typ Description
-                               mb e   
-                               er     
-  ---------------------------- -- --- -------------------------------------
-  ReservationRQ                1      Root node..
 
-  Passengers                   1      Paxes information.
+| **Element**					| **Number**	| **Type**	| **Description**					|
+| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| ReservationRQ               			| 1     	|		| Root node.						|
+| Passengers                  			| 1     	|		| Paxes information.					|
+| Passengers/Passenger        			| 1..n    	|		| List of Passenger.   					|
+| @passengerType         			| 1 		| String	| Possible values: MR, MRS, CHD, INF.			|
+| @name                  			| 1 		| String	| Name of the passenger.				|
+| @surname               			| 1 		| String	| Surname of the passenger.				|
+| @birthDate             			| 1 		| Date		| Date of birth of the passenger.			|
+| @documentType          			| 1 		| String	| Possible values: NATIONAL_ID, PASSPORT, RESIDENT_ID, FOREIGN_PASSPORT.	|
+| @documentId            			| 1 		| String	| Document ID.						|
+| @documentExpiration   			| 1 		| Date		| Date of expiration of the document.			|
+| @documentExpedition    			| 1 		| Date		| Date of expedition of the document.			|
+| @nationality           			| 1 		| String	| Nationality code (ISO 3166-1 alphaa-3).		|
+| @gender                			| 1 		| Char		| Possible values: 72 (male), 77 (female).		|
+| Passenger/PaxBonusDetails   			| 1     	|		| Details of the discount bonus applied to the passenger.  |
+| Passenger/PaxBonusDetails /AppliedBonuses	| 0..1    	|		| Applied discounts.					|
+| @resident              			| 1     	|		| Resident discount type: N(None), BP(Balearic Islands resident flying to mainland), BI(Balearic Islands resident flying to another balearic island), DC(Canarian Islands resident flying to another Canarian Island), RC(Canarian Islands resident flying to mainland),RM(Ceuta/Melilla resident), STR(Italian resident discount), ELB(Italian resident Elba), SDG(Italian resident Sardegna), SCL(Italian resident Sicily).	|
+| @largeFamily           			| 1 		| String	| Family discount type: N(None), F1(Large family), F2 (Special large family).	|
+| @discountCard          			| 1 		| String	| Discount card type (for more details, see information below). 	|
+| Passenger/PaxBonusDetails /ResidentCityCode 	| 0..1		| String	| If required, city code for the Spanish Resident discount.  |
+| Passenger/PaxBonusDetails /LargeFamilyId	| 0..1		| String	| Mandatory if customer wants to apply Spanish family discount.  |
+| Passenger/PaxBonusDetails /LargeFamilyCityCode | 0..1		| String	| City code for the Spanish Family discount.		|
+| Passenger/PaxBonusDetails /ResidentCertificateId | 0..1	| String	| Mandatory if requested Spanish Resident discount.	|
+| Itineraries                   		| 1     	|		| List of Itineraries.					|
+| Itineraries/Itinerary       			| 1..n    	|		| Details of the Itinerary.    				|
+| @id                    			| 1 		| Integer	| Unique identifier of the Itinerary. 			|
+| @fareRef               			| 1 		| Integer	| Reference identifier to the original Fare. Flights parameter.  	|
+| Itineraries/Itinerary /Conditions		| 0..1    	|		| Contains a list of Conditions.    			|
+| Itineraries/Itinerary /Journeys		| 0..1    	|		| Contains a list of Journeys.				|
+| Itineraries/Itinerary /Journeys/Journey	| 0..n    	|		|Contains details of the Journeys.			|
+| @id                    			| 1 		| Integer	| Unique identifier of the Journey in scope.		|
+| @duration              			| 1 		| Integer	| Duration of the Journey in minutes. 			|
+| Itineraries/Itinerary /Journeys/Journey/Segments | 0..1    	|		| Contains a list of Segments associated to the Journey.  |
+| Itineraries/Itinerary /Journeys/Journey/Segments /Segment | 0..n |   		| Contains details of the SegmentInfo.			|
+| @id                    			| 1 		| Integer	| Unique SegmentInfo identifier.			|
+| Itineraries/Itinerary /Journeys/Journey/Segments /Segment/SegmentInfo | 0..n | | Contains information of the SegmentInfo.		|
+| @id                    			| 1 		| Integer	| Unique identifier of the SegmentInfo.			|
+| @transportationId      			| 1 		| String	| Unique Id of the transportation.			|
+| @transportationType    			| 1 		| String	| Transport type: F ( Flight ), T ( Train ), B ( Bus ) & F ( Ferry ).	|
+| @operatinCarrier       			| 1 		| String	| Company which operates the transportation.		|
+| @marketingCarrier      			| 1 		| String	| Company which commercializes the transportation.	|
+| @departureTerminal     			| 1 		| String	| Departure terminal. 					|
+| @arrivalTerminal       			| 1 		| String	| Arrival terminal.					|
+| @departureDate         			| 1 		| Date		| Departure date.					|
+| @arrivalDate           			| 1 		| Date		| Arrival date.						|
+| @segmentDuration       			| 1 		| Integer	| Transport duration ( in minutes ).  			|
+| @maxCheckinDate        			| 1 		| String	| Maximum date to make the check-in.			|
+| @segmentStatus         			| 1 		| String	| SegmentInfo status: HK (OK), TK (Change of programming), UC (Unconfirmed), UN( Unable), NO (No action taken) & UD (Undefined).	|
+| @hasTechnicalStop      			| 1 		| Boolean	| If true, the SegmentInfo has a technical stop.	|
+| Itineraries/Itinerary /Journeys/Journey/Segments /Segment/SegmentInfo/OriginLoc | 1 |  | Origin location.				|
+| @type                  			| 1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).	|
+| @code                  			| 1 		| String	| Location code.					|
+| @cityCode              			| 1 		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.	|
+| Itineraries/Itinerary /Journeys/Journey/Segments /Segment/SegmentInfo/DestinationLoc | 1  |  | Destination location.			|
+| @type                  			| 1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).	|
+| @code                  			| 1 		| String	| Location code.					|
+| @cityCode              			| 1 		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.	|
+| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /SegmentClasses | 0..1 |   | Contains a list of SegmentClasses.		|
+| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /SegmentClasses/SegmentClass | 0..n |  | Contains details of the SegmentClass.  |
+| @cabinClass            			| 1 		| String	| Cabin class of the seat: N (Not specified), Y (Tourist), C (Business), F (First), CA (Cabin, only for ferries), YP (Tourist Plus).	|
+| @class                 			| 1 		| String	| Fare class.						|
+| @paxRef                			| 1 		| Integer	| Reference for the passenger which is using this fare in the transport.	|
+| @fareBasis             			| 1 		| String	| Fare basis.						|
+| @fareType              			| 1 		| String	| Fare type: PUB ( Public ), PRI ( Private ), NEGO ( Negotiated ) & CORP ( Corporate ).	|
+| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /ReservationToken | 0..1 |  | Contains specific attributes of each provider.	|
+| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /ReservationToken/Attribute | 0..n |  | Contains details of the attribute.	|
+| @key                   			| 1 		| String	| Keyword or id to identify a parameter.		|
+| @value                 			| 1 		| String	| Value of the parameter.				|
+| Itineraries/Itinerary/AmountBreakdown  	| 1     	|		| Contains details of the AmountBreakdown.		|
+| @currency               			| 1 		| String	| Currency code of the fare.				|
+| @totalAmount           			| 1 		| Decimal	| Total amount. with taxes and other charges included.	|
+| @notCommissionableAmount			| 1 		| Decimal	| Total amount that can not be commissioned.		|
+| @commission            			| 1 		| Decimal	| Commission percentage. A -1 value will be returned if the provider doesn't return any comission information.	|
+| Itineraries/Itinerary /AmountBreakdown/ChargeBreakdowns | 0..1 |   		| Contains a list of ChargeBreakdowns.			|
+| Itineraries/Itinerary /AmountBreakdown/ChargeBreakdowns /ChargeBreakdown | 1..n |  | Contains details of the ChargeBreakdown.		|
+| @type                  			| 1 		| String	| ChargeBreakdown type.					|
+| @amount                			| 1 		| Decimal	| Total amount, with taxes included, associated to the passenger.	|
+| Itineraries/Itinerary /AmountBreakdown/ChargeBreakdowns /ChargeBreakdown/Concept | 1 |  | Charge concept.				|
+| @id                    			| 1 		| String	| Indicates if the conditions are of one way ( with a 0 ) or round trip ( with a 1 ). Ferries parameter.  |
+| @language              			| 1 		| String	| Language.						|
+| Itineraries/Itinerary /AmountBreakdown/ChargeBreakdowns /ChargeBreakdown/Concept /Text | 1 | String | Remarks.			|
+| Itineraries/Itinerary /AmountBreakdown/PaxBreakdowns |  0..1  |  		| Contains a list of breakdown amounts for each passenger ( ADT amount, etc. ).	|
+| Itineraries/Itinerary /AmountBreakdown/PaxBreakdowns /PaxBreakdown | 0..n |   | Contains details of breakdown amounts for each passenger. |
+| @paxType               			| 1 		| String	| Passenger type: ADT ( Adult ), CHD ( Child ) & INF ( Infant ). 	|
+| @amount                			| 1 		| Decimal	| Total amount, with taxes included, associated to the passenger.  	|
+| @taxes                 			| 1 		| Integer	| If they exist, taxes are applied for this passenger type.  |
+| @tasaDU                			| 1 		| Integer	| Deprecated.						|
+| Itineraries/Itinerary /PaxConfigurations	| 1     	|		| Contains a list of PaxConfigurations.			|
+| Itineraries/Itinerary /PaxConfigurations/PaxConfiguration | 1 |    		| Contains details of the PaxConfiguration.		|
+| @id                    			| 1 		| Integer	| Unique identifier of the PaxConfiguration.  		|
+| @paxRef                			| 1 		| Integer	| Reference to the passenger Id from the request.	|
+| @age                   			| 1 		| Integer	| Age of the passenger.					|
+| @paxType               			| 1 		| String	| Passenger type based on the age of the passenger: ADT (Adult), CHD (Child), INF (Infant), YOU (Young) and SEN (Senior).	|
+| Itineraries/Itinerary /PaxConfigurations/PaxConfiguration /AppliedBonuses | 0..1 |   | Applied discounts.				|
+| @resident              			| 1 		| String	| Resident discount type: N(None), BP(Balearic Islands resident flying to mainland), BI(Balearic Islands resident flying to another balearic island), DC(Canarian Islands resident flying to another Canarian Island), RC(Canarian Islands resident flying to mainland),RM(Ceuta/Melilla resident), STR(Italian resident discount), ELB(Italian resident  Elba), SDG(Italian resident Sardegna), SCL(Italian resident Sicily).	|
+| @largeFamily           			| 1 		| String	| Family discount type: N(None), F1(Large family), F2 (Special large family).	|
+| @discountCard          			| 1 		| String	| Discount card type (for more details, see information below). 	|
+| Itineraries/Itinerary /PaxConfigurations/PaxConfiguration /AppliedBonuses/PaxTypeCodes | 0..1 |  | Contains a list of PaxTypeCodes.	|
+| Itineraries/Itinerary /PaxConfigurations/PaxConfiguration /AppliebBonuses/PaxTypeCodes /PaxTypeCode | 0..n |  | Contains details of the PTC. |
+| @code                  			| 1 		| String	| String with the PTC code.				|
+| Vehicles                    			| 0..1    	|		| List of Vehicle.   					|
+| Vehicles/Vehicle            			| 1..2    	|		| Contains the information of the vehicle.		|
+| @name                  			| 0..1		| String	| Name of the vehicle type.				|
+| @licensePlate          			| 1 		| String	| License plate of the vehicle.				|
+| @brand                 			| 1 		| String	| Brand name of the vehicle.				|
+| @model                 			| 1 		| String	| Model of the vehicle.					|
+| @code                  			| 1 		| String	| Code of the vehicle returned by the provider in the previous steps.	|
+| @height                			| 1 		| Integer	| Height of the vehicle.				|
+| @length                			| 1 		| Integer	| Length of the vehicle.				|
+| @type                  			| 1     	|		| Vehicle type: N (None/Unknown), Tourism, 4x4, MPV, MotorbikeMax50 (motorbike with less than 50 cc), MotorbikeMin50Max250 (motorbike with 50 - 250 cc), MotorbikeMin250Max500 (motorbike with 250 - 500 cc),  MotorbikeMin500 (motorbike with more than 500 cc), Bicicle, Van, LongVehicleMax6 (vehicle larger than 6 meters), Emission0Vehicle (vehicle with no emissions), Caravan, Trailer.	  |
+| Client                      			| 1     	|		| Contains client's information.			|
+| @passengerType         			| 1 		| String	| Treatment.						|
+| @name                  			| 1 		| String	| Name.							|
+| @surname               			| 1 		| String	| SurName.						|
+| @eMail                 			| 1 		| String	| eMail address.					|
+| @countryPrefix         			| 1 		| String	| Country telephone prefix.				|
+| @telephone             			| 1 		| String	| Telephone.						|
+| @mobilephone           			| 1 		| String	| mobilephone Telephone.				|
+| Client/Address              			| 1     	|		| Contains the client's address.			|
+| @zipCode               			| 1 		| String	| Zip code.						|
+| @countryCode           			| 1 		| String	| Country code.						|
+| Client/Address/Street       			| 1 		| String	| Contains the street name of the address.		|
+| Locators                    			| 1     	|		| Contains a list of locators.				|
+| Locators/Locator            			| 1     	|		| Contains details of the locator.			|
+| Locators/Locator/Id         			| 1 		| String	| Unique identifier of the locator.			|
+| Locators/Locator/Type       			| 1 		| String	| Locator type: PROVIDER, TFBOOKINGREFERENCE, UNIVERSAL, EMISSION and CARRIER.	|
+| deltaPrice                  			| 1 		| Decimal	| Maximum amount increasement allowed between "Valoracion" and "Reserva".	|
+
+
+
+
+ReservationRS
+=============
 
-  Passengers/Passenger         1.     List of Passenger.
-                               .n     
 
-  <*@passengerType>\*          1  Str Possible values: MR, MRS, CHD, INF.
-                                  ing 
-
-  <*@name>\*                   1  Str Name of the passenger.
-                                  ing 
-
-  <*@surname>\*                1  Str Surname of the passenger.
-                                  ing 
-
-  <*@birthDate>\*              1  Dat Date of birth of the passenger.
-                                  e   
-
-  <*@documentType>\*           1  Str Possible values: NATIONAL\_ID,
-                                  ing PASSPORT, RESIDENT\_ID,
-                                      FOREIGN\_PASSPORT.
-
-  <*@documentId>\*             1  Str Document ID.
-                                  ing 
-
-  <*@documentExpiration>\*     1  Dat Date of expiration of the document.
-                                  e   
-
-  <*@documentExpedition>\*     1  Dat Date of expedition of the document.
-                                  e   
-
-  <*@nationality>\*            1  Str Nationality code (ISO 3166-1
-                                  ing alphaa-3)
-
-  <*@gender>\*                 1  Cha Possible values: 72 (male), 77
-                                  r   (female).
-
-  Passenger/PaxBonusDetails    1      Details of the discount bonus applied
-                                      to the passenger.
-
-  Passenger/PaxBonusDetails/Ap 0.     Applied discounts.
-  pliedBonuses                 .1     
-
-  <*@resident>\*               1      Resident discount type: N(None),
-                                      BP(Balearic Islands resident flying
-                                      to mainland), BI(Balearic Islands
-                                      resident flying to another balearic
-                                      island), DC(Canarian Islands resident
-                                      flying to another Canarian Island),
-                                      RC(Canarian Islands resident flying
-                                      to mainland),RM(Ceuta/Melilla
-                                      resident), STR(Italian resident
-                                      discount), ELB(Italian resident
-                                      Elba), SDG(Italian resident
-                                      Sardegna), SCL(Italian resident
-                                      Sicily).
-
-  <*@largeFamily>\*            1  Str Family discount type: N(None),
-                                  ing F1(Large family), F2 (Special large
-                                      family).
-
-  <*@discountCard>\*           1  Str Discount card type (for more details,
-                                  ing see information below).
-
-  Passenger/PaxBonusDetails/Re 0. Str If required, city code for the
-  sidentCityCode               .1 ing Spanish Resident discount.
-
-  Passenger/PaxBonusDetails/La 0. Str Mandatory if customer wants to apply
-  rgeFamilyId                  .1 ing Spanish family discount.
-
-  Passenger/PaxBonusDetails/La 0. Str City code for the Spanish Family
-  rgeFamilyCityCode            .1 ing discount.
-
-  Passenger/PaxBonusDetails/Re 0. Str Mandatory if requested Spanish
-  sidentCertificateId          .1 ing Resident discount.
-
-  Itineraries                  1      List of Itineraries.
-
-  Itineraries/Itinerary        1.     Details of the Itinerary.
-                               .n     
-
-  <*@id>\*                     1  Int Unique identifier of the Itinerary.
-                                  ege 
-                                  r   
-
-  <*@fareRef>\*                1  Int Reference identifier to the original
-                                  ege Fare. Flights parameter.
-                                  r   
-
-  Itineraries/Itinerary/Condit 0.     Contains a list of Conditions.
-  ions                         .1     
-
-  Itineraries/Itinerary/Journe 0.     Contains a list of Journeys.
-  ys                           .1     
-
-  Itineraries/Itinerary/Journe 0.     Contains details of the Journeys.
-  ys/Journey                   .n     
-
-  <*@id>\*                     1  Int Unique identifier of the Journey in
-                                  ege scope.
-                                  r   
-
-  <*@duration>\*               1  Int Duration of the Journey in minutes.
-                                  ege 
-                                  r   
-
-  Itineraries/Itinerary/Journe 0.     Contains a list of Segments
-  ys/Journey/Segments          .1     associated to the Journey.
-
-  Itineraries/Itinerary/Journe 0.     Contains details of the SegmentInfo.
-  ys/Journey/Segments/Segment  .n     
-
-  <*@id>\*                     1  Int Unique SegmentInfo identifier.
-                                  ege 
-                                  r   
-
-  Itineraries/Itinerary/Journe 0.     Contains information of the
-  ys/Journey/Segments/Segment/ .n     SegmentInfo.
-  SegmentInfo                         
-
-  <*@id>\*                     1  Int Unique identifier of the SegmentInfo.
-                                  ege 
-                                  r   
-
-  <*@transportationId>\*       1  Str Unique Id of the transportation.
-                                  ing 
-
-  <*@transportationType>\*     1  Str Transport type: F ( Flight ), T (
-                                  ing Train ), B ( Bus ) & F ( Ferry ).
-
-  <*@operatinCarrier>\*        1  Str Company which operates the
-                                  ing transportation.
-
-  <*@marketingCarrier>\*       1  Str Company which commercializes the
-                                  ing transportation.
-
-  <*@departureTerminal>\*      1  Str Departure terminal.
-                                  ing 
-
-  <*@arrivalTerminal>\*        1  Str Arrival terminal.
-                                  ing 
-
-  <*@departureDate>\*          1  Dat Departure date.
-                                  e   
-
-  <*@arrivalDate>\*            1  Dat Arrival date.
-                                  e   
-
-  <*@segmentDuration>\*        1  Int Transport duration ( in minutes ).
-                                  ege 
-                                  r   
-
-  <*@maxCheckinDate>\*         1  Str Maximum date to make the check-in.
-                                  ing 
-
-  <*@segmentStatus>\*          1  Str SegmentInfo status: HK (OK), TK
-                                  ing (Change of programming), UC
-                                      (Unconfirmed), UN( Unable), NO (No
-                                      action taken) & UD (Undefined)
-
-  <*@hasTechnicalStop>\*       1  Boo If true, the SegmentInfo has a
-                                  lea technical stop.
-                                  n   
-
-  Itineraries/Itinerary/Journe 1      Origin location.
-  ys/Journey/Segments/Segment/        
-  SegmentInfo/OriginLoc               
-
-  <*@type>\*                   1  Str Type of station of the location
-                                  ing indicated with A ( AirPort ), T (
-                                      Train Station ) & P ( Port ).
-
-  <*@code>\*                   1  Str Location code.
-                                  ing 
-
-  <*@cityCode>\*               1  Boo If true, the field code indicates a
-                                  lea city code, if false, it will indicate
-                                  n   an airport code.
-
-  Itineraries/Itinerary/Journe 1      Destination location.
-  ys/Journey/Segments/Segment/        
-  SegmentInfo/DestinationLoc          
-
-  <*@type>\*                   1  Str Type of station of the location
-                                  ing indicated with A ( AirPort ), T (
-                                      Train Station ) & P ( Port ).
-
-  <*@code>\*                   1  Str Location code.
-                                  ing 
-
-  <*@cityCode>\*               1  Boo If true, the field code indicates a
-                                  lea city code, if false, it will indicate
-                                  n   an airport code.
-
-  Itineraries/Itinerary/Journe 0.     Contains a list of SegmentClasses.
-  ys/Journey/Segments/Segment/ .1     
-  SegmentClasses                      
-
-  Itineraries/Itinerary/Journe 0.     Contains details of the SegmentClass.
-  ys/Journey/Segments/Segment/ .n     
-  SegmentClasses/SegmentClass         
-
-  <*@cabinClass>\*             1  Str Cabin class of the seat: N (Not
-                                  ing specified), Y (Tourist), C
-                                      (Business), F (First), CA (Cabin,
-                                      only for ferries), YP (Tourist Plus)
-
-  <*@class>\*                  1  Str Fare class.
-                                  ing 
-
-  <*@paxRef>\*                 1  Int Reference for the passenger which is
-                                  ege using this fare in the transport.
-                                  r   
-
-  <*@fareBasis>\*              1  Str Fare basis.
-                                  ing 
-
-  <*@fareType>\*               1  Str Fare type: PUB ( Public ), PRI (
-                                  ing Private ), NEGO ( Negotiated ) & CORP
-                                      ( Corporate ).
-
-  Itineraries/Itinerary/Journe 0.     Contains specific attributes of each
-  ys/Journey/Segments/Segment/ .1     provider.
-  ReservationToken                    
-
-  Itineraries/Itinerary/Journe 0.     Contains details of the attribute.
-  ys/Journey/Segments/Segment/ .n     
-  ReservationToken/Attribute          
-
-  <*@key>\*                    1  Str Keyword or id to identify a
-                                  ing parameter.
-
-  <*@value>\*                  1  Str Value of the parameter.
-                                  ing 
-
-  Itineraries/Itinerary/Amount 1      Contains details of the
-  Breakdown                           AmountBreakdown.
-
-  <*@currency>\*               1  Str Currency code of the fare.
-                                  ing 
-
-  <*@totalAmount>\*            1  Dec Total amount. with taxes and other
-                                  ima charges included.
-                                  l   
-
-  <*@notCommissionableAmount>\ 1  Dec Total amount that can not be
-  *                               ima commissioned.
-                                  l   
-
-  <*@commission>\*             1  Dec Commission percentage. A -1 value
-                                  ima will be returned if the provider
-                                  l   doesn't return any comission
-                                      information.
-
-  Itineraries/Itinerary/Amount 0.     Contains a list of ChargeBreakdowns.
-  Breakdown/ChargeBreakdowns   .1     
-
-  Itineraries/Itinerary/Amount 1.     Contains details of the
-  Breakdown/ChargeBreakdowns/C .n     ChargeBreakdown.
-  hargeBreakdown                      
-
-  <*@type>\*                   1  Str ChargeBreakdown type.
-                                  ing 
-
-  <*@amount>\*                 1  Dec Total amount, with taxes included,
-                                  ima associated to the passenger.
-                                  l   
-
-  Itineraries/Itinerary/Amount 1      Charge concept.
-  Breakdown/ChargeBreakdowns/C        
-  hargeBreakdown/Concept              
-
-  <*@id>\*                     1  Str Indicates if the conditions are of
-                                  ing one way ( with a 0 ) or round trip (
-                                      with a 1 ). Ferries parameter.
-
-  <*@language>\*               1  Str Language.
-                                  ing 
-
-  Itineraries/Itinerary/Amount 1  Str Remarks.
-  Breakdown/ChargeBreakdowns/C    ing 
-  hargeBreakdown/Concept/Text         
-
-  Itineraries/Itinerary/Amount 0.     Contains a list of breakdown amounts
-  Breakdown/PaxBreakdowns      .1     for each passenger ( ADT amount, etc.
-                                      ).
-
-  Itineraries/Itinerary/Amount 0.     Contains details of breakdown amounts
-  Breakdown/PaxBreakdowns/PaxB .n     for each passenger.
-  reakdown                            
-
-  <*@paxType>\*                1  Str Passenger type: ADT ( Adult ), CHD (
-                                  ing Child ) & INF ( Infant ).
-
-  <*@amount>\*                 1  Dec Total amount, with taxes included,
-                                  ima associated to the passenger.
-                                  l   
-
-  <*@taxes>\*                  1  Int If they exist, taxes are applied for
-                                  ege this passenger type.
-                                  r   
-
-  <*@tasaDU>\*                 1  Int Deprecated
-                                  ege 
-                                  r   
-
-  Itineraries/Itinerary/PaxCon 1      Contains a list of PaxConfigurations.
-  figurations                         
-
-  Itineraries/Itinerary/PaxCon 1      Contains details of the
-  figurations/PaxConfiguration        PaxConfiguration.
-
-  <*@id>\*                     1  Int Unique identifier of the
-                                  ege PaxConfiguration.
-                                  r   
-
-  <*@paxRef>\*                 1  Int Reference to the passenger Id from
-                                  ege the request.
-                                  r   
-
-  <*@age>\*                    1  Int Age of the passenger.
-                                  ege 
-                                  r   
-
-  <*@paxType>\*                1  Str Passenger type based on the age of
-                                  ing the passenger: ADT (Adult), CHD
-                                      (Child), INF (Infant), YOU (Young)
-                                      and SEN (Senior).
-
-  Itineraries/Itinerary/PaxCon 0.     Applied discounts.
-  figurations/PaxConfiguration .1     
-  /AppliedBonuses                     
-
-  <*@resident>\*               1  Str Resident discount type: N(None),
-                                  ing BP(Balearic Islands resident flying
-                                      to mainland), BI(Balearic Islands
-                                      resident flying to another balearic
-                                      island), DC(Canarian Islands resident
-                                      flying to another Canarian Island),
-                                      RC(Canarian Islands resident flying
-                                      to mainland),RM(Ceuta/Melilla
-                                      resident), STR(Italian resident
-                                      discount), ELB(Italian resident
-                                      Elba), SDG(Italian resident
-                                      Sardegna), SCL(Italian resident
-                                      Sicily)
-
-  <*@largeFamily>\*            1  Str Family discount type: N(None),
-                                  ing F1(Large family), F2 (Special large
-                                      family).
-
-  <*@discountCard>\*           1  Str Discount card type (for more details,
-                                  ing see information below).
-
-  Itineraries/Itinerary/PaxCon 0.     Contains a list of PaxTypeCodes.
-  figurations/PaxConfiguration .1     
-  /AppliedBonuses/PaxTypeCodes        
-
-  Itineraries/Itinerary/PaxCon 0.     Contains details of the PTC.
-  figurations/PaxConfiguration .n     
-  /AppliebBonuses/PaxTypeCodes        
-  /PaxTypeCode                        
-
-  <*@code>\*                   1  Str String with the PTC code.
-                                  ing 
-
-  Vehicles                     0.     List of Vehicle.
-                               .1     
-
-  Vehicles/Vehicle             1.     Contains the information of the
-                               .2     vehicle.
-
-  <*@name>\*                   0. Str Name of the vehicle type.
-                               .1 ing 
-
-  <*@licensePlate>\*           1  Str License plate of the vehicle.
-                                  ing 
-
-  <*@brand>\*                  1  Str Brand name of the vehicle.
-                                  ing 
-
-  <*@model>\*                  1  Str Model of the vehicle.
-                                  ing 
-
-  <*@code>\*                   1  Str Code of the vehicle returned by the
-                                  ing provider in the previous steps.
-
-  <*@height>\*                 1  Int Height of the vehicle.
-                                  ege 
-                                  r   
-
-  <*@length>\*                 1  Int Length of the vehicle.
-                                  ege 
-                                  r   
-
-  <*@type>\*                   1      Vehicle type: N (None/Unknown),
-                                      Tourism, 4x4, MPV, MotorbikeMax50
-                                      (motorbike with less than 50 cc),
-                                      MotorbikeMin50Max250 (motorbike with
-                                      50 - 250 cc), MotorbikeMin250Max500
-                                      (motorbike with 250 - 500 cc),
-                                      MotorbikeMin500 (motorbike with more
-                                      than 500 cc), Bicicle, Van,
-                                      LongVehicleMax6 (vehicle larger than
-                                      6 meters), Emission0Vehicle (vehicle
-                                      with no emissions), Caravan, Trailer.
-
-  Client                       1      Contains client's information.
-
-  <*@passengerType>\*          1  Str Treatment.
-                                  ing 
-
-  <*@name>\*                   1  Str Name.
-                                  ing 
-
-  <*@surname>\*                1  Str SurName.
-                                  ing 
-
-  <*@eMail>\*                  1  Str eMail address.
-                                  ing 
-
-  <*@countryPrefix>\*          1  Str Country telephone prefix.
-                                  ing 
-
-  <*@telephone>\*              1  Str Telephone.
-                                  ing 
-
-  <*@mobilephone>\*            1  Str mobilephone Telephone.
-                                  ing 
-
-  Client/Address               1      Contains the client's address.
-
-  <*@zipCode>\*                1  Str Zip code.
-                                  ing 
-
-  <*@countryCode>\*            1  Str Country code.
-                                  ing 
-
-  Client/Address/Street        1  Str Contains the street name of the
-                                  ing address.
-
-  Locators                     1      Contains a list of locators.
-
-  Locators/Locator             1      Contains details of the locator.
-
-  Locators/Locator/Id          1  Str Unique identifier of the locator.
-                                  ing 
-
-  Locators/Locator/Type        1  Str Locator type: PROVIDER,
-                                  ing TFBOOKINGREFERENCE, UNIVERSAL,
-                                      EMISSION and CARRIER.
-
-  deltaPrice                   1  Dec Maximum amount increasement allowed
-                                  ima between "Valoracion" and "Reserva"
-                                  l   
-  -------------------------------------------------------------------------
-
-|
-
-ReservationRS ---------
-
-:
 
     <ReservationRS>
     <Locators>
@@ -693,102 +362,41 @@ ReservationRS ---------
             </PaxBreakdowns>
         </AmountBreakdown>
     </Invoice>
+    </ReservationRS>
 
-\</ReservationRS\>
 
-|
 
-ReservationRS Description ---------------------
+ReservationRS Description
+=========================
 
-  -------------------------------------------------------------------------
-  Element                      Nu Typ Description
-                               mb e   
-                               er     
-  ---------------------------- -- --- -------------------------------------
-  ReservationRS                1      Root node
 
-  Locator                      0.     List of locators given by the
-                               .n     provider.
+| **Element**					| **Number**	| **Type**	| **Description**					|
+| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| ReservationRS               			| 1     	|		| Root node.						|
+| Locator                     			| 0..n    	|		| List of locators given by the provider.		|
+| Locators/Locator/Id         			| 1 		| String	| Unique identifier of the locator.			|
+| Locators/Locator/Type       			| 1 		| String	| Locator type: PROVIDER, TFBOOKINGREFERENCE, UNIVERSAL, EMISSION and CARRIER.	|
+| Passengers                  			| 1     	|		| Contains a list of Passengers.			|
+| Passengers/Passenger        			| 1..n    	|		| Contains information of the Passenger.		|
+| @passengerType         			| 1 		| String	| Treatment: MR, MRS, CHD and INF. 			|
+| @name                  			| 1 		| String	| Name of the Passenger.				|
+| @surname               			| 1 		| String	| Surname/s of the Passenger.				|
+| @bithDate              			| 1 		| String	| Date of birth.					|
+| @codeDCO               			| 1 		| String	| Document code.					|
+| @documentType          			| 1 		| String	| Documentation type.					|
+| @documentId            			| 1 		| String	| Unique identifier of the documentation.		|
+| @documentExpiration    			| 1 		| String	| Expiration date of the documentation.			|
+| @nationality           			| 1 		| String	| Nationality.						|
+| Invoice                     			| 1      	|		|							|
+| Invoice/AmountBreakdown     			| 1      	|		|							|
+| @currency               			| 1 		| String	| Currency code of the fare.				|
+| @totalAmount           			| 1 		| Decimal	| Total amount. with taxes and other charges included.	|
+| @notCommissionableAmount			| 1 		| Decimal	| Total amount that can not be commissioned. 		|
+| @commission					| 1 		| Decimal	 Commission percentage. A -1 value will be returned if the provider doesn't return any comission information.	|
+| Invoice/AmountBreakdown /ChargeBreakdowns	| 0..1    	|		| Contains a list of ChargeBreakdowns.			|
+| Invoice/AmountBreakdown /PaxBreakdowns	| 0..1    	|		| Contains a list of breakdown amounts for each Passenger ( ADT amount, etc. ).	|
+| Invoice/AmountBreakdown /PaxBreakdowns/PaxBreakdown | 0..n    |		| Contains details of breakdown amounts for each Passenger. |
+| @paxType               			| 1 		| String	| Passenger type: ADT ( Adult ), CHD ( Child ) & INF ( Infant ). 	|
+| @amount                			| 1 		| Decimal	| Total amount, with taxes included, associated to the Passenger.	|
+| @taxes                 			| 1 		| Integer	| If they exist, taxes are applied for this Passenger type. |
 
-  Locators/Locator/Id          1  Str Unique identifier of the locator.
-                                  ing 
-
-  Locators/Locator/Type        1  Str Locator type: PROVIDER,
-                                  ing TFBOOKINGREFERENCE, UNIVERSAL,
-                                      EMISSION and CARRIER.
-
-  Passengers                   1      Contains a list of Passengers.
-
-  Passengers/Passenger         1.     Contains information of the
-                               .n     Passenger.
-
-  <*@passengerType>\*          1  Str Treatment: MR, MRS, CHD and INF.
-                                  ing 
-
-  <*@name>\*                   1  Str Name of the Passenger.
-                                  ing 
-
-  <*@surname>\*                1  Str Surname/s of the Passenger.
-                                  ing 
-
-  <*@bithDate>\*               1  Str Date of birth.
-                                  ing 
-
-  <*@codeDCO>\*                1  Str Document code.
-                                  ing 
-
-  <*@documentType>\*           1  Str Documentation type.
-                                  ing 
-
-  <*@documentId>\*             1  Str Unique identifier of the
-                                  ing documentation.
-
-  <*@documentExpiration>\*     1  Str Expiration date of the documentation.
-                                  ing 
-
-  <*@nationality>\*            1  Str Nationality.
-                                  ing 
-
-  Invoice                      1      
-
-  Invoice/AmountBreakdown      1      
-
-  <*@currency>\*               1  Str Currency code of the fare.
-                                  ing 
-
-  <*@totalAmount>\*            1  Dec Total amount. with taxes and other
-                                  ima charges included.
-                                  l   
-
-  <*@notCommissionableAmount>\ 1  Dec Total amount that can not be
-  *                               ima commissioned.
-                                  l   
-
-  <*@commission>\*             1  Dec Commission percentage. A -1 value
-                                  ima will be returned if the provider
-                                  l   doesn't return any comission
-                                      information.
-
-  Invoice/AmountBreakdown/Char 0.     Contains a list of ChargeBreakdowns.
-  geBreakdowns                 .1     
-
-  Invoice/AmountBreakdown/PaxB 0.     Contains a list of breakdown amounts
-  reakdowns                    .1     for each Passenger ( ADT amount, etc.
-                                      ).
-
-  Invoice/AmountBreakdown/PaxB 0.     Contains details of breakdown amounts
-  reakdowns/PaxBreakdown       .n     for each Passenger.
-
-  <*@paxType>\*                1  Str Passenger type: ADT ( Adult ), CHD (
-                                  ing Child ) & INF ( Infant ).
-
-  <*@amount>\*                 1  Dec Total amount, with taxes included,
-                                  ima associated to the Passenger.
-                                  l   
-
-  <*@taxes>\*                  1  Int If they exist, taxes are applied for
-                                  ege this Passenger type.
-                                  r   
-  -------------------------------------------------------------------------
-
-|

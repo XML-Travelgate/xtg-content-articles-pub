@@ -14,28 +14,15 @@ The integration will have the following methods:
 
 |
 
-  -------------------------------------------------------------------------
-  Method         Input          Output         Requir Description
-                                               ed     
-  -------------- -------------- -------------- ------ ---------------------
-  Avail          AvailabilityRQ AvailabilityRS Yes    Makes a availability
-                                                      call
-
-  Valuation      ValuationRQ    ValuationRS    Yes    Makes a pre-booking
-
-  Reservation    ReservationRQ  ReservationRS  Yes    Makes a booking
-
-  Routes         RoutesRQ       RoutesRS       Yes    Gets a static routes
-                                                      list
-
-  RetrieveReserv RetrieveReserv RetrieveReserv No     Gets the details of a
-  ation          ationRQ        ationRS               single booking
-
-  RetrieveReserv RetrieveReserv RetrieveReserv No     Gets a list of
-  ationList      ationListRQ    ationListRS           bookings
-
-  Cancelation    CancellationRQ CancellationRS No     Cancels a booking
-  -------------------------------------------------------------------------
+| **Method**			| **Input**			| **Output**			| **Required** | **Description**		|
+| ----------------------------- | ----------------------------- | ----------------------------- | ------------ | ------------------------------ |
+| Avail         		| AvailabilityRQ		| AvailabilityRS		| Yes          | Makes a availability call	|
+| Valuation     		| ValuationRQ   		| ValuationRS   		| Yes          | Makes a pre-booking		|
+| Reservation   		| ReservationRQ 		| ReservationRS 		| Yes          | Makes a booking		|
+| Routes        		| RoutesRQ      		| RoutesRS      		| Yes          | Gets a static routes list	|
+| RetrieveReservation		| RetrieveReservation RQ	| RetrieveReservation RS	| No           | Gets the details of a single booking |
+| RetrieveReservation List	| RetrieveReservation ListRQ	| RetrieveReservation ListRS 	| No           | Gets a list of bookings	|
+| Cancelation   		| CancellationRQ		| CancellationRS 		| No           | Cancels a booking		|
 
 |
 
@@ -51,19 +38,13 @@ the specific objects related to the operation
 
 **Data structure content:**
 
-> maxdepth
->
-> :   3
->
-> numbered
->
-> :   
->
-> Common-Elements\<./DSF/common/common-elements-ferries.rst\>
-> Avail\<./DSF/ferries/avail.rst\>
-> Valuation\<./DSF/ferries/valuation.rst\>
-> Reservation\<./DSF/ferries/reservation.rst\> Routes
-> \<./DSF/ferries/routes.rst\> Retrieve Reservation
-> \<./DSF/ferries/retrieveReservation.rst\> Retrieve Reservation List
-> \<./DSF/ferries/retrieveReservationList.rst\> Cancellation
-> \<./DSF/ferries/cancel.rst\>
+1. [Ferries](/developer-documentation/transportation/ferries)
+2. [Common-Elements](/developer-documentation/transportation/DSF/ferries/common-elements)
+3. [Valuation](/developer-documentation/hotel/DSF/Valuation)
+4. [Avail](/developer-documentation/transportation/DSF/ferries/avail)
+5. [Valuation](/developer-documentation/transportation/DSF/ferries/valuation)
+6. [Reservation](/developer-documentation/transportation/DSF/ferries/reservation)
+7. [Routes](/developer-documentation/transportation/DSF/ferries/routes)
+8. [RetrieveReservation](/developer-documentation/transportation/DSF/ferries/retrieveReservation)
+9. [RetrieveReservationList](/developer-documentation/transportation/DSF/ferries/retrieveReservationList)
+10. [Cancellation](/developer-documentation/transportation/DSF/ferries/cancel)

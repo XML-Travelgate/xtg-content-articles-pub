@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/transportation/DSF/ferries/routes
 ---
 
-|
+
 
 Method Goals
 ============
@@ -13,14 +13,14 @@ Method Goals
 This method aims to return all the available routes for the selected
 carrier.
 
-|
+
 
 Request Format
 ==============
 
 This request does not require any parameters.
 
-|
+
 
 Response Format
 ===============
@@ -28,34 +28,37 @@ Response Format
 The result returns a list of Route with the corresponding time frame in
 which this route is valid.
 
-|
+
 
 Remarks This method should be cached internally and only called once a
 week and in most cases once a month.
 
 |
 
-RoutesRQ Example ---------------
+RoutesRQ Example
+================
 
-:
+
 
     <RoutesRQ>
     </RoutesRQ>
 
-|
 
-RoutesRQ Description -------------------
 
-  Element        Number     Type       Description
-  -------------- ---------- ---------- -------------------------------------
-  RoutesRQ       1                     Root node
+RoutesRQ Description
+====================
 
-|
+
+| **Element**		| **Number**	| **Type**	| **Description**	|
+| --------------------- | ------------- | ------------- | --------------------- |
+| RoutesRQ      	| 1             |       	| Root node.		|
+
+
 
 RutasRS Example
 ===============
 
-:
+
 
     <RoutesRS>
        <Routes>
@@ -84,63 +87,25 @@ RutasRS Example
        </Routes>
     </RoutesRS>
 
-|
+
 
 RutasRS Description
 ===================
 
-+----------------------------------+-------+--------+------------------------------+
-| Element                          | Numbe | Type   | Description                  |
-|                                  | r     |        |                              |
-+==================================+=======+========+==============================+
-| RutasRS                          | 1     |        | Root node                    |
-+----------------------------------+-------+--------+------------------------------+
-| Routes                           | 1     |        | List of Route objects.       |
-+----------------------------------+-------+--------+------------------------------+
-| Routes/Route                     | 0..n  |        | Indicates an origin port and |
-|                                  |       |        | the available destinations   |
-|                                  |       |        | for this origin. If the      |
-|                                  |       |        | provider returns information |
-|                                  |       |        | about the period in which    |
-|                                  |       |        | the route is available, it   |
-|                                  |       |        | will be shown with           |
-|                                  |       |        | "fromDate" and "toDate.      |
-+----------------------------------+-------+--------+------------------------------+
-| Routes/Route/OriginLoc           | 1     |        | Departure port of this       |
-|                                  |       |        | route.                       |
-+----------------------------------+-------+--------+------------------------------+
-| <*@type>\*                       | 1     | 1      | > Type of station of the     |
-|                                  |       |        | > location indicated with A  |
-|                                  |       |        |                              |
-|                                  |       |        | ( AirPort ), T ( Train       |
-|                                  |       |        | Station ) & P ( Port ).      |
-+----------------------------------+-------+--------+------------------------------+
-| <*@code>\*                       | 1     | 1      | Port code.                   |
-+----------------------------------+-------+--------+------------------------------+
-| <*@citycode>\*                   | 1     | 1      | If true, the field code      |
-|                                  |       |        | indicates a city code, if    |
-|                                  |       |        | false, it will indicate an   |
-|                                  |       |        | airport code.                |
-+----------------------------------+-------+--------+------------------------------+
-| Routes/Route/DestinationTimeInte | 1     |        | List of                      |
-| rvals                            |       |        | DestinationTimeInterval      |
-+----------------------------------+-------+--------+------------------------------+
-| Routes/Route/DestinationTimeInte | 1     |        | Destination port for this    |
-| rvals/DestinationTimeInterval    |       |        | route                        |
-+----------------------------------+-------+--------+------------------------------+
-| <*@fromDate>\*                   | 1     | Date   | Indicates when this route    |
-|                                  |       |        | becomes active. A default    |
-|                                  |       |        | value "0001-01-01T00:00:00"  |
-|                                  |       |        | will be returned if the      |
-|                                  |       |        | provider doesn't return this |
-|                                  |       |        | information.                 |
-+----------------------------------+-------+--------+------------------------------+
-| <*@toDate>\*                     |       |        | Indicates when this route    |
-|                                  |       |        | becomes inactive. A default  |
-|                                  |       |        | value "0001-01-01T00:00:00"  |
-|                                  |       |        | will be returned if the      |
-|                                  |       |        | provider doesn't return this |
-|                                  |       |        | information.                 |
-+----------------------------------+-------+--------+------------------------------+
 
-|
+| **Element**                        	| **Number** 	| **Type** 	| **Description**                 			|
+| ------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| RutasRS                          	| 1     	|        	| Root node                    				|
+| Routes                           	| 1     	|        	| List of Route objects.       				|
+| Routes/Route                     	| 0..n  	|        	| Indicates an origin port and the available destinations for this origin. If the provider returns information about the period in which the route is available, it will be shown with "fromDate" and "toDate.      |
+| Routes/Route/OriginLoc           	| 1     	|        	| Departure port of this route.                       	|
+| @type                       		| 1     	| 1      	| Type of station of the  location indicated with A  ( AirPort ), T ( Train Station ) & P ( Port ).      |
+| @code                       		| 1     	| 1      	| Port code.                   				|
+| @citycode                   		| 1     	| 1      	| If true, the field code indicates a city code, if false, it will indicate an airport code.        |
+| Routes/Route /DestinationTimeIntervals | 1     	|        	| List of DestinationTimeInterval.     			|
+| Routes/Route /DestinationTimeIntervals/DestinationTimeInterval | 1    |       | Destination port for this route.   		|
+| @fromDate                   		| 1     	| Date   	| Indicates when this route becomes active. A default value "0001-01-01T00:00:00" will be returned if the provider doesn't return this information.        |
+| @toDate                     		|       	|        	| Indicates when this route  becomes inactive. A default value "0001-01-01T00:00:00" will be returned if the provider doesn't return this information.        |
+
+
+

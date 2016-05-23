@@ -14,26 +14,14 @@ The integration will have the following methods:
 
 |
 
-  --------------------------------------------------------------------------
-  Method         Input           Output          Require escription
-                                                 d       
-                                                 | D     
-  -------------- --------------- --------------- ------- -------------------
-  Availability   AvailabilityRQ  AvailabilityRS  Yes | M akes a availability
-                                                         call
-
-  Valuation      ValuationRQ     ValuationRS     Yes | M akes a pre-booking
-
-  Reservation    ReservationRQ   ReservationRS   Yes | M akes a booking
-
-  RetrieveReserv RetrieveReserva RetrieveReserva No | G  ets booking details
-  ation          tionRQ          tionRS                  
-
-  RetrieveReserv RetrieveReserva RetrieveReserva No | G  ets booking list
-  ationList      tionListRQ      tionListRS              
-
-  Cancellation   CancellationRQ  CancellationRS  No | C  ancels a booking
-  --------------------------------------------------------------------------
+| **Method**			| **Input**			| **Output**			| **Required** | **Description**	|
+| ----------------------------- | ----------------------------- | ----------------------------- | ------------ | ---------------------- |
+| Availability  		| AvailabilityRQ 		| AvailabilityRS 		| Yes 	       | Makes a availability call |
+| Valuation     		| ValuationRQ    		| ValuationRS    		| Yes 	       | Makes a pre-booking	|
+| Reservation   		| ReservationRQ  		| ReservationRS  		| Yes 	       | Makes a booking	|
+| RetrieveReservation		| RetrieveReservation RQ		| RetrieveReservation RS		| No 	       | Gets booking details	|
+| RetrieveReservation List	| RetrieveReservation ListRQ	| RetrieveReservation ListRS	| No 	       | Gets booking list	|
+| Cancellation  		| CancellationRQ 		| CancellationRS 		| No 	       | Cancels a booking	|
 
 |
 
@@ -49,18 +37,10 @@ the specific objects related to the operation
 
 **Data structure content:**
 
-> maxdepth
->
-> :   3
->
-> numbered
->
-> :   
->
-> Avail \<./DSF/flights/avail.rst\> Valuation
-> \<./DSF/flights/valuation.rst\> Reservation
-> \<./DSF/flights/reservation.rst\> RetrieveReservation
-> \<./DSF/flights/recover-reserve.rst\> RetrieveReservationList
-> \<./DSF/flights/recover-reserve-list.rst\> Cancellation
-> \<./DSF/flights/cancel.rst\> Code Lists
-> \<./DSF/commoen/codes-list.rst\>
+1. [Flights](/developer-documentation/transportation/flights)
+2. [Avail](/developer-documentation/transportation/DSF/flights/avail)
+3. [Valuation](/developer-documentation/transportation/DSF/flights/valuation)
+4. [Reservation](/developer-documentation/transportation/DSF/flights/reservation)
+5. [RetrieveReservation](/developer-documentation/transportation/DSF/flights/recover-reserve)
+6. [RetrieveReservationList](/developer-documentation/transportation/DSF/flights/recover-reserve-list)
+7. [Cancellation](/developer-documentation/transportation/DSF/flights/cancel)
