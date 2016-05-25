@@ -5,13 +5,13 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/transportation/change-log
 ---
 
-|
+
 
 -   **Version 1.0.8:** Date 24/07/2012
 
 Added ConfigCompaniasDispo in the common RQ objects
 
-|
+
 
 -   **Version 1.0.9:** Date 30/08/2012
 
@@ -21,13 +21,13 @@ Added baggage type in SuplementosRS
 
 Added special supplement in SuplementosRS
 
-|
+
 
 -   **Version 1.0.11:** Date 09/01/2013
 
 Added Generic Error Code
 
-|
+
 
 -   **Version 1.0.12:** Date 30/03/2013
 

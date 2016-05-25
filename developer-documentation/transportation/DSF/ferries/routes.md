@@ -33,7 +33,7 @@ which this route is valid.
 Remarks This method should be cached internally and only called once a
 week and in most cases once a month.
 
-|
+
 
 RoutesRQ Example
 ================

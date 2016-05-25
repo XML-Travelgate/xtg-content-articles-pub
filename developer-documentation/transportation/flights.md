@@ -8,11 +8,11 @@ permalink: /developer-documentation/transportation/flights
 The structure of the API specification follows a standard. This document
 intends to explain every aspect of this structure and their fields.
 
-|
+
 
 The integration will have the following methods:
 
-|
+
 
 | **Method**			| **Input**			| **Output**			| **Required** | **Description**	|
 | ----------------------------- | ----------------------------- | ----------------------------- | ------------ | ---------------------- |
@@ -23,17 +23,17 @@ The integration will have the following methods:
 | RetrieveReservation List	| RetrieveReservation ListRQ	| RetrieveReservation ListRS	| No 	       | Gets booking list	|
 | Cancellation  		| CancellationRQ 		| CancellationRS 		| No 	       | Cancels a booking	|
 
-|
+
 
 Each request sent to the **service url** requires a node called rqXML .
 Inside this node travels the current method's Input object.
 
-|
+
 
 The data structure will always have common elements in all objects and
 the specific objects related to the operation
 
-|
+
 
 **Data structure content:**
 

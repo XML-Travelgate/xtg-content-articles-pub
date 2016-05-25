@@ -59,7 +59,7 @@ Common Elements RQ Example
        …
     </TransportationBaseRQ>
 
-|
+
 
 Common Elements RQ Description
 ==============================

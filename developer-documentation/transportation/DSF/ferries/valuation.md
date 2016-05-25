@@ -50,7 +50,7 @@ totalAmount is definitive. Sometimes this method will fail since the
 selected Option at Availability may not be available for this stage. In
 this case the integration returns an error code 301 ( link missing ).
 
-|
+
 
 Remarks
 =======
@@ -60,7 +60,7 @@ of the information **must** be returned in the Availability, therefore
 the Valuation call will do the Availability process again filtered by
 the selected Option.
 
-|
+
 
 ValuationRQ Example
 ===================
