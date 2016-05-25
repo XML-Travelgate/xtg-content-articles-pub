@@ -7,45 +7,21 @@ permalink: /developer-documentation/hotel-push/messages
 
 List of messages with OTA xsd structure used:
 
-  -------------------------------------------------------------------------
-  Method          OTA RQ       OTA RS      Type  Description
-  --------------- ------------ ----------- ----- --------------------------
-  HotelRatePlanIn OTA\_HotelRa OTA\_HotelR Retri Retrieve static
-  ventoryRetrieve tePlanRQ     atePlanRS   eve   information of hotel
-                                                 seller inventory
+  
+| **Method**			| **OTA RQ**			| **OTA RS**			| **Type**	| **Description**	|
+| ----------------------------- | ----------------------------- | ----------------------------- | ------------- | --------------------- |
+| HotelRatePlan InventoryRetrieve | OTA_HotelRatePlanRQ | OTA_Hotel RatePlanRS | Retrieve | Retrieve static information of hotel seller inventory|
+| HotelRatePlan Retrieve | OTA_Hote lRatePlanRQ | OTA_Hotel RatePlanRS | Retrieve | Retrieve rates of hotel seller|
+| HotelAvail Retrieve | OTA_Hotel AvailGetRQ | OTA_Hotel AvailGetRS | Retrieve | Retrieve availability of hotel seller|
+| HotelRes Retrieve | OTA_ReadRQ  | OTA_HotelResRS | Retrieve | Retrieve reservations from user seller|
+| HotelRate PlanNotify | OTA_Hotel RatePlanNotifRQ | OTA_Hotel RatePlanNotifRS | Notify | Notify rates to hotel seller  |
+| HotelAvail Notify | OTA_Hotel AvailNotifRQ | OTA_Hotel AvailNotifRS | Notify | Notify availability to hotel seller|
+| HotelRes Retrieve | OTA_Hotel ResRetrieveRQ | OTA_Hotel ResRetrieveRS | Retrieve | Retrieve reservations from user seller |
 
-  HotelRatePlanRe OTA\_HotelRa OTA\_HotelR Retri Retrieve rates of hotel
-  trieve          tePlanRQ     atePlanRS   eve   seller
-
-  HotelAvailRetri OTA\_HotelAv OTA\_HotelA Retri Retrieve availability of
-  eve             ailGetRQ     vailGetRS   eve   hotel seller
-
-  HotelResRetriev OTA\_ReadRQ  OTA\_HotelR Retri Retrieve reservations from
-  e                            esRS        eve   user seller
-
-  HotelRatePlanNo OTA\_HotelRa OTA\_HotelR Notif Notify rates to hotel
-  tif             tePlanNotifR atePlanNoti y     seller
-                  Q            fRS               
-
-  HotelAvailNotif OTA\_HotelAv OTA\_HotelA Notif Notify availability to
-                  ailNotifRQ   vailNotifRS y     hotel seller
-
-  HotelResRetriev OTA\_HotelRe OTA\_HotelR Retri Retrieve reservations from
-  e               sRetrieveRQ  esRetrieveR eve   user seller
-                               S                 
-  -------------------------------------------------------------------------
 
 **Contents:**
 
-> maxdepth
->
-> :   3
->
-> numbered
->
-> :   
->
-> Typical Exchange Message Scenario
-> \<./messages-files/typical-scenario.rst\> Retrieve Messages
-> \<./messages-files/retrieve-messages.rst\> Notify Messages
-> \<./messages-files/notify-messages.rst\>
+
+1. [Typical Exchange Message Scenario](/developer-documentation/hotel-push/messages-files/typical-scenario)
+2. [Retrieve Messages](/developer-documentation/hotel-push/messages-files/retrieve-messages)
+3. [Notify Messages](/developer-documentation/hotel-push/messages-files/notify-messages)

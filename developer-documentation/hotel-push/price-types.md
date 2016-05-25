@@ -41,4 +41,4 @@ When a price is charged per Occupancy means that this price will
 Please, see section 7.4.3.2. HotelRatePlanNotif for calculation examples
 and for charging specifications.
 
-|
+
