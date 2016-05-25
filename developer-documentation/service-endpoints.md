@@ -20,7 +20,8 @@ through the following URLs:
 > 
 > -   Batch messages:
 > 
-> > -  <http://hubpublic.xmltravelgate.com/Service/Travel/v2/HotelBatch.svc>
+> > -  <http://hubhotelbatch.xmltravelgate.com/Service/Travel/v2/HotelBatch.svc>
+> > -  <https://hubhotelbatch.xmltravelgate.com/Service/Travel/v2/HotelBatchSecure.svc>
 
 -   **Transportation API:**
 
@@ -31,7 +32,8 @@ through the following URLs:
 > 
 > -   Batch messages:
 > 
-> > -   <http://hubpublic.xmltravelgate.com/Service/Travel/TransportationBatch.svc>
+> > -   <http://hubtransportationbatch.xmltravelgate.com/Service/Travel/v2/TransportationBatch.svc>
+> > -   <https://hubtransportationbatch.xmltravelgate.com/Service/Travel/v2/TransportationBatchSecure.svc>
 
 -   **Car Rental API:**
 
@@ -42,7 +44,8 @@ through the following URLs:
 > 
 > -   Batch messages:
 > 
->> -   <http://hubpublic.xmltravelgate.com/Service/Travel/v2/CarBatch.svc>
+> > -   <http://hubcarbatch.xmltravelgate.com/Service/Travel/v2/CarBatch.svc>
+> > -   <https://hubcarbatch.xmltravelgate.com/Service/Travel/v2/CarBatchSecure.svc>
 
 -   **Activities API:**
 
@@ -53,7 +56,8 @@ through the following URLs:
 > 
 > -   Batch messages:
 > 
-> > -   <http://hubpublic.xmltravelgate.com/Service/Travel/ActivitiesBatch.svc>
+> > -   <http://hubactivitiesbatch.xmltravelgate.com/Service/Travel/v2/ActivitiesBatch.svc>
+> > -   <https://hubactivitiesbatch.xmltravelgate.com/Service/Travel/v2/ActivitiesBatchSecure.svc>
 
 -   **Transfers API:**
 
@@ -64,7 +68,8 @@ through the following URLs:
 > 
 > -   Batch messages:
 > 
-> > -   <http://hubpublic.xmltravelgate.com/Service/Travel/TransfersBatch.svc>
+> > -   <http://hubtransfersbatch.xmltravelgate.com/Service/Travel/v2/TransfersBatch.svc>
+> > -   <https://hubtransfersbatch.xmltravelgate.com/Service/Travel/v2/TransfersBatchSecure.svc>
 
 
 It's the clients responsibility to use **http or https** when needed.
