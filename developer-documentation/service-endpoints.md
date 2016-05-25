@@ -38,7 +38,7 @@ through the following URLs:
 > -   Booking messages:
 
 > > -   <http://hubpublic.xmltravelgate.com/Service/Travel/v2/Car.svc>
-> >     -   <https://hubpublic.xmltravelgate.com/Service/Travel/v2/CarSecure.svc>
+> > -   <https://hubpublic.xmltravelgate.com/Service/Travel/v2/CarSecure.svc>
 > 
 > -   Batch messages:
 > 
