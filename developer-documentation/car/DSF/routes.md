@@ -171,7 +171,7 @@ OTA VehLocSearchRS Description
 The result returns a list of VehMatchedLoc with the corresponding
 information.
 
-|
+
   
 | **Element**					| **Number**	| **Type**	| **Description**					|
 | --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
