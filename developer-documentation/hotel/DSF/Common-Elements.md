@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hotel/DSF/Common-Elements
 ---
 
-|
+
 
 This node will be in every request and response objects.
 
@@ -14,7 +14,7 @@ credentials.
 
 The response object contains the operation status and errors if any.
 
-|
+
 
 Common Elements RQ Example
 ==========================
@@ -45,7 +45,7 @@ Common Elements RQ Example
         …
     </HotelBaseRQ>
 
-|
+
 
 Common Elements RQ Description
 ==============================
@@ -76,7 +76,7 @@ Common Elements RQ Description
 | @key                                 | 1          | String   | Contains the keyword/Id to identify a parameter. |
 | @value                               | 1          | String   | Contains the value of the parameter. |
 
-|
+
 
 Detailed description
 ====================
@@ -97,7 +97,7 @@ the client is different than the established by us, we use the minimum
 of those two values. This way, the rest of the traffic won't be
 affected.
 
-|
+
 
 Common Elements RS Example
 ==========================
@@ -125,7 +125,7 @@ Common Elements RS Example
         …
     </HotelBaseRS>
 
-|
+
 
 Common Elements RS Description
 ==============================
@@ -149,7 +149,7 @@ Common Elements RS Description
 |auditData/timeStamp                | 1          | Integer  | TimeStamp in which response has been generated. |
 | auditData/processTimeMilliseconds | 1          | Integer  | Time in milliseconds consumed by this method. |
 
-|
+
 
 Detailed description
 ====================
@@ -183,4 +183,4 @@ if the client request 6000 hotels, the response may contain a range of
 hotel range is 250.000 although it is recommended to make requests of
 multiple of 1000.
 
-|
+

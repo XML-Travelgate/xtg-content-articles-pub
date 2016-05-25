@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hotel/DSF/HotelList
 ---
 
-|
+
 
 Method Goals
 ============
@@ -13,21 +13,21 @@ Method Goals
 This method returns a list of hotels, where every hotel contains basic
 information ( code, name, address, phone...)
 
-|
+
 
 Request Format
 ==============
 
 The request does not require any elements. Empty request.
 
-|
+
 
 Response Format
 ===============
 
 The result returns a list of *Hotel* (hotels).
 
-|
+
 
 Remarks
 =======
@@ -39,26 +39,28 @@ This method may be preloaded in **XML Travelgate**'s system if it takes
 more than 4 minutes to download.
 
 The **ContinuationToken** can be used in this call, the specification
-can be see in Common-Elements section\_.
+can be see in Common-Elements section_.
 
-|
+
 
 HotelListRQ Example
 ===================
 
+
     <HotelListRQ>
     </HotelListRQ>
 
-|
+
 
 HotelListRQ Description
 =======================
 
-| **Element**		| **Number**	| **Type** | **Description**	|
-| --------------------- | ------------- | -------- | ------------------ |
-| HotelListRQ		| 1          	|	   | Root node.		|
 
-|
+| **Element**		| **Number**	| **Type**	| **Description**	|
+| --------------------- | ------------- | ------------- | --------------------- |
+| HotelListRQ		| 1          	|		| Root node.		|
+  
+
 
 HotelListRS Example
 ===================
@@ -124,51 +126,54 @@ HotelListRS Example
         </Hotels>
     </HotelListRS>
 
-|
+
 
 HotelListRS Description
 =======================
 
-| **Element**				| **Number**	| **Type**	| **Description**				|
-| ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
-| HotelListRS/Hotels/Hotel		| 0..n       	| 		| Root node. Hotel sheet.			|
-| Code       				| 1    		| String	| Internal code to perform availability and/or provider code. |
-| ProviderCode				| 0..1 		| String	| Internal code established by the provider (see  StaticConfiguration). |
-| GiataId    				| 0..1       	|		| Giata System.					|
-| @source    				| 0..1 		| String	| Giata url, endpoint access where we obtain a Giata id. |
-| @value     				| 0..1 		| String	| Giata code, depends on the product of each provider is in a Giata System. |
-| Name       				| 1    		| String	| Name.						|
-| Address    				| 1    		| String	| Address.     					|
-| Town       				| 1    		| String	| Town.						|
-| ZipCode    				| 1    		| String	| ZipCode.  					|
-| CountryISOCode			| 1    		| String	| CountryISOCode.				|
-| AvailDestination			| 0..1       	|		| Avail Destination (will come only if it is attackable on availability, and the type is CTY). |
-| @code      				| 1    		| String	| Destination code.  				|
-| @name      				| 1    		| String	| Destination name.   				|
-| GeographicDestination			| 1          	|		| Geographic Destination.    			|
-| @code      				| 1    		| String	| Destination code.    				|
-| @name      				| 1    		| String	| Destination name. 				|
-| @avail     				| 1    		| Boolean	| Indicates if it is attackable on availability.|
-| Latitude   				| 1    		| String	| Latitude.  					|
-| Longitude  				| 1    		| String	| Longitude.   					|
-| Contact    				| 1          	|		| Contact.					|
-| Contact/Email				| 1    		| String	| Email.					|
-| Contact/Telephone			| 1    		| String	| Telephone.   					|
-| Contact/Fax				| 1    		| String	| Fax.  					|
-| CategoryCode				| 1    		| String	| CategoryCode.					|
-| Type       				| 0..1 		| String	| Hotel type: H (hotel) A (apartment) AH (aparthotel) C (club) AT (agritourism) HS (hostel) CA (house) V (Ville) B (Bungalows). |
-| PaymentOptions			| 0..1 		| String	| Type of cards allowed by the provider. This tag only is mandatory if payment type is different  that *MerchantPay*. |
-| @cash 				| 1    		| Boolean	| Deprecated attribute. 			|
-| @bankAcct				| 1    		| Boolean	| Deprecated attribute.				|
-| PaymentOptions/Cards			| 1          	|		| List of cards allowed.			|
-| PaymentOptions/Cards/Card		| 1..n       	|		| Type card allowed.				|
-| @code					| 1    		| String	| Code card (see in *Lists of Data* (VI,AX,BV,CA...)).|
-| ExclusiveDeal				| 0..1 		| Boolean	| Indicates that a Hotel is an Exlusive Deal. The provider has formed partnerships with select Hotels in order to bring you list rates and superior prime availability in locations. The provider suggests with provide the best value. |
-| PropertyCategory			| 0..1       	|		| Hotels property type. Similar to Type, but on providers side. |
-| PropertyCategory/Code			| 1    		| String	| Provider property code.			|
-| PropertyCategory/Name			| 1    		| String	| Provider property name.			|
 
-|
+| **Element**				| **Number**	| **Type**	| **Description**						|
+| ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
+| HotelListRS/Hotels/Hotel		| 0..n       	|		| Root node. Hotel sheet.          				|
+| Code       				| 1    		| String	| Internal code to perform availability and/or provider code.	|
+| ProviderCode				| 0..1 		| String	| Internal code established by the provider (see StaticConfiguration). |
+| GiataId    				| 0..1       	|		| Giata System.							|
+| @source    				| 0..1 		| String	| Giata url, endpoint access where we obtain a Giata id.	|
+| @value     				| 0..1 		| String	| Giata code, depends on the product of each provider is in a Giata System.	|
+| Name       				| 1    		| String	| Name.								|
+| Address    				| 1    		| String	| Address.							|
+| Town       				| 1    		| String	| Town.								|
+| ZipCode    				| 1    		| String	| ZipCode.							|
+| CountryISOCode			| 1    		| String	| CountryISOCode.						|
+| AvailDestination			| 0..1       	|		| Avail Destination (will come only if it is attackable on availability, and the type is CTY).  |
+| @code      				| 1    		| String	| Destination code.						|
+| @name      				| 1    		| String	| Destination name.						|
+| GeographicDestination			| 1          	|		| Geographic Destination.					|
+| @code      				| 1    		| String	| Destination code.						|
+| @name      				| 1    		| String	| Destination name.						|
+| @avail      				| 1    		| Boolean	| Indicates if it is attackable on availability.		|
+| Latitude   				| 1    		| String	| Latitude.							|
+| Longitude  				| 1    		| String	| Longitude.							|
+| Contact    				| 1          	|		| Contact.							|
+| Contact/Email				| 1    		| String	| Email.							|
+| Contact/Telephone			| 1    		| String	| Telephone.							|
+| Contact/Fax				| 1    		| String	| Fax. 								|
+| CategoryCode				| 1    		| String	| CategoryCode.							|
+| Type       				| 0..1 		| String	| Hotel type: H (hotel) A (apartment) AH (aparthotel) C (club) AT (agritourism) HS (hostel) CA (house) V (Ville) B (Bungalows).	|
+| PaymentOptions			| 0..1 		| String	| Type of cards allowed by the provider. This tag only is mandatory if payment type is different that *MerchantPay*.	|
+| @cash 				| 1    		| Boolean	| Deprecated attribute.						|
+| @bankAcct				| 1    		| Boolean	| Deprecated attribute.						|
+| PaymentOptions/Cards/Cards		| 1          	|		| List of cards allowed.					|
+| PaymentOptions/Cards/Card		| 1..n       	|		| Type card allowed.    					|
+| @code 				| 1    		| String	| Code card (see in *Lists of Data* (VI,AX,BV,CA...)).		|
+| ExclusiveDeal				| 0..1  	| Boolean	| Indicates that a Hotel is an Exlusive Deal. The provider has formed partnerships with select Hotels in order to bring you list rates and superior prime availability in locations. The provider suggests with provide the best value.	|
+| PropertyCategory			| 0..1       	|		| Hotels property type. Similar to <Type>, but on providers side.  |
+| PropertyCategory/Code			| 1    		| String	| Provider property code.       				|
+| PropertyCategory/Name			| 1    		| String	| Provider property name.					|
+                     
+ 
+
+
 
 Detailed Description
 ====================
@@ -201,7 +206,7 @@ is different, but the Giata code stays the same. Giata system it is an
 external company that does an generic mapping of all of the hotels
 information.
 
-|
+
 
 **AvailDestination & GeographicDestination:**
 
@@ -209,7 +214,7 @@ Please note that the code for these parameters needs to be the lowest
 destination level. And these values are available in the
 AvailDestinationTree & GeographicDestinationTree call respectively.
 
-|
+
 
 **Hotel types:**
 
@@ -233,7 +238,7 @@ B (Bungalows)
 
 D (Disco club)
 
-|
+
 
 **Provider Code:**
 
@@ -248,4 +253,5 @@ instead of city code (i.e. country code). Only in these cases we return
 the *ProviderCode* tag, that contains the internal code used by the
 provider (see StaticConfiguration).
 
-|
+
+

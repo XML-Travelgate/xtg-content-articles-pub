@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hotel/DSF/RoomList
 ---
 
-|
+
 
 Method Goals
 ============
@@ -13,21 +13,21 @@ Method Goals
 This method aims to return a list of the available rooms code, which
 will be used in the availability response.
 
-|
+
 
 Request Format
 ==============
 
 The request does not require any elements empty request.
 
-|
+
 
 Response Format
 ===============
 
 The result returns a list of *RoomInfo*.
 
-|
+
 
 Remarks
 =======
@@ -39,29 +39,28 @@ This message must be implemented solely in case it can not be provided
 the description is room in the hotel availability. ( It is indicated in
 the *StaticConfiguration* )
 
-|
+
 
 RoomListRQ Example
 ==================
 
-:
+
 
     <RoomListRQ>
     </RoomListRQ>
 
-|
+
 
 RoomListRQ Description
 ======================
 
-  -------------------------------------------------------------------------
-  Element     Numbe Type  Description
-              r           
-  ----------- ----- ----- -------------------------------------------------
-  RoomListRQ  1           Root node.
-  -------------------------------------------------------------------------
 
-|
+| **Element**		| **Number**	| **Type**	| **Description**	|
+| --------------------- | ------------- | ------------- | --------------------- |
+| RoomListRQ 		| 1          	|		| Root node.		|
+  
+
+
 
 RoomListRS Example
 ==================
@@ -81,19 +80,18 @@ RoomListRS Example
         </RoomsInfo>
     </RoomListRS>
 
-|
+
 
 RoomListRS Description
 ======================
 
-  -------------------------------------------------------------------------
-  Element     Numbe Type  Description
-              r           
-  ----------- ----- ----- -------------------------------------------------
-  RoomListRS  1           Root node.
-  -------------------------------------------------------------------------
 
-|
+| **Element**		| **Number**	| **Type**	| **Description**	|
+| --------------------- | ------------- | ------------- | --------------------- |
+| RoomListRS 		| 1          	|		| Root node.		|
+  
+
+
 
 Detailed description
 ====================

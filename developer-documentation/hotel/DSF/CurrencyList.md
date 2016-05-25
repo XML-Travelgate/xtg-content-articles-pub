@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hotel/DSF/CurrencyList
 ---
 
-|
+
 
 Method Goals
 ============
@@ -15,21 +15,21 @@ this petition implemented in there systems on an availability level,
 with this meaning that the provider can use different currencies in the
 availability.
 
-|
+
 
 Request Format
 ==============
 
 The request does not require any elements. Empty request.
 
-|
+
 
 Response Format
 ===============
 
 The result returns a list of currencies.
 
-|
+
 
 Remarks
 =======
@@ -38,7 +38,7 @@ This petition is still in a working progress. There are no integration
 that have this petition implemented, but they will be added, provided
 that the supplier returns said information.
 
-|
+
 
 CurrenyListRQ Example
 =====================
@@ -46,20 +46,18 @@ CurrenyListRQ Example
     <CurrenyListRQ>
     </CurrenyListRQ>
 
-|
+
 
 CurrenyListRQ Description
 =========================
 
-  -------------------------------------------------------------------------
-  Element     Numbe Type  Description
-              r           
-  ----------- ----- ----- -------------------------------------------------
-  CurrenyList 1           Root node.
-  RQ                      
-  -------------------------------------------------------------------------
 
-|
+| **Element**			| **Number**	| **Type**	| **Description**			|
+| ----------------------------- | ------------- | ------------- | ------------------------------------- |
+| CurrenyListRQ			| 1          	|		| Root node.				|
+
+
+
 
 CurrencyListRS Example
 ======================
@@ -77,27 +75,19 @@ CurrencyListRS Example
         </Currencies>
     </CurrencyListRS>
 
-|
+
 
 HotelListRS Description
 =======================
 
-  -------------------------------------------------------------------------
-  Element     Numbe Type  Description
-              r           
-  ----------- ----- ----- -------------------------------------------------
-  CurrencyLis 1           Root node.
-  tRS                     
 
-  Currencies  1           Contains a list of currencies.
+| **Element**			| **Number**	| **Type**	| **Description**			|
+| ----------------------------- | ------------- | ------------- | ------------------------------------- |
+| CurrencyListRS		| 1          	|		| Root node.       			|
+| Currencies 			| 1           	|		| Contains a list of currencies.	|
+| Currency   			| 0..n       	|		| Contains details of the currency.	|
+| @code 			| 1    		| String	| Code.    				|
+| @Name 			| 1    		| String	| Name of the currency.			|
 
-  Currency    0..n        Contains details of the currency.
 
-  <*@code>\*  1     Strin Code.
-                    g     
 
-  <*@Name>\*  1     Strin Name of the currency.
-                    g     
-  -------------------------------------------------------------------------
-
-|

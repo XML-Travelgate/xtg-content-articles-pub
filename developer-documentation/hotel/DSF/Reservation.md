@@ -5,14 +5,14 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hotel/DSF/Reservation
 ---
 
-|
+
 
 Method Goals
 ============
 
 This method aims to book an option.
 
-|
+
 
 Request Format
 ==============
@@ -20,7 +20,7 @@ Request Format
 The request format works the same way as the *Valuation* request but
 with the list of passengers.
 
-|
+
 
 Response Format
 ===============
@@ -28,12 +28,12 @@ Response Format
 The result returns the booking locator (booking code). It can be the
 provider's or the one sent in the request.
 
-|
+
 
 It also returns all the charges associated to the booking and the state
 of booking.
 
-|
+
 
 Remarks
 =======
@@ -41,7 +41,7 @@ Remarks
 The maximum time, that is permitted in our system, before the connection
 is closed, is of **180000** milliseconds.
 
-|
+
 
 ReservationRQ Example
 =====================
@@ -86,65 +86,67 @@ ReservationRQ Example
         <Remarks>I want it a double bed.</Remarks>
     </ReservationRQ>
 
-|
+
 
 ReservationRQ Description
 =========================
 
-| **Element**                            | **Number** | **Type** | **Description** |
-| -------------------------------------- | ---------- | -------- | --------------- |
-| ReservationRQ				 | 1 	      |          | Root node.      |
-| ClientLocator				 | 1          | String   | Client locator. |
-| OnRequest 		        	 | 1          | Boolean  | Indicates if you want to receive the on request options in AvailRS, as long as the provider returns it in this call (see StaticConfiguration). |
-| Parameters    			 | 0..1       |          | Parameters for additional information that have been reported in ValuationRS. |
-| Parameters/Parameter                   | 1..n       |          | List of parameter. |
-| @key                                   | 1          | String   | Contains the keyword/Id to identify a parameter. |
-| @value                                 | 1          | String   | Contains the value of the parameter. |
-| DeltaPrice                             | 0..1       |          | Price range accepted by the client to be higher than valuation and confirmation process. |
-| @amount                                | 0..1       | String   | Amount (in the currency returned into the option) that is accepted by the client to be higher than the valuation price. |
-| @percent  				 | 0..1	      | String   | Percentage accepted by the client to be higher than the valuation price. |
-| @applyBoth				 | 1          | Boolean  | Indicates that the range between valuation price and the new price does not exceed the amount and/or porcentage indicated by the client. |
-| StartDate     			 | 1          | String   | Start date to search rates. |
-| EndDate       			 | 1          | String   | End date to search rates. |
-| MealPlanCode  			 | 1          | String   | MealPlan code. |
-| HotelCode     			 | 1  	      | String   | Hotel code. |
-| Nationality    			 | 0..1       | String   | Nationality of the Holder (use ISO3166_1_alfa_2). This informations will be mandatory depending on the provider, as long as the provider returns it in this call (see StaticConfiguration). |
-| Price         			 | 1          |          | Total price of this valuation. |
-| @currency				 | 1  	      | String   | Currency code. |
-| @amount  				 | 1  	      | Decimal  | Option Amount. |
-| @binding 				 | 1  	      | Boolean  | Identifies if is the price is binding ( When true the sale price returned **must** not be less than the price informed. |
-| @commission				 | 1  	      | Decimal  | Commission (-1 = not specified (will come indicated with the provider contract), 0 = net price, X = % of the commission that applies to the amount. |
-| ResGuests     			 | 1	      |		 | Structure of the passengers. |
-| ResGuests/Guests			 | 1 	      |		 | List of passengers. |
-| ResGuests/Guests/Guest		 | 1..n	      |		 | Detail of each passenger. |
-| @roomCandidateID			 | 1 	      | Integer  | Identifier of room candidate.  |
-| @paxId	   			 | 1	      | Integer  | Passenger id (starting at 1). |
-| ResGuests/Guests/Guest/GivenName	 | 1 	      | String   | Given name. |
-| ResGuests/Guests/Guest/SurName	 | 1	      | String   | Surname. 	|
-| PaymentType   			 | 1  	      | String   | Indicates the typology of payment. |
-| Rooms         			 | 1          |		 | Rooms of this option ( room list). |
-| Rooms/Room    			 | 1..n       |          | Detail of room. |
-| @id      				 | 1	      | String   | Identifier of the room. |
-| @roomCandidateRefId			 | 1   	      | Integer  | Identifier of room candidate. |
-| @code 				 | 1  	      | String   | Room code. |
-| @description				 | 1  	      | String   | Room description. |
-| Rooms/Room/Price			 | 1	      |          | Total price of this room. |
-| @currency>				 | 1  	      | String   | Currency code. |
-| @amount				 | 1  	      | Decimal  | Room Amount. |
-| @binding				 | 1  	      | Boolean  | Identifies if is the price is binding (When true the sale price returned **must** not be less than the price informed). |
-| @commission 				 | 1  	      | Decimal  | Commission (-1 = not specified (will come indicated with the provider contract), 0 = net price, X = % of the commission that applies to the amount. |
-| RoomCandidates/RoomCandidate		 | 1..n       |		 | Room required. |
-| @id					 | 1  	      | Integer  | Id of the requested room (starting at 1). |
-| RoomCandidates/RoomCandidate/Paxes/Pax | 1..n       |		 | Pax required. |
-| @age     				 | 1  	      | Integer  | Passenger age. |
-| @id      				 | 1  	      | Integer  | Passenger id (starting at 1). |
-| Remarks       			 | 0..1       |		 | Customer comments for reservation option. The provider will consider it, as long as the provider returns it in this call (see StaticConfiguration). |
+
+| **Element**					| **Number**	| **Type**	| **Description**					|
+| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| ReservationRQ 				| 1      	|		| Root node.						|
+| ClientLocator 				| 1  		| String	| Client locator.					|
+| OnRequest     				| 1  		| Boolean	| Indicates if you want to receive the on request options in AvailRS, as long as the provider returns it in this call (see StaticConfiguration).	|
+| Parameters    				| 0..1    	|		| Parameters for additional information that have been reported in ValuationRS.	|
+| Parameters/Parameter				| 1..n    	|		| List of parameter.					|
+| @key     					| 1  		| String	| Contains the keyword/Id to identify a parameter.	|
+| @value   					| 1  		| String	| Contains the value of the parameter.			|
+| DeltaPrice    				| 0..1    	|		| Price range accepted by the client to be higher than valuation and confirmation process.	|
+| @amount  					| 0..1		| String	| Amount (in the currency returned into the option) that is accepted by the client to be higher than the valuation price. |
+| @percent 					| 0..1		| String	| Percentage accepted by the client to be higher than the valuation price.	|
+| @applyBoth					| 1  		| Boolean	| Indicates that the range between valuation price and the new price does not exceed the amount and/or porcentage indicated by the client.  |
+| StartDate     				| 1  		| String 	| Start date to search rates.				|
+| EndDate       				| 1  		| String	| End date to search rates.				|
+| MealPlanCode  				| 1  		| String	| MealPlan code.					|
+| HotelCode     				| 1  		| String	| Hotel code.						|
+| Nationality   				| 0..1		| String	| Nationality of the Holder (use ISO3166_1_alfa_2). This informations will be mandatory depending on the provider, as long as the provider returns it in this call (see StaticConfiguration).  |
+| Price         				| 1      	|		| Total price of this valuation.			|
+| @currency					| 1  		| String	| Currency code.					|
+| @amount  					| 1  		| Decimal	| Option Amount.					|
+| @binding 					| 1  		| Boolean	| Identifies if is the price is binding ( When true the sale price returned **must** not be less than the price informed.  |
+| @commission					| 1  		| Decimal	| Commission (-1 = not specified (will come indicated with the provider contract), 0 = net price, X = % of the commission that applies to the amount.	|
+| ResGuests     				| 1      	|		| Structure of the passengers.				|
+| ResGuests/Guests				| 1      	|		| List of passengers.					|
+| ResGuests/Guests/Guest			| 1..n    	|		| Detail of each passenger.				|
+| @roomCandidateId				| 1  		| Integer	| Identifier of room candidate.				|
+| @paxId   					| 1  		| Integer	| Passenger id (starting at 1).				|
+| ResGuests/Guests/Guest/GivenName		| 1 	 	| String	| Given name.						|
+| ResGuests/Guests/Guest/SurName		| 1   		| String	| Surname.						|
+| PaymentType   				| 1  		| String	| Indicates the typology of payment.			|
+| Rooms          				| 1      	|		| Rooms of this option ( room list).			|
+| Rooms/Room    				| 1..n    	|		| Detail of room. 					|
+| @id      					| 1  		| String	| Identifier of the room.				|
+| @roomCandidateRefId				| 1  		| Integer	| Identifier of room candidate.				|
+| @code    					| 1  		| String	| Room code.						|
+| @description					| 1  		| String	| Room description.					|
+| Rooms/Room/Price				| 1      	|		| Total price of this room.				|
+| @currency					| 1  		| String	| Currency code.					|
+| @amount  					| 1  		| Decimal	| Room Amount.						|
+| @binding 					| 1  		| Boolean	| Identifies if is the price is binding ( When true the sale price returned **must** not be less than the price informed.  |
+| @commission					| 1  		| Decimal	| Commission (-1 = not specified (will come indicated with the provider contract), 0 = net price, X = % of the commission that applies to the amount.		|
+| RoomCandidates/RoomCandidate			| 1..n    	|		| Room required.					|
+| @id      					| 1  		| Integer	| Id of the requested room (starting at 1).		|
+| RoomCandidates/RoomCandidate/Paxes/Pax	| 1..n    	|		| Pax required.						|
+| @age     					| 1  		| Integer	| Passenger age. 					|
+| @id      					| 1  		| Integer	| Passenger id (starting at 1). 			|
+| Remarks       				| 0..1    	| 		| Customer comments for reservation option. The provider will consider it, as long as the provider returns it in this call (see StaticConfiguration).	|
+  
 
 
-|
 
 ReservationRS Example
 =====================
+
 
     <ReservationRS>
         <ProviderLocator>102</ProviderLocator>
@@ -152,28 +154,29 @@ ReservationRS Example
         <Price currency = "EUR" amount = "36.20" binding = "false" commission = "-1"/>
     </ReservationRS>
 
-|
+
 
 ReservationRS Description
 =========================
 
 
-| **Element**        	| **Number** | **Type** | **Description** 		|
-| --------------------- | ---------- | -------- | ----------------------------- |
-| ReservationRS		| 1   	     | 		| Root node.			|
-| ProviderLocator	| 1	     | String   | Provider locator		|
-| ResStatus		| 1	     | String	| Status of book (OK = confirmed, RQ = on request, CN = cancelled, UN = unknown. |
-| Price  		| 0..1	     | 		| Total price of this book.	|
-| @currency		| 1	     | String	| Currency code.		|
-| @amount		| 1  	     | Decimal  | Book Amount.			|
-| @binding		| 1  	     | Boolean  | Identifies if is the price is binding ( When true the sale price returned **must** not be less than the price informed). |
-| @commission		| 1  	     | Decimal  | Commission ( -1 = not specified (will come indicated with the provider contract ), 0 = net price, X = % of the commission that applies to the amount. 	|
-| Remarks		| 0..1	     | String   | Remarks of this book.  	|
-| BillingSupplierCode	| 0..1	     | String 	| Society billing code, will be returned given that the supplier has different billing societies and that the supplier informs this in the reservation. |
-| Payable		| 0..1	     |		| Payable.			|
-| @value		| 1	     |		| Informs Payable.		|
+| **Element**					| **Number**	| **Type**	| **Description**					|
+| --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
+| ReservationRS					| 1       	|		| Root node.						|
+| ProviderLocator 				| 1  		| String	| Provider locator.					|
+| ResStatus					| 1  		| String	| Status of book (OK = confirmed, RQ = on request, CN = cancelled, UN = unknown.	|
+| Price  					| 0..1     	|		| Total price of this book.				|
+| @currency					| 1  		| String	| Currency code.					|
+| @amount					| 1  		| Decimal	| Book Amount.						|
+| @binding					| 1  		| Boolean	| Identifies if is the price is binding ( When true the sale price returned **must** not be less than the price informed. |
+| @commission					| 1  		| Decimal	| Commission ( -1 = not specified (will come indicated with the provider contract ), 0 = net price, X = % of the commission that applies to the amount.	|
+| Remarks					| 0..1		| String	| Remarks of this book.					|
+| BillingSupplierCode				| 0..1		| String	| Society billing code, will be returned given that the supplier has different billing societies and that the supplier informs this in the reservation.	|
+| Payable					| 0..1     	|		| Payable.						|
+| @value					| 1       	|		| Informs Payable.					|
+  
 
-|
+
 
 Detailed description
 ====================
@@ -196,14 +199,11 @@ of the reservation can have fours values: OK, RQ, CN and UN.
     is in a OK status, therefore it is the clients responsibility to
     check if the reservation fulfilled completely.
 
-|
 
-> **Note**
->
-> Keep the parameters in the valuation response to include them in the
-> reservation request.
 
-|
+**Note:** *Keep the parameters in the valuation response to include them in the reservation request.*
+
+
 
 **MerchantPay & LaterPay & CardBookingPay & CardCheckInPay**
 
@@ -213,7 +213,7 @@ the payment type, like so:
 
     <PaymentType>MerchantPay</PaymentType>
 
-|
+
 
 If the payment is done by credit card, then in the XML petition, is it
 mandatory to specify the payment type and the credit card information,
@@ -231,7 +231,7 @@ like so:
        <CVC>XXX</CVC>
      </CardInfo>    
 
-|
+
 
 DeltaPrice description
 ======================
@@ -259,4 +259,5 @@ process will be done directly (because the provider does not have native
 delta price and this will not be implemented). Static configuration of
 each provider informs if it is implemented or it is not.
 
-|
+
+

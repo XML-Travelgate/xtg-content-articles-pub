@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hotel/DSF/Valuation
 ---
 
-|
+
 
 Method Goals
 ============
@@ -14,7 +14,7 @@ This method aims to return the total price and cancel policies of the
 selected *Option*. This *Option* **must** be selected in the previous
 step (*Avail*).
 
-|
+
 
 Request Format
 ==============
@@ -22,7 +22,7 @@ Request Format
 The *Valuation* request is same that availabilityRQ and add rooms and
 Mealplan code.
 
-|
+
 
 Response Format
 ===============
@@ -33,7 +33,7 @@ time will not be available in this stage. In this case the integration
 returns one of our errors: code 301. For more information of our errors,
 please consult the paragraph "Lists of Data"
 
-|
+
 
 Remarks
 =======
@@ -41,7 +41,7 @@ Remarks
 The maximum time, that is permitted in our system, before the connection
 is closed, is of **180000** milliseconds.
 
-|
+
 
 ValuationRQ Example
 ===================
@@ -68,6 +68,7 @@ ValuationRQ Example
             </RoomCandidate>
         </RoomCandidates>
     </ValuationRQ>
+
 
 ValuationRQ Description
 =======================
@@ -101,7 +102,7 @@ ValuationRQ Description
 | @key                                   | 1          | String   | Contains the keyword/Id to identify a parameter. |
 | @value                                 | 1          | String   | Contains the value of the parameter. |
 
-|
+
 
 ValuationRS Example
 ===================
@@ -134,7 +135,7 @@ ValuationRS Example
        <CancelPoliciesDescription/>
     </ValuationRS>
 
-|
+
 
 ValuationRS Description
 =======================
@@ -177,7 +178,7 @@ ValuationRS Description
 | @commission				    | 1          | Decimal  | Commission ( -1 = not specified (will come indicated with the provider contract ), 0 = net price, X = % of the commission that applies to the amount. |
 | CancelPoliciesDescription                 | 0..1       | String   | Contains the cancellation penalties in free text. |
  
-|
+
 
 Detailed Description
 ====================
@@ -200,18 +201,18 @@ follow:
     then the petition of blockage of allotment will have to be done in
     the booking petition.
 
-|
+
 
 **Status:**
 
-The valuation response depends the parameter \<OnRequest\> set: In case
-that the parameter \<OnRequest\> is set as false, the integration filter
+The valuation response depends the parameter <OnRequest> set: In case
+that the parameter <OnRequest> is set as false, the integration filter
 this options if the supplier provide us the new status with value on
 request in ValuationRS, then we return an error because the provider
-change the status option. In case that the parameter \<OnRequest\> is
+change the status option. In case that the parameter <OnRequest> is
 set as true, we don't filter the option.
 
-|
+
 
 **CardInfo:**
 
@@ -241,7 +242,7 @@ set as true, we don't filter the option.
 | XS        | Access			|
 | O         | Others			|
 
-|
+
 
 **CancelPenalty:**
 
@@ -262,14 +263,12 @@ as follows:
 
 -   **Currency:** Money currency of the import.
 
-|
 
-**Note:**
 
-Keep the parameters in the avail response to include them in the
-valuation request.
+**Note:** 
 
-Keep the parameters in the valuation response to include them in the
-reservation request.
+*Keep the parameters in the avail response to include them in the valuation request.*
 
-|
+*Keep the parameters in the valuation response to include them in the reservation request.*
+
+

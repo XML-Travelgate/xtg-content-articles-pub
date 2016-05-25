@@ -5,14 +5,14 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hotel/DSF/ReservationRead
 ---
 
-|
+
 
 Method Goals
 ============
 
 This method aims to retrieve a booking with its full details.
 
-|
+
 
 Request Format
 ==============
@@ -27,7 +27,7 @@ The request requires one of the following data depending on provider:
 -   *StardDate*: the check-in date
 -   *EndDate*: the check-out date
 
-|
+
 
 Response Format
 ===============
@@ -36,7 +36,7 @@ The result returns the full details of a booking. It is very similar to
 the *Option* in the Availability Response, the cancel policies and
 holder of booking.
 
-|
+
 
 Remarks
 =======
@@ -44,7 +44,7 @@ Remarks
 The maximum time, that is permitted in our system, before the connection
 is closed, is of **180000** millisecond.
 
-|
+
 
 ReservationReadRQ Example
 =========================
@@ -60,7 +60,7 @@ ReservationReadRQ Example
         <CreationDate>17/01/2014</CreationDate>
     </ReservationReadRQ>
 
-|
+
 
 ReservationReadRQ Description
 =============================
@@ -77,7 +77,7 @@ ReservationReadRQ Description
 | EndDate    		| 1    		| String	| End date of booking.					|
 | CreationDate		| 1    		| String	| Creation date of booking.				|
 
-|
+
 
 ReservationReadRS Example
 =========================
@@ -112,7 +112,7 @@ ReservationReadRS Example
                 </TransactionStatus>
     </ReservationReadRS>
 
-|
+
 
 ReservationReadRS Description
 =============================

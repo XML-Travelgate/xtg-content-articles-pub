@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hotel/DSF/AvailDestinationTree
 ---
 
-|
+
 
 Method Goals
 ============
@@ -13,14 +13,14 @@ Method Goals
 This method returns the tree of destinations accessible from the call
 *Avail* .
 
-|
+
 
 Request Format
 ==============
 
 The request does not require any elements empty request.
 
-|
+
 
 Response Format
 ===============
@@ -28,7 +28,7 @@ Response Format
 The result returns a list of *DestinationTree* with their corresponding
 sub-destinations.
 
-|
+
 
 Remarks
 =======
@@ -36,7 +36,7 @@ Remarks
 The maximum time, that is permitted in our system, before the connection
 is closed, is of **240000** milliseconds.
 
-|
+
 
 AvailDestinationTreeRQ Example
 ==============================
@@ -44,18 +44,18 @@ AvailDestinationTreeRQ Example
     <AvailDestinationTreeRQ>
     </AvailDestinationTreeRQ>
 
-|
+
 
 AvailDestinationTreeRQ Description
 ==================================
 
-|
+
 
 | **Element**		 | **Number** | **Type** | **Description** |
 | ---------------------  | ---------- | -------- | --------------- |
 | AvailDestinationTreeRQ | 1          |          | Root node.      |
 
-|
+
 
 AvailDestinationTreeRS Example
 ==============================
@@ -83,12 +83,12 @@ AvailDestinationTreeRS Example
         . . .
     </AvailDestinationTreeRS>
 
-|
+
 
 AvailDestinationTreeRS Description
 ==================================
 
-|
+
 
 | **Element**			| **Number** | **Type** | **Description**	|
 | ----------------------------- | ---------- | -------- | --------------------- |
@@ -96,7 +96,7 @@ AvailDestinationTreeRS Description
 | DestinationTree		| 1..n       | 		| Father node.		|
 | DestinationLeaf		| 0..1       |		| Child node.		|
 
-|
+
 
 Detailed description
 ====================
@@ -113,7 +113,7 @@ Detailed description
         . . .
     </AvailDestinationTreeRS>
 
-|
+
 
 There is one primordial definition that needs to be clear to understand
 the difference in city and zone: types of nodes.
@@ -131,18 +131,9 @@ Therefore:
 -  **City:** Lowest node.
 -  **Zone:** Not the lowest node.
 
-|
 
 
-![Diagrama](../images/diagrama2.png)
+
+**Note:** *All of the zones that appear in this particular call ( DestinationsTree call ) are all attackable nodes on an availability level.*
 
 
-|
-
-**Note**
-
- All of the zones that appear in this particular call (
- DestinationsTree call ) are all attackable nodes on an availability
- level.
-
-|

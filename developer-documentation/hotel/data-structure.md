@@ -33,12 +33,12 @@ integration will have the following methods:
 Each request sent to the **service url** requires a node called *rqXML*.
 Inside this node travels the current method's Input object.
 
-|
+
 
 The data structure will always have common elements in all objects and
 the specific objects related to the operation
 
-|
+
 
 **Data structure content:**
 

@@ -73,7 +73,7 @@ Avail
       </soapenv:Body>
     </soapenv:Envelope>
 
-|
+
 
 Multi Avail
 ===========
@@ -189,7 +189,7 @@ Multi Avail
       </soapenv:Body>
     </soapenv:Envelope>
 
-|
+
 
 Valuation
 =========
@@ -259,7 +259,7 @@ Valuation
       </soapenv:Body>
     </soapenv:Envelope>
 
-|
+
 
 GeographicalDestinationTree
 ===========================
@@ -309,7 +309,7 @@ GeographicalDestinationTree
       </soapenv:Body>
     </soapenv:Envelope>
 
-|
+
 
 Hotel List
 ==========
@@ -359,7 +359,7 @@ Hotel List
       </soapenv:Body>
     </soapenv:Envelope>
 
-|
+
 
 DescriptiveInfo
 ===============
@@ -410,7 +410,7 @@ DescriptiveInfo
         </soapenv:Body>
     </soapenv:Envelope>
 
-|
+
 
 AvailDestinationTree
 ====================
@@ -462,7 +462,7 @@ AvailDestinationTree
       </soapenv:Body>
     </soapenv:Envelope>
 
-|
+
 
 Room List
 =========
@@ -516,7 +516,7 @@ Room List
       </soapenv:Body>
     </soapenv:Envelope>
 
-|
+
 
 MealPlanList
 ============
@@ -568,7 +568,7 @@ MealPlanList
       </soapenv:Body>
     </soapenv:Envelope>
 
-|
+
 
 Reservation
 ===========
@@ -643,7 +643,7 @@ Reservation
       </soapenv:Body>
     </soapenv:Envelope>
 
-|
+
 
 Cancel
 ======
@@ -702,7 +702,7 @@ Cancel
       </soapenv:Body>
     </soapenv:Envelope>
 
-|
+
 
 ReservationRead
 ===============
@@ -753,7 +753,7 @@ ReservationRead
     </soapenv:Body>
     </soapenv:Envelope>
 
-|
+
 
 ReservationList
 ===============
@@ -808,7 +808,7 @@ ReservationList
       </soapenv:Body>
     </soapenv:Envelope>
 
-|
+
 
 RunTimeConfiguration
 ====================
@@ -860,7 +860,7 @@ RunTimeConfiguration
       </soapenv:Body>
     </soapenv:Envelope>
 
-|
+
 
 StaticConfiguration
 ===================
@@ -912,4 +912,4 @@ StaticConfiguration
       </soapenv:Body>
     </soapenv:Envelope>
 
-|
+

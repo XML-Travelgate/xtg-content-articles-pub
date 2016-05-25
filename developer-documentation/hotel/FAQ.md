@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hotel/FAQ
 ---
 
-| 
+
 
 **How many providers can we do a one request?**
 
@@ -14,7 +14,7 @@ petition MultiAvail, where you can use one or more providers.
 
 **How can I identify which providers is which in the MultiAvail call?**
 
-By using the field ID in the request.  
+By using the field ID in the request.
 
 For example:
    
@@ -54,7 +54,7 @@ an inferior price.
    >     the provider ( this price is mandatory if binding price is
    >     true ).
 
-|
+
 
 **What is a static download and why do we use it?**
 
@@ -67,4 +67,4 @@ the static information that we have loaded into our system.
 **In the tag "RequiredAllPassenger", is specifying the names of the babies necessary?**
 
 If the value of "RequiredAllPassengers" is true in the static
-data, then yes, it is necessary
+data, then yes, it is necessary.

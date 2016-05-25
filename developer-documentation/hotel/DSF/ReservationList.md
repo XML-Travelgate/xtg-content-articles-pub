@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hotel/DSF/ReservationList
 ---
 
-|
+
 
 Method Goals
 ============
@@ -13,7 +13,7 @@ Method Goals
 This method aims to return a list of bookings for a given time period
 being that either booking date or the travelling date.
 
-|
+
 
 Request Format
 ==============
@@ -25,7 +25,7 @@ The request requires one of the following data depending on provider:
 -   *Start*: the date from
 -   *End*: the date to
 
-|
+
 
 Response Format
 ===============
@@ -33,7 +33,7 @@ Response Format
 The result returns a list of bookings details, with the same format as
 *ReservationReadRS*.
 
-|
+
 
 Remarks
 =======
@@ -41,7 +41,7 @@ Remarks
 The maximum time, that is permitted in our system, before the connection
 is closed, is of **240000** milliseconds.
 
-|
+
 
 ReservationListRQ Example
 =========================
@@ -52,7 +52,7 @@ ReservationListRQ Example
         <End>22/02/2014</End>
     </ReservationListRQ>
 
-|
+
 
 ReservationListRQ Description
 =============================
@@ -65,7 +65,7 @@ ReservationListRQ Description
 | End            	| 1      	| String 	| End date. 						|
 | Currency       	| 1      	| String 	| Currency code.					|
 
-|
+
 
 ReservationListRS Example
 =========================
@@ -144,6 +144,7 @@ ReservationListRS Example
         </Reservations>
     </ReservationListRS>
 
+
 ReservationListRS Description
 =============================
 
@@ -153,4 +154,4 @@ ReservationListRS Description
 | ReservationListRS/Reservations 		| 0..1          |	   | Reservations.				|
 | ReservationListRS/Reservations/Reservation	| 1             |	   | Same structure as ReservationReadRS.	|
 
-|
+

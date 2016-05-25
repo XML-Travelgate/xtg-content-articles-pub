@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hotel/DSF/DescriptiveInfo
 ---
 
-|
+
 
 Method Goals
 ============
@@ -13,7 +13,7 @@ Method Goals
 This method returns the details of a hotel (pictures, descriptions ...)
 for a given language.
 
-|
+
 
 Request Format
 ==============
@@ -21,22 +21,22 @@ Request Format
 The request just requires the hotel code and language code (ISO-639-1) (
 this is specified within the source--\>languageCode).
 
-|
+
 
 Response Format
 ===============
 
 The result returns the details of that hotel.
 
-|
+
 
 Remarks
 =======
 
-The maximum time, that is permitted in our system, before the connection
-is closed, is of **180000** milliseconds.
+The maximum time permitted in our system before the connection is closed
+is **180000** milliseconds.
 
-|
+
 
 DescriptiveInfoRQ Example
 =========================
@@ -47,21 +47,24 @@ DescriptiveInfoRQ Example
         </Hotel>
     </DescriptiveInfoRQ>
 
-|
+
 
 DescriptiveInfoRQ Description
 =============================
 
-| **Element**			| **Number**	| **Type**	| **Description**		|
-| ----------------------------- | ------------- | ------------- | ----------------------------- |
-| DescriptiveInfoRQ		| 1          	|		| Root node.			|
-| DescriptiveInfoRQ/Hotel	| 1    		| String	| Hotel requested.  		|
-| DescriptiveInfoRQ/Hotel/Code	| 1    		| String	| Code.				|
 
-|
+| **Element**				| **Number**	| **Type**	| **Description**				|
+| ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
+| DescriptiveInfoRQ			| 1          	|		| Root node.					|
+| DescriptiveInfoRQ/Hotel		| 1    		| String	| Hotel requested.				|
+| DescriptiveInfoRQ/Hotel/Code		| 1    		| String	| Code.						|
+
+
+
 
 DescriptiveInfoRS Example
 =========================
+
 
     <DescriptiveInfoRS>
     <Hotel>
@@ -167,83 +170,82 @@ DescriptiveInfoRS Example
             <Cards>
                 <Card code="VI"/>
                 <Card code="AX"/>
-                <Card code="CA"/>  
-            </Cards> 
-        <PaymentOptions/>       
-        <ExclusiveDeal>true</ExclusiveDeal>         
+                <Card code="CA"/>
+            </Cards>
+        <PaymentOptions/>
+        <ExclusiveDeal>true</ExclusiveDeal>
         <PropertyCategory>
              <Code>1</Code>
-             <Name>Hotel</Name>             
-        </PropertyCategory>         
+             <Name>Hotel</Name>
+        </PropertyCategory>
     </Hotel>
     </DescriptiveInfoRS>
 
-|
+
 
 DescriptiveInfoRS Description
 =============================
 
-| **Element**				| **Number**	| **Type**	| **Description**				|
-| ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
-| DescriptiveInfoRS/Hotel		| 0..n       	|		| Root node. Hotel sheet.			|
-| Code       				| 1    		| String	| Code.  					|
-| Name       				| 1    		| String	| Name.   					|
-| Address    				| 1    		| String	| Address.   					|
-| Town       				| 1    		| String	| Town.   					|
-| ZipCode    				| 1    		| String	| ZipCode.   					|
-| CountryISOCode			| 1    		| String	| CountryISOCode.				|
-| AvailDestination			| 0..1       	|		| Avail Destination ( will come only if it is attackable on availability, and the type is CTY). |
-| @code      				| 1    		| String	| Destination code.				|
-| @name      				| 1    		| String	| Destination name. 				|
-| GeographicDestination			| 1          	|		| Geographic Destination.			|
-| @code      				| 1    		| String	| Destination code.    				|
-| @name      				| 1    		| String	| Destination name. 				|
-| @avail     				| 1    		| Boolean	| Indicates if it is attackable on availability.|
-| Latitude   				| 1    		| String	| Latitude. 					|
-| Longitude  				| 1    		| String	| Longitude.   					|
-| Contact    				| 0..1       	|		| Contact.					|
-| Contact/Email				| 1    		| String	| Email.					|
-| Contact/Telephone			| 1    		| String	| Telephone.					|
-| Contact/Fax				| 1    		| String	| Fax.   					|
-| CategoryCode				| 1    		| String	| CategoryCode.					|
-| BookingContact			| 0..1       	|		| Booking Contact.				|
-| BookingContact/Email			| 1    		| String	| Email.					|
-| BookingContact/Telephone		| 1    		| String	| Telephone. 					|
-| BookingContact/Fax			| 1    		| String	| Fax.						|
-| Type       				| 0..1 		| String	| Hotel type: H (hotel) A (apartment) AH (aparthotel) C (club) AT (agritourism) HS (hostel) CA (house) V (Ville) B (Bungalows). |
-| Chaincode  				| 0..1 		| String	| Chain code. 					|
-| ShortDescription			| 0..1 		| String	| Short Description.				|
-| LongDescription			| 0..1 		| String	| Long Description.				|
-| HowToGet   				| 0..1 		| String	| How to get description.			|
-| RoomDescription			| 0..1 		| String	| Room description.				|
-| SituationDescription			| 0..1 		| String	| Situation description.			|
-| RestaurantsDescription		| 0..1 		| String	| Restaurants description.			|
-| PoolsDescription			| 0..1 		| String	| Pools description.				|
-| ActivitiesDescription			| 0..1 		| String	| Activities description.			|
-| ServicesDescription			| 0..1 		| String	| Services description.				|
-| AdditionalDetails			| 0..1 		| String	| Additional details.   			|
-| Attributes 				| 0..1       	|		| Attributes.					|
-| Attributes/Attribute			| 1..n       	|		| Specific Attributes of the Hotel, like for example the service of having wi-fi. |
-| Attributes/Attribute/Code		| 1    		| String	| Code.                     			|
-| Attributes/Attribute/Value		| 1    		| String	| Value.					|
-| Attributes/Attribute/Classification	| 1    		| String 	| Classification ( HOT=hotel, HAB=room, SER=service and GRAL=generic). |
-| Images     				| 0..1       	|		| Images.					|
-| Images/Picture			| 1..n       	|		| Picture.					|
-| Images/Picture/Url			| 1    		| String	| Url.						|
-| Images/Picture/Classification		| 1    		| String	| Classification (HOT=hotel, HAB=room, SER=service and GRAL=generic). |
-| Images/Picture/Ordered		| 0..1 		| String	| Images should be ordered from 1 onward. 1 is top.|
-| Images/Picture/Description		| 1    		| String	| Description.					|
-| LocationType				| 0..1 		| String	| LocationCode.					|
-| CategoryCode				| 1    		| String	| CategoryCode.					|
-| PaymentOptions			| 0..1 		| String	| Type of cards allowed by the provider. This tag only is mandatory if payment type is different that *MerchantPay*. |
-| @cash					| 1    		| Boolean	| Deprecated attribute. 			|
-| @bankAcct				| 1    		| Boolean	| Deprecated attribute.				|
-| PaymentOptions/Cards			| 1          	|		| List of cards allowed.			|
-| PaymentOptions/Cards/Cards		| 1..n       	|		| Type card allowed.         			|
-| @code					| 1    		| String	| Code card (see in *Lists of Data* (VI,AX,BV,CA...)).|
-| ExclusiveDeal				| 0..1 		| Boolean	| Indicates that a Hotel is an Exlusive Deal. The provider has formed partnerships with select Hotels in order to bring you list rates and superior prime availability in locations. The provider suggests with provide the best value. |
-| PropertyCategory			| 0..1       	|		| Hotels property type. Similar to Type, but on providers side. |
-| PropertyCategory/Code			| 1     	| String	| Provider property code.			|
-| PropertyCategory/Name			| 1    		| String	| Provider property name.			|
 
+| **Element**				| **Number**	| **Type**	| **Description**						|
+| ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
+| DescriptiveInfoRS/Hotel		| 0..n       	|		| Root node. Hotel sheet.					|
+| Code       				| 1    		| String	| Code.								|
+| Name       				| 1    		| String	| Name.								|
+| Address    				| 1    		| String	| Address.							|
+| Town       				| 1    		| String	| Town.    							|
+| ZipCode    				| 1    		| String	| ZipCode.							|
+| CountryISOCode			| 1    		| String	| CountryISOCode.						|
+| AvailDestination			| 0..1       	|		| Avail Destination ( will come only if it is attackable on availability, and the type is CTY).  |
+| @code      				| 1    		| String	| Destination code.						|
+| @name      				| 1    		| String	| Destination name. 						|
+| GeographicDestination			| 1          	|		| Geographic Destination.					|
+| @code      				| 1    		| String	| Destination code.						|
+| @name      				| 1    		| String	| Destination name.						|
+| @avail     				| 1    		| Boolean	| Indicates if it is attackable on availability.		|
+| Latitude   				| 1    		| String	| Latitude.							|
+| Longitude  				| 1    		| String	| Longitude.							|
+| Contact    				| 0..1       	|		| Contact.							|
+| Contact/Email				| 1    		| String	| Email.							|
+| Contact/Telephone			| 1    		| String	| Telephone.							|
+| Contact/Fax				| 1    		| String	| Fax.								|
+| CategoryCode				| 1    		| String	| CategoryCode.							|
+| BookingContact			| 0..1       	|		| Booking Contact.						|
+| BookingContact/Email			| 1    		| String	| Email.							|
+| BookingContact/Telephone		| 1    		| String	| Telephone. 							|
+| BookingContact/Fax			| 1    		| String	| Fax.   							|
+| Type       				| 0..1		| String	| Hotel type: H (hotel) A (apartment) AH (aparthotel) C (club) AT (agritourism) HS (hostel) CA (house) V (Ville) B (Bungalows).	|
+| Chaincode  				| 0..1 		| String	| Chain code.							|
+| ShortDescription			| 0..1 		| String	| Short Description.   						|
+| LongDescription			| 0..1 		| String	| Long Description.    						|
+| HowToGet   				| 0..1 		| String	| Directions to the hotel.					|
+| RoomDescription			| 0..1 		| String	| Room description.   						|
+| SituationDescription			| 0..1 		| String	| Situation description.					|
+| RestaurantsDescription		| 0..1 		| String	| Restaurants description.					|
+| PoolsDescription			| 0..1 		| String	| Pools description.    					|
+| ActivitiesDescription			| 0..1 		| String	| Activities description.					|
+| ServicesDescription			| 0..1 		| String	| Services description.						|
+| AdditionalDetails			| 0..1 		| String	| Additional details.						|
+| Attributes 				| 0..1       	|		| Attributes.							|
+| Attributes/Attribute			| 1..n       	|		| Specific Attributes of the Hotel, like for example the service of having wi-fi.	|
+| Attributes/Attribute/Code		| 1    		| String	| Code.								|
+| Attributes/Attribute/Value		| 1    		| String	| Value.							|
+| Attributes/Attribute/Classification	| 1    		| String	| Classification ( HOT=hotel, HAB=room, SER=service and GRAL=generic). |
+| Images     				| 0..1       	|		| Images.							|
+| Images/Picture			| 1..n       	|		| Picture.     							|
+| Images/Picture/Url			| 1    		| String	| Url.								|
+| Images/Picture/Classification		| 1    		| String	| Classification (HOT=hotel, HAB=room, SER=service and GRAL=generic). |
+| Images/Picture/Ordered		| 0..1 		| String	| Images should be ordered from 1 onward. 1 is top.		|
+| Images/Picture/Description		| 1    		| String	| Description.							|
+| LocationType				| 0..1 		| String	| LocationCode.							|
+| PaymentOptions			| 0..1 		| String	| Type of cards allowed by the provider. This tag only is mandatory if payment type is different than *MerchantPay*.	 |
+| @cash 				| 1    		| Boolean	| Deprecated attribute.						|
+| @bankAcct				| 1    		| Boolean	| Deprecated attribute.						|
+| PaymentOptions/Cards/Cards		| 1          	|		| List of cards allowed.					|
+| PaymentOptions/Cards/Card		| 1..n       	|		| Type card allowed. 						|
+| @code 				| 1    		| String	| Code card (see in *Lists of Data* (VI,AX,BV,CA...)).		|
+| ExclusiveDeal				| 0..1 		| Boolean 	| Indicates that a Hotel is an Exlusive Deal. The provider has formed partnerships with select Hotels in order to bring you list rates and superior prime availability in locations. The provider suggests with provide the best value.	|
+| PropertyCategory			| 0..1       	|		| Hotels property type. Similar to <Type>, but on providers side. |
+| PropertyCategory/Code			| 1    		| String	| Provider property code.					|
+| PropertyCategory/Name			| 1    		| String	| Provider property name.					|
 

@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hotel/DSF/DescriptiveInfoExtended
 ---
 
-|
+
 
 Method Goals
 ============
@@ -19,7 +19,7 @@ With the combination of contextItem\_ plus data\_ you will have the
 information (extracted from provider's documentation hierachy / fields
 descriptions ) required to do it.
 
-|
+
 
 Request Format
 ==============
@@ -40,7 +40,7 @@ i.e. en could return en _GB and en _US
 *For setting filters, recommendation is first call request without
 filters to see which languages are available by the provider*
 
-|
+
 
 Remarks
 =======
@@ -48,7 +48,7 @@ Remarks
 The maximum time before the connection gets closed, is of **180000**
 milliseconds.
 
-|
+
 
 DescriptiveInfoExtendedRQ Example
 =================================
@@ -66,12 +66,12 @@ DescriptiveInfoExtendedRQ Example
         </Filters>
     </DescriptiveInfoExtendedRQ>
 
-|
+
 
 DescriptiveInfoExtendedRQ Description
 =====================================
 
-|
+
 
 | **Element**     			| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
@@ -81,7 +81,7 @@ DescriptiveInfoExtendedRQ Description
 | DescriptiveInfoExtendedRQ/Filters/LanguageCodes | 0..1| LanguageCodes | LanguageCodes.				|
 | LanguageCodes/LanguageCode 		| 1..n  	| String	| LanguageCode. 				|
 
-|
+
 
 DescriptiveInfoExtendedRS Example
 =================================
@@ -867,12 +867,12 @@ DescriptiveInfoExtendedRS Example
 }
 ~~~
 
-|
+
 
 DescriptiveInfoExtendedRS Description
 =====================================
 
-|
+
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
@@ -935,7 +935,7 @@ DescriptiveInfoExtendedRS Description
 | Description/Context   		| 1..n  	|         	| ContextItem                                 	|
 | Description/text   			| 1..n  	|         	| Text                                        	|
 
-|
+
 
 Response Format
 ===============
@@ -951,7 +951,7 @@ The result returns the details of the hotel requested:
 -   Room Descriptions.
 -   Room Medias.
 
-|
+
 
 Hotel Summary
 =============
@@ -960,28 +960,28 @@ Typified hotel information from the provider.
 
 **Property Type** :
 
-> This item contains code and text\_ from the hotel category provider. (
-> i.e. Hotel, ApartHotel, ...)
->
-> In the DescriptiveInfoExtendedRS Example\_
->
-> Hotel has category Hotel which in providers side is specified by code
-> 1 ( Notice that no language code is sent, that means that the provider
-> don't specify it.)
+ -  This item contains code and text_ from the hotel category provider. (
+   i.e. Hotel, ApartHotel, ...).
+
+ - In the DescriptiveInfoExtendedRS Example_.
+
+ -  Hotel has category Hotel which in providers side is specified by code
+   1 ( Notice that no language code is sent, that means that the provider
+   don't specify it ).
 
 **Chains**
 
-> Contains the chains infromation from the provider, it could be
-> returned in 2 ways
-> 
-> 1.  By code And Name.
-> 
-> 2.  By data.
-> 
-> > You can find code in data code field and value as a
-> > multiLanguage Value in data value field.
+- Contains the chains infromation from the provider, it could be
+ returned in 2 ways:
+ 
+   1.  By code And Name.
+ 
+   2.  By data.
+ 
+- You can find code in data code field and value as a
+ multiLanguage Value in data value field.
 
-|
+
 
 Room Summary
 ============
@@ -1009,12 +1009,12 @@ Name example:
 }
 ~~~
 
-|
+
 
 Attributes
 ==========
 
-|
+
 
 | **Element**	| **Number**	| **Type**	| **Description**	|
 | ------------- | ------------- | ------------- | --------------------- |
@@ -1092,25 +1092,25 @@ Example:
 
 -   Context explanation :
 
-    > There is 1 description with a contextItem child in HotelSummary (
-    > Summary elements for the property returned )
+    There is 1 description with a contextItem child in HotelSummary (
+    Summary elements for the property returned )
 
 -   Data explanation (en) :
 
-    > name "highRate" , description "Highest rate returned by the hotel
-    > in recent queries. This is a statistical figure and not
-    > necessarily a rate for current availability."
-    >
-    > Type : numeric
-    >
-    > value : 626.7603
+    Name "highRate" , description "Highest rate returned by the hotel
+     in recent queries. This is a statistical figure and not
+     necessarily a rate for current availability."
+    
+     Type: numeric
+    
+     Value: 626.7603
 
-|
+
 
 Descriptions
 ============
 
-|
+
 
 | **Element**		| **Number**	| **Type**	| **Description**	|
 | Description 		|        	|           	|                       |
@@ -1195,27 +1195,27 @@ Example:
 
 -   Context explanation :
 
-    > There is 1 description with a contextItem child
-    > locationDescription and description : General location as entered
-    > by the property, e.g. "Near Pike Place Market" which it's parent
-    > is HotelSummary ( Summary elements for the property returned )
+     There is 1 description with a contextItem child
+     locationDescription and description : General location as entered
+     by the property, e.g. "Near Pike Place Market" which it's parent
+     is HotelSummary ( Summary elements for the property returned )
 
 -   Text explanation :
 
-    > The locationDescription has 2 text elements :
-    >
-    > en\_US -\> Near Eloro Beach
-    >
-    > and
-    >
-    > es\_ES -\> A poca distancia de Playa Eloro
+     The locationDescription has 2 text elements :
+    
+     en_US -\> Near Eloro Beach
+    
+     and
+    
+     es_ES -\> A poca distancia de Playa Eloro
 
-|
+
 
 Medias
 ======
 
-|
+
 
 | **Element**			| **Number**	| **Type**	| **Description** 			|
 | ----------------------------- | ------------- | ------------- | ------------------------------------- |
@@ -1235,7 +1235,7 @@ Medias
 | /Others     			| 0..1   	|          	| Other Medias array                    |
 | /Others/Other/Url 		| 1..n   	| String 	| Url                                   |
 
-| 
+
 
 Example:
 
@@ -1555,17 +1555,17 @@ Example:
 
 - **Child contextItems id:**
 
-HotelImage\#Category\#0 (Unknown) , HotelImage\#Type\#0 (Unknown)
+HotelImage#Category#0 (Unknown) , HotelImage#Type#0 (Unknown)
 
 - **Context hierarchy:**
 
- HotelImage\#Category\#0 -\> HotelImage -\> HotelImages
+ HotelImage#Category#0 -\> HotelImage -\> HotelImages
 
- HotelImage\#Type\#0 -\> HotelImage -\> HotelImages
+ HotelImage#Type#0 -\> HotelImage -\> HotelImages
 
 - **Attribute :**
 
-HotelImage\#supplierId = 13
+HotelImage#supplierId = 13
 
 - **Description:**
 
@@ -1575,12 +1575,12 @@ HotelImage\#supplierId = 13
 
 2 photos ( thumbnail and not thumbnail )
 
-|
+
 
 contextItem
 ===========
 
-|
+
 
 | **Element**		| **Number**	| **Type** 	| **Description**	                         |
 | --------------------- | ------------- | ------------- | ---------------------------------------------- |
@@ -1593,7 +1593,7 @@ contextItem
 | /Schema      		| 0..1  	|         	|                                                |
 | /text        		| 1..n  	| Text  	| text: Providers explanation of the context.    |
 
-|
+
 
 ContextItem provide context information to each data / text and
 Medias ( Attributes, Descriptions and Medias).
@@ -1605,24 +1605,24 @@ text is the Hotel Long Description...).
 
 Each context item is typified by:
 
-id
+*id*
 
 parentRefId ( if parentRefId is not null, means that exist a contextItem
 which is in a low depth and match it's Id with parentRefId that provide
 more context information to the child element)
 
-text
+*text*
 
 It can contain N child elements, child element is a contextItem that
 it's id is not contained in other contexItem's -\> parentRefId (in the
 same context)
 
-|
+
 
 data
 ====
 
-|
+
 
 | **Element**		| **Number**	| **Type**	| **Description**					|
 | --------------------- | ------------- | ------------- | ----------------------------------------------------- |
@@ -1635,7 +1635,7 @@ data
 | /Value/value 		| 1     	| String 	| Value of the element.     	                        |
 | /Text        		| 1     	| Text  	| text 		                                        |
 
-|
+
 
 Data element is used to return the value of an item which is in the
 context specified by the contextItem_ element.
@@ -1659,12 +1659,12 @@ There will be a value element for each language available for each element, lang
 
 There will be only 1 value element with languageCode set as "" or not being returned.
 
-|
+
 
 text
 ====
 
-|
+
 
 | **Element**		| **Number**	| **Type**	| **Description**					|
 | --------------------- | ------------- | ------------- | ----------------------------------------------------- |
@@ -1674,7 +1674,7 @@ text
 | description  		| 0..1 		| Text  	| Provider explanation of the context specyfied   	|
 | value        		| 0..1 		| Text  	| This field is returned in the Descriptions text field. It refers to the description value. |
 
-|
+
 
 Description field is filled with the provider documentation or response
 from the provider. It will be empty if the provider documentation /
@@ -1685,4 +1685,4 @@ description of the element refered to.
 
 See data section regarding Languages.
 
-|
+

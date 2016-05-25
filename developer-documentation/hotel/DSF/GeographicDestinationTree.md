@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hotel/DSF/GeographicDestinationTree
 ---
 
-|
+
 
 Method Goals
 ============
@@ -16,14 +16,14 @@ indicate with a parameter with values of true and false. The main
 difference between the methods GeographicalTree and DestinationTree is
 that GeographicalTree has this boolean parameter.
 
-|
+
 
 Request Format
 ==============
 
 The request not requires any element, it is empty.
 
-|
+
 
 Response Format
 ===============
@@ -31,7 +31,7 @@ Response Format
 The result returns a list of *DestinationTree* with corresponding
 sub-destinations.
 
-|
+
 
 Remarks
 =======
@@ -39,7 +39,7 @@ Remarks
 The maximum time, that is permitted in our system, before the connection
 is closed, is of **240000** milliseconds.
 
-|
+
 
 GeographicDestinationTreeRQ Example
 ===================================
@@ -47,18 +47,18 @@ GeographicDestinationTreeRQ Example
     <GeographicDestinationTreeRQ>
     </GeographicDestinationTreeRQ>
 
-|
+
 
 GeographicDestinationTreeRQ Description
 =======================================
 
-|
+
 
 | **Element**		      | **Number** | **Type** | **Description**	|
 | --------------------------- | ---------- | -------- | --------------- |
 | GeographicDestinationTreeRQ | 1          |	      | Root node.	|
 
-|
+
 
 GeographicDestinationTreeRS Example
 ===================================
@@ -87,12 +87,12 @@ GeographicDestinationTreeRS Example
         . . .
     </GeographicDestinationTreeRS>
 
-|
+
 
 GeographicDestinationTreeRS Description
 =======================================
 
-|
+
 
 | **Element**			| **Number** | **Type** | **Description**	|
 | ----------------------------- | ---------- | -------- | --------------------- |
@@ -100,7 +100,7 @@ GeographicDestinationTreeRS Description
 | DestinationTree		| 1..n       |		| Father node.		|
 | DestinationLeaf		| 0..1       |		| Child node.		|
 
-|
+
 
 Detailed description
 ====================
@@ -135,7 +135,7 @@ Detailed description
      . . .
 </GeographicDestinationTreeRS\>
 
-|
+
 
 There are two primordial definitions that needs to be clear to
 understand the difference in city and zone: types of nodes and if these
@@ -160,15 +160,7 @@ Therefore:
 -   **City:** Lowest attackable node.
 -   **Zone:** Not the lowest attackable node.
 
-|
 
-![image](../images/diagrama1.png)
 
-|
-
- **Note**
-
- In rare occasions it is possible finding nodes lower than cities,
- which won't be attackable, but the standard scenario is not to find
- lower nodes than cities.
+ **Note:** *In rare occasions it is possible finding nodes lower than cities, which won't be attackable, but the standard scenario is not to find lower nodes than cities.*
 

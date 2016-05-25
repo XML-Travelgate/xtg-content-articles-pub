@@ -5,28 +5,28 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hotel/DSF/RuntimeConfiguration
 ---
 
-|
+
 
 Method Goals
 ============
 
 This message lets you know the provider configuration template.
 
-|
+
 
 Request Format
 ==============
 
 The request does not require any elements empty request.
 
-|
+
 
 Response Format
 ===============
 
 The returned XML contains a template of all fields used by the provider.
 
-|
+
 
 RuntimeConfigurationRQ Example
 ==============================
@@ -34,20 +34,18 @@ RuntimeConfigurationRQ Example
     <RuntimeConfigurationRQ>
     </RuntimeConfigurationRQ>
 
-|
+
 
 RuntimeConfigurationRQ Description
 ==================================
 
-  -------------------------------------------------------------------------
-  Element      Numbe Type  Description
-               r           
-  ------------ ----- ----- ------------------------------------------------
-  RuntimeConfi 1           Root node.
-  gurationRQ               
-  -------------------------------------------------------------------------
 
-|
+| **Element**			| **Number**	| **Type**	| **Description**	|
+| ----------------------------- | ------------- | ------------- | --------------------- |
+| RuntimeConfigurationRQ	| 1          	|		| Root node.		|
+                 
+
+
 
 RuntimeConfigurationRS Example
 ==============================
@@ -63,17 +61,13 @@ RuntimeConfigurationRS Example
         </Configuration>
     </RuntimeConfigurationRS>
 
-|
+
 
 ConfiguracionRunTimeRS Description
 ==================================
 
-  -------------------------------------------------------------------------
-  Element      Numbe Type  Description
-               r           
-  ------------ ----- ----- ------------------------------------------------
-  RuntimeConfi 1           Root node.
-  gurationRS               
-  -------------------------------------------------------------------------
-
-|
+ 
+| **Element**			| **Number**	| **Type**	| **Description**			|
+| ----------------------------- | ------------- | ------------- | ------------------------------------- |
+| RuntimeConfigurationRS	| 1          	|		| Root node.				|
+ 

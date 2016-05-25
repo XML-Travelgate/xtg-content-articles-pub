@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hotel/DSF/MealPlanList
 ---
 
-|
+
 
 Method Goals
 ============
@@ -13,21 +13,21 @@ Method Goals
 This method aims to return a list of the available MealPlans, which will
 be used in the availability response.
 
-|
+
 
 Request Format
 ==============
 
 The request does not require any elements empty request.
 
-|
+
 
 Response Format
 ===============
 
 The result returns a list of *MealPlan*.
 
-|
+
 
 Remarks
 =======
@@ -39,28 +39,28 @@ If the provider has more than 100 mealplan codes, or more than 20 codes
 for one single mealplan, this code will be mapped depending on the
 provider.
 
-|
+
 
 MealPlanRQ Example
 ==================
 
-:
+
 
     <MealPlanListRQ>
     </MealPlanListRQ>
 
-|
+
 
 MealPlanListRQ Description
 ==========================
 
-|
+
 
 | **Element**		| **Number** | **Type** | **Description**		|
 | --------------------- | ---------- | -------- | ----------------------------- |
 | MealPlanListRQ	| 1          |		| Root node.			|
 
-|
+
 
 MealPlanListRS Example
 ======================
@@ -80,12 +80,12 @@ MealPlanListRS Example
         </MealPlans>
     </MealPlanListRS>
 
-|
+
 
 MealPlanListRS Description
 ==========================
 
-|
+
 
 | **Element**		| **Number** | **Type** | **Description**	|
 | --------------------- | ---------- | -------- | --------------------- |
