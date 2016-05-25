@@ -111,9 +111,9 @@ Module ExampleConnectionVB
 End Module
 ~~~
 
-|
 
-C\# Example
+
+C# Example
 ===========
 
 ~~~
@@ -222,7 +222,7 @@ namespace ClientC
 }
 ~~~
 
-|
+
 
 Java
 ====
@@ -318,7 +318,7 @@ public class ExampleConnectionJava {
 }
 ~~~
 
-|
+
 
 ~~~
 
@@ -342,7 +342,7 @@ public class HotelServiceHandlerResolver implements HandlerResolver {
 }
 ~~~
 
-|
+
 
 ~~~
 
@@ -413,7 +413,7 @@ public class HotelServiceSOAPSecurityHandler implements SOAPHandler<SOAPMessageC
 }
 ~~~
 
-|
+
 
 PHP
 ===
@@ -487,7 +487,7 @@ $client     = new SoapClient(null, array("trace" => true,
                        "uri" =>  $ns_xtg,
                         'use' => SOAP_LITERAL));
 // Call 
-$result = $client->__soapCall("HotelList", $hotelListRQ,  
+$result = $client->__soapCall("HotelList", $hotelListRQ, 
                         array("soapaction" => "http://schemas.xmltravelgate.com/hub/2012/06/IServiceHotelBatch/HotelList"),                                             $header); 
 
 //Print the result
@@ -495,7 +495,7 @@ echo print_r($result, true);
 ?>
 ~~~
 
-|
+
 
 ### Car - Availability Call 1..n providers in Request - Service Car - VehAvailRate Method
 
@@ -587,7 +587,7 @@ $result = $client->__soapCall("OTA_VehAvailRate", $VehAvailRateRQ,
 ?>
 ~~~
 
-|
+
 
 ### Car - Common Call 1 provider in Request - Service Car - VehRateRule Method
 
@@ -596,15 +596,15 @@ $result = $client->__soapCall("OTA_VehAvailRate", $VehAvailRateRQ,
 //php.ini must include soap extension:  extension=php_soap.dll
 
 //Values configured by client, tipically runtime calculated
-$requestTimeoutMs = 15000;    
-$connectTimeouttMs = 2000;   
+$requestTimeoutMs = 15000;
+$connectTimeouttMs = 2000; 
 
 //Values provided by XMLTravelgate
 $xtgHubUrl   = "http://hubpublic.xmltravelgate.com/Service/Travel/v2/Car.svc";
-$hubUser = "your_hubuser";  
+$hubUser = "your_hubuser";
 $hubPassword = "your_hubpassword"; 
 $providerCode = "XXX"; 
-$providerAgencyCode = "your_agencyCode";  
+$providerAgencyCode = "your_agencyCode"; 
 
 
 //Values provided by Provider (Supplier)
@@ -623,7 +623,7 @@ $attribute4Value = "your_attribute_4_value";
 //Values regarding XMLTravelgate WebService SOAP method to use
 $soapOperation = "OTA_VehRateRule";
 $soapMessage = "vehRateRuleRQ";
-$soapAction ="http://schemas.xmltravelgate.com/hub/2012/06/IServiceCar/OTA_VehRateRule";        
+$soapAction ="http://schemas.xmltravelgate.com/hub/2012/06/IServiceCar/OTA_VehRateRule";
 
 
 $xmlRQStr = "<OTA_VehRateRuleRQ xmlns:xsi = \"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd = \"http://www.w3.org/2001/XMLSchema\">" 
@@ -698,7 +698,7 @@ $client     = new SoapClient(null, array("trace" => true,
                        "uri" =>  $ns_xtg,
                        "use" => SOAP_LITERAL));
 // Call 
-$result = $client->__soapCall($soapOperation, $rq,  
+$result = $client->__soapCall($soapOperation, $rq, 
                         array("soapaction" => $soapAction),                                             
                         $header); 
 
@@ -707,4 +707,4 @@ echo print_r($result, true);
 ?>
 ~~~
 
-|
+

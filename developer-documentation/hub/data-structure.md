@@ -15,7 +15,7 @@ For information about the specific XML elements that travel inside the
 requests and response objects please check the documentation by required
 API:
 
-|
+
 
 -   [Hotel API](/developer-documentation/hotel/index)
 -   [Transportation API](/developer-documentation/transportation/index)
@@ -23,14 +23,14 @@ API:
 -   [Transfers API](/developer-documentation/transfers/index)
 -   [Tour Activity API](/developer-documentation/activities/index) 
 
-|
+
 
 All XML details must be checked, at each stage, by the client system and
 by the end traveller. XML Travelgate does not take any responsibility
 for any changes in details that are not noticed, since this can
 sometimes be caused by the supplier.
 
-|
+
 
 - **Availability Calls**
 
@@ -48,9 +48,9 @@ Please, check Hub Quotas for some limitations to requests.
 |
 
 Availability RQ Example
------------------------
+=======================
 
-:
+
 
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
         <soapenv:Header>
@@ -87,12 +87,12 @@ Availability RQ Example
         </soapenv:Body>
     </soapenv:Envelope>
 
-|
+
 
 Availability RQ Description
----------------------------
+===========================
 
-|
+
 
 | **Element**                   | **Number**  | **Type** | **Description** |
 | ------------                  | ----------- | -------- | --------------- |
@@ -107,12 +107,12 @@ Availability RQ Description
 | providersRQs/ProviderRQ/rqXML | 1           | String   | API specific XML to request |
 
  
-|
+
 
 Availability RS Example
------------------------
+=======================
 
-:
+
 
     <s:Envelope xmlns:s = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:u = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
         <s:Header>
@@ -198,12 +198,12 @@ Availability RS Example
         </s:Body>
     </s:Envelope>
 
-|
+
 
 Availability RS Description
----------------------------
+===========================
 
-| 
+
 
 | **Element**                                | **Number**  | **Type** | **Description** |
 | ------------                               | ----------- | -------- | --------------- |
@@ -216,7 +216,7 @@ Availability RS Description
 | providersRSs/ProviderRS/refId              | 1           | String   | Id to correlate responses with requests. It is a reference to id filled in request |
 | providersRSs/ProviderRS/rsXML              | 1           | String   | API specific XML to response |
 
-|
+
 
 Other Calls
 ===========
@@ -229,4 +229,4 @@ when provider has responded.
 **Common structures are same used in availability calls but only
 allowing 1 element of type Provider per Request/Response.**
 
-|
+

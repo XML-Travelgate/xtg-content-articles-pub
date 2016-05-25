@@ -8,7 +8,7 @@ permalink: /developer-documentation/hub/quotas
 This section enumerates basic quotas and throttling thresholds in XML
 Travelgate Hub: 
 
-|
+
 
 | **Quota Name** | **Scope** | **Type** | **Behaviour when exceeded** | **Value** |
 | -------------- | --------- | -------- | --------------------------- | --------- |
