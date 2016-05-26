@@ -7,8 +7,8 @@ permalink: /developer-documentation/activities/DSF/valuation
 
 
 
-ValuationRQ Example
-===================
+### ValuationRQ Example
+
 
     <OTA_TourActivityBookRQ xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd = "http://www.w3.org/2001/XMLSchema" PrimaryLangID = "es">
       <BookingInfo>
@@ -44,8 +44,8 @@ ValuationRQ Example
 
 
 
-ValuationRQ Description
-=======================
+### ValuationRQ Description
+
 
 
 
@@ -77,8 +77,8 @@ ValuationRQ Description
 
 
 
-ValuationRS Example
-===================
+### ValuationRS Example
+
 
 
 
@@ -122,8 +122,8 @@ ValuationRS Example
 
 
 
-ValuationRS Description
-=======================
+### ValuationRS Description
+
 
 
 

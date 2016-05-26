@@ -7,37 +7,37 @@ permalink: /developer-documentation/activities/DSF/cancel
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to cancel a booking
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request requires the booking code and the name of the customer
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The result returns the new status of the reservation and the possible
 cost of the cancellation.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 Not implemented by all suppliers
 
 
 
-CancelRQ Example
-================
+### CancelRQ Example
+
 
 
 
@@ -47,8 +47,8 @@ CancelRQ Example
 
 
 
-CancelRQ Description
-====================
+### CancelRQ Description
+
 
 
 
@@ -62,8 +62,8 @@ CancelRQ Description
 
 
 
-CancelRS Example
-================
+### CancelRS Example
+
 
 
 
@@ -83,8 +83,8 @@ CancelRS Example
 
 
 
-CancelRS Description
-====================
+### CancelRS Description
+
 
 
 

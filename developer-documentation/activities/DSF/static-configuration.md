@@ -7,23 +7,23 @@ permalink: /developer-documentation/activities/DSF/static-configuration
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method returns important information about the behaviour of the
 integration (specific provider).
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request only requires the provider code and credentials.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The response contains a list of basic information about the limitations
 of the integration / provider.
@@ -47,8 +47,8 @@ of the integration / provider.
 
 
 
-StaticConfigurationRQ Example
-=============================
+### StaticConfigurationRQ Example
+
 
 
 
@@ -75,8 +75,8 @@ StaticConfigurationRQ Example
 
 
 
-StaticConfigurationRQ Description
-=================================
+### StaticConfigurationRQ Description
+
 
 
 
@@ -104,8 +104,8 @@ StaticConfigurationRQ Description
 
 
 
-StaticConfigurationRS Example
-=============================
+### StaticConfigurationRS Example
+
 
 
 
@@ -127,8 +127,8 @@ StaticConfigurationRS Example
 
 
 
-StaticConfigurationRS Description
-=================================
+### StaticConfigurationRS Description
+
 
 
 

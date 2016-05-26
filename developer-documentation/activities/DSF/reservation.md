@@ -7,12 +7,12 @@ permalink: /developer-documentation/activities/DSF/reservation
 
 
 
-ReservationRQ Example
-=====================
+### ReservationRQ Example
 
 
 
-    <OTA_TourActivityBookRQ
+
+    <OTA_TourActivityBookRQ>
         xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
         xmlns:xsd = "http://www.w3.org/2001/XMLSchema"
         PrimaryLangID = "es">
@@ -54,12 +54,12 @@ ReservationRQ Example
                 </Attributes>
             </TPA_Extensions>
         </BookingInfo>
-    <OTA_TourActivityBookRQ>
+    </OTA_TourActivityBookRQ>
 
 
 
-ReservationRQ Description
-=========================
+### ReservationRQ Description
+
 
 
 
@@ -106,8 +106,8 @@ ReservationRQ Description
 
 
 
-ReservationRS Example
-=====================
+### ReservationRS Example
+
 
 
 
@@ -144,8 +144,8 @@ ReservationRS Example
 
 
 
-Reservation RS Description
-==========================
+### Reservation RS Description
+
 
 
 

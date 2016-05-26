@@ -7,8 +7,8 @@ permalink: /developer-documentation/activities/DSF/reservation-list
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to return all the reservation list of each activity
 confirm for a given specific date from which you want to search and Date
@@ -16,8 +16,8 @@ type.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 It is mandatory to pass a date range and a Date type. Depends the Date
 type, you obtain different reservation list.
@@ -31,12 +31,12 @@ type, you obtain different reservation list.
 
 
 
-ReservationsListRQ Example
-==========================
+### ReservationsListRQ Example
 
 
 
-    <OTA_ReadRQ
+
+    <OTA_ReadRQ>
         xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
         xmlns:xsd = "http://www.w3.org/2001/XMLSchema"
         PrimaryLangID = "es">
@@ -48,12 +48,12 @@ ReservationsListRQ Example
                     Start = "2013-12-18T12:32:15"/>
             </TourActivityReadRequest>
         </ReadRequests>
-    <OTA_ReadRQ>
+    </OTA_ReadRQ>
 
 
 
-ReservationsListRQ Description
-==============================
+### ReservationsListRQ Description
+
 
 
 
@@ -70,8 +70,8 @@ ReservationsListRQ Description
 
 
 
-ReservationsListRS Example
-==========================
+### ReservationsListRS Example
+
 
 
 
@@ -129,8 +129,8 @@ ReservationsListRS Example
 
 
 
-ReservationsListRS Description
-==============================
+### ReservationsListRS Description
+
 
 
 

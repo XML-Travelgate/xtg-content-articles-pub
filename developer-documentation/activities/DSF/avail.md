@@ -7,8 +7,8 @@ permalink: /developer-documentation/activities/DSF/avail
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to return all the available options for a given date
 and search type. It does not filter different classes, times or fares.
@@ -17,8 +17,8 @@ specific date range.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 It is mandatory to pass a date range and a search type. Depends if
 OpenAvailability is true or false (this attribute return in
@@ -35,8 +35,8 @@ StaticConfiguration call), you need specify passengers.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The response contains information of each activity that provider return.
 Depends if OpenAvailability is true or false (this attribute return in
@@ -53,12 +53,12 @@ StaticConfiguration call).
 
 
 
-AvailRQ Example
-===============
+### AvailRQ Example
 
 
 
-    <OTA_TourActivityAvailRQ
+
+    <OTA_TourActivityAvailRQ>
         xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
         xmlns:xsd = "http://www.w3.org/2001/XMLSchema"
         PrimaryLangID = "es">
@@ -78,12 +78,12 @@ AvailRQ Example
             <!--Mandatory specify if OpenAvailability = false-->
             <ParticipantCount Age = "30" Quantity = "1"/>
         </TourActivity>
-    <OTA_TourActivityAvailRQ>
+    </OTA_TourActivityAvailRQ>
 
 
 
-AvailRQ Description
-===================
+### AvailRQ Description
+
 
 
 
@@ -116,8 +116,8 @@ AvailRQ Description
 
 
 
-AvailRS Example
-===============
+### AvailRS Example
+
 
 
 
@@ -290,8 +290,8 @@ AvailRS Example
 
 
 
-AvailRS Description
-===================
+### AvailRS Description
+
 
 
 

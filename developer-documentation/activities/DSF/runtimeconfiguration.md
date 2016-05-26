@@ -7,30 +7,30 @@ permalink: /developer-documentation/activities/DSF/runtimeconfiguration
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method returns a list of "atributos" that should be included in
 each request for the selected provider.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request only requires the provider code.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The response contains a list of "atributo".
 
 
 
-RunTimeConfigurationRQ Example
-==============================
+### RunTimeConfigurationRQ Example
+
 
 
 
@@ -56,13 +56,13 @@ RunTimeConfigurationRQ Example
 
 
 
-RunTimeConfiguration Description
-================================
+### RunTimeConfiguration Description
 
 
 
-RunTimeConfigurationRS Example
-==============================
+
+### RunTimeConfigurationRS Example
+
 
 
 
@@ -85,7 +85,7 @@ RunTimeConfigurationRS Example
 
 
 
-RunTimeConfigurationRS Description
-==================================
+### RunTimeConfigurationRS Description
+
 
 

@@ -7,51 +7,51 @@ permalink: /developer-documentation/activities/DSF/reservation-read
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to consult a reservation
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request requires the booking code and the name of the customer
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The result returns the new status of the reservation and the possible
 cost of the consultation.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 Not implemented by all suppliers
 
 
 
-ReservationReadRQ Example
-=========================
+### ReservationReadRQ Example
 
 
 
-    <OTA_ReadRQ
+
+    <OTA_ReadRQ>
         xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
         xmlns:xsd = "http://www.w3.org/2001/XMLSchema"
         PrimaryLangID = "es">
         <UniqueID ID = "1283712#1" Type = "PROVIDER"/>
-    <OTA_ReadRQ>
+    </OTA_ReadRQ>
 
 
 
-ReservationReadRQ Description
-=============================
+### ReservationReadRQ Description
+
 
 
 
@@ -65,8 +65,8 @@ ReservationReadRQ Description
 
 
 
-ReservationReadRS Example
-=========================
+### ReservationReadRS Example
+
 
 
 
@@ -124,8 +124,8 @@ ReservationReadRS Example
 
 
 
-ReservationReadRS Description
-=============================
+### ReservationReadRS Description
+
 
 
 
