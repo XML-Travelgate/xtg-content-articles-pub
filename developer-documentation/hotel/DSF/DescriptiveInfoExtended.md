@@ -6,48 +6,35 @@ permalink: /developer-documentation/hotel/DSF/DescriptiveInfoExtended
 ---
 
 
-
 ### Method Goals
 
 
-This method returns all the hotel information from the provider.
+This method returns 100% of the hotel information provided by the supplier.
 
-It allows you to map each hotel from the provider with your own
-criteria.
-
-With the combination of contextItem_ plus data_ you will have the
-information (extracted from provider's documentation hierachy / fields
-descriptions ) required to do it.
-
+It allows you to map each hotel using your own criteria with the combination of contextItem_ plus data_ so you will have the
+information (extracted from the supplier's documentation hierachy/fields descriptions) required to do so.
 
 
 ### Request Format
 
 
-In addition to the hotel code, you can set language filters.
+In addition to the hotel code, you can set language filters. We recommend that the first call request is done without filters in order to ascertain which languages are provided by the supplier. 
 
-To define language filters fill LanguageCode element with *Culture* or
-*No Culture* value:
+To define language filters use the LanguageCode element with one of the following values:
 
--  *Culture (xx\_YY) :* Reponse will return only *values* /
- *text* with the specified language_culture.
+-  *Culture (xx\_YY) :* Response will return *values* /
+ *text* of the one specific language_culture requested
 
 -  *No Culture (xx) :* Response will return *values* / *text*
- with all cultures available for the language sent.
+ of all cultures available for the language sent.
 
-i.e. en could return en _GB and en _US
-
-*For setting filters, recommendation is first call request without
-filters to see which languages are available by the provider*
-
+For example, when en is entered in *No Culture*, then the response could return en _GB and en _US.
 
 
 ### Remarks
 
 
-The maximum time before the connection gets closed, is of **180000**
-milliseconds.
-
+A maximum time of **180000** milliseconds is permitted before the connection is closed.
 
 
 ### DescriptiveInfoExtendedRQ Example
@@ -136,7 +123,7 @@ milliseconds.
                                     {
                                         "languageCode" : "en",
                                         "name" : "HotelSummary",
-                                        "description" : "Summary elements for the property returned"
+                                        "description" : "Summary of the elements returned for the property "
                                     },
                                     {
                                         "languageCode" : "pt",
@@ -165,12 +152,12 @@ milliseconds.
                         {
                             "languageCode" : "en",
                             "name" : "highRate",
-                            "description" : "Highest rate returned by the hotel in recent queries. This is a statistical figure and not necessarily a rate for current availability."
+                            "description" : "Highest rate returned by the hotel in recent queries. This is a statistical figure and is not necessarily the rate for the current availability."
                         },
                         {
                             "languageCode" : "pt",
                             "name" : "highRate",
-                            "description" : "Menor tarifa retornada pelo hotel em consultas recentes. Trata-se de um número estatístico e não é necessariamente uma tarifa para a disponibilidade atual."
+                            "description" : "Maior tarifa retornada pelo hotel em consultas recentes. Trata-se de um número estatístico e não é necessariamente a tarifa da disponibilidade atual."
                         },
                         {
                             "languageCode" : "es",
@@ -218,7 +205,7 @@ milliseconds.
                                             {
                                                 "languageCode" : "en",
                                                 "name" : "HotelSummary",
-                                                "description" : "Summary elements for the property returned"
+                                                "description" : "Summary of the elements returned for the property "
                                             },
                                             {
                                                 "languageCode" : "pt",
@@ -324,7 +311,7 @@ milliseconds.
                                                     {
                                                         "languageCode" : "en",
                                                         "name" : "RoomTypes",
-                                                        "description" : "Contains array of available room type at the property. Has size attribute to indicate the number of results contained."
+                                                        "description" : "Contains array of available room type at the property. Has the size attribute to indicate the number of results contained."
                                                     },
                                                     {
                                                         "languageCode" : "pt",
