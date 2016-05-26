@@ -21,7 +21,7 @@ Unused methods are deleted.
 
 -   **Version 1.2.1:** Date 23/08/2012
 
-Added fields in OTA\_VehResRQ to send the customer's address on the
+Added fields in OTA_VehResRQ to send the customer's address on the
 request.
 
 

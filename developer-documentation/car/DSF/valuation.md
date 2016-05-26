@@ -7,22 +7,22 @@ permalink: /developer-documentation/car/DSF/valuation
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to retrieve a booking with its full details.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 Some suppliers do not implement this method.
 
 
 
-OTA VehRetResRQ Example
-=======================
+### OTA VehRetResRQ Example
+
 
 
 
@@ -43,8 +43,8 @@ OTA VehRetResRQ Example
 
 
 
-OTA_VehRetResRQ Description
-============================
+### OTA_VehRetResRQ Description
+
 
 The request requires the UniqueID (locator) of the reservation and the
 name of the customer to identify the reservation and retrieve its
@@ -60,8 +60,8 @@ information.
 
 
 
-OTA_VehRetResRS Example
-========================
+### OTA_VehRetResRS Example
+
 
 
 
@@ -94,8 +94,8 @@ OTA_VehRetResRS Example
 
 
 
-OTA VehRetResRS Description
-===========================
+### OTA VehRetResRS Description
+
 
 The result returns the full details of a booking. It is very similar to
 the OTA VehRes Response.

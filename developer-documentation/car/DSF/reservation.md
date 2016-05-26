@@ -7,20 +7,20 @@ permalink: /developer-documentation/car/DSF/reservation
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to book the selected vehicle.
 
 
 
-Remarks
-=======
+### Remarks
 
 
 
-OTA VehResRQ Example
-====================
+
+### OTA VehResRQ Example
+
 
 
 
@@ -80,8 +80,8 @@ OTA VehResRQ Example
 
 
 
-OTA VehResRQ Description
-========================
+### OTA VehResRQ Description
+
 
 The request format works the same way as the OTA VehRateRule request.
 The main difference is that in addition to vehicle information, it is
@@ -120,8 +120,8 @@ also necessary the customer information.
 
 
 
-OTA VehResRS Example
-====================
+### OTA VehResRS Example
+
 
 
 
@@ -154,8 +154,8 @@ OTA VehResRS Example
 
 
 
-OTA VehResRS Description
-========================
+### OTA VehResRS Description
+
 
 The result returns a list of ConfID (booking codes). It can be the
 supplier's or the one sent in the request. It also returns all the

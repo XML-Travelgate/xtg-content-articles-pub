@@ -7,31 +7,31 @@ permalink: /developer-documentation/car/DSF/static-configuration
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method returns important information about the behavior of the
 integration.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request only requires the provider code.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The response contains a list of parameters that will inform how to
 configure the integration.
 
 
 
-StaticConfigurationRQ Example
-=============================
+### StaticConfigurationRQ Example
+
 
 
 
@@ -58,13 +58,13 @@ StaticConfigurationRQ Example
 
 
 
-StaticConfigurationRQ Description
-=================================
+### StaticConfigurationRQ Description
 
 
 
-StaticConfigurationRS Example
-=============================
+
+### StaticConfigurationRS Example
+
 
 
 
@@ -83,7 +83,7 @@ StaticConfigurationRS Example
 
 
 
-StaticConfigurationRS Description
-=================================
+### StaticConfigurationRS Description
+
 
 

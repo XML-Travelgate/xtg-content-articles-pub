@@ -7,24 +7,24 @@ permalink: /developer-documentation/car/DSF/routes
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to return all the available offices for the selected
 carrier.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 This method should be cached internally and only called once a week and
 in most cases once a month.
 
 
 
-OTA VehLocSearchRQ Example
-==========================
+### OTA VehLocSearchRQ Example
+
 
 
 
@@ -59,8 +59,8 @@ OTA VehLocSearchRQ Example
 
 
 
-OTA VehLocSearchRQ Description
-==============================
+### OTA VehLocSearchRQ Description
+
 
 The request requires a POS object. This method also accepts an office
 code in order to retrieve the specific information related to this
@@ -81,8 +81,8 @@ office if the provider allows it.
 
 
 
-OTA VehLocSearchRS Example
-==========================
+### OTA VehLocSearchRS Example
+
 
 
 
@@ -165,8 +165,8 @@ OTA VehLocSearchRS Example
 
 
 
-OTA VehLocSearchRS Description
-==============================
+### OTA VehLocSearchRS Description
+
 
 The result returns a list of VehMatchedLoc with the corresponding
 information.

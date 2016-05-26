@@ -7,22 +7,22 @@ permalink: /developer-documentation/car/DSF/cancel
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to cancel a booking
 
 
 
-Remarks
-=======
+### Remarks
+
 
 Not implemented by all suppliers
 
 
 
-OTA VehCancelRQ Example
-=======================
+### OTA VehCancelRQ Example
+
 
 
 
@@ -43,27 +43,27 @@ OTA VehCancelRQ Example
 
 
 
-OTA VehCancelRQ Description
-===========================
+### OTA VehCancelRQ Description
+
 
 The request requires the booking code and the name of the customer.
 
 
 
-| **Element**				| **Number**	| **Type**	| **Description**								|
-| ------------------------------------- | ------------- | ------------- | ----------------------------------------------------------------------------- |
-| OTA_VehCancelRQ			| 1           	|		| Root Node.        								|
-| OTA_VehCancelRQ/POS			| 1   		| Pos    	| Contains information of the Point Of Sale. 					|
+| **Element**				| **Number**	| **Type**	| **Description**						|
+| ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
+| OTA_VehCancelRQ			| 1           	|		| Root Node.        						|
+| OTA_VehCancelRQ/POS			| 1   		| Pos    	| Contains information of the Point Of Sale. 			|
 | OTA_VehCancelRQ /VehCancelRQCore	| 1   		| CancelInfoRQ	| It has the UniqueID that identifies the reservation for the provider to cancel it.	|
-| VehCancelRQ/UniqueID			| 1   		| UniqueID	| Locator code that identifies the reservation. 				|
-| VehCancelRQ/PersonName		| 1   		| PersonName	| Object that contains the name of the customer. 				|
+| VehCancelRQ/UniqueID			| 1   		| UniqueID	| Locator code that identifies the reservation. 		|
+| VehCancelRQ/PersonName		| 1   		| PersonName	| Object that contains the name of the customer. 		|
 | OTA_VehCancelRQ /VehCancelRQInfo	| 1   		| vehCancel RQInfo	| Contains the dates of the reservation and the selected offices. Most of the providers don't require this information.	|
-| vehCancelRQInfo /RentalInfo		| 1   		| RentalInfo	| Contains the locations and dates of the rental.				|
+| vehCancelRQInfo /RentalInfo		| 1   		| RentalInfo	| Contains the locations and dates of the rental.		|
 
 
 
-OTA VehCancelRS Example
-=======================
+### OTA VehCancelRS Example
+
 
 
 
@@ -88,17 +88,17 @@ OTA VehCancelRS Example
 
 
 
-OTA VehCancelRS Description
-===========================
+### OTA VehCancelRS Description
+
 
 The result returns the new status of the reservation and the possible
 cost of the cancellation.
 
 
  
-| **Element**				| **Number**	| **Type**	| **Description**								|
-| ------------------------------------- | ------------- | ------------- | ----------------------------------------------------------------------------- |
-| OTA_VehCancelRS     			| 1             |        	| Root Node									|
-| OTA_VehCancelRS /VehCancelRSCore	| 1     	| VehCancelRSCore | Contains the Cancelation rules.						|
-| VehCancelRSCore /CancelStatus		| 1     	| eTransactionStatusType | It showns the new status of the reservation.				|
+| **Element**				| **Number**	| **Type**	| **Description**						|
+| ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
+| OTA_VehCancelRS     			| 1             |        	| Root Node							|
+| OTA_VehCancelRS /VehCancelRSCore	| 1     	| VehCancelRSCore | Contains the Cancelation rules.				|
+| VehCancelRSCore /CancelStatus		| 1     	| eTransactionStatusType | It showns the new status of the reservation.		|
 

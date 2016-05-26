@@ -7,23 +7,23 @@ permalink: /developer-documentation/car/DSF/avail
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to return all the available options for a given date
 and offices.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 This method **must** be called **before** the OTA VehRateRule method.
 
 
 
-OTA VehAvailRateRQ Example
-==========================
+### OTA VehAvailRateRQ Example
+
 
 
 
@@ -69,8 +69,8 @@ OTA VehAvailRateRQ Example
 
 
 
-OTA VehAvailRateRQ Description
-==============================
+### OTA VehAvailRateRQ Description
+
 
 The availability request is very straight forward. It only requires the
 offices (airport ISO code, office code or city code), the required dates
@@ -141,8 +141,8 @@ and a few other optional filters.
 
 
 
-OTA VehAvailRateRS Example
-==========================
+### OTA VehAvailRateRS Example
+
 
 
 
@@ -217,8 +217,8 @@ OTA VehAvailRateRS Example
 
 
 
-OTA VehAvailRateRS Description
-==============================
+### OTA VehAvailRateRS Description
+
 
 A list of VehAvail (Available vehicles) is returned. Each of this
 vehAvails contains the details of the vehicle. The price returned should

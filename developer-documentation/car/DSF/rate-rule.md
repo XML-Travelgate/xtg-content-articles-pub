@@ -7,8 +7,8 @@ permalink: /developer-documentation/car/DSF/rate-rule
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to return the total price of the selected VehAvail
 (option). This VehAvail option **must** be selected in the previous step
@@ -26,8 +26,8 @@ will do a OTA VehAvailRate again filtered by the selected option.
 
 
 
-OTA VehRateRule RQ Example
-==========================
+### OTA VehRateRule RQ Example
+
 
 
 
@@ -77,8 +77,8 @@ OTA VehRateRule RQ Example
 
 
 
-OTA VehRateRuleRQ Description
-=============================
+### OTA VehRateRuleRQ Description
+
 
 The VehRateRule request requires the following information:
 
@@ -103,8 +103,8 @@ The VehRateRule request requires the following information:
 
 
 
-OTA VehRateRuleRS Example
-=========================
+### OTA VehRateRuleRS Example
+
 
 
 
@@ -248,8 +248,8 @@ OTA VehRateRuleRS Example
 
 
 
-OTA VehRateRuleRS Description
-=============================
+### OTA VehRateRuleRS Description
+
 
 The returned XML is similar to the result of the OTA VehAvailRate call.
 The main difference is that only one option is returned (the selected
