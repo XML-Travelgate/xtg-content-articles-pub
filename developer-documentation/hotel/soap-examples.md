@@ -6,8 +6,8 @@ permalink: /developer-documentation/hotel/soap-examples
 ---
 
 
-Avail
-=====
+### Avail
+
 
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
@@ -75,8 +75,8 @@ Avail
 
 
 
-Multi Avail
-===========
+### Multi Avail
+
 
 
 
@@ -191,8 +191,8 @@ Multi Avail
 
 
 
-Valuation
-=========
+### Valuation
+
 
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
@@ -261,8 +261,8 @@ Valuation
 
 
 
-GeographicalDestinationTree
-===========================
+### GeographicalDestinationTree
+
 
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
@@ -311,8 +311,8 @@ GeographicalDestinationTree
 
 
 
-Hotel List
-==========
+### Hotel List
+
 
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
@@ -361,8 +361,8 @@ Hotel List
 
 
 
-DescriptiveInfo
-===============
+### DescriptiveInfo
+
 
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
         <soapenv:Header>
@@ -412,8 +412,8 @@ DescriptiveInfo
 
 
 
-AvailDestinationTree
-====================
+### AvailDestinationTree
+
 
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
@@ -464,8 +464,8 @@ AvailDestinationTree
 
 
 
-Room List
-=========
+### Room List
+
 
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
@@ -518,8 +518,8 @@ Room List
 
 
 
-MealPlanList
-============
+### MealPlanList
+
 
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
       <soapenv:Header>
@@ -570,8 +570,8 @@ MealPlanList
 
 
 
-Reservation
-===========
+### Reservation
+
 
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
       <soapenv:Header>
@@ -645,8 +645,8 @@ Reservation
 
 
 
-Cancel
-======
+### Cancel
+
 
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
@@ -704,8 +704,8 @@ Cancel
 
 
 
-ReservationRead
-===============
+### ReservationRead
+
 
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
@@ -755,8 +755,8 @@ ReservationRead
 
 
 
-ReservationList
-===============
+### ReservationList
+
 
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
       <soapenv:Header>
@@ -810,8 +810,8 @@ ReservationList
 
 
 
-RunTimeConfiguration
-====================
+### RunTimeConfiguration
+
 
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
@@ -862,8 +862,8 @@ RunTimeConfiguration
 
 
 
-StaticConfiguration
-===================
+### StaticConfiguration
+
 
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 

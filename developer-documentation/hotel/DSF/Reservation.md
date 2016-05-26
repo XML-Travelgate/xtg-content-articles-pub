@@ -7,23 +7,23 @@ permalink: /developer-documentation/hotel/DSF/Reservation
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to book an option.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request format works the same way as the *Valuation* request but
 with the list of passengers.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The result returns the booking locator (booking code). It can be the
 provider's or the one sent in the request.
@@ -35,16 +35,16 @@ of booking.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 The maximum time, that is permitted in our system, before the connection
 is closed, is of **180000** milliseconds.
 
 
 
-ReservationRQ Example
-=====================
+### ReservationRQ Example
+
 
     <ReservationRQ>
         <ClientLocator>2537459</ClientLocator>
@@ -88,8 +88,8 @@ ReservationRQ Example
 
 
 
-ReservationRQ Description
-=========================
+### ReservationRQ Description
+
 
 
 | **Element**					| **Number**	| **Type**	| **Description**					|
@@ -144,8 +144,8 @@ ReservationRQ Description
 
 
 
-ReservationRS Example
-=====================
+### ReservationRS Example
+
 
 
     <ReservationRS>
@@ -156,8 +156,8 @@ ReservationRS Example
 
 
 
-ReservationRS Description
-=========================
+### ReservationRS Description
+
 
 
 | **Element**					| **Number**	| **Type**	| **Description**					|
@@ -178,8 +178,8 @@ ReservationRS Description
 
 
 
-Detailed description
-====================
+### Detailed description
+
 
 **ResStatus:**
 
@@ -233,8 +233,8 @@ like so:
 
 
 
-DeltaPrice description
-======================
+### DeltaPrice description
+
 
 **applyBoth:**
 

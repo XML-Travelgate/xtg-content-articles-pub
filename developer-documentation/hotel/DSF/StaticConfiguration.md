@@ -8,23 +8,23 @@ permalink: /developer-documentation/hotel/DSF/StaticConfiguration
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This message provides information about the static configuration of the
 provider, to see and configure the provider in the best way.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request does not require any elements empty request.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The XML returned contains more elements on the configuration (number of
 hotels, the number of cities and the number of areas of availability, if
@@ -34,16 +34,16 @@ stay minimum, list of languages that allows ....).
 
 
 
-StaticConfigurationRQ Example
-=============================
+### StaticConfigurationRQ Example
+
 
     <StaticConfigurationRQ>
     </StaticConfigurationRQ>
 
 
 
-StaticConfigurationRQ Description
-=================================
+### StaticConfigurationRQ Description
+
 
   
 | **Element**			| **Number**	| **Type**	| **Description**	|
@@ -52,8 +52,8 @@ StaticConfigurationRQ Description
                 
   
 
-StaticConfigurationRS Example
-=============================
+### StaticConfigurationRS Example
+
 
     <StaticConfigurationRS>
         <MaxNumberHotels>2000</MaxNumberHotels>
@@ -152,8 +152,8 @@ StaticConfigurationRS Example
 
 
 
-StaticConfigurationRS Description
-=================================
+### StaticConfigurationRS Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**						|
@@ -241,8 +241,8 @@ StaticConfigurationRS Description
  
 
 
-Detailed description
-====================
+### Detailed description
+
 
 **HotelListType, DescriptiveInfoType, GeographicDestinationTreeType,
 AvailDestinationTreeType and RoomListType:**

@@ -7,8 +7,8 @@ permalink: /developer-documentation/hotel/DSF/Valuation
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to return the total price and cancel policies of the
 selected *Option*. This *Option* **must** be selected in the previous
@@ -16,16 +16,16 @@ step (*Avail*).
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The *Valuation* request is same that availabilityRQ and add rooms and
 Mealplan code.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The returned XML contains the total price and list of cancel policies.
 Sometimes this method will fail since the selected option at *Avail*
@@ -35,16 +35,16 @@ please consult the paragraph "Lists of Data"
 
 
 
-Remarks
-=======
+### Remarks
+
 
 The maximum time, that is permitted in our system, before the connection
 is closed, is of **180000** milliseconds.
 
 
 
-ValuationRQ Example
-===================
+### ValuationRQ Example
+
 
     <ValuationRQ>
         <StartDate>28/01/2014</StartDate>
@@ -70,8 +70,8 @@ ValuationRQ Example
     </ValuationRQ>
 
 
-ValuationRQ Description
-=======================
+### ValuationRQ Description
+
 
 | **Element**                            | **Number** | **Type** | **Description** |
 | -------------------------------------- | ---------- | -------- | --------------- |
@@ -104,8 +104,8 @@ ValuationRQ Description
 
 
 
-ValuationRS Example
-===================
+### ValuationRS Example
+
 
     <ValuationRS>
         <Parameters>
@@ -137,8 +137,8 @@ ValuationRS Example
 
 
 
-ValuationRS Description
-=======================
+### ValuationRS Description
+
 
 | **Element**                               | **Number** | **Type** | **Description** |
 | ----------------------------------------- | ---------- | -------- | --------------- |
@@ -180,8 +180,8 @@ ValuationRS Description
  
 
 
-Detailed Description
-====================
+### Detailed Description
+
 
 **Providers with allotment blockage**
 

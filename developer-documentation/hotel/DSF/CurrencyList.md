@@ -7,8 +7,8 @@ permalink: /developer-documentation/hotel/DSF/CurrencyList
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method returns a list of currencies, provided that the supplier has
 this petition implemented in there systems on an availability level,
@@ -17,22 +17,22 @@ availability.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request does not require any elements. Empty request.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The result returns a list of currencies.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 This petition is still in a working progress. There are no integration
 that have this petition implemented, but they will be added, provided
@@ -40,16 +40,16 @@ that the supplier returns said information.
 
 
 
-CurrenyListRQ Example
-=====================
+### CurrenyListRQ Example
+
 
     <CurrenyListRQ>
     </CurrenyListRQ>
 
 
 
-CurrenyListRQ Description
-=========================
+### CurrenyListRQ Description
+
 
 
 | **Element**			| **Number**	| **Type**	| **Description**			|
@@ -59,8 +59,8 @@ CurrenyListRQ Description
 
 
 
-CurrencyListRS Example
-======================
+### CurrencyListRS Example
+
 
     <CurrencyListRS>
         <Currencies>
@@ -77,8 +77,8 @@ CurrencyListRS Example
 
 
 
-HotelListRS Description
-=======================
+### HotelListRS Description
+
 
 
 | **Element**			| **Number**	| **Type**	| **Description**			|

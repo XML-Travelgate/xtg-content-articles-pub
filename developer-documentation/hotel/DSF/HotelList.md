@@ -7,30 +7,30 @@ permalink: /developer-documentation/hotel/DSF/HotelList
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method returns a list of hotels, where every hotel contains basic
 information ( code, name, address, phone...)
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request does not require any elements. Empty request.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The result returns a list of *Hotel* (hotels).
 
 
 
-Remarks
-=======
+### Remarks
+
 
 The maximum time, that is permitted in our system, before the connection
 is closed, is of **240000** milliseconds.
@@ -43,8 +43,8 @@ can be see in Common-Elements section_.
 
 
 
-HotelListRQ Example
-===================
+### HotelListRQ Example
+
 
 
     <HotelListRQ>
@@ -52,8 +52,8 @@ HotelListRQ Example
 
 
 
-HotelListRQ Description
-=======================
+### HotelListRQ Description
+
 
 
 | **Element**		| **Number**	| **Type**	| **Description**	|
@@ -62,8 +62,8 @@ HotelListRQ Description
   
 
 
-HotelListRS Example
-===================
+### HotelListRS Example
+
 
     <HotelListRS>
         <Hotels>
@@ -128,8 +128,8 @@ HotelListRS Example
 
 
 
-HotelListRS Description
-=======================
+### HotelListRS Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**						|
@@ -175,8 +175,8 @@ HotelListRS Description
 
 
 
-Detailed Description
-====================
+### Detailed Description
+
 
 **Giata Code:**
 

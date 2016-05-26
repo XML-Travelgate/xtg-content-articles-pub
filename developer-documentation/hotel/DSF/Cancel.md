@@ -7,15 +7,15 @@ permalink: /developer-documentation/hotel/DSF/Cancel
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to cancel a booking
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request requires one of the following data depending on provider:
 
@@ -28,24 +28,24 @@ The request requires one of the following data depending on provider:
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The result returns a response with the state of booking, the
 cancellation's identification and the fee for that cancellation.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 The maximum time, that is permitted in our system, before the connection
 is closed, is of **180000** milliseconds.
 
 
 
-CancelRQ Example
-================
+### CancelRQ Example
+
 
     <CancelRQ  hotelCode="H1548">
         <Locators>
@@ -58,8 +58,8 @@ CancelRQ Example
 
 
 
-CancelRQ Description
-====================
+### CancelRQ Description
+
 
 
 | **Element**			| **Number**	| **Type**	| **Description**					|
@@ -75,8 +75,8 @@ CancelRQ Description
 
 
 
-CancelRS Example
-================
+### CancelRS Example
+
 
 
     <CancelRS>
@@ -92,8 +92,8 @@ CancelRS Example
 
 
 
-CancelRS Description
-====================
+### CancelRS Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**						|

@@ -7,30 +7,30 @@ permalink: /developer-documentation/hotel/DSF/MealPlanList
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to return a list of the available MealPlans, which will
 be used in the availability response.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request does not require any elements empty request.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The result returns a list of *MealPlan*.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 The maximum time, that is permitted in our system, before the connection
 is closed, is of **240000** milliseconds.
@@ -41,8 +41,8 @@ provider.
 
 
 
-MealPlanRQ Example
-==================
+### MealPlanRQ Example
+
 
 
 
@@ -51,8 +51,8 @@ MealPlanRQ Example
 
 
 
-MealPlanListRQ Description
-==========================
+### MealPlanListRQ Description
+
 
 
 
@@ -62,8 +62,8 @@ MealPlanListRQ Description
 
 
 
-MealPlanListRS Example
-======================
+### MealPlanListRS Example
+
 
     <MealPlanListRS>
         <MealPlans>
@@ -82,8 +82,8 @@ MealPlanListRS Example
 
 
 
-MealPlanListRS Description
-==========================
+### MealPlanListRS Description
+
 
 
 

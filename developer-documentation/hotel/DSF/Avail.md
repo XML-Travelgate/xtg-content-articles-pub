@@ -6,23 +6,23 @@ permalink: /developer-documentation/hotel/DSF/Avail
 ---
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to return all the available options for a given date
 and itinerary. It does not filter different classes, times or fares. It
 will always return all results returned by the provider.
 
 
-Request Format
-==============
+### Request Format
+
 
 The availability request is very straight forward. It only requires
 destination, travel dates and the number of pax in each room.
 
 
-Response Format
-===============
+### Response Format
+
 
 Results are organized in this hierarchy:
 
@@ -48,8 +48,8 @@ discounts are included in the total price.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 This method **must** be called **before** the *Valuation* method.
 
@@ -58,8 +58,8 @@ is closed.
 
 
 
-AvailRQ Example
-===============
+### AvailRQ Example
+
 
     <AvailRQ>
         <CancellationPolicies>false</CancellationPolicies>
@@ -88,8 +88,8 @@ AvailRQ Example
 
 
 
-AvailRQ Description
-===================
+### AvailRQ Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**						|
@@ -115,8 +115,8 @@ AvailRQ Description
 
 
 
-AvailRS Example
-===============
+### AvailRS Example
+
 
 
     <AvailRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
@@ -273,8 +273,8 @@ AvailRS Example
 
 
 
-Detailed description
-====================
+### Detailed description
+
 
 **BusinessRules:**
 
@@ -308,8 +308,8 @@ Currently, the client can configure the following BusinessRules:
 
 
 
-AvailRS Description
-===================
+### AvailRS Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**						|
@@ -410,8 +410,8 @@ AvailRS Description
 
 
 
-Detailed description
-====================
+### Detailed description
+
 
 **Price, binding price and commission:**
 
@@ -506,7 +506,7 @@ response, provided that the parameter \<CancellationPolicies\> is set as
 true in the request and that the provider supplies this information in
 the availability call.
 
-|
+
 
 **On Request:**
 

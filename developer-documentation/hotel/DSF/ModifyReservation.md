@@ -7,37 +7,37 @@ permalink: /developer-documentation/hotel/DSF/ModifyReservation
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This message confirms a modification
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request requires the valuation returned for ModifyValuationRS
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The XML returned contains a booking confirmation
 
 
 
-Remarks
-=======
+### Remarks
+
 
 The maximum time, that is permitted in our system, before the connection
 is closed, is of **180000** milliseconds.
 
 
 
-ModifyReservationRQ Example
-===========================
+### ModifyReservationRQ Example
+
 
     <ModifyReservationRQ>
         <OnRequest>false</OnRequest>
@@ -108,8 +108,8 @@ ModifyReservationRQ Example
 
 
 
-ModifyReservationRQ Description
-===============================
+### ModifyReservationRQ Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**						|
@@ -185,8 +185,8 @@ ModifyReservationRQ Description
 
 
 
-ModifyReservationRS Example
-===========================
+### ModifyReservationRS Example
+
 
     <ModifyReservationRS>
         <ProviderLocator>XXXXXX</ProviderLocator>
@@ -199,8 +199,8 @@ ModifyReservationRS Example
 
 
 
-ModifyReservationRS Description
-===============================
+### ModifyReservationRS Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**						|

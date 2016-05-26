@@ -7,15 +7,15 @@ permalink: /developer-documentation/hotel/DSF/ReservationRead
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to retrieve a booking with its full details.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request requires one of the following data depending on provider:
 
@@ -29,8 +29,8 @@ The request requires one of the following data depending on provider:
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The result returns the full details of a booking. It is very similar to
 the *Option* in the Availability Response, the cancel policies and
@@ -38,16 +38,16 @@ holder of booking.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 The maximum time, that is permitted in our system, before the connection
 is closed, is of **180000** millisecond.
 
 
 
-ReservationReadRQ Example
-=========================
+### ReservationReadRQ Example
+
 
     <ReservationReadRQ>
         <Locators>
@@ -62,8 +62,8 @@ ReservationReadRQ Example
 
 
 
-ReservationReadRQ Description
-=============================
+### ReservationReadRQ Description
+
 
   
 | **Element** 		| **Number**	| **Type**	| **Description**					|
@@ -79,8 +79,8 @@ ReservationReadRQ Description
 
 
 
-ReservationReadRS Example
-=========================
+### ReservationReadRS Example
+
 
     <ReservationReadRS>
           <Locators>
@@ -114,8 +114,8 @@ ReservationReadRS Example
 
 
 
-ReservationReadRS Description
-=============================
+### ReservationReadRS Description
+
 
   
 | **Element**				| **Number**	| **Type**	| **Description**				|

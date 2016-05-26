@@ -7,39 +7,39 @@ permalink: /developer-documentation/hotel/DSF/ModifyValuation
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This message lets you know if it is possible a modify, and new price of
 that.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request require the reservation and all modifications will be apply
 ( these will depend on what is specified in the *StaticConfiguration* ).
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The XML returned contains a simulation of the new booking.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 The maximum time, that is permitted in our system, before the connection
 is closed, is of **180000** milliseconds.
 
 
 
-ModifyValuationRQ Example
-=========================
+### ModifyValuationRQ Example
+
 
     <ModifyValuationRQ>
         <OnRequest>false</OnRequest>
@@ -104,8 +104,8 @@ ModifyValuationRQ Example
 
 
 
-ModifyValuationRQ Description
-=============================
+### ModifyValuationRQ Description
+
 
 
 | **Element**					| **Number**	| **Type**	| **Description**					|
@@ -163,8 +163,8 @@ ModifyValuationRQ Description
 
 
 
-ModifyValuationRS Example
-=========================
+### ModifyValuationRS Example
+
 
     <ModifyValuationRS>
         <Status>OK</Status>
@@ -190,8 +190,8 @@ ModifyValuationRS Example
 
 
 
-ModifyValuationRS Description
-=============================
+### ModifyValuationRS Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**						|

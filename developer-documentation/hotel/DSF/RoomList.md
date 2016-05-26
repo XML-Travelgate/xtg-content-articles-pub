@@ -7,30 +7,30 @@ permalink: /developer-documentation/hotel/DSF/RoomList
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to return a list of the available rooms code, which
 will be used in the availability response.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request does not require any elements empty request.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The result returns a list of *RoomInfo*.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 The maximum time, that is permitted in our system, before the connection
 is closed, is of **240000** milliseconds.
@@ -41,8 +41,8 @@ the *StaticConfiguration* )
 
 
 
-RoomListRQ Example
-==================
+### RoomListRQ Example
+
 
 
 
@@ -51,8 +51,8 @@ RoomListRQ Example
 
 
 
-RoomListRQ Description
-======================
+### RoomListRQ Description
+
 
 
 | **Element**		| **Number**	| **Type**	| **Description**	|
@@ -62,8 +62,8 @@ RoomListRQ Description
 
 
 
-RoomListRS Example
-==================
+### RoomListRS Example
+
 
     <RoomListRS>
         <RoomsInfo>
@@ -82,8 +82,8 @@ RoomListRS Example
 
 
 
-RoomListRS Description
-======================
+### RoomListRS Description
+
 
 
 | **Element**		| **Number**	| **Type**	| **Description**	|
@@ -93,8 +93,8 @@ RoomListRS Description
 
 
 
-Detailed description
-====================
+### Detailed description
+
 
 **Room types & languages**
 

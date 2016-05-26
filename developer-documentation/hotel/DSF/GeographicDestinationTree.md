@@ -7,8 +7,8 @@ permalink: /developer-documentation/hotel/DSF/GeographicDestinationTree
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method returns the provider's geographic tree where each node
 indicates whether the call is accessible from availability which is
@@ -18,39 +18,39 @@ that GeographicalTree has this boolean parameter.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request not requires any element, it is empty.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The result returns a list of *DestinationTree* with corresponding
 sub-destinations.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 The maximum time, that is permitted in our system, before the connection
 is closed, is of **240000** milliseconds.
 
 
 
-GeographicDestinationTreeRQ Example
-===================================
+### GeographicDestinationTreeRQ Example
+
 
     <GeographicDestinationTreeRQ>
     </GeographicDestinationTreeRQ>
 
 
 
-GeographicDestinationTreeRQ Description
-=======================================
+### GeographicDestinationTreeRQ Description
+
 
 
 
@@ -60,8 +60,8 @@ GeographicDestinationTreeRQ Description
 
 
 
-GeographicDestinationTreeRS Example
-===================================
+### GeographicDestinationTreeRS Example
+
 
     <GeographicDestinationTreeRS>
         <DestinationTree code = "ES" name = "España" avail = "False">
@@ -89,8 +89,8 @@ GeographicDestinationTreeRS Example
 
 
 
-GeographicDestinationTreeRS Description
-=======================================
+### GeographicDestinationTreeRS Description
+
 
 
 
@@ -102,8 +102,8 @@ GeographicDestinationTreeRS Description
 
 
 
-Detailed description
-====================
+### Detailed description
+
 
     <GeographicDestinationTreeRS>
      <DestinationTree code = "ES" name = "España" avail = "False">
@@ -133,7 +133,7 @@ Detailed description
      <DestinationTree code = "SAR" name = "Son Sardina" avail = "false"/>
      <DestinationTree code = "IND" name = "Indioteria" avail = "false"/>
      . . .
-</GeographicDestinationTreeRS\>
+    </GeographicDestinationTreeRS>
 
 
 

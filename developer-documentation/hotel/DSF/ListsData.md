@@ -7,15 +7,15 @@ permalink: /developer-documentation/hotel/DSF/ListData
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This paragraph aims to describe all of our lists with data.
 
 
 
-Language Codes
-==============
+### Language Codes
+
 
 | **Language**	| **Code**	|
 | ------------- | ------------- |
@@ -29,8 +29,8 @@ Language Codes
 
 
 
-Error codes
-===========
+### Error codes
+
 
 
 | **Code**	| **Description**												|
@@ -47,16 +47,16 @@ Error codes
 
 
 
-Currency list
-=============
+### Currency list
+
 
 Most of providers use a standard ISO - 4217, but this depends of each
 supplier.
 
 
 
-Credit Cards
-============
+### Credit Cards
+
 
 
 | **Codes**	| **Names**			|
@@ -87,15 +87,15 @@ Credit Cards
 
 
 
-Nationality
-===========
+### Nationality
+
 
 We use a standard ISO - 3166_1_alfa_2.
 
 
 
-Markets
-=======
+### Markets
+
 
 Most of providers use a standard ISO - 3166_1_alfa_2, but this
 depends of each supplier.

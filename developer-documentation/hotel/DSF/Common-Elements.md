@@ -16,8 +16,8 @@ The response object contains the operation status and errors if any.
 
 
 
-Common Elements RQ Example
-==========================
+### Common Elements RQ Example
+
 
     <HotelBaseRQ>
         <echoToken>TEST</echoToken>
@@ -47,8 +47,8 @@ Common Elements RQ Example
 
 
 
-Common Elements RQ Description
-==============================
+### Common Elements RQ Description
+
 
 
 | **Element**                          | **Number** | **Type** | **Description** |
@@ -78,8 +78,8 @@ Common Elements RQ Description
 
 
 
-Detailed description
-====================
+### Detailed description
+
 
 **optionsQuota:**
 
@@ -99,8 +99,8 @@ affected.
 
 
 
-Common Elements RS Example
-==========================
+### Common Elements RS Example
+
 
     <HotelBaseRS>
         <echoToken>TEST</echoToken>
@@ -127,8 +127,8 @@ Common Elements RS Example
 
 
 
-Common Elements RS Description
-==============================
+### Common Elements RS Description
+
 
 | **Element**                       | **Number** | **Type** | **Description**|
 | --------------------------------- | ---------- | -------- | -------------- |
@@ -151,8 +151,8 @@ Common Elements RS Description
 
 
 
-Detailed description
-====================
+### Detailed description
+
 
 **ContinuationToken:**
 

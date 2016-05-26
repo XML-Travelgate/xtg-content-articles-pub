@@ -7,22 +7,22 @@ permalink: /developer-documentation/hotel/DSF/DescriptiveInfoExtended
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method returns all the hotel information from the provider.
 
 It allows you to map each hotel from the provider with your own
 criteria.
 
-With the combination of contextItem\_ plus data\_ you will have the
+With the combination of contextItem_ plus data_ you will have the
 information (extracted from provider's documentation hierachy / fields
 descriptions ) required to do it.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 In addition to the hotel code, you can set language filters.
 
@@ -42,16 +42,16 @@ filters to see which languages are available by the provider*
 
 
 
-Remarks
-=======
+### Remarks
+
 
 The maximum time before the connection gets closed, is of **180000**
 milliseconds.
 
 
 
-DescriptiveInfoExtendedRQ Example
-=================================
+### DescriptiveInfoExtendedRQ Example
+
 
     <DescriptiveInfoExtendedRQ>
         <timeoutMilliseconds>180000</timeoutMilliseconds>
@@ -68,8 +68,8 @@ DescriptiveInfoExtendedRQ Example
 
 
 
-DescriptiveInfoExtendedRQ Description
-=====================================
+### DescriptiveInfoExtendedRQ Description
+
 
 
 
@@ -83,8 +83,8 @@ DescriptiveInfoExtendedRQ Description
 
 
 
-DescriptiveInfoExtendedRS Example
-=================================
+### DescriptiveInfoExtendedRS Example
+
 
 ~~~
 
@@ -869,8 +869,8 @@ DescriptiveInfoExtendedRS Example
 
 
 
-DescriptiveInfoExtendedRS Description
-=====================================
+### DescriptiveInfoExtendedRS Description
+
 
 
 
@@ -937,8 +937,8 @@ DescriptiveInfoExtendedRS Description
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The result returns the details of the hotel requested:
 
@@ -953,8 +953,8 @@ The result returns the details of the hotel requested:
 
 
 
-Hotel Summary
-=============
+### Hotel Summary
+
 
 Typified hotel information from the provider.
 
@@ -983,8 +983,8 @@ Typified hotel information from the provider.
 
 
 
-Room Summary
-============
+### Room Summary
+
 
 Typified room information from the provider.
 
@@ -1011,8 +1011,8 @@ Name example:
 
 
 
-Attributes
-==========
+### Attributes
+
 
 
 
@@ -1107,8 +1107,8 @@ Example:
 
 
 
-Descriptions
-============
+### Descriptions
+
 
 
 
@@ -1212,8 +1212,8 @@ Example:
 
 
 
-Medias
-======
+### Medias
+
 
 
 
@@ -1577,8 +1577,8 @@ HotelImage#supplierId = 13
 
 
 
-contextItem
-===========
+### ContextItem
+
 
 
 
@@ -1619,8 +1619,8 @@ same context)
 
 
 
-data
-====
+### Data
+
 
 
 
@@ -1661,8 +1661,8 @@ There will be only 1 value element with languageCode set as "" or not being retu
 
 
 
-text
-====
+### Text
+
 
 
 

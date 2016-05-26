@@ -7,37 +7,37 @@ permalink: /developer-documentation/hotel/DSF/RuntimeConfiguration
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This message lets you know the provider configuration template.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request does not require any elements empty request.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The returned XML contains a template of all fields used by the provider.
 
 
 
-RuntimeConfigurationRQ Example
-==============================
+### RuntimeConfigurationRQ Example
+
 
     <RuntimeConfigurationRQ>
     </RuntimeConfigurationRQ>
 
 
 
-RuntimeConfigurationRQ Description
-==================================
+### RuntimeConfigurationRQ Description
+
 
 
 | **Element**			| **Number**	| **Type**	| **Description**	|
@@ -47,8 +47,8 @@ RuntimeConfigurationRQ Description
 
 
 
-RuntimeConfigurationRS Example
-==============================
+### RuntimeConfigurationRS Example
+
 
     <RuntimeConfigurationRS>
         <Configuration>
@@ -63,8 +63,8 @@ RuntimeConfigurationRS Example
 
 
 
-ConfiguracionRunTimeRS Description
-==================================
+### ConfiguracionRunTimeRS Description
+
 
  
 | **Element**			| **Number**	| **Type**	| **Description**			|

@@ -7,39 +7,39 @@ permalink: /developer-documentation/hotel/DSF/DescriptiveInfo
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method returns the details of a hotel (pictures, descriptions ...)
 for a given language.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request just requires the hotel code and language code (ISO-639-1) (
 this is specified within the source--\>languageCode).
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The result returns the details of that hotel.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 The maximum time permitted in our system before the connection is closed
 is **180000** milliseconds.
 
 
 
-DescriptiveInfoRQ Example
-=========================
+### DescriptiveInfoRQ Example
+
 
     <DescriptiveInfoRQ>
         <Hotel>
@@ -49,8 +49,8 @@ DescriptiveInfoRQ Example
 
 
 
-DescriptiveInfoRQ Description
-=============================
+### DescriptiveInfoRQ Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
@@ -62,8 +62,8 @@ DescriptiveInfoRQ Description
 
 
 
-DescriptiveInfoRS Example
-=========================
+### DescriptiveInfoRS Example
+
 
 
     <DescriptiveInfoRS>
@@ -183,8 +183,8 @@ DescriptiveInfoRS Example
 
 
 
-DescriptiveInfoRS Description
-=============================
+### DescriptiveInfoRS Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**						|
