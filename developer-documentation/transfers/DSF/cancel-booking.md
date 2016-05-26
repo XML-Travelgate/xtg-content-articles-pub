@@ -7,15 +7,15 @@ permalink: /developer-documentation/transfers/DSF/cancel-booking
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to cancel a booking.
 
 
 
-CancelBookingRQ Example
-=======================
+### CancelBookingRQ Example
+
 
     <CancelBookingRQ>
     <timeoutMilliseconds>XXXX</timeoutMilliseconds>
@@ -43,8 +43,8 @@ CancelBookingRQ Example
 
 
 
-CancelBookingRQ Description
-===========================
+### CancelBookingRQ Description
+
 
 
 
@@ -54,8 +54,8 @@ CancelBookingRQ Description
 
 
 
-CancelBookingRS Example
-=======================
+### CancelBookingRS Example
+
 
 
     <CancelBookingRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
@@ -97,8 +97,8 @@ CancelBookingRS Example
 
 
 
-GetTransferTypesRS Description
-==============================
+### GetTransferTypesRS Description
+
 
 | **Element**				| **Number**	| **Type**	| **Description**						|
 | ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |

@@ -7,18 +7,18 @@ permalink: /developer-documentation/transfers/DSF/GetTransferTypes
 
 
 
-Method Goals
-============
+### Method Goals
 
 
 
-Remarks
-=======
+
+### Remarks
 
 
 
-GetTransferTypesRQ Example
-==========================
+
+### GetTransferTypesRQ Example
+
 
     <GetTransferTypesRQ>
         <timeoutMilliseconds>60000</timeoutMilliseconds>
@@ -38,8 +38,8 @@ GetTransferTypesRQ Example
 
 
 
-GetTransferTypesRQ Description
-==============================
+### GetTransferTypesRQ Description
+
 
 
 
@@ -49,8 +49,8 @@ GetTransferTypesRQ Description
 
 
 
-GetTransferTypesRS Example
-==========================
+### GetTransferTypesRS Example
+
 
     <GetTransferTypesRS>
         <auditData>
@@ -72,8 +72,8 @@ GetTransferTypesRS Example
 
 
 
-GetTransferTypesRS Description
-==============================
+### GetTransferTypesRS Description
+
 
 
 

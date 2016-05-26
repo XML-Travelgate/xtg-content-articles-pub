@@ -7,21 +7,21 @@ permalink: /developer-documentation/transfers/DSF/GetSupplierRateTransfersTypes
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to retrieve a list of the suppliers including their
 rates.
 
 
 
-Remarks
-=======
+### Remarks
 
 
 
-GetSupplierRateTransfersTypesRQ Example
-=======================================
+
+#### GetSupplierRateTransfersTypesRQ Example
+
 
     <GetSupplierRateTransferTypesRQ>
     <timeoutMilliseconds>60000</timeoutMilliseconds>
@@ -41,8 +41,8 @@ GetSupplierRateTransfersTypesRQ Example
 
 
 
-GetSuppliersRateTransfersTypesRQ Description
-============================================
+### GetSuppliersRateTransfersTypesRQ Description
+
 
 
 
@@ -52,8 +52,8 @@ GetSuppliersRateTransfersTypesRQ Description
 
 
 
-GetSupplierRateTransfersTypesRS Example
-=======================================
+### GetSupplierRateTransfersTypesRS Example
+
 
     <GetSupplierRateTransferTypesRS>
     <auditData>
@@ -89,8 +89,8 @@ GetSupplierRateTransfersTypesRS Example
 
 
 
-GetSupplierRateTransfersTypesRS Description
-===========================================
+### GetSupplierRateTransfersTypesRS Description
+
 
 
 

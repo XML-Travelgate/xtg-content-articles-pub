@@ -7,23 +7,23 @@ permalink: /developer-documentation/transfers/DSF/avail
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to return all the available options for a given dates
 and destinations.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 This method **must** be called **before** the RateRule method.
 
 
 
-AvailabilityRQ Example
-======================
+### AvailabilityRQ Example
+
 
 
 
@@ -85,8 +85,8 @@ AvailabilityRQ Example
 
 
 
-AvailabilityRQ Description
-==========================
+### AvailabilityRQ Description
+
 
 The availability request is very straight forward. It only requires a
 list of segments and a list of passengers. Each segment represents the
@@ -129,8 +129,8 @@ and HotelInfo object.
 
 
 
-AvailabilityRS Example
-======================
+### AvailabilityRS Example
+
 
 
 
@@ -224,8 +224,8 @@ AvailabilityRS Example
 
 
 
-AvailabilityRS Description
-==========================
+### AvailabilityRS Description
+
 
 The response of this method will contain a list of transfers and a list
 of rates. The transfer object contains information related to the

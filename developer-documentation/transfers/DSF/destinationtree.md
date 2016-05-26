@@ -7,16 +7,16 @@ permalink: /developer-documentation/transfers/DSF/destionationtree
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to return all the available destinations for the
 selected carrier.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 This method should be cached internally and only called once a week and
 in most cases once a month. The hierarchically structure of the tree is
@@ -24,8 +24,8 @@ defined by the provider.
 
 
 
-DestinationsTreeRQ Example
-==========================
+### DestinationsTreeRQ Example
+
 
 
 
@@ -53,8 +53,8 @@ DestinationsTreeRQ Example
 
 
 
-DestinationsTreeRQ Description
-==============================
+### DestinationsTreeRQ Description
+
 
 The request just contains the elements of BaseRQ.
 
@@ -64,8 +64,8 @@ The request just contains the elements of BaseRQ.
 
 
 
-DestinationsTreeRS Example
-==========================
+### DestinationsTreeRS Example
+
 
 
 
@@ -110,8 +110,8 @@ DestinationsTreeRS Example
 
 
 
-DestinationsTreeRS Description
-==============================
+### DestinationsTreeRS Description
+
 
 The response returns a list of Destination with a code that identifies
 it in the provider's system. The Destination object also contains a list

@@ -7,21 +7,21 @@ permalink: /developer-documentation/transfers/DSF/GetSupplements
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to retrieve a list of the supplements that can be added
 to a product.
 
 
 
-Remarks
-=======
+### Remarks
 
 
 
-GetSupplementsRQ Example
-========================
+
+### GetSupplementsRQ Example
+
 
     <GetSupplementsRQ>
         <timeoutMilliseconds>60000</timeoutMilliseconds>
@@ -41,8 +41,8 @@ GetSupplementsRQ Example
 
 
 
-GetSupplementsRQ Description
-============================
+### GetSupplementsRQ Description
+
 
 
 
@@ -52,8 +52,8 @@ GetSupplementsRQ Description
 
 
 
-GetSupplementsRS Example
-========================
+### GetSupplementsRS Example
+
 
     <GetSupplementsRS>
         <auditData>
@@ -73,8 +73,8 @@ GetSupplementsRS Example
 
 
 
-GetSupplementsRS Description
-============================
+### GetSupplementsRS Description
+
 
 
 

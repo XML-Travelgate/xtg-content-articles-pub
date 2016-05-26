@@ -7,18 +7,18 @@ permalink: /developer-documentation/transfers/DSF/GetSupplierTransferTypes
 
 
 
-Method Goals
-============
+### Method Goals
 
 
 
-Remarks
-=======
+
+### Remarks
 
 
 
-GetSupplierTransferTypesRQ Example
-==================================
+
+### GetSupplierTransferTypesRQ Example
+
 
     <GetSupplierTransferTypesRQ>
         <timeoutMilliseconds>60000</timeoutMilliseconds>
@@ -38,8 +38,8 @@ GetSupplierTransferTypesRQ Example
 
 
 
-GetSupplierTransferTypesRQ Description
-======================================
+### GetSupplierTransferTypesRQ Description
+
 
 
 
@@ -49,8 +49,8 @@ GetSupplierTransferTypesRQ Description
 
 
 
-GetSupplierTransferTypesRS Example
-==================================
+### GetSupplierTransferTypesRS Example
+
 
     <GetSupplierTransferTypesRS>
         <auditData>
@@ -87,8 +87,8 @@ GetSupplierTransferTypesRS Example
 
 
 
-GetSupplierTransferTypesRS Description
-======================================
+### GetSupplierTransferTypesRS Description
+
 
 
 

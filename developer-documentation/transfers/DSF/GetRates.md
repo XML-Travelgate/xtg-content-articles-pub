@@ -7,20 +7,20 @@ permalink: /developer-documentation/transfers/DSF/GetRates
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to retrieve a list of the rates that can be booked.
 
 
 
-Remarks
-=======
+### Remarks
 
 
 
-GetRatesRQ Example
-==================
+
+### GetRatesRQ Example
+
 
     <GetRatesRQ>
         <timeoutMilliseconds>60000</timeoutMilliseconds>
@@ -40,8 +40,8 @@ GetRatesRQ Example
 
 
 
-GetRatesRQ Description
-======================
+### GetRatesRQ Description
+
 
 The request just contains the elements of BaseRQ.
 
@@ -51,8 +51,8 @@ The request just contains the elements of BaseRQ.
 
 
 
-GetRatesRS Example
-==================
+### GetRatesRS Example
+
 
     <GetRatesRS>
         <auditData>
@@ -82,8 +82,8 @@ GetRatesRS Example
 
 
 
-GetRatesRS Description
-======================
+### GetRatesRS Description
+
 
  
 

@@ -6,8 +6,8 @@ permalink: /developer-documentation/transfers/DSF/hotel-list
 ---
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to retrieve a list of the hotels that can be used as a
 destination in the provider's system. The information details is
@@ -15,8 +15,8 @@ provided by the provider.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 This method should be cached internally and only called once a week and
 in most cases once a month. The information details is provided by the
@@ -24,8 +24,8 @@ provider.
 
 
 
-HotelListRQ Example
-===================
+### HotelListRQ Example
+
 
 
     <HotelListRQ xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
@@ -54,8 +54,8 @@ HotelListRQ Example
 
 
 
-HotelListRQ Description
-=======================
+### HotelListRQ Description
+
 
 The request just contains the elements of BaseRQ.
 
@@ -65,8 +65,8 @@ The request just contains the elements of BaseRQ.
 
 
 
-HotelListRS Example
-===================
+### HotelListRS Example
+
 
 
 
@@ -107,8 +107,8 @@ HotelListRS Example
 
 
 
-HotelListRS Description
-=======================
+### HotelListRS Description
+
 
 The result returns a list of the hotels that can be used as a
 destination in the provider's system. Each of the retrieved Hotel

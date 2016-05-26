@@ -7,15 +7,15 @@ permalink: /developer-documentation/transfers/DSF/retrieve-booking
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to Retrieve Booking details.
 
 
 
-RetrieveBookingRQ Example
-=========================
+### RetrieveBookingRQ Example
+
 
 
 
@@ -45,8 +45,8 @@ RetrieveBookingRQ Example
 
 
 
-RetrieveBookingRQ Description
-=============================
+### RetrieveBookingRQ Description
+
 
 The request format works the same way as the Book response. the main
 difference is that only contains the locator of the provider's system.
@@ -62,8 +62,8 @@ difference is that only contains the locator of the provider's system.
 
 
 
-RetrieveBookingRS Example
-=========================
+### RetrieveBookingRS Example
+
 
 
 
@@ -142,8 +142,8 @@ RetrieveBookingRS Example
 
 
 
-RetrieveBookingRS Description
-=============================
+### RetrieveBookingRS Description
+
 
 The response format works the same way as the RateRule reponse. The main
 difference is that we return the ReservationStatus.

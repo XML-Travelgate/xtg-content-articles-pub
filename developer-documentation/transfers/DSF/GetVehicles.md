@@ -7,21 +7,21 @@ permalink: /developer-documentation/transfers/DSF/GetVehicles
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to retrieve a list of the vehicles that operate the
 transfers.
 
 
 
-Remarks
-=======
+### Remarks
 
 
 
-GetVehiclesRQ Example
-=====================
+
+### GetVehiclesRQ Example
+
 
     <GetVehiclesRQ>
         <timeoutMilliseconds>60000</timeoutMilliseconds>
@@ -41,8 +41,8 @@ GetVehiclesRQ Example
 
 
 
-GetVehiclesRQ Description
-=========================
+### GetVehiclesRQ Description
+
 
 
 
@@ -52,8 +52,8 @@ GetVehiclesRQ Description
 
 
 
-GetVehiclesRS Example
-=====================
+### GetVehiclesRS Example
+
 
     <GetVehiclesRS>
         <auditData>
@@ -74,8 +74,8 @@ GetVehiclesRS Example
 
 
 
-GetVehiclesRS Description
-=========================
+### GetVehiclesRS Description
+
 
 
 

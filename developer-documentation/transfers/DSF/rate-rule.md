@@ -7,8 +7,8 @@ permalink: /developer-documentation/transfers/DSF/rate-rule
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to return price of the SelectedOptions . This options
 **must** be selected in the previous step ( Availability ).
@@ -18,8 +18,8 @@ chosen transfers.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 Some suppliers do not provide this method. If this is the case, our
 integration will internally call an Availability method and will filter
@@ -27,8 +27,8 @@ the results in order to refresh the information and produce a RateRuleRS.
 
 
 
-RateRule RQ Example
-===================
+### RateRule RQ Example
+
 
 
 
@@ -119,8 +119,8 @@ RateRule RQ Example
 
 
 
-RateRule RQ Description
-=======================
+### RateRule RQ Description
+
 
 The RateRule request requires the following information:
 
@@ -153,8 +153,8 @@ The RateRule request requires the following information:
 
 
 
-RateRuleRS Example
-==================
+### RateRuleRS Example
+
 
 
 
@@ -232,8 +232,8 @@ RateRuleRS Example
 
 
 
-RateRuleRS Description
-======================
+### RateRuleRS Description
+
 
 The returned XML is similar to the result of the Availability call. The
 main difference is that instead of receiving Rates the client receives a

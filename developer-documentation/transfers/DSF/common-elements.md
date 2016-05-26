@@ -14,8 +14,8 @@ The response object contains the operation status and errors if any.
 
 
 
-Common Elements RQ Example
-==========================
+### Common Elements RQ Example
+
 
 
 
@@ -49,8 +49,8 @@ Common Elements RQ Example
 
 
 
-Common Elements RQ Description
-==============================
+### Common Elements RQ Description
+
 
  
 
@@ -82,8 +82,8 @@ Common Elements RQ Description
 
 
 
-Common Elements RS Example
-==========================
+### Common Elements RS Example
+
 
 
 
@@ -113,8 +113,8 @@ Common Elements RS Example
 
 
 
-Common Elements RS Description
-==============================
+### Common Elements RS Description
+
 
  
   

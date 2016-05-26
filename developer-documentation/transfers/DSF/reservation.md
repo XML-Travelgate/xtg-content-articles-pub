@@ -7,15 +7,15 @@ permalink: /developer-documentation/transfers/DSF/reservation
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to book the selected options.
 
 
 
-BookRQ Example
-==============
+### BookRQ Example
+
 
 
 
@@ -90,8 +90,8 @@ BookRQ Example
 
 
 
-BookRQ Description
-==================
+### BookRQ Description
+
 
 The request format works the same way as the RateRule request. The main
 difference is that the passengers also include name and surname
@@ -124,8 +124,8 @@ always CLIENT).
 
 
 
-BookRS Example
-==============
+### BookRS Example
+
 
 
 
@@ -158,8 +158,8 @@ BookRS Example
 
 
 
-BookRS Description
-==================
+### BookRS Description
+
 
 The result returns a list of Locator (booking codes) the pricing of the
 reservation and the reservation status, Also we added important but not
