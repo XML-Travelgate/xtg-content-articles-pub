@@ -10,8 +10,8 @@ Providers).
 
 
 
-HotelRatePlanInventoryRetrieve
-==============================
+### HotelRatePlanInventoryRetrieve
+
 
 Providers will send an HotelRatePlanInventoryRetrieveRQ message to
 retrieve a list of hotels, rates and rooms and their configurations. XTG
@@ -19,8 +19,8 @@ will return a list of all active rooms and configurations.
 
 
 
-HotelRatePlanInventoryRetrieveRQ
-================================
+### HotelRatePlanInventoryRetrieveRQ
+
 
 
 
@@ -60,8 +60,8 @@ HotelRatePlanInventoryRetrieveRQ
 
 
 
-HotelRatePlanInventoryRetrieveRS
-================================
+### HotelRatePlanInventoryRetrieveRS
+
 
 **Example for RatePlan**
 
@@ -318,8 +318,8 @@ occupancies. STD2 room has 2 possible occupations: 2 adults + 1 child or
 
 
 
-HotelRatePlanRetrieve
-=====================
+### HotelRatePlanRetrieve
+
 
 Providers will send an HotelRatePlanRetrieveRQ message to retrieve a
 complete break down of rates. XTG will return break down of hotel /
@@ -327,8 +327,8 @@ rates / rooms.
 
 
 
-HotelRatePlanRetrieveRQ
-=======================
+### HotelRatePlanRetrieveRQ
+
 
 
 
@@ -376,8 +376,8 @@ HotelRatePlanRetrieveRQ
 
 
 
-HotelRatePlanRetrieveRS
-=======================
+### HotelRatePlanRetrieveRS
+
 
 **Example for RatePlan**
 
@@ -603,8 +603,8 @@ rates have associated all the rooms from the base rate plan.
 
 
 
-HotelAvailRetrieve
-==================
+### HotelAvailRetrieve
+
 
 Providers will send an HotelAvailRetrieveRQ message to retrieve a
 complete break down of availability. XTG will return break down of hotel
@@ -612,8 +612,8 @@ complete break down of availability. XTG will return break down of hotel
 
 
 
-HotelAvailRetrieveRQ
-====================
+### HotelAvailRetrieveRQ
+
 
 
 
@@ -662,8 +662,8 @@ HotelAvailRetrieveRQ
 
 
 
-HotelAvailRetrieveRS
-====================
+### HotelAvailRetrieveRS
+
 
 **Example for RatePlan**
 
@@ -768,16 +768,16 @@ HotelAvailRetrieveRS
 
 
 
-HotelResRetrieve
-================
+### HotelResRetrieve
+
 
 Providers will send an HotelResRetrieveRQ message to retrieve a list of
 seller reservations.
 
 
 
-HotelResRetrieveRQ
-==================
+### HotelResRetrieveRQ
+
 
 
 
@@ -821,8 +821,8 @@ HotelResRetrieveRQ
 
 
 
-HotelResRetrieveRS
-==================
+### HotelResRetrieveRS
+
 
 
 

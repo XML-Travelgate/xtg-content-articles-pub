@@ -7,8 +7,8 @@ permalink: /developer-documentation/hotel-push/full-files/full-retrieve-messages
 
 
 
-Full HotelRatePlanInventoryRetrieveRQ
-=====================================
+### Full HotelRatePlanInventoryRetrieveRQ
+
 
 
 
@@ -47,8 +47,8 @@ Full HotelRatePlanInventoryRetrieveRQ
 
 
 
-Full HotelRatePlanInventoryRetrieveRS
-=====================================
+### Full HotelRatePlanInventoryRetrieveRS
+
 
 
 
@@ -318,8 +318,8 @@ Full HotelRatePlanInventoryRetrieveRS
 
 
 
-Full HotelRatePlanRetrieveRQ
-============================
+### Full HotelRatePlanRetrieveRQ
+
 
 
 
@@ -359,8 +359,8 @@ Full HotelRatePlanRetrieveRQ
 
 
 
-Full HotelRatePlanRetrieveRS
-============================
+### Full HotelRatePlanRetrieveRS
+
 
 
 
@@ -544,8 +544,8 @@ Full HotelRatePlanRetrieveRS
 
 
 
-Full HotelAvailRetrieveRQ
-=========================
+### Full HotelAvailRetrieveRQ
+
 
 
 
@@ -585,8 +585,8 @@ Full HotelAvailRetrieveRQ
 
 
 
-Full HotelAvailRetrieveRS
-=========================
+### Full HotelAvailRetrieveRS
+
 
 
 

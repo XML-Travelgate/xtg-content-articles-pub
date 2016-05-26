@@ -7,8 +7,8 @@ permalink: /developer-documentation/hotel-push/code-lists
 
 
 
-Error Codes
-===========
+### Error Codes
+
 
 
 
@@ -26,8 +26,8 @@ Error Codes
 
 
 
-Meal Plan Codes (OTA MPT)
-=========================
+### Meal Plan Codes (OTA MPT)
+
 
 
 
@@ -56,8 +56,8 @@ Meal Plan Codes (OTA MPT)
 
 
 
-Payment Type Codes
-==================
+### Payment Type Codes
+
 
  
 
@@ -70,8 +70,8 @@ Payment Type Codes
 
 
 
-Credit Cards
-============
+### Credit Cards
+
 
  
 

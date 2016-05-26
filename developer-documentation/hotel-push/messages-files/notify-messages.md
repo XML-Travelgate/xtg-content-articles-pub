@@ -9,16 +9,16 @@ Providers sends data to Sellers (Negotiation is started by Providers).
 
 
 
-HotelRatePlanNotif
-==================
+### HotelRatePlanNotif
+
 
 Provider will send an HotelRatePlanNotifRQ message to push Rates to
 seller. XTG will process data and response with error code if needed.
 
 
 
-HotelRatePlanNotifRQ
-====================
+### HotelRatePlanNotifRQ
+
 
 **Example for RatePlan**
 
@@ -601,8 +601,8 @@ The price of 2 adults, 0 child and 1 baby will be 80.
 
 
 
-HotelRatePlanNotifRS
-====================
+### HotelRatePlanNotifRS
+
 
 Success Response
 
@@ -630,16 +630,16 @@ Error Response
 
 
 
-HotelAvailNotif
-===============
+### HotelAvailNotif
+
 
 Provider will send an HotelAvailNotifRQ message to push availabilities
 to seller. XTG will process data and response with error code if needed.
 
 
 
-HotelAvailNotifRQ
-=================
+### HotelAvailNotifRQ
+
 
 **Example for RatePlan**
 
@@ -753,8 +753,8 @@ HotelAvailNotifRQ
 
 
 
-HotelAvailNotifRS
-=================
+### HotelAvailNotifRS
+
 
 Success Response
 
@@ -782,8 +782,8 @@ Error Response
 
 
 
-Error Codes
-===========
+### Error Codes
+
 
 
 

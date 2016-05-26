@@ -26,7 +26,7 @@ Standard occupancy is used to calculate prices above it:
 
 For example, if the standard occupancy is 2. And it’s loaded...
 
-:
+
 
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>

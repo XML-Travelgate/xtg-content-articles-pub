@@ -7,8 +7,8 @@ permalink: /developer-documentation/hotel-push/full-files/full-notif-messages
 
 
 
-Full HotelRatePlanNotifRQ
-=========================
+### Full HotelRatePlanNotifRQ
+
 
 
 
@@ -65,8 +65,8 @@ Full HotelRatePlanNotifRQ
 
 
 
-Full HotelRatePlanNotifRS
-=========================
+### Full HotelRatePlanNotifRS
+
 
 
 
@@ -90,8 +90,8 @@ Full HotelRatePlanNotifRS
 
 
 
-Full HotelAvailNotifRQ
-======================
+### Full HotelAvailNotifRQ
+
 
 
 
@@ -158,8 +158,8 @@ Full HotelAvailNotifRQ
 
 
 
-Full HotelAvailNotifRS
-======================
+### Full HotelAvailNotifRS
+
 
 
 
