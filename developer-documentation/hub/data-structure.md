@@ -45,10 +45,10 @@ empty response will be returned for this specific supplier.
 
 Please, check Hub Quotas for some limitations to requests.
 
-|
 
-Availability RQ Example
-=======================
+
+### Availability RQ Example
+
 
 
 
@@ -89,8 +89,8 @@ Availability RQ Example
 
 
 
-Availability RQ Description
-===========================
+### Availability RQ Description
+
 
 
 
@@ -109,8 +109,8 @@ Availability RQ Description
  
 
 
-Availability RS Example
-=======================
+### Availability RS Example
+
 
 
 
@@ -200,8 +200,8 @@ Availability RS Example
 
 
 
-Availability RS Description
-===========================
+### Availability RS Description
+
 
 
 
@@ -218,8 +218,8 @@ Availability RS Description
 
 
 
-Other Calls
-===========
+### Other Calls
+
 
 All other API calls only support one provider per transaction.
 

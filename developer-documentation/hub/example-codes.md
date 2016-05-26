@@ -5,8 +5,8 @@ sidebar: mydoc_sidebar
 permalink: /developer-documentation/hub/example-codes
 ---
 
-Visual Basic .NET Example
-=========================
+### Visual Basic .NET Example
+
 
 ~~~
 Imports System.Net
@@ -113,8 +113,8 @@ End Module
 
 
 
-C# Example
-===========
+### C# Example
+
 
 ~~~
 using Microsoft.VisualBasic;
@@ -224,8 +224,8 @@ namespace ClientC
 
 
 
-Java
-====
+### Java
+
 
 ~~~
 
@@ -415,8 +415,8 @@ public class HotelServiceSOAPSecurityHandler implements SOAPHandler<SOAPMessageC
 
 
 
-PHP
-===
+### PHP
+
 
 ### Hotel - Service HotelBatch - HotelList Method
 

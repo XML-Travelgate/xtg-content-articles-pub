@@ -1,1 +1,0 @@
-# xtg-content-articles-pub
