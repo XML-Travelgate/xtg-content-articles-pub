@@ -7,15 +7,15 @@ permalink: /developer-documentation/transportation/DSF/ferries/reservation
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to book one or more itineraries.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request format works the same way as the Valuation request. It can
 work with one Itinerary or with two.
@@ -24,8 +24,8 @@ This request also holds the passengers and payment data.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The result returns a list of Locator (booking codes). It can be the
 supplier's or the one sent in the request. It also returns all the
@@ -33,13 +33,13 @@ charges associated to the booking.
 
 
 
-Remarks
-=======
+### Remarks
 
 
 
-ReservationRQ
-=============
+
+### ReservationRQ
+
 
 
 
@@ -197,8 +197,8 @@ ReservationRQ
 
 
 
-ReservationRQ Description
-=========================
+### ReservationRQ Description
+
 
 
 | **Element**					| **Number**	| **Type**	| **Description**					|
@@ -333,8 +333,8 @@ ReservationRQ Description
 
 
 
-ReservationRS
-=============
+### ReservationRS
+
 
 
 
@@ -366,8 +366,8 @@ ReservationRS
 
 
 
-ReservationRS Description
-=========================
+### ReservationRS Description
+
 
 
 | **Element**					| **Number**	| **Type**	| **Description**					|

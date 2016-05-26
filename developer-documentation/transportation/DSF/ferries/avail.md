@@ -7,8 +7,8 @@ permalink: /developer-documentation/transportation/DSF/ferries/avail
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to complete the common side of the petition with the
 ferries specifications, if any, and therefore have the complete petition
@@ -16,23 +16,23 @@ for ferries.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request needs a list of journeys (each one with the desired dates
 and ports), a list of the passengers and an optional vehicle list.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The response contains a list of fares with the available options.
 
 
 
-AvailabilityRQ
-==============
+### AvailabilityRQ
+
 
 
     <AvailabilityRQ xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" travelType = "RT">
@@ -56,10 +56,10 @@ AvailabilityRQ
         </Vehicles>
     </AvailabilityRQ>
 
-|
 
-AvailabilityRQ Description
-==========================
+
+### AvailabilityRQ Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**					|
@@ -99,8 +99,8 @@ AvailabilityRQ Description
 
 
 
-AvailabilityRS
-==============
+### AvailabilityRS
+
 
     <AvailabilityRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
     <operationImplemented>true</operationImplemented>
@@ -329,8 +329,8 @@ AvailabilityRS
 
 
 
-AvailabilityRS Description
-==========================
+### AvailabilityRS Description
+
 
 
 | **Element**					| **Number**	| **Type**	| **Description**					|

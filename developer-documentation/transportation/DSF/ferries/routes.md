@@ -7,23 +7,23 @@ permalink: /developer-documentation/transportation/DSF/ferries/routes
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to return all the available routes for the selected
 carrier.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 This request does not require any parameters.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The result returns a list of Route with the corresponding time frame in
 which this route is valid.
@@ -35,8 +35,8 @@ week and in most cases once a month.
 
 
 
-RoutesRQ Example
-================
+### RoutesRQ Example
+
 
 
 
@@ -45,8 +45,8 @@ RoutesRQ Example
 
 
 
-RoutesRQ Description
-====================
+### RoutesRQ Description
+
 
 
 | **Element**		| **Number**	| **Type**	| **Description**	|
@@ -55,8 +55,8 @@ RoutesRQ Description
 
 
 
-RutasRS Example
-===============
+### RutasRS Example
+
 
 
 
@@ -89,8 +89,8 @@ RutasRS Example
 
 
 
-RutasRS Description
-===================
+### RutasRS Description
+
 
 
 | **Element**                        	| **Number** 	| **Type** 	| **Description**                 			|

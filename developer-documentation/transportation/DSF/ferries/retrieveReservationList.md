@@ -7,29 +7,29 @@ permalink: /developer-documentation/transportation/DSF/ferries/retrieveReservati
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to return a list of bookings for a given time period
 being that either booking date or the travelling date.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request requires a date (of reservation or departure) and all the
 bookings that match this date will be returned.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The response contains a list of bookings that match the requested date.
 
-RetrieveReservationListRQ Example
-=================================
+### RetrieveReservationListRQ Example
+
 
 
 
@@ -44,10 +44,10 @@ RetrieveReservationListRQ Example
         <AgencyCode></AgencyCode>
     </RetrieveReservationListRQ>
 
-|
 
-RetrieveReservationListRQ Description
-=====================================
+
+### RetrieveReservationListRQ Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**					|
@@ -63,8 +63,8 @@ RetrieveReservationListRQ Description
 
 
 
-RetrieveReservationListRS Example
-=================================
+### RetrieveReservationListRS Example
+
 
 
 
@@ -100,8 +100,8 @@ RetrieveReservationListRS Example
 
 
 
-RetrieveReservationListRS Description
-=====================================
+### RetrieveReservationListRS Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**						|

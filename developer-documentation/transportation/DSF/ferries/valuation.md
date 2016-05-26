@@ -7,8 +7,8 @@ permalink: /developer-documentation/transportation/DSF/ferries/valuation
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to do a prebook of the selected Option. This Option
 **must** be selected in the previous step ( Availability ).
@@ -19,8 +19,8 @@ not grant the correct functionability of the Valuation.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The Valuation request can be done by two different ways: with a single
 Itinerary or multiple Itineraries.
@@ -41,8 +41,8 @@ the business rules.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The returned XML is very similar to the result in the Availability call.
 The main difference is that there is only one node Option returned. The
@@ -52,8 +52,8 @@ this case the integration returns an error code 301 ( link missing ).
 
 
 
-Remarks
-=======
+### Remarks
+
 
 Some suppliers do not provide this method. If this is the case then all
 of the information **must** be returned in the Availability, therefore
@@ -62,8 +62,8 @@ the selected Option.
 
 
 
-ValuationRQ Example
-===================
+### ValuationRQ Example
+
 
     <ValuationRQ>
     <Itineraries>
@@ -209,8 +209,8 @@ ValuationRQ Example
 
 
 
-ValuationRQ Description
-=======================
+### ValuationRQ Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**					|
@@ -311,8 +311,8 @@ ValuationRQ Description
 
 
 
-ValuationRS Example
-===================
+### ValuationRS Example
+
 
 
     <ValuationRS>
@@ -432,8 +432,8 @@ ValuationRS Example
 
 
 
-ValuationRS Description
-=======================
+### ValuationRS Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**					|

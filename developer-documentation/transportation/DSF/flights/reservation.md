@@ -7,15 +7,15 @@ permalink: /developer-documentation/transportation/DSF/flights/reservation
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to book one or more Itineraries.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request format works the same way as the Valuation request. It can
 work with one or with two Itineraries. The request will also contain a
@@ -23,8 +23,8 @@ list of Passengers and the PaymentInfo, such as payment method.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The result returns a list of Locators (booking codes). It can be the
 supplier's or the one sent in the request. It also returns all the
@@ -32,8 +32,8 @@ charges associated to the booking.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 This method **must** be called **after** the Valuation method.
 
@@ -64,8 +64,8 @@ family code and region code.
 
      
 
-ReservationRQ Example
-===================== 
+### ReservationRQ Example
+
 
 
 
@@ -140,8 +140,8 @@ ReservationRQ Example
 
 
 
-ReservationRQ Description 
-=========================
+### ReservationRQ Description 
+
 
 
 
@@ -270,8 +270,8 @@ ReservationRQ Description
 
 
 
-ReservationsRS Example
-=====================
+### ReservationsRS Example
+
  
 
     <ReservationsRS>
@@ -309,8 +309,8 @@ ReservationsRS Example
 
 
 
-ReservationsRS Description
-==========================
+### ReservationsRS Description
+
  
 
 

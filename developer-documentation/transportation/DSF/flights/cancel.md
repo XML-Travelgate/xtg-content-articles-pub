@@ -7,36 +7,36 @@ permalink: /developer-documentation/transportation/DSF/flights/cancel
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to cancel a booking.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request requires the booking code or locator.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The result returns empty response
 
 
 
-Remarks
-=======
+### Remarks
+
 
 Not implemented by all suppliers
 
 
 
-CancellationRQ Example
-======================
+### CancellationRQ Example
+
 
     <CancellationRQ>
         <timeoutMilliseconds>18000</timeoutMilliseconds>
@@ -54,8 +54,8 @@ CancellationRQ Example
 
 
 
-CancellationRQ Description
-==========================
+### CancellationRQ Description
+
 
 
 | **Element**			| **Number**	| **Type**	| **Description**			|
@@ -67,8 +67,8 @@ CancellationRQ Description
 
 
 
-CancellationRS Example
-======================
+### CancellationRS Example
+
 
 
 
@@ -77,8 +77,8 @@ CancellationRS Example
 
 
 
-CancellationRS Description
-==========================
+### CancellationRS Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**						|

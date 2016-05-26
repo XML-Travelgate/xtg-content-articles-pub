@@ -7,16 +7,16 @@ permalink: /developer-documentation/transportation/DSF/flights/recover-reserve-l
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to return a list of bookings for a given time period
 being that either booking date or the travelling date.
 
 
 
-RetrieveReservationListRQ Example
-=================================
+### RetrieveReservationListRQ Example
+
 
 
 
@@ -33,8 +33,8 @@ RetrieveReservationListRQ Example
 
 
 
-RetrieveReservationListRQ Description
-=====================================
+### RetrieveReservationListRQ Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**						|
@@ -50,8 +50,8 @@ RetrieveReservationListRQ Description
 
 
 
-RetrieveReservationListRS Example
-=================================
+### RetrieveReservationListRS Example
+
 
 
 
@@ -188,8 +188,8 @@ RetrieveReservationListRS Example
 
 
 
-RetrieveReservationListRS Description
-=====================================
+### RetrieveReservationListRS Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**						|

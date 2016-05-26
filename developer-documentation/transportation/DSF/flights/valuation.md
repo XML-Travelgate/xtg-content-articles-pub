@@ -7,16 +7,16 @@ permalink: /developer-documentation/transportation/DSF/flights/valuation
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to return the total price of the selected Option. This
 Option **must** be selected in the previous step ( Availability ).
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The Valuation request can be done by two different ways: with a single
 Itinerary or multiple Itineraries.
@@ -37,8 +37,8 @@ the business rules.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The returned XML is very similar to the result in the Availability call.
 The main difference is that there is only one node Option returned. The
@@ -48,8 +48,8 @@ this case the integration returns an error code 301 ( link missing ).
 
 
 
-Remarks
-=======
+### Remarks
+
 
 Some suppliers do not provide this method. If this is the case then all
 of the information **must** be returned in the Availability, therefore
@@ -58,8 +58,8 @@ the selected Option.
 
 
 
-ValoracionRQ Example
-====================
+### ValoracionRQ Example
+
 
     <ValuationRQ>
         <ClientConfiguration currencyCode = "EUR"/>
@@ -138,8 +138,8 @@ ValoracionRQ Example
 
 
 
-ValoracionRQ Description
-========================
+### ValoracionRQ Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**							|
@@ -228,8 +228,8 @@ ValoracionRQ Description
 
 
 
-ValuationRS Example
-===================
+### ValuationRS Example
+
 
     <ValuationRS>
         <Itineraries>
@@ -535,8 +535,8 @@ ValuationRS Example
 
 
 
-ValuationRS Description
-=======================
+### ValuationRS Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**							|
@@ -627,8 +627,8 @@ ValuationRS Description
 
 
 
-ValuationSupplements
-====================
+### ValuationSupplements
+
 
   
 

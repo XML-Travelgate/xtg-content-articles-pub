@@ -7,16 +7,16 @@ permalink: /developer-documentation/transportation/DSF/ferries/common-elements
 
 
 
-Introduction
-============
+### Introduction
+
 
 In every petition there some nodes which will always appear, there for
 this chapter is dedicated for said nodes.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The common elements in all of the petitions are: source of the petition,
 Timeout, the indication if you wish to register the transactions and the
@@ -24,8 +24,8 @@ provider configuration.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The response will contain the indication if the function is implemented
 or not, application errors, if any, the providers traces if requested
@@ -33,8 +33,8 @@ and the response status.
 
 
 
-Common Elements RQ Example
-==========================
+### Common Elements RQ Example
+
 
 
 
@@ -61,8 +61,8 @@ Common Elements RQ Example
 
 
 
-Common Elements RQ Description
-==============================
+### Common Elements RQ Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**						|
@@ -97,8 +97,8 @@ Common Elements RQ Description
 
 
 
-Common Elements RS Example
-==========================
+### Common Elements RS Example
+
 
 
 
@@ -128,8 +128,8 @@ Common Elements RS Example
 
 
 
-Common Elements RS Description
-==============================
+### Common Elements RS Description
+
 
 
 | **Element**					| **Number**	| **Type**	| **Description**					|

@@ -7,8 +7,8 @@ permalink: /developer-documentation/transportation/DSF/flights/avail
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to return all the available options for a given date
 and itinerary. It does not filter different classes, times or fares. It
@@ -16,8 +16,8 @@ will always return all of the results returned by the provider.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The common part of an availability request is very straight forward. It
 only requires the destination/s, the travelling dates, the paxes and the
@@ -25,8 +25,8 @@ indication of the trip type: one way trip or a round trip.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The response format will always be delivered in the node Transportation,
 which will be organized by two main nodes:
@@ -52,8 +52,8 @@ are already included in the total price.
 
 
 
-Remarks
-=======
+### Remarks
+
 
 This method **must** be called **before** the Valuation method.
 
@@ -62,8 +62,8 @@ is of **25000** milliseconds.
 
 
 
-AvailabilityRQ Example
-======================
+### AvailabilityRQ Example
+
 
 
 
@@ -106,8 +106,8 @@ AvailabilityRQ Example
 
 
 
-AvailabilityRQ Description
-==========================
+### AvailabilityRQ Description
+
 
 | **Element**				| **Number**	| **Type**	| **Description**						|
 | ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
@@ -140,8 +140,8 @@ AvailabilityRQ Description
 
 
 
-AvailabilityRS Example
-======================
+### AvailabilityRS Example
+
 
 
 
@@ -196,8 +196,8 @@ AvailabilityRS Example
 
 
 
-AvailabilityRS Description
-==========================
+### AvailabilityRS Description
+
 
 | **Element**				| **Number**	| **Type**	| **Description**						|
 | ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
@@ -312,8 +312,8 @@ AvailabilityRS Description
 | Fares/Fare/HasObFees        		| 1 		| Boolean	| If true then there is an extra fee for using credit card.   	|
 
 
-Detailed description
-====================
+### Detailed description
+
 
 **Total amount breakdown:**
 

@@ -7,30 +7,30 @@ permalink: /developer-documentation/transportation/DSF/ferries/cancel
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to cancel a booking.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request requires the booking code or locator.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 If the provider returns a Breakdown, this will be informed in
 CancellarionRS.
 
 
 
-CancellationRQ Example
-======================
+### CancellationRQ Example
+
 
 
 
@@ -41,8 +41,8 @@ CancellationRQ Example
 
 
 
-CancellationRQ Description
-==========================
+### CancellationRQ Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
@@ -53,8 +53,8 @@ CancellationRQ Description
 
 
 
-CancellationRS Example
-======================
+### CancellationRS Example
+
 
 
 
@@ -63,8 +63,8 @@ CancellationRS Example
 
 
 
-CancellationRS Description
-==========================
+### CancellationRS Description
+
 
 
 | **Element**				 | **Number**	| **Type**	| **Description**						|

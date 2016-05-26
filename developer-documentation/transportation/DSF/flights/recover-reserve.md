@@ -7,15 +7,15 @@ permalink: /developer-documentation/transportation/DSF/flights/recover-reserve
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to retrieve a booking with its full details.
 
 
 
-RetrieveReservationRQ Example
-=============================
+### RetrieveReservationRQ Example
+
 
 
 
@@ -27,8 +27,8 @@ RetrieveReservationRQ Example
 
 
 
-RetrieveReservationRQ Description
-=================================
+### RetrieveReservationRQ Description
+
 
 | **Element**				| **Number**	| **Type**	| **Description**					|
 | ------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
@@ -38,8 +38,8 @@ RetrieveReservationRQ Description
 
 
 
-RetrieveReservationRS Example
-=============================
+### RetrieveReservationRS Example
+
 
 
 
@@ -149,8 +149,8 @@ RetrieveReservationRS Example
 
 
 
-RetrieveReservationRS Description
-=================================
+### RetrieveReservationRS Description
+
 
 
 | **Element**				| **Number**	| **Type**	| **Description**					|

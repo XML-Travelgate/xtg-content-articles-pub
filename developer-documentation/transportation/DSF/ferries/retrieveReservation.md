@@ -7,29 +7,29 @@ permalink: /developer-documentation/transportation/DSF/ferries/retrieveReservati
 
 
 
-Method Goals
-============
+### Method Goals
+
 
 This method aims to retrieve a booking with its full details.
 
 
 
-Request Format
-==============
+### Request Format
+
 
 The request requires the booking code or locator.
 
 
 
-Response Format
-===============
+### Response Format
+
 
 The response contains the details of a booking.
 
 
 
-RetrieveReservationRQ Example
-=============================
+### RetrieveReservationRQ Example
+
 
 
 
@@ -41,8 +41,8 @@ RetrieveReservationRQ Example
 
 
 
-RetrieveReservationRQ Description
-=================================
+### RetrieveReservationRQ Description
+
 
 
 | **Element**			| **Number**	| **Type**	| **Description**		|
@@ -53,8 +53,8 @@ RetrieveReservationRQ Description
 
 
 
-RetrieveReservationRS Example
-=============================
+### RetrieveReservationRS Example
+
 
 
 
@@ -276,8 +276,8 @@ RetrieveReservationRS Example
 
 
 
-RetrieveReservationRS Description
-=================================
+### RetrieveReservationRS Description
+
 
 
 | **Element**                      	| **Number**	| **Type**	| **Description**                         		|
