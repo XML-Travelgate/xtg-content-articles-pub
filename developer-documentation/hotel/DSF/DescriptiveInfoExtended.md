@@ -864,22 +864,22 @@ A maximum time of **180000** milliseconds is permitted before the connection is 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
 | DescriptiveInfoExtendedRS/Hotel 	| 0..n  	|         	| Root node. Hotel sheet.			|
-| Code          			| 1     	| String  	| Specify the hotel desired for the request.	                                        |
-| Name          			| 1     	| String  	| Name.                                         |
-| Address       			| 1     	| String  	| Address.                                      |
-| Town          			| 1     	| String  	| Town.                                         |
-| ZipCode       			| 1     	| String  	| ZipCode.                                      |
-| CountryISOCode 			| 1     	| String  	| CountryISOCode.                               |
-| AvailDestination 			| 0..1  	|         	| Avail Destination ( will come only if it is attackable on availability, and the type is CTY). |
-| @code         			| 1     	| String  	| Destination code.                             |
-| @name         			| 1     	| String 	| Destination name.                             |
-| GeographicDestination 		| 1     	|         	| Geographic Destination.                       |
+| Code          			| 1     	| String  	| Specify the hotel code desired for the request.	                                        |
+| Name          			| 1     	| String  	| Hotel Name                                         |
+| Address       			| 1     	| String  	| Address                                      |
+| Town          			| 1     	| String  	| Town                                        |
+| ZipCode       			| 1     	| String  	| ZipCode                                      |
+| CountryISOCode 			| 1     	| String  	| Country ISO code for Country-specific addresses                              |
+| AvailDestination 			| 0..1  	|      	| Destination that can be searched in Availability
+|| @code         			| 1     	| String  | Destination code e.g. LON                            |
+| @name         			| 1     	| String 	| Destination name e.g. London                         |
+| GeographicDestination 		| 1     	|    All destinations provided by the supplier not just in Availability                       |
 | @code         			| 1     	| String  	| Destination code.                             |
 | @name         			| 1     	| String  	| Destination name.                             |
-| @avail        			| 1     	| Boolean 	| Indicates if it is attackable on availability.|
+| @avail        			| 1     	| Boolean 	| Indicates if it can be requested in availability.|
 | Latitude      			| 1     	| String  	| Latitude.                                     |
 | Longitude     			| 1     	| String  	| Longitude.                                    |
-| Contact       			| 0..1  	|         	| Contact.                                      |
+| Contact       			| 0..1  	|         	|Hotel Contact.                                      |
 | Contact/Email 			| 1     	| String  	| Email.                                        |
 | Contact/Telephone 			| 1     	| String  	| Telephone.                                    |
 | Contact/Fax   			| 1     	| String  	| Fax.                                          |
@@ -896,11 +896,11 @@ A maximum time of **180000** milliseconds is permitted before the connection is 
 | Chains/Name  				| 1     	| String  	| Chain Name.                                   |
 | Chains/Data  				| 1     	| Data    	| Chain Data (more info in Hotel Summary)     |
 | Languages     			| 0..1  	|         	|                                               |
-| Languages/language      		| 1..n  	| String  	| Languages sopken at the hotel.                |
+| Languages/language      		| 1..n  	| String  	| Languages spoken at the hotel.                |
 | PaymentOptions/Cards 			| 1     	|         	| List of cards allowed.                        |
 | PaymentOptions/Cards/Card 		| 1..n  	|         	| Type card allowed.                            |
 | @code>   				| 1     	| String  	| Code card (see in *Lists of Data* (VI,AX,BV,CA...)). |
-| ExclusiveDeal 			| 0..1  	| Boolean 	| Indicates that a Hotel is an Exlusive Deal. The provider has formed partnerships with select Hotels in order to bring you list rates and superior prime availability in locations. The provider suggests with provide the best value. |
+| ExclusiveDeal 			| 0..1  	| Boolean 	| Indicates that a Hotel is an Exclusive Deal. The provider has formed partnerships with select Hotels in order to bring you list rates and superior prime availability in locations. |
 | NumberOfRooms 			| 0..1  	| Integer 	| Total rooms of hotel.   	                |
 | HotelAttributes 			| 0..1  	|         	|                                               |
 | HotelAttributes/Attributes 		| 0..1  	| Attributes 	|                                               |
