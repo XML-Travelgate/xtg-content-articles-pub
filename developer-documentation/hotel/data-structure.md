@@ -11,10 +11,10 @@ integration will have the following methods:
 
 | **Method**                | **Input**                   | **Output**                  | **Required** | **Description** |
 | ------------------------- | --------------------------- | --------------------------- | ------------ | --------------- |
-| AvailDestinationTree      | AvailDestinationTreeRQ      | AvailDestinationTreeRS      | No           | Returns a tree of available destinations. |
-| GeographicDestinationTree | GeographicDestinationTreeRQ | GeographicDestinationTreeRS | Yes          | Returns a tree of provider destinations. |
+| AvailDestination Tree      | AvailDestination TreeRQ      | AvailDestination TreeRS      | No           | Returns a tree of available destinations. |
+| Geographic DestinationTree | Geographic DestinationTreeRQ | Geographic DestinationTreeRS | Yes          | Returns a tree of provider destinations. |
 | HotelList                 | HotelListRQ                 | HotelListRS                 | Yes          | Returns a list of available hotels. |
-| DescriptiveInfo           | DescriptiveInfoRQ           | DescriptiveInfoRS           | Yes          | Returns hotel information per hotel. |
+| Descriptive Info           | Descriptive InfoRQ           | Descriptive InfoRS           | Yes          | Returns hotel information per hotel. |
 | RoomList                  | RoomListRQ                  | RoomListRS                  | No           | Returns available room types. |
 | MealPlanList              | MealPlanListRQ              | MealPlanListRS              | Yes          | Returns a list of available boards. |
 | CategoryList              | CategoryListRQ              | CategoryListRS              | Yes  	       | Returns a list of available categories. |
@@ -24,10 +24,10 @@ integration will have the following methods:
 | Cancel                    | CancelRQ                    | CancelRS                    | No           | Cancels a booking. |
 | ReservationRead           | ReservationReadRQ           | ReservationReadRS           | No           | Gets booking details. |
 | ReservationList           | ReservationListRQ           | ReservationListRS           | No           | Gets a list of bookings. |
-| RuntimeConfiguration      | RuntimeConfigurationRQ      | RuntimeConfigurationRS      | Yes          | Gets the provider’s run-time configuration. |
-| StaticConfiguration       | StaticConfigurationRQ       | StaticConfigurationRS       | Yes          | Gets the provider’s static configuration. |
+| Runtime Configuration      | Runtime ConfigurationRQ      | Runtime ConfigurationRS      | Yes          | Gets the provider’s run-time configuration. |
+| Static Configuration       | Static ConfigurationRQ       | StaticC onfigurationRS       | Yes          | Gets the provider’s static configuration. |
 | ModifyValuation           | ModifyValuationRQ           | ModifyValuationRS           | No           | Valuation a possible booking modification. |
-| ModifyReservation         | ModifyReservationRQ         |  ModifyReservationRS        | No           | Confirm a booking modification. |
+| ModifyReservation         | Modify ReservationRQ         |  Modify ReservationRS        | No           | Confirm a booking modification. |
 
 
 Each request sent to the **service url** requires a node called *rqXML*.
