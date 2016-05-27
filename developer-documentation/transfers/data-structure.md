@@ -16,15 +16,15 @@ integration will have the following methods:
 | Availability		| AvailabilityRQ	| AvailabilityRS	| Yes		| Makes an availability search   		| Transfers Booking Endpoint                    |
 | RateRule		| RateRuleRQ		| RateRuleRS		| Yes 		| Makes a pre-booking      			| Transfers Booking Endpoint			|
 | Book    		| BookRQ   		| BookRS   		| Yes 		| Creates a booking        			| Transfers Booking Endpoint			|
-| RetrieveBooking	| Retrieve BookingRQ	| Retrieve BookingRS	| No  		| Retrieves Booking details			| Transfers Booking Endpoint			|
-| CancelBooking		| Cancel BookingRQ	| Cancel BookingRS	| No  		| Cancels a booking        			| Transfers Booking Endpoint			|
+| Retrieve Booking	| Retrieve BookingRQ	| Retrieve BookingRS	| No  		| Retrieves Booking details			| Transfers Booking Endpoint			|
+| Cance lBooking		| Cancel BookingRQ	| Cancel BookingRS	| No  		| Cancels a booking        			| Transfers Booking Endpoint			|
 | Destinations Tree	| Destinations TreeRQ	| Destinations TreeRS	| Yes 		| Gets a hierarchical list of destinations	| Transfers Booking Endpoint			|
 | HotelList		| HotelListRQ		| HotelListRS		| No  		| Gets a list of the hotels with a basic information | Transfers Booking Endpoint		|
 | GetRates		| GetRatesRQ		| GetRatesRS		| No  		| Gets a list of the rates with a basic information | Transfers Booking Endpoint		|
-| GetSupplements	| GetSupplements RQ	| GetSupplements RS	| No  		| Gets a list of the supplements with a basic information | Transfers Booking Endpoint		|
+| GetSupplements	| Get SupplementsRQ	| Get SupplementsRS	| No  		| Gets a list of the supplements with a basic information | Transfers Booking Endpoint		|
 | GetSupplier RateTransfers Type | Getsupplier RateTransfers TypeRQ | Getsupplier RateTransfers TypeRS | No | Gets a list of the types of suppliers transfers rates with a basicinformation | Transfers Booking Endpoint |
 | GetSupplier TransfersType | GetSupplier TransfersTypeRQ | GetSupplier TransfersTypeRS | No | Gets a list of the suppliers transfers types with a basic information | Transfers Booking Endpoint |
-| GetTransfersTypes  	| GetTransfers TypesRQ	| GetTransfers TypesRQ	| No  		| Gets a list of the transfers types with a basic information | Transfers Booking Endpoint	|
+| GetTransfers Types  	| GetTransfers TypesRQ	| GetTransfers TypesRQ	| No  		| Gets a list of the transfers types with a basic information | Transfers Booking Endpoint	|
 | GetVehicles     	| GetVehiclesRQ		| GetVehiclesRS		| No  		| Gets a list of the vehicles with a basic information | Transfers Booking Endpoint		|
                              
 
