@@ -18,17 +18,17 @@ information (extracted from the supplier's documentation hierachy/fields descrip
 ### Request Format
 
 
-In addition to the hotel code, you can set language filters. We recommend that the first call request is done without filters in order to ascertain which languages are provided by the supplier. 
+After entering the hotel code, you can set language filters. We recommend that the first call request is done without filters in order to ascertain which languages are provided by the supplier. 
 
-To define language filters use the LanguageCode element with one of the following values:
+To define language filters set the LanguageCode element with one of the following values:
 
 -  *Culture (xx\_YY) :* Response will return *values* /
  *text* of the one specific language_culture requested
 
 -  *No Culture (xx) :* Response will return *values* / *text*
- of all cultures available for the language sent.
+ of all cultures available within the language requested.
 
-For example, when en is entered in *No Culture*, then the response could return en _GB and en _US.
+For example, when en is entered in *No Culture*, then the response will return en _GB and en _US.
 
 
 ### Remarks
@@ -123,7 +123,7 @@ A maximum time of **180000** milliseconds is permitted before the connection is 
                                     {
                                         "languageCode" : "en",
                                         "name" : "HotelSummary",
-                                        "description" : "Summary of the elements returned for the property "
+                                        "description" : "Summary elements for the property returned"
                                     },
                                     {
                                         "languageCode" : "pt",
@@ -152,7 +152,7 @@ A maximum time of **180000** milliseconds is permitted before the connection is 
                         {
                             "languageCode" : "en",
                             "name" : "highRate",
-                            "description" : "Highest rate returned by the hotel in recent queries. This is a statistical figure and is not necessarily the rate for the current availability."
+                            "description" : "Highest rate returned by the hotel in recent queries. This is a statistical figure and not necessarily a rate for current availability."
                         },
                         {
                             "languageCode" : "pt",
@@ -205,7 +205,7 @@ A maximum time of **180000** milliseconds is permitted before the connection is 
                                             {
                                                 "languageCode" : "en",
                                                 "name" : "HotelSummary",
-                                                "description" : "Summary of the elements returned for the property "
+                                                "description" : "Summary elements for the property returned"
                                             },
                                             {
                                                 "languageCode" : "pt",
@@ -864,7 +864,7 @@ A maximum time of **180000** milliseconds is permitted before the connection is 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
 | DescriptiveInfoExtendedRS/Hotel 	| 0..n  	|         	| Root node. Hotel sheet.			|
-| Code          			| 1     	| String  	| Code.	                                        |
+| Code          			| 1     	| String  	| Specify the hotel desired for the request.	                                        |
 | Name          			| 1     	| String  	| Name.                                         |
 | Address       			| 1     	| String  	| Address.                                      |
 | Town          			| 1     	| String  	| Town.                                         |
@@ -927,13 +927,13 @@ A maximum time of **180000** milliseconds is permitted before the connection is 
 ### Response Format
 
 
-The result returns the details of the hotel requested:
+The result retrieves the details of the hotel requested:
 
--   Hotel Summary ( standard for all providers ).
+-   Hotel Summary (standard for all providers).
 -   Hotel Attributes.
 -   Hotel Descriptions.
 -   Hotel Medias.
--   Room Summary ( standard for all providers ).
+-   Room Summary (standard for all providers).
 -   Room Attributes.
 -   Room Descriptions.
 -   Room Medias.
@@ -1185,7 +1185,7 @@ Example:
      There is 1 description with a contextItem child
      locationDescription and description : General location as entered
      by the property, e.g. "Near Pike Place Market" which it's parent
-     is HotelSummary ( Summary elements for the property returned )
+     is HotelSummary (Summary elements for the property returned)
 
 -   Text explanation :
 
