@@ -44,11 +44,10 @@ the *StaticConfiguration* )
 ### RoomListRQ Example
 
 
-
-
+~~~xml
     <RoomListRQ>
     </RoomListRQ>
-
+~~~
 
 
 ### RoomListRQ Description
@@ -65,6 +64,7 @@ the *StaticConfiguration* )
 ### RoomListRS Example
 
 
+~~~xml
     <RoomListRS>
         <RoomsInfo>
              <RoomInfo>
@@ -79,7 +79,7 @@ the *StaticConfiguration* )
             <RoomInfo/>
         </RoomsInfo>
     </RoomListRS>
-
+~~~
 
 
 ### RoomListRS Description

@@ -40,9 +40,10 @@ is closed, is of **240000** milliseconds.
 ### CategoryListRQ Example
 
 
+~~~xml
     <CategoryListRQ>
     </CategoryListRQ>
-
+~~~
 
 
 ### CategoryListRQ Description
@@ -59,6 +60,7 @@ is closed, is of **240000** milliseconds.
 ### CategoryListRS Example
 
 
+~~~xml
     <CategoryListRS>
         <Categories>
             <Category>
@@ -73,7 +75,7 @@ is closed, is of **240000** milliseconds.
             <Category/>
         </Categories>
     </CategoryListRS>
-
+~~~
 
 
 ### CategoryListRS Description

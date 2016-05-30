@@ -46,10 +46,10 @@ can be see in Common-Elements section_.
 ### HotelListRQ Example
 
 
-
+~~~xml
     <HotelListRQ>
     </HotelListRQ>
-
+~~~
 
 
 ### HotelListRQ Description
@@ -65,6 +65,7 @@ can be see in Common-Elements section_.
 ### HotelListRS Example
 
 
+~~~xml
     <HotelListRS>
         <Hotels>
             <Hotel>
@@ -125,7 +126,7 @@ can be see in Common-Elements section_.
             <Hotel>...</Hotel>
         </Hotels>
     </HotelListRS>
-
+~~~
 
 
 ### HotelListRS Description
@@ -187,19 +188,23 @@ This code is common for all of the providers.
 
 For the provider TravellingTest:
 
+~~~xml
     <Hotel>
         <Code>5</Code>
         <GiataFormatCode>254</GiataFormatCodez>
         <Name>BADAJOZ</Name>
     </Hotel>
+~~~
 
 For the provider TestOnTour:
 
+~~~xml
     <Hotel>
         <Code>14</Code>
         <GiataFormatCode>254</GiataFormatCodez>
         <Name>BADAJOZ</Name>
     </Hotel>
+~~~
 
 Please note that for the same hotel, the internal code of each provider
 is different, but the Giata code stays the same. Giata system it is an

@@ -39,6 +39,7 @@ is closed, is of **180000** milliseconds.
 ### ModifyReservationRQ Example
 
 
+~~~xml
     <ModifyReservationRQ>
         <OnRequest>false</OnRequest>
         <Nationality>ES</Nationality>
@@ -105,7 +106,7 @@ is closed, is of **180000** milliseconds.
             <Parameter key = "bd1" value = "43"/>
         </Parameters>
     </ModifyReservationRQ>
-
+~~~
 
 
 ### ModifyReservationRQ Description
@@ -188,6 +189,7 @@ is closed, is of **180000** milliseconds.
 ### ModifyReservationRS Example
 
 
+~~~xml
     <ModifyReservationRS>
         <ProviderLocator>XXXXXX</ProviderLocator>
         <Price currency = "EUR" amount = "86.20" binding = "false" commission = "-1"/>
@@ -196,7 +198,7 @@ is closed, is of **180000** milliseconds.
         <BillingSupplierCode>Proveedor facturacion Externa</BillingSupplierCode>
         <Payable>Payment is guaranteed by: DESTINATIONS OF THE WORLD - DMCC as per final booking form reference  HTL-AE2-80989482</Payable>
     </ModifyReservationRS>
-
+~~~
 
 
 ### ModifyReservationRS Description

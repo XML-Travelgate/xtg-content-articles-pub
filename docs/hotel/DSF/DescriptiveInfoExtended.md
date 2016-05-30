@@ -22,7 +22,7 @@ After entering the hotel code, you can set language filters. We recommend that t
 
 To define language filters set the LanguageCode element with one of the following values:
 
--  *Culture (xx\_YY) :* Response will return *values* /
+-  *Culture (xx_YY) :* Response will return *values* /
  *text* of the one specific language_culture requested
 
 -  *No Culture (xx) :* Response will return *values* / *text*
@@ -40,6 +40,7 @@ A maximum time of **180000** milliseconds is permitted before the connection is 
 ### DescriptiveInfoExtendedRQ Example
 
 
+~~~xml
     <DescriptiveInfoExtendedRQ>
         <timeoutMilliseconds>180000</timeoutMilliseconds>
         <Hotel>
@@ -52,7 +53,7 @@ A maximum time of **180000** milliseconds is permitted before the connection is 
             </LanguageCodes>
         </Filters>
     </DescriptiveInfoExtendedRQ>
-
+~~~
 
 
 ### DescriptiveInfoExtendedRQ Description
@@ -73,7 +74,7 @@ A maximum time of **180000** milliseconds is permitted before the connection is 
 ### DescriptiveInfoExtendedRS Example
 
 
-~~~
+~~~json
 
 {
  "hotel" : {
@@ -168,7 +169,7 @@ A maximum time of **180000** milliseconds is permitted before the connection is 
                 }
             }
 ],
-    "hotelDescriptions" : {
+ "hotelDescriptions" : {
         "description" : {
                 "description" : [
                     {
@@ -975,11 +976,11 @@ Typified hotel information from the provider.
 
 Typified room information from the provider.
 
-Room Name is multiLanguage text\_ field.
+Room Name is multiLanguage text_ field.
 
 Name example:
 
-~~~
+~~~json
 {
     "name" : {
         "text" : [
@@ -1014,7 +1015,7 @@ which is not either *Descriptions* or *Medias*.
 
 Example:
 
-~~~
+~~~json
 {
     "hotelAttributes" : [
         {
@@ -1111,7 +1112,7 @@ Media description)
 
 Example:
 
-~~~
+~~~json
 {
     "description" : [
         {
@@ -1226,7 +1227,7 @@ Example:
 
 Example:
 
-~~~
+~~~json
 {
     "medias" : {
         "media" : [

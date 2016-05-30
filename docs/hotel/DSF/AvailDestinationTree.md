@@ -40,10 +40,10 @@ is closed, is of **240000** milliseconds.
 
 ### AvailDestinationTreeRQ Example
 
-
+~~~xml
     <AvailDestinationTreeRQ>
     </AvailDestinationTreeRQ>
-
+~~~
 
 
 ### AvailDestinationTreeRQ Description
@@ -60,6 +60,7 @@ is closed, is of **240000** milliseconds.
 ### AvailDestinationTreeRS Example
 
 
+~~~xml
     <AvailDestinationTreeRS>
         <DestinationTree code = "ES" name = "España">
             <DestinationLeaf code = "BAL"/>
@@ -82,7 +83,7 @@ is closed, is of **240000** milliseconds.
         <DestinationTree codigo = "ALC0" name = "Alcudia"/>
         . . .
     </AvailDestinationTreeRS>
-
+~~~
 
 
 ### AvailDestinationTreeRS Description
@@ -101,6 +102,7 @@ is closed, is of **240000** milliseconds.
 ### Detailed description
 
 
+~~~xml
     <AvailDestinationTreeRS>
         <DestinationTree code = "BAL" name = "Baleares">
             <DestinationLeaf code = "PAL0"/>
@@ -112,7 +114,7 @@ is closed, is of **240000** milliseconds.
         <DestinationTree code = "ALC0" name = "Alcudia"/>
         . . .
     </AvailDestinationTreeRS>
-
+~~~
 
 
 There is one primordial definition that needs to be clear to understand

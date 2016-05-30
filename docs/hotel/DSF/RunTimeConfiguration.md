@@ -31,9 +31,10 @@ The returned XML contains a template of all fields used by the provider.
 ### RuntimeConfigurationRQ Example
 
 
+~~~xml
     <RuntimeConfigurationRQ>
     </RuntimeConfigurationRQ>
-
+~~~
 
 
 ### RuntimeConfigurationRQ Description
@@ -50,6 +51,7 @@ The returned XML contains a template of all fields used by the provider.
 ### RuntimeConfigurationRS Example
 
 
+~~~xml
     <RuntimeConfigurationRS>
         <Configuration>
             <User/>
@@ -60,7 +62,7 @@ The returned XML contains a template of all fields used by the provider.
             </Parameters>
         </Configuration>
     </RuntimeConfigurationRS>
-
+~~~
 
 
 ### ConfiguracionRunTimeRS Description

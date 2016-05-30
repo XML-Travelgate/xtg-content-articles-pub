@@ -46,6 +46,7 @@ is closed, is of **180000** milliseconds.
 ### ReservationRQ Example
 
 
+~~~xml
     <ReservationRQ>
         <ClientLocator>2537459</ClientLocator>
         <OnRequest>false</OnRequest>
@@ -85,7 +86,7 @@ is closed, is of **180000** milliseconds.
         </RoomCandidates>
         <Remarks>I want it a double bed.</Remarks>
     </ReservationRQ>
-
+~~~
 
 
 ### ReservationRQ Description
@@ -147,13 +148,13 @@ is closed, is of **180000** milliseconds.
 ### ReservationRS Example
 
 
-
+~~~xml
     <ReservationRS>
         <ProviderLocator>102</ProviderLocator>
         <ResStatus>OK</ResStatus>
         <Price currency = "EUR" amount = "36.20" binding = "false" commission = "-1"/>
     </ReservationRS>
-
+~~~
 
 
 ### ReservationRS Description
@@ -211,14 +212,16 @@ In the reservation, you can pay with cash or with a credit card. If the
 payment is done by cash, in the XML petition you only have to specify
 the payment type, like so:
 
+~~~xml
     <PaymentType>MerchantPay</PaymentType>
-
+~~~
 
 
 If the payment is done by credit card, then in the XML petition, is it
 mandatory to specify the payment type and the credit card information,
 like so:
 
+~~~xml
     <PaymentType>LaterPay/CardBookingPay/CardCheckInPay</PaymentType>
       <CardInfo>
        <CardCode>XX</CardCode>
@@ -230,7 +233,7 @@ like so:
        </ValidityDate>
        <CVC>XXX</CVC>
      </CardInfo>    
-
+~~~
 
 
 ### DeltaPrice description

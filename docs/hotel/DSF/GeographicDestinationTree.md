@@ -44,9 +44,10 @@ is closed, is of **240000** milliseconds.
 ### GeographicDestinationTreeRQ Example
 
 
+~~~xml
     <GeographicDestinationTreeRQ>
     </GeographicDestinationTreeRQ>
-
+~~~
 
 
 ### GeographicDestinationTreeRQ Description
@@ -63,6 +64,7 @@ is closed, is of **240000** milliseconds.
 ### GeographicDestinationTreeRS Example
 
 
+~~~xml
     <GeographicDestinationTreeRS>
         <DestinationTree code = "ES" name = "España" avail = "False">
             <DestinationLeaf code = "BAL"/>
@@ -86,7 +88,7 @@ is closed, is of **240000** milliseconds.
         <DestinationTree code = "ALC0" name = "Alcudia" avail = " True"/>
         . . .
     </GeographicDestinationTreeRS>
-
+~~~
 
 
 ### GeographicDestinationTreeRS Description
@@ -105,6 +107,7 @@ is closed, is of **240000** milliseconds.
 ### Detailed description
 
 
+~~~xml
     <GeographicDestinationTreeRS>
      <DestinationTree code = "ES" name = "España" avail = "False">
          <DestinationLeaf code = "BAL"/>
@@ -134,7 +137,7 @@ is closed, is of **240000** milliseconds.
      <DestinationTree code = "IND" name = "Indioteria" avail = "false"/>
      . . .
     </GeographicDestinationTreeRS>
-
+~~~
 
 
 There are two primordial definitions that needs to be clear to

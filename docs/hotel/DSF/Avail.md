@@ -61,6 +61,7 @@ is closed.
 ### AvailRQ Example
 
 
+~~~xml
     <AvailRQ>
         <CancellationPolicies>false</CancellationPolicies>
         <OnRequest>false</OnRequest>
@@ -85,7 +86,7 @@ is closed.
             </RoomCandidate>
         </RoomCandidates>
     </AvailRQ>
-
+~~~
 
 
 ### AvailRQ Description
@@ -118,7 +119,7 @@ is closed.
 ### AvailRS Example
 
 
-
+~~~xml
     <AvailRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
       <Hotels>
         <Hotel code = "10" name = "LEO">
@@ -270,7 +271,7 @@ is closed.
         ...
       </Hotels>
     </AvailRS>
-
+~~~
 
 
 ### Detailed description
@@ -435,29 +436,31 @@ client can sell the product for a lower price.
 
 *Below are 4 possible scenarios:*
 
+~~~xml
     <Price currency = "EUR" amount = "200" binding = "false" commission = "-1"/>
+~~~
 
 We have no way of knowing if the price is PVP or a net price, given that
 the commission is not sent to us via XML. The commission is established
 by contract.
 
-
-
+~~~xml
     <Price currency = "EUR" amount = "300" binding = "true" commission = "-1"/>
+~~~
 
 The price is PVP, the commission is not sent to us via XML. The
 commission is established by contract.
 
-
-
+~~~xml
     <Price currency = "EUR" amount = "150" binding = "true/false" commission = "20"/>
+~~~
 
 The price is PVP with a commission of 20%. The binding in this case can
 be true or false.
 
-
-
+~~~xml
     <Price currency = "EUR" amount = "100" binding = "false" commission = "0"/>
+~~~
 
 The price is net.
 
@@ -502,7 +505,7 @@ modified for the rest of the petitions, like for example the valuation process.*
 **Cancellation policies:**
 
 The cancellation policies or penalizations may be displayed in the
-response, provided that the parameter \<CancellationPolicies\> is set as
+response, provided that the parameter <CancellationPolicies> is set as
 true in the request and that the provider supplies this information in
 the availability call.
 
@@ -558,11 +561,13 @@ in the availability call.
 
 The possible values of the status in the response is OK or RQ:
 
+~~~xml
     <Option type = "Hotel" paymentType = "MerchantPay" status = "OK">
+~~~
 
 In the case that the client doesn't want to display the options in a
 status RQ, we can filter the options given that the provider typifies
-this status when the AvailRQ specifies the \<OnRequest\> tag. In the
+this status when the AvailRQ specifies the <OnRequest> tag. In the
 case the provider doesn't facilitates this information, wich will be
 informed into the StaticConfiguration call, then this will have to be
 treated on a commercial level.
@@ -571,7 +576,9 @@ treated on a commercial level.
 
 **Room quantity:**
 
+~~~xml
 	<RoomCandidate "cantidad=“1” id=“1"\>
+~~~
 
 The quantity ( or "cantidad" ) has to be one. This quantity is
 deprecated.
@@ -595,6 +602,7 @@ deprecated.
 
 Case 1:
 
+~~~xml
     <POIs>
       <POI code = "8A" Description = "Andorra">
         <Services>
@@ -607,6 +615,7 @@ Case 1:
         </Services>
       </POI>
     </POIs>
+~~~
 
 Specifying the quantity makes no difference and it won't send anything
 because it already specifies the start and end dates.
@@ -615,6 +624,7 @@ because it already specifies the start and end dates.
 
 Case 2:
 
+~~~xml
     <POIs>
       <POI code = "8A" Description = "Andorra">
         <Services>
@@ -625,6 +635,7 @@ Case 2:
         </Services>
       </POI>
     </POIs>
+~~~
 
 In this case, quantity is applicable in all the stay, i.e., the client
 can enjoy until 5 hours of forfait in any day of the stay.
@@ -633,6 +644,7 @@ can enjoy until 5 hours of forfait in any day of the stay.
 
 Case 3:
 
+~~~xml
     <POIs>
       <POI code = "8A" Description = "Andorra">
         <Services>
@@ -643,6 +655,7 @@ Case 3:
         </Services>
       </POI>
     </POIs>
+~~~
 
 In this case, quantity is applicable in all the stay, i.e., the client
 can enjoy until 2 days of forfait in between the check in and the check
@@ -652,9 +665,10 @@ out of the stay of the reservation/option.
 
 **Note:** *Keep the parameters in the avail response to include them in the valuation request.*
 
+~~~xml
     <Parameters>
        <Parameter key = "sesion" value = "888de014"/>
     </Parameters>
-
+~~~
 
 

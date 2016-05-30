@@ -8,7 +8,7 @@ permalink: /docs/hotel/soap-examples
 
 ### Avail
 
-
+~~~xml
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
     xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -72,14 +72,14 @@ permalink: /docs/hotel/soap-examples
         </ns:Avail>
       </soapenv:Body>
     </soapenv:Envelope>
-
+~~~
 
 
 ### Multi Avail
 
 
 
-
+~~~xml
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
     xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -188,12 +188,13 @@ permalink: /docs/hotel/soap-examples
         </ns:Avail>
       </soapenv:Body>
     </soapenv:Envelope>
-
+~~~
 
 
 ### Valuation
 
 
+~~~xml
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
     xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -258,12 +259,13 @@ permalink: /docs/hotel/soap-examples
         </ns:Valuation>
       </soapenv:Body>
     </soapenv:Envelope>
-
+~~~
 
 
 ### GeographicalDestinationTree
 
 
+~~~xml
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
     xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -308,12 +310,13 @@ permalink: /docs/hotel/soap-examples
         </ns:GeographicDestinationTree>
       </soapenv:Body>
     </soapenv:Envelope>
-
+~~~
 
 
 ### Hotel List
 
 
+~~~xml
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
     xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -358,12 +361,13 @@ permalink: /docs/hotel/soap-examples
         </ns:HotelList>
       </soapenv:Body>
     </soapenv:Envelope>
-
+~~~
 
 
 ### DescriptiveInfo
 
 
+~~~xml
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
         <soapenv:Header>
             <wsse:Security>
@@ -409,12 +413,13 @@ permalink: /docs/hotel/soap-examples
             </ns:DescriptiveInfo>
         </soapenv:Body>
     </soapenv:Envelope>
-
+~~~
 
 
 ### AvailDestinationTree
 
 
+~~~xml
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
     xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -461,12 +466,13 @@ permalink: /docs/hotel/soap-examples
         </ns:AvailDestinationTree>
       </soapenv:Body>
     </soapenv:Envelope>
-
+~~~
 
 
 ### Room List
 
 
+~~~xml
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
     xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -515,12 +521,13 @@ permalink: /docs/hotel/soap-examples
         </ns:RoomList>
       </soapenv:Body>
     </soapenv:Envelope>
-
+~~~
 
 
 ### MealPlanList
 
 
+~~~xml
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
       <soapenv:Header>
         <wsse:Security>
@@ -567,12 +574,13 @@ permalink: /docs/hotel/soap-examples
         </ns:MealPlanList>
       </soapenv:Body>
     </soapenv:Envelope>
-
+~~~
 
 
 ### Reservation
 
 
+~~xml
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
       <soapenv:Header>
         <wsse:Security>
@@ -642,12 +650,13 @@ permalink: /docs/hotel/soap-examples
         </ns:Reservation>
       </soapenv:Body>
     </soapenv:Envelope>
-
+~~~
 
 
 ### Cancel
 
 
+~~~xml
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
     xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -701,12 +710,13 @@ permalink: /docs/hotel/soap-examples
         </ns:Cancel>
       </soapenv:Body>
     </soapenv:Envelope>
-
+~~~
 
 
 ### ReservationRead
 
 
+~~~xml
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
     xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -752,12 +762,13 @@ permalink: /docs/hotel/soap-examples
     </ns:ReservationRead>
     </soapenv:Body>
     </soapenv:Envelope>
-
+~~~
 
 
 ### ReservationList
 
 
+~~~xml
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
       <soapenv:Header>
         <wsse:Security>
@@ -807,12 +818,13 @@ permalink: /docs/hotel/soap-examples
         </ns:ReservationList>
       </soapenv:Body>
     </soapenv:Envelope>
-
+~~~
 
 
 ### RunTimeConfiguration
 
 
+~~~xml
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
     xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -859,12 +871,13 @@ permalink: /docs/hotel/soap-examples
         </ns:RuntimeConfiguration>
       </soapenv:Body>
     </soapenv:Envelope>
-
+~~~
 
 
 ### StaticConfiguration
 
 
+~~~xml
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" 
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" 
     xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -911,5 +924,5 @@ permalink: /docs/hotel/soap-examples
         </ns:StaticConfiguration>
       </soapenv:Body>
     </soapenv:Envelope>
-
+~~~
 

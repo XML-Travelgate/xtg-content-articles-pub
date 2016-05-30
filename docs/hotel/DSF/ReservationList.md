@@ -46,12 +46,13 @@ is closed, is of **240000** milliseconds.
 ### ReservationListRQ Example
 
 
+~~~xml
     <ReservationListRQ>
         <DateType>E</DateType>
         <Start>01/01/2014</Start>
         <End>22/02/2014</End>
     </ReservationListRQ>
-
+~~~
 
 
 ### ReservationListRQ Description
@@ -70,6 +71,7 @@ is closed, is of **240000** milliseconds.
 ### ReservationListRS Example
 
 
+~~~xml
     <ReservationListRS>
         <Reservations>
             <Reservation>
@@ -143,6 +145,7 @@ is closed, is of **240000** milliseconds.
     ...
         </Reservations>
     </ReservationListRS>
+~~~
 
 
 ### ReservationListRS Description

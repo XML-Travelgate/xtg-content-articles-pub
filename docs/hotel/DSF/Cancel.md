@@ -47,6 +47,7 @@ is closed, is of **180000** milliseconds.
 ### CancelRQ Example
 
 
+~~~xml
     <CancelRQ  hotelCode="H1548">
         <Locators>
             <Client>AFH123OP567</Client>
@@ -55,7 +56,7 @@ is closed, is of **180000** milliseconds.
         <StartDate>15/10/2012</StartDate>
         <EndDate>20/10/2015</EndDate>
     </CancelRQ>
-
+~~~
 
 
 ### CancelRQ Description
@@ -78,7 +79,7 @@ is closed, is of **180000** milliseconds.
 ### CancelRS Example
 
 
-
+~~~xml
     <CancelRS>
         <ProviderLocator>XXXX0000</ProviderLocator> 
         <CancelId>0000000</CancelId>
@@ -89,7 +90,7 @@ is closed, is of **180000** milliseconds.
           </TransactionStatus>
          <Price  currency="EUR" amount="120.5" binding="false" commission="-1"/>
     </CancelRS>
-
+~~~
 
 
 ### CancelRS Description

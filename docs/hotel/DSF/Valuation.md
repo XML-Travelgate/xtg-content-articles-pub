@@ -46,6 +46,7 @@ is closed, is of **180000** milliseconds.
 ### ValuationRQ Example
 
 
+~~~xml
     <ValuationRQ>
         <StartDate>28/01/2014</StartDate>
         <EndDate>29/01/2014</EndDate>
@@ -68,6 +69,7 @@ is closed, is of **180000** milliseconds.
             </RoomCandidate>
         </RoomCandidates>
     </ValuationRQ>
+~~~
 
 
 ### ValuationRQ Description
@@ -107,6 +109,7 @@ is closed, is of **180000** milliseconds.
 ### ValuationRS Example
 
 
+~~~xml
     <ValuationRS>
         <Parameters>
             <Parameter key = "bd1" value = "43"/>
@@ -134,7 +137,7 @@ is closed, is of **180000** milliseconds.
         <PaymentOptions/>       
        <CancelPoliciesDescription/>
     </ValuationRS>
-
+~~~
 
 
 ### ValuationRS Description

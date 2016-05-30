@@ -43,9 +43,10 @@ that the supplier returns said information.
 ### CurrenyListRQ Example
 
 
+~~~xml
     <CurrenyListRQ>
     </CurrenyListRQ>
-
+~~~
 
 
 ### CurrenyListRQ Description
@@ -62,6 +63,7 @@ that the supplier returns said information.
 ### CurrencyListRS Example
 
 
+~~~xml
     <CurrencyListRS>
         <Currencies>
             <Currency>
@@ -74,7 +76,7 @@ that the supplier returns said information.
             </Currency>
         </Currencies>
     </CurrencyListRS>
-
+~~~
 
 
 ### HotelListRS Description

@@ -18,16 +18,29 @@ By using the field ID in the request.
 
 For example:
    
-    > **In the request:**
-    >
-    >     <!--First provider-->               <!--Second provider-->
-    >     <ns:code>TEST</ns:code>             <ns:code>TEST2</ns:code>
-    >     <ns:id>1</ns:id>                    <ns:id>2</ns:id>
-    >
-    > **In the response:**
-    >
-    >     <!--Response first provider-->       <!--Response Second provider-->
-    >     <refId>1</refId>                     <refId>2</refId>
+**In the request:**
+
+~~~xml
+<!--First provider-->
+<ns:code>TEST</ns:code>
+<ns:id>1</ns:id>
+~~~
+~~~xml
+<!--Second provider-->
+<ns:code>TEST2</ns:code>
+<ns:id>2</ns:id>
+~~~
+
+**In the response:**
+
+~~~xml
+<!--Response first provider-->
+<refId>1</refId>
+~~~
+~~~xml
+<!--Response Second provider-->
+<refId>2</refId>
+~~~
 
 **How does the price work and how should I interpret the value in the field "commission"?**
 

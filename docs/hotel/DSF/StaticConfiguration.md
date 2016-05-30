@@ -37,9 +37,10 @@ stay minimum, list of languages that allows ....).
 ### StaticConfigurationRQ Example
 
 
+~~~xml
     <StaticConfigurationRQ>
     </StaticConfigurationRQ>
-
+~~~
 
 
 ### StaticConfigurationRQ Description
@@ -55,6 +56,7 @@ stay minimum, list of languages that allows ....).
 ### StaticConfigurationRS Example
 
 
+~~~xml
     <StaticConfigurationRS>
         <MaxNumberHotels>2000</MaxNumberHotels>
         <MaxNumberCities>1</MaxNumberCities>
@@ -149,7 +151,7 @@ stay minimum, list of languages that allows ....).
         <ImplementsDescriptiveInfoExtended>false</ImplementsDescriptiveInfoExtended>
         <InformNumberOfUnits>true</InformNumberOfUnits>     
     </StaticConfigurationRS>
-
+~~~
 
 
 ### StaticConfigurationRS Description

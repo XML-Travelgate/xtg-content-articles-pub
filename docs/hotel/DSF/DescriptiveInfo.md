@@ -41,12 +41,13 @@ is **180000** milliseconds.
 ### DescriptiveInfoRQ Example
 
 
+~~~xml
     <DescriptiveInfoRQ>
         <Hotel>
             <Code>524AC</Code>
         </Hotel>
     </DescriptiveInfoRQ>
-
+~~~
 
 
 ### DescriptiveInfoRQ Description
@@ -65,7 +66,7 @@ is **180000** milliseconds.
 ### DescriptiveInfoRS Example
 
 
-
+~~~xml
     <DescriptiveInfoRS>
     <Hotel>
         <Code>70</Code>
@@ -180,7 +181,7 @@ is **180000** milliseconds.
         </PropertyCategory>
     </Hotel>
     </DescriptiveInfoRS>
-
+~~~
 
 
 ### DescriptiveInfoRS Description

@@ -19,6 +19,7 @@ The response object contains the operation status and errors if any.
 ### Common Elements RQ Example
 
 
+~~~xml
     <HotelBaseRQ>
         <echoToken>TEST</echoToken>
         <timeoutMilliseconds>20000</timeoutMilliseconds>
@@ -44,7 +45,7 @@ The response object contains the operation status and errors if any.
         </Configuration>
         …
     </HotelBaseRQ>
-
+~~~
 
 
 ### Common Elements RQ Description
@@ -102,6 +103,7 @@ affected.
 ### Common Elements RS Example
 
 
+~~~xml
     <HotelBaseRS>
         <echoToken>TEST</echoToken>
         <OperationImplemented>true</OperationImplemented>
@@ -124,7 +126,7 @@ affected.
         </auditData>
         …
     </HotelBaseRS>
-
+~~~
 
 
 ### Common Elements RS Description

@@ -49,6 +49,7 @@ is closed, is of **180000** millisecond.
 ### ReservationReadRQ Example
 
 
+~~~xml
     <ReservationReadRQ>
         <Locators>
             <Client>5356342</Client>
@@ -59,7 +60,7 @@ is closed, is of **180000** millisecond.
         <EndDate>29/01/2014</EndDate>
         <CreationDate>17/01/2014</CreationDate>
     </ReservationReadRQ>
-
+~~~
 
 
 ### ReservationReadRQ Description
@@ -82,6 +83,7 @@ is closed, is of **180000** millisecond.
 ### ReservationReadRS Example
 
 
+~~~xml
     <ReservationReadRS>
           <Locators>
                     <Client>2578478</Client>
@@ -111,7 +113,7 @@ is closed, is of **180000** millisecond.
                     <ResStatus>OK</ResStatus>
                 </TransactionStatus>
     </ReservationReadRS>
-
+~~~
 
 
 ### ReservationReadRS Description

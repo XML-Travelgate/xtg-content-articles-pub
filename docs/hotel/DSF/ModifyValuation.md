@@ -41,6 +41,7 @@ is closed, is of **180000** milliseconds.
 ### ModifyValuationRQ Example
 
 
+~~~xml
     <ModifyValuationRQ>
         <OnRequest>false</OnRequest>
         <Nationality>ES</Nationality>
@@ -101,7 +102,7 @@ is closed, is of **180000** milliseconds.
             </ModifyRoomsRemoveRooms>
         </Modifications>
     </ModifyValuationRQ>
-
+~~~
 
 
 ### ModifyValuationRQ Description
@@ -166,6 +167,7 @@ is closed, is of **180000** milliseconds.
 ### ModifyValuationRS Example
 
 
+~~~xml
     <ModifyValuationRS>
         <Status>OK</Status>
         <ModifyPenalty currency = "EUR" amount = "0" binding = "false" commission = "-1"/>
@@ -187,7 +189,7 @@ is closed, is of **180000** milliseconds.
             <Parameter key = "bd1" value = "43"/>
         </Parameters>
     </ModifyValuationRS>
-
+~~~
 
 
 ### ModifyValuationRS Description
