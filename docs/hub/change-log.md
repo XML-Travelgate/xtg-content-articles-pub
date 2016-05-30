@@ -2,7 +2,7 @@
 title: Change log
 keywords: intro, version
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hub/change-log
+permalink: /docs/hub/change-log
 ---
 
 

@@ -2,7 +2,7 @@
 title: Typical Exchange Message Scenario
 keywords: hotel-push, messages, messages files, typical scenario
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel-push/messages-files/typical-scenario
+permalink: /docs/hotel-push/messages-files/typical-scenario
 ---
 
 Typical use case of message exchange flow between Providers and Sellers

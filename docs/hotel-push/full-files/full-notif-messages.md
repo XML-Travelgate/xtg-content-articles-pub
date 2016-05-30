@@ -2,7 +2,7 @@
 title: Full Notify Messages
 keywords: hotel-push, full messages, full notify messages
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel-push/full-files/full-notif-messages
+permalink: /docs/hotel-push/full-files/full-notif-messages
 ---
 
 

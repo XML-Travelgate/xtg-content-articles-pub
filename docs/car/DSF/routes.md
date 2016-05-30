@@ -2,7 +2,7 @@
 title: Routes (Offices)
 keywords: transfers, data structure, routes, offices
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/car/DSF/routes
+permalink: /docs/car/DSF/routes
 ---
 
 

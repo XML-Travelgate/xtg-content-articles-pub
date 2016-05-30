@@ -2,7 +2,7 @@
 title: Example Code
 keywords: example, codes
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hub/example-codes
+permalink: /docs/hub/example-codes
 ---
 
 ### Visual Basic .NET Example

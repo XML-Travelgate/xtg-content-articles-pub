@@ -2,7 +2,7 @@
 title: DestinationsTree
 keywords: transfers, destination tree, destination
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transfers/DSF/destionationtree
+permalink: /docs/transfers/DSF/destionationtree
 ---
 
 

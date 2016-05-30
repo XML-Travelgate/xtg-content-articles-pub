@@ -2,7 +2,7 @@
 title: MealPlanList
 keywords: hotel, data structure, meal plan list , meal, list
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/MealPlanList
+permalink: /docs/hotel/DSF/MealPlanList
 ---
 
 

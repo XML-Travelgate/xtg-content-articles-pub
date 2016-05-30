@@ -2,7 +2,7 @@
 title: Booking
 keywords: transfers, booking
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transfers/DSF/reservation
+permalink: /docs/transfers/DSF/reservation
 ---
 
 

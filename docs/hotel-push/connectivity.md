@@ -2,7 +2,7 @@
 title: Connectivity
 keywords: hotel-push, connectivity
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel-push/connectivity
+permalink: /docs/hotel-push/connectivity
 ---
 
 XTG HubPush provides an OTA (OpenTravel Alliance) Web Service which

@@ -2,7 +2,7 @@
 title: Reservation
 keywords: transportation, data structure, ferries, reservation
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transportation/DSF/ferries/reservation
+permalink: /docs/transportation/DSF/ferries/reservation
 ---
 
 

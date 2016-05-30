@@ -2,7 +2,7 @@
 title: Availability
 keywords: transfers, availability, avail
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transfers/DSF/avail
+permalink: /docs/transfers/DSF/avail
 ---
 
 

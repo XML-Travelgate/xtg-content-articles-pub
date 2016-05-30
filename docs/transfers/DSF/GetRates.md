@@ -2,7 +2,7 @@
 title: GetRates
 keywords: transfers, get rates, rates
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transfers/DSF/GetRates
+permalink: /docs/transfers/DSF/GetRates
 ---
 
 

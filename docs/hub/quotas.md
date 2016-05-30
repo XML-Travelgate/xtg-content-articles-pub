@@ -2,7 +2,7 @@
 title: Hub Quotas
 keywords: intro
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hub/quotas
+permalink: /docs/hub/quotas
 ---
 
 This section enumerates basic quotas and throttling thresholds in XML

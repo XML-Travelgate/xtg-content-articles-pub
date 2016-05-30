@@ -2,7 +2,7 @@
 title: Avail
 keywords: hotel, data structure, avail
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/Avail
+permalink: /docs/hotel/DSF/Avail
 ---
 
 

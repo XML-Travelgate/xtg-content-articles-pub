@@ -2,7 +2,7 @@
 title: Cancel
 keywords: activities, data structure, cancel
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/activities/DSF/cancel
+permalink: /docs/activities/DSF/cancel
 ---
 
 

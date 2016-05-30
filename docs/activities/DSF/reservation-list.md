@@ -2,7 +2,7 @@
 title: Reservation List
 keywords: activities, data structure, reservation list
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/activities/DSF/reservation-list
+permalink: /docs/activities/DSF/reservation-list
 ---
 
 

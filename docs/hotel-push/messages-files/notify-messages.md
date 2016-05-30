@@ -2,7 +2,7 @@
 title: Notify Messages
 keywords: hotel-push, messages, messages files, notify messages
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel-push/messages-files/notify-messages
+permalink: /docs/hotel-push/messages-files/notify-messages
 ---
 
 Providers sends data to Sellers (Negotiation is started by Providers).

@@ -2,7 +2,7 @@
 title: Pre-Booking (Rate Rule)
 keywords: transfers, data structure, pre booking, rate rule
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/car/DSF/rate-rule
+permalink: /docs/car/DSF/rate-rule
 ---
 
 

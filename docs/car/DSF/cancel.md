@@ -2,7 +2,7 @@
 title: Cancel Booking
 keywords: transfers, data structure, cancel booking, cancellation
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/car/DSF/cancel
+permalink: /docs/car/DSF/cancel
 ---
 
 

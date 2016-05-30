@@ -2,7 +2,7 @@
 title: HotelList
 keywords: transfers, hotel list, list
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transfers/DSF/hotel-list
+permalink: /docs/transfers/DSF/hotel-list
 ---
 
 

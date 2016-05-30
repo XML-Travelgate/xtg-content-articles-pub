@@ -2,7 +2,7 @@
 title: Static Configuration
 keywords: activities, data structure, static configuration
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/activities/DSF/static-configuration
+permalink: /docs/activities/DSF/static-configuration
 ---
 
 

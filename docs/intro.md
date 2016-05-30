@@ -2,7 +2,7 @@
 title: Intro
 keywords: intro
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/intro/
+permalink: /docs/intro/
 ---
 
 # XML Travelgate Introduction!

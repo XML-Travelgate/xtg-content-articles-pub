@@ -2,7 +2,7 @@
 title: Service Endpoints
 keywords: service endpoints, intro
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/service-endpoints/
+permalink: /docs/service-endpoints/
 ---
 
 # Service Endpoints

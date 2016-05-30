@@ -2,7 +2,7 @@
 title: RuntimeConfiguration
 keywords: hotel, data structure, run time configuration, time
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/RuntimeConfiguration
+permalink: /docs/hotel/DSF/RuntimeConfiguration
 ---
 
 

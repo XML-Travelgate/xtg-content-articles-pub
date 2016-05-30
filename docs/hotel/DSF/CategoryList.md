@@ -2,7 +2,7 @@
 title: CategoryList
 keywords: hotel, data structure, category list, list
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/CategoryList
+permalink: /docs/hotel/DSF/CategoryList
 ---
 
 

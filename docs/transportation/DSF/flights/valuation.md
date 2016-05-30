@@ -2,7 +2,7 @@
 title: Valuation
 keywords: transportation, data structure, flights, valuation
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transportation/DSF/flights/valuation
+permalink: /docs/transportation/DSF/flights/valuation
 ---
 
 

@@ -2,7 +2,7 @@
 title: DescriptiveInfoExtended (In development)
 keywords: hotel, data structure, descriptive, descriptive info, extended
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/DescriptiveInfoExtended
+permalink: /docs/hotel/DSF/DescriptiveInfoExtended
 ---
 
 

@@ -2,7 +2,7 @@
 title: Reservation
 keywords: activities, data structure, reservation
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/activities/DSF/reservation
+permalink: /docs/activities/DSF/reservation
 ---
 
 

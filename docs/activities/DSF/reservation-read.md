@@ -2,7 +2,7 @@
 title: Reservation Read
 keywords: activities, data structure, reservation read
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/activities/DSF/reservation-read
+permalink: /docs/activities/DSF/reservation-read
 ---
 
 

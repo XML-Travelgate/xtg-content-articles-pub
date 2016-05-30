@@ -2,7 +2,7 @@
 title: Reservation
 keywords: transportation, data structure, flights, reservation
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transportation/DSF/flights/reservation
+permalink: /docs/transportation/DSF/flights/reservation
 ---
 
 

@@ -2,7 +2,7 @@
 title: GetTransferTypes
 keywords: transfers, get transfers, transfers types
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transfers/DSF/GetTransferTypes
+permalink: /docs/transfers/DSF/GetTransferTypes
 ---
 
 

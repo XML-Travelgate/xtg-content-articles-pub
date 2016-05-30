@@ -2,7 +2,7 @@
 title: DescriptiveInfo
 keywords: hotel, data structure, descriptive, descriptive info, info
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/DescriptiveInfo
+permalink: /docs/hotel/DSF/DescriptiveInfo
 ---
 
 

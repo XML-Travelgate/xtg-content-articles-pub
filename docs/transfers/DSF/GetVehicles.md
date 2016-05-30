@@ -2,7 +2,7 @@
 title: GetVehicles
 keywords: transfers, get vehicles, vehicles
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transfers/DSF/GetVehicles
+permalink: /docs/transfers/DSF/GetVehicles
 ---
 
 

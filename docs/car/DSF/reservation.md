@@ -2,7 +2,7 @@
 title: Booking
 keywords: transfers, data structure, booking
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/car/DSF/reservation
+permalink: /docs/car/DSF/reservation
 ---
 
 

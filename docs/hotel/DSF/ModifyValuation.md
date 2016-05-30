@@ -2,7 +2,7 @@
 title: ModifyValuation
 keywords: hotel, data structure, modify valuation
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/ModifyValuation
+permalink: /docs/hotel/DSF/ModifyValuation
 ---
 
 

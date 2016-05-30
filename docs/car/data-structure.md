@@ -2,7 +2,7 @@
 title: Data Structure
 keywords: transfers, data structure
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/car/data-structure
+permalink: /docs/car/data-structure
 ---
 
 This document intends to explain every aspect of this structure and
@@ -62,14 +62,14 @@ can be resumed as:
 
 **Data structure content:**
 
-1. [Common-Elements](/developer-documentation/car/DSF/common-elements)
-2. [Availability](/developer-documentation/car/DSF/avail)
-3. [Pre-Booking (Rate Rule)](/developer-documentation/car/DSF/rate-rule)
-4. [Booking](/developer-documentation/activities/DSF/reservation)
-5. [Routes (Offices)](/developer-documentation/car/DSF/routes)
-6. [OTA VehRetRes (GetBooking Details)](/developer-documentation/car/DSF/valuation)
-7. [Cancel Booking](/developer-documentation/car/DSF/cancel)
-8. [StaticConfiguration](/developer-documentation/car/DSF/static-configuration)
-9. [RunTimeConfiguration](/developer-documentation/car/DSF/runtimeconfiguration)
-10. [Code List](/developer-documentation/car/DSF/code-lists)
+1. [Common-Elements](/docs/car/DSF/common-elements)
+2. [Availability](/docs/car/DSF/avail)
+3. [Pre-Booking (Rate Rule)](/docs/car/DSF/rate-rule)
+4. [Booking](/docs/activities/DSF/reservation)
+5. [Routes (Offices)](/docs/car/DSF/routes)
+6. [OTA VehRetRes (GetBooking Details)](/docs/car/DSF/valuation)
+7. [Cancel Booking](/docs/car/DSF/cancel)
+8. [StaticConfiguration](/docs/car/DSF/static-configuration)
+9. [RunTimeConfiguration](/docs/car/DSF/runtimeconfiguration)
+10. [Code List](/docs/car/DSF/code-lists)
 

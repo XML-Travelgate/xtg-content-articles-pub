@@ -2,7 +2,7 @@
 title: Valuation
 keywords: transportation, data structure, ferries, valuation
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transportation/DSF/ferries/valuation
+permalink: /docs/transportation/DSF/ferries/valuation
 ---
 
 

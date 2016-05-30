@@ -2,7 +2,7 @@
 title: CurrencyList
 keywords: hotel, data structure, currency list, list
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/CurrencyList
+permalink: /docs/hotel/DSF/CurrencyList
 ---
 
 

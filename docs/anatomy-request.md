@@ -2,7 +2,7 @@
 title: Anatomy of Request
 keywords:
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/anatomy-request/
+permalink: /docs/anatomy-request/
 ---
 
 

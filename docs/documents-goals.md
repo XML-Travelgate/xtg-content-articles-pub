@@ -3,7 +3,7 @@ title: Documents goals
 keywords: "documents, documents goals, intro"
 published: true
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/documents-goals/
+permalink: /docs/documents-goals/
 ---
 
 

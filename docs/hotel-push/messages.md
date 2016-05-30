@@ -2,7 +2,7 @@
 title: Messages
 keywords: hotel-push, messages
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel-push/messages
+permalink: /docs/hotel-push/messages
 ---
 
 List of messages with OTA xsd structure used:
@@ -22,6 +22,6 @@ List of messages with OTA xsd structure used:
 **Contents:**
 
 
-1. [Typical Exchange Message Scenario](/developer-documentation/hotel-push/messages-files/typical-scenario)
-2. [Retrieve Messages](/developer-documentation/hotel-push/messages-files/retrieve-messages)
-3. [Notify Messages](/developer-documentation/hotel-push/messages-files/notify-messages)
+1. [Typical Exchange Message Scenario](/docs/hotel-push/messages-files/typical-scenario)
+2. [Retrieve Messages](/docs/hotel-push/messages-files/retrieve-messages)
+3. [Notify Messages](/docs/hotel-push/messages-files/notify-messages)

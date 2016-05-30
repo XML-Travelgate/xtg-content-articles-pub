@@ -2,7 +2,7 @@
 title: GeographicDestinationTree
 keywords: hotel, data structure, destination tree, geographic destination tree
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/GeographicDestinationTree
+permalink: /docs/hotel/DSF/GeographicDestinationTree
 ---
 
 

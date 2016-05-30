@@ -2,7 +2,7 @@
 title: Lists of Data
 keywords: hotel, data structure, list data
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/ListData
+permalink: /docs/hotel/DSF/ListData
 ---
 
 

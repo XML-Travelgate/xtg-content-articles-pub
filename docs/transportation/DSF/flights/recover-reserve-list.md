@@ -2,7 +2,7 @@
 title: RetrieveReservationList
 keywords: transportation, data structure, flights, recover reserve, retrieve list, list, reservation
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transportation/DSF/flights/recover-reserve-list
+permalink: /docs/transportation/DSF/flights/recover-reserve-list
 ---
 
 

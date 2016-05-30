@@ -2,7 +2,7 @@
 title: RoomList
 keywords: hotel, data structure, room list, list
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/RoomList
+permalink: /docs/hotel/DSF/RoomList
 ---
 
 

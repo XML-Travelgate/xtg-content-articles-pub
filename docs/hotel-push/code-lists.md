@@ -2,7 +2,7 @@
 title: Code Lists
 keywords: hotel-push, code lists
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel-push/code-lists
+permalink: /docs/hotel-push/code-lists
 ---
 
 

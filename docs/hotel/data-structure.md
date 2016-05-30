@@ -2,7 +2,7 @@
 title: Data Structure
 keywords: common elements, elements, hotel
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/data-structure
+permalink: /docs/hotel/data-structure
 ---
 
 The structure of the API specification follows a standard. This document
@@ -42,27 +42,27 @@ the specific objects related to the operation
 
 **Data structure content:**
 
-1. [Common-Elements](/developer-documentation/hotel/DSF/Common-Elements)
-2. [Avail](/developer-documentation/hotel/DSF/Avail)
-3. [Valuation](/developer-documentation/hotel/DSF/Valuation)
-4. [Reservation](/developer-documentation/hotel/DSF/Reservation)
-5. [ReservationRead](/developer-documentation/hotel/DSF/ReservationRead)
-6. [ReservationList](/developer-documentation/hotel/DSF/ReservationList)
-7. [Cancel](/developer-documentation/hotel/DSF/Cancel)
-8. [HotelList](/developer-documentation/hotel/DSF/HotelList)
-9. [DescriptiveInfo](/developer-documentation/hotel/DSF/DescriptiveInfo)
-10. [DescriptiveInfoExtended](/developer-documentation/hotel/DSF/DescriptiveInfoExtended)
-11. [AvailDestinationTree](/developer-documentation/hotel/DSF/AvailDestinationTree)
-12. [GeographicDestinationTree](/developer-documentation/hotel/DSF/GeographicDestinationTree)
-13. [MealPlanList](/developer-documentation/hotel/DSF/MealPlanList)
-14. [RoomList](/developer-documentation/hotel/DSF/RoomList)
-15. [CategoryList](/developer-documentation/hotel/DSF/CategoryList)
-16. [StaticConfiguration](/developer-documentation/hotel/DSF/StaticConfiguration)
-17. [RuntimeConfiguration](/developer-documentation/hotel/DSF/RuntimeConfiguration)
-18. [ModifyValuation](/developer-documentation/hotel/DSF/ModifyValuation)
-19. [ModifyReservation](/developer-documentation/hotel/DSF/ModifyReservation)
-20. [CurrencyList](/developer-documentation/hotel/DSF/CurrencyList)
-21. [Lists of Data](/developer-documentation/hotel/DSF/ListData)
+1. [Common-Elements](/docs/hotel/DSF/Common-Elements)
+2. [Avail](/docs/hotel/DSF/Avail)
+3. [Valuation](/docs/hotel/DSF/Valuation)
+4. [Reservation](/docs/hotel/DSF/Reservation)
+5. [ReservationRead](/docs/hotel/DSF/ReservationRead)
+6. [ReservationList](/docs/hotel/DSF/ReservationList)
+7. [Cancel](/docs/hotel/DSF/Cancel)
+8. [HotelList](/docs/hotel/DSF/HotelList)
+9. [DescriptiveInfo](/docs/hotel/DSF/DescriptiveInfo)
+10. [DescriptiveInfoExtended](/docs/hotel/DSF/DescriptiveInfoExtended)
+11. [AvailDestinationTree](/docs/hotel/DSF/AvailDestinationTree)
+12. [GeographicDestinationTree](/docs/hotel/DSF/GeographicDestinationTree)
+13. [MealPlanList](/docs/hotel/DSF/MealPlanList)
+14. [RoomList](/docs/hotel/DSF/RoomList)
+15. [CategoryList](/docs/hotel/DSF/CategoryList)
+16. [StaticConfiguration](/docs/hotel/DSF/StaticConfiguration)
+17. [RuntimeConfiguration](/docs/hotel/DSF/RuntimeConfiguration)
+18. [ModifyValuation](/docs/hotel/DSF/ModifyValuation)
+19. [ModifyReservation](/docs/hotel/DSF/ModifyReservation)
+20. [CurrencyList](/docs/hotel/DSF/CurrencyList)
+21. [Lists of Data](/docs/hotel/DSF/ListData)
 
 
 

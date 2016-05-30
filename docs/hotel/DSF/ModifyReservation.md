@@ -2,7 +2,7 @@
 title: ModifyReservation
 keywords: hotel, data structure, modify reservation
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/ModifyReservation
+permalink: /docs/hotel/DSF/ModifyReservation
 ---
 
 

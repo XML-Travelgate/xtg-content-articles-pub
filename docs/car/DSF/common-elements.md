@@ -2,7 +2,7 @@
 title: Common Elements
 keywords: transfers, data structure, common elements
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/car/DSF/common-elements
+permalink: /docs/car/DSF/common-elements
 ---
 
 

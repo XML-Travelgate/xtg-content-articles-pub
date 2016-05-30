@@ -2,7 +2,7 @@
 title: Ferries Data Structure
 keywords: transportation, ferries data structure
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transportation/ferries
+permalink: /docs/transportation/ferries
 ---
 
 The structure of the API specification follows a standard. This document
@@ -38,13 +38,13 @@ the specific objects related to the operation
 
 **Data structure content:**
 
-1. [Ferries](/developer-documentation/transportation/ferries)
-2. [Common-Elements](/developer-documentation/transportation/DSF/ferries/common-elements)
-3. [Valuation](/developer-documentation/hotel/DSF/Valuation)
-4. [Avail](/developer-documentation/transportation/DSF/ferries/avail)
-5. [Valuation](/developer-documentation/transportation/DSF/ferries/valuation)
-6. [Reservation](/developer-documentation/transportation/DSF/ferries/reservation)
-7. [Routes](/developer-documentation/transportation/DSF/ferries/routes)
-8. [RetrieveReservation](/developer-documentation/transportation/DSF/ferries/retrieveReservation)
-9. [RetrieveReservationList](/developer-documentation/transportation/DSF/ferries/retrieveReservationList)
-10. [Cancellation](/developer-documentation/transportation/DSF/ferries/cancel)
+1. [Ferries](/docs/transportation/ferries)
+2. [Common-Elements](/docs/transportation/DSF/ferries/common-elements)
+3. [Valuation](/docs/hotel/DSF/Valuation)
+4. [Avail](/docs/transportation/DSF/ferries/avail)
+5. [Valuation](/docs/transportation/DSF/ferries/valuation)
+6. [Reservation](/docs/transportation/DSF/ferries/reservation)
+7. [Routes](/docs/transportation/DSF/ferries/routes)
+8. [RetrieveReservation](/docs/transportation/DSF/ferries/retrieveReservation)
+9. [RetrieveReservationList](/docs/transportation/DSF/ferries/retrieveReservationList)
+10. [Cancellation](/docs/transportation/DSF/ferries/cancel)

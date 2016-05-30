@@ -2,7 +2,7 @@
 title: Common Elements
 keywords: transportation, data structure, ferries, common elements
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transportation/DSF/ferries/common-elements
+permalink: /docs/transportation/DSF/ferries/common-elements
 ---
 
 

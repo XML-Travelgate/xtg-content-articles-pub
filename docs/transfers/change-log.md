@@ -2,7 +2,7 @@
 title: Change Log
 keywords: transfers, change log
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transfers/change-log
+permalink: /docs/transfers/change-log
 ---
 
 

@@ -2,7 +2,7 @@
 title: Valuation
 keywords: activities, data structure, valuation
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/activities/DSF/valuation
+permalink: /docs/activities/DSF/valuation
 ---
 
 

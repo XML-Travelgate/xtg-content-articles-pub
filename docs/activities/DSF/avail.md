@@ -2,7 +2,7 @@
 title: Avail
 keywords: activities, data structure, avail
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/activities/DSF/avail
+permalink: /docs/activities/DSF/avail
 ---
 
 

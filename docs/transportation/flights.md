@@ -2,7 +2,7 @@
 title: Flights Data Structure
 keywords: transportation, flights data structure
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transportation/flights
+permalink: /docs/transportation/flights
 ---
 
 The structure of the API specification follows a standard. This document
@@ -37,10 +37,10 @@ the specific objects related to the operation
 
 **Data structure content:**
 
-1. [Flights](/developer-documentation/transportation/flights)
-2. [Avail](/developer-documentation/transportation/DSF/flights/avail)
-3. [Valuation](/developer-documentation/transportation/DSF/flights/valuation)
-4. [Reservation](/developer-documentation/transportation/DSF/flights/reservation)
-5. [RetrieveReservation](/developer-documentation/transportation/DSF/flights/recover-reserve)
-6. [RetrieveReservationList](/developer-documentation/transportation/DSF/flights/recover-reserve-list)
-7. [Cancellation](/developer-documentation/transportation/DSF/flights/cancel)
+1. [Flights](/docs/transportation/flights)
+2. [Avail](/docs/transportation/DSF/flights/avail)
+3. [Valuation](/docs/transportation/DSF/flights/valuation)
+4. [Reservation](/docs/transportation/DSF/flights/reservation)
+5. [RetrieveReservation](/docs/transportation/DSF/flights/recover-reserve)
+6. [RetrieveReservationList](/docs/transportation/DSF/flights/recover-reserve-list)
+7. [Cancellation](/docs/transportation/DSF/flights/cancel)

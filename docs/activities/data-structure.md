@@ -2,7 +2,7 @@
 title: Data Structure
 keywords: activities, data structure
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/activities/data-structure
+permalink: /docs/activities/data-structure
 ---
 
 The structure of the API specification follows a standard. This document
@@ -34,15 +34,15 @@ the specific objects related to the operation
 
 **Data structure content:**
 
-1. [Common-Elements](/developer-documentation/activities/DSF/common-elements)
-2. [Avail](/developer-documentation/activities/DSF/avail)
-3. [Valuation](/developer-documentation/activities/DSF/valuation)
-4. [Reservation](/developer-documentation/activities/DSF/reservation)
-5. [ReservationRead](/developer-documentation/activities/DSF/reservation-read)
-6. [ReservationList](/developer-documentation/activities/DSF/reservation-list)
-7. [Cancel](/developer-documentation/activities/DSF/cancel)
-8. [StaticConfiguration](/developer-documentation/activities/DSF/static-configuration)
-9. [RunTimeConfiguration](/developer-documentation/activities/DSF/runtimeconfiguration)
+1. [Common-Elements](/docs/activities/DSF/common-elements)
+2. [Avail](/docs/activities/DSF/avail)
+3. [Valuation](/docs/activities/DSF/valuation)
+4. [Reservation](/docs/activities/DSF/reservation)
+5. [ReservationRead](/docs/activities/DSF/reservation-read)
+6. [ReservationList](/docs/activities/DSF/reservation-list)
+7. [Cancel](/docs/activities/DSF/cancel)
+8. [StaticConfiguration](/docs/activities/DSF/static-configuration)
+9. [RunTimeConfiguration](/docs/activities/DSF/runtimeconfiguration)
 
 
 

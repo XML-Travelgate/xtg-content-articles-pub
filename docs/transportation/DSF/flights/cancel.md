@@ -2,7 +2,7 @@
 title: Cancellation
 keywords: transportation, data structure, flights, cancellation
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transportation/DSF/flights/cancel
+permalink: /docs/transportation/DSF/flights/cancel
 ---
 
 

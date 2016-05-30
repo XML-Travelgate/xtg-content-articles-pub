@@ -2,7 +2,7 @@
 title: Code Lists
 keywords: transfers, data structure, code lists, lists
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/car/DSF/code-lists
+permalink: /docs/car/DSF/code-lists
 ---
 
 

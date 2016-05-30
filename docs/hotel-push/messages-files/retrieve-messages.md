@@ -2,7 +2,7 @@
 title: Retrieve Messages
 keywords: hotel-push, messages, messages files, retrieve messages
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel-push/messages-files/retrieve-messages
+permalink: /docs/hotel-push/messages-files/retrieve-messages
 ---
 
 Providers requests Sellers to retrieve data (Negotiation is started by

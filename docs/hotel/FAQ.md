@@ -2,7 +2,7 @@
 title: Frequently Asked Questions!
 keywords: intro
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/FAQ
+permalink: /docs/hotel/FAQ
 ---
 
 

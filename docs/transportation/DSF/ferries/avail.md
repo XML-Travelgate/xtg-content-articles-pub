@@ -2,7 +2,7 @@
 title: Availability
 keywords: transportation, data structure, ferries, availability
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transportation/DSF/ferries/avail
+permalink: /docs/transportation/DSF/ferries/avail
 ---
 
 

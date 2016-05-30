@@ -2,7 +2,7 @@
 title: Common Elements
 keywords: transfers, common elements, elements
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transfers/DSF/common-elements
+permalink: /docs/transfers/DSF/common-elements
 ---
 
 This node will be in every request and response objects.

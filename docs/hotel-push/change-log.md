@@ -2,7 +2,7 @@
 title: Change Log
 keywords: hotel-push, change log
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel-push/change-log
+permalink: /docs/hotel-push/change-log
 ---
 
 

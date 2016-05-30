@@ -2,7 +2,7 @@
 title: Reservation
 keywords: hotel, data structure, reservation
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/Reservation
+permalink: /docs/hotel/DSF/Reservation
 ---
 
 

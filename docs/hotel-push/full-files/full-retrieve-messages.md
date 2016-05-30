@@ -2,7 +2,7 @@
 title: Full Retrieve Messages
 keywords: hotel-push, full messages, full retrieve messages
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel-push/full-files/full-retrieve-messages
+permalink: /docs/hotel-push/full-files/full-retrieve-messages
 ---
 
 

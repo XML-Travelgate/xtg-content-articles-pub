@@ -2,7 +2,7 @@
 title: Avail
 keywords: transportation, data structure, flights, avail
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transportation/DSF/flights/avail
+permalink: /docs/transportation/DSF/flights/avail
 ---
 
 

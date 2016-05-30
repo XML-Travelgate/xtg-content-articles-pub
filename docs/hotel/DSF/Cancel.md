@@ -2,7 +2,7 @@
 title: Cancel
 keywords: hotel, data structure, cancel
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/Cancel
+permalink: /docs/hotel/DSF/Cancel
 ---
 
 

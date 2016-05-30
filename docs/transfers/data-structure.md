@@ -2,7 +2,7 @@
 title: Data Structure
 keywords: transfers, data structure
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transfers/data-structure
+permalink: /docs/transfers/data-structure
 ---
 
 The structure of the API specification follows a standard. This document
@@ -39,20 +39,20 @@ the specific objects related to the operation.
 
 **Data structure content:**
 
-1. [Common-Elements](/developer-documentation/transfers/DSF/common-elements)
-2. [Avail](/developer-documentation/transfers/DSF/avail)
-3. [Rate Rule](/developer-documentation/transfers/DSF/rate-rule)
-4. [Booking](/developer-documentation/transfers/DSF/reservation)
-5. [Retrieve Booking](/developer-documentation/transfers/DSF/retrieve-booking)
-6. [Cancel Booking](/developer-documentation/transfers/DSF/cancel-booking)
-7. [DestinationTree](/developer-documentation/transfers/DSF/destionationtree)
-8. [HotelList](/developer-documentation/transfers/DSF/hotel-list)
-9. [GetRates](/developer-documentation/transfers/DSF/GetRates)
-10. [GetSupplements](/developer-documentation/transfers/DSF/GetSupplements)
-11. [GetSupplierRateTransferTypes](/developer-documentation/transfers/DSF/GetSupplierRateTransfersTypes)
-12. [GetSupplierTransferTypes](/developer-documentation/transfers/DSF/GetSupplierTransferTypes)
-13. [GetTransferTypes](/developer-documentation/transfers/DSF/GetTransferTypes)
-14. [GetVehicles](/developer-documentation/transfers/DSF/GetVehicles)
+1. [Common-Elements](/docs/transfers/DSF/common-elements)
+2. [Avail](/docs/transfers/DSF/avail)
+3. [Rate Rule](/docs/transfers/DSF/rate-rule)
+4. [Booking](/docs/transfers/DSF/reservation)
+5. [Retrieve Booking](/docs/transfers/DSF/retrieve-booking)
+6. [Cancel Booking](/docs/transfers/DSF/cancel-booking)
+7. [DestinationTree](/docs/transfers/DSF/destionationtree)
+8. [HotelList](/docs/transfers/DSF/hotel-list)
+9. [GetRates](/docs/transfers/DSF/GetRates)
+10. [GetSupplements](/docs/transfers/DSF/GetSupplements)
+11. [GetSupplierRateTransferTypes](/docs/transfers/DSF/GetSupplierRateTransfersTypes)
+12. [GetSupplierTransferTypes](/docs/transfers/DSF/GetSupplierTransferTypes)
+13. [GetTransferTypes](/docs/transfers/DSF/GetTransferTypes)
+14. [GetVehicles](/docs/transfers/DSF/GetVehicles)
 
 
 

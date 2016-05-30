@@ -2,7 +2,7 @@
 title: Static Configuration
 keywords: transfers, data structure, static configuration
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/car/DSF/static-configuration
+permalink: /docs/car/DSF/static-configuration
 ---
 
 

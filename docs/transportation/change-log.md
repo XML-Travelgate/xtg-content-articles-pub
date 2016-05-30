@@ -2,7 +2,7 @@
 title: Change Log
 keywords: transportation, change log
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transportation/change-log
+permalink: /docs/transportation/change-log
 ---
 
 

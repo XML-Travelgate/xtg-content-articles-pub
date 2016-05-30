@@ -2,7 +2,7 @@
 title: Data Structure
 keywords: intro
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hub/data-structure
+permalink: /docs/hub/data-structure
 ---
 
 There is a common XML API structure that is used for all integration
@@ -17,11 +17,11 @@ API:
 
 
 
--   [Hotel API](/developer-documentation/hotel/index)
--   [Transportation API](/developer-documentation/transportation/index)
--   [Car API](/developer-documentation/car/index)
--   [Transfers API](/developer-documentation/transfers/index)
--   [Tour Activity API](/developer-documentation/activities/index) 
+-   [Hotel API](/docs/hotel/index)
+-   [Transportation API](/docs/transportation/index)
+-   [Car API](/docs/car/index)
+-   [Transfers API](/docs/transfers/index)
+-   [Tour Activity API](/docs/activities/index) 
 
 
 

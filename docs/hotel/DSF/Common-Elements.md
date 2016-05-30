@@ -2,7 +2,7 @@
 title: Common Elements
 keywords: common elements, elements, hotel
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/Common-Elements
+permalink: /docs/hotel/DSF/Common-Elements
 ---
 
 

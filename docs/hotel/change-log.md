@@ -2,7 +2,7 @@
 title: Change Log
 keywords: intro
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/change-log
+permalink: /docs/hotel/change-log
 ---
 
 

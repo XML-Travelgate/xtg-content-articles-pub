@@ -2,7 +2,7 @@
 title: Common Elements
 keywords: activities, data structure, common elements
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/activities/DSF/common-elements
+permalink: /docs/activities/DSF/common-elements
 ---
 
 This node will be in every request and response objects.

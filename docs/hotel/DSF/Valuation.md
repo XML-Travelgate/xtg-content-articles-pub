@@ -2,7 +2,7 @@
 title: Valuation
 keywords: hotel, data structure, valuation
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/Valuation
+permalink: /docs/hotel/DSF/Valuation
 ---
 
 

@@ -2,7 +2,7 @@
 title: CancelBooking
 keywords: transfers, cancel booking
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transfers/DSF/cancel-booking
+permalink: /docs/transfers/DSF/cancel-booking
 ---
 
 

@@ -2,7 +2,7 @@
 title: AvailDestinationTree
 keywords: hotel, data structure, destination tree, avail destination tree
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/AvailDestinationTree
+permalink: /docs/hotel/DSF/AvailDestinationTree
 ---
 
 

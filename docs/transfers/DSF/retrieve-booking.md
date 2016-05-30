@@ -2,7 +2,7 @@
 title: RetrieveBooking
 keywords: transfers, retrieve booking
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transfers/DSF/retrieve-booking
+permalink: /docs/transfers/DSF/retrieve-booking
 ---
 
 

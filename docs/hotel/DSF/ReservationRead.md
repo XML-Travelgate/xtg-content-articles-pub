@@ -2,7 +2,7 @@
 title: ReservationRead
 keywords: hotel, data structure, reservation
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/ReservationRead
+permalink: /docs/hotel/DSF/ReservationRead
 ---
 
 

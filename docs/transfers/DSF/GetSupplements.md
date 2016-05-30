@@ -2,7 +2,7 @@
 title: GetSupplements
 keywords: transfers, get supplements, supplements
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transfers/DSF/GetSupplements
+permalink: /docs/transfers/DSF/GetSupplements
 ---
 
 

@@ -2,21 +2,21 @@
 title: Hotel PUSH API Docs''s documentation!
 keywords: index
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel-push/index
+permalink: /docs/hotel-push/index
 ---
 
 **Contents:**
 
-1. [Change Log](/developer-documentation/hotel-push/change-log)
-2. [Connectivity](/developer-documentation/hotel-push/connectivity)
-3. [Price Charging Types](/developer-documentation/hotel-push/price-types)
-4. [Messages](/developer-documentation/hotel-push/messages)
-   1. [Typical Exchange Message Scenario](/developer-documentation/hotel-push/messages-files/typical-scenario)
-   2. [Retrieve Messages](/developer-documentation/hotel-push/messages-files/retrieve-messages)
-   3. [Notify Messages](/developer-documentation/hotel-push/messages-files/notify-messages)
-5. [Full Body Messages](/developer-documentation/hotel-push/full-messages)
-   1. [Full Retrieve Messages](/developer-documentation/hotel-push/full-files/full-retrieve-messages)
-   2. [Full Notify Messages](/developer-documentation/hotel-push/full-files/full-notif-messages)
-6. [Certification Process](/developer-documentation/hotel-push/certification) 
-7. [Code Lists](/developer-documentation/hotel-push/code-lists)
-8. [FAQ](/developer-documentation/hotel-push/FAQ)
+1. [Change Log](/docs/hotel-push/change-log)
+2. [Connectivity](/docs/hotel-push/connectivity)
+3. [Price Charging Types](/docs/hotel-push/price-types)
+4. [Messages](/docs/hotel-push/messages)
+   1. [Typical Exchange Message Scenario](/docs/hotel-push/messages-files/typical-scenario)
+   2. [Retrieve Messages](/docs/hotel-push/messages-files/retrieve-messages)
+   3. [Notify Messages](/docs/hotel-push/messages-files/notify-messages)
+5. [Full Body Messages](/docs/hotel-push/full-messages)
+   1. [Full Retrieve Messages](/docs/hotel-push/full-files/full-retrieve-messages)
+   2. [Full Notify Messages](/docs/hotel-push/full-files/full-notif-messages)
+6. [Certification Process](/docs/hotel-push/certification) 
+7. [Code Lists](/docs/hotel-push/code-lists)
+8. [FAQ](/docs/hotel-push/FAQ)

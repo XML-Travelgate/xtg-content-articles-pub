@@ -2,7 +2,7 @@
 title: StaticConfiguration
 keywords: hotel, data structure, static configuration, static
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/StaticConfiguration
+permalink: /docs/hotel/DSF/StaticConfiguration
 ---
 
 

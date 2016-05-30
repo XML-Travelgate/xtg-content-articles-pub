@@ -2,7 +2,7 @@
 title: SOAP Examples
 keywords: hotel, soap, examples
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/soap-examples
+permalink: /docs/hotel/soap-examples
 ---
 
 

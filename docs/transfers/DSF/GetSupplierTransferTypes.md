@@ -2,7 +2,7 @@
 title: GetSupplierTransferTypes
 keywords: transfers, get supplier transfers, transfers types
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transfers/DSF/GetSupplierTransferTypes
+permalink: /docs/transfers/DSF/GetSupplierTransferTypes
 ---
 
 

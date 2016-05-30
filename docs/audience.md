@@ -2,7 +2,7 @@
 title: Audience
 keywords: audience
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/audience/
+permalink: /docs/audience/
 ---
 
 This document is intended to a technical audience. Prior knowledge of

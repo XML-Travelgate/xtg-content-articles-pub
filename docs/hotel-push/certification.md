@@ -2,7 +2,7 @@
 title: Certification Process
 keywords: hotel-push, certification process
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel-push/certification
+permalink: /docs/hotel-push/certification
 ---
 
 Once integration is developed, please refer to

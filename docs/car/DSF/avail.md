@@ -2,7 +2,7 @@
 title: Availability
 keywords: transfers, data structure, availability
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/car/DSF/avail
+permalink: /docs/car/DSF/avail
 ---
 
 

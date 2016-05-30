@@ -2,7 +2,7 @@
 title: RateRule (Pre-Booking)
 keywords: transfers, rate rule
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/transfers/DSF/rate-rule
+permalink: /docs/transfers/DSF/rate-rule
 ---
 
 

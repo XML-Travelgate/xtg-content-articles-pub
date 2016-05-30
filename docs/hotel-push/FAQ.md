@@ -2,7 +2,7 @@
 title: FAQ
 keywords: hotel-push, faq
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel-push/FAQ
+permalink: /docs/hotel-push/FAQ
 ---
 
 
@@ -15,11 +15,11 @@ Standard occupancy is used to calculate prices under it:
 
 For example, if the standard occupancy is 2. And it’s loaded...
 
-```
+~~~xml
 <BaseByGuestAmts>
    <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
 </BaseByGuestAmts>
-```
+~~~
 
 ... The price of two paxes will be 100, and the price for one pax will
 be 50.

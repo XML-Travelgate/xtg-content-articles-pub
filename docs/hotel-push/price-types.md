@@ -2,7 +2,7 @@
 title: Price Charging Types
 keywords: hotel-push, price charging types, types
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel-push/price-types
+permalink: /docs/hotel-push/price-types
 ---
 
 Three price charging types are allowed: price per Room, price per Pax

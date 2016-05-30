@@ -2,7 +2,7 @@
 title: HotelList
 keywords: hotel, data structure, hotel list, list
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/hotel/DSF/HotelList
+permalink: /docs/hotel/DSF/HotelList
 ---
 
 

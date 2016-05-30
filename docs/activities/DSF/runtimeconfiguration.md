@@ -2,7 +2,7 @@
 title: Run Time Configuration
 keywords: activities, data structure, run time configuration
 sidebar: mydoc_sidebar
-permalink: /developer-documentation/activities/DSF/runtimeconfiguration
+permalink: /docs/activities/DSF/runtimeconfiguration
 ---
 
 
