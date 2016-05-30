@@ -51,7 +51,7 @@ Please, check Hub Quotas for some limitations to requests.
 
 
 
-
+~~~xml
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
         <soapenv:Header>
             <wsse:Security>
@@ -86,7 +86,7 @@ Please, check Hub Quotas for some limitations to requests.
             </ns:Disponibilidad>
         </soapenv:Body>
     </soapenv:Envelope>
-
+~~~
 
 
 ### Availability RQ Description
@@ -113,7 +113,7 @@ Please, check Hub Quotas for some limitations to requests.
 
 
 
-
+~~~xml
     <s:Envelope xmlns:s = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:u = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
         <s:Header>
             <o:Security s:mustUnderstand = "1" xmlns:o = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -197,7 +197,7 @@ Please, check Hub Quotas for some limitations to requests.
             </DisponibilidadResponse>
         </s:Body>
     </s:Envelope>
-
+~~~
 
 
 ### Availability RS Description

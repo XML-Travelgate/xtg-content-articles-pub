@@ -8,7 +8,7 @@ permalink: /docs/hub/example-codes
 ### Visual Basic .NET Example
 
 
-~~~
+~~~VBNET
 Imports System.Net
 Imports System.ServiceModel.Channels
 Imports System.Security.Cryptography.X509Certificates
@@ -116,7 +116,7 @@ End Module
 ### C# Example
 
 
-~~~
+~~~csharp
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
@@ -227,7 +227,7 @@ namespace ClientC
 ### Java
 
 
-~~~
+~~~java
 
 import com.xmltravelgate.schemas.hub._2012._06.*;
 import javax.xml.ws.*;
@@ -320,7 +320,7 @@ public class ExampleConnectionJava {
 
 
 
-~~~
+~~~java
 
 import java.util.ArrayList;
 import java.util.List;
@@ -344,7 +344,7 @@ public class HotelServiceHandlerResolver implements HandlerResolver {
 
 
 
-~~~
+~~~java
 
 import java.util.*;
 import javax.xml.ws.handler.soap.*; 
@@ -420,7 +420,7 @@ public class HotelServiceSOAPSecurityHandler implements SOAPHandler<SOAPMessageC
 
 ### Hotel - Service HotelBatch - HotelList Method
 
-~~~
+~~~php
 
 <?php 
 //php.ini must include soap extension:  extension=php_soap.dll
@@ -500,7 +500,7 @@ echo print_r($result, true);
 ### Car - Availability Call 1..n providers in Request - Service Car - VehAvailRate Method
 
 
-~~~
+~~~php
 <?php 
 //php.ini must include soap extension:  extension=php_soap.dll
 $requestTimeoutMs = 20000; 
@@ -591,7 +591,7 @@ $result = $client->__soapCall("OTA_VehAvailRate", $VehAvailRateRQ,
 
 ### Car - Common Call 1 provider in Request - Service Car - VehRateRule Method
 
-~~~
+~~~php
 <?php 
 //php.ini must include soap extension:  extension=php_soap.dll
 
