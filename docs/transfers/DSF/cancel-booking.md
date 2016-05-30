@@ -17,6 +17,7 @@ This method aims to cancel a booking.
 ### CancelBookingRQ Example
 
 
+~~~xml
     <CancelBookingRQ>
     <timeoutMilliseconds>XXXX</timeoutMilliseconds>
     <source>
@@ -39,7 +40,7 @@ This method aims to cancel a booking.
     </Configuration>
     <Locator id = "94" type = "PROVIDER"/>
     </CancelBookingRQ>
-
+~~~
 
 
 
@@ -57,7 +58,7 @@ This method aims to cancel a booking.
 ### CancelBookingRS Example
 
 
-
+~~~xml
     <CancelBookingRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
     <auditData>
         <timeStamp>2015-03-05T10:54:41.5860766+01:00</timeStamp>
@@ -93,7 +94,7 @@ This method aims to cancel a booking.
         </CanceledRate>
     </CanceledRates>
     <ReservationStatus>CANCELLED</ReservationStatus></CancelBookingRS>
-
+~~~
 
 
 

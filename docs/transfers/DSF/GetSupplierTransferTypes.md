@@ -20,6 +20,7 @@ permalink: /docs/transfers/DSF/GetSupplierTransferTypes
 ### GetSupplierTransferTypesRQ Example
 
 
+~~~xml
     <GetSupplierTransferTypesRQ>
         <timeoutMilliseconds>60000</timeoutMilliseconds>
         <source>
@@ -35,7 +36,7 @@ permalink: /docs/transfers/DSF/GetSupplierTransferTypes
             <Attributes/>
         </Configuration>
     </GetSupplierTransferTypesRQ>
-
+~~~
 
 
 ### GetSupplierTransferTypesRQ Description
@@ -52,6 +53,7 @@ permalink: /docs/transfers/DSF/GetSupplierTransferTypes
 ### GetSupplierTransferTypesRS Example
 
 
+~~~xml
     <GetSupplierTransferTypesRS>
         <auditData>
             <timeStamp>2014-10-30T11:33:16.7125413+00:00</timeStamp>
@@ -84,7 +86,7 @@ permalink: /docs/transfers/DSF/GetSupplierTransferTypes
             </Supplier>
         </Suppliers>
     </GetSupplierTransferTypesRS>
-
+~~~
 
 
 ### GetSupplierTransferTypesRS Description

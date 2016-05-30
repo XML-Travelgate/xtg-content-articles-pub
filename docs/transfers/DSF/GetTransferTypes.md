@@ -20,6 +20,7 @@ permalink: /docs/transfers/DSF/GetTransferTypes
 ### GetTransferTypesRQ Example
 
 
+~~~xml
     <GetTransferTypesRQ>
         <timeoutMilliseconds>60000</timeoutMilliseconds>
         <source>
@@ -35,7 +36,7 @@ permalink: /docs/transfers/DSF/GetTransferTypes
             <Attributes/>
         </Configuration>
     </GetTransferTypesRQ>
-
+~~~
 
 
 ### GetTransferTypesRQ Description
@@ -52,6 +53,7 @@ permalink: /docs/transfers/DSF/GetTransferTypes
 ### GetTransferTypesRS Example
 
 
+~~~xml
     <GetTransferTypesRS>
         <auditData>
             <timeStamp>2014-10-30T11:35:31.1499128+00:00</timeStamp>
@@ -69,7 +71,7 @@ permalink: /docs/transfers/DSF/GetTransferTypes
             <TransferType id = "5" name = "Privado - VIP"/>
         </TransferTypes>
     </GetTransferTypesRS>
-
+~~~
 
 
 ### GetTransferTypesRS Description

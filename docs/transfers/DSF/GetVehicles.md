@@ -23,6 +23,7 @@ transfers.
 ### GetVehiclesRQ Example
 
 
+~~~xml
     <GetVehiclesRQ>
         <timeoutMilliseconds>60000</timeoutMilliseconds>
         <source>
@@ -38,7 +39,7 @@ transfers.
             <Attributes/>
         </Configuration>
     </GetVehiclesRQ>
-
+~~~
 
 
 ### GetVehiclesRQ Description
@@ -55,6 +56,7 @@ transfers.
 ### GetVehiclesRS Example
 
 
+~~~xml
     <GetVehiclesRS>
         <auditData>
             <timeStamp>2014-10-30T11:34:03.0050926+00:00</timeStamp>
@@ -71,7 +73,7 @@ transfers.
             <Vehicle id = "6" name = "Coche"/>
         </Vehicles>
     </GetVehiclesRS>
-
+~~~
 
 
 ### GetVehiclesRS Description

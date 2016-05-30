@@ -23,6 +23,7 @@ rates.
 #### GetSupplierRateTransfersTypesRQ Example
 
 
+~~~xml
     <GetSupplierRateTransferTypesRQ>
     <timeoutMilliseconds>60000</timeoutMilliseconds>
     <source>
@@ -38,7 +39,7 @@ rates.
     <Attributes/>
     </Configuration>
     </GetSupplierRateTransferTypesRQ>
-
+~~~
 
 
 ### GetSuppliersRateTransfersTypesRQ Description
@@ -55,6 +56,7 @@ rates.
 ### GetSupplierRateTransfersTypesRS Example
 
 
+~~~xml
     <GetSupplierRateTransferTypesRS>
     <auditData>
     <timeStamp>2014-10-30T11:32:29.8466879+00:00</timeStamp>
@@ -86,7 +88,7 @@ rates.
     <Supplier id = "ext-4"/>
     </Suppliers>
     </GetSupplierRateTransferTypesRS>
-
+~~~
 
 
 ### GetSupplierRateTransfersTypesRS Description

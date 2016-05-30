@@ -17,8 +17,7 @@ This method aims to book the selected options.
 ### BookRQ Example
 
 
-
-
+~~~xml
     <BookRQ>
         <timeoutMilliseconds>60000</timeoutMilliseconds>
         <source>
@@ -87,7 +86,7 @@ This method aims to book the selected options.
         </PassengersConfirm>
         <Customer name = "xxx" surname = "XXXX" age = "30" phone = "+34665246787"/>
     </BookRQ>
-
+~~~
 
 
 ### BookRQ Description
@@ -127,8 +126,7 @@ always CLIENT).
 ### BookRS Example
 
 
-
-
+~~~xml
     <BookRS> 
         <auditData>
             <transactions>
@@ -155,7 +153,7 @@ always CLIENT).
         <TotalPrice currency = "EUR" amount = "5.350" priceType = "NET" commission = "0.640"/>
         <ReservationStatus>RESERVED</ReservationStatus>
     </BookRS>
-
+~~~
 
 
 ### BookRS Description

@@ -28,7 +28,7 @@ defined by the provider.
 
 
 
-
+~~~xml
     <DestinationsTreeRQ>
         <timeoutMilliseconds>60000</timeoutMilliseconds>
         <source>
@@ -50,7 +50,7 @@ defined by the provider.
             <Attributes></Attributes>
         </Configuration>
     </DestinationsTreeRQ>
-
+~~~
 
 
 ### DestinationsTreeRQ Description
@@ -68,7 +68,7 @@ The request just contains the elements of BaseRQ.
 
 
 
-
+~~~xml
     <DestinationsTreeRS>
         <auditData>
             <timeStamp>2014-09-11T15:08:20.7037707+01:00</timeStamp>
@@ -107,7 +107,7 @@ The request just contains the elements of BaseRQ.
         <Destination code = "444" name = "Xxxx" type = "HOT" avail = "true"/>
     ...
     </DestinationsTreeRS>
-
+~~~
 
 
 ### DestinationsTreeRS Description

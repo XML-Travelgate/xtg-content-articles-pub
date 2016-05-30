@@ -22,6 +22,7 @@ This method aims to retrieve a list of the rates that can be booked.
 ### GetRatesRQ Example
 
 
+~~~xml
     <GetRatesRQ>
         <timeoutMilliseconds>60000</timeoutMilliseconds>
         <source>
@@ -37,7 +38,7 @@ This method aims to retrieve a list of the rates that can be booked.
             <Attributes/>
         </Configuration>
     </GetRatesRQ>
-
+~~~
 
 
 ### GetRatesRQ Description
@@ -54,6 +55,7 @@ The request just contains the elements of BaseRQ.
 ### GetRatesRS Example
 
 
+~~~xml
     <GetRatesRS>
         <auditData>
             <timeStamp>2014-10-30T11:29:11.5564985+00:00</timeStamp>
@@ -79,7 +81,7 @@ The request just contains the elements of BaseRQ.
             <Rate id = "18" name = "Comas Privado 21 - 31 RT"/>
         </Rates>
     </GetRatesRS>
-
+~~~
 
 
 ### GetRatesRS Description

@@ -23,6 +23,7 @@ to a product.
 ### GetSupplementsRQ Example
 
 
+~~~xml
     <GetSupplementsRQ>
         <timeoutMilliseconds>60000</timeoutMilliseconds>
         <source>
@@ -38,7 +39,7 @@ to a product.
             <Attributes/>
         </Configuration>
     </GetSupplementsRQ>
-
+~~~
 
 
 ### GetSupplementsRQ Description
@@ -55,6 +56,7 @@ to a product.
 ### GetSupplementsRS Example
 
 
+~~~xml
     <GetSupplementsRS>
         <auditData>
             <timeStamp>2014-10-30T11:31:22.5565555+00:00</timeStamp>
@@ -70,7 +72,7 @@ to a product.
             <Supplement id = "1" name = "Guitarra"/>
         </Supplements>
     </GetSupplementsRS>
-
+~~~
 
 
 ### GetSupplementsRS Description

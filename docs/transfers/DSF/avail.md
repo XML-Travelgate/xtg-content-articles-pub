@@ -26,7 +26,7 @@ This method **must** be called **before** the RateRule method.
 
 
 
-
+~~~xml
     <AvailabilityRQ>
         <echoToken>test</echoToken>
         <timeoutMilliseconds>60000</timeoutMilliseconds>
@@ -82,7 +82,7 @@ This method **must** be called **before** the RateRule method.
             </Passenger>
         </Passengers>
     </AvailabilityRQ>
-
+~~~
 
 
 ### AvailabilityRQ Description
@@ -133,7 +133,7 @@ and HotelInfo object.
 
 
 
-
+~~~xml
     <AvailabilityRS>
         <auditData>
             <transactions>
@@ -221,7 +221,7 @@ and HotelInfo object.
             ...
         </Warnings>
     </AvailabilityRS>
-
+~~~
 
 
 ### AvailabilityRS Description

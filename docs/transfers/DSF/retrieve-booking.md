@@ -18,7 +18,7 @@ This method aims to Retrieve Booking details.
 
 
 
-
+~~~xml
     <RetrieveBookingRQ>
         <timeoutMilliseconds>60000</timeoutMilliseconds>
         <source>
@@ -42,7 +42,7 @@ This method aims to Retrieve Booking details.
         </Configuration>
         <Locator id = "XXX" type = "PROVIDER"/>
     </RetrieveBookingRQ>
-
+~~~
 
 
 ### RetrieveBookingRQ Description
@@ -66,7 +66,7 @@ difference is that only contains the locator of the provider's system.
 
 
 
-
+~~~xml
     <RetrieveBookingRS> 
         <auditData>
             <transactions>
@@ -139,7 +139,7 @@ difference is that only contains the locator of the provider's system.
             . . .    
         </Errors>
     </RetrieveBookingRS>
-
+~~~
 
 
 ### RetrieveBookingRS Description

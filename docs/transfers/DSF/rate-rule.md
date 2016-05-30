@@ -31,7 +31,7 @@ the results in order to refresh the information and produce a RateRuleRS.
 
 
 
-
+~~~xml
     <RateRuleRQ>
        <timeoutMilliseconds>60000</timeoutMilliseconds>
         <source>
@@ -116,7 +116,7 @@ the results in order to refresh the information and produce a RateRuleRS.
             </Passenger>
         </Passengers>
     </RateRuleRQ>
-
+~~~
 
 
 ### RateRule RQ Description
@@ -157,7 +157,7 @@ The RateRule request requires the following information:
 
 
 
-
+~~~xml
     <RateRuleRS>
         <auditData>
             <transactions>
@@ -229,7 +229,7 @@ The RateRule request requires the following information:
             . . .    
         </Errors>
      </RateRuleRS>
-
+~~~
 
 
 ### RateRuleRS Description

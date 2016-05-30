@@ -27,7 +27,7 @@ provider.
 ### HotelListRQ Example
 
 
-
+~~~xml
     <HotelListRQ xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
         <timeoutMilliseconds>900000</timeoutMilliseconds>
         <source>
@@ -51,7 +51,7 @@ provider.
             </Attributes>
         </Configuration>
     </HotelListRQ>
-
+~~~
 
 
 ### HotelListRQ Description
@@ -68,8 +68,7 @@ The request just contains the elements of BaseRQ.
 ### HotelListRS Example
 
 
-
-
+~~~xml
     <HotelListRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
         <auditData>
             <timeStamp>2014-09-11T17:46:22.3354117+02:00</timeStamp>
@@ -104,7 +103,7 @@ The request just contains the elements of BaseRQ.
         </Hotel>
         ...
     </HotelListRS>
-
+~~~
 
 
 ### HotelListRS Description

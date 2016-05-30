@@ -18,7 +18,7 @@ The response object contains the operation status and errors if any.
 
 
 
-
+~~~xml
     <TransfersBaseRQ>
         <echoToken>TEST</echoToken>
         <timeoutMilliseconds>60000</timeoutMilliseconds>
@@ -46,7 +46,7 @@ The response object contains the operation status and errors if any.
         </Configuration>
        …
     </TransfersBaseRQ>
-
+~~~
 
 
 ### Common Elements RQ Description
@@ -86,7 +86,7 @@ The response object contains the operation status and errors if any.
 
 
 
-
+~~~xml
     <TransfersBaseRS>
        <operationImplemented>true</operationImplemented>
        <Errors>
@@ -110,7 +110,7 @@ The response object contains the operation status and errors if any.
        </Warnings>
        …
     </TransfersBaseRS>
-
+~~~
 
 
 ### Common Elements RS Description
