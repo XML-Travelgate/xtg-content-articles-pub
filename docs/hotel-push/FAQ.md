@@ -15,9 +15,11 @@ Standard occupancy is used to calculate prices under it:
 
 For example, if the standard occupancy is 2. And it’s loaded...
 
-    <BaseByGuestAmts>
-        <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
-    </BaseByGuestAmts>
+```
+<BaseByGuestAmts>
+   <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
+</BaseByGuestAmts>
+```
 
 ... The price of two paxes will be 100, and the price for one pax will
 be 50.

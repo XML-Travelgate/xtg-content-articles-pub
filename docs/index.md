@@ -1,5 +1,5 @@
 ---
-title: Welcome to XML Travelgate API Docs's documentation!
+title: XML Travelgate API documentation
 sidebar: mydoc_sidebar
 permalink: /developer-documentation/index/
 ---
