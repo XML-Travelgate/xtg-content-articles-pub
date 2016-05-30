@@ -34,7 +34,7 @@ configure the integration.
 
 
 
-
+~~~xml
     <StaticConfigurationRQ xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
         <timeoutMilliseconds>999999</timeoutMilliseconds>
         <filterAuditData>
@@ -55,7 +55,7 @@ configure the integration.
         </Configuration>
         <ClientConfiguration agency="testAgency" SellCurrency="EUR" />
     </StaticConfigurationRQ>
-
+~~~
 
 
 ### StaticConfigurationRQ Description
@@ -67,7 +67,7 @@ configure the integration.
 
 
 
-
+~~~xml
     <StaticConfigurationRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
         <operationImplemented>true</operationImplemented>
         <ImplementsOTA_VehRetRes>true</ImplementsOTA_VehRetRes>
@@ -80,7 +80,7 @@ configure the integration.
         <MaxPickUpIATALocationsPerOTA_VehAvail>1</MaxPickUpIATALocationsPerOTA_VehAvail>
         <MaxReturnIATALocationsPerOTA_VehAvail>1</MaxReturnIATALocationsPerOTA_VehAvail>
     </StaticConfigurationRS>
-
+~~~
 
 
 ### StaticConfigurationRS Description

@@ -23,7 +23,7 @@ This method aims to book the selected vehicle.
 
 
 
-
+~~~xml
     <OTA_VehResRQ>
     <timeoutMilliseconds>60000</timeoutMilliseconds>
       <filterAuditData>
@@ -77,7 +77,7 @@ This method aims to book the selected vehicle.
             <UniqueID ID = "Travel123456" Type = "1"/>
         </VehResRQCore>
     </OTA_VehResRQ>
-
+~~~
 
 
 ### OTA VehResRQ Description
@@ -124,7 +124,7 @@ also necessary the customer information.
 
 
 
-
+~~~xml
     <OTA_VehResRS> 
         <auditData>
             <transactions>
@@ -151,7 +151,7 @@ also necessary the customer information.
             </VehReservation>
         </VehResRSCore>
     </OTA_VehResRS>
-
+~~~
 
 
 ### OTA VehResRS Description

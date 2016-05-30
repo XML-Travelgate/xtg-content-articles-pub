@@ -29,8 +29,7 @@ will do a OTA VehAvailRate again filtered by the selected option.
 ### OTA VehRateRule RQ Example
 
 
-
-
+~~~xml
     <OTA_VehRateRuleRQ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <timeoutMilliseconds>60000</timeoutMilliseconds>
       <filterAuditData>
@@ -74,7 +73,7 @@ will do a OTA VehAvailRate again filtered by the selected option.
         </TPA_Extensions>
       </RentalInfo>
     </OTA_VehRateRuleRQ>
-
+~~~
 
 
 ### OTA VehRateRuleRQ Description
@@ -107,7 +106,7 @@ The VehRateRule request requires the following information:
 
 
 
-
+~~~xml
     <?xml version="1.0"?>
     <OTA_VehRateRuleRS xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <auditData>
@@ -245,7 +244,7 @@ The VehRateRule request requires the following information:
         <Atributos></Atributos>
       </TPA_Extensions>
     </OTA_VehRateRuleRS>
-
+~~~
 
 
 ### OTA VehRateRuleRS Description

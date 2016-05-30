@@ -26,7 +26,7 @@ This method **must** be called **before** the OTA VehRateRule method.
 
 
 
-
+~~~xml
     <OTA_VehAvailRateRQ>
         <timeoutMilliseconds>60000</timeoutMilliseconds>
       <filterAuditData>
@@ -66,7 +66,7 @@ This method **must** be called **before** the OTA VehRateRule method.
         </Customer>
       </VehAvailRQInfo>
     </OTA_VehAvailRateRQ>
-
+~~~
 
 
 ### OTA VehAvailRateRQ Description
@@ -145,7 +145,7 @@ and a few other optional filters.
 
 
 
-
+~~~xml
     <OTA_VehAvailRateRS xmlns = "" xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
         <auditData>
             <transactions>
@@ -214,7 +214,7 @@ and a few other optional filters.
             </VehVendorAvails>
         </VehAvailRSCore>
     </OTA_VehAvailRateRS>
-
+~~~
 
 
 ### OTA VehAvailRateRS Description

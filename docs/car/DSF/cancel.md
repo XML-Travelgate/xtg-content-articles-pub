@@ -25,7 +25,7 @@ Not implemented by all suppliers
 
 
 
-
+~~~xml
     <OTA_VehCancelRQ>
         <POS>
             <Source ISOCountry = "ESP">
@@ -40,7 +40,7 @@ Not implemented by all suppliers
             </PersonName>
         </VehCancelRQCore>
     </OTA_VehCancelRQ>
-
+~~~
 
 
 ### OTA VehCancelRQ Description
@@ -66,7 +66,7 @@ The request requires the booking code and the name of the customer.
 
 
 
-
+~~~xml
     <OTA_VehCancelRS>
         <Success/>
         <VehCancelRSCore CancelStatus = " ">
@@ -85,7 +85,7 @@ The request requires the booking code and the name of the customer.
             ...
         </Warnings>
     </OTA_VehCancelRS>
-
+~~~
 
 
 ### OTA VehCancelRS Description

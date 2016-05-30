@@ -25,7 +25,7 @@ Some suppliers do not implement this method.
 
 
 
-
+~~~xml
     <OTA_VehRetResRQ>
         <POS>
             <Source ISOCountry = "ESP">
@@ -40,7 +40,7 @@ Some suppliers do not implement this method.
             </PersonName>
         </VehRetResRQCore>
     </OTA_VehRetResRQ>
-
+~~~
 
 
 ### OTA_VehRetResRQ Description
@@ -64,7 +64,7 @@ information.
 
 
 
-
+~~~xml
     <OTA_VehRetResRS>
         <Success/>
         <VehRetResRSCore>
@@ -91,7 +91,7 @@ information.
             ...
         </Warnings>
     </OTA_VehRetResRS>
-
+~~~
 
 
 ### OTA VehRetResRS Description

@@ -33,7 +33,7 @@ The response contains a list of "attribute".
 
 
 
-
+~~~xml
     <RunTimeConfigurationRQ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <timeoutMilliseconds>999999</timeoutMilliseconds>
       <filterAuditData>
@@ -53,7 +53,7 @@ The response contains a list of "attribute".
       </Configuration>
       <ClientConfiguration agency="testAgency" SellCurrency="EUR" />
     </RunTimeConfigurationRQ>
-
+~~~
 
 
 ### RunTimeConfiguration Description
@@ -65,7 +65,7 @@ The response contains a list of "attribute".
 
 
 
-
+~~~xml
     <RunTimeConfigurationRS xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <operationImplemented>true</operationImplemented>
       <Configuration ProviderCode="AVI">
@@ -95,7 +95,7 @@ The response contains a list of "attribute".
         </Attributes>
       </Configuration>
     </RunTimeConfigurationRS>
-
+~~~
 
 
 ### RunTimeConfigurationRS Description

@@ -19,7 +19,7 @@ The response object contains the operation status and errors if any.
 
 
 
-
+~~~xml
     <CarBaseRQ>
        <timeoutMilliseconds>20000</timeoutMilliseconds>
        <filterAuditData>
@@ -39,7 +39,7 @@ The response object contains the operation status and errors if any.
        <ClientConfiguration agency = "agencyName" SellCurrency = "EUR"/>
        …
     </CarBaseRQ>
-
+~~~
 
 
 ### Common Elements RQ Description
@@ -81,7 +81,7 @@ The response object contains the operation status and errors if any.
 
 
 
-
+~~~xml
     <CarBaseRS>
        <operationImplemented>true</operationImplemented>
        <Errors>
@@ -103,7 +103,7 @@ The response object contains the operation status and errors if any.
        </Warnings>
        …
     </CarBaseRS>
-
+~~~
 
 
 ### Common Elements RS Description

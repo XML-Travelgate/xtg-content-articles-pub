@@ -27,7 +27,7 @@ in most cases once a month.
 
 
 
-
+~~~xml
     <OTA_VehLocSearchRQ>
         <timeoutMilliseconds>999999</timeoutMilliseconds>
         <filterAuditData>
@@ -56,7 +56,7 @@ in most cases once a month.
             </Source>
         </POS>
     </OTA_VehLocSearchRQ>
-
+~~~
 
 
 ### OTA VehLocSearchRQ Description
@@ -85,7 +85,7 @@ office if the provider allows it.
 
 
 
-
+~~~xml
     <OTA_VehLocSearchRS>
         <auditData>
             <timeStamp>2012-07-19T12:33:07.6131251+02:00</timeStamp>
@@ -162,7 +162,7 @@ office if the provider allows it.
             </VehMatchedLoc>
         </VehMatchedLocs>
     </OTA_VehLocSearchRS>
-
+~~~
 
 
 ### OTA VehLocSearchRS Description
