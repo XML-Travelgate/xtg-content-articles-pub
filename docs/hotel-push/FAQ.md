@@ -29,13 +29,14 @@ Standard occupancy is used to calculate prices above it:
 For example, if the standard occupancy is 2. And it’s loaded...
 
 
-
-    <BaseByGuestAmts>
-        <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
-    </BaseByGuestAmts>
-    <AdditionalGuestAmounts>
-        <AdditionalGuestAmount MaxAdditionalGuests = "1" Amount = "50.00" AgeQualifyingCode = "10"/>
-    </AdditionalGuestAmounts>
+~~~xml
+<BaseByGuestAmts>
+   <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
+   </BaseByGuestAmts>
+   <AdditionalGuestAmounts>
+   <AdditionalGuestAmount MaxAdditionalGuests = "1" Amount = "50.00" AgeQualifyingCode = "10"/>
+</AdditionalGuestAmounts>
+~~~ 
 
 ... The price of two paxes will be 100, but the price of three paxes
 will be 250

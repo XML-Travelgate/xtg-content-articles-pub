@@ -23,7 +23,7 @@ seller. XTG will process data and response with error code if needed.
 **Example for RatePlan**
 
 
-
+~~~xml
     <HotelRatePlanNotif>
       <request>
         <POS>
@@ -93,11 +93,13 @@ seller. XTG will process data and response with error code if needed.
         </RatePlans>
       </request>
     </HotelRatePlanNotif>
+~~~
+
 
 **Example for Derived RatePlan**
 
 
-
+~~~xml
     <HotelRatePlanNotif>
       <request Version = "0">
         <POS>
@@ -120,7 +122,7 @@ seller. XTG will process data and response with error code if needed.
         </RatePlan>
       </request>
     </HotelRatePlanNotif>
-
+~~~
 
 
 | **Element**				| **Number** | **Type**	| **Description**					|
@@ -212,10 +214,12 @@ Room uses = 1-0-0, 2-0-0.
 We only load the price for standard occupancy.
 
 
-
+~~~xml
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
     </BaseByGuestAmts>  
+~~~
+
 
 There is no price for one adult, so it wont be available.
 
@@ -232,11 +236,12 @@ Room uses = 1-0-0, 2-0-0.
 We load the price for standard occupancy and the price for 1 Adult.
 
 
-
+~~~xml
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "1" AmountAfterTax="100.00"/>
         <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="130.00"/>
     </BaseByGuestAmts>
+~~~
 
 The price of one Adult (Also known as Double Single Use) will be 100 =
 100.
@@ -255,13 +260,15 @@ We load the price for standard occupancy and the price for 1 additional
 Adult Type default.
 
 
-
+~~~xml
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
     </BaseByGuestAmts>
     <AdditionalGuestAmounts>
         <AdditionalGuestAmount MaxAdditionalGuests = "1" Amount = "40.00" AgeQualifyingCode = "10"/>
     </AdditionalGuestAmounts>
+~~~
+
 
 There is no price for one adult, so it wont be available.
 
@@ -282,13 +289,15 @@ We load the price for standard occupancy and the price for 1 additional
 Adult Type Exclusive.
 
 
-
+~~~xml
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
     </BaseByGuestAmts>
     <AdditionalGuestAmounts>
         <AdditionalGuestAmount MaxAdditionalGuests = "1" Amount = "40.00" AgeQualifyingCode = "10" Type="Exclusive"/>
     </AdditionalGuestAmounts>
+~~~
+
 
 There is no price for one adult, so it wont be available.
 
@@ -308,13 +317,15 @@ We load price for standard occupancy and the price for 1 additional
 Child (AgeQualifyingCode = "8") Type default.
 
 
-
+~~~xml
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
     </BaseByGuestAmts>
     <AdditionalGuestAmounts>
         <AdditionalGuestAmount MaxAdditionalGuests = "1" Amount = "40.00" AgeQualifyingCode = "8" />
     </AdditionalGuestAmounts>
+~~~
+
 
 There is no price for one adult, so it wont be available.
 
@@ -338,13 +349,15 @@ We load price for standard occupancy and the price for 1 additional Baby
 (AgeQualifyingCode = "7") Type default.
 
 
-
+~~~xml
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
     </BaseByGuestAmts>
     <AdditionalGuestAmounts>
         <AdditionalGuestAmount MaxAdditionalGuests = "1" Amount = "40.00" AgeQualifyingCode = "7" />
     </AdditionalGuestAmounts>
+~~~
+
 
 There is no price for one adult, so it wont be available.
 
@@ -365,13 +378,15 @@ We load price for standard occupancy and the price for 1 additional
 Child Type default negative price
 
 
-
+~~~xml
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
     </BaseByGuestAmts>
     <AdditionalGuestAmounts>
         <AdditionalGuestAmount MaxAdditionalGuests = "1" Amount = "-40.00" AgeQualifyingCode = "8" />
     </AdditionalGuestAmounts>
+~~~
+
 
 There is no price for one adult, so it wont be available.
 
@@ -392,7 +407,7 @@ We load the price of standard occupancy and the price for 1 additional
 adult and the price for 2 additional adults.
 
 
-
+~~~xml
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
     </BaseByGuestAmts>
@@ -400,6 +415,8 @@ adult and the price for 2 additional adults.
         <AdditionalGuestAmount MaxAdditionalGuests = "1" Amount = "10.00" AgeQualifyingCode = "10" />
         <AdditionalGuestAmount MaxAdditionalGuests = "2" Amount = "-15.00" AgeQualifyingCode = "10" />
     </AdditionalGuestAmounts>
+~~~
+
 
 There is no price for one adult, so it wont be available.
 
@@ -423,13 +440,15 @@ We load the price of standard occupancy and the price for each
 additional adult (Without specifying MaxAdditionalGuests).
 
 
-
+~~~xml
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax="100.00"/>
     </BaseByGuestAmts>
     <AdditionalGuestAmounts>
         <AdditionalGuestAmount MaxAdditionalGuests = "1" Amount = "-10.00" AgeQualifyingCode = "10" />
     </AdditionalGuestAmounts>
+~~~
+
 
 There is no price for one adult, so it wont be available.
 
@@ -453,7 +472,7 @@ We load the price of standard occupancy and the price for 1 additional
 adult and the price for 2 additional adults.
 
 
-
+~~~xml
     <BaseByGuestAmts>
         <BaseByGuestAmt NumberOfGuests = "3" AmountAfterTax="150.00"/>
     </BaseByGuestAmts>
@@ -461,6 +480,8 @@ adult and the price for 2 additional adults.
         <AdditionalGuestAmount MaxAdditionalGuests = "1" Amount = "-10.00" AgeQualifyingCode = "10" />
         <AdditionalGuestAmount MaxAdditionalGuests = "2" Amount = "15.00" AgeQualifyingCode = "10" />
     </AdditionalGuestAmounts>
+~~~
+
 
 There is no price for one adult, so it wont be available.
 
@@ -487,10 +508,12 @@ Room uses = 1-0-0, 2-0-0, 1-1-0.
 We load the price per room Type="25".
 
 
-
+~~~xml
     <BaseByGuestAmts>
         <BaseByGuestAmt Type = "25" AmountAfterTax="100.00"/>
     </BaseByGuestAmts>
+~~~
+
 
 The price of one Adult will be 100.
 
@@ -513,7 +536,7 @@ NOTE: the AdditionalGuestAmount Type in price per room has to be
 default. Exclusive type not allowed.
 
 
-
+~~~xml
     <BaseByGuestAmts>
         <BaseByGuestAmt Type = "25" AmountAfterTax="100.00"/>
     </BaseByGuestAmts>
@@ -521,6 +544,8 @@ default. Exclusive type not allowed.
         <AdditionalGuestAmount MaxAdditionalGuests = "1" Amount = "20.00" AgeQualifyingCode = "10" />
         <AdditionalGuestAmount MaxAdditionalGuests = "1" Amount = "10.00" AgeQualifyingCode = "8" />
     </AdditionalGuestAmounts>
+~~~
+
 
 The price of one Adult will be 100.
 
@@ -543,13 +568,15 @@ Room uses = 1-0-0, 2-0-0, 3-0-0, 4-0-0.
 We load the price per room but also the price for 1 additional adult.
 
 
-
+~~~xml
     <BaseByGuestAmts>
         <BaseByGuestAmt Type = "25" AmountAfterTax="100.00"/>
     </BaseByGuestAmts>
     <AdditionalGuestAmounts>
         <AdditionalGuestAmount MaxAdditionalGuests = "1" Amount = "20.00" AgeQualifyingCode = "10" />
     </AdditionalGuestAmounts>
+~~~
+
 
 The price of one Adult will be 100.
 
@@ -570,10 +597,12 @@ Room uses = 1-0-0, 2-0-0, 3-0-0.
 We only load price occupancy = 2 adults, 0 child and 0 baby.
 
 
-
+~~~xml
     <BaseByGuestAmts>
         <BaseByGuestAmt Type = "14" AmountAfterTax="100.00" Code = "2-0-0"/>
     </BaseByGuestAmts> 
+~~~
+
 
 Room will not be available for 1 or 3 adults.
 
@@ -589,11 +618,13 @@ We load price occupancy = 2 adults, 1 child and 0 baby; and for
 occupancy = 2 adults, 0 child and 1 baby.
 
 
-
+~~~xml
     <BaseByGuestAmts>
         <BaseByGuestAmt Type = "14" AmountAfterTax="95.00" Code = "2-1-0"/>
         <BaseByGuestAmt Type = "14" AmountAfterTax="80.00" Code = "2-0-1"/>
     </BaseByGuestAmts>  
+~~~
+
 
 The price of 2 adults, 1 child and 0 baby will be 95.
 
@@ -607,19 +638,19 @@ The price of 2 adults, 0 child and 1 baby will be 80.
 Success Response
 
 
-
+~~~xml
     <HotelRatePlanNotifResponse xmlns="http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
              <HotelRatePlanNotifResult>
                 <Success xmlns="http://www.opentravel.org/OTA/2003/05"/>
              </HotelRatePlanNotifResult>
     </HotelRatePlanNotifResponse>
-
+~~~
 
 
 Error Response
 
 
-
+~~~xml
     <HotelRatePlanNotifResponse xmlns="http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
          <HotelRatePlanNotifResult>
             <Errors xmlns="http://www.opentravel.org/OTA/2003/05">
@@ -627,7 +658,7 @@ Error Response
             </Errors>
          </HotelRatePlanNotifResult>
       </HotelRatePlanNotifResponse>
-
+~~~
 
 
 ### HotelAvailNotif
@@ -644,7 +675,7 @@ to seller. XTG will process data and response with error code if needed.
 **Example for RatePlan**
 
 
-
+~~~xml
     <HotelAvailNotif>
       <request>
         <POS>
@@ -686,13 +717,13 @@ to seller. XTG will process data and response with error code if needed.
         </AvailStatusMessages>
       </request>
     </HotelAvailNotif>
-
+~~~
 
 
 **Example for Derived RatePlan**
 
 
-
+~~xml
     <HotelAvailNotif xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
       <request Version = "0">
         <POS xmlns = "http://www.opentravel.org/OTA/2003/05">
@@ -715,7 +746,7 @@ to seller. XTG will process data and response with error code if needed.
         </AvailStatusMessages>
       </request>
     </HotelAvailNotif>
-
+~~~
 
 
 | **Element**				| **Number** | **Type**	| **Description**					|
@@ -759,19 +790,19 @@ to seller. XTG will process data and response with error code if needed.
 Success Response
 
 
-
+~~~xml
     <HotelAvailNotifResponse xmlns="http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
       <HotelAvailNotifResult>
         <Success xmlns="http://www.opentravel.org/OTA/2003/05"/>
       </HotelAvailNotifResult>
     </HotelAvailNotifResponse>
-
+~~~
 
 
 Error Response
 
 
-
+~~~xml
     <HotelAvailNotifResponse xmlns="http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
       <HotelAvailNotifResult>
         <Errors xmlns="http://www.opentravel.org/OTA/2003/05">
@@ -779,7 +810,7 @@ Error Response
         </Errors>
       </HotelAvailNotifResult>
     </HotelAvailNotifResponse>
-
+~~~
 
 
 ### Error Codes

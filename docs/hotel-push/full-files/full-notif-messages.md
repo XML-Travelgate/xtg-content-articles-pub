@@ -11,65 +11,65 @@ permalink: /docs/hotel-push/full-files/full-notif-messages
 
 
 
-
-    <s:Envelope xmlns:s = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10" xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:ns1 = "http://www.opentravel.org/OTA/2003/05">
-        <s:Header>
-            <wsse:Security>
-                <wsse:UsernameToken>
-                    <wsse:Username>user</wsse:Username>
-                    <wsse:Password>pass</wsse:Password>
-                </wsse:UsernameToken>
-            </wsse:Security>
-        </s:Header>
-        <s:Body>
-            <ns:HotelRatePlanNotif>
-                <ns:request Version = "0">
-                    <ns1:POS>
-                        <ns1:Source>
-                            <ns1:RequestorID ID = "ProviderCode"/>
-                            <ns1:BookingChannel>
-                                <ns1:CompanyName Code = "Clientcode"/>
-                            </ns1:BookingChannel>
-                        </ns1:Source>
-                    </ns1:POS>
-                    <ns1:RatePlans HotelCode = "1">
-                        <ns1:RatePlan RatePlanCode = "SRATE" CurrencyCode = "EUR" RatePlanStatusType = "Active">
-                            <ns1:Rates>
-                                <ns1:Rate Start = "2014-08-01" End = "2014-08-31">
-                                    <ns1:BaseByGuestAmts>
-                                        <ns1:BaseByGuestAmt Type = "25" AmountAfterTax = "150.00"/>
-                                    </ns1:BaseByGuestAmts>
-                                </ns1:Rate>
-                            </ns1:Rates>
-                            <ns1:SellableProducts>
-                                <ns1:SellableProduct InvCode = "SROOM2" InvType = "ROOM"/>
-                            </ns1:SellableProducts>
-                        </ns1:RatePlan>
-                        <ns1:RatePlan RatePlanCode = "SRATE" CurrencyCode = "EUR" RatePlanStatusType = "Deactivated">
-                            <ns1:Rates>
-                                <ns1:Rate Start = "2014-09-01" End = "2014-09-30">
-                                    <ns1:BaseByGuestAmts>
-                                        <ns1:BaseByGuestAmt Type = "25" AmountAfterTax = "150.00"/>
-                                    </ns1:BaseByGuestAmts>
-                                </ns1:Rate>
-                            </ns1:Rates>
-                            <ns1:SellableProducts>
-                                <ns1:SellableProduct InvCode = "SROOM2" InvType = "ROOM"/>
-                            </ns1:SellableProducts>
-                        </ns1:RatePlan>
-                    </ns1:RatePlans>
-                </ns:request>
-            </ns:HotelRatePlanNotif>
-        </s:Body>
-    </s:Envelope>
-
+~~~xml
+<s:Envelope xmlns:s = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10" xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:ns1 = "http://www.opentravel.org/OTA/2003/05">
+   <s:Header>
+      <wsse:Security>
+      	<wsse:UsernameToken>
+     		<wsse:Username>user</wsse:Username>
+      		<wsse:Password>pass</wsse:Password>
+      	</wsse:UsernameToken>
+      </wsse:Security>
+    </s:Header>
+    <s:Body>
+      <ns:HotelRatePlanNotif>
+       	<ns:request Version = "0">
+       		<ns1:POS>
+       		<ns1:Source>
+       			<ns1:RequestorID ID = "ProviderCode"/>
+   	        <ns1:BookingChannel>
+		        <ns1:CompanyName Code = "Clientcode"/>
+       		</ns1:BookingChannel>
+       		</ns1:Source>
+       		</ns1:POS>
+       		<ns1:RatePlans HotelCode = "1">
+       		<ns1:RatePlan RatePlanCode = "SRATE" CurrencyCode = "EUR" RatePlanStatusType = "Active">
+       		<ns1:Rates>
+       		<ns1:Rate Start = "2014-08-01" End = "2014-08-31">
+		    <ns1:BaseByGuestAmts>
+	<ns1:BaseByGuestAmt Type = "25" AmountAfterTax = "150.00"/>
+		    </ns1:BaseByGuestAmts>
+	</ns1:Rate>
+	</ns1:Rates>
+	<ns1:SellableProducts>
+	<ns1:SellableProduct InvCode = "SROOM2" InvType = "ROOM"/>
+	</ns1:SellableProducts>
+	</ns1:RatePlan>
+	<ns1:RatePlan RatePlanCode = "SRATE" CurrencyCode = "EUR" RatePlanStatusType = "Deactivated">
+	<ns1:Rates>
+	<ns1:Rate Start = "2014-09-01" End = "2014-09-30">
+	<ns1:BaseByGuestAmts>
+	<ns1:BaseByGuestAmt Type = "25" AmountAfterTax = "150.00"/>
+		    </ns1:BaseByGuestAmts>
+	</ns1:Rate>
+    </ns1:Rates>
+    <ns1:SellableProducts>
+	<ns1:SellableProduct InvCode = "SROOM2" InvType = "ROOM"/>
+    </ns1:SellableProducts>
+</ns1:RatePlan>
+    </ns1:RatePlans>
+</ns:request>
+    </ns:HotelRatePlanNotif>
+</s:Body>
+</s:Envelope>
+~~~
 
 
 ### Full HotelRatePlanNotifRS
 
 
 
-
+~~~xml
     <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
        <s:Header>
           <o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -87,14 +87,14 @@ permalink: /docs/hotel-push/full-files/full-notif-messages
           </HotelRatePlanNotifResponse>
        </s:Body>
     </s:Envelope>
-
+~~~
 
 
 ### Full HotelAvailNotifRQ
 
 
 
-
+~~~xml
     <s:Envelope xmlns:s = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:u = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
         <s:Header>
             <o:Security s:mustUnderstand = "1" xmlns:o = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -155,14 +155,14 @@ permalink: /docs/hotel-push/full-files/full-notif-messages
             </HotelAvailNotif>
         </s:Body>
     </s:Envelope>
-
+~~~
 
 
 ### Full HotelAvailNotifRS
 
 
 
-
+~~~xml
     <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
        <s:Header>
           <o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -180,5 +180,5 @@ permalink: /docs/hotel-push/full-files/full-notif-messages
           </HotelAvailNotifResponse>
        </s:Body>
     </s:Envelope>
-
+~~~
 

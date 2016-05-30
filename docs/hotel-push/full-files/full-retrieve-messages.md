@@ -10,8 +10,7 @@ permalink: /docs/hotel-push/full-files/full-retrieve-messages
 ### Full HotelRatePlanInventoryRetrieveRQ
 
 
-
-
+~~~xml
     <s:Envelope xmlns:s = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10" xmlns:ns1 = "http://www.opentravel.org/OTA/2003/05" xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
         <s:Header>
             <wsse:Security>
@@ -44,14 +43,14 @@ permalink: /docs/hotel-push/full-files/full-retrieve-messages
             </ns:HotelRatePlanInventoryRetrieve>
         </s:Body>
     </s:Envelope>
-
+~~~
 
 
 ### Full HotelRatePlanInventoryRetrieveRS
 
 
 
-
+~~~xml
     <s:Envelope xmlns:s = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:u = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
         <s:Header>
             <o:Security s:mustUnderstand = "1" xmlns:o = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -315,14 +314,14 @@ permalink: /docs/hotel-push/full-files/full-retrieve-messages
             </HotelRatePlanInventoryRetrieveResponse>
         </s:Body>
     </s:Envelope>
-
+~~~
 
 
 ### Full HotelRatePlanRetrieveRQ
 
 
 
-
+~~~xml
     <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.xmltravelgate.com/hubpush/provider/2012/10" xmlns:ns1="http://www.opentravel.org/OTA/2003/05" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
         <s:Header>
             <o:Security s:mustUnderstand = "1" xmlns:o = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -356,14 +355,14 @@ permalink: /docs/hotel-push/full-files/full-retrieve-messages
           </ns:HotelRatePlanRetrieve>
        </s:Body>
     </s:Envelope>
-
+~~~
 
 
 ### Full HotelRatePlanRetrieveRS
 
 
 
-
+~~~xml
     <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
        <s:Header>
           <o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -541,14 +540,14 @@ permalink: /docs/hotel-push/full-files/full-retrieve-messages
           </HotelRatePlanRetrieveResponse>
        </s:Body>
     </s:Envelope>
-
+~~~
 
 
 ### Full HotelAvailRetrieveRQ
 
 
 
-
+~~~xml
     <s:Envelope xmlns:s = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:u = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
         <s:Header>
             <o:Security s:mustUnderstand = "1" xmlns:o = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -582,14 +581,14 @@ permalink: /docs/hotel-push/full-files/full-retrieve-messages
             </HotelAvailRetrieve>
         </s:Body>
     </s:Envelope>
-
+~~~
 
 
 ### Full HotelAvailRetrieveRS
 
 
 
-
+~~~xml
     <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
        <s:Header>
           <o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
@@ -621,5 +620,5 @@ permalink: /docs/hotel-push/full-files/full-retrieve-messages
           </HotelAvailRetrieveResponse>
        </s:Body>
     </s:Envelope>
-
+~~~
 

@@ -23,7 +23,7 @@ will return a list of all active rooms and configurations.
 
 
 
-
+~~~xml
     <HotelRatePlanInventoryRetrieve>
       <request PrimaryLangID = "ES">
         <POS>
@@ -44,7 +44,7 @@ will return a list of all active rooms and configurations.
         </RatePlans>
       </request>
     </HotelRatePlanInventoryRetrieve>
-
+~~~
 
 
 | **Element**			| **Number** | **Type** | **Description**						|
@@ -66,7 +66,7 @@ will return a list of all active rooms and configurations.
 **Example for RatePlan**
 
 
-
+~~~xml
     <HotelRatePlanInventoryRetrieveResponse xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
       <HotelRatePlanInventoryRetrieveResult Version = "0">
         <Success xmlns = "http://www.opentravel.org/OTA/2003/05"/>
@@ -157,6 +157,8 @@ will return a list of all active rooms and configurations.
         </RatePlans>
       </HotelRatePlanInventoryRetrieveResult>
     </HotelRatePlanInventoryRetrieveResponse>
+~~~
+
 
 If your Rate has information about meals included in rate, this will be
 shown in MealsIncluded tag.
@@ -171,7 +173,7 @@ occupancies. STD2 room has 2 possible occupations: 2 adults + 1 child or
 **Example for Derived RatePlan**
 
 
-
+~~~xml
     <HotelRatePlanInventoryRetrieveResponse xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
         <HotelRatePlanInventoryRetrieveResult Version = "0">
             <Success xmlns = "http://www.opentravel.org/OTA/2003/05"/>
@@ -244,6 +246,7 @@ occupancies. STD2 room has 2 possible occupations: 2 adults + 1 child or
             </RatePlans>
         </HotelRatePlanInventoryRetrieveResult>
     </HotelRatePlanInventoryRetrieveResponse> 
+~~~
 
 
 
@@ -331,7 +334,7 @@ rates / rooms.
 
 
 
-
+~~~xml 
     <HotelRatePlanRetrieve>
       <request>
         <POS>
@@ -356,7 +359,7 @@ rates / rooms.
         </RatePlans>
       </request>
     </HotelRatePlanRetrieve>
-
+~~~
 
 
 | **Element**			| **Number**	| **Type**	| **Description**					|
@@ -382,7 +385,7 @@ rates / rooms.
 **Example for RatePlan**
 
 
-
+~~~xml
     <HotelRatePlanRetrieveResponse xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
       <HotelRatePlanRetrieveResult Version = "0">
         <RatePlans HotelCode = "12" xmlns = "http://www.opentravel.org/OTA/2003/05">
@@ -540,6 +543,8 @@ rates / rooms.
         </RatePlans>
       </HotelRatePlanRetrieveResult>
     </HotelRatePlanRetrieveResponse>
+~~~ 
+
 
 Gets the Rate BAR for the Hotel 12 from 2013-12-20 to 2013-12-25. In
 this case, the rate LOWCOST has two rooms associated, you will receive a
@@ -550,7 +555,7 @@ RatePlan for each day-room-rate.
 **Example for Derived RatePlan**
 
 
-
+~~~xml
     <HotelRatePlanRetrieveResponse xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
       <HotelRatePlanRetrieveResult Version = "0">
         <RatePlans HotelCode = "1" xmlns = "http://www.opentravel.org/OTA/2003/05">
@@ -597,6 +602,8 @@ RatePlan for each day-room-rate.
         </RatePlans>
       </HotelRatePlanRetrieveResult>
     </HotelRatePlanRetrieveResponse>
+~~~ 
+
 
 For a derived rate you will not receive the rooms associated. Derived
 rates have associated all the rooms from the base rate plan.
@@ -616,7 +623,7 @@ complete break down of availability. XTG will return break down of hotel
 
 
 
-
+~~~xml
     <HotelAvailRetrieve>
       <request>
         <POS>
@@ -641,6 +648,7 @@ complete break down of availability. XTG will return break down of hotel
         </HotelAvailRequests>
       </request>
     </HotelAvailRetrieve>
+~~~
 
 
 
@@ -668,7 +676,7 @@ complete break down of availability. XTG will return break down of hotel
 **Example for RatePlan**
 
 
-
+~~~xml
     <HotelAvailRetrieveResponse>
       <HotelAvailRetrieveResult>
         <Success/>
@@ -708,11 +716,13 @@ complete break down of availability. XTG will return break down of hotel
         </AvailStatusMessages>
       </HotelAvailRetrieveResult>
     </HotelAvailRetrieveResponse>
+~~~
+
 
 **Example for Derived RatePlan**
 
 
-
+~~~xml
     <HotelAvailRetrieveResponse xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
       <HotelAvailRetrieveResult Version = "0">
         <Success xmlns = "http://www.opentravel.org/OTA/2003/05"/>
@@ -728,7 +738,7 @@ complete break down of availability. XTG will return break down of hotel
         </AvailStatusMessages>
       </HotelAvailRetrieveResult>
     </HotelAvailRetrieveResponse>
-
+~~~
 
 
 | **Element**			| **Number**	| **Type**	| **Description**					|
@@ -780,7 +790,7 @@ seller reservations.
 
 
 
-
+~~~xml
     <HotelResRetrieve>
       <request>
         <POS>
@@ -802,7 +812,7 @@ seller reservations.
         </ReadRequests>
       </request>
     </HotelResRetrieve>
-
+~~~
 
 
 | **Element**			| **Number**	| **Type**	| **Description**					|
@@ -825,7 +835,7 @@ seller reservations.
 
 
 
-
+~~~xml
     <HotelResRetrieveResponse xmlns = "http://schemas.xmltravelgate.com/hubpush/client/2012/10">
       <HotelResRetrieveResult Version = "0">
         <Success xmlns = "http://www.opentravel.org/OTA/2003/05"/>
@@ -952,7 +962,7 @@ seller reservations.
         </HotelReservations>
       </HotelResRetrieveResult>
     </HotelResRetrieveResponse>
-
+~~~
 
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
@@ -1091,6 +1101,7 @@ seller reservations.
 
 **Example Guarantee object with credit card details**
 
+~~~xml
     <Guarantee PaymentCode="DirectPayment">
       <GuaranteesAccepted>
         <GuaranteeAccepted>
@@ -1106,9 +1117,12 @@ seller reservations.
         </GuaranteeAccepted>
       </GuaranteesAccepted>
     </Guarantee>
+~~~
+
 
 **Example Guarantee object with URL for credit card details**
 
+~~~xml
     <Guarantee PaymentCode="DirectPayment">
       <GuaranteesAccepted>
         <GuaranteeAccepted>
@@ -1120,5 +1134,5 @@ seller reservations.
         </GuaranteeAccepted>
       </GuaranteesAccepted>
     </Guarantee>
-
+~~~
 
