@@ -9,7 +9,7 @@ permalink: /docs/activities/DSF/valuation
 
 ### ValuationRQ Example
 
-
+~~~xml
     <OTA_TourActivityBookRQ xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd = "http://www.w3.org/2001/XMLSchema" PrimaryLangID = "es">
       <BookingInfo>
         <BasicInfo Name = "Palma Aquarium" TourActivityID = "000200515"/>
@@ -41,7 +41,7 @@ permalink: /docs/activities/DSF/valuation
         </TPA_Extensions>
       </BookingInfo>
     </OTA_TourActivityBookRQ>
-
+~~~
 
 
 ### ValuationRQ Description
@@ -81,7 +81,7 @@ permalink: /docs/activities/DSF/valuation
 
 
 
-
+~~~xml
     <OTA_TourActivityBookRS>
         <ReservationDetails>
             <BasicInfo
@@ -119,7 +119,7 @@ permalink: /docs/activities/DSF/valuation
             </TPA_Extensions>           
         </ReservationDetails>
     </OTA_TourActivityBookRS>
-
+~~~
 
 
 ### ValuationRS Description

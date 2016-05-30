@@ -51,7 +51,7 @@ of the integration / provider.
 
 
 
-
+~~~xml
     <StaticConfigurationRQ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
       <timeoutMilliseconds>60000</timeoutMilliseconds>
       <filterAuditData>
@@ -72,7 +72,7 @@ of the integration / provider.
         </Attributes>
       </Configuration>
     </StaticConfigurationRQ>
-
+~~~
 
 
 ### StaticConfigurationRQ Description
@@ -108,7 +108,7 @@ of the integration / provider.
 
 
 
-
+~~~xml
     <StaticConfigurationRS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
       <operationImplemented>true</operationImplemented>
       <NumOfDestinations>1</NumOfDestinations>
@@ -124,7 +124,7 @@ of the integration / provider.
       <OpenAvailability>false</OpenAvailability>
       <NumMaxParticipants>12</NumMaxParticipants>
     </StaticConfigurationRS>
-
+~~~
 
 
 ### StaticConfigurationRS Description

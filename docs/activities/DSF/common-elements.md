@@ -18,7 +18,7 @@ The response object contains the operation status and errors if any.
 
 
 
-
+~~~xml
     <TicketBaseRQ>
            <timeoutMilliseconds>60000</timeoutMilliseconds>
         <source>
@@ -44,7 +44,7 @@ The response object contains the operation status and errors if any.
         </Configuration>
        …
     </TicketBaseRQ>
-
+~~~
 
 
 ### Common Elements RQ Description
@@ -80,7 +80,7 @@ The response object contains the operation status and errors if any.
 
 
 
-
+~~~xml
     <TicketBaseRS>
        <operationImplemented>true</operationImplemented>
        <Errors>
@@ -98,7 +98,7 @@ The response object contains the operation status and errors if any.
        </auditData>
 
     </TicketBaseRS>
-
+~~~
 
 
 ### Common Elements RS Description

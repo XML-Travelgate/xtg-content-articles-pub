@@ -40,14 +40,14 @@ Not implemented by all suppliers
 
 
 
-
+~~~xml
     <OTA_ReadRQ>
         xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
         xmlns:xsd = "http://www.w3.org/2001/XMLSchema"
         PrimaryLangID = "es">
         <UniqueID ID = "1283712#1" Type = "PROVIDER"/>
     </OTA_ReadRQ>
-
+~~~
 
 
 ### ReservationReadRQ Description
@@ -69,7 +69,7 @@ Not implemented by all suppliers
 
 
 
-
+~~~xml
     <OTA_TourActivityResRetrieveRS xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd = "http://www.w3.org/2001/XMLSchema">
         <operationImplemented>true</operationImplemented>
         <Detail ResStatus = "Confirmed" CreateDateTime = "2013-11-21T00:00:00" LastModifyDateTime="2014-02-19T00:00:00">
@@ -121,7 +121,7 @@ Not implemented by all suppliers
             </Schedule>
         </Detail>
     </OTA_TourActivityResRetrieveRS>
-
+~~~
 
 
 ### ReservationReadRS Description

@@ -33,7 +33,7 @@ The response contains a list of "atributo".
 
 
 
-
+~~~xml
     <RunTimeConfigurationRQ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
       <timeoutMilliseconds>60000</timeoutMilliseconds>
       <filterAuditData>
@@ -53,7 +53,7 @@ The response contains a list of "atributo".
         </Attributes>
       </Configuration>
     </RunTimeConfigurationRQ>
-
+~~~
 
 
 ### RunTimeConfiguration Description
@@ -65,7 +65,7 @@ The response contains a list of "atributo".
 
 
 
-
+~~~xml
     <RunTimeConfigurationRS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
       <operationImplemented>true</operationImplemented>
       <ConfigurationProvider>
@@ -82,7 +82,7 @@ The response contains a list of "atributo".
         </Attributes>
       </ConfigurationProvider>
     </RunTimeConfigurationRS>
-
+~~~
 
 
 ### RunTimeConfigurationRS Description

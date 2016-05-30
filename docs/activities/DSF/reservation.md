@@ -11,7 +11,7 @@ permalink: /docs/activities/DSF/reservation
 
 
 
-
+~~~xml
     <OTA_TourActivityBookRQ>
         xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
         xmlns:xsd = "http://www.w3.org/2001/XMLSchema"
@@ -55,7 +55,7 @@ permalink: /docs/activities/DSF/reservation
             </TPA_Extensions>
         </BookingInfo>
     </OTA_TourActivityBookRQ>
-
+~~~
 
 
 ### ReservationRQ Description
@@ -110,7 +110,7 @@ permalink: /docs/activities/DSF/reservation
 
 
 
-
+~~~xml
     <OTA_TourActivityBookRS>
         <ReservationDetails>
             <BasicInfo Name = "Palma Aquarium" TourActivityID = "000200515"/>
@@ -141,7 +141,7 @@ permalink: /docs/activities/DSF/reservation
             </TPA_Extensions>
         </ReservationDetails>
     </OTA_TourActivityBookRS>
-
+~~~
 
 
 ### Reservation RS Description

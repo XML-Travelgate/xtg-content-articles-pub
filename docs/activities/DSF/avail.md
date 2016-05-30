@@ -57,7 +57,7 @@ StaticConfiguration call).
 
 
 
-
+~~~xml
     <OTA_TourActivityAvailRQ>
         xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
         xmlns:xsd = "http://www.w3.org/2001/XMLSchema"
@@ -79,7 +79,7 @@ StaticConfiguration call).
             <ParticipantCount Age = "30" Quantity = "1"/>
         </TourActivity>
     </OTA_TourActivityAvailRQ>
-
+~~~
 
 
 ### AvailRQ Description
@@ -120,7 +120,7 @@ StaticConfiguration call).
 
 
 
-
+~~~xml
     <OTA_TourActivityAvailRS xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd = "http://www.w3.org/2001/XMLSchema">
         <!--OpenAvailability = false -->
         <TourActivityInfo>
@@ -287,7 +287,7 @@ StaticConfiguration call).
                     .
                     .
     </OTA_TourActivityAvailRS>
-
+~~~
 
 
 ### AvailRS Description

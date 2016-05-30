@@ -35,7 +35,7 @@ type, you obtain different reservation list.
 
 
 
-
+~~~xml
     <OTA_ReadRQ>
         xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
         xmlns:xsd = "http://www.w3.org/2001/XMLSchema"
@@ -49,7 +49,7 @@ type, you obtain different reservation list.
             </TourActivityReadRequest>
         </ReadRequests>
     </OTA_ReadRQ>
-
+~~~
 
 
 ### ReservationsListRQ Description
@@ -74,7 +74,7 @@ type, you obtain different reservation list.
 
 
 
-
+~~~xml
     <OTA_TourActivityResRetrieveRS xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd = "http://www.w3.org/2001/XMLSchema">
         <operationImplemented>true</operationImplemented>
         <Detail ResStatus = "Confirmed" CreateDateTime = "2013-11-21T00:00:00">
@@ -126,7 +126,7 @@ type, you obtain different reservation list.
             </Schedule>
         </Detail>
     </OTA_TourActivityResRetrieveRS>
-
+~~~
 
 
 ### ReservationsListRS Description

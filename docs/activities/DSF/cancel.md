@@ -40,11 +40,11 @@ Not implemented by all suppliers
 
 
 
-
+~~~xml
     <OTA_TourActivityCancelRQ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PrimaryLangID = "es">
       <Confirmation ID="1283479#1" type="PROVIDER" />
     </OTA_TourActivityCancelRQ>
-
+~~~
 
 
 ### CancelRQ Description
@@ -66,7 +66,7 @@ Not implemented by all suppliers
 
 
 
-
+~~~xml
     <OTA_TourActivityCancelRS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
       <operationImplemented>true</operationImplemented>
       <Reservation ResStatus="Cancel">
@@ -80,7 +80,7 @@ Not implemented by all suppliers
         </ReservationInfo>
       </Reservation>
     </OTA_TourActivityCancelRS>
-
+~~~
 
 
 ### CancelRS Description
