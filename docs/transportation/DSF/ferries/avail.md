@@ -34,7 +34,7 @@ The response contains a list of fares with the available options.
 ### AvailabilityRQ
 
 
-
+~~~xml
     <AvailabilityRQ xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" travelType = "RT">
         <Journeys>
             <Journey id = "0" departureDate = "27/08/2015" departureTime = "">
@@ -55,7 +55,7 @@ The response contains a list of fares with the available options.
             <AvailabilityVehicle id = "1" height = "160" length = "350" type = "Tourism"/>
         </Vehicles>
     </AvailabilityRQ>
-
+~~~
 
 
 ### AvailabilityRQ Description
@@ -102,6 +102,7 @@ The response contains a list of fares with the available options.
 ### AvailabilityRS
 
 
+~~~xml
     <AvailabilityRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
     <operationImplemented>true</operationImplemented>
     <EstadoRespuesta tipoTrayecto = "IDA" tipoPet = "OW" estado = "ok"/>
@@ -326,7 +327,7 @@ The response contains a list of fares with the available options.
         </Fares>
     </Transportation>
     </AvailabilityRS>
-
+~~~
 
 
 ### AvailabilityRS Description

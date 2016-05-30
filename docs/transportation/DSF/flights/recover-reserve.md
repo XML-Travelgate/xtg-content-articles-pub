@@ -17,14 +17,13 @@ This method aims to retrieve a booking with its full details.
 ### RetrieveReservationRQ Example
 
 
-
-
+~~~xml
     <RetrieveReservationRQ xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
         <Configuration/>
         <ClientConfiguration/>
         <Locator>A3U4NS</Locator>
     </RetrieveReservationRQ>
-
+~~~
 
 
 ### RetrieveReservationRQ Description
@@ -41,8 +40,7 @@ This method aims to retrieve a booking with its full details.
 ### RetrieveReservationRS Example
 
 
-
-
+~~~xml
     <RetrieveReservationRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
         <auditData>
             <timeStamp>2014-03-11T09:02:21.1120439+01:00</timeStamp>
@@ -146,7 +144,7 @@ This method aims to retrieve a booking with its full details.
         </Locators>
         <commission>0</commission>
     </RetrieveReservationRS>
-
+~~~
 
 
 ### RetrieveReservationRS Description

@@ -65,6 +65,7 @@ the selected Option.
 ### ValuationRQ Example
 
 
+~~~xml
     <ValuationRQ>
     <Itineraries>
         <Itinerary id = "0">
@@ -205,7 +206,7 @@ the selected Option.
         </Itinerary>
     </Itineraries>
     </ValuationRQ>
-
+~~~
 
 
 
@@ -314,7 +315,7 @@ the selected Option.
 ### ValuationRS Example
 
 
-
+~~~xml
     <ValuationRS>
     <Itineraries>
         <Itinerary id = "0">
@@ -429,7 +430,7 @@ the selected Option.
         </Itinerary>
     </Itineraries>
     </ValuationRS>
-
+~~~
 
 
 ### ValuationRS Description

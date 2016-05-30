@@ -31,8 +31,7 @@ The response contains a list of bookings that match the requested date.
 ### RetrieveReservationListRQ Example
 
 
-
-
+~~~xml
     <RetrieveReservationListRQ>
         <Configuration/>
         <ClientConfiguration currencyCode = "EUR"/>
@@ -43,7 +42,7 @@ The response contains a list of bookings that match the requested date.
         <DestinationCode></DestinationCode>
         <AgencyCode></AgencyCode>
     </RetrieveReservationListRQ>
-
+~~~
 
 
 ### RetrieveReservationListRQ Description
@@ -66,8 +65,7 @@ The response contains a list of bookings that match the requested date.
 ### RetrieveReservationListRS Example
 
 
-
-
+~~~xml
     <RetrieveReservationListRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
     <ResponseStatus tripType = "IDA" petitionType = "OW" status = "ok"/>
     <ReservationList>
@@ -97,7 +95,7 @@ The response contains a list of bookings that match the requested date.
         </PaymentInfo>
     </ReservationList>
     </RetrieveReservationListRS>
-
+~~~
 
 
 ### RetrieveReservationListRS Description

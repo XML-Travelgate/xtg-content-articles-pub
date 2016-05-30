@@ -36,8 +36,7 @@ and the response status.
 ### Common Elements RQ Example
 
 
-
-
+~~~xml
     <TransportationBaseRQ>
        <source>
           <agencyCode>XXXXX</agencyCode>
@@ -58,7 +57,7 @@ and the response status.
        </Configuration>
        …
     </TransportationBaseRQ>
-
+~~~
 
 
 ### Common Elements RQ Description
@@ -100,8 +99,7 @@ and the response status.
 ### Common Elements RS Example
 
 
-
-
+~~~xml
     <TransportationBaseRS>
        <operationImplemented>true</operationImplemented>
        <applicationErrors>
@@ -125,7 +123,7 @@ and the response status.
        <EstadoRespuesta tripType = "IDA" petitionType = "OW" status = "ok"/>
        …
     </TransportationBaseRS>
-
+~~~
 
 
 ### Common Elements RS Description

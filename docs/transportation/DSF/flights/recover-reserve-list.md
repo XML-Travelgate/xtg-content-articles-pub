@@ -18,8 +18,7 @@ being that either booking date or the travelling date.
 ### RetrieveReservationListRQ Example
 
 
-
-
+~~~xml
     <RetrieveReservationListRQ>
         <Configuration/>
         <ClientConfiguration currencyCode = "GBP"/>
@@ -30,7 +29,7 @@ being that either booking date or the travelling date.
         <DestinationCode></DestinationCode>
         <AgencyCode></AgencyCode>
     </RetrieveReservationListRQ>
-
+~~~
 
 
 ### RetrieveReservationListRQ Description
@@ -53,8 +52,7 @@ being that either booking date or the travelling date.
 ### RetrieveReservationListRS Example
 
 
-
-
+~~~xml
     <RetrieveReservationListRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
         <auditData>
             <timeStamp>2014-03-11T09:04:11.1793394+01:00</timeStamp>
@@ -185,7 +183,7 @@ being that either booking date or the travelling date.
             </PaymentInfo>
         </ReservationList>
     </RetrieveReservationListRS>
-
+~~~
 
 
 ### RetrieveReservationListRS Description

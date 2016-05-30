@@ -38,6 +38,7 @@ Not implemented by all suppliers
 ### CancellationRQ Example
 
 
+~~~xml
     <CancellationRQ>
         <timeoutMilliseconds>18000</timeoutMilliseconds>
         <source>
@@ -51,7 +52,7 @@ Not implemented by all suppliers
         </Configuration>
         <Locator>xxx</Locator>
     </CancellationRQ>
-
+~~~
 
 
 ### CancellationRQ Description
@@ -70,11 +71,10 @@ Not implemented by all suppliers
 ### CancellationRS Example
 
 
-
-
+~~~xml
     <CancellationRS>
     </CancellationRS>
-
+~~~
 
 
 ### CancellationRS Description

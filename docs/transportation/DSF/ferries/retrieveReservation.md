@@ -31,14 +31,13 @@ The response contains the details of a booking.
 ### RetrieveReservationRQ Example
 
 
-
-
+~~~xml
     <RetrieveReservationRQ xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
         <Configuration/>
         <ClientConfiguration/>
         <Locator>BFRFKVM</Locator>
     </RetrieveReservationRQ>
-
+~~~
 
 
 ### RetrieveReservationRQ Description
@@ -56,8 +55,7 @@ The response contains the details of a booking.
 ### RetrieveReservationRS Example
 
 
-
-
+~~~xml
     <RetrieveReservationRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
     <ResponseStatus tripType = "IDA" petitionType = "OW" status = "ok"/>
     <Passengers>
@@ -273,7 +271,7 @@ The response contains the details of a booking.
     </Locators>
     <commission>0</commission>
     </RetrieveReservationRS>
-
+~~~
 
 
 ### RetrieveReservationRS Description

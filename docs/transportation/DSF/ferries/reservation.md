@@ -41,8 +41,7 @@ charges associated to the booking.
 ### ReservationRQ
 
 
-
-
+~~~xml
     <ReservationRQ>
     <Itineraries>
         <Itinerary id = "0">
@@ -194,7 +193,7 @@ charges associated to the booking.
     </Locators>
     <DeltaPrice>0</DeltaPrice>
     </ReservationRQ>
-
+~~~
 
 
 ### ReservationRQ Description
@@ -336,8 +335,7 @@ charges associated to the booking.
 ### ReservationRS
 
 
-
-
+~~~xml
     <ReservationRS>
     <Locators>
         <Id>BFRFKVM</Id>
@@ -363,7 +361,7 @@ charges associated to the booking.
         </AmountBreakdown>
     </Invoice>
     </ReservationRS>
-
+~~~
 
 
 ### ReservationRS Description

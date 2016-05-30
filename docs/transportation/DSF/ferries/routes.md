@@ -38,11 +38,10 @@ week and in most cases once a month.
 ### RoutesRQ Example
 
 
-
-
+~~~xml
     <RoutesRQ>
     </RoutesRQ>
-
+~~~
 
 
 ### RoutesRQ Description
@@ -58,8 +57,7 @@ week and in most cases once a month.
 ### RutasRS Example
 
 
-
-
+~~~xml
     <RoutesRS>
        <Routes>
           <Route>
@@ -86,7 +84,7 @@ week and in most cases once a month.
           </Route>
        </Routes>
     </RoutesRS>
-
+~~~
 
 
 ### RutasRS Description

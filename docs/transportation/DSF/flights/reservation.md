@@ -67,8 +67,7 @@ family code and region code.
 ### ReservationRQ Example
 
 
-
-
+~~~xml
     <ReservationRQ>
         <Configuration/>
         <ClientConfiguration currencyCode = "GBP"/>
@@ -137,7 +136,7 @@ family code and region code.
             </Locator>
         </Locators>
     </ReservationRQ>
-
+~~~
 
 
 ### ReservationRQ Description 
@@ -273,7 +272,7 @@ family code and region code.
 ### ReservationsRS Example
 
  
-
+~~~xml
     <ReservationsRS>
         <Passengers>
             <Passenger
@@ -306,7 +305,7 @@ family code and region code.
             </AmountBreakdown>
         </Invoice>
     </ReservationsRS>
-
+~~~
 
 
 ### ReservationsRS Description

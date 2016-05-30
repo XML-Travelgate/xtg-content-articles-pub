@@ -32,13 +32,12 @@ CancellarionRS.
 ### CancellationRQ Example
 
 
-
-
+~~~xml
     <CancellationRQ>
        <Locator>XXX</Locator>
        <CancellationCosts>0</CancellationCosts>
     </CancellationRQ>
-
+~~~
 
 
 ### CancellationRQ Description
@@ -56,11 +55,10 @@ CancellarionRS.
 ### CancellationRS Example
 
 
-
-
+~~~xml
     <CancellationRS>
     </CancellationRS>
-
+~~~
 
 
 ### CancellationRS Description

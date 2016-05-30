@@ -65,8 +65,7 @@ is of **25000** milliseconds.
 ### AvailabilityRQ Example
 
 
-
-
+~~~xml
     <AvailabilityRQ travelType = "RT">
         <timeoutMilliseconds>999900</timeoutMilliseconds>
         <source>
@@ -103,7 +102,7 @@ is of **25000** milliseconds.
             </ConnexionCompanies>
         </Preferences>
     </AvailabilityRQ> 
-
+~~~
 
 
 ### AvailabilityRQ Description
@@ -143,8 +142,7 @@ is of **25000** milliseconds.
 ### AvailabilityRS Example
 
 
-
-
+~~~xml
     <AvailabilityRS>
         <Transportation>
             <Segments>
@@ -193,7 +191,7 @@ is of **25000** milliseconds.
             </Fares>     
         </Transportation>
     </AvailabilityRS>
-
+~~~
 
 
 ### AvailabilityRS Description

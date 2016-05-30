@@ -61,6 +61,7 @@ the selected Option.
 ### ValoracionRQ Example
 
 
+~~~xml
     <ValuationRQ>
         <ClientConfiguration currencyCode = "EUR"/>
         <Itineraries>
@@ -135,7 +136,7 @@ the selected Option.
             </Itinerary>
         </Itineraries>
     </ValuationRQ>
-
+~~~
 
 
 ### ValoracionRQ Description
@@ -231,6 +232,7 @@ the selected Option.
 ### ValuationRS Example
 
 
+~~~xml
     <ValuationRS>
         <Itineraries>
             <Itinerary id="0" HasObFees="false" carrier="SK">
@@ -532,7 +534,7 @@ the selected Option.
             </Conditions>
         </Supplements>
     </ValuationRS> 
-
+~~~
 
 
 ### ValuationRS Description
