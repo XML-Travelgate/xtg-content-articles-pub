@@ -8,7 +8,7 @@ permalink: /docs/service-endpoints/
 # Service Endpoints
 
 
-WSDLs describing the requests and responses XML structures are available
+WSDLs describing the structure of an XML request and response are available
 through the following URLs:
 
 -   **Hotel API:**
