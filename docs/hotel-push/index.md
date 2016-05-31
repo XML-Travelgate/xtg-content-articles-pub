@@ -5,8 +5,6 @@ sidebar: mydoc_sidebar
 permalink: /docs/hotel-push/index
 ---
 
-abc
-
 
 **Contents:**
 
