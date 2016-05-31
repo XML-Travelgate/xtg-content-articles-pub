@@ -5,15 +5,14 @@ sidebar: mydoc_sidebar
 permalink: /docs/hub/data-structure
 ---
 
-There is a common XML API structure that is used for all integration
+There is one XML API structure used for all integration
 services.
 
 The API structure has common elements and inside the body there are
-specific XML elements depending integration type.
+specific XML elements depending on the type of integration .
 
-For information about the specific XML elements that travel inside the
-requests and response objects please check the documentation by required
-API:
+For more detailed information on the specific XML elements inside the
+requests and response objects, please choose from the API documentations below:
 
 
 
@@ -23,34 +22,19 @@ API:
 -   [Transfers API](/docs/transfers/index)
 -   [Tour Activity API](/docs/activities/index) 
 
+- **Availability Calls**
+- 
+The Availability method supports requests to 1 or more (1..n) suppliers in a single availability request.
 
-## All Request Methods (except Avail)
-
-All API methods require one supplier per transaction.
-
-Supplier response will be responded when timeout limit is reached or
-when supplier has responded.
-
-**Common structures are same used in availability calls but only
-allowing 1 element of type supplier per Request/Response.**
-
-## Availability Calls
-
-
-Availability calls supports 1 or more (1..n) providers requests in a
-single availability call.
-
-All the supplier requests will be sent to each supplier in parallel and
-the responses will be aggregated into one single response. If the
-timeout time is reached and the supplier has not responded on time an
+All  supplier requests will be sent to each supplier simultaneously and
+the responses aggregated into one single response. If the
+timeout time is reached and a supplier has not responded on time, an
 empty response will be returned for this specific supplier.
 
-Please, check Hub Quotas for some limitations to requests.
-
+Please check Hub Quotas for some limitations to requests.
 
 
 ### Availability RQ Example
-
 
 
 ~~~xml
@@ -220,6 +204,15 @@ Please, check Hub Quotas for some limitations to requests.
 
 
 
+### Other Calls
 
+
+All other API calls only support one provider per transaction.
+
+Provider response will be responded when timeout limit is reached or
+when provider has responded.
+
+**Common structures are same used in availability calls but only
+allowing 1 element of type Provider per Request/Response.**
 
 
