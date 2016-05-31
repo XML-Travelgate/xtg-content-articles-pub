@@ -24,15 +24,17 @@ API:
 -   [Tour Activity API](/docs/activities/index) 
 
 
+## All Request Methods (except Avail)
 
-All XML details must be checked, at each stage, by the client system and
-by the end traveller. XML Travelgate does not take any responsibility
-for any changes in details that are not noticed, since this can
-sometimes be caused by the supplier.
+All API methods require one supplier per transaction.
 
+Supplier response will be responded when timeout limit is reached or
+when supplier has responded.
 
+**Common structures are same used in availability calls but only
+allowing 1 element of type supplier per Request/Response.**
 
-- **Availability Calls**
+## Availability Calls
 
 
 Availability calls supports 1 or more (1..n) providers requests in a
@@ -218,15 +220,6 @@ Please, check Hub Quotas for some limitations to requests.
 
 
 
-### Other Calls
 
-
-All other API calls only support one provider per transaction.
-
-Provider response will be responded when timeout limit is reached or
-when provider has responded.
-
-**Common structures are same used in availability calls but only
-allowing 1 element of type Provider per Request/Response.**
 
 
