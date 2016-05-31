@@ -26,7 +26,7 @@ the supplier TEST with the supplier code TST (\<ns:code\>TST/ns:code\>).
 The response of this call will be exclusively for the supplier TST.
 
 
-
+~~~xml
     <soapenv:Envelope
     xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/"
     xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06"
@@ -55,15 +55,14 @@ The response of this call will be exclusively for the supplier TST.
           </ns:Cancel>
        </soapenv:Body>
     </soapenv:Envelope>
-
+~~~
 
 The only exception where there is a possibility of using one or more
 providerRQs in the same request is when using the call Avail. To
 identify which providerRQ is used in the Avail call use the field id.
-For example, for TST the id will be 1 (\<ns:id\>1/ns:id\>) and for the
-supplier TST2 the id will be 2 (\<ns:id\>2/ns:id\>), then in the
-response for the supplier TST the refId will be 1 (\<refId\>1\</refId\>)
+For example, for TST the id will be 1 (<ns:id>1</ns:id>) and for the
+supplier TST2 the id will be 2 (<ns:id>2</ns:id>), then in the
+response for the supplier TST the refId will be 1 (<refId>1</refId>)
 and for the second supplier TST2 the refID will be 2
-(\<refId\>2\</refId\>). This will be visually shown in the 'SOAP
-Examples'\_.
+(<refId>2</refId>). This will be visually shown in the [Soap Example](/docs/hotel/soap-examples).
 

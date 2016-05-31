@@ -17,10 +17,8 @@ This documentation follows a standard. For every method there is:
 
 1.  Method Description
     1.  Method Goals: What does it do, how does it do it?
-    2.  Request Format: General information on how the request is
-        formed.
-    3.  Response Format: General information on how the response is
-        returned.
+    2.  Request Format: General information on how the request is formed.
+    3.  Response Format: General information on how the response is returned.
     4.  Remarks: Any remark / explanation about this method
 
 2.  Example Request
