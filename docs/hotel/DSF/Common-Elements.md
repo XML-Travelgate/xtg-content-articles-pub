@@ -9,10 +9,10 @@ permalink: /docs/hotel/DSF/Common-Elements
 
 This node will be in every request and response objects.
 
-The request objects contains the provider's configuration, urls and
+The request object contains the supplier's configuration, urls and
 credentials.
 
-The response object contains the operation status and errors if any.
+The response object contain the status of the request and any possible errors as well as possible messages from the supplier (if previously requested).
 
 
 
@@ -28,17 +28,17 @@ The response object contains the operation status and errors if any.
             <languageCode>es</languageCode>
         </source>
         <filterAuditData>
-            <registerTransactions>True</registerTransactions>
+            <registerTransactions>true</registerTransactions>
         </filterAuditData>
         <optionsQuota>500</optionsQuota>
         <ContinuationToken expectedRange = "6000"></ContinuationToken>
         <Configuration>
             <User>USERXX</User>
             <Password>PWXX</Password>
-            <UrlAvail>www.proveedor.es/avail</UrlAvail>
-            <UrlReservation>www.proveedor.es/reservation</UrlReservation>
-            <UrlValuation>www.proveedor.es/valuation</UrlValuation>
-            <UrlGeneric>www.proveedor.es</UrlGeneric>
+            <UrlAvail>www.supplier.com/avail</UrlAvail>
+            <UrlReservation>www.supplier.com/reservation</UrlReservation>
+            <UrlValuation>www.supplier.com/valuation</UrlValuation>
+            <UrlGeneric>www.supplier.com</UrlGeneric>
             <Parameters>
                 <Parameter key = "SegundoPW" value = "PWXML"/>
             </Parameters>
@@ -55,48 +55,35 @@ The response object contains the operation status and errors if any.
 | **Element**                          | **Number** | **Type** | **Description** |
 | ------------------------------------ | ---------- | -------- | --------------- |
 | HotelBaseRQ                          | 1          |          | Root node. |
-| echoToken                            | 0..1       | String   | Echo token to be returned in response (valid for test purposes). |
-| timeoutMillisencods                  | 1          | Integer  | Timeout in milliseconds that client will be waiting that response. |
+| echoToken                            | 0..1       | String   | Echo token to be returned in response (used for test purposes only). 
+| timeoutMilliseconds                  | 1          | Integer  | Maximum time for a response from the supplier's system. |
 | source                               | 1          |          |  	Information about source requesting the operation. |
-| source/agencyCode                    | 0..1       | String   |  	Agency code that requests the operation. |
+| source/agencyCode                    | 0..1       | String   |  	Agency code requesting the operation (deprecated). |
 | source/languageCode                  | 1          | String   |  	Language code (ISO 3166-1 alpha-2) format lowercase. |
-| filterAuditData                      | 1          |          | Enables or disables information returned in audit data. |
-| filterAuditData/registerTransactions | 1          | Boolean  | Returns all the transactions (XMLs) exchanged with the provider.|
-| optionsQuota                         | 0..1       | Integer  | Numbers of options wanted by MealPlan. |
+| filterAuditData                      | 1          |          | Set to activate transaction data sent & received in the supplier's native format. |
+| filterAuditData/registerTransactions | 1          | Boolean  | Returns all the transactions (XMLs) exchanged with the supplier.|
+| optionsQuota                         | 0..1       | Integer  | Sets the max number of options by MealPlan. |
 | ContinuationToken                    | 0..1       | String   | Internal Token to identify the next set of HotelList. |
 | @expectedRange                       | 0..1       | Integer  |  	Number of hotels expected in HotelList call. |
-| Configuration                        | 1          |          |  	Information about source requesting the operation. |
-| Configuration/User                   | 0..1       | String   | User code for connection. |
+| Configuration                        | 1          |          | The information required in order to access the supplier's system. |
+| Configuration/User                   | 0..1       | String   | User code to connect to supplier. |
 | Configuration/Password               | 0..1       | String   | Password for the connection. |
-| Configuration/UrlGeneric             | 0..1       | String   | Url generic connection. |
-| Configuration/UrlAvail               | 0..1       | String   | Url for Avail method. |
-| Configuration/UrlValuation           | 0..1       | String   | Url for Valuation method. |
-| Configuration/UrlReservation         | 0..1       | String   |  	Url for Reservation method. |
+| Configuration/UrlGeneric             | 0..1       | String   | Supplier URL used for multiple methods.|
+| Configuration/UrlAvail               | 0..1       | String   | Specific Url for Availability method. |
+| Configuration/UrlValuation           | 0..1       | String   | Specific Url for Valuation method. |
+| Configuration/UrlReservation         | 0..1       | String   | Specific Url for Reservation method. |
 | Configuration/Parameters             | 0..1       |          | Parameters for additional information. |
-| Configuration/Parameters/Parameter   | 0..n       |          | List of parameter. |
+| Configuration/Parameters/Parameter   | 0..n       |          | List of parameters. |
 | @key                                 | 1          | String   | Contains the keyword/Id to identify a parameter. |
-| @value                               | 1          | String   | Contains the value of the parameter. |
+| @value                               | 1          | String   | Contains the parameter values |
 
 
 
 ### Detailed description
 
-
 **optionsQuota:**
 
-This new tag will be used just for those suppliers that return a really
-big quantity of options into availability response (more than 20.000
-options in the same response). It is impractible treat so much options
-for us and for the client. In order to avoid this issue the client will
-be able to decide numbers of options wanted by MealPlan, as long as the
-provider returns it in this call (see StaticConfiguration
-*ImplementsBusinessRule*). In case that the provider will have
-ImplementsBusinessRule = True, the client can choose between different
-business rules to filter the options they are interested in (see in
-Avail). We also have a system level limit, if the OptionsQuota sent by
-the client is different than the established by us, we use the minimum
-of those two values. This way, the rest of the traffic won't be
-affected.
+This new tag will be used only for those suppliers returning a very large number of options, about 20.000+ in the same response. In order to avoid this, the client can set the numbers of options wanted by MealPlan, as long as the supplier returns it in this call (see StaticConfiguration *ImplementsBusinessRules*). If the supplier has ImplementsBusinessRules = True, the client can then choose between differentbusiness rules to filter the options they are interested in (see in Avail). We also have established a system level limit, so that if the OptionsQuota set by the client is higher than the established limit we then use the smallest of those two values. 
 
 
 
@@ -135,21 +122,21 @@ affected.
 | **Element**                       | **Number** | **Type** | **Description**|
 | --------------------------------- | ---------- | -------- | -------------- |
 | HotelBaseRS                       | 1          |          | Root node.     |
-| echoToken                         | 0..1       | String   | Echo token to be returned in response (valid for test purposes). |
-| OperationImplemented              | 1          | Boolean  | If the operation is implemented by this provider or not. |
+| echoToken                         | 0..1       | String   | Echo token to be returned in response (used for test purposes only). |
+| OperationImplemented              | 1          | Boolean  | Informs whether the method has been implemented by the supplier. |
 | ContinuationToken                 | 0..1       | String   | Internal Token to identify the next set of HotelList. |
 | @expectedRange                    | 0..1       | Integer  | Number of hotels expected in HotelList call. |
-| applicationErrors                 | 0..n       |          | Application errors reported by provider. |
+| applicationErrors                 | 0..n       |          | Application errors reported by supplier. |
 | applicationErrors/type            | 1          | String   | Error Type as specified by XML Travelgate. |
-| applicationErrors/code            | 1          | String   | Native error code reported by provider. |
+| applicationErrors/code            | 1          | String   | Native error code reported by supplier. |
 | applicationErrors/description     | 1          | String   | Error description. |
-| auditData                         | 1          |          | Information about processing that transaction. |
-| auditData/transactions            | 0..n       |          | List of transactions communicated with provider. |
-| auditData/transactions/timeStamp  | 1          | Integer  | TimeStamp in which has been generated that transaction. |
+| auditData                         | 1          |          | Data sent & received in the supplier's native format.|
+| auditData/transactions            | 0..n       |          | List of transactions data. |
+| auditData/transactions/timeStamp  | 1          | Integer  | TimeStamp of each transaction. |
 | auditData/transactions/RQ         | 1          | String   | Transaction Request. |
 | auditData/transactions/RS         | 1          | String   | Transaction Response. |
-|auditData/timeStamp                | 1          | Integer  | TimeStamp in which response has been generated. |
-| auditData/processTimeMilliseconds | 1          | Integer  | Time in milliseconds consumed by this method. |
+| auditData/timeStamp                | 1          | Integer  | Time when the request has been processed.  |
+| auditData/processTimeMilliseconds | 1          | Integer  | Process time in milliseconds |
 
 
 
@@ -159,30 +146,25 @@ affected.
 **ContinuationToken:**
 
 This new tag is useful to split the hotel list response. This is done
-because there are suppliers that have a big amount of hotels (over
-250.000). In those cases, the response has to be splitted in order to
-get all the hotels. In case that ContinuationToken is not sent, the
+because there are suppliers who have a large amount of hotels (over
+250.000). In those cases, the response has to be split in order to
+retrieve all the hotels available. In case that ContinuationToken is not sent, the
 HotelList returns a maximum of 250.000 hotels. Using this
 ContinuationToken and the attribute *expectedRange* the client may
 decide the number of hotels expected in each HotelList call. If the
-provider has more hotels than the amount mentioned before, in order to
-get all the hotels the client will need to do requests using the
+supplier has more than 250.000 hotels, in order to get 100% of the hotels available, the client will need to do requests using the
 ContinuationToken returned inside the HotelListRS response until the
-ContinuationToken field is not returned in the response (see the example
+ContinuationToken field is no longer returned in the response (see the example
 in Common Elements RS). Once the tag is not returned the hotel list is
-completed. The value of this tag is an internal Token that identifies
+complete. The value of this tag is an internal Token that identifies
 the next set of HotelList to be returned.
 
--   *expectedRange* :
+**expectedRange** :
 
-Hotel list range that the client want to get in each HotelList response.
-The number of hotels returned will be established in the expectedRange
-value, though it is possible to get more hotels than the requested.
-Having the list of hotels paged we can not return a range of hotels in
-one page so we are forced to set a range of +999 hotels. This means that
-if the client request 6000 hotels, the response may contain a range of
-6000 to 6999 hotels. In case that this value is not sent, the maximum
-hotel range is 250.000 although it is recommended to make requests of
-multiple of 1000.
-
+Specifies the hotel list range set by the client in each HotelList response.
+The number of hotels returned is set in the expectedRange value, although it
+is possible to get more hotels than requested. This means that
+if the client requests 1000 hotels, the response may contain a range between
+1000 to 1999 hotels. In the case this value is not set, the maximum
+hotel range is 250.000. We strongly recommend using multiples of one thousand.
 
