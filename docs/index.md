@@ -1,5 +1,5 @@
 ---
-title: XML Travelgate API documentation
+title: XML Travelgate API documentation.
 sidebar: mydoc_sidebar
 permalink: /docs/index/
 ---
