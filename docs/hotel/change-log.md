@@ -6,210 +6,190 @@ permalink: /docs/hotel/change-log
 ---
 
 
-- **Version 1.0.1:** Date 11/01/2012
+**Version 1.0.1:** Date 11/01/2012
 
-
-Specified Common Elements Added Appendices
-
-
-
-- **Version 1.0.2:** Date 20/02/2012
-
-
-AvailDestinationTree specified destinations only attackable on
-availability Added ISO country code in response Hotel
-
-
-
-- **Version 1.0.3:** Date 09/04/2012
-
-
-New type errors in Valuation
-
-
-
-- **Version 1.0.4:** Date 13/06/2012
-
-
-Larger PDI structure to charge hotel + ticket
-
-Add ProveedorFacturacionExterna in confirmacionRS
-
-
-
-- **Version 1.0.5:** Date 30/07/2012
-
-
-Correcting errors in the documentation
-
-Add Promotions / Specials Offers in disponibilidadRS option
+ :  Specified Common Elements Added Appendices.
 
 |
 
-- **Version 1.0.6:** Date 30/08/2012
+**Version 1.0.2:** Date 20/02/2012
 
+ :  AvailDestinationTree specified destinations only attackable on availability Added ISO country code in response Hotel.
 
-Implemented three new calls: ReservationList, RuntimeConfigurationand
-StaticConfiguration
+|
 
-Added attribute element level NuevaOpcion Offer
+**Version 1.0.3:** Date 09/04/2012
 
-Appendix of countries and currencies
+ :  New type errors in Valuation.
 
+|
 
+**Version 1.0.4:** Date 13/06/2012
 
-- **Version 1.0.7:** Date 11/03/2013
+ :  Larger PDI structure to charge hotel + ticket.
 
+ :  Add ProveedorFacturacionExterna in confirmacionRS.
 
-Product specification download
+|
 
-Added element geographical destination in hotel
+**Version 1.0.5:** Date 30/07/2012
 
-Implemented new call: GeographicDestinationTree
+ :  Correcting errors in the documentation.
 
+ :  Add Promotions / Specials Offers in disponibilidadRS option.
 
+|
 
-- **Version 1.0.8:** Date 17/03/2014
+**Version 1.0.6:** Date 30/08/2012
 
+ :  Implemented three new calls: ReservationList, RuntimeConfigurationand StaticConfiguration.
 
-Bed information in AvailRS
+ :  Added attribute element level NuevaOpcion Offer.
 
+ :  Appendix of countries and currencies.
 
+|
 
-- **Version 1.0.9:** Date 27/03/2014
+**Version 1.0.7:** Date 11/03/2013
 
+ :  Product specification download.
 
-Modify booking
+ :  Added element geographical destination in hotel.
 
+ :  Implemented new call: GeographicDestinationTree.
 
+|
 
-- **Version 1.0.9:** Date 30/11/2014
+**Version 1.0.8:** Date 17/03/2014
 
+ :  Bed information in AvailRS.
 
-New Wiki look & Feel, now using Sphinx reST
+|
 
-Add hotel XSDs
+**Version 1.0.9:** Date 27/03/2014
 
-Improvement documentation PaymentType, CardInfo and MasterCodes
+ :  Modify booking.
 
+| 
 
+**Version 1.0.9:** Date 30/11/2014
 
-- **Version 1.0.10:** Date 29/09/2015
+ :  New Wiki look & Feel, now using Sphinx reST.
 
+ :  Add hotel XSDs.
 
-OnRequest
+ :  Improvement documentation PaymentType, CardInfo and MasterCodes.
 
-DailyRatePlans
+|
 
-Remarks in Confirmation request
+**Version 1.0.10:** Date 29/09/2015
 
-BedTypes
+ :  OnRequest.
 
-SharedBed
+ :  DailyRatePlans.
+ 
+ :  Remarks in Confirmation request.
 
-BlockOption
+ :  BedTypes.
 
-ExclusiveDeal
+ :  SharedBed.
 
-Offers in Avail
+ :  BlockOption.
 
-Fees in Valuation
+ :  ExclusiveDeal.
 
-CancelPoliciesDescription in Valuation
+ :  Offers in Avail.
 
-DeltaPrice in Confirmation
+ :  Fees in Valuation.
 
-DescriptiveInfoExtended
+ :  CancelPoliciesDescription in Valuation.
 
+ :  DeltaPrice in Confirmation.
 
+ :  DescriptiveInfoExtended.
 
-- **Version 1.0.11:** Date 17/11/2015
+|
 
+**Version 1.0.11:** Date 17/11/2015
 
-BusinessRule in AvailRQ
+ :  BusinessRule in AvailRQ.
 
-AvailableModifications in ReservationRead
+ :  AvailableModifications in ReservationRead.
 
-ImplementsBusinessRule in StaticConfiguration
+ :  ImplementsBusinessRule in StaticConfiguration.
 
-InformAvailableModificationsInReservationRead in StaticConfiguration
+ :  InformAvailableModificationsInReservationRead in StaticConfiguration. 
 
-GiataId
+ :  GiataId.
 
+|
 
+**Version 1.0.12:** Date 09/12/2015
 
-- **Version 1.0.12:** Date 09/12/2015
+ :  Nationality in Avail, Valuation, ModifyValuation and ModifyReservation request.
 
+ :  New rate conditions: largeFamily and honeymoon.
 
-Nationality in Avail, Valuation, ModifyValuation and ModifyReservation
-request
+ :  RequiredNationality in StaticConfiguration.
 
-New rate conditions: largeFamily and honeymoon
+ :  Inform60Rate in StaticConfiguration.
 
-RequiredNationality in StaticConfiguration
+ :  Inform65Rate in StaticConfiguration.
 
-Inform60Rate in StaticConfiguration
+ :  InformCanaryResidentRate in StaticConfiguration
 
-Inform65Rate in StaticConfiguration
+ :  InformBalearicResidentRate in StaticConfiguration.
 
-InformCanaryResidentRate in StaticConfiguration
+ :  InformLargeFamilyRate in StaticConfiguration.
 
-InformBalearicResidentRate in StaticConfiguration
+ :  InformHoneymoonRate in StaticConfiguration.
 
-InformLargeFamilyRate in StaticConfiguration
+|
 
-InformHoneymoonRate in StaticConfiguration
+**Version 1.0.13:** Date 18/01/2016
 
+ :  BusinessRules in AvailRQ.
 
+ :  ImplementsBusinessRules in StaticConfiguration.
 
-- **Version 1.0.13:** Date 18/01/2016
+ :  OptionsQuota in Common-Elements.
 
+ :  PropertyCategory in HotelList and DescriptiveInfo.
 
-BusinessRules in AvailRQ
+|
 
-ImplementsBusinessRules in StaticConfiguration
+**Version 1.0.14:** Date 01/02/2016
 
-OptionsQuota in Common-Elements
+ :  ContinuationToken in Common Elements (use in HotelList call).
 
-PropertyCategory in HotelList and DescriptiveInfo
+|
 
+**Version 1.0.15:** Date 29/02/2016
 
+ :  New BusinessRules (RoomType) in AvailRQ.
 
-- **Version 1.0.14:** Date 01/02/2016
+ :  ImplementsProviderLocatorCancel in StaticConfiguration.
 
+ :  ImplementsClientLocatorCancel in StaticConfiguration.
 
-ContinuationToken in Common Elements (use in HotelList call)
+|
 
+**Version 1.0.16:** Date 03/05/2016
 
+ :  Currency in AvailRQ.
 
-- **Version 1.0.15:** Date 29/02/2016
+ :  Markets in AvailRQ.
 
+ :  NumberOfUnits in AvailRQ.
 
-New BusinessRules (RoomType) in AvailRQ
+ :  ProviderCode in HotelListRS.
 
-ImplementsProviderLocatorCancel in StaticConfiguration
+ :  NumMarketsAllowed in StaticConfiguration.
 
-ImplementsClientLocatorCancel in StaticConfiguration
+ :  InformTiket in StaticConfiguration.
 
+ :  InformNumberOfUnits in StaticConfiguration.
 
-
-- **Version 1.0.16:** Date 03/05/2016
-
-
-Currency in AvailRQ
-
-Markets in AvailRQ
-
-NumberOfUnits in AvailRQ
-
-ProviderCode in HotelListRS
-
-NumMarketsAllowed in StaticConfiguration
-
-InformTiket in StaticConfiguration
-
-InformNumberOfUnits in StaticConfiguration
-
-ImplementsDescriptiveInfoExtended in StaticConfiguration
+ :  ImplementsDescriptiveInfoExtended in StaticConfiguration.
 
 
