@@ -5,7 +5,7 @@ permalink: /docs/index/
 ---
 
 
-___Contents___ 
+___Contents:___ 
 
 **General Specifications** 
 
