@@ -8,7 +8,7 @@ permalink: /docs/hub/example-codes
 ### Visual Basic .NET Example
 
 
-~~~VBNET
+~~~vb
 Imports System.Net
 Imports System.ServiceModel.Channels
 Imports System.Security.Cryptography.X509Certificates
