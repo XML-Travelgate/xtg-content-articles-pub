@@ -7,7 +7,7 @@ permalink: /docs/index/
 
 ___Contents:___ 
 
-**General Specifications!** 
+**General Specifications** 
 
 1. [Intro](/docs/intro/)
 2. [Audience](/docs/audience/)
