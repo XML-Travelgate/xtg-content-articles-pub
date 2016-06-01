@@ -251,10 +251,9 @@ public class ExampleConnectionJava {
     public static final String providerParamValueUrlEstaticos ="http://www.myurl.com/syncroservices.asmx";
     public static final String providerParamValueUrlInfoHoteles ="http://www.myurl.com/wshoteles/Service.asmx";
 
-    // Please refer to http://www.xmltravelgate.com/Docs/API-Specification/Hub.html#Service%20Endpoints
-    public static final String url = "http://hubpublichotel.xmltravelgate.com/Service/Travel/v2/HotelBatch.svc"; 
+    public static final String url = "http://hubhotelbatch.xmltravelgate.com/Service/Travel/v2/HotelBatch.svc"; 
 
-//wsimport http://hubpublichotel.xmltravelgate.com/Service/Travel/v2/HotelBatch.svc?wsdl -keep
+//wsimport http://hubhotelbatch.xmltravelgate.com/Service/Travel/v2/HotelBatch.svc?wsdl -keep
     public static void main(String[] args) throws Exception {
 
         String xmlRQStr = "<HotelListRQ xmlns:xsi = \"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd = \"http://www.w3.org/2001/XMLSchema\">" 
@@ -434,8 +433,7 @@ $providerUrlGeneric = "http://www.myurl.com/bookingservices.asmx"; //Provided by
 $providerParamValueUrlEstaticos ="http://www.myurl.com/syncroservices.asmx"; //Provided by Provider
 $providerParamValueUrlInfoHoteles = "http://www.myurl.com/wshoteles/Service.asmx"; //Provided by Provider
 
-// Please refer to http://www.xmltravelgate.com/Docs/API-Specification/Hub.html#Service%20Endpoints
-$url   = "http://hubpublic.xmltravelgate.com/Service/Travel/v2/HotelBatch.svc";
+$url   = "http://hubhotelbatch.xmltravelgate.com/Service/Travel/v2/HotelBatch.svc";
 
 $xmlRQStr = "<HotelListRQ xmlns:xsi = \"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd = \"http://www.w3.org/2001/XMLSchema\">" 
                                           ."<timeoutMilliseconds>".($requestTimeoutMs-1000)."</timeoutMilliseconds>"
