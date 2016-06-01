@@ -5,16 +5,17 @@ sidebar: mydoc_sidebar
 permalink: /docs/hotel/FAQ
 ---
 
-
 **How many suppliers can I request in one call?**
 
 One supplier per request. The only exception is in Availability, where you can request one or more suppliers.
 
 
 
+
 **What is the workflow for hotel reservation?**
 
 Our workflow has three mandatory steps: Availability (avail), Valuation and Reservation, always in this order.
+
 
 
 
@@ -47,9 +48,11 @@ By using the field ID in the request. For example:
 ~~~
 
 
+
 **What does PVP mean?**
 
 PVP is public sale price in Spanish and it means the price you shoud sell the hotel to your customer. If it's binding, you must sell at least at this price, not less. More info below.
+
 
 
 
@@ -65,7 +68,8 @@ Every option has a price and every price indicates the currency, the amount, if 
  - Commission = -1: the supplier has not supplied the sale price nor the commission. This information is obtained by signing a contract with the supplier.
  - Commission is greater than 0: X = % of the commission that is applied to the amount
 
- Please go to http://tech.xmltravelgate.com/docs/hotel/DSF/Avail for detailed examples.
+ Please go to [http://tech.xmltravelgate.com/docs/hotel/DSF/Avail] for detailed examples.
+
 
 
 
@@ -75,9 +79,11 @@ It´s all the information we download from a supplier so we have it ready for ac
 
 
 
+
 **In the tag "RequiredAllPassenger", is specifying the names of the children necessary?**
 
 If the value of "RequiredAllPassengers" is true in the static data, then yes, it is necessary.
+
 
 
 
@@ -87,8 +93,9 @@ As far as connecting to a client, there is no difference for you. Both types of 
 
 
 
+
 **How can I request a new Integration with another supplier?**
 
 Please contact your chosen supplier, negotiate a commercial contract and then fill in the form below. We'll do the rest!
 
-http://goo.gl/forms/WTGcUo3ztdOtlx8U2
+[http://goo.gl/forms/WTGcUo3ztdOtlx8U2]
