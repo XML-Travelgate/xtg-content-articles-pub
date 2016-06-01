@@ -1,5 +1,5 @@
 ---
-title: Hotel API Docs''s documentation!
+title: Hotel API Documentation
 keywords: index
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/index
