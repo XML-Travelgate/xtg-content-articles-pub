@@ -148,14 +148,13 @@ namespace ClientC
             string pass = "xxx";
 
             //Conexin por HTTP
-            // Please refer to http://www.xmltravelgate.com/Docs/API-Specification/Hub.html#Service%20Endpoints
 
-            string url = "http://hubxtghotel.xmltravelgate.com/Service/Travel/HotelInsecure.svc";
+            string url = "http://hubhotelbatch.xmltravelgate.com/Service/Travel/v2/HotelBatch.svc";
             Binding binding = default(Binding);
             binding = CreateBinding(timeout);
 
             //Conexin por HTTPS
-            //Dim url As String = "https://hubxtghotel.xmltravelgate.com/Service/Travel/Hotel.svc"
+            //Dim url As String = "https://hubhotelbatch.xmltravelgate.com/Service/Travel/v2/HotelBatchSecure.svc"
             //Dim binding As Binding
             //binding = CreateBindingSecure(timeout)
 
@@ -171,18 +170,18 @@ namespace ClientC
             client.ClientCredentials.UserName.UserName = user;
             client.ClientCredentials.UserName.Password = pass;
 
-            ServiceReferenceHotelInsecure.ListadoHotelesRS rs = new ServiceReferenceHotelInsecure.ListadoHotelesRS();
+            ServiceReferenceHotelInsecure.HotelListRS rs = new ServiceReferenceHotelInsecure.HotelListRS();
 
-                    ServiceReferenceHotelInsecure.ListadoHotelesRQ rq = new ServiceReferenceHotelInsecure.ListadoHotelesRQ();
+                    ServiceReferenceHotelInsecure.HotelListRQ rq = new ServiceReferenceHotelInsecure.HotelListRQ();
 
                     rq.timeoutMilliseconds = timeout;
 
                     rq.providerRQ = new ProviderRQ();
                     rq.providerRQ.id = "1";
                     rq.providerRQ.code = "XXX";
-                    rq.providerRQ.rqXML = new XElement("ListadoHotelesRQ", new XElement("timeoutMilliseconds", "999999"), new XElement("source", new XElement("languageCode", "es")), new XElement("filterAuditData", new XElement("registerTransactions", "false")), new XElement("Configuracion", new XElement("Usuario", "xxx"), new XElement("Password", "xxx"), new XElement("UrlGenerica", "xxx"), new XElement("Parametros")));
+                    rq.providerRQ.rqXML = new XElement("HotelListRQ", new XElement("timeoutMilliseconds", "999999"), new XElement("source", new XElement("languageCode", "es")), new XElement("filterAuditData", new XElement("registerTransactions", "false")), new XElement("Configuration", new XElement("User", "xxx"), new XElement("Password", "xxx"), new XElement("UrlGeneric", "xxx"), new XElement("Parameters")));
 
-                    rs = client.ListadoHoteles(rq);
+                    rs = client.HotelList(rq);
 
 
         }
