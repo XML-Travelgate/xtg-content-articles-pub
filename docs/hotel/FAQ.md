@@ -23,7 +23,7 @@ Our workflow has three mandatory steps: Availability (avail), Valuation and Rese
 
 By using the field ID in the request. For example:
 
-  **In the request:**
+ **In the request:**
 
 ~~~xml
 <!--First supplier-->
@@ -68,7 +68,7 @@ Every option has a price and every price indicates the currency, the amount, if 
  - Commission = -1: the supplier has not supplied the sale price nor the commission. This information is obtained by signing a contract with the supplier.
  - Commission is greater than 0: X = % of the commission that is applied to the amount
 
-  Please click on [Avail](http://tech.xmltravelgate.com/docs/hotel/DSF/Avail) for detailed examples.
+  Please go to Avail [http://tech.xmltravelgate.com/docs/hotel/DSF/Avail] for detailed examples.
 
 
 
