@@ -11,7 +11,7 @@ permalink: /docs/hotel/DSF/Avail
 
 This method aims to return all the available options for a given date
 and itinerary. It does not filter different classes, times or fares. It
-will always return all results returned by the provider.
+will always retrieve all results returned by the supplier.
 
 
 ### Request Format
@@ -29,11 +29,11 @@ Results are organized in this hierarchy:
 -   *Hotel* :
 
 A list with all the hotels, including hotel name and code, *mealplans*
-list, etc. returned by the provider.
+list, etc. returned by the supplier.
 
 -   *Mealplans* :
 
-A list of all MealPlans returned by the provider, every *mealplan* and
+A list of all MealPlans returned by the supplier, every *mealplan* and
 its code. Every *mealplan* also contains a list of *options* for this
 availability.
 
@@ -48,7 +48,7 @@ discounts are included in the total price.
 
 
 
-### Remarks
+### Observations
 
 
 This method **must** be called **before** the *Valuation* method.
@@ -96,16 +96,16 @@ is closed.
 | **Element**				| **Number**	| **Type**	| **Description**						|
 | ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
 | AvailRQ               		| 1            	|		| Root node.							|
-| CancellationPolicies 			| 1     	| Boolean	| Indicates if you want to receive the cancellation policies in AvailRS, as long as the provider returns it in this call (see StaticConfiguration).	|
-| OnRequest            			| 1     	| Boolean	| Indicates if you want to receive the onrequest options in AvailRS, as long as the provider returns it in this call (see StaticConfiguration).		|
-| BusinessRules        			| 1            	|		| Indicates the business rules the client wants to apply in availability, as long as the provider returns it in this call (see StaticConfiguration).	|
+| CancellationPolicies 			| 1     	| Boolean	| Indicates if you want to receive the cancellation policies in AvailRS, as long as the supplier returns it in this call (see StaticConfiguration).	|
+| OnRequest            			| 1     	| Boolean	| Indicates if you want to receive the onrequest options in AvailRS, as long as the supplier returns it in this call (see StaticConfiguration).		|
+| BusinessRules        			| 1            	|		| Indicates the business rules the client wants to apply in availability, as long as the supplier returns it in this call (see StaticConfiguration).	|
 | AvailDestinations/Destination		| 1..n         	|		| Contains the list of destinations filters (hotels or cities or zones or geocodes).	|
 | @type           			| 1     	| String	| Destination type (HOT, CTY, ZON, GEO). Clarification: ZONs contains CTYs. ZONs are higher nodes and CTY are lower nodes.  |
-| @code           			| 1     	| String	| Native destination code as returned by provider in *HotelList* or *AvailDestinationTree*.	|
+| @code           			| 1     	| String	| Native destination code as returned by supplier in *HotelList* or *AvailDestinationTree*.	|
 | StartDate            			| 1     	| String	| 'Search from' date.						|
 | EndDate              			| 1     	| String	| 'Search til' date.						|
-| Currency             			| 0..1  	| String	| Currency requested, if supported by provider. If not, this value will be ignored.	|
-| Nationality          			| 0..1  	| String	| Nationality of the guest (use ISO3166_1_alfa_2). This informations will be mandatory depending on the provider, as long as the provider returns it in this call (see StaticConfiguration).	|
+| Currency             			| 0..1  	| String	| Currency requested, if supported by supplier. If not, this value will be ignored.	|
+| Nationality          			| 0..1  	| String	| Nationality of the guest (use ISO3166_1_alfa_2). This informations will be mandatory depending on the supplier, as long as the supplier returns it in this call (see StaticConfiguration).	|
 | Markets              			| 0..1         	|		| List of Market requested.					|
 | Markets/Market       			| 0..n  	| String	| The targeted zone/ country/ Point of sale.			|
 | RoomCandidates/RoomCandidate 		| 1..n         	|		| Room required.						|
@@ -352,7 +352,7 @@ Currently, the client can configure the following BusinessRules:
 | MealPlans/MealPlan/Options /Option/Rooms/Room /Beds/Bed | 0..n | 	| Identifies types of beds.					|
 | @numberOfBeds 			| 0..1 		| String 	| Indicates number of beds in the room.				|
 | @type 				| 0..1 		| String 	| Indicates the type of bed.					|
-| MealPlans/MealPlan/Options /Option/Rooms/Room /DailyPrices | 0..1 | 	| Specifies the daily price, as long as the provider returns it in this call (see StaticConfiguration).	| 
+| MealPlans/MealPlan/Options /Option/Rooms/Room /DailyPrices | 0..1 | 	| Specifies the daily price, as long as the supplier returns it in this call (see StaticConfiguration).	| 
 | MealPlans/MealPlan/Options /Option/Rooms/Room /DailyPrices/DailyPrice | 1..n | | Specifies the price for each day.			|
 | @effectiveDate 			| 1 		| String 	| Start date in which the price becomes effective.		|
 | @expireDate 				| 1 		| String 	| Expiry date of price.						|
@@ -360,17 +360,17 @@ Currently, the client can configure the following BusinessRules:
 | @currency 				| 1 		| String 	| Currency code.						|
 | @amount 				| 1 		| Decimal 	| Day Amount.							|
 | @binding 				| 1 		| Boolean 	| Identifies if is the price is binding (When true the sale price returned **must** not be less than the price informed. |
-| @commission 				| 1 		| Decimal 	| Commission: -1 = not specified (will come indicated with the provider contract ), 0 = net price, X = % of the commission that applies to the amount. |
-| MealPlans/MealPlan/Options /Option/Rooms/Room /DailyRatePlans | 0..1 | | Specifies the daily rate, as long as the provider returns it in this call (see StaticConfiguration).  |
+| @commission 				| 1 		| Decimal 	| Commission: -1 = not specified (will come indicated with the supplier contract ), 0 = net price, X = % of the commission that applies to the amount. |
+| MealPlans/MealPlan/Options /Option/Rooms/Room /DailyRatePlans | 0..1 | | Specifies the daily rate, as long as the supplier returns it in this call (see StaticConfiguration).  |
 | MealPlans/MealPlan/Options /Option/Rooms/Room /DailyRatePlans/DailyRatePlan | 1..n | | Specifies the rates for each day.		|
 | @effectiveDate 			| 1 		| String 	| Start date in which the rate becomes effective.		|
 | @expireDate 				| 1 		| String 	| End date in which the rate becomes expire.			|
-| @code 				| 1 		| String 	| Indicates the provider's rate code. This code specifies the rate that applies to those days.	|
+| @code 				| 1 		| String 	| Indicates the supplier's rate code. This code specifies the rate that applies to those days.	|
 | MealPlans/MealPlan/Options /Option/Rooms/Room /Price | 1 | 		| Room price.							|
 | @currency 				| 1 		| String 	| Currency code.						|
 | @amount 				| 1 		| Decimal 	| Room Amount.							|
 | @binding 				| 1 		| Boolean 	| Identifies if is the price is binding (When true the sale price returned **must** not be less than the price informed).|
-| @commission 				| 1 		| Decimal 	| Commission ( -1 = not specified (will come indicated with the provider contract ), 0 = net price, X = % of the commission that applies to the amount.   |
+| @commission 				| 1 		| Decimal 	| Commission ( -1 = not specified (will come indicated with the supplier contract ), 0 = net price, X = % of the commission that applies to the amount.   |
 | MealPlans/MealPLan/Options /Option/InfoTipoOpcion | 	| 		| Deprecated node.						|
 | @TipoDuracion 			| 		| 		|								|
 | @Cantidad 				| 		| 		|								|
@@ -385,7 +385,7 @@ Currently, the client can configure the following BusinessRules:
 | @currency 				| 1 		| String 	| Currency code.						|
 | @amount 				| 1 		| Decimal 	| Option Amount.						|
 | @binding 				| 1 		| Boolean 	| Identifies if is the price is binding (When true the sale price returned **must** not be less than the price informed.|
-| @commission 				| 1 		| Decimal 	| Commission ( -1 = not specified (will come indicated with the provider contract ), 0 = net price, X = % of the commission that applies to the amount.	|
+| @commission 				| 1 		| Decimal 	| Commission ( -1 = not specified (will come indicated with the supplier contract ), 0 = net price, X = % of the commission that applies to the amount.	|
 | MealPlans/MealPlan/Options /Option/Detail | 0..1 	| 		| Detail of option (it is indicated if the option is different from the type\<\> Hotel).  |
 | MealPlans/MealPlan/Options /Option/Detail/POIs | 1 	| 		| Points of interest.						|
 | MealPlans/MealPlan/Options /Option/Detail/POIs/POI | 1..n | 		| Point of interest.						|
@@ -404,7 +404,7 @@ Currently, the client can configure the following BusinessRules:
 | @endDate 				| 1 		| String 	| End date to service.						|
 | MealPlans/MealPlan/Options /Option/Remarks | 0..1 	| 		| List of remarks.						|
 | MealPlans/MealPlan/Options /Option/Remarks/Remark | 1..n | 		| Remark.							|
-| MealPlans/MealPlan/Options /Option/Offers | 0..1 	| 		| The provider returns in response which offer is applicable for each option.	|
+| MealPlans/MealPlan/Options /Option/Offers | 0..1 	| 		| The supplier returns in response which offer is applicable for each option.	|
 | MealPlans/MealPlan/Options /Option/Offers/Offer | 1..n | 		| List of offers.						|
 | @code 				| 1 		| String 	| Contains the code to identify a offer.			|
 | @name 				| 1 		| String 	| Contains the name of the offer.				|
@@ -428,9 +428,9 @@ client can sell the product for a lower price.
 -   *Commission:*
 
    > -   Commission = 0: the price returned is a net price.
-   > -   Commission = -1: the provider has not supplied the sale price
+   > -   Commission = -1: the supplier has not supplied the sale price
    >     nor the commission. This information is obtained by signing a
-   >     contract with the provider.
+   >     contract with the supplier.
    > -   Commission is greater than 0: X = % of the commission that is
    >     applied to the amount
 
@@ -474,10 +474,10 @@ request.
 This field will be sent to the supplier provided that the the supplier
 allows for it in the request, otherwise it won't be sent.
 
-If the provider allows for the field currency to be used, we can't
+If the supplier allows for the field currency to be used, we can't
 guarantee that the response will be in the currency you requested, as we
-always work with the native code of the provider. For example if you
-requested EUR but the provider only works with GBP, the provider will
+always work with the native code of the supplier. For example if you
+requested EUR but the supplier only works with GBP, the supplier will
 return in GBP, and we will pass it on to you in GBP
 
 
@@ -485,15 +485,15 @@ return in GBP, and we will pass it on to you in GBP
 **PAX ages:**
 
 The range of what is considered an adult, infant or baby is particular
-to each provider.
+to each supplier.
 
 We don't have a standardization of the paxs ages, we adapt to what the
-providers wants. For one provider a child age might range from 1 to 15
+suppliers wants. For one supplier a child age might range from 1 to 15
 years old, for others, a 13 years old is considered an adult. We will
-always use the provider´s definition. If the providers requires it, we
+always use the supplier´s definition. If the suppliers requires it, we
 will convert the age of a pax to a pax type (for example, convert a 30
 year old pax to an adult ) or send directly the age of the pax. This
-depends on the provider's request.   
+depends on the supplier's request.   
 
 
 
@@ -506,7 +506,7 @@ modified for the rest of the petitions, like for example the valuation process.*
 
 The cancellation policies or penalizations may be displayed in the
 response, provided that the parameter <CancellationPolicies> is set as
-true in the request and that the provider supplies this information in
+true in the request and that the supplier supplies this information in
 the availability call.
 
 
@@ -523,14 +523,14 @@ in the availability call.
 
 **PaymentOptions:**
 
--   **MerchantPay:** The payment is managed by the provider.
+-   **MerchantPay:** The payment is managed by the supplier.
 
 -   **LaterPay:** The payment is managed by the hotel. The customer will
     use a credit-card as a guarantee for the hotel and the payment will
     be done at check in.
--   **CardBookinPay:** The payment is managed by the provider. The
+-   **CardBookinPay:** The payment is managed by the supplier. The
     payment is effectuated at the time of booking.
--   **CardChekinPay:** The payment is managed by the provider. The
+-   **CardChekinPay:** The payment is managed by the supplier. The
     payment is effectuated during check in at the hotel.
 
 
@@ -539,7 +539,7 @@ in the availability call.
 
 -   The extra fee for a **nonRefundable** cancellation is a 100% from
     the moment the reservation is created.
--   The provider can return options for pax: older than 55 years old,
+-   The supplier can return options for pax: older than 55 years old,
     i.e. options that can only be sold to people who are 55 and older.
     In this case we will return the condition: rate 55 years old.
 -   In the case of pax older than **60 years** and **65 years** the same
@@ -551,9 +551,9 @@ in the availability call.
 -   The rate **BalearicResident** is applicable to Balearic Islands
     residents only.
 -   The rate **largeFamily** is applied to large families and is
-    determined by each provider.Check *remarks* for more details.
+    determined by each supplier.Check *remarks* for more details.
 -   The rate **honeymoon** is applied to those who just got married and
-    is determined by each provider. Check *remarks* for more details.
+    is determined by each supplier. Check *remarks* for more details.
 
 
 
@@ -566,9 +566,9 @@ The possible values of the status in the response is OK or RQ:
 ~~~
 
 In the case that the client doesn't want to display the options in a
-status RQ, we can filter the options given that the provider typifies
+status RQ, we can filter the options given that the supplier typifies
 this status when the AvailRQ specifies the <OnRequest> tag. In the
-case the provider doesn't facilitates this information, wich will be
+case the supplier doesn't facilitates this information, wich will be
 informed into the StaticConfiguration call, then this will have to be
 treated on a commercial level.
 
