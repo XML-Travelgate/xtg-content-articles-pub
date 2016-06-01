@@ -49,14 +49,14 @@ PVP is public sale price in Spanish and it means the price you shoud sell the ho
 
 Every option has a price and every price indicates the currency, the amount, if it is binding and the commission.
 
-	*Binding:* If binding is set as true, then the client cannot sell the product provided by the supplier for a lower price. If it's set as false, the client can sell the product for a lower price.
+Binding: If binding is set as true, then the client cannot sell the product provided by the supplier for a lower price. If it's set as false, the client can sell the product for a lower price.
 
-	*Commission:*
-	 - Commission = 0: the price returned is a net price.
-	 - Commission = -1: the supplier has not supplied the sale price nor the commission. This information is obtained by signing a contract with the supplier.
-	 - Commission is greater than 0: X = % of the commission that is applied to the amount
-   
-  Please go to http://tech.xmltravelgate.com/docs/hotel/DSF/Avail for detailed examples.
+Commission:
+- Commission = 0: the price returned is a net price.
+- Commission = -1: the supplier has not supplied the sale price nor the commission. This information is obtained by signing a contract with the supplier.
+- Commission is greater than 0: X = % of the commission that is applied to the amount
+
+ Please go to http://tech.xmltravelgate.com/docs/hotel/DSF/Avail for detailed examples.
 
 **What is a static download and what is it for?**
 
@@ -73,4 +73,5 @@ As far as connecting to a client, there is no difference for you. Both types of 
 **How can I request a new Integration with another supplier?**
 
 Please contact your chosen supplier, negotiate a commercial contract and then fill in the form below. We'll do the rest!
+
 http://goo.gl/forms/WTGcUo3ztdOtlx8U2
