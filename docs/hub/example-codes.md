@@ -29,13 +29,12 @@ Module ExampleConnectionVB
         Dim pass As String = "xxx" 'Provided by XML Travelgate
 
         ''Conexin por HTTP
-        'Please refer to http://www.xmltravelgate.com/Docs/API-Specification/Hub.html#Service%20Endpoints
-        Dim url As String = "http://hubxtghotel.xmltravelgate.com/Service/Travel/HotelInsecure.svc"
+        Dim url As String = "http://hubhotelbatch.xmltravelgate.com/Service/Travel/v2/HotelBatch.svc"
         Dim binding As Binding
         binding = CreateBinding(timeout)
 
         ''Conexin por HTTPS
-        'Dim url As String = "https://hubxtghotel.xmltravelgate.com/Service/Travel/Hotel.svc"
+        'Dim url As String = "https://hubhotelbatch.xmltravelgate.com/Service/Travel/v2/HotelBatchSecure.svc"
         'Dim binding As Binding
         'binding = CreateBindingSecure(timeout)
 
@@ -51,17 +50,17 @@ Module ExampleConnectionVB
         client.ClientCredentials.UserName.UserName = user
         client.ClientCredentials.UserName.Password = pass
 
-        Dim rs As New ServiceReferenceHotelInsecure.ListadoHotelesRS
+        Dim rs As New ServiceReferenceHotelInsecure.HotelListRS
 
                 'Llamada de dispo
-                Dim rq As New ServiceReferenceHotelInsecure.ListadoHotelesRQ
+                Dim rq As New ServiceReferenceHotelInsecure.HotelListRQ
 
                 rq.timeoutMilliseconds = timeout
 
                 rq.providerRQ = New ProviderRQ()
                 rq.providerRQ.id = "1"
                 rq.providerRQ.code = "XXX"
-                rq.providerRQ.rqXML = <ListadoHotelesRQ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                rq.providerRQ.rqXML = <HotelListRQ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                                           <timeoutMilliseconds>999999</timeoutMilliseconds>
                                           <source>
                                               <languageCode>es</languageCode>
@@ -69,15 +68,15 @@ Module ExampleConnectionVB
                                           <filterAuditData>
                                               <registerTransactions>false</registerTransactions>
                                           </filterAuditData>
-                                          <Configuracion>
-                                              <Usuario>xxx</Usuario>
+                                          <Configuration>
+                                              <User>xxx</User>
                                               <Password>xxx</Password>
-                                              <UrlGenerica>xxx</UrlGenerica>
-                                              <Parametros></Parametros>
-                                          </Configuracion>
-                                      </ListadoHotelesRQ>
+                                              <UrlGeneric>xxx</UrlGeneric>
+                                              <Parameters></Parameters>
+                                          </Configuration>
+                                      </HotelListRQ>
 
-                rs = client.ListadoHoteles(rq)
+                rs = client.HotelList(rq)
     End Sub
 
 
