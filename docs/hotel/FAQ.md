@@ -96,4 +96,13 @@ As far as connecting to a client, there is no difference for you. Both types of 
 
 **How can I request a new Integration with another supplier?**
 
-Please contact your chosen supplier, negotiate a commercial contract and then fill in this [form](http://goo.gl/forms/WTGcUo3ztdOtlx8U2). We'll do the rest!
+Please contact your chosen supplier, negotiate a commercial contract with them and then fill in this [form](http://goo.gl/forms/WTGcUo3ztdOtlx8U2). We'll do the rest!
+
+**Can I split the rooms inside an <option> node and book each room separately?**
+
+The <option> node was created with the goal of guaranteeing that all rooms contained inside the option are bookable. If you need to book separate rooms, you must send us separate avail requests, one per room.
+
+**How many timeouts are there in XMLTravelgate?**
+There are two types of timeout - a general timeout and a supplier's time out. The first is for the request itself and the second refers to the request sent to each supplier. The general timeout is the sum of the supplier's timeout and our timeout and is defined in the body of the soap message. Instead, the supplier's timeout is the exclusive time while the supplier is given, the timeout is defined within the message rqXML. With all this data, the supplier's timeot should be slightly less than the whole timeout, a difference of 300 milliseconds is sufficient. We also have to respect the maximum timeout allowed by our systems according to the call type, see link http://tech.xmltravelgate.com/docs/hub/quotas.
+
+
