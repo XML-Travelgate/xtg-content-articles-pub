@@ -12,31 +12,29 @@ integration will have the following methods:
 | **Method**                | **Input**                   | **Output**                  | **Required** | **Description** |
 | ------------------------- | --------------------------- | --------------------------- | ------------ | --------------- |
 | AvailDestination Tree      | AvailDestination TreeRQ      | AvailDestination TreeRS      | No           | Returns a tree of available destinations. |
-| Geographic DestinationTree | Geographic DestinationTreeRQ | Geographic DestinationTreeRS | Yes          | Returns a tree of provider destinations. |
+| Geographic DestinationTree | Geographic DestinationTreeRQ | Geographic DestinationTreeRS | Yes          | Returns a tree of supplier's destinations. |
 | HotelList                 | HotelListRQ                 | HotelListRS                 | Yes          | Returns a list of available hotels. |
-| Descriptive Info           | Descriptive InfoRQ           | Descriptive InfoRS           | Yes          | Returns hotel information per hotel. |
+| Descriptive Info           | Descriptive InfoRQ           | Descriptive InfoRS           | Yes          | Retrieves information for current hotel such as photos, descriptions, amenities,etc as well as basic info (code,name, town, address, contact). |
 | RoomList                  | RoomListRQ                  | RoomListRS                  | No           | Returns available room types. |
 | MealPlanList              | MealPlanListRQ              | MealPlanListRS              | Yes          | Returns a list of available boards. |
 | CategoryList              | CategoryListRQ              | CategoryListRS              | Yes  	       | Returns a list of available categories. |
-| Avail                     | AvailRQ                     | AvailRS                     | Yes          | Makes an availability call. |
-| Valuation                 | ValuationRQ                 | ValuationRS                 | Yes          | Gets a booking quote (pre-book). |
+| Avail                     | AvailRQ                     | AvailRS                     | Yes          | Makes an availability request. |
+| Valuation                 | ValuationRQ                 | ValuationRS                 | Yes          | Retrieves a booking quote (pre-book). |
 | Reservation               | ReservationRQ               | ReservationRS               | Yes          | Makes a booking. |
 | Cancel                    | CancelRQ                    | CancelRS                    | No           | Cancels a booking. |
-| ReservationRead           | ReservationReadRQ           | ReservationReadRS           | No           | Gets booking details. |
-| ReservationList           | ReservationListRQ           | ReservationListRS           | No           | Gets a list of bookings. |
-| Runtime Configuration      | Runtime ConfigurationRQ      | Runtime ConfigurationRS      | Yes          | Gets the provider’s run-time configuration. |
-| Static Configuration       | Static ConfigurationRQ       | StaticC onfigurationRS       | Yes          | Gets the provider’s static configuration. |
-| ModifyValuation           | ModifyValuationRQ           | ModifyValuationRS           | No           | Valuation a possible booking modification. |
-| ModifyReservation         | Modify ReservationRQ         |  Modify ReservationRS        | No           | Confirm a booking modification. |
+| ReservationRead           | ReservationReadRQ           | ReservationReadRS           | No           | Retrieves booking details. |
+| ReservationList           | ReservationListRQ           | ReservationListRS           | No           | Retrieves a list of bookings. |
+| Runtime Configuration      | Runtime ConfigurationRQ      | Runtime ConfigurationRS      | Yes          |Retrieves the supplier’s run-time configuration. |
+| Static Configuration       | Static ConfigurationRQ       | StaticC onfigurationRS       | Yes          | Retrieves the supplier’s static configuration. |
+| ModifyValuation           | ModifyValuationRQ           | ModifyValuationRS           | No           | Requests a possible booking change. |
+| ModifyReservation         | Modify ReservationRQ         |  Modify ReservationRS        | No           | Confirms booking change. |
 
 
-Each request sent to the **service url** requires a node called *rqXML*.
-Inside this node travels the current method's Input object.
+Each request sent to  **service url** requires a node called *rqXML*. The current method's input object travels inside this node.
 
 
-
-The data structure will always have common elements in all objects and
-the specific objects related to the operation
+The data structure will always have common elements in all objects as well as
+specific objects related to the operation
 
 
 
