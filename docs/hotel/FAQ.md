@@ -99,9 +99,9 @@ As far as connecting to a client, there is no difference for you. Both types of 
 Please contact your chosen supplier, negotiate a commercial contract with them and then fill in this [form](http://goo.gl/forms/WTGcUo3ztdOtlx8U2). We'll do the rest!
 
 
-**Can I split the rooms inside an (<option>) node and book each room separately?**
+**Can I split the rooms inside an `<option>` node and book each room separately?**
 
-The (<option>) node was created with the goal of guaranteeing that all rooms contained inside the option are bookable. If you need to book separate rooms, you must send us separate avail requests, one per room.
+The `<option>` node was created with the goal of guaranteeing that all rooms contained inside the option are bookable. If you need to book separate rooms, you must send us separate avail requests, one per room.
 
 **How many timeouts are there in XMLTravelgate?**
 
