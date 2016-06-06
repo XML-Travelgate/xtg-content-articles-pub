@@ -427,7 +427,6 @@ client can sell the product for a lower price.
 ~~~xml
     <Price currency = "EUR" amount = "200" binding = "false" commission = "-1"/>
 ~~~
-
 We have no way of knowing if the price is PVP or net, given that
 the commission is not sent to us via XML. The commission is established
 by contract.
@@ -435,21 +434,18 @@ by contract.
 ~~~xml
     <Price currency = "EUR" amount = "300" binding = "true" commission = "-1"/>
 ~~~
-
 The price is PVP, the commission is not sent to us via XML. The
 commission is established by contract.
 
 ~~~xml
     <Price currency = "EUR" amount = "150" binding = "true/false" commission = "20"/>
 ~~~
-
 The price is PVP with a commission of 20%. The binding in this case can
 be true or false.
 
 ~~~xml
     <Price currency = "EUR" amount = "100" binding = "false" commission = "0"/>
 ~~~
-
 The price is net.
 
 
@@ -484,9 +480,9 @@ year old pax to an adult ) or send directly the age of the pax. This
 depends on the supplier's request.   
 
 
-
 **Note:** *Once the age as been established for each pax then it must not be
 modified in the remaining methods, like for example in valuation.*   
+
 
 
 
@@ -499,8 +495,8 @@ the availability method.
 
 **HoursBefore:** cancellation fees applicable *x* number of hours before the check in date.
 
-**Type:** There are three values that can be inside types:
-
+**Type:** 
+There are three values that can be inside types:
 > -   *Noches:* Indicates the number of nights to be
 >     penalized.
 > -   *Porcentaje:*Indicates the percentage to pay based on the
@@ -565,6 +561,7 @@ In the case  the client doesn't want to display the options in a
 status RQ, we can filter the options as long as the supplier specifies
 the status and the <OnRequest> tag is set in AvailRQ. In
 case the supplier doesn't specify the status, the element AllowOnRequest in (StaticConfigurationRS Description)[/docs/hotel/DSF/StaticConfiguration] needs to be set as FALSE.
+
 
 
 
