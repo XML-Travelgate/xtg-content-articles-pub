@@ -278,7 +278,7 @@ is closed.
 
 **BusinessRules:**
 
-BusinessRules uses *optionsQuota*, go to (Common-Elements)[/hotel/DSF/Common-Elements] for more
+BusinessRules uses *optionsQuota*, go to [Common-Elements](/hotel/DSF/Common-Elements) for more
 information.
 
 This tag will only be used for suppliers availability responses
@@ -386,8 +386,8 @@ Currently, the client can configure the following BusinessRules:
 | @type 				| 1 		| String 	| Service type (SkiPass, Lessons, Meals, Equipment, Ticket, Transfers or Gala).	|
 | @code 				| 1 		| String 	| Service code.							|
 | @description 				| 1 		| String 	| Service description.						|
-| @durationType 			| 1 		| String 	|  Date of service (if range= date range is set, then the element "RangeDates" is returned - Open= not restrictd by date. Elements "quantity" and "unit" are returned to specify the type and quantity.|
-| @quantity 				| 1 		| Integer 	| Indicate the quantity of field in the element "unit".		|
+| @durationType 			| 1 		| String 	|  Date of service (if range= date range is set, then the element "RangeDates" is returned - Open= not restricted by date. Elements "quantity" and "unit" are returned to specify type and quantity.|
+| @quantity 				| 1 		| Integer 	| Indicates the quantity of field in the element "unit".		|
 | @unit 				| 0..1 		| String 	| Day or Hour.							|
 | MealPlans/MealPlan/Options /Option/Detail/POIs/POI /Services/Service/RangeDates| 0..1 | | Service date range (Only specified if durationType=Range).	|
 | @startDate 				| 1 		| String 	| Start date of service.					|
@@ -560,7 +560,7 @@ The possible values in status in response are OK or RQ:
 In the case  the client doesn't want to display the options in a
 status RQ, we can filter the options as long as the supplier specifies
 the status and the <OnRequest> tag is set in AvailRQ. In
-case the supplier doesn't specify the status, the element AllowOnRequest in (StaticConfigurationRS Description)[/docs/hotel/DSF/StaticConfiguration] needs to be set as FALSE.
+case the supplier doesn't specify the status, the element AllowOnRequest in [StaticConfigurationRS Description](/docs/hotel/DSF/StaticConfiguration) needs to be set as FALSE.
 
 
 
