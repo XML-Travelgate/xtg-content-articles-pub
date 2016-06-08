@@ -10,36 +10,29 @@ permalink: /docs/hotel/DSF/Valuation
 ### Method Goals
 
 
-This method aims to return the total price and cancel policies of the
-selected *Option*. This *Option* **must** be selected in the previous
-step (*Avail*).
+This method aims to return the total price and cancellation policies of the *Option*
+selected  in the previous step (*Avail*).
 
 
 
 ### Request Format
 
 
-The *Valuation* request is same that availabilityRQ and add rooms and
-Mealplan code.
+The *Valuation* request format is similar to that of availabilityRQ. It's here you will add  data to the *option* selected.
 
 
 
 ### Response Format
 
 
-The returned XML contains the total price and list of cancel policies.
-Sometimes this method will fail since the selected option at *Avail*
-time will not be available in this stage. In this case the integration
-returns one of our errors: code 301. For more information of our errors,
-please consult the paragraph "Lists of Data"
+The returned XML contains the total price and list of cancellation policies. 
 
 
 
 ### Remarks
 
 
-The maximum time, that is permitted in our system, before the connection
-is closed, is of **180000** milliseconds.
+Our system allows for a maximum of **180000** milliseconds before the connection is closed.
 
 
 
@@ -48,27 +41,35 @@ is closed, is of **180000** milliseconds.
 
 ~~~xml
     <ValuationRQ>
-        <StartDate>28/01/2014</StartDate>
-        <EndDate>29/01/2014</EndDate>
-        <OnRequest>false</OnRequest>
-        <MealPlanCode>D</MealPlanCode>
-        <HotelCode>10</HotelCode>
-        <PaymentType>MerchantPay</PaymentType>
-        <OptionType>Hotel</OptionType>
-        <BlockOption>true</BlockOption>
-        <Nationality>ES</Nationality>           
-        <Rooms>
-            <Room id = "4582" roomCandidateRefId = "1" code = "506" description = "Doble Standard.."/>
-        </Rooms>
-        <RoomCandidates>
-            <RoomCandidate id = "1">
-                <Paxes>
-                    <Pax age = "30" id = "1"/>
-                    <Pax age = "30" id = "2"/>
-                </Paxes>
-            </RoomCandidate>
-        </RoomCandidates>
-    </ValuationRQ>
+   <StartDate>04/07/2016</StartDate>
+   <EndDate>11/07/2016</EndDate>
+   <MealPlanCode>15</MealPlanCode>
+   <HotelCode>6259</HotelCode>
+   <PaymentType>MerchantPay</PaymentType>
+   <OptionType>Hotel</OptionType>
+   <Parameters>
+       <Parameter key = "ID1" value = "ID#1#VR"/>
+       <Parameter key = "ID2" value = "ID#2#FGR#45187#10-5"/>
+       <Parameter key = "PSR" value = "511.28"/>
+   </Parameters>
+   <Rooms>
+       <Room id = "ITD10" roomCandidateRefId = "1" code = "TW" description = "Twinn"/>
+       <Room id = "IOG22" roomCandidateRefId = "2" code = "IND" description = "Individual"/>
+   </Rooms>
+   <RoomCandidates>
+       <RoomCandidate id = "1">
+           <Paxes>
+               <Pax age = "30" id = "1"/>
+               <Pax age = "30" id = "2"/>
+           </Paxes>
+       </RoomCandidate>
+       <RoomCandidate id = "2">
+           <Paxes>
+               <Pax age = "30" id = "1"/>
+           </Paxes>
+       </RoomCandidate>
+   </RoomCandidates>
+</ValuationRQ>
 ~~~
 
 
@@ -78,31 +79,30 @@ is closed, is of **180000** milliseconds.
 | **Element**                            | **Number** | **Type** | **Description** |
 | -------------------------------------- | ---------- | -------- | --------------- |
 | ValuationRQ                            | 1          |          | Root node.      |
-| StartDate                              | 1          | String   | Start date to search rates. |
-| EndDate                                | 1          | String   | End date to search rates. |
-| OnRequest                              | 1          | Boolean  | Indicates if you want to receive the on request options in AvailRS, as long as the provider returns it in this call (see StaticConfiguration). |
-| BlockOption                            | 1          | Boolean  | Indicates if you want to block the option selected in AvailRS, as long as the provider allow it in this call (see StaticConfiguration). |
+| StartDate                              | 1          | String   | Start date of rate search. |
+| EndDate                                | 1          | String   | End date of rates search. |
+| OnRequest                              | 1          | Boolean  | Indicates if you want to receive the on request options in AvailRS, as long as the supplier returns it in this method (see StaticConfiguration). |
+| BlockOption                            | 1          | Boolean  | Indicates if you want to block the option selected in AvailRS, as long as the supplier allows it in this method (see StaticConfiguration). |
 | MealPlanCode                           | 1          | String   | MealPlan code.  |
 | HotelCode                              | 1          | String   | Hotel code.     |
-| PaymentType                            | 1          | String   | Indicates the typology of payment. |
-| OptionType                             | 1          | String   | Indicates the type of option. |
-| Nationality                            | 0..1       | String   | Nationality of the Holder (use ISO3166_1_alfa_2). This informations will be mandatory depending on the provider, as long as the provider returns it in this call (see StaticConfiguration). |
-| Rooms                                  | 1          |          | Rooms of this option ( room list). |
-| Rooms/Room                             | 1..n       |          | Detail of room. |
-| @id                                    | 1          | String   | Identifier of the room. |
-| @roomCandidateRefId                    | 1          | Integer  | Identifier of room candidate. |
+| PaymentType                            | 1          | String   | Indicates payment type. |
+| OptionType                             | 1          | String   | Indicates option types. |
+| Nationality                            | 0..1       | String   | Guest nationality (use ISO3166_1_alfa_2). This informations is mandatory for some suppliers only. |
+| Rooms                                  | 1          |          | Rooms in this option (room list). |
+| Rooms/Room                             | 1..n       |          | Room Details. |
+| @id                                    | 1          | String   | Room Identifier. |
+| @roomCandidateRefId                    | 1          | Integer  | Room candidate Identifier. |
 | @code                                  | 1          | String   | Room code.      |
 | @description                           | 1          | String   | Room description. |
-| RoomCandidates                         | 1          |          | Rooms required. |
 | RoomCandidates/RoomCandidate           | 1..n       |          | Room required.  |
-| @id                                    | 1          | Integer  | Id of the requested room (starting at 1). |
+| @id                                    | 1          | Integer  | Id of requested room (starting at 1). |
 | RoomCandidates/RoomCandidate/Paxes/Pax | 1..n       |          | Pax required.   |
 | @age                                   | 1          | Integer  | Passenger age. |
 | @id                                    | 1          | Integer  | Passenger id (starting at 1). |
-| Parameters                             | 0..1       |          | Additional parameters that have been reported in the option (AvailRS). |
-| Parameters/Parameter                   | 0..n       |          | Additional parameter that requires the integration. |
-| @key                                   | 1          | String   | Contains the keyword/Id to identify a parameter. |
-| @value                                 | 1          | String   | Contains the value of the parameter. |
+| Parameters                             | 0..1       |          | Additional parameters reported in AvailRS. |
+| Parameters/Parameter                   | 0..n       |          | Additional parameter requiring integration. |
+| @key                                   | 1          | String   | Contains keyword/Id to identify a parameter. |
+| @value                                 | 1          | String   | Contains parameter value. |
 
 
 
@@ -147,28 +147,26 @@ is closed, is of **180000** milliseconds.
 | ----------------------------------------- | ---------- | -------- | --------------- |
 | ValuationRS                               | 1          |          | Root node.      |
 | Parameters                                | 0..1       |          | Parameters for additional information. |
-| Parameters/Parameter                      | 1..n       |          | List of parameter. |
+| Parameters/Parameter                      | 1..n       |          | List of parameters. |
 | @key                                      | 1          | String   | Contains the keyword/Id to identify a parameter. |
-| @value                                    | 1          | String   | Contains the value of the parameter. |
+| @value                                    | 1          | String   | Contains parameter value. |
 | Status                                    | 1          |          | Status option (OK = available, RQ = on request). |
 | Price                                     | 1          |          | Total price of this valuation. |
 | @currency				    | 1          | String   | Currency code. |
 | @amount                                   | 1          | Decimal  | Option Amount. |
-| @binding                                  | 1          | Boolean  | Identifies if is the price is binding ( When true the sale price returned must not be less than the price informed. |
-| @commission                               | 1          | Decimal  | Commission ( -1 = not specified (will come indicated with the provider contract ), 0 = net price, X = % of the commission that applies to the amount. |
-| CancelPenalties                           | 1          |          | Information of cancellation policies. |
+| @binding                                  | 1          | Boolean  | Identifies if the price is binding (When true the sale price returned must not be less than the price informed. |
+| @commission                               | 1          | Decimal  | Commission |
+| CancelPenalties                           | 1          |          | Cancellation policy details. |
 | @nonRefundable                            | 1          | Boolean  | Indicate if this option is nonRefundable (true or false). |
 | CancelPenalties/CancelPenalty             | 0..n       |          | Listing cancellation penalties. |
 | CancelPenalties/CancelPenalty/HoursBefore | 1          | String   | Number of hours prior to arrival day in which this Cancellation policy applies . |
 | CancelPenalties/CancelPenalty/Penalty     | 1          |          | Contains the value to apply. |
-| @type					    | 1          | String   | Type of penalty Possible values: “Noches” (nights) , “Porcentaje” (percentage) ,”Importe” (price value). |
+| @type					    | 1          | String   | Type of possible penalty values: “Noches” (nights) , “Porcentaje” (percentage) ,”Importe” (price value). |
 | @currency				    | 1          | String   | Currency code. |
 | Remarks 				    | 0..1       | String   | Remarks.       |
-| PaymentOptions			    | 0..1       | String   | Type of cards allowed by the provider. This tag only is mandatory if payment type is different that MerchantPay. |
-| @cash					    | 1          | Boolean  | Deprecated attribute. |
-| @bankAcct 				    | 1          | Boolean  | Deprecated attribute. |
+| PaymentOptions			    | 0..1       | String   | Payment Types allowed by the supplier. This tag  is mandatory only if payment type is different than MerchantPay. |
 | PaymentOptions/Cards			    | 1		 | 	    | List of cards allowed. |
-| PaymentOptions/Cards/Card		    | 1..n       |          | Type card allowed. |
+| PaymentOptions/Cards/Card		    | 1..n       |          | Types of cards allowed. |
 | @code   				    | 1          | String   | Code card. See in CardInfo the possible values, provided in Detailed Description (VI,AX,BV,CA...) |
 | Fees					    | 0..1       | 	    | Contains a list of fees. |
 | Fees/Fee				    | 1..n       |          | Contains details of the fee. |
