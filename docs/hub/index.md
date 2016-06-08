@@ -1,5 +1,5 @@
 ---
-title: Hub API Docs''s documentation!
+title: Hub API Documentation
 keywords: index
 sidebar: mydoc_sidebar
 permalink: /docs/hub/index
