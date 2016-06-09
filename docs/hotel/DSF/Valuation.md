@@ -154,29 +154,29 @@ Our system allows for a maximum of **180000** milliseconds before the connection
 | Price                                     | 1          |          | Total price of this valuation. |
 | @currency				    | 1          | String   | Currency code. |
 | @amount                                   | 1          | Decimal  | Option Amount. |
-| @binding                                  | 1          | Boolean  | Identifies if the price is binding (When true the sale price returned must not be less than the price informed. |
-| @commission                               | 1          | Decimal  | Commission |
+| @binding                                  | 1          | Boolean  | Identifies if the price is binding (When true the sale price returned must not be less than the price informed). |
+| @commission                               | 1          | Decimal  | Commission: -1 = not specified (indicated in contract with the supplier), 0 = net price, X = % of the commission applied to the amount. |
 | CancelPenalties                           | 1          |          | Cancellation policy details. |
 | @nonRefundable                            | 1          | Boolean  | Indicate if this option is nonRefundable (true or false). |
 | CancelPenalties/CancelPenalty             | 0..n       |          | Listing cancellation penalties. |
-| CancelPenalties/CancelPenalty/HoursBefore | 1          | String   | Number of hours prior to arrival day in which this Cancellation policy applies . |
+| CancelPenalties/CancelPenalty/HoursBefore | 1          | String   | Number of hours prior to checkin date in which this Cancellation policy applies . |
 | CancelPenalties/CancelPenalty/Penalty     | 1          |          | Contains the value to apply. |
 | @type					    | 1          | String   | Type of possible penalty values: “Noches” (nights) , “Porcentaje” (percentage) ,”Importe” (price value). |
 | @currency				    | 1          | String   | Currency code. |
 | Remarks 				    | 0..1       | String   | Remarks.       |
 | PaymentOptions			    | 0..1       | String   | Payment Types allowed by the supplier. This tag  is mandatory only if payment type is different than MerchantPay. |
 | PaymentOptions/Cards			    | 1		 | 	    | List of cards allowed. |
-| PaymentOptions/Cards/Card		    | 1..n       |          | Types of cards allowed. |
+| PaymentOptions/Cards/Card		    | 1..n       |          | Details of card. |
 | @code   				    | 1          | String   | Code card. See in CardInfo the possible values, provided in Detailed Description (VI,AX,BV,CA...) |
 | Fees					    | 0..1       | 	    | Contains a list of fees. |
 | Fees/Fee				    | 1..n       |          | Contains details of the fee. |
-| @includedPriceOption			    | 1		 | Boolean  | Indicates if the price of the fee is included or not in the final price (value indicated in the node Price in ValuationRS). |
-| @description				    | 1          | String   | Remarks of the fee. |
-| Fees/Fee/Price			    | 1          |          | Contains the price of the fee. |
+| @includedPriceOption			    | 1		 | Boolean  | Indicates if the fee is included or not in the final price (value indicated in the node Price in ValuationRS). |
+| @description				    | 1          | String   | Remarks regarding fee. |
+| Fees/Fee/Price			    | 1          |          | Contains details of price. |
 | @currency 				    | 1          | String   | Currency code. |
 | @amount 				    | 1          | Decimal  | Fee Amount. |
-| @binding				    | 1          | Boolean  | Identifies if is the price is binding ( When true the sale price returned must not be less than the price informed. |
-| @commission				    | 1          | Decimal  | Commission ( -1 = not specified (will come indicated with the provider contract ), 0 = net price, X = % of the commission that applies to the amount. |
+| @binding				    | 1          | Boolean  | Identifies if is the price is binding (When true the sale price returned must not be less than the price informed. |
+| @commission				    | 1          | Decimal  | Commission: -1 = not specified (indicated in contract with supplier), 0 = net price, X = % of the commission applied to the amount. |
 | CancelPoliciesDescription                 | 0..1       | String   | Contains the cancellation penalties in free text. |
  
 
@@ -184,19 +184,18 @@ Our system allows for a maximum of **180000** milliseconds before the connection
 ### Detailed Description
 
 
-**Providers with allotment blockage**
+**Suppliers with blockage allotment **
 
-There are some providers which, for their internal reasons, block the
+There are some suppliers who for their internal reasons, block the
 allotments of the petitions. If this should be the case, the clients
-have to relaunch automatically the valuation, provided that it has past
-more than 30 minutes of the last valuation petition.
+have to start another valuation request after 30 minutes of the last.
 
-Given the case, that a provider has a specific transaction for blocking
-allotments ( normally called pre-confirmation, quote, booking with a
+If a supplier has a specific transaction for blocking
+allotments (normally called pre-confirmation, quote, booking with a
 parameter quote.. ), then there is two possible paths that you need to
 follow:
 
--   If the provider assures a blockage equal or superior to 30 minutes
+-   If the supplier guarantees a blockage equal or superior to 30 minutes
     then you will have to do the blockage of allotment petition.
 -   If the provider doesn't assure a blockage superior of 30 minutes
     then the petition of blockage of allotment will have to be done in
@@ -206,9 +205,7 @@ follow:
 
 **Status:**
 
-The valuation response depends the parameter <OnRequest> set: In case
-that the parameter <OnRequest> is set as false, the integration filter
-this options if the supplier provide us the new status with value on
+The valuation response depends the parameter <OnRequest> set: If the parameter <OnRequest> is set as false, the integration will filter this options if the supplier provide us the new status with value on
 request in ValuationRS, then we return an error because the provider
 change the status option. In case that the parameter <OnRequest> is
 set as true, we don't filter the option.
@@ -247,22 +244,19 @@ set as true, we don't filter the option.
 
 **CancelPenalty:**
 
-The penalty in cancelling a booking depends on which situation you do
-the cancellation. The factors that affects the cancel penalization goes
-as follows:
+Booking cancellation penalties are affected by the following elements:
 
--   **HoursBefore:** Number of hours until the checking date. This time
-    is calculated based on the local time of destination.
+-   **HoursBefore:** cancellation fees applicable x number of hours before the check in date
+
 -   **Type:** There are three values that can be inside types:
 
-> -   *Noches:* Which will indicate the number of nights which will be
->     penalized.
-> -   *Porcentaje:* Which indicates the percentage to pay based on the
->     option price.
-> -   *Importe:* That indicates the exact amount that it is necessary to
->     pay.
+> -   *Noches:* indicates the number of nights to be penalized.
 
--   **Currency:** Money currency of the import.
+> -   *Porcentaje:* indicates the percentage to pay based on the option price.
+
+> -   *Importe:* indicates the exact amount payable
+
+-   **Currency:** currency of the penalty fee.
 
 
 
