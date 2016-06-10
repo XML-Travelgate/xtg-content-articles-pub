@@ -1069,6 +1069,7 @@
   </xs:complexType>
   <xs:complexType name="Picture">
     <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Code" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="URL" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="Classification" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="Ordered" type="xs:string" />
