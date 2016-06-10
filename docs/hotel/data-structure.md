@@ -5,9 +5,12 @@ sidebar: mydoc_sidebar
 permalink: /docs/hotel/data-structure
 ---
 
-The structure of the API specification follows a standard. This document
-intends to explain every aspect of this structure and their fields. The
-integration will have the following methods:
+The structure of the API specification follows a standard. This document intends to explain every aspect of this structure and their fields. 
+
+You can also download the XSD file containing each and every data structures of the API from [here](hotel.xsd)
+
+The integration will have the following methods:
+
 
 | **Method**                | **Input**                   | **Output**                  | **Required** | **Description** |
 | ------------------------- | --------------------------- | --------------------------- | ------------ | --------------- |
