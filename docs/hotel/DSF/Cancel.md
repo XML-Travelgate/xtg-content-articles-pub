@@ -81,7 +81,7 @@ is closed, is of **180000** milliseconds.
 
 ~~~xml
     <CancelRS>
-        <ProviderLocator>XXXX0000</ProviderLocator> 
+        <ProviderLocator>YYYYYYYY</ProviderLocator> 
         <CancelId>0000000</CancelId>
           <TransactionStatus>
                 <ComunicationStatus>OK</ComunicationStatus>
