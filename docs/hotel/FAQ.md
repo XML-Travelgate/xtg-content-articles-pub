@@ -5,7 +5,7 @@ sidebar: mydoc_sidebar
 permalink: /docs/hotel/FAQ
 ---
 
-**How many suppliers can I request in one call?**
+**How many suppliers can I request in one method?**
 
 One supplier per request. The only exception is in Availability, where you can request one or more suppliers.
 
