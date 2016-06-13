@@ -12,7 +12,7 @@ This node will be in every request and response objects.
 The request object contains the supplier's configuration, urls and
 credentials.
 
-The response object contain the status of the request and any possible errors as well as possible messages from the supplier (if previously requested).
+The response object contains the status of the request and any possible errors as well as possible messages from the supplier (if previously requested).
 
 
 
@@ -60,12 +60,12 @@ The response object contain the status of the request and any possible errors as
 | source                               | 1          |          |  	Information about source requesting the operation. |
 | source/agencyCode                    | 0..1       | String   |  	Agency code requesting the operation (deprecated). |
 | source/languageCode                  | 1          | String   |  	Language code (ISO 3166-1 alpha-2) format lowercase. |
-| filterAuditData                      | 1          |          | Set to activate transaction data sent & received in the supplier's native format. |
+| filterAuditData                      | 1          |          | Activates transaction data sent & received in the supplier's native format. |
 | filterAuditData/registerTransactions | 1          | Boolean  | Returns all the transactions (XMLs) exchanged with the supplier.|
 | optionsQuota                         | 0..1       | Integer  | Sets the max number of options by MealPlan. |
 | ContinuationToken                    | 0..1       | String   | Internal Token to identify the next set of HotelList. |
 | @expectedRange                       | 0..1       | Integer  |  	Number of hotels expected in HotelList call. |
-| Configuration                        | 1          |          | The information required in order to access the supplier's system. |
+| Configuration                        | 1          |          | The info required to access the supplier's system. |
 | Configuration/User                   | 0..1       | String   | User code to connect to supplier. |
 | Configuration/Password               | 0..1       | String   | Password for the connection. |
 | Configuration/UrlGeneric             | 0..1       | String   | Supplier URL used for multiple methods.|
@@ -146,17 +146,17 @@ This new tag will be used only for those suppliers returning a very large number
 **ContinuationToken:**
 
 This new tag is useful to split the hotel list response. This is done
-because there are suppliers who have a large amount of hotels (over
+because there are suppliers with a large amount of hotels (over
 250.000). In those cases, the response has to be split in order to
 retrieve all the hotels available. In case that ContinuationToken is not sent, the
 HotelList returns a maximum of 250.000 hotels. Using this
 ContinuationToken and the attribute *expectedRange* the client may
 decide the number of hotels expected in each HotelList call. If the
-supplier has more than 250.000 hotels, in order to get 100% of the hotels available, the client will need to do requests using the
+supplier has more than 250.000 hotels, in order to get 100% of the hotels available, the client will need to use the
 ContinuationToken returned inside the HotelListRS response until the
 ContinuationToken field is no longer returned in the response (see the example
 in Common Elements RS). Once the tag is not returned the hotel list is
-complete. The value of this tag is an internal Token that identifies
+complete. The value of this tag is an internal Token identifying
 the next set of HotelList to be returned.
 
 **expectedRange** :
