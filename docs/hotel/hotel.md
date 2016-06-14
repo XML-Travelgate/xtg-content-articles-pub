@@ -1,4 +1,12 @@
-﻿<?xml version="1.0"?>
+﻿---
+title: Hotel XSD
+keywords: common elements, elements, hotel
+sidebar: mydoc_sidebar
+permalink: /docs/hotel/hotel
+---
+
+~~~xml
+<?xml version="1.0"?>
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="AvailRQ" nillable="true" type="AvailRQ" />
   <xs:complexType name="AvailRQ">
@@ -8,7 +16,7 @@
           <xs:element minOccurs="1" maxOccurs="1" name="SearchType" type="eTypeSearch" />
           <xs:element minOccurs="1" maxOccurs="1" name="CancellationPolicies" type="xs:boolean" />
 		  <xs:element minOccurs="1" maxOccurs="1" name="OnRequest" type="xs:boolean" />
-		  <xs:element minOccurs="0" maxOccurs="1" name="BusinessRules" type="eTypeBusinessRule" />		  
+		  <xs:element minOccurs="0" maxOccurs="1" name="BusinessRules" type="eTypeBusinessRule" />
           <xs:element minOccurs="0" maxOccurs="1" name="AvailDestinations" type="AvailDestinations" />
           <xs:element minOccurs="0" maxOccurs="1" name="StartDate" type="xs:string" />
           <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string" />
@@ -1619,3 +1627,4 @@
     </xs:sequence>
   </xs:complexType>
 </xs:schema>
+~~~
