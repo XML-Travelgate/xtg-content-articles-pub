@@ -215,7 +215,7 @@ is **180000** milliseconds.
 | BookingContact/Email			| 1    		| String	| Email.							|
 | BookingContact/Telephone		| 1    		| String	| Telephone. 							|
 | BookingContact/Fax			| 1    		| String	| Fax.   							|
-| Type       				| 0..1		| String	| Hotel type: H (hotel) A (apartment) AH (aparthotel) C (club) AT (agritourism) HS (hostel) CA (house) V (Ville) B (Bungalows).	|
+| Type       				| 0..1		| String	| Hotel type: H (hotel) A (apartment) AH (aparthotel) C (club) AT (agritourism) HS (hostel) CA (house) V (Ville) B (Bungalows). (Deprecated)	|
 | Chaincode  				| 0..1 		| String	| Chain code.							|
 | ShortDescription			| 0..1 		| String	| Short Description.   						|
 | LongDescription			| 0..1 		| String	| Long Description.    						|
@@ -246,7 +246,7 @@ is **180000** milliseconds.
 | PaymentOptions/Cards/Card		| 1..n       	|		| Type card allowed. 						|
 | @code 				| 1    		| String	| Code card (see in *Lists of Data* (VI,AX,BV,CA...)).		|
 | ExclusiveDeal				| 0..1 		| Boolean 	| Indicates that a Hotel is an Exlusive Deal. The provider has formed partnerships with select Hotels in order to bring you list rates and superior prime availability in locations. The provider suggests with provide the best value.	|
-| PropertyCategory			| 0..1       	|		| Hotels property type. Similar to <Type>, but on providers side. |
+| PropertyCategory			| 0..1       	|		| Hotels property type. Similar to Type tag, but on providers side. |
 | PropertyCategory/Code			| 1    		| String	| Provider property code.					|
 | PropertyCategory/Name			| 1    		| String	| Provider property name.					|
 
