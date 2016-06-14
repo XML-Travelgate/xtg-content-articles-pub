@@ -133,7 +133,7 @@ Therefore:
 -  **City:** Lowest node.
 -  **Zone:** Not the lowest node.
 
-
+![Diagrama1](/articles-pub/docs/hotel/images/diagrama2.png)
 
 
 **Note:** *All of the zones that appear in this particular call ( DestinationsTree call ) are all attackable nodes on an availability level.*

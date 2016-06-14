@@ -163,7 +163,7 @@ Therefore:
 -   **City:** Lowest attackable node.
 -   **Zone:** Not the lowest attackable node.
 
-
+![Diagrama1](/articles-pub/docs/hotel/images/diagrama1.png)
 
  **Note:** *In rare occasions it is possible finding nodes lower than cities, which won't be attackable, but the standard scenario is not to find lower nodes than cities.*
 
