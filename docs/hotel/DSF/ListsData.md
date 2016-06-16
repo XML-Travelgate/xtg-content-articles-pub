@@ -35,13 +35,13 @@ This paragraph aims to describe all of our lists with data.
 
 | **Code**	| **Description**												|
 | ------------- | ------------------------------------------------------------------------------------------------------------- |
-|  101         	| Exception of the System (Exception not controlled or tipified as generic exceptions ).			|
-|  102         	| Error controlled by the provider ( Errors controlled by the provider ).					|
-|  104         	| Timeout (Timeout during the execution of an operation ( look in the common attribute timeout )).		|
-|  204         	| Provider returns 0 results in availability.									|
-|  205         	| The provider doesn't accept the distribution RQ.								|
-|  206         	| The provider doesn't accept the dates RQ.									|
-|  207         	| The provider doesn't accept the petition RQ.									|
+|  101         	| System Exception (Exception not controlled or not classified as general exception).			|
+|  102         	| Supplier Error.					|
+|  104         	| Timeout (Timeout during the execution of an operation (look in the common attribute timeout )).		|
+|  204         	| Supplier returns 0 results in availability.									|
+|  205         	| The Supplier doesn't accept the distribution RQ.								|
+|  206         	| The Supplier doesn't accept the dates RQ.									|
+|  207         	| The Supplier doesn't accept the request RQ.									|
 |  301         	| Option not found in policies.											|
   
 
