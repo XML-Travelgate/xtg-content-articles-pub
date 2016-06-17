@@ -28,7 +28,7 @@ needed to access the web service.
 
 
 
-Please contact us on mail: <sales@xmltravelgate.com> for more
+Please contact us on <sales@xmltravelgate.com> for more
 information.
 
 
