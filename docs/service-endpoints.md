@@ -13,12 +13,12 @@ through the following URLs:
 
 -   **Hotel API:**
 
-> -   Booking messages:
+> -   Endpoints to our system for the dynamic workflow (Avail, Valuation, Reservation, etc):
 > 
 > > -   <http://hubpublic.xmltravelgate.com/Service/Travel/v2/Hotel.svc>
 > > -   <https://hubpublic.xmltravelgate.com/Service/Travel/v2/HotelSecure.svc>
 > 
-> -   Batch messages:
+> -   Endpoints to our system for the static information (HotelList, DescriptiveInfo, GeographicDestinationTree, etc):
 > 
 > > -  <http://hubhotelbatch.xmltravelgate.com/Service/Travel/v2/HotelBatch.svc>
 > > -  <https://hubhotelbatch.xmltravelgate.com/Service/Travel/v2/HotelBatchSecure.svc>
