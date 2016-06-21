@@ -184,31 +184,16 @@ Our system allows for a maximum of **180000** milliseconds before the connection
 ### Detailed Description
 
 
-**Suppliers with blockage allotment **
+**Suppliers with block allotment **
 
-There are some suppliers who for their internal reasons, block the
-allotments of the petitions. If this should be the case, the clients
-have to start another valuation request after 30 minutes of the last.
-
-If a supplier has a specific transaction for blocking
-allotments (normally called pre-confirmation, quote, booking with a
-parameter quote.. ), then there is two possible paths that you need to
-follow:
-
--   If the supplier guarantees a blockage equal or superior to 30 minutes
-    then you will have to do the blockage of allotment petition.
--   If the provider doesn't assure a blockage superior of 30 minutes
-    then the petition of blockage of allotment will have to be done in
-    the booking petition.
+There are some suppliers who use block allotments, sometimes called pre-confirmation or quote.
+In that case, you will have 30 minutes to complete the booking, if  not, you will have to re-launch Valuation 30 minutes after the last request, normally just before booking request.
 
 
 
 **Status:**
 
-The valuation response depends the parameter <OnRequest> set: If the parameter <OnRequest> is set as false, the integration will filter this options if the supplier provide us the new status with value on
-request in ValuationRS, then we return an error because the provider
-change the status option. In case that the parameter <OnRequest> is
-set as true, we don't filter the option.
+The valuation response depends if the parameter <OnRequest> is set: if it is set as false, the integration will filter this option.  If the supplier provides us a new status in ValuationRS, then we return an error because the supplier changed the status option.
 
 
 
