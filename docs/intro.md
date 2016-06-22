@@ -8,7 +8,7 @@ permalink: /docs/intro/
 # XML Travelgate Introduction
 
 
-XML Travelgate's API documentation allows clients to access content from
+XML Travelgate's API allows clients to access content from
 XML Travelgate's inventory of partners. Currently there are more than
 600 suppliers including switching platforms, bedbanks, direct hotel
 chains, rent a car, ferries, rail, flights and activities companies
