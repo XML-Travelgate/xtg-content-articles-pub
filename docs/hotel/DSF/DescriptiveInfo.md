@@ -19,7 +19,7 @@ for a given language.
 
 
 The request just requires the hotel code and language code (ISO-639-1) (
-this is specified within the source--\>languageCode).
+this is specified within the *source*--\>*languageCode*).
 
 
 
@@ -70,13 +70,13 @@ is **180000** milliseconds.
     <DescriptiveInfoRS>
     <Hotel>
         <Code>70</Code>
-        <Name>ILLA</Name>
-        <Address>AVDA. ILLA S/N</Address>
-        <Town>HUELVA</Town>
+        <Name>Nice Stay</Name>
+        <Address>Avenue Doctor Brown S/N</Address>
+        <Town>London</Town>
         <ZipCode>21449</ZipCode>
-        <CountryISOCode>ES</CountryISOCode>
-        <AvailDestination code = "2" name = "HUELVA"/>
-        <GeographicDestination code = "2" name = "HUELVA" avail = "true"/>
+        <CountryISOCode>UK</CountryISOCode>
+        <AvailDestination code = "2" name = "London"/>
+        <GeographicDestination code = "2" name = "London" avail = "true"/>
         <Contact>
             <Email>emailhotel@xxx.com</Email>
             <Telephone>91547892</Telephone>
@@ -212,7 +212,7 @@ is **180000** milliseconds.
 | @avail     				| 1    		| Boolean	| Indicates if the code can be used in Avail.		|
 | Latitude   				| 1    		| String	| Latitude.							|
 | Longitude  				| 1    		| String	| Longitude.							|
-| Contact    				| 0..1       	|		| Hotel contact.							|
+| Contact    				| 0..1       	|		| Hotel contact information.							|
 | Contact/Email				| 1    		| String	| Email.							|
 | Contact/Telephone			| 1    		| String	| Telephone.							|
 | Contact/Fax				| 1    		| String	| Fax.								|
