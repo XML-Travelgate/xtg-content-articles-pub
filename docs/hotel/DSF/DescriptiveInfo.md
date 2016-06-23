@@ -232,12 +232,14 @@ is **180000** milliseconds.
 | Attributes/Attribute/Code		| 1    		| String	| Code.								|
 | Attributes/Attribute/Value		| 1    		| String	| Value.							|
 | Attributes/Attribute/Classification	| 1    		| String	| Classification ( HOT=hotel, HAB=room, SER=service and GRAL=generic). |
+| Attributes/Attribute/Description		| 0..1    		| String	| Description.							|
 | Images     				| 0..1       	|		| Images.							|
 | Images/Picture			| 1..n       	|		| Picture.     							|
 | Images/Picture/Url			| 1    		| String	| Url.								|
 | Images/Picture/Classification		| 1    		| String	| Classification (HOT=hotel, HAB=room, SER=service and GRAL=generic). |
 | Images/Picture/Ordered		| 0..1 		| String	| Images should be ordered from 1 onward. 1 is top.		|
-| Images/Picture/Description		| 1    		| String	| Description.							|
+| Images/Picture/Description		| 0..1    		| String	| Description.							|
+| Images/Picture/Code			| 0..1    		| String	| Code.								|
 | LocationType				| 0..1 		| String	| LocationCode.							|
 | PaymentOptions			| 0..1 		| String	| Type of cards allowed by the provider. This tag only is mandatory if payment type is different than *MerchantPay*.	 |
 | @cash 				| 1    		| Boolean	| Deprecated attribute.						|
