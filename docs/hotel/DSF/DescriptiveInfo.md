@@ -160,10 +160,16 @@ is **180000** milliseconds.
             <Picture>
                 <URL>http://www.images.net/infor/work/imagen/hotel_07/mapa.jpg</URL>
                 <Classification>GRAL</Classification>
+                <Description>Map view</Description>
+                <Ordered>1</Ordered>
+                <Code>50</Code>
             </Picture>
             <Picture>
                 <URL>http://www.images.net/infor/work/imagen/hotel_02/M.jpg</URL>
                 <Classification>GRAL</Classification>
+                <Description>External view</Description>
+                <Ordered>2</Ordered>
+                <Code>100</Code>
             </Picture>
         </Images>
         <LocationType>City</LocationType>
