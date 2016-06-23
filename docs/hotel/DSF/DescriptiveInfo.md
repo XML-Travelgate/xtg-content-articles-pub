@@ -87,7 +87,7 @@ is **180000** milliseconds.
             <Telephone>91547880</Telephone>
             <Fax>910200200</Fax>
         </BookingContact>
-        <CategoryCode>4 Estrellas</CategoryCode>
+        <CategoryCode>4 Stars</CategoryCode>
         <Type>H</Type>
         <ShortDescription>the hotel.....</ShortDescription>
         <LongDescription>the hotel....</LongDescription>
@@ -98,17 +98,17 @@ is **180000** milliseconds.
             <Attribute>
                 <Code>10</Code>
                 <Classification>GRAL</Classification>
-                <Description>Centro ciudad: 3000</Description>
+                <Description>City center: 3000</Description>
             </Attribute>
             <Attribute>
                 <Code>21</Code>
                 <Classification>GRAL</Classification>
-                <Description>Parada de bus/metro más cercana: 70000</Description>
+                <Description>Bus stop: 70000</Description>
             </Attribute>
             <Attribute>
                 <Code>32</Code>
                 <Classification>HAB</Classification>
-                <Description>Baño</Description>
+                <Description>Bathroom</Description>
             </Attribute>
             <Attribute>
                 <Code>43</Code>
@@ -118,7 +118,7 @@ is **180000** milliseconds.
             <Attribute>
                 <Code>54</Code>
                 <Classification>HAB</Classification>
-                <Description>Bañera</Description>
+                <Description>Jacuzzi</Description>
             </Attribute>
             <Attribute>
                 <Code>65</Code>
@@ -128,12 +128,12 @@ is **180000** milliseconds.
             <Attribute>
                 <Code>76</Code>
                 <Classification>HAB</Classification>
-                <Description>Caja fuerte</Description>
+                <Description>Safe</Description>
             </Attribute>
             <Attribute>
                 <Code>87</Code>
                 <Classification>HOT</Classification>
-                <Description>Area de juegos</Description>
+                <Description>Playground</Description>
             </Attribute>
             <Attribute>
                 <Code>98</Code>
@@ -143,17 +143,17 @@ is **180000** milliseconds.
             <Attribute>
                 <Code>90</Code>
                 <Classification>GRAL</Classification>
-                <Description>Restaurante</Description>
+                <Description>Restaurant</Description>
             </Attribute>
             <Attribute>
                 <Code>01</Code>
                 <Classification>HAB</Classification>
-                <Description>Televisión</Description>
+                <Description>TV</Description>
             </Attribute>
             <Attribute>
                 <Code>31</Code>
                 <Classification>HOT</Classification>
-                <Description>Piscina</Description>
+                <Description>Pool</Description>
             </Attribute>
         </Attributes>
         <Images>
@@ -202,39 +202,38 @@ is **180000** milliseconds.
 | Address    				| 1    		| String	| Address.							|
 | Town       				| 1    		| String	| Town.    							|
 | ZipCode    				| 1    		| String	| ZipCode.							|
-| CountryISOCode			| 1    		| String	| CountryISOCode.						|
-| AvailDestination			| 0..1       	|		| Avail Destination ( will come only if it is attackable on availability, and the type is CTY).  |
+| CountryISOCode			| 1    		| String	| Country ISOCode.						|
+| AvailDestination			| 0..1       	|		| Avail destination (will be returned only if requested in Avail, and the type is CTY).  |
 | @code      				| 1    		| String	| Destination code.						|
 | @name      				| 1    		| String	| Destination name. 						|
-| GeographicDestination			| 1          	|		| Geographic Destination.					|
+| GeographicDestination			| 1          	|		| Geographic destination.					|
 | @code      				| 1    		| String	| Destination code.						|
 | @name      				| 1    		| String	| Destination name.						|
-| @avail     				| 1    		| Boolean	| Indicates if it is attackable on availability.		|
+| @avail     				| 1    		| Boolean	| Indicates if the code can be used in Avail.		|
 | Latitude   				| 1    		| String	| Latitude.							|
 | Longitude  				| 1    		| String	| Longitude.							|
-| Contact    				| 0..1       	|		| Contact.							|
+| Contact    				| 0..1       	|		| Hotel contact.							|
 | Contact/Email				| 1    		| String	| Email.							|
 | Contact/Telephone			| 1    		| String	| Telephone.							|
 | Contact/Fax				| 1    		| String	| Fax.								|
-| CategoryCode				| 1    		| String	| CategoryCode.							|
-| BookingContact			| 0..1       	|		| Booking Contact.						|
+| CategoryCode				| 1    		| String	| Category code.							|
+| BookingContact			| 0..1       	|		| Booking dept contact.						|
 | BookingContact/Email			| 1    		| String	| Email.							|
 | BookingContact/Telephone		| 1    		| String	| Telephone. 							|
 | BookingContact/Fax			| 1    		| String	| Fax.   							|
-| Type       				| 0..1		| String	| Hotel type: H (hotel) A (apartment) AH (aparthotel) C (club) AT (agritourism) HS (hostel) CA (house) V (Ville) B (Bungalows). (Deprecated)	|
-| Chaincode  				| 0..1 		| String	| Chain code.							|
-| ShortDescription			| 0..1 		| String	| Short Description.   						|
-| LongDescription			| 0..1 		| String	| Long Description.    						|
+| Chaincode  				| 0..1 		| String	| Hotel chain code.							|
+| ShortDescription			| 0..1 		| String	| Short description.   						|
+| LongDescription			| 0..1 		| String	| Long description.    						|
 | HowToGet   				| 0..1 		| String	| Directions to the hotel.					|
 | RoomDescription			| 0..1 		| String	| Room description.   						|
-| SituationDescription			| 0..1 		| String	| Situation description.					|
+| SituationDescription			| 0..1 		| String	| Area description.					|
 | RestaurantsDescription		| 0..1 		| String	| Restaurants description.					|
 | PoolsDescription			| 0..1 		| String	| Pools description.    					|
 | ActivitiesDescription			| 0..1 		| String	| Activities description.					|
 | ServicesDescription			| 0..1 		| String	| Services description.						|
 | AdditionalDetails			| 0..1 		| String	| Additional details.						|
 | Attributes 				| 0..1       	|		| Attributes.							|
-| Attributes/Attribute			| 1..n       	|		| Specific Attributes of the Hotel, like for example the service of having wi-fi.	|
+| Attributes/Attribute			| 1..n       	|		| Specific attributes of the hotel, such as wi-fi.	|
 | Attributes/Attribute/Code		| 1    		| String	| Code.								|
 | Attributes/Attribute/Value		| 1    		| String	| Value.							|
 | Attributes/Attribute/Classification	| 1    		| String	| Classification ( HOT=hotel, HAB=room, SER=service and GRAL=generic). |
@@ -246,15 +245,13 @@ is **180000** milliseconds.
 | Images/Picture/Ordered		| 0..1 		| String	| Images should be ordered from 1 onward. 1 is top.		|
 | Images/Picture/Description		| 0..1    		| String	| Description.							|
 | Images/Picture/Code			| 0..1    		| String	| Code.								|
-| LocationType				| 0..1 		| String	| LocationCode.							|
-| PaymentOptions			| 0..1 		| String	| Type of cards allowed by the provider. This tag only is mandatory if payment type is different than *MerchantPay*.	 |
-| @cash 				| 1    		| Boolean	| Deprecated attribute.						|
-| @bankAcct				| 1    		| Boolean	| Deprecated attribute.						|
+| LocationType				| 0..1 		| String	| Location code.							|
+| PaymentOptions			| 0..1 		| String	| Type of cards allowed by the supplier. This tag is only mandatory if payment type is different than *MerchantPay*.	 |
 | PaymentOptions/Cards/Cards		| 1          	|		| List of cards allowed.					|
-| PaymentOptions/Cards/Card		| 1..n       	|		| Type card allowed. 						|
-| @code 				| 1    		| String	| Code card (see in *Lists of Data* (VI,AX,BV,CA...)).		|
-| ExclusiveDeal				| 0..1 		| Boolean 	| Indicates that a Hotel is an Exlusive Deal. The provider has formed partnerships with select Hotels in order to bring you list rates and superior prime availability in locations. The provider suggests with provide the best value.	|
-| PropertyCategory			| 0..1       	|		| Hotels property type. Similar to Type tag, but on providers side. |
-| PropertyCategory/Code			| 1    		| String	| Provider property code.					|
-| PropertyCategory/Name			| 1    		| String	| Provider property name.					|
+| PaymentOptions/Cards/Card		| 1..n       	|		| Type of card allowed. 						|
+| @code 				| 1    		| String	| Code of card (see in *Lists of Data* (VI,AX,BV,CA...)).		|
+| ExclusiveDeal				| 0..1 		| Boolean 	| Indicates that a Hotel is an Exlusive Deal.	|
+| PropertyCategory			| 0..1       	|		| Hotels property type. Similar to Type tag, but on supplier's side. |
+| PropertyCategory/Code			| 1    		| String	| Supplier property code.					|
+| PropertyCategory/Name			| 1    		| String	| Supplier property name.					|
 
