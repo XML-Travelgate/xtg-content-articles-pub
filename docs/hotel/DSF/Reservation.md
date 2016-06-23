@@ -17,7 +17,7 @@ This method aims to book an option.
 ### Request Format
 
 
-The request format works the same way as the *Valuation* request but
+The request format works the same way as *Valuation* but
 with the list of passengers.
 
 
@@ -25,21 +25,20 @@ with the list of passengers.
 ### Response Format
 
 
-The result returns the booking locator (booking code). It can be the
-provider's or the one sent in the request.
+The result returns the booking locator (booking code), which could be the
+supplier's own code or the one sent in the request.
 
 
 
-It also returns all the charges associated to the booking and the state
-of booking.
+It also returns all the charges associated with the booking as well as its status.
 
 
 
 ### Remarks
 
 
-The maximum time, that is permitted in our system, before the connection
-is closed, is of **180000** milliseconds.
+**180000** milliseconds is the maximum amount of time permitted in our system before the connection
+is closed. 
 
 
 
@@ -96,14 +95,14 @@ is closed, is of **180000** milliseconds.
 | **Element**					| **Number**	| **Type**	| **Description**					|
 | --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
 | ReservationRQ 				| 1      	|		| Root node.						|
-| ClientLocator 				| 1  		| String	| Client locator.					|
-| OnRequest     				| 1  		| Boolean	| Indicates if you want to receive the on request options in AvailRS, as long as the provider returns it in this call (see StaticConfiguration).	|
+| ClientLocator 				| 1  		| String	| the booking id in the client's system.					|
+| OnRequest     				| 1  		| Boolean	| Indicates if you want to receive the onrequest options in AvailRS, as long as the supplier returns it in this method (see StaticConfiguration).	|
 | Parameters    				| 0..1    	|		| Parameters for additional information that have been reported in ValuationRS.	|
-| Parameters/Parameter				| 1..n    	|		| List of parameter.					|
+| Parameters/Parameter				| 1..n    	|		| List of parameters.					|
 | @key     					| 1  		| String	| Contains the keyword/Id to identify a parameter.	|
 | @value   					| 1  		| String	| Contains the value of the parameter.			|
-| DeltaPrice    				| 0..1    	|		| Price range accepted by the client to be higher than valuation and confirmation process.	|
-| @amount  					| 0..1		| String	| Amount (in the currency returned into the option) that is accepted by the client to be higher than the valuation price. |
+| DeltaPrice    				| 0..1    	|		| Indicates a price variation allowed by the client.	|
+| @amount  					| 0..1		| String	| Amount in the currency returned into the option) that is accepted by the client to be higher than the valuation price. |
 | @percent 					| 0..1		| String	| Percentage accepted by the client to be higher than the valuation price.	|
 | @applyBoth					| 1  		| Boolean	| Indicates that the range between valuation price and the new price does not exceed the amount and/or porcentage indicated by the client.  |
 | StartDate     				| 1  		| String 	| Start date to search rates.				|
