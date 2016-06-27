@@ -10,18 +10,18 @@ permalink: /docs/hotel/DSF/ReservationRead
 ### Method Goals
 
 
-This method aims to retrieve a booking with its full details.
+This method aims to retrieve all the details of a booking.
 
 
 
 ### Request Format
 
 
-The request requires one of the following data depending on provider:
+The request requires one of the following data depending on supplier:
 
 -   *Locators*: booking codes (this element contains two elements
-    *Client* (client's booking code) and *Provider* (provider's booking
-    code), one or both will be required depending on the provider)
+    *Client* (client's booking code) and *Provider* (supplier's booking
+    code), one or both will be required depending on the supplier)
 -   *Currency*: the currency code
 -   *CreationDate*: the booking date
 -   *StardDate*: the check-in date
@@ -41,8 +41,8 @@ holder of booking.
 ### Remarks
 
 
-The maximum time, that is permitted in our system, before the connection
-is closed, is of **180000** millisecond.
+**180000** millisecond is the maximum amount of time permitted in our system before the connection
+is closed.
 
 
 
@@ -70,9 +70,9 @@ is closed, is of **180000** millisecond.
 | **Element** 		| **Number**	| **Type**	| **Description**					|
 | --------------------- | ------------- | ------------- | ----------------------------------------------------- |
 | ReservationReadRQ	| 1		|		| Root node.						|
-| Locators   		| 1          	|		| Information of the locators (it is mandatory indicate one of two, or client or provider). |
+| Locators   		| 1          	|		| Information of the locators (it is mandatory to indicate at least one either client or supplier's locator). |
 | Locators/Client	| 0..1		| String	| Client locator.					|
-| Locators/Provider	| 0..1		| String	| Provider locator.					|
+| Locators/Provider	| 0..1		| String	| supplier locator.					|
 | Currency   		| 1    		| String	| Currency code.					|
 | StartDate  		| 1    		| String	| Start date of booking. 				|
 | EndDate    		| 1    		| String	| End date of booking.					|
