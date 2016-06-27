@@ -16,7 +16,7 @@ Thanks you for joining our fast growing network of partners. This guide is inten
 
 Our Flow
 ------------  
-|
+
 ![Steps](/articles-pub/start/images-start/steps.png)
 
 |
