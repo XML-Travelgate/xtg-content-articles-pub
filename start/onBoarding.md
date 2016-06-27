@@ -6,11 +6,9 @@ permalink: /get-started/
 
 # Getting Started with XML Travelgate
 
-|
 
-## *Welcome aboard!*
 
-Thanks you for joining our fast growing network of partners. This guide is intended to help you along the process of integrating with our API. We'll work with you to make sure the integration goes as smoothly as possible so don't hesitate in asking questions as we've been through this many times before. We are always looking to improve and your questions will definitely help us do just that!
+Thank you for your interest in joining our fast growing network of partners. This guide is intended to introduce you to the process of integrating with our API. We'll work with you to make sure the integration goes as smoothly as possible so don't hesitate in asking questions as we've been through this many times before. We are always looking to improve and your questions will definitely help us do just that!
 
 |
 
