@@ -26,7 +26,7 @@ with the list of passengers.
 
 
 The result returns the booking locator (booking code), which could be the
-supplier's own code or the one sent in the request.
+supplier's own code or the one sent in request.
 
 
 
@@ -95,46 +95,51 @@ is closed.
 | **Element**					| **Number**	| **Type**	| **Description**					|
 | --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
 | ReservationRQ 				| 1      	|		| Root node.						|
-| ClientLocator 				| 1  		| String	| the booking id in the client's system.					|
+| ClientLocator 				| 1  		| String	| Booking ID in client's system.					|
 | OnRequest     				| 1  		| Boolean	| Indicates if you want to receive the onrequest options in AvailRS, as long as the supplier returns it in this method (see StaticConfiguration).	|
 | Parameters    				| 0..1    	|		| Parameters for additional information that have been reported in ValuationRS.	|
 | Parameters/Parameter				| 1..n    	|		| List of parameters.					|
 | @key     					| 1  		| String	| Contains the keyword/Id to identify a parameter.	|
 | @value   					| 1  		| String	| Contains the value of the parameter.			|
-| DeltaPrice    				| 0..1    	|		| Indicates a price variation allowed by the client.	|
-| @amount  					| 0..1		| String	| Amount in the currency returned into the option) that is accepted by the client to be higher than the valuation price. |
+| DeltaPrice    				| 0..1    	|		| Indicates price variation permitted by the client.	|
+| @amount  					| 0..1		| String	| Amount (in the currency returned into the option) that is accepted by the client to be higher than the valuation price. |
 | @percent 					| 0..1		| String	| Percentage accepted by the client to be higher than the valuation price.	|
 | @applyBoth					| 1  		| Boolean	| Indicates that the range between valuation price and the new price does not exceed the amount and/or porcentage indicated by the client.  |
 | StartDate     				| 1  		| String 	| Start date to search rates.				|
 | EndDate       				| 1  		| String	| End date to search rates.				|
 | MealPlanCode  				| 1  		| String	| MealPlan code.					|
 | HotelCode     				| 1  		| String	| Hotel code.						|
-| Nationality   				| 0..1		| String	| Nationality of the Holder (use ISO3166_1_alfa_2). This informations will be mandatory depending on the provider, as long as the provider returns it in this call (see StaticConfiguration).  |
+| Nationality   				| 0..1		| String	| Nationality of the Holder (use ISO3166_1_alfa_2). This informations will be mandatory depending on the supplier (see StaticConfiguration).  |
 | Price         				| 1      	|		| Total price of this valuation.			|
 | @currency					| 1  		| String	| Currency code.					|
 | @amount  					| 1  		| Decimal	| Option Amount.					|
-| @binding 					| 1  		| Boolean	| Identifies if is the price is binding ( When true the sale price returned **must** not be less than the price informed.  |
-| @commission					| 1  		| Decimal	| Commission (-1 = not specified (will come indicated with the provider contract), 0 = net price, X = % of the commission that applies to the amount.	|
-| ResGuests     				| 1      	|		| Structure of the passengers.				|
+| @binding 					| 1  		| Boolean	| Identifies if is the price is binding (When true the sale price returned **must** not be less than the price informed.  |
+| @commission					| 1  		| Decimal	| Commission (-1 = not specified, 0 = net price, X = % of the commission applied to the amount.	|
+| ResGuests     				| 1      	|		| 				|
 | ResGuests/Guests				| 1      	|		| List of passengers.					|
 | ResGuests/Guests/Guest			| 1..n    	|		| Detail of each passenger.				|
-| @roomCandidateId				| 1  		| Integer	| Identifier of room candidate.				|
+| @roomCandidateId				| 1  		| Integer	| Room candidate Identifier				|
 | @paxId   					| 1  		| Integer	| Passenger id (starting at 1).				|
-| ResGuests/Guests/Guest/GivenName		| 1 	 	| String	| Given name.						|
-| ResGuests/Guests/Guest/SurName		| 1   		| String	| Surname.						|
-| PaymentType   				| 1  		| String	| Indicates the typology of payment.			|
-| Rooms          				| 1      	|		| Rooms of this option ( room list).			|
+| ResGuests/Guests/Guest/GivenName		| 1 	 	| String	| Guest's given name.						|
+| ResGuests/Guests/Guest/SurName		| 1   		| String	| Guest's last name.						|
+| PaymentType   				| 1  		| String	| Indicates the type of payment.			|
+| Rooms          				| 1      	|		| Rooms within this option (room list).			|
 | Rooms/Room    				| 1..n    	|		| Detail of room. 					|
-| @id      					| 1  		| String	| Identifier of the room.				|
-| @roomCandidateRefId				| 1  		| Integer	| Identifier of room candidate.				|
+| @id      					| 1  		| String	| Room identifier.				|
+| @roomCandidateRefId				| 1  		| Integer	| Room candidate identifier.				|
 | @code    					| 1  		| String	| Room code.						|
 | @description					| 1  		| String	| Room description.					|
+| Rooms/Room/Price				| 1      	|		| Total price of this room.				|
+| @currency					| 1  		| String	| Currency code.					|
+| @amount  					| 1  		| Decimal	| Room Amount.						|
+| @binding 					| 1  		| Boolean	| Identifies if is the price is binding (When true the sale price returned **must** not be less than the price informed.  |
+| @commission					| 1  		| Decimal	| Commission (-1 = not specified, 0 = net price, X = % of the commission applied to the amount.		|
 | RoomCandidates/RoomCandidate			| 1..n    	|		| Room required.					|
 | @id      					| 1  		| Integer	| Id of the requested room (starting at 1).		|
 | RoomCandidates/RoomCandidate/Paxes/Pax	| 1..n    	|		| Pax required.						|
 | @age     					| 1  		| Integer	| Passenger age. 					|
 | @id      					| 1  		| Integer	| Passenger id (starting at 1). 			|
-| Remarks       				| 0..1    	| 		| Customer comments for reservation option. The provider will consider it, as long as the provider returns it in this call (see StaticConfiguration).	|
+| Remarks       				| 0..1    	| 		| Any customer comments for the supplier to consider (as long as the supplier returns it in this method, see StaticConfiguration).	|
   
 
 
@@ -158,15 +163,15 @@ is closed.
 | **Element**					| **Number**	| **Type**	| **Description**					|
 | --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
 | ReservationRS					| 1       	|		| Root node.						|
-| ProviderLocator 				| 1  		| String	| Provider locator.					|
-| ResStatus					| 1  		| String	| Status of book (OK = confirmed, RQ = on request, CN = cancelled, UN = unknown.	|
-| Price  					| 0..1     	|		| Total price of this book.				|
+| ProviderLocator 				| 1  		| String	| Booking ID in the Supplier´s system					|
+| ResStatus					| 1  		| String	| reservation status  (OK = confirmed, RQ = on request, CN = cancelled, UN = unknown.	|
+| Price  					| 0..1     	|		| Total price of this reservation.				|
 | @currency					| 1  		| String	| Currency code.					|
 | @amount					| 1  		| Decimal	| Book Amount.						|
-| @binding					| 1  		| Boolean	| Identifies if is the price is binding ( When true the sale price returned **must** not be less than the price informed. |
-| @commission					| 1  		| Decimal	| Commission ( -1 = not specified (will come indicated with the provider contract ), 0 = net price, X = % of the commission that applies to the amount.	|
-| Remarks					| 0..1		| String	| Remarks of this book.					|
-| BillingSupplierCode				| 0..1		| String	| Society billing code, will be returned given that the supplier has different billing societies and that the supplier informs this in the reservation.	|
+| @binding					| 1  		| Boolean	| Identifies if is the price is binding (when true the sale price returned **must** not be less than the price informed. |
+| @commission					| 1  		| Decimal	| Commission (-1 = not specified, 0 = net price, X = % of the commission that applies to the amount.	|
+| Remarks					| 0..1		| String	| Any remarks about this reservation			|
+| BillingSupplierCode				| 0..1		| String	| Supplier's billing code. Will be returned if the supplier has different billing accounts and this is informed in the reservation.	|
 | Payable					| 0..1     	|		| Payable.						|
 | @value					| 1       	|		| Informs Payable.					|
   
@@ -178,21 +183,17 @@ is closed.
 
 **ResStatus:**
 
-When doing a reservation, in the response, there will be a field named
-ResStatus which will indicate the status of the reservation. The status
-of the reservation can have fours values: OK, RQ, CN and UN.
+When making a reservation,  there will be a field named
+ResStatus in the response indicating the status of the reservation. It
+can have four values: OK, RQ, CN and UN.
 
--   *OK:* The reservation finished with no problems.
--   *RQ:* The reservation is finished but the product is still not
-    available, so it will set the reservation in a waiting list (
-    Request ).
--   *CN:* The reservation is finished but a provider error or a timeout
-    occurred, then for some providers, the system will immediately
-    cancel the reservation to prevent possible errors.
--   *UN:* The reservation is finished but a provider error or a timeout
-    occurred and we can't assure 100% that the status of the reservation
-    is in a OK status, therefore it is the clients responsibility to
-    check if the reservation fulfilled completely.
+-   *OK:* The reservation was completed with no problems.
+-   *RQ:* The reservation was completed but the product is still not
+    available, so the reservation goes into a waiting list (Request).
+-   *CN:* The reservation was completed but due to a supplier error or a timeout
+    the system will immediately cancel the reservation to prevent further possible errors.
+-   *UN:* The reservation was completed but due to a supplier error or a timeout, the reservation status is unknown.
+   It is the client's responsibility to check if the booking is OK.
 
 
 
@@ -200,20 +201,18 @@ of the reservation can have fours values: OK, RQ, CN and UN.
 
 
 
-**MerchantPay & LaterPay & CardBookingPay & CardCheckInPay**
+**MerchantPay, LaterPay, CardBookingPay & CardCheckInPay**
 
-In the reservation, you can pay with cash or with a credit card. If the
-payment is done by cash, in the XML petition you only have to specify
-the payment type, like so:
+CardChekInPay:payment using the card used in the ReservationRQ at the time of check in. 
+CardBookingPay: payment completed in the day of the booking using the same card  provided in the ReservationRQ 
+LaterPay: payment completed at the hotel (cash, card or another type as per each hotel's payment options.)
+MerchantPay: paid by invoice.
 
 ~~~xml
     <PaymentType>MerchantPay</PaymentType>
 ~~~
 
-
-If the payment is done by credit card, then in the XML petition, is it
-mandatory to specify the payment type and the credit card information,
-like so:
+If the payment is done by credit card, is it mandatory to specify the payment type and the credit card information in the XML request as in the example below:
 
 ~~~xml
     <PaymentType>LaterPay/CardBookingPay/CardCheckInPay</PaymentType>
@@ -238,10 +237,10 @@ like so:
 Depending on the value of applyBoth:
 
 -   *applyBoth ="false"*: Indicates that one of the conditions (amount
-    or percentage) has to meet the critertia before confirmation
+    or percentage) has to meet the criteria before confirmation
     process.
--   *applyBoth ="true"*: Indicates that the new price can not exceed
-    neither amount nor percentage indicated by the client.
+-   *applyBoth ="true"*: Indicates that the new price cannot exceed
+    the amount or percentage indicated by the client.
 
 In case that the checking is not correct, an error will be returned
 before confirmation process. If DeltaPrice tag is not sent in case that
