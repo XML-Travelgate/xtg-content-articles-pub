@@ -191,5 +191,11 @@ permalink: /docs/hotel/change-log
  :  InformNumberOfUnits in StaticConfiguration.
 
  :  ImplementsDescriptiveInfoExtended in StaticConfiguration.
+ 
+ |
+
+**Version 1.0.17:** Date 27/06/2016
+
+ :  Code (Picture) in DescriptiveInfoRS.
 
 
