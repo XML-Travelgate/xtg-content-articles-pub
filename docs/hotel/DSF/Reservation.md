@@ -129,11 +129,6 @@ is closed.
 | @roomCandidateRefId				| 1  		| Integer	| Identifier of room candidate.				|
 | @code    					| 1  		| String	| Room code.						|
 | @description					| 1  		| String	| Room description.					|
-| Rooms/Room/Price				| 1      	|		| Total price of this room.				|
-| @currency					| 1  		| String	| Currency code.					|
-| @amount  					| 1  		| Decimal	| Room Amount.						|
-| @binding 					| 1  		| Boolean	| Identifies if is the price is binding ( When true the sale price returned **must** not be less than the price informed.  |
-| @commission					| 1  		| Decimal	| Commission (-1 = not specified (will come indicated with the provider contract), 0 = net price, X = % of the commission that applies to the amount.		|
 | RoomCandidates/RoomCandidate			| 1..n    	|		| Room required.					|
 | @id      					| 1  		| Integer	| Id of the requested room (starting at 1).		|
 | RoomCandidates/RoomCandidate/Paxes/Pax	| 1..n    	|		| Pax required.						|
