@@ -433,7 +433,7 @@ permalink: /docs/hotel/soap-examples
       </soapenv:Header>
       <soapenv:Body>
         <ns:AvailDestinationTree>
-          <ns:descriptiveInfoRQ>
+          <ns:availDestinationTreeRQ>
             <ns:timeoutMilliseconds>240000</ns:timeoutMilliseconds>
             <ns:version>1</ns:version>
             <ns:providerRQ>
@@ -462,7 +462,7 @@ permalink: /docs/hotel/soap-examples
                 </AvailDestinationTreeRQ>
               </ns:rqXML>
             </ns:providerRQ>
-          </ns:descriptiveInfoRQ>
+          </ns:availDestinationTreeRQ>
         </ns:AvailDestinationTree>
       </soapenv:Body>
     </soapenv:Envelope>
