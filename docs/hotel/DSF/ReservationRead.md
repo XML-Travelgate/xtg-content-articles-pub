@@ -138,7 +138,7 @@ is closed.
 | @currency				| 1    		| String	|		Displays the currency provided by the supplier				|
 | @amount				| 1    		| Decimal	| Total amount for the booking.					|
 | @binding				| 1    		| Boolean	| Identifies if is the price is binding (When true the sale price returned must not be less than the price informed). |
-| @commission				| 1    		| Decimal	| Commission (-1 = not specified (will come indicated with the provider contract ), 0 = net  price, X = % of the commission that applies to the amount . |
+| @commission				| 1    		| Decimal	| Commission (-1 = not specified), 0 = net  price, X = % of the commission applied to the amount . |
 | Hotel/Rooms				| 0..1       	|		| List of rooms reserved				|
 | Hotel/Rooms/Room			| 1..n       	|		| Details of room reserved.				|
 | @id   				| 0..1 		| String	| Identifier of the room.			|
