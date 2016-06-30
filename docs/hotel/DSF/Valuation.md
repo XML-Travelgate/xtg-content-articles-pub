@@ -119,7 +119,7 @@ Our system allows for a maximum of **180000** milliseconds before the connection
         <CancelPenalties nonRefundable = "false">
             <CancelPenalty>
                 <HoursBefore>48</HoursBefore>
-                <Penalty type = "Importe" currency = "EUR">72.40</Penalty>
+                <Penalty type = "Importe"  paymentType = "MerchantPay" currency = "EUR">72.40</Penalty>
             </CancelPenalty>
         </CancelPenalties>
         <Fees>
@@ -163,6 +163,7 @@ Our system allows for a maximum of **180000** milliseconds before the connection
 | CancelPenalties/CancelPenalty/Penalty     | 1          |          | Contains the value to apply. |
 | @type					    | 1          | String   | Type of possible penalty values: “Noches” (nights) , “Porcentaje” (percentage) ,”Importe” (price value). |
 | @currency				    | 1          | String   | Currency code. |
+| @paymentType                            | 1          | String   | Indicates payment type of penalty. |
 | Remarks 				    | 0..1       | String   | Remarks.       |
 | PaymentOptions			    | 0..1       | String   | Payment Types allowed by the supplier. This tag  is mandatory only if payment type is different than MerchantPay. |
 | PaymentOptions/Cards			    | 1		 | 	    | List of cards allowed. |
