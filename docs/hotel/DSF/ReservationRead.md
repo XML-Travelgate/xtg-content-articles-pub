@@ -96,12 +96,12 @@ is closed.
                     <Holder name = "Test11" surname = "TestAp11"/>
                     <Price currency = "EUR" amount = "36.20" binding = "false" commission = "-1"/>
                     <Rooms>
-                        <Room id = "4582" roomCandidateRefId = "1" description = "Doble Standard.."/>
+                        <Room id = "4582" roomCandidateRefId = "1" description = "Standard.."/>
                     </Rooms>
                     <CancelPenalties nonRefundable = "false">
                         <CancelPenalty>
                             <HoursBefore>120</HoursBefore>
-                            <Penalty type = "Importe" paymentType = "pagoMinorista" currency = "EUR">72.40</Penalty>
+                            <Penalty type = "Importe" paymentType = "MerchantPay" currency = "EUR">72.40</Penalty>
                         </CancelPenalty>
                     </CancelPenalties>
                 </Hotel>
