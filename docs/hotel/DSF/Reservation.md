@@ -198,10 +198,14 @@ can have four values: OK, RQ, CN and UN.
 
 **MerchantPay, LaterPay, CardBookingPay & CardCheckInPay**
 
-CardChekInPay:payment using the card used in the ReservationRQ at the time of check in. 
-CardBookingPay: payment completed in the day of the booking using the same card  provided in the ReservationRQ 
-LaterPay: payment completed at the hotel (cash, card or another type as per each hotel's payment options.)
-MerchantPay: paid by invoice.
+- PaymentOptions:
+
+- *MerchantPay*: The payment is managed by the supplier.
+- *LaterPay*: The payment is managed by the hotel. The customer will use a credit-card as a guarantee for the hotel and the payment
+will be completed at check in.
+- *CardBookinPay*: The payment is managed by the supplier. The payment is effectuated at the time of booking.
+- *CardChekinPay*: The payment is managed by the supplier. The payment is effectuated at check in in the hotel. the ReservationRQ 
+
 
 ~~~xml
     <PaymentType>MerchantPay</PaymentType>
@@ -232,23 +236,17 @@ If the payment is done by credit card, is it mandatory to specify the payment ty
 Depending on the value of applyBoth:
 
 -   *applyBoth ="false"*: Indicates that one of the conditions (amount
-    or percentage) has to meet the criteria before confirmation
-    process.
+    or percentage) has to meet the criteria before reservation.
 -   *applyBoth ="true"*: Indicates that the new price cannot exceed
     the amount or percentage indicated by the client.
 
-In case that the checking is not correct, an error will be returned
-before confirmation process. If DeltaPrice tag is not sent in case that
-the integration implements it, we will take into account that the price
-range is 0 so the process will keep on in case that the price is lower
-or equal to the price showed in valuation process.
+An error will be returned if the new price does not abide to *DeltaPrice*. If DeltaPrice tag is not sent and 
+the integration implements it, we assume that the price
+range is 0 and the process will continue (price is lower
+or equal to the price showed in valuation).
 
-This field it is implemented if the provider has it as a native or if it
-is necessary to do another availability/valuation process. In case that
-the provider blocks the option in valuation process, confirmation
-process will be done directly (because the provider does not have native
-delta price and this will not be implemented). Static configuration of
-each provider informs if it is implemented or it is not.
-
+This field is implemented if it's native to the supplier or if it another availability/valuation request needs to be done in Reservation. In case the supplier blocks the option in valuation, reservation
+will be done automatically in reservation method. This information is available in the Static configuration of
+each supplier.
 
 
