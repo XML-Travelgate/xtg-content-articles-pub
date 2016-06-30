@@ -20,7 +20,7 @@ rates.
 
 
 
-#### GetSupplierRateTransfersTypesRQ Example
+### GetSupplierRateTransfersTypesRQ Example
 
 
 ~~~xml

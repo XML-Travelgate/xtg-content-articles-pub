@@ -14,7 +14,6 @@ This method aims to return the total price of the selected Option. This
 Option **must** be selected in the previous step ( Availability ).
 
 
-
 ### Request Format
 
 
@@ -55,6 +54,7 @@ Some suppliers do not provide this method. If this is the case then all
 of the information **must** be returned in the Availability, therefore
 the Valuation call will do the Availability process again filtered by
 the selected Option.
+
 
 
 
