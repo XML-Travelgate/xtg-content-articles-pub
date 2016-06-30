@@ -154,7 +154,7 @@ is closed.
 | Hotel/CancelPenaltiesCancelPenalties	| 0..1       	|		| Information of cancellation policies.		|
 | @nonRefundable			| 1    		| Boolean	| Indicate if this option is nonRefundable (true or false). |
 | Hotel/CancelPenalties/CancelPenalty	| 0..n       	|		| Listing of cancellation penalties.		|
-| Hotel/CancelPenalties/CancelPenalty/HoursBefore | 1	|		|     String | Number of hours prior to arrival day in which this Cancellation policy applies. |
+| Hotel/CancelPenalties/CancelPenalty/HoursBefore | 1	|	String	|Number of hours prior to arrival day in which this Cancellation policy applies. |
 | Hotel/CancelPenalties/CancelPenalty/Penalty |   1 	|         	| Contains the value to apply.			|
 | @type 				| 1    		| String	| Type of penalty Possible values: "Noches" (nights) , "Porcentaje" (percentage) ,"Importe" (price value). |
 | @paymentType				| 1    		| String	| Indicates payment type.		|
