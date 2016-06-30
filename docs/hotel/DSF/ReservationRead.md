@@ -68,7 +68,7 @@ is closed.
 | **Element** 		| **Number**	| **Type**	| **Description**					|
 | --------------------- | ------------- | ------------- | ----------------------------------------------------- |
 | ReservationReadRQ	| 1		|		| Root node.						|
-| Locators   		| 1          	|		| Information about the locators (it is mandatory to indicate either client or supplier's locator). |
+| Locators   		| 1|		| Information about the locators (it is mandatory to indicate either client or supplier's locator). |
 | Locators/Client	| 0..1		| String	| Client locator.					|
 | Locators/Provider	| 0..1		| String	| Supplier locator.					|
 | Currency   		| 1    		| String	| Currency code.					|
@@ -120,8 +120,8 @@ is closed.
   
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
-| ReservationReadRS			| 1 		|          	| Root node.					|
-| Locators   				| 1          	|		|  |Information about the locators.
+| ReservationReadRS			| 1 |   	| Root node.					|
+| Locators   				   | 1 |		|Information about the locators.|
 | Locators/Client			| 0..1 		| String	| Client locator.				|
 | Locators/Provider			| 0..1 		| String	| Supplier locator.				|
 | Hotel      				| 0..1       	|		| Hotel reservation.				|
