@@ -521,9 +521,9 @@ in the availability method.
 -   **LaterPay:** The payment is managed by the hotel. The customer will
     use a credit-card as a guarantee for the hotel and the payment will
     be completed at check in.
--   **CardBookinPay:** The payment is managed by the supplier. The
+-   **CardBookingPay:** The payment is managed by the supplier. The
     payment is effectuated at the time of booking.
--   **CardChekinPay:** The payment is managed by the supplier. The
+-   **CardChekInPay:** The payment is managed by the supplier. The
     payment is effectuated at check in in the hotel.
 
 
