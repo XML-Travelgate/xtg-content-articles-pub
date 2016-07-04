@@ -43,7 +43,7 @@ Some suppliers do not implement this method.
 ~~~
 
 
-### OTA_VehRetResRQ Description
+### OTA VehRetResRQ Description
 
 
 The request requires the UniqueID (locator) of the reservation and the
@@ -60,7 +60,7 @@ information.
 
 
 
-### OTA_VehRetResRS Example
+### OTA VehRetResRS Example
 
 
 
