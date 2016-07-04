@@ -580,7 +580,7 @@ permalink: /docs/hotel/soap-examples
 ### Reservation
 
 
-~~xml
+~~~xml
     <soapenv:Envelope xmlns:soapenv = "http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns = "http://schemas.xmltravelgate.com/hub/2012/06" xmlns:wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
       <soapenv:Header>
         <wsse:Security>
