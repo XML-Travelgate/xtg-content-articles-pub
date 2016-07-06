@@ -50,8 +50,7 @@ This paragraph aims to describe all of our lists with data.
 ### Currency list
 
 
-Most of providers use a standard ISO - 4217, but this depends of each
-supplier.
+Our system uses a standard ISO - 3 for all suppliers.
 
 
 
