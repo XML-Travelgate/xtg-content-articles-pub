@@ -67,19 +67,19 @@ that the supplier returns said information.
     <CurrencyListRS>
         <Currencies>
             <Currency>
-                <Code>1</Code>
-                <Name>EUR</Name>
+                <Code>EUR</Code>
+                <Name>Euro</Name>
             </Currency>
             <Currency>
-                <Code>2</Code>
-                <Name>USD</Name>
+                <Code>USD</Code>
+                <Name>Dollar</Name>
             </Currency>
         </Currencies>
     </CurrencyListRS>
 ~~~
 
 
-### HotelListRS Description
+### CurrencyListRS Description
 
 
 
@@ -88,7 +88,7 @@ that the supplier returns said information.
 | CurrencyListRS		| 1          	|		| Root node.       			|
 | Currencies 			| 1           	|		| Contains a list of currencies.	|
 | Currency   			| 0..n       	|		| Contains details of the currency.	|
-| @code 			| 1    		| String	| Code.    				|
+| @code 			| 1    		| String	| ISO - 3 Code.    				|
 | @Name 			| 1    		| String	| Name of the currency.			|
 
 
