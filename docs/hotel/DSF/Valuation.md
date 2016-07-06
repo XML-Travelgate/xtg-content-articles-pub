@@ -40,7 +40,7 @@ Our system allows for a maximum of **180000** milliseconds before the connection
 
 
 ~~~xml
-    <ValuationRQ>
+<ValuationRQ>
    <StartDate>04/07/2016</StartDate>
    <EndDate>11/07/2016</EndDate>
    <MealPlanCode>15</MealPlanCode>
@@ -164,7 +164,7 @@ Our system allows for a maximum of **180000** milliseconds before the connection
 | @type					    | 1          | String   | Type of possible penalty values: “Noches” (nights) , “Porcentaje” (percentage) ,”Importe” (price value). |
 | @currency				    | 1          | String   | Currency code. |
 | @paymentType                            | 1          | String   | Indicates payment type of penalty. |
-| Remarks 				    | 0..1       | String   | Remarks.       |
+| Remarks 				    | 0..1       | String   | Remarks (see StaticConfiguration in order to verify if a supplier implements it).       |
 | PaymentOptions			    | 0..1       | String   | Payment Types allowed by the supplier. This tag  is mandatory only if payment type is different than MerchantPay. |
 | PaymentOptions/Cards			    | 1		 | 	    | List of cards allowed. |
 | PaymentOptions/Cards/Card		    | 1..n       |          | Details of card. |
@@ -178,7 +178,7 @@ Our system allows for a maximum of **180000** milliseconds before the connection
 | @amount 				    | 1          | Decimal  | Fee Amount. |
 | @binding				    | 1          | Boolean  | Identifies if is the price is binding (When true the sale price returned must not be less than the price informed. |
 | @commission				    | 1          | Decimal  | Commission: -1 = not specified (indicated in contract with supplier), 0 = net price, X = % of the commission applied to the amount. |
-| CancelPoliciesDescription                 | 0..1       | String   | Contains the cancellation penalties in free text. |
+| CancelPoliciesDescription                 | 0..1       | String   | Contains the cancellation penalties in free text (see StaticConfiguration in order to verify if a supplier implements it). |
  
 
 
