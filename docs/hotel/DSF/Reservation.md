@@ -96,12 +96,12 @@ is closed.
 | --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
 | ReservationRQ 				| 1      	|		| Root node.						|
 | ClientLocator 				| 1  		| String	| Booking ID in client's system.					|
-| OnRequest     				| 1  		| Boolean	| Indicates if you want to receive the onrequest options in AvailRS, as long as the supplier returns it in this method (see StaticConfiguration).	|
+| OnRequest     				| 1  		| Boolean	| Indicates if you want to receive the onrequest options in AvailRS, as long as the supplier returns it in this method (see StaticConfiguration in order to verify if a supplier implements it).	|
 | Parameters    				| 0..1    	|		| Parameters for additional information that have been reported in ValuationRS.	|
 | Parameters/Parameter				| 1..n    	|		| List of parameters.					|
 | @key     					| 1  		| String	| Contains the keyword/Id to identify a parameter.	|
 | @value   					| 1  		| String	| Contains the value of the parameter.			|
-| DeltaPrice    				| 0..1    	|		| Indicates price variation permitted by the client.	|
+| DeltaPrice    				| 0..1    	|		| Indicates price variation permitted by the client (see StaticConfiguration in order to verify if a supplier implements it).	|
 | @amount  					| 0..1		| String	| Amount (in the currency returned into the option) that is accepted by the client to be higher than the valuation price. |
 | @percent 					| 0..1		| String	| Percentage accepted by the client to be higher than the valuation price.	|
 | @applyBoth					| 1  		| Boolean	| Indicates that the range between valuation price and the new price does not exceed the amount and/or porcentage indicated by the client.  |
@@ -109,7 +109,7 @@ is closed.
 | EndDate       				| 1  		| String	| End date to search rates.				|
 | MealPlanCode  				| 1  		| String	| MealPlan code.					|
 | HotelCode     				| 1  		| String	| Hotel code.						|
-| Nationality   				| 0..1		| String	| Nationality of the Holder (use ISO3166_1_alfa_2). This informations will be mandatory depending on the supplier (see StaticConfiguration).  |
+| Nationality   				| 0..1		| String	| Nationality of the Holder (use ISO3166_1_alfa_2). This informations will be mandatory depending on the supplier (see StaticConfiguration in order to verify if a supplier implements it).  |
 | Price         				| 1      	|		| Total price of this valuation.			|
 | @currency					| 1  		| String	| Currency code.					|
 | @amount  					| 1  		| Decimal	| Option Amount.					|
@@ -134,7 +134,7 @@ is closed.
 | RoomCandidates/RoomCandidate/Paxes/Pax	| 1..n    	|		| Pax required.						|
 | @age     					| 1  		| Integer	| Passenger age. 					|
 | @id      					| 1  		| Integer	| Passenger id (starting at 1). 			|
-| Remarks       				| 0..1    	| 		| Any customer comments for the supplier to consider (as long as the supplier returns it in this method, see StaticConfiguration).	|
+| Remarks       				| 0..1    	| 		| Any customer comments for the supplier to consider (see StaticConfiguration in order to verify if a supplier implements it).	|
   
 
 
@@ -160,13 +160,13 @@ is closed.
 | ReservationRS					| 1       	|		| Root node.						|
 | ProviderLocator 				| 1  		| String	| Booking ID in the Supplier´s system					|
 | ResStatus					| 1  		| String	| reservation status  (OK = confirmed, RQ = on request, CN = cancelled, UN = unknown.	|
-| Price  					| 0..1     	|		| Total price of this reservation.				|
+| Price  					| 0..1     	|		| Total price of this reservation (see StaticConfiguration in order to verify if a supplier implements it).				|
 | @currency					| 1  		| String	| Currency code.					|
 | @amount					| 1  		| Decimal	| Book Amount.						|
 | @binding					| 1  		| Boolean	| Identifies if is the price is binding (when true the sale price returned **must** not be less than the price informed. |
 | @commission					| 1  		| Decimal	| Commission (-1 = not specified, 0 = net price, X = % of the commission that applies to the amount.	|
 | Remarks					| 0..1		| String	| Any remarks about this reservation			|
-| BillingSupplierCode				| 0..1		| String	| Supplier's billing code. Will be returned if the supplier has different billing accounts and this is informed in the reservation.	|
+| BillingSupplierCode				| 0..1		| String	| Supplier's billing code. Will be returned if the supplier has different billing accounts and this is informed in the reservation (see StaticConfiguration in order to verify if a supplier implements it).	|
 | Payable					| 0..1     	|		| Payable.						|
 | @value					| 1       	|		| Informs Payable.					|
   
