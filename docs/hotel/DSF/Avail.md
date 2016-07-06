@@ -106,8 +106,8 @@ is closed.
 | **Element**				| **Number**	| **Type**	| **Description**						|
 | ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
 | AvailRQ               		| 1            	|		| Root node.							|
-| CancellationPolicies 			| 1     	| Boolean	| Indicates if you want to receive the cancellation policies in AvailRS, as long as the supplier returns it in this method (see StaticConfiguration).	|
-| OnRequest            			| 1     	| Boolean	| Indicates if you want to receive the onrequest options in AvailRS, as long as the supplier returns it in this method (see StaticConfiguration).		|
+| CancellationPolicies 			| 1     	| Boolean	| Indicates if you want to receive the cancellation policies in AvailRS, as long as the supplier returns it in this method (see StaticConfiguration in order to verify if a supplier implements it).	|
+| OnRequest            			| 1     	| Boolean	| Indicates if you want to receive the onrequest options in AvailRS, as long as the supplier returns it in this method (see StaticConfiguration in order to verify if a supplier implements it).		|
 | BusinessRules        			| 1            	|		| Indicates the business rules the client wants to apply in availability, as long as the supplier returns it in this method (see StaticConfiguration).	|
 | AvailDestinations/Destination		| 1..n         	|		| Contains the list of destinations filters (hotels or cities or zones or geocodes). The number of Destinations is defined in StaticConfiguration.	|
 | @type           			| 1     	| String	| Destination type (HOT, CTY, ZON, GEO). Clarification: ZONs contains CTYs. ZONs are higher nodes and CTY are lower nodes. It is not possible to mix types of destinations in the same request.  |
@@ -115,8 +115,8 @@ is closed.
 | StartDate            			| 1     	| String	| 'Search from' date.						|
 | EndDate              			| 1     	| String	| 'Search til' date.						|
 | Currency             			| 0..1  	| String	| Currency requested if supported by supplier. If not, this value will be ignored.	|
-| Nationality          			| 0..1  	| String	| Nationality of the guest (use ISO3166_1_alfa_2). This information is mandatory **depending** on the supplier. (see StaticConfiguration).	|
-| Markets              			| 0..1         	|		| List of Market requested.					|
+| Nationality          			| 0..1  	| String	| Nationality of the guest (use ISO3166_1_alfa_2). This information is mandatory **depending** on the supplier. (see StaticConfiguration in order to verify if a supplier implements it).	|
+| Markets              			| 0..1         	|		| List of Market requested (see StaticConfiguration in order to verify if a supplier implements it).				|
 | Markets/Market       			| 0..n  	| String	| Targeted zone/ country/ Point of sale.			|
 | RoomCandidates/RoomCandidate 		| 1..n         	|		| Room required.						|
 | @id             			| 1     	| Integer	| Id of the requested room (starting at 1).			|
@@ -340,7 +340,7 @@ Currently, the client can configure the following BusinessRules:
 | MealPlans/MealPlan/Options /Option/Parameters/Parameter | 0..n | 	| Additional parameter requiring integration.		|
 | @key 					| 1 		| String 	| Contains the keyword/Id to identify a parameter.		|
 | @value 				| 1 		| String 	| Contains  parameter value.				|
-| MealPlans/MealPlan/Options /Option/CancelPenalties /CancelPenalty | 0..1|  | List of cancellation penalties.				|
+| MealPlans/MealPlan/Options /Option/CancelPenalties /CancelPenalty | 0..1|  | List of cancellation penalties. (see StaticConfiguration in order to verify if a supplier implements it)				|
 | MealPlans/MealPlan/Options /Option/CancelPenalties /CancelPenalty/HoursBefore| 1 | String | Number of hours prior to arrival day in which this Cancellation policy applies. | 
 | MealPlans/MealPlan/Options /Option/CancelPenalties /CancelPenalty | 1..n| | Contains the value to apply.				|
 | @type 				| 1 		| String 	| Type of penalty -possible values: "Noches" (nights), "Porcentaje" (percentage), "Importe" (price value).  |
@@ -357,12 +357,12 @@ Currently, the client can configure the following BusinessRules:
 | @description 				| 1 		| String 	| Room description.						|
 | @nonRefundable 			| 0..1 		| String 	| Identifies if the room is refundable or not.			|
 | @numberOfUnits 			| 0..1 		| Integer 	| Number of rooms available with the same type (see StaticConfiguration).	|
-| MealPlans/MealPlan/Options /Option/Rooms/Room/Beds | 0..1 | 		| Detail of beds.						|
+| MealPlans/MealPlan/Options /Option/Rooms/Room/Beds | 0..1 | 		| Detail of beds (see StaticConfiguration in order to verify if a supplier implements it).						|
 | @sharedBed 				| 0..1 		| Boolean 	| Specifies if the beds in the room are shared.			|
 | MealPlans/MealPlan/Options /Option/Rooms/Room /Beds/Bed | 0..n | 	| Identifies types of beds.					|
 | @numberOfBeds 			| 0..1 		| String 	| Indicates number of beds in the room.				|
 | @type 				| 0..1 		| String 	| Indicates the type of bed.					|
-| MealPlans/MealPlan/Options /Option/Rooms/Room /DailyPrices | 0..1 | 	| Specifies daily price, as long as the supplier returns it in this method (see StaticConfiguration).	| 
+| MealPlans/MealPlan/Options /Option/Rooms/Room /DailyPrices | 0..1 | 	| Specifies daily price, as long as the supplier returns it in this method (see StaticConfiguration in order to verify if a supplier implements it).	| 
 | MealPlans/MealPlan/Options /Option/Rooms/Room /DailyPrices/DailyPrice | 1..n | | Specifies the price for each day.			|
 | @effectiveDate 			| 1 		| String 	| Start date in which the price becomes effective.		|
 | @expireDate 				| 1 		| String 	| Expiry date of price.						|
@@ -371,7 +371,7 @@ Currently, the client can configure the following BusinessRules:
 | @amount 				| 1 		| Decimal 	| Day Amount.							|
 | @binding 				| 1 		| Boolean 	| Identifies if the price is binding (When true, the sale price returned **must** not be less than the price informed. |
 | @commission 				| 1 		| Decimal 	| Commission: -1 = not specified (information available in  contract with the supplier ), 0 = net price, X = % of the commission applied to the amount. |
-| MealPlans/MealPlan/Options /Option/Rooms/Room /DailyRatePlans | 0..1 | | Specifies the daily rate, as long as the supplier returns it in this method (see StaticConfiguration).  |
+| MealPlans/MealPlan/Options /Option/Rooms/Room /DailyRatePlans | 0..1 | | Specifies the daily rate, as long as the supplier returns it in this method (see StaticConfiguration in order to verify if a supplier implements it).  |
 | MealPlans/MealPlan/Options /Option/Rooms/Room /DailyRatePlans/DailyRatePlan | 1..n | | Specifies the rates for each day.		|
 | @effectiveDate 			| 1 		| String 	| Start date in which the rate becomes effective.		|
 | @expireDate 				| 1 		| String 	| End date in which the rate expires.			|
@@ -387,7 +387,7 @@ Currently, the client can configure the following BusinessRules:
 | @amount 				| 1 		| Decimal 	| Option Amount.						|
 | @binding 				| 1 		| Boolean 	| Identifies if is the price is binding (When true the sale price returned **must** not be less than the price informed.|
 | @commission 				| 1 		| Decimal 	| Commission:  -1 = not specified (information available in  contract with the supplier ), 0 = net price, X = % of the commission applied to the amount.	|
-| MealPlans/MealPlan/Options /Option/Detail | 0..1 	| 		| Detail of option (if the option is different from the type\<\> Hotel).  |
+| MealPlans/MealPlan/Options /Option/Detail | 0..1 	| 		| Detail of option (if the option is different from the type\<\> Hotel and see StaticConfiguration in order to verify if a supplier implements it).  |
 | MealPlans/MealPlan/Options /Option/Detail/POIs | 1 	| 		| Points of interest.						|
 | MealPlans/MealPlan/Options /Option/Detail/POIs/POI | 1..n | 		| Point of interest.						|
 | @code 				| 1 		| String 	| POI code.							|
@@ -403,9 +403,9 @@ Currently, the client can configure the following BusinessRules:
 | MealPlans/MealPlan/Options /Option/Detail/POIs/POI /Services/Service/RangeDates| 0..1 | | Service date range (Only specified if durationType=Range).	|
 | @startDate 				| 1 		| String 	| Start date of service.					|
 | @endDate 				| 1 		| String 	| End date of service.						|
-| MealPlans/MealPlan/Options /Option/Remarks | 0..1 	| 		| List of remarks.						|
+| MealPlans/MealPlan/Options /Option/Remarks | 0..1 	| 		| List of remarks (see StaticConfiguration in order to verify if a supplier implements it).						|
 | MealPlans/MealPlan/Options /Option/Remarks/Remark | 1..n | 		| Remark.							|
-| MealPlans/MealPlan/Options /Option/Offers | 0..1 	| 		| The supplier returns in response which offer is applicable for each option.	|
+| MealPlans/MealPlan/Options /Option/Offers | 0..1 	| 		| The supplier returns in response which offer is applicable for each option (see StaticConfiguration in order to verify if a supplier implements it).	|
 | MealPlans/MealPlan/Options /Option/Offers/Offer | 1..n | 		| List of offers.						|
 | @code 				| 1 		| String 	| Contains the code to identify a offer.			|
 | @name 				| 1 		| String 	| Contains the name of the offer.				|
