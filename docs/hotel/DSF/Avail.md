@@ -65,8 +65,10 @@ is closed.
         <CancellationPolicies>false</CancellationPolicies>
         <OnRequest>false</OnRequest>
         <BusinessRules>CheaperAmount</BusinessRules>
-        <AvailDestinations> lista de "Destination"
+        <AvailDestinations> list of destinations
             <Destination type = "CTY" code = "5"/>
+            <Destination type = "CTY" code = "15"/>
+            ....
         </AvailDestinations>
         <StartDate>28/01/2014</StartDate>
         <EndDate>29/01/2014</EndDate>
@@ -75,6 +77,7 @@ is closed.
         <Markets>
             <Market>SP</Market>
             <Market>EN</Market>
+            ....
         </Markets>
         <RoomCandidates>
             <RoomCandidate id = "1">
@@ -83,6 +86,14 @@ is closed.
                     <Pax age = "30" id = "2"/>
                 </Paxes>
             </RoomCandidate>
+            <RoomCandidate id = "2">
+                <Paxes>
+                    <Pax age = "35" id = "1"/>
+                    <Pax age = "42" id = "2"/>
+                    <Pax age = "5" id = "3"/>
+                </Paxes>
+            </RoomCandidate>
+            ....
         </RoomCandidates>
     </AvailRQ>
 ~~~
@@ -98,8 +109,8 @@ is closed.
 | CancellationPolicies 			| 1     	| Boolean	| Indicates if you want to receive the cancellation policies in AvailRS, as long as the supplier returns it in this method (see StaticConfiguration).	|
 | OnRequest            			| 1     	| Boolean	| Indicates if you want to receive the onrequest options in AvailRS, as long as the supplier returns it in this method (see StaticConfiguration).		|
 | BusinessRules        			| 1            	|		| Indicates the business rules the client wants to apply in availability, as long as the supplier returns it in this method (see StaticConfiguration).	|
-| AvailDestinations/Destination		| 1..n         	|		| Contains the list of destinations filters (hotels or cities or zones or geocodes).	|
-| @type           			| 1     	| String	| Destination type (HOT, CTY, ZON, GEO). Clarification: ZONs contains CTYs. ZONs are higher nodes and CTY are lower nodes.  |
+| AvailDestinations/Destination		| 1..n         	|		| Contains the list of destinations filters (hotels or cities or zones or geocodes). The number of Destinations is defined in StaticConfiguration.	|
+| @type           			| 1     	| String	| Destination type (HOT, CTY, ZON, GEO). Clarification: ZONs contains CTYs. ZONs are higher nodes and CTY are lower nodes. It is not possible to mix types of destinations in the same request.  |
 | @code           			| 1     	| String	| Native destination code as returned by supplier in *HotelList* or *AvailDestinationTree*.	|
 | StartDate            			| 1     	| String	| 'Search from' date.						|
 | EndDate              			| 1     	| String	| 'Search til' date.						|
