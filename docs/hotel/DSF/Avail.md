@@ -143,6 +143,9 @@ is closed.
                       <Beds sharedBed = "false">
                         <Bed numberOfBeds = "1" type = "Doble"/>
                       </Beds>
+                      <Features>
+                         <Feature code = "Double with spa"/>
+                      </Features>
                       <DailyPrices>
                         <DailyPrice effectiveDate = "28/01/2014" expireDate = "29/01/2014">
                           <Price
@@ -362,6 +365,9 @@ Currently, the client can configure the following BusinessRules:
 | MealPlans/MealPlan/Options /Option/Rooms/Room /Beds/Bed | 0..n | 	| Identifies types of beds.					|
 | @numberOfBeds 			| 0..1 		| String 	| Indicates number of beds in the room.				|
 | @type 				| 0..1 		| String 	| Indicates the type of bed.					|
+| MealPlans/MealPlan/Options /Option/Rooms/Room /Features | 0..1 | 	| Features of this room (features list).	| 
+| MealPlans/MealPlan/Options /Option/Rooms/Room /Features/Feature | 1..n | 	| Detail of feature	| 
+|@code   | 1 | String| Feature code or text|
 | MealPlans/MealPlan/Options /Option/Rooms/Room /DailyPrices | 0..1 | 	| Specifies daily price, as long as the supplier returns it in this method (see StaticConfiguration in order to verify if a supplier implements it).	| 
 | MealPlans/MealPlan/Options /Option/Rooms/Room /DailyPrices/DailyPrice | 1..n | | Specifies the price for each day.			|
 | @effectiveDate 			| 1 		| String 	| Start date in which the price becomes effective.		|
