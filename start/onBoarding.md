@@ -37,16 +37,15 @@ click on the link below:
 [API Documentation](http://tech.xmltravelgate.com/docs/index/)
 
 This documentation is actively being developed and expanded, so check back often!
-|
+
 
 Suppliers
 ---------
 
-This is our regularly updated list of suppliers:
+Click [here](https://goo.gl/cjqAGK) for our regularly updated list of suppliers. Please note you will need a google account to view the list.
 
-[Suppliers](https://goo.gl/cjqAGK)
 
-Please let us know which suppliers you want to connect to and which order you want to implement them in. Once they give you credentials to access their system, you hand those over to us so we can begin the development. At this stage, we'll also certify the integration with the supplier. Moreover, we will download the supplier's inventory to our system to be able to supply it to you in less than 3 minutes regardless of its size.
+Once you have decided which suppliers you want to connect to, you need to get in touch with them to arrange a commercial contract. The next step is to let us know who they are and which order you want to implement them in. Once they give you credentials to access their system, you hand those over to us so we can begin the development. At this stage, we'll also certify the integration with the supplier. Moreover, we will download the supplier's inventory to our system to be able to supply it to you in less than 3 minutes regardless of its size.
 
 
 You can request a new Integration at any time by filling out the form below. Just remember to **arrange a contract** with
@@ -73,8 +72,7 @@ API calls so you can download the inventory. These calls are called "batch" and 
 Testing
 -------
 
-Testing, testing and more testing. To make sure you don't have any surprises in the future please test your implementation thoroughly. If the supplier requires a certification, we will do the integration part, but it's up to you to certify your website or the data you return to your client. As usual, if you have any questions or need help please
-contact us at <support@xmltravelgate.com>.
+Testing, testing and more testing. To make sure you don't have any surprises in the future please test your implementation thoroughly. If the supplier requires a certification, we will do the integration part, but it's up to you to certify your website or the data you return to your client. As usual, if you have any questions or need help please contact us at <support@xmltravelgate.com>.
 
 |
 
