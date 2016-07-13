@@ -18,7 +18,7 @@ information (extracted from the supplier's documentation hierachy/fields descrip
 ### Request Format
 
 
-After entering the hotel code, you can set language filters. We recommend that the first call request is done without filters in order to ascertain which languages are provided by the supplier. 
+After entering the hotel code, you can set language filters. We recommend that the first call is done without filters in order to ascertain which languages are provided by the supplier. 
 
 To define language filters set the LanguageCode element with one of the following values:
 
@@ -865,7 +865,7 @@ A maximum time of **180000** milliseconds is permitted before the connection is 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
 | DescriptiveInfoExtendedRS/Hotel 	| 0..n  	|         	| Root node. Hotel sheet.			|
-| Code          			| 1     	| String  	| Specify the hotel code desired for the request.	                                        |
+| Code          			| 1     	| String  	| Specify the code for the hotel required.	                                        |
 | Name          			| 1     	| String  	| Hotel Name                                         |
 | Address       			| 1     	| String  	| Address                                      |
 | Town          			| 1     	| String  	| Town                                        |
@@ -901,7 +901,7 @@ A maximum time of **180000** milliseconds is permitted before the connection is 
 | PaymentOptions/Cards 			| 1     	|         	| List of cards allowed.                        |
 | PaymentOptions/Cards/Card 		| 1..n  	|         	| Type card allowed.                            |
 | @code>   				| 1     	| String  	| Code card (see in *Lists of Data* (VI,AX,BV,CA...)). |
-| ExclusiveDeal 			| 0..1  	| Boolean 	| Indicates that a Hotel is an Exclusive Deal. The provider has formed partnerships with select Hotels in order to bring you list rates and superior prime availability in locations. |
+| ExclusiveDeal 			| 0..1  	| Boolean 	| Indicates that a Hotel is an Exclusive Deal.|
 | NumberOfRooms 			| 0..1  	| Integer 	| Total rooms of hotel.   	                |
 | HotelAttributes 			| 0..1  	|         	|                                               |
 | HotelAttributes/Attributes 		| 0..1  	| Attributes 	|                                               |
@@ -928,9 +928,9 @@ A maximum time of **180000** milliseconds is permitted before the connection is 
 ### Response Format
 
 
-The result retrieves the details of the hotel requested:
+The result retrieves the details for the hotel requested:
 
--   Hotel Summary (standard for all providers).
+-   Hotel Summary (standard for all suppliers).
 -   Hotel Attributes.
 -   Hotel Descriptions.
 -   Hotel Medias.
@@ -944,7 +944,7 @@ The result retrieves the details of the hotel requested:
 ### Hotel Summary
 
 
-Typified hotel information from the provider.
+Defines the hotel information received from the supplier.
 
 **Property Type** :
 
