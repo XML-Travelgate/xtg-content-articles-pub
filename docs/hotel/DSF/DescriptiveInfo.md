@@ -11,15 +11,14 @@ permalink: /docs/hotel/DSF/DescriptiveInfo
 
 
 This method returns the details of a hotel (pictures, descriptions ...)
-for a given language.
+in a given language.
 
 
 
 ### Request Format
 
 
-The request just requires the hotel code and language code (ISO-639-1) (
-this is specified within the *source*--\>*languageCode*).
+The request just requires the hotel code and language code (ISO-639-1) - this is specified within the *source*--\>*languageCode*).
 
 
 
@@ -203,7 +202,7 @@ is **180000** milliseconds.
 | Town       				| 1    		| String	| Town.    							|
 | ZipCode    				| 1    		| String	| ZipCode.							|
 | CountryISOCode			| 1    		| String	| Country ISOCode.						|
-| AvailDestination			| 0..1       	|		| Avail destination (will be returned only if requested in Avail, and the type is CTY).  |
+| AvailDestination			| 0..1       	|		| Avail destination (will only be returned if requested in Avail, and the type is CTY).  |
 | @code      				| 1    		| String	| Destination code.						|
 | @name      				| 1    		| String	| Destination name. 						|
 | GeographicDestination			| 1          	|		| Geographic destination.					|
