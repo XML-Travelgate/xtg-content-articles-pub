@@ -126,6 +126,7 @@ is closed.
 | Locators/Client			| 0..1 		| String	| Client locator.				|
 | Locators/Provider			| 0..1 		| String	| Supplier locator.				|
 | Hotel      				| 0..1       	|		| Hotel reservation.				|
+| Hotel/Code 				| 1 		| String	| Hotel Code.					|
 | Hotel/Name 				| 0..1 		| String	| Hotel Name.					|
 | Hotel/City 				| 0..1 		| String	| Hotel city.					|
 | Hotel/CreationDate			| 0..1 		| String 	| Date of booking.    			|
@@ -133,7 +134,7 @@ is closed.
 | Hotel/EndDate				| 1    		| String	| Check out date.				|
 | Hotel/MealPlanCode			| 0..1 		| String	| Booking Mealplan code.			|
 | Hotel/Holder				| 0..1 		| String	| Reservation Holder .				|
-| @name>				| 1    		| String	| Holder name.					|
+| @name				| 1    		| String	| Holder name.					|
 | @surname				| 1    		| String	| Holder surname.				|
 | Hotel/Price				| 1    		| String	| Price of the reservation.   				|
 | @currency				| 1    		| String	|		Displays the currency provided by the supplier				|
