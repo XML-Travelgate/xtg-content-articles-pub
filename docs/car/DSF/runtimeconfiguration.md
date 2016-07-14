@@ -1,6 +1,7 @@
 ---
 title: Run Time Configuration
 keywords: transfers, data structure, run time configuration
+search: Car - Data Structure - Run Time Configuration
 sidebar: mydoc_sidebar
 permalink: /docs/car/DSF/runtimeconfiguration
 ---

@@ -1,6 +1,7 @@
 ---
 title: Car API Docs''s documentation!
 keywords: index
+search: Car - Index
 sidebar: mydoc_sidebar
 permalink: /docs/car/index
 ---

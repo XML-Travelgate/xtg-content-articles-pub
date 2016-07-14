@@ -1,6 +1,7 @@
 ---
 title: Code Lists
 keywords: transfers, data structure, code lists, lists
+search: Car - Data Structure - Code Lists
 sidebar: mydoc_sidebar
 permalink: /docs/car/DSF/code-lists
 ---

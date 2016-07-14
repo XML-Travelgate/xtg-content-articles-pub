@@ -1,6 +1,7 @@
 ---
 title: Availability
 keywords: transfers, data structure, availability
+search: Car - Data Structure - Availability
 sidebar: mydoc_sidebar
 permalink: /docs/car/DSF/avail
 ---

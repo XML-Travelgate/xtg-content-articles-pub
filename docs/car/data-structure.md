@@ -1,6 +1,7 @@
 ---
 title: Data Structure
 keywords: transfers, data structure
+search: Car - Data Structure
 sidebar: mydoc_sidebar
 permalink: /docs/car/data-structure
 ---

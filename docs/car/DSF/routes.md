@@ -1,6 +1,7 @@
 ---
 title: Routes (Offices)
 keywords: transfers, data structure, routes, offices
+search: Car - Data Structure - Routes (Offices)
 sidebar: mydoc_sidebar
 permalink: /docs/car/DSF/routes
 ---

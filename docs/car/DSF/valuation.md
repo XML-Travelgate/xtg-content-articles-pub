@@ -1,6 +1,7 @@
 ---
 title: OTA VehRetRes (Get Booking Details)
 keywords: transfers, data structure, valuation
+search: Car - Data Structure - OTA VehRetRes (Get Booking Details)
 sidebar: mydoc_sidebar
 permalink: /docs/car/DSF/valuation
 ---

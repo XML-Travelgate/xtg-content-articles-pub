@@ -1,6 +1,7 @@
 ---
 title: Cancel Booking
 keywords: transfers, data structure, cancel booking, cancellation
+search: Car - Data Structure - Cancel Booking
 sidebar: mydoc_sidebar
 permalink: /docs/car/DSF/cancel
 ---

@@ -1,6 +1,7 @@
 ---
 title: Booking
 keywords: transfers, data structure, booking
+search: Car - Data Structure - Booking
 sidebar: mydoc_sidebar
 permalink: /docs/car/DSF/reservation
 ---

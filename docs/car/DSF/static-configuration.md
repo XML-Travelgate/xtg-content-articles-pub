@@ -1,6 +1,7 @@
 ---
 title: Static Configuration
 keywords: transfers, data structure, static configuration
+search: Car - Data Structure - Static Configuration
 sidebar: mydoc_sidebar
 permalink: /docs/car/DSF/static-configuration
 ---
