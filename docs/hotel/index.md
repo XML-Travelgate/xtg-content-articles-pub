@@ -1,6 +1,7 @@
 ---
 title: Hotel API Documentation
 keywords: index
+search: Hotel - Index
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/index
 ---

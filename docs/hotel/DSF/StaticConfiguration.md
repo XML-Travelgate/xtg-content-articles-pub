@@ -1,6 +1,7 @@
 ---
 title: StaticConfiguration
 keywords: hotel, data structure, static configuration, static
+search: Hotel - Data Structure - StaticConfiguration
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/DSF/StaticConfiguration
 ---

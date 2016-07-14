@@ -1,6 +1,7 @@
 ---
 title: Avail
 keywords: hotel, data structure, avail
+search: Hotel - Data Structure - Avail
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/DSF/Avail
 ---

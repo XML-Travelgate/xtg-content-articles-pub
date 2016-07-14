@@ -1,6 +1,7 @@
 ---
 title: ReservationList
 keywords: hotel, data structure, reservation
+search: Hotel - Data Structure - ReservationList
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/DSF/ReservationList
 ---

@@ -1,6 +1,7 @@
 ---
 title: HotelList
 keywords: hotel, data structure, hotel list, list
+search: Hotel - Data Structure - HotelList
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/DSF/HotelList
 ---

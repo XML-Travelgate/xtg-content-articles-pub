@@ -1,6 +1,7 @@
 ---
 title: ModifyReservation
 keywords: hotel, data structure, modify reservation
+search: Hotel - Data Structure - ModifyReservation
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/DSF/ModifyReservation
 ---

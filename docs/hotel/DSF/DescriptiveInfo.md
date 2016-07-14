@@ -1,6 +1,7 @@
 ---
 title: DescriptiveInfo
 keywords: hotel, data structure, descriptive, descriptive info, info
+search: Hotel - Data Structure - DescriptiveInfo
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/DSF/DescriptiveInfo
 ---

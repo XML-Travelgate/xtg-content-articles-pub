@@ -1,6 +1,7 @@
 ---
 title: Change Log
 keywords: intro
+search: Hotel - Change Log
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/change-log
 ---

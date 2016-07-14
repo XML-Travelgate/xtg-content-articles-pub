@@ -1,6 +1,7 @@
 ---
 title: ModifyValuation
 keywords: hotel, data structure, modify valuation
+search: Hotel - Data Structure - ModifyValuation
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/DSF/ModifyValuation
 ---

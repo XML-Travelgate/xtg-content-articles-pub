@@ -1,6 +1,7 @@
 ---
 title: CurrencyList
 keywords: hotel, data structure, currency list, list
+search: Hotel - Data Structure - CurrencyList
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/DSF/CurrencyList
 ---

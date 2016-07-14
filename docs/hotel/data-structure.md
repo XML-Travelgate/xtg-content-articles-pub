@@ -1,6 +1,7 @@
 ---
 title: Data Structure
 keywords: common elements, elements, hotel
+search: Hotel - Data Structure
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/data-structure
 ---

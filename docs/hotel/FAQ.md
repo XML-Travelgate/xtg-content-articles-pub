@@ -1,6 +1,7 @@
 ---
 title: Frequently Asked Questions
 keywords: intro
+search: Hotel - FAQ
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/FAQ
 ---

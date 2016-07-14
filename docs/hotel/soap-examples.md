@@ -1,6 +1,7 @@
 ---
 title: SOAP Examples
 keywords: hotel, soap, examples
+search: Hotel - SOAP Examples
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/soap-examples
 ---

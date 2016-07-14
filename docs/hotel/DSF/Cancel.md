@@ -1,6 +1,7 @@
 ---
 title: Cancel
 keywords: hotel, data structure, cancel
+search: Hotel - Data Structure - Cancel
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/DSF/Cancel
 ---

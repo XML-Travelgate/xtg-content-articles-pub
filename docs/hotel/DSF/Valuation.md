@@ -1,6 +1,7 @@
 ---
 title: Valuation
 keywords: hotel, data structure, valuation
+search: Hotel - Data Structure - Valuation
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/DSF/Valuation
 ---
