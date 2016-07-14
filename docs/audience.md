@@ -1,6 +1,7 @@
 ---
 title: Audience
 keywords: audience
+search: Audience
 sidebar: mydoc_sidebar
 permalink: /docs/audience/
 ---

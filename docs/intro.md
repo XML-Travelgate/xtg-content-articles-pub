@@ -1,6 +1,7 @@
 ---
 title: Intro
 keywords: intro
+search: Intro
 sidebar: mydoc_sidebar
 permalink: /docs/intro/
 ---

@@ -1,6 +1,7 @@
 ---
 title: Anatomy of Request
 keywords:
+search: Anatomy of Request
 sidebar: mydoc_sidebar
 permalink: /docs/anatomy-request/
 ---

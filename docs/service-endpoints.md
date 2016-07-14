@@ -1,6 +1,7 @@
 ---
 title: Service Endpoints
 keywords: service endpoints, intro
+search: Service Endpoints
 sidebar: mydoc_sidebar
 permalink: /docs/service-endpoints/
 ---

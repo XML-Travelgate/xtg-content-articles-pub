@@ -1,6 +1,7 @@
 ---
 title: Documents goals
 keywords: "documents, documents goals, intro"
+search: Documents Goals
 published: true
 sidebar: mydoc_sidebar
 permalink: /docs/documents-goals/
