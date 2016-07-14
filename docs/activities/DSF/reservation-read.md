@@ -1,6 +1,7 @@
 ---
 title: Reservation Read
 keywords: activities, data structure, reservation read
+search: Activities - Data Structure - Reservation Read
 sidebar: mydoc_sidebar
 permalink: /docs/activities/DSF/reservation-read
 ---

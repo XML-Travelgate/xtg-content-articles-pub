@@ -1,6 +1,7 @@
 ---
 title: Valuation
 keywords: activities, data structure, valuation
+search: Activities - Data Structure - Valuation
 sidebar: mydoc_sidebar
 permalink: /docs/activities/DSF/valuation
 ---

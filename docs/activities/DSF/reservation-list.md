@@ -1,6 +1,7 @@
 ---
 title: Reservation List
 keywords: activities, data structure, reservation list
+search: Activities - Data Structure - Reservation List
 sidebar: mydoc_sidebar
 permalink: /docs/activities/DSF/reservation-list
 ---

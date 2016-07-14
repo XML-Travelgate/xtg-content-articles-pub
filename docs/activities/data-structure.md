@@ -1,6 +1,7 @@
 ---
 title: Data Structure
 keywords: activities, data structure
+search: Activities - Data Structure
 sidebar: mydoc_sidebar
 permalink: /docs/activities/data-structure
 ---

@@ -1,6 +1,7 @@
 ---
 title: Reservation
 keywords: activities, data structure, reservation
+search: Activities - Data Structure - Reservation
 sidebar: mydoc_sidebar
 permalink: /docs/activities/DSF/reservation
 ---

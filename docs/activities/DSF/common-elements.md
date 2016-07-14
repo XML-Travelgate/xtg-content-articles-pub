@@ -1,6 +1,7 @@
 ---
 title: Common Elements
 keywords: activities, data structure, common elements
+search: Activities - Data Structure - Common Elements
 sidebar: mydoc_sidebar
 permalink: /docs/activities/DSF/common-elements
 ---

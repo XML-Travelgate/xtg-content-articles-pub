@@ -1,6 +1,7 @@
 ---
 title: Run Time Configuration
 keywords: activities, data structure, run time configuration
+search: Activities - Data Structure - Run Time Configuration
 sidebar: mydoc_sidebar
 permalink: /docs/activities/DSF/runtimeconfiguration
 ---

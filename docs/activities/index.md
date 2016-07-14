@@ -1,6 +1,7 @@
 ---
 title: Activities API Docs''s documentation!
 keywords: index activities
+search: Activities - Index
 sidebar: mydoc_sidebar
 permalink: /docs/activities/index
 ---

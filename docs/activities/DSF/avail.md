@@ -1,6 +1,7 @@
 ---
 title: Avail
 keywords: activities, data structure, avail
+search: Activities - Data Structure -  Avail
 sidebar: mydoc_sidebar
 permalink: /docs/activities/DSF/avail
 ---

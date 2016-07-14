@@ -1,6 +1,7 @@
 ---
 title: Cancel
 keywords: activities, data structure, cancel
+search: Activities - Data Structure - Cancel
 sidebar: mydoc_sidebar
 permalink: /docs/activities/DSF/cancel
 ---
