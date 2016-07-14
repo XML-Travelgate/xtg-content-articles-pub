@@ -1,6 +1,7 @@
 ---
 title: Messages
 keywords: hotel-push, messages
+search: Hotel-Push - Messages
 sidebar: mydoc_sidebar
 permalink: /docs/hotel-push/messages
 ---

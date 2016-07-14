@@ -1,6 +1,7 @@
 ---
 title: Hotel PUSH API Docs''s documentation!
 keywords: index
+search: Hotel-Push - Index
 sidebar: mydoc_sidebar
 permalink: /docs/hotel-push/index
 ---

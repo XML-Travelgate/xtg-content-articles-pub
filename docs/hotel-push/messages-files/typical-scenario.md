@@ -1,6 +1,7 @@
 ---
 title: Typical Exchange Message Scenario
 keywords: hotel-push, messages, messages files, typical scenario
+search: Hotel-Push - MessagesFiles - Typical Exchange Message Scenario
 sidebar: mydoc_sidebar
 permalink: /docs/hotel-push/messages-files/typical-scenario
 ---

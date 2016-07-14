@@ -1,6 +1,7 @@
 ---
 title: FAQ
 keywords: hotel-push, faq
+search: Hotel-Push - FAQ
 sidebar: mydoc_sidebar
 permalink: /docs/hotel-push/FAQ
 ---

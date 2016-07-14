@@ -1,6 +1,7 @@
 ---
 title: Full Retrieve Messages
 keywords: hotel-push, full messages, full retrieve messages
+search: Hotel-Push - FullFiles - Full Retrieve Messages
 sidebar: mydoc_sidebar
 permalink: /docs/hotel-push/full-files/full-retrieve-messages
 ---

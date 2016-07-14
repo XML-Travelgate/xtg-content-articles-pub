@@ -1,6 +1,7 @@
 ---
 title: Full Body Messages
 keywords: hotel-push, full body messages
+search: Hotel-Push - Full Body Messages
 sidebar: mydoc_sidebar
 permalink: /docs/hotel-push/full-messages
 ---

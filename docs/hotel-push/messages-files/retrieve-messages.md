@@ -1,6 +1,7 @@
 ---
 title: Retrieve Messages
 keywords: hotel-push, messages, messages files, retrieve messages
+search: Hotel-Push - MessagesFiles - Retrieve Messages
 sidebar: mydoc_sidebar
 permalink: /docs/hotel-push/messages-files/retrieve-messages
 ---

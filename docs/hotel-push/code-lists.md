@@ -1,6 +1,7 @@
 ---
 title: Code Lists
 keywords: hotel-push, code lists
+search: Hotle-Push - Code Lists
 sidebar: mydoc_sidebar
 permalink: /docs/hotel-push/code-lists
 ---

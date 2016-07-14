@@ -1,6 +1,7 @@
 ---
 title: Notify Messages
 keywords: hotel-push, messages, messages files, notify messages
+search: Hotel-Push - MessagesFiles - Notify Messages
 sidebar: mydoc_sidebar
 permalink: /docs/hotel-push/messages-files/notify-messages
 ---

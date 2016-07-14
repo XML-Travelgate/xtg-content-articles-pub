@@ -1,6 +1,7 @@
 ---
 title: Price Charging Types
 keywords: hotel-push, price charging types, types
+search: Hotel-Push - Price Charging Types
 sidebar: mydoc_sidebar
 permalink: /docs/hotel-push/price-types
 ---

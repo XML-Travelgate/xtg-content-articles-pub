@@ -1,6 +1,7 @@
 ---
 title: Connectivity
 keywords: hotel-push, connectivity
+search: Hotel-Push - Connectivity
 sidebar: mydoc_sidebar
 permalink: /docs/hotel-push/connectivity
 ---

@@ -1,6 +1,7 @@
 ---
 title: Certification Process
 keywords: hotel-push, certification process
+search: Hotel-Push - Certification Process
 sidebar: mydoc_sidebar
 permalink: /docs/hotel-push/certification
 ---
