@@ -1,6 +1,7 @@
 ---
 title: Cancellation
 keywords: transportation, data structure, flights, cancellation
+search: Transportation - Flights - Data Structure - Cancellation
 sidebar: mydoc_sidebar
 permalink: /docs/transportation/DSF/flights/cancel
 ---

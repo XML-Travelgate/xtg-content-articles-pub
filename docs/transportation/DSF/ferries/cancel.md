@@ -1,6 +1,7 @@
 ---
 title: Cancellation
 keywords: transportation, data structure, ferries, cancellation
+search: Transportation - Ferries - Data Structure - Cancellation
 sidebar: mydoc_sidebar
 permalink: /docs/transportation/DSF/ferries/cancel
 ---

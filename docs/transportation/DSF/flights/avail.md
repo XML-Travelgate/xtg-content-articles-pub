@@ -1,6 +1,7 @@
 ---
 title: Avail
 keywords: transportation, data structure, flights, avail
+search: Transportation - Flights - Data Structure - Avail
 sidebar: mydoc_sidebar
 permalink: /docs/transportation/DSF/flights/avail
 ---

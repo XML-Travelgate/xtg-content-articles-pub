@@ -1,6 +1,7 @@
 ---
 title: Flights Data Structure
 keywords: transportation, flights data structure
+search: Transportation - Flights Data Structure
 sidebar: mydoc_sidebar
 permalink: /docs/transportation/flights
 ---

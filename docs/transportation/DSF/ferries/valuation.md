@@ -1,6 +1,7 @@
 ---
 title: Valuation
 keywords: transportation, data structure, ferries, valuation
+search: Transportation - Ferries - Data Structure - Valuation
 sidebar: mydoc_sidebar
 permalink: /docs/transportation/DSF/ferries/valuation
 ---

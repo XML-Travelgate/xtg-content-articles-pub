@@ -1,6 +1,7 @@
 ---
 title: Reservation
 keywords: transportation, data structure, ferries, reservation
+search: Transportation - Ferries - Data Structure - Reservation
 sidebar: mydoc_sidebar
 permalink: /docs/transportation/DSF/ferries/reservation
 ---

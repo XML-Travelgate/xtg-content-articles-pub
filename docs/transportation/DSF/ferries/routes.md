@@ -1,6 +1,7 @@
 ---
 title: Routes
 keywords: transportation, data structure, ferries, routes
+search: Transportation - Ferries - Data Structure - Routes
 sidebar: mydoc_sidebar
 permalink: /docs/transportation/DSF/ferries/routes
 ---

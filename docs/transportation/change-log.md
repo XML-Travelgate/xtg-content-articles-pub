@@ -1,6 +1,7 @@
 ---
 title: Change Log
 keywords: transportation, change log
+search: Transportation - Change Log
 sidebar: mydoc_sidebar
 permalink: /docs/transportation/change-log
 ---

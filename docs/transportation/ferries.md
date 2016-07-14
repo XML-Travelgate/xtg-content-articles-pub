@@ -1,6 +1,7 @@
 ---
 title: Ferries Data Structure
 keywords: transportation, ferries data structure
+search: Transportation - Ferries Data Structure
 sidebar: mydoc_sidebar
 permalink: /docs/transportation/ferries
 ---

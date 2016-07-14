@@ -1,6 +1,7 @@
 ---
 title: RetrieveReservationList
 keywords: transportation, data structure, ferries, retrieve reservation list
+search: Transportation - Ferries - Data Structure - RetrieveReservationList
 sidebar: mydoc_sidebar
 permalink: /docs/transportation/DSF/ferries/retrieveReservationList
 ---

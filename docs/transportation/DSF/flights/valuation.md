@@ -1,6 +1,7 @@
 ---
 title: Valuation
 keywords: transportation, data structure, flights, valuation
+search: Transportation - Flights - Data Structure - Valuation
 sidebar: mydoc_sidebar
 permalink: /docs/transportation/DSF/flights/valuation
 ---

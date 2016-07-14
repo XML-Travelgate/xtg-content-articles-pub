@@ -1,6 +1,7 @@
 ---
 title: RetrieveReservationList
 keywords: transportation, data structure, flights, recover reserve, retrieve list, list, reservation
+search: Transportation - Flights - Data Structure - RetrieveReservationList
 sidebar: mydoc_sidebar
 permalink: /docs/transportation/DSF/flights/recover-reserve-list
 ---

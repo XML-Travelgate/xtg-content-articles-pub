@@ -1,6 +1,7 @@
 ---
 title: Availability
 keywords: transportation, data structure, ferries, availability
+search: Transportation - Ferries - Data Structure - Availability
 sidebar: mydoc_sidebar
 permalink: /docs/transportation/DSF/ferries/avail
 ---
