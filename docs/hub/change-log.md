@@ -1,6 +1,7 @@
 ---
 title: Change log
 keywords: intro, version
+search: Hub - Chenge Log
 sidebar: mydoc_sidebar
 permalink: /docs/hub/change-log
 ---

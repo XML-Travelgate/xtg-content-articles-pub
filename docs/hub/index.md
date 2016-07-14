@@ -1,6 +1,7 @@
 ---
 title: Hub API Documentation
 keywords: index
+search: Hub - Index
 sidebar: mydoc_sidebar
 permalink: /docs/hub/index
 ---

@@ -1,6 +1,7 @@
 ---
 title: Example Code
 keywords: example, codes
+search: Hub - Example Code
 sidebar: mydoc_sidebar
 permalink: /docs/hub/example-codes
 ---

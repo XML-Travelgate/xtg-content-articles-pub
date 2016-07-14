@@ -1,6 +1,7 @@
 ---
 title: Data Structure
 keywords: intro
+search: Hub - Data Structure
 sidebar: mydoc_sidebar
 permalink: /docs/hub/data-structure
 ---

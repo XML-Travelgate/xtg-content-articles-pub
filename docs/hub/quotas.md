@@ -1,6 +1,7 @@
 ---
 title: Hub Quotas
 keywords: intro
+search: Hub - Hub Quotas
 sidebar: mydoc_sidebar
 permalink: /docs/hub/quotas
 ---
