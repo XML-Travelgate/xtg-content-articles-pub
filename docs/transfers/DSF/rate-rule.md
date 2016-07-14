@@ -1,6 +1,7 @@
 ---
 title: RateRule (Pre-Booking)
 keywords: transfers, rate rule
+search: Transfers - Data Structure - RateRule (Pre-Booking)
 sidebar: mydoc_sidebar
 permalink: /docs/transfers/DSF/rate-rule
 ---

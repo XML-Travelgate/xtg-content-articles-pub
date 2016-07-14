@@ -1,6 +1,7 @@
 ---
 title: GetVehicles
 keywords: transfers, get vehicles, vehicles
+search: Transfers - Data Structure - GetVehicles
 sidebar: mydoc_sidebar
 permalink: /docs/transfers/DSF/GetVehicles
 ---

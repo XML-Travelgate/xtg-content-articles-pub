@@ -1,6 +1,7 @@
 ---
 title: Common Elements
 keywords: transfers, common elements, elements
+search: Transfers - Data Structure - Common Elements
 sidebar: mydoc_sidebar
 permalink: /docs/transfers/DSF/common-elements
 ---

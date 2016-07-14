@@ -1,6 +1,7 @@
 ---
 title: GetSupplierTransferTypes
 keywords: transfers, get supplier transfers, transfers types
+search: Transfers - Data Structure - GetSupplierTransferTypes
 sidebar: mydoc_sidebar
 permalink: /docs/transfers/DSF/GetSupplierTransferTypes
 ---

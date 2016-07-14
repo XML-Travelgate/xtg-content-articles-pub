@@ -1,6 +1,7 @@
 ---
 title: DestinationsTree
 keywords: transfers, destination tree, destination
+search: Transfers - Data Structure - DestinationTree
 sidebar: mydoc_sidebar
 permalink: /docs/transfers/DSF/destionationtree
 ---

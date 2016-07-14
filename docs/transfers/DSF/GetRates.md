@@ -1,6 +1,7 @@
 ---
 title: GetRates
 keywords: transfers, get rates, rates
+search: Transfers - Data Structure - GetRates
 sidebar: mydoc_sidebar
 permalink: /docs/transfers/DSF/GetRates
 ---

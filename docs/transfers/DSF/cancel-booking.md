@@ -1,6 +1,7 @@
 ---
 title: CancelBooking
 keywords: transfers, cancel booking
+search: Transfers - Data Structure - CancelBooking
 sidebar: mydoc_sidebar
 permalink: /docs/transfers/DSF/cancel-booking
 ---

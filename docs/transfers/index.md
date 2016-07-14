@@ -1,6 +1,7 @@
 ---
 title: Transfers API Docs''s documentation!
 keywords: index
+search: Transfers - Index
 sidebar: mydoc_sidebar
 permalink: /docs/transfers/index
 ---

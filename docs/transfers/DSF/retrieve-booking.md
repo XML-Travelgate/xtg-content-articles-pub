@@ -1,6 +1,7 @@
 ---
 title: RetrieveBooking
 keywords: transfers, retrieve booking
+search: Transfers - Data Structure - RetrieveBooking
 sidebar: mydoc_sidebar
 permalink: /docs/transfers/DSF/retrieve-booking
 ---

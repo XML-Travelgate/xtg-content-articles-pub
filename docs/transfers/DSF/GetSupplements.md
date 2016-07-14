@@ -1,6 +1,7 @@
 ---
 title: GetSupplements
 keywords: transfers, get supplements, supplements
+search: Transfers - Data Structure - GetSupplements
 sidebar: mydoc_sidebar
 permalink: /docs/transfers/DSF/GetSupplements
 ---

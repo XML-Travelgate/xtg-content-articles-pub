@@ -1,6 +1,7 @@
 ---
 title: Availability
 keywords: transfers, availability, avail
+search: Transfers - Data Structure - Availability
 sidebar: mydoc_sidebar
 permalink: /docs/transfers/DSF/avail
 ---

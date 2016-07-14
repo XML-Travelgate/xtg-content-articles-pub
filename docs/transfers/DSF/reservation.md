@@ -1,6 +1,7 @@
 ---
 title: Booking
 keywords: transfers, booking
+search: Transfers - Data Structure - Booking
 sidebar: mydoc_sidebar
 permalink: /docs/transfers/DSF/reservation
 ---

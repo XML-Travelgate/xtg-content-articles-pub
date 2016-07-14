@@ -1,6 +1,7 @@
 ---
 title: Change Log
 keywords: transfers, change log
+search: Transfers - Chenge Log
 sidebar: mydoc_sidebar
 permalink: /docs/transfers/change-log
 ---

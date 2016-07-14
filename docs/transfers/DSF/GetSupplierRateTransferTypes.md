@@ -1,6 +1,7 @@
 ---
 title: GetSupplierRateTransfersTypes
 keywords: transfers, get supplier rates, transfers types
+search: Transfers - Data Structure - GetSupplierRateTransfersTypes
 sidebar: mydoc_sidebar
 permalink: /docs/transfers/DSF/GetSupplierRateTransfersTypes
 ---

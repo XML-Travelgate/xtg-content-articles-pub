@@ -1,6 +1,7 @@
 ---
 title: HotelList
 keywords: transfers, hotel list, list
+search: Transfers - Data Structure - HotelList
 sidebar: mydoc_sidebar
 permalink: /docs/transfers/DSF/hotel-list
 ---

@@ -1,6 +1,7 @@
 ---
 title: GetTransferTypes
 keywords: transfers, get transfers, transfers types
+search: Transfers - Data Structure - GetTransferTypes
 sidebar: mydoc_sidebar
 permalink: /docs/transfers/DSF/GetTransferTypes
 ---
