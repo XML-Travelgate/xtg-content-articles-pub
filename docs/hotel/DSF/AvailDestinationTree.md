@@ -19,7 +19,7 @@ This method returns the tree of destinations accessible from the call
 ### Request Format
 
 
-The request does not require any elements empty request.
+The request does not require any elements - it's an empty request.
 
 
 
@@ -34,8 +34,7 @@ sub-destinations.
 ### Remarks
 
 
-The maximum time, that is permitted in our system, before the connection
-is closed, is of **240000** milliseconds.
+The maximum time permitted in our system before the connection is closed is **240000** milliseconds.
 
 
 
@@ -118,16 +117,11 @@ is closed, is of **240000** milliseconds.
 ~~~
 
 
-There is one primordial definition that needs to be clear to understand
-the difference in city and zone: types of nodes.
+It is essential to understand types of nodes in order to definition in order to discern between city and zone. 
 
-There are two types of nodes. First there is the parent node, also named
-DestinationTree node, and the child node, also named Destination leaf
-node. A parent can have zero to n children ( 0..n ) and a child will
-have only one parent ( 1..1 ). For example, the DestinationTree code =
-"ES" is the parent of the DestinationLeaf code = "BAL", "AST" and "AND"
-and at the same time DestinationTree code = "BAL" is also a the parent
-of the DestinationLeaf code = "PAL0" and "ALC0", and so on.
+There are two types of nodes: the parent node, also called DestinationTree node, and the child node, also named Destination leaf
+node. A parent can have zero to n children ( 0..n ) and a child can only one parent ( 1..1 ). For example, the DestinationTree code =
+"ES" is the parent of the DestinationLeaf code = "BAL", "AST" and "AND" and at the same time DestinationTree code = "BAL" is also a the parent of the DestinationLeaf code = "PAL0" and "ALC0", and so on.
 
 Therefore:
 
@@ -137,6 +131,6 @@ Therefore:
 ![Diagrama1](/articles-pub/docs/hotel/images/diagrama2.png)
 
 
-**Note:** *All of the zones that appear in this particular call ( DestinationsTree call ) are all attackable nodes on an availability level.*
+**Note:** *All of the zones that appear in this particular call (DestinationsTree) are all allowed in availability.*
 
 
