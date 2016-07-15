@@ -138,6 +138,7 @@ The maximum time permitted in our system before the connection is closed is **24
 
 
 There are two essential definitions which needs to be clear in order to understand the difference between city and zone:
+
 1. types of nodes
 2. if these nodes are accessible or not.
 
