@@ -117,7 +117,7 @@ The maximum time permitted in our system before the connection is closed is **24
 ~~~
 
 
-It is essential to understand types of nodes in order to definition in order to discern between city and zone. 
+It is essential to understand types of nodes in order to discern between city and zone. 
 
 There are two types of nodes: the parent node, also called DestinationTree node, and the child node, also named Destination leaf
 node. A parent can have zero to n children ( 0..n ) and a child can only one parent ( 1..1 ). For example, the DestinationTree code =
@@ -131,6 +131,6 @@ Therefore:
 ![Diagrama1](/articles-pub/docs/hotel/images/diagrama2.png)
 
 
-**Note:** *All of the zones that appear in this particular call (DestinationsTree) are all allowed in availability.*
+**Note:** *All of the zones that appear in this particular call (DestinationsTree) are all accessible from availability.*
 
 
