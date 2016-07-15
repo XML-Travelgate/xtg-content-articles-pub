@@ -11,10 +11,7 @@ permalink: /docs/hotel/DSF/GeographicDestinationTree
 ### Method Goals
 
 
-This method returns the provider's geographic tree where each node
-indicates whether the call is accessible from availability which is
-indicate with a parameter with values of true and false. The main
-difference between the methods GeographicalTree and DestinationTree is
+This method returns the supplier's geographic tree where each node indicates whether the request is accessible from availability, indicated with a parameter with values true or false. The main difference between the methods GeographicalTree and DestinationTree is
 that GeographicalTree has this boolean parameter.
 
 
@@ -37,8 +34,7 @@ sub-destinations.
 ### Remarks
 
 
-The maximum time, that is permitted in our system, before the connection
-is closed, is of **240000** milliseconds.
+The maximum time permitted in our system before the connection is closed is **240000** milliseconds.
 
 
 
@@ -141,30 +137,20 @@ is closed, is of **240000** milliseconds.
 ~~~
 
 
-There are two primordial definitions that needs to be clear to
-understand the difference in city and zone: types of nodes and if these
-nodes are attackable or not.
+There are two essential definitions which needs to be clear in order to understand the difference between city and zone:
+1. types of nodes
+2. if these nodes are accessible or not.
 
-Lets start with the two types of nodes. First there is the parent node,
-also named DestinationTree node, and the child node, also named
-Destination leaf node. A parent can have zero to n children ( 0..n ) and
-a child will have only one parent ( 1..1 ). For example, the
-DestinationTree code = "ES" is the parent of the DestinationLeaf code =
-"BAL", "AST" and "AND" and at the same time DestinationTree code = "BAL"
-is also a the parent of the DestinationLeaf code = "PAL0" and "ALC0",
-and so on.
+Let's start with the two types of nodes. There are two types of nodes: the parent node, also called DestinationTree node, and the child node, also named Destination leaf node. A parent can have zero to n children ( 0..n ) and a child can only one parent ( 1..1 ). For example, the DestinationTree code = "ES" is the parent of the DestinationLeaf code = "BAL", "AST" and "AND" and at the same time DestinationTree code = "BAL" is also a the parent of the DestinationLeaf code = "PAL0" and "ALC0", and so on.
 
-Attackable on an **availability** level means that it is possible doing
-an avail for that zone. A node is attackable when the tag avail is set
-as true, if it is set as false the node is not attackable and
-consequently it is not available.
+Accessible on an **availability** level means that it is possible doing an avail for that zone. A node is accessible when the tag avail is set to true. If it is set as false the node is not accessible and consequently, not available.
 
 Therefore:
 
--   **City:** Lowest attackable node.
--   **Zone:** Not the lowest attackable node.
+-   **City:** Lowest accessible node.
+-   **Zone:** Not the lowest accessible node.
 
 ![Diagrama1](/articles-pub/docs/hotel/images/diagrama1.png)
 
- **Note:** *In rare occasions it is possible finding nodes lower than cities, which won't be attackable, but the standard scenario is not to find lower nodes than cities.*
+ **Note:** *In rare occasions it is possible finding nodes lower than cities, which won't be accessible, but the standard scenario is not to find lower nodes than cities.*
 
