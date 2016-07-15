@@ -42,7 +42,7 @@ This documentation is actively being developed and expanded, so check back often
 Suppliers
 ---------
 
-Click [here](https://goo.gl/cjqAGK) for our regularly updated list of suppliers. Please note you will need a google account to view the list.
+Click [here](https://docsend.com/view/ivxyn32) for our regularly updated list of suppliers.
 
 
 Once you have decided which suppliers you want to connect to, you need to get in touch with them to arrange a commercial contract. The next step is to let us know who they are and which order you want to implement them in. Once they give you credentials to access their system, you hand those over to us so we can begin the development. At this stage, we'll also certify the integration with the supplier. Moreover, we will download the supplier's inventory to our system to be able to supply it to you in less than 3 minutes regardless of its size.
