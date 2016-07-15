@@ -19,7 +19,7 @@ be used in the availability response.
 ### Request Format
 
 
-The request does not require any elements empty request.
+The request does not require any elements - empty request.
 
 
 
@@ -33,12 +33,9 @@ The result returns a list of *MealPlan*.
 ### Remarks
 
 
-The maximum time, that is permitted in our system, before the connection
-is closed, is of **240000** milliseconds.
+The maximum time permitted in our system before the connection is closed is  **240000** milliseconds.
 
-If the provider has more than 100 mealplan codes, or more than 20 codes
-for one single mealplan, this code will be mapped depending on the
-provider.
+If the supplier has more than 100 mealplan codes, or more than 20 codes for one single mealplan, this code will be mapped depending on the supplier.
 
 
 
