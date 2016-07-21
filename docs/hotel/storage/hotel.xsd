@@ -1,4 +1,4 @@
-﻿
+.
 <?xml version="1.0"?>
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="AvailRQ" nillable="true" type="AvailRQ" />
@@ -14,8 +14,9 @@
           <xs:element minOccurs="0" maxOccurs="1" name="StartDate" type="xs:string" />
           <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string" />
           <xs:element minOccurs="0" maxOccurs="1" name="Currency" type="xs:string" />
-          <xs:element minOccurs="0" maxOccurs="1" name="Nationality" type="xs:string" />		  
-          <xs:element minOccurs="0" maxOccurs="1" name="RoomCandidates" type="RoomCandidates" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Nationality" type="xs:string" />
+		  <xs:element minOccurs="0" maxOccurs="1" name="Markets" type="Markets" />		  
+          <xs:element minOccurs="0" maxOccurs="1" name="RoomCandidates" type="RoomCandidates" />		  
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -115,6 +116,11 @@
       <xs:enumeration value="GEO" />
     </xs:restriction>
   </xs:simpleType>
+  <xs:complexType name="Markets">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Market" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>  
   <xs:complexType name="RoomCandidates">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="RoomCandidate" type="RoomCandidate" />
@@ -243,6 +249,7 @@
     <xs:attribute name="code" type="xs:string" />
     <xs:attribute name="description" type="xs:string" />
     <xs:attribute name="nonRefundable" type="xs:boolean" />
+	<xs:attribute name="numberOfUnits" type="xs:integer" />
   </xs:complexType>
   <xs:complexType name="Price">
     <xs:attribute name="currency" type="xs:string" />
@@ -347,7 +354,7 @@
       <xs:element minOccurs="0" maxOccurs="1" name="Services" type="ArrayOfService" />
     </xs:sequence>
     <xs:attribute name="code" type="xs:string" />
-    <xs:attribute name="Description" type="xs:string" />
+    <xs:attribute name="description" type="xs:string" />
   </xs:complexType>
   <xs:complexType name="ArrayOfService">
     <xs:sequence>
@@ -473,7 +480,7 @@
       <xs:enumeration value="HotelSkiPassEquipment" />
       <xs:enumeration value="HotelSkiPassMeals" />
       <xs:enumeration value="HotelSkiPassEquipmentMeals" />
-      <xs:enumeration value="HotelActivity" />	  
+      <xs:enumeration value="HotelActivity" />	  	  
     </xs:restriction>
   </xs:simpleType>
    <xs:complexType name="Offers">
@@ -997,6 +1004,7 @@
   <xs:complexType name="Hotel">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="1" name="Code" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProviderCode" type="xs:string" />	  
       <xs:element minOccurs="0" maxOccurs="1" name="GiataId" type="GiataId" />
       <xs:element minOccurs="0" maxOccurs="1" name="GiataFormatCode" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
@@ -1070,7 +1078,7 @@
   </xs:complexType>
   <xs:complexType name="Picture">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="1" name="Code" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Code" type="xs:string" />	
       <xs:element minOccurs="0" maxOccurs="1" name="URL" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="Classification" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="Ordered" type="xs:string" />
@@ -1337,6 +1345,10 @@
           <xs:element minOccurs="0" maxOccurs="1" name="InformHoneymoonRate" type="xs:boolean" />	
           <xs:element minOccurs="0" maxOccurs="1" name="ImplementsProviderLocatorCancel" type="xs:boolean" />	
           <xs:element minOccurs="0" maxOccurs="1" name="ImplementsClientLocatorCancel" type="xs:boolean" />		  
+          <xs:element minOccurs="0" maxOccurs="1" name="NumMarketsAllowed" type="xs:boolean" />	
+          <xs:element minOccurs="0" maxOccurs="1" name="InformTiket" type="xs:boolean" />	
+          <xs:element minOccurs="0" maxOccurs="1" name="ImplementsDescriptiveInfoExtended" type="xs:boolean" />	
+          <xs:element minOccurs="0" maxOccurs="1" name="InformNumberOfUnits" type="xs:boolean" />			  
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1444,7 +1456,8 @@
       <xs:extension base="HotelBaseRQ">
         <xs:sequence>
 	      <xs:element minOccurs="0" maxOccurs="1" name="OnRequest" type="xs:boolean" />
-          <xs:element minOccurs="0" maxOccurs="1" name="Nationality" type="xs:string" />		  
+          <xs:element minOccurs="0" maxOccurs="1" name="Nationality" type="xs:string" />		
+		  <xs:element minOccurs="0" maxOccurs="1" name="Markets" type="Markets" />		  
 	      <xs:element minOccurs="0" maxOccurs="1" name="BlockOption" type="xs:boolean" />	 		  
           <xs:element minOccurs="0" maxOccurs="1" name="Reservation" type="Reservation" />
           <xs:element minOccurs="0" maxOccurs="1" name="Modifications" type="Modifications" />
