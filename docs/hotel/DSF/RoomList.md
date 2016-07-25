@@ -65,12 +65,12 @@ This message must be implemented solely in case the supplier does not return roo
     <RoomListRS>
         <RoomsInfo>
              <RoomInfo>
-                 <Code>DBLSTD</Code>
-                  <Name>Doble Estandard</Name>
+                 <Code>STD</Code>
+                  <Name>Standard</Name>
             </RoomInfo>
             <RoomInfo>
-                <Code>DBLSUP</Code>
-                <Name>Doble Superior</Name>
+                <Code>ST</Code>
+                <Name>Suite</Name>
             </RoomInfo>
                 ...
             <RoomInfo/>
@@ -85,8 +85,10 @@ This message must be implemented solely in case the supplier does not return roo
 
 | **Element**		| **Number**	| **Type**	| **Description**	|
 | --------------------- | ------------- | ------------- | --------------------- |
-| RoomListRS 		| 1          	|		| Root node.		|
-  
+| RoomListRS/RoomsInfo 		| 1          	|		| Root node, list of rooms		|
+|RoomInfo | 1..n ||Room info.|
+|RoomInfo/Code | 1 | String | Code. |
+|RoomInfo/Name | 1 | String | Name. |
 
 
 
