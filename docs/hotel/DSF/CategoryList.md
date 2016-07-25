@@ -11,8 +11,7 @@ permalink: /docs/hotel/DSF/CategoryList
 ### Method Goals
 
 
-This method aims to return a list of the available categories, which
-will be used in the list of hotels response.
+This method returns a list of categories (codes and descriptions) used in HotelList and DescriptiveInfo.
 
 
 
@@ -33,8 +32,7 @@ The result returns a list of *Category* .
 ### Remarks
 
 
-The maximum time, that is permitted in our system, before the connection
-is closed, is of **240000** milliseconds.
+The maximum time permitted in our system before the connection is closed is **240000** milliseconds.
 
 
 
@@ -66,11 +64,11 @@ is closed, is of **240000** milliseconds.
         <Categories>
             <Category>
                 <Code>3*</Code>
-                <Name>3 Estrellas</Name>
+                <Name>3 stars</Name>
             </Category>
             <Category>
                 <Code>3L</Code>
-                <Name>3 Llaves</Name>
+                <Name>3 keys</Name>
             </Category>
             ...
             <Category/>
