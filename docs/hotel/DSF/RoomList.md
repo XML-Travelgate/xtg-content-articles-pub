@@ -11,8 +11,7 @@ permalink: /docs/hotel/DSF/RoomList
 ### Method Goals
 
 
-This method aims to return a list of the available room codes which
-will be used in the availability response.
+This method aims to return a list of rooms, their codes as well as descriptions. 
 
 
 
