@@ -12,26 +12,25 @@ permalink: /docs/hotel/DSF/StaticConfiguration
 ### Method Goals
 
 
-This message provides information about the static configuration of the
-provider, to see and configure the provider in the best way.
+This method provides information about the static configuration of the
+supplier, in order to configure the supplier effectively.
 
 
 
 ### Request Format
 
 
-The request does not require any elements empty request.
+The request does not require any elements - empty request.
 
 
 
 ### Response Format
 
 
-The XML returned contains more elements on the configuration (number of
-hotels, the number of cities and the number of areas of availability, if
-the provider returns the cancellation policies, maximum number of
-distributions, maximum number of paxes in a distribution, release days,
-stay minimum, list of languages that allows ....).
+The XML response contains many elements of the supplier's configuration: number of
+hotels, number of cities and number of areas available, maximum number of
+*roomcandidate*, maximum number of paxes in a *roomcandidate*, release days,
+minimum stay, list of languages supported ...
 
 
 
@@ -162,85 +161,85 @@ stay minimum, list of languages that allows ....).
 | **Element**				| **Number**	| **Type**	| **Description**						|
 | ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
 | StaticConfigurationRS			| 1        	|		| Root node.							|
-| MaxNumberHotels      			| 1   		| Integer	| Maximum number of hotel that can be requested in a avail petition. |
-| MaxNumberCities      			| 1   		| Integer	| Maximum number of cities that can be requested in a avail petition. |
-| MaxNumberZones       			| 1   		| Integer	| Maximum number of zones that can be requested in a avail petition. |
-| MaxNumberGeoCodes    			| 1   		| Integer	| Maximum number of GeoCodes that can be requested in a avail petition.|
-| RequiredRoomList     			| 1   		| Boolean	| The provider has implemented a list of rooms, where the provider will return the description of the room in availability, not a mandatory call.	|
-| InformCancelPolicies 			| 1   		| Boolean	| The provider informs of the cancellation policies.		|
-| InformBindingPriceValuation		| 1   		| Boolean	| Informs if the price of the option in the response of valuation is binding.	 |
-| InformBindingPrice   			| 1   		| Boolean	| Provider returns binding PVPs in availability.		|
-| InformNRFValuation   			| 1   		| Boolean	| The provider can inform in valuation if the rate is non-refundable. |
-| InformNRFRate        			| 1   		| Boolean	| The provider can inform in availability if the rate is non-refundable. |
-| InformNRFRateByRoom   		| 1   		| Boolean	| The provider can inform in availability if the room is non-refundable. |
-| Inform55Rate         			| 1   		| Boolean	| The provider informs the options with rates of pax of 55 years old or over in availability.	|
-| InformPackageRate    			| 1   		| Boolean	| The provider informs the options with package rates in availability. These options cant be sold by separate, need to add a service (like a plane ticket).	|
-| InformExtraActivity  			| 1   		| Boolean	| The provider informs of the possible option type Hotel+entrance.  |
-| InformForfait        			| 1   		| Boolean	| The provider informs of the possible option type Hotel+Forfait.  |
-| RemarksValuation     			| 1   		| Boolean	| The provider informs of the important observation in policies, like per example, supplies paid in the hotel.	|
+| MaxNumberHotels      			| 1   		| Integer	| Maximum number of hotel that can be requested in an *AvailRQ*.|
+| MaxNumberCities      			| 1   		| Integer	| Maximum number of cities that can be requested in an *AvailRQ*.|
+| MaxNumberZones       			| 1   		| Integer	| Maximum number of zones that can be requested in an *AvailRQ*.|
+| MaxNumberGeoCodes    			| 1   		| Integer	| Maximum number of GeoCodes that can be requested in an *AvailRQ*.|
+| RequiredRoomList     			| 1   		| Boolean	| The supplier has implemented a list of rooms in which the room description is returned in availability.(not a mandatory call)|
+| InformCancelPolicies 			| 1   		| Boolean	| Returns cancellation policies.|
+| InformBindingPriceValuation		| 1   		| Boolean	| Informs if the price is binding in valuation response.|
+| InformBindingPrice   			| 1   		| Boolean	| Supplier returns binding PVPs in availability.|
+| InformNRFValuation   			| 1   		| Boolean	| The supplier can inform in valuation if the rate is non-refundable. |
+| InformNRFRate        			| 1   		| Boolean	| The supplier can inform in availability if the rate is non-refundable. |
+| InformNRFRateByRoom   		| 1   		| Boolean	| The supplier can inform in availability if the room is non-refundable. |
+| Inform55Rate         			| 1   		| Boolean	| Returns the options for rates for 55 years old or over in availability.	|
+| InformPackageRate    			| 1   		| Boolean	| The supplier informs package rates options in availability. These options can't be sold separately.|
+| InformExtraActivity  			| 1   		| Boolean	| The supplier informs of the possible option type Hotel+entrance.|
+| InformForfait        			| 1   		| Boolean	| The supplier informs of the possible option type Hotel+Forfait.|
+| RemarksValuation     			| 1   		| Boolean	| The supplier informs of the important observation in policies, like per example, supplies paid in the hotel.	|
 | MaxNumberRoomCandidates		| 1   		| Integer	| Maximum number of room candidates that can be requested in the same avail request.	|
 | MaxPaxInRoomCandidates		| 1   		| Integer	| Maximum number paxs in same room that can be requested in the same avail request.	|
-| Release              			| 1   		| Integer	| Minimum days that is required in between booking date and checking date ( days in advance ). If the value is zero then there is no limitation.	|
-| MinimumStay          			| 1   		| Integer	| Minimum number of days that are needed to be booked. If the value is zero then there is no limitation.  |
-| InformBillingSupplier Reservation	| 1   		| Boolean	| Informs of the data of the external provider in the booking.	|
-| ImplementsProvideLocator ReservationRead | 1   	| Boolean	| The provider implements the consult transaction with the **provider** localizator.	|
-| ImplementsClientLocator ReservationRead | 1   	| Boolean	| The provider implements the consult transaction with the **client** localizator.	|
-| ImplementsCancel     			| 1   		| Boolean	| The provider implements cancellation transaction.		|
-| InformPriceReservation		| 1   		| Boolean	| The provider informs about the price in the reservation in the booking RS.	|
-| HotelListLanguages   			| 1        	|		| Languages that the provider can return their information.	|
-| HotelListLanguages/Languages		| 1        	|		|Languages.							| 
-| HotelListLanguages/Languages /Language | 1..n 	| String	| Languages description.					|
-| ReservationListCreationDate		| 1   		| Boolean	| The provider implements the list of bookings transaction by creation date.	|
-| ReservationListCheckDate		| 1   		| Boolean	| The provider implements the list of bookings transaction by check in date.	|
-| HotelListType        			| 1   		| Enum		| See the specification in Static-Type section_.		|
-| DescriptiveInfoType  			| 1   		| Enum		| See the specification in Static-Type section_.		|
-| GeographicDestination TreeType	| 1   		| Enum		| See the specification in Static-Type section_.		|
-| AvailDestinationTreeType		| 1   		| Enum		| See the specification in Static-Type section_.		|
-| RoomListType         			| 1   		| Enum		| See the specification in Static-Type section_.		|
-| InformCancelPolicies ReservationRead	| 1   		| Boolean	| Informs of the cancellation policies in the booking consultation. |
-| InformCancelPolicies ReservationList	| 1   		| Boolean	| Informs of the cancellation policies in the booking list.	|
-| InformCancelPoliciesAvail		| 1   		| Boolean	| Informs of the cancellation policies in availability.		|
-| InformChangesPolicies			| 1   		| Boolean	| The provider informs if there is an extra fee for any booking modification.	|
-| ImplementsDeltaPrice 			| 1   		| Boolean	| Implemented a margin stipulated by the client for booking with a higher price (delta).	|
-| RequiredAllPassengers			| 1   		| Boolean	| Needs all of the data (names and surnames) of all the pax in booking.|
-| ImplementsOffersAvail			| 1   		| Boolean	|If it shows in availability the applied offers.		|
-| ImplementsRemarksAvail		| 1   		| Boolean	| Observation and comments.					|
-| AllowsCurrencyAvail  			| 1   		| Boolean	| If true, then it is possible to indicate the currency on a availability level.	|
-| AllowOnRequest      	 		| 1   		| Boolean	| If true, then the provider specifies the on request status option on a availability, valuation, or reservation level. |
-| InformCancelPoliciesModify		| 1   		| Boolean	| Informs of the cancellation policies in Modification call.	|
-| ImplementsDailyPrice 			| 1   		| Boolean	| Specifies if the provider return the daily price in availability call.	|
-| ImplementsDailyRatePlan		| 1   		| Boolean	| Specifies if the provider return the daily rate in availability call.|
-| AllowRemarks         			| 1   		| Boolean	| Specifies if the provider allows send remarks in Reservation request.|
-| InformSharedBed      			| 1   		| Boolean	| Specifies if the provider informs in availability response if beds in the room are shared.	|
-| InformBedType        			| 1   		| Boolean	| Specifies if the provider informs in availability response the beds types.	|
-| InformNumberOfBeds   			| 1   		| Boolean	| Specifies if the provider informs in availability response the number of beds for each room.	|
-| AllowBlockOption     			| 1   		| Boolean	| Specifies if the provider block the option in valuation call.	|
-| InformExclusiveDeal  			| 1   		| Boolean	| The provider indicates in one Hotel is an Exclusive Deal in HotelList and/or DescriptiveInfo.	|
-| InformPriceCancel    			| 1   		| Boolean	| The provider informs about the cancelation price in the cancel response.	|
-| AllowUrlCard         			| 1   		| Boolean	| Specifies if the provider allows url card data encode when the option type is LaterPay.	|
-| InformCancelPolicies Description	| 1   		| Boolean	| Specifies if the provider inform the cancel policies in free text in Valuation response.	|
-| ImplementsBusinessRules		| 1   		| Boolean	| Specifies if in this provider use the business rules in availability.|
+| Release              			| 1   		| Integer	| Minimum days required in between booking date and checking date ( days in advance ). If the value is zero then there is no limitation.	|
+| MinimumStay          			| 1   		| Integer	| Minimum number of days required for booking. If the value is zero then there is no limitation.  |
+| InformBillingSupplier Reservation	| 1   		| Boolean	| Informs data of the external supplier in the booking.	|
+| ImplementsProvideLocator ReservationRead | 1   	| Boolean	| The supplier implements ReservationRead using **provider** locator.	|
+| ImplementsClientLocator ReservationRead | 1   	| Boolean	| The supplier implements ReservationRead using **client** locator.	|
+| ImplementsCancel     			| 1   		| Boolean	| The supplier implements the Cancel method.|
+| InformPriceReservation		| 1   		| Boolean	| The supplier informs the booking price in the reservation method.|
+| HotelListLanguages   			| 1        	|		|Languages that the supplier returns their information in.|
+| HotelListLanguages/Languages		| 1        	|		|List of languages.							| 
+| HotelListLanguages/Languages /Language | 1..n 	| String	| Language code.					|
+| ReservationListCreationDate		| 1   		| Boolean	| The supplier implements ReservationList by creation date.	|
+| ReservationListCheckDate		| 1   		| Boolean	| The supplier implements ReservationList by check in date.	|
+| HotelListType        			| 1   		| Enum		| XMLTravelgate's internal parameter, see the specification in _Detailed description_.		|
+| DescriptiveInfoType  			| 1   		| Enum		| XMLTravelgate's internal parameter, see the specification in _Detailed description_.		|
+| GeographicDestination TreeType	| 1   		| Enum		| XMLTravelgate's internal parameter, see the specification in _Detailed description_.		|
+| AvailDestinationTreeType		| 1   		| Enum		| XMLTravelgate's internal parameter, see the specification in _Detailed description_.		|
+| RoomListType         			| 1   		| Enum		| XMLTravelgate's internal parameter, see the specification in _Detailed description_.		|
+| InformCancelPolicies ReservationRead	| 1   		| Boolean	| Informs cancellation policies in ReservationRead. |
+| InformCancelPolicies ReservationList	| 1   		| Boolean	| Informs cancellation policies in ReservationList.	|
+| InformCancelPoliciesAvail		| 1   		| Boolean	| Informs cancellation policies in Avail.		|
+| InformChangesPolicies			| 1   		| Boolean	| The supplier informs if there is an extra fee for any booking modification.|
+| ImplementsDeltaPrice 			| 1   		| Boolean	| Implements a margin stipulated by the client for booking with a higher price (delta).	|
+| RequiredAllPassengers			| 1   		| Boolean	| Required data for all passengers (names and surnames).|
+| ImplementsOffersAvail			| 1   		| Boolean	|If true, the supplier returns the offers applied in Avail.|
+| ImplementsRemarksAvail		| 1   		| Boolean	| Space available for any remarks or comments aimed at the client in Avail.					|
+| AllowsCurrencyAvail  			| 1   		| Boolean	| If true, it is possible to request the currency in Avail.	|
+| AllowOnRequest      	 		| 1   		| Boolean	| If true, the supplier informs the onrequest status option in Avail,  Valuation, and Reservation. |
+| InformCancelPoliciesModify		| 1   		| Boolean	| Informs the cancellation policies in Modification methods.	|
+| ImplementsDailyPrice 			| 1   		| Boolean	| Informs if the supplier returns the daily price in Avail.	|
+| ImplementsDailyRatePlan		| 1   		| Boolean	| Informs if the supplier returns the daily rate in Avail.|
+| AllowRemarks         			| 1   		| Boolean	| Informs if the supplier allows send remarks in Reservation.|
+| InformSharedBed      			| 1   		| Boolean	| Informs in availability response if beds in the room are shared.	|
+| InformBedType        			| 1   		| Boolean	| Informs if the supplier returns the beds types in Avail.	|
+| InformNumberOfBeds   			| 1   		| Boolean	| Informs if the supplier returns the number of beds for each room in Avail.	|
+| AllowBlockOption     			| 1   		| Boolean	| Informs if the supplier can block the option in Valuation.	|
+| InformExclusiveDeal  			| 1   		| Boolean	| The supplier indicates if a Hotel is an Exclusive Deal in HotelList and/or DescriptiveInfo.	|
+| InformPriceCancel    			| 1   		| Boolean	| The supplier informs about the cancelation price in the cancel response.	|
+| AllowUrlCard         			| 1   		| Boolean	| Specifies if the supplier allows url card data encode when the paymente type is LaterPay.	|
+| InformCancelPolicies Description	| 1   		| Boolean	| Specifies if the supplier informs the cancel policies in free text in Valuation.	|
+| ImplementsBusinessRules		| 1   		| Boolean	| Specifies if this supplier uses *businessrules* in Avail.|
 | PaymentTypes         			| 1        	|		| List of payment types accepted by the supplier.		|
-| PaymentTypes/PaymentType		| 1..n     	|		| Indicates the typology of payment (Merchant, Direct ...) .	|
-| InformAvailableModifications InReservationRead | 1   	| Boolean	| Specifies if the provider inform the available modifications in	 ReservationReadRS.	 |
-| RequiredNationality  			| 1   		| Boolean	| Specifies if the provider required the nationality in Avail, Valuation and Reservation call.	|
-| Inform60Rate         			| 1   		| Boolean	| The provider informs the options with rates of pax of 60 years old or over in availability.	|
-| Inform65Rate         			| 1   		| Boolean	| The provider informs the options with rates of pax of 65 years old or over in availability.	|
-| InformCanaryResidentRate		| 1   		| Boolean	| The provider informs the options with canary resident rates in availability. These options cant be sold if the customer don't have this condition.	|
-| InformCanaryResidentRate		| 1   		| Boolean	| The provider informs the options with balearic resident rates in availability. These options can't be sold if the customer don't have this condition.	|
-| InformBalearicResidentRate		| 1   		| Boolean	| The provider informs the options with large family rates in availability. These options can't be sold if the customer don't have this condition.	|
-| InformLargeFamilyRate			| 1   		| Boolean	| The provider informs the options with canary resident rates in availability. These options can't be sold if the customer don't have this condition.	|
-| InformHoneymoonRate  			| 1   		| Boolean	| The provider informs the options with honeymoon rates in availability. These options can't be sold if the customer don't have this condition.	|
-| ImplementsProviderLocatorCancel	| 1   		| Boolean	| The provider implements the cancel transaction with the **provider** localizator.	|
-| ImplementsClientLocatorCancel		| 1   		| Boolean	| The provider implements the cancel transaction with the **client** localizator.	|
-| InformModificationPolicies 		| 1   		| Boolean	| The provider informs of the modification policies in Valuation process.	|
+| PaymentTypes/PaymentType		| 1..n     	|		| Indicates the types of payment (Merchant, Direct ...) .	|
+| InformAvailableModifications InReservationRead | 1   	| Boolean	| Specifies if the supplier informs of the possible modifications in ReservationRead.|
+| RequiredNationality  			| 1   		| Boolean	| Specifies if the supplier required the nationality in Avail, Valuation and Reservation.	|
+| Inform60Rate         			| 1   		| Boolean	| The supplier informs the options with rates of pax of 60 years old or over in availability.	|
+| Inform65Rate         			| 1   		| Boolean	| The supplier informs the options with rates of pax of 65 years old or over in availability.	|
+| InformCanaryResidentRate		| 1   		| Boolean	| The supplier informs the options with canary resident rates in availability. These options cant be sold if the customer don't have this condition.	|
+| InformCanaryResidentRate		| 1   		| Boolean	| The supplier informs the options with balearic resident rates in availability. These options can't be sold if the customer don't have this condition.	|
+| InformBalearicResidentRate		| 1   		| Boolean	| The supplier informs the options with large family rates in availability. These options can't be sold if the customer don't have this condition.	|
+| InformLargeFamilyRate			| 1   		| Boolean	| The supplier informs the options with canary resident rates in availability. These options can't be sold if the customer don't have this condition.	|
+| InformHoneymoonRate  			| 1   		| Boolean	| The supplier informs the options with honeymoon rates in availability. These options can't be sold if the customer don't have this condition.	|
+| ImplementsProviderLocatorCancel	| 1   		| Boolean	| The supplier implements the cancel transaction with the **provider** localizator.	|
+| ImplementsClientLocatorCancel		| 1   		| Boolean	| The supplier implements the cancel transaction with the **client** localizator.	|
+| InformModificationPolicies 		| 1   		| Boolean	| The supplier informs of the modification policies in Valuation process.	|
 | ModifyTransactions   			| 0..1     	|		| Modifications allowed by the supplier.			|
 | ModifyTransactions /ModifyTransaction | 1..n     	|		| Modifications set allowed in the same request by the supplier. |
 | ModifyTransactions /ModifyTransaction/Modify | 1..n   |  		| Modification type (ModifyStartDateAddDays, ModifyStartDateSubtractDays, ModifyEndDateAddDays, ModifyEndDateSubtractDays, ModifyHolder, ModifyRoomsAddRooms, ModifyRoomsRemoveRooms, ModifyMealPlan or ModifyAddComment). |
-| NumMarketsAllowed    			| 1   		| Integer	| Number of markets that the provider support in the same request. |
-| InformTiket          			| 1   		| Boolean	| The provider informs of the possible option type Hotel+Tiket.	|
+| NumMarketsAllowed    			| 1   		| Integer	| Number of markets that the supplier support in the same request. |
+| InformTiket          			| 1   		| Boolean	| The supplier informs of the possible option type Hotel+Tiket.	|
 | ImplementsDescriptive InfoExtended	| 1   		| Boolean	| It indicates whether the new DescriptiveInfo is implemented.	|
-| InformNumberOfUnits  			| 1   		| Boolean	| The provider inform the number of units are available per room.  |
+| InformNumberOfUnits  			| 1   		| Boolean	| The supplier inform the number of units are available per room.  |
  
 
 
@@ -250,19 +249,12 @@ stay minimum, list of languages that allows ....).
 **HotelListType, DescriptiveInfoType, GeographicDestinationTreeType,
 AvailDestinationTreeType and RoomListType:**
 
-If the parameter value is set as online, then the information of these
-methods is obtained of the supplier system. On the other hand if the
-parameter takes antoher value means that the process takes more than 4
-minutes. In this case, we need to load the information process in our
-BBDD. Information of these methods are updated every week.
+These parameters are XMLTravelgate's internal parameters. They define the type of download each method has for each supplier. If the parameter value is set as online, the method runs a direct call to the supplier's system because the method takes less than 4 minutes. Any other value will signify that the process takes more than 4 minutes, which means we have to cache the information in our BBDD (the methods with this feature are updated every week).
 
 
 
-In case that the provider return the status in process response in
-avail, valuation or reservation you can filter this option if you send
-the parameter <OnRequest>true</OnRequest>.
-
-By default the following tags:
+**The following tags are set as FALSE by default:**
+(This is either because the supplier doesn't support it or because is has not been updated yet)
 
 -   **ImplementsDailyRatePlan**
 -   **InformSharedBed**
@@ -284,8 +276,7 @@ By default the following tags:
 -   **ImplementsDescriptiveInfoExtended**
 -   **InformNumberOfUnits**
 
-Rigth now, this tags are set up to false value, either because the
-provider doesn't support it or because is not updated yet.
+
 
 
 
