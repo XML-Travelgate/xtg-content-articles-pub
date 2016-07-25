@@ -11,7 +11,7 @@ permalink: /docs/hotel/DSF/RoomList
 ### Method Goals
 
 
-This method aims to return a list of the available rooms code, which
+This method aims to return a list of the available room codes which
 will be used in the availability response.
 
 
@@ -19,7 +19,7 @@ will be used in the availability response.
 ### Request Format
 
 
-The request does not require any elements empty request.
+The request does not require any elements - empty request.
 
 
 
@@ -33,12 +33,9 @@ The result returns a list of *RoomInfo*.
 ### Remarks
 
 
-The maximum time, that is permitted in our system, before the connection
-is closed, is of **240000** milliseconds.
+The maximum time permitted in our system before the connection is closed is **240000** milliseconds.
 
-This message must be implemented solely in case it can not be provided
-the description is room in the hotel availability. ( It is indicated in
-the *StaticConfiguration* )
+This message must be implemented solely in case the supplier does not return room description in Avail. This requirement will be indicated in *StaticConfiguration*.
 
 
 
@@ -99,7 +96,4 @@ the *StaticConfiguration* )
 
 **Room types & languages**
 
-The language of the room description can be defined the RQ ( Common
-Elements ) given that the provider supplies the selected language,
-otherwise it will use a default language which in most cases will be
-English. The standard languages are : English & Spanish.
+You can define in AvailRQ (Common Elements) which language you want the room description returned in  - as long as the supplier supports the selected language, otherwise the default language is most commonly English. The standard languages are: English & Spanish.
