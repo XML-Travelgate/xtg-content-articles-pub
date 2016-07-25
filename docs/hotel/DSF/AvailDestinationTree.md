@@ -95,10 +95,10 @@ The maximum time permitted in our system before the connection is closed is **24
 | ----------------------------- | ---------- | -------- | --------------------- |
 | AvailDestinationTreeRS	| 1          |          | Root node.		|
 | DestinationTree		| 0..n       | 		| Father node.		|
-| @code | 1 | String | |
-| @name | 1 | String | |
-| DestinationTree/DestinationLeaf		| 0..n      |		| Childs node.		|
-| @code | 1 | String | |
+| @code | 1 | String | Destination code.|
+| @name | 1 | String | Destination name.|
+| DestinationTree/DestinationLeaf		| 0..n      |		| Child node.		|
+| @code | 1 | String |Destination code. |
 
 
 
