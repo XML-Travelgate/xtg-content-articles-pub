@@ -92,7 +92,7 @@ This message must be implemented solely in case the supplier does not return roo
 
 
 
-### Detailed description
+### Detailed description 
 
 
 **Room types & languages**
