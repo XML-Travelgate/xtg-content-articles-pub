@@ -66,12 +66,12 @@ If the supplier has more than 100 mealplan codes, or more than 20 codes for one 
     <MealPlanListRS>
         <MealPlans>
             <MealPlan>
-                <Code>AD</Code>
-                <Name>Alojamiento y desayuno</Name>
+                <Code>BB</Code>
+                <Name>Bed and breakfast.</Name>
             </MealPlan>
             <MealPlan>
-                <Code>MP</Code>
-                <Name>Media Pensión</Name>
+                <Code>HB</Code>
+                <Name>Half board./Name>
             </MealPlan>
             …
             <MealPlan/>
@@ -87,6 +87,10 @@ If the supplier has more than 100 mealplan codes, or more than 20 codes for one 
 
 | **Element**		| **Number** | **Type** | **Description**	|
 | --------------------- | ---------- | -------- | --------------------- |
-| MealPlanListRS	| 1          |		| Root node.		|
+| MealPlanListRS/MealPlans	| 1          |		| Root node, list of mealplans.		|
+| MealPlan	| 1..n          	| 		| MealPlan.			|
+| MealPlan/Code	| 1         	| String		| Code.			|
+| MealPlan/Name	| 1         	| String		| Name.			|
+
                        
 
