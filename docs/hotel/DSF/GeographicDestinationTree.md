@@ -96,8 +96,12 @@ The maximum time permitted in our system before the connection is closed is **24
 | **Element**			| **Number** | **Type** | **Description**	|
 | ----------------------------- | ---------- | -------- | --------------------- |
 | GeographicDestinationTreeRS	| 1          | 		| Root node.		|
-| DestinationTree		| 1..n       |		| Father node.		|
-| DestinationLeaf		| 0..1       |		| Child node.		|
+| DestinationTree		| 1..n       | 		| Father node.		|
+| @code | 1 | String | |
+| @name | 1 | String | |
+| @avail | 1 | Boolean | |
+| DestinationTree/DestinationLeaf		| 0..n      |		| Childs node.		|
+| @code | 1 | String | |
 
 
 
