@@ -13,7 +13,7 @@ permalink: /docs/hotel/DSF/StaticConfiguration
 
 
 This method provides information about the static configuration of the
-supplier, in order to configure the supplier effectively.
+supplier so that it can be effectively configured.
 
 
 
@@ -172,11 +172,11 @@ minimum stay, list of languages supported ...
 | InformNRFValuation   			| 1   		| Boolean	| The supplier can inform in valuation if the rate is non-refundable. |
 | InformNRFRate        			| 1   		| Boolean	| The supplier can inform in availability if the rate is non-refundable. |
 | InformNRFRateByRoom   		| 1   		| Boolean	| The supplier can inform in availability if the room is non-refundable. |
-| Inform55Rate         			| 1   		| Boolean	| Returns the options for rates for 55 years old or over in availability.	|
-| InformPackageRate    			| 1   		| Boolean	| The supplier informs package rates options in availability. These options can't be sold separately.|
-| InformExtraActivity  			| 1   		| Boolean	| The supplier informs of the possible option type Hotel+entrance.|
-| InformForfait        			| 1   		| Boolean	| The supplier informs of the possible option type Hotel+Forfait.|
-| RemarksValuation     			| 1   		| Boolean	| The supplier informs of the important observation in policies, like per example, supplies paid in the hotel.	|
+| Inform55Rate         			| 1   		| Boolean	| Returns options for over 55s rates (senior rates) in availability.	|
+| InformPackageRate    			| 1   		| Boolean	| Informs package rates options in availability. These options can't be sold separately.|
+| InformExtraActivity  			| 1   		| Boolean	| Informs of the possible option type Hotel+entrance.|
+| InformForfait        			| 1   		| Boolean	| Informs of the possible option type Hotel+Forfait.|
+| RemarksValuation     			| 1   		| Boolean	| Returns remarks in Valuation.	|
 | MaxNumberRoomCandidates		| 1   		| Integer	| Maximum number of room candidates that can be requested in the same avail request.	|
 | MaxPaxInRoomCandidates		| 1   		| Integer	| Maximum number paxs in same room that can be requested in the same avail request.	|
 | Release              			| 1   		| Integer	| Minimum days required in between booking date and checking date ( days in advance ). If the value is zero then there is no limitation.	|
@@ -222,24 +222,23 @@ minimum stay, list of languages supported ...
 | PaymentTypes         			| 1        	|		| List of payment types accepted by the supplier.		|
 | PaymentTypes/PaymentType		| 1..n     	|		| Indicates the types of payment (Merchant, Direct ...) .	|
 | InformAvailableModifications InReservationRead | 1   	| Boolean	| Specifies if the supplier informs of the possible modifications in ReservationRead.|
-| RequiredNationality  			| 1   		| Boolean	| Specifies if the supplier required the nationality in Avail, Valuation and Reservation.	|
+| RequiredNationality  			| 1   		| Boolean	| Informs if the supplier requires nationality in Avail, Valuation and Reservation.	|
 | Inform60Rate         			| 1   		| Boolean	| The supplier informs the options with rates of pax of 60 years old or over in availability.	|
 | Inform65Rate         			| 1   		| Boolean	| The supplier informs the options with rates of pax of 65 years old or over in availability.	|
-| InformCanaryResidentRate		| 1   		| Boolean	| The supplier informs the options with canary resident rates in availability. These options cant be sold if the customer don't have this condition.	|
-| InformCanaryResidentRate		| 1   		| Boolean	| The supplier informs the options with balearic resident rates in availability. These options can't be sold if the customer don't have this condition.	|
-| InformBalearicResidentRate		| 1   		| Boolean	| The supplier informs the options with large family rates in availability. These options can't be sold if the customer don't have this condition.	|
-| InformLargeFamilyRate			| 1   		| Boolean	| The supplier informs the options with canary resident rates in availability. These options can't be sold if the customer don't have this condition.	|
-| InformHoneymoonRate  			| 1   		| Boolean	| The supplier informs the options with honeymoon rates in availability. These options can't be sold if the customer don't have this condition.	|
-| ImplementsProviderLocatorCancel	| 1   		| Boolean	| The supplier implements the cancel transaction with the **provider** localizator.	|
-| ImplementsClientLocatorCancel		| 1   		| Boolean	| The supplier implements the cancel transaction with the **client** localizator.	|
-| InformModificationPolicies 		| 1   		| Boolean	| The supplier informs of the modification policies in Valuation process.	|
+| InformCanaryResidentRate		| 1   		| Boolean	| The supplier informs rates for canary residents in Avail. |
+| InformBalearicResidentRate		| 1   		| Boolean	| The supplier informs rates for balearic residents in Avail. 	|
+| InformLargeFamilyRate			| 1   		| Boolean	| The supplier informs rates for large families in Avail. |
+| InformHoneymoonRate  			| 1   		| Boolean	| The supplier informs rates for honeymoon in Avail. |
+| ImplementsProviderLocatorCancel	| 1   		| Boolean	| The supplier implements cancel transaction using  **provider** locator.	|
+| ImplementsClientLocatorCancel		| 1   		| Boolean	| The supplier implements cancel transaction using  **client** locator.	|
+| InformModificationPolicies 		| 1   		| Boolean	| The supplier informs of the modification policies in Valuation.	|
 | ModifyTransactions   			| 0..1     	|		| Modifications allowed by the supplier.			|
-| ModifyTransactions /ModifyTransaction | 1..n     	|		| Modifications set allowed in the same request by the supplier. |
+| ModifyTransactions /ModifyTransaction | 1..n     	|		| Modifications allowed in the same request by the supplier. |
 | ModifyTransactions /ModifyTransaction/Modify | 1..n   |  		| Modification type (ModifyStartDateAddDays, ModifyStartDateSubtractDays, ModifyEndDateAddDays, ModifyEndDateSubtractDays, ModifyHolder, ModifyRoomsAddRooms, ModifyRoomsRemoveRooms, ModifyMealPlan or ModifyAddComment). |
-| NumMarketsAllowed    			| 1   		| Integer	| Number of markets that the supplier support in the same request. |
-| InformTiket          			| 1   		| Boolean	| The supplier informs of the possible option type Hotel+Tiket.	|
-| ImplementsDescriptive InfoExtended	| 1   		| Boolean	| It indicates whether the new DescriptiveInfo is implemented.	|
-| InformNumberOfUnits  			| 1   		| Boolean	| The supplier inform the number of units are available per room.  |
+| NumMarketsAllowed    			| 1   		| Integer	| Number of markets supported by the supplier in the same request. |
+| InformTiket          			| 1   		| Boolean	| Informs of the possible option type Hotel+Ticket.	|
+| ImplementsDescriptive InfoExtended	| 1   		| Boolean	|Indicates whether the new DescriptiveInfo is implemented.	|
+| InformNumberOfUnits  			| 1   		| Boolean	| Indicates the number of units available per room.  |
  
 
 
