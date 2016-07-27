@@ -97,8 +97,7 @@ We use a standard ISO - 3166_1_alfa_2.
 ### Markets
 
 
-Most of providers use a standard ISO - 3166_1_alfa_2, but this
-depends of each supplier.
+Most suppliers use a standard ISO - 3166_1_alfa_2, but it depends on each individual supplier.
 
 
 
