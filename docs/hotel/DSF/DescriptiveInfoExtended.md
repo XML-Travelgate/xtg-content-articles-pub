@@ -959,20 +959,19 @@ A maximum time of **180000** milliseconds is permitted before the connection is 
 | hotelDescriptions/description/description/Object/text/Object/name  		| 0..1 	|  	|                                      |
 | hotelDescriptions/description/description/Object/text/Object/description  		| 0..1 	|  	|                                      |
 | hotelDescriptions/description/description/Object/text/Object/value  		| 0..1 	|  	|                                      |
-| roomTypes     			| 0..1  	|         	|                                               |
-| roomTypes/roomType     		| 0..1 	|         	|                                               |
-| roomTypes/roomType/Object     		| 1..n 	|         	|                                               |
+| roomTypes     			| 0..1  	|        	|                     RoomTypes                          |
+| roomTypes/roomType     		| 0..1 	|    RoomType     	|                                               |
+| roomTypes/roomType/Object     		| 1..n 	|   RoomType  Detail    	|                                               |
 | roomTypes/roomType/Object/code      			| 1     	| String  	| Room Code.                                    |
 | roomTypes/roomType/Object/typeId       		| 0..1  	| String  	| Room Type Id.                                 |
-| roomTypes/roomType/Object/name      			| 1     	|         	| Room Name.                                    |
-| roomTypes/roomType/Object/name/text      			|     	|         	|                                     |
-| roomTypes/roomType/Object/name/text/Object      			|     	|         	|                                     |
-| roomTypes/roomType/Object/name/text/Object/languageCode      			|   1  	|         	|                                     |
-| roomTypes/roomType/Object/name/text/Object/name      			|    0..1 	|         	|                                     |
-| roomTypes/roomType/Object/name/text/Object/description      			|   0..1  	|         	|                                     |
-| roomTypes/roomType/Object/name/text/Object/value      			|    0..1 	|         	|                                     |
-| roomTypes/roomType/Object/quantity     		| 0..1  	|   	|                                 |
-| roomTypes/roomType/Object/dimension       		| 0..1  	|   	|                               |
+| roomTypes/roomType/Object/name      			| 1     	|         	| Root Name.                                    |
+| roomTypes/roomType/Object/name/text      			|   1  	|         	|      Root text                               |
+| roomTypes/roomType/Object/name/text/Object      			|  1..n   	|         	|    Root text                                 |
+| roomTypes/roomType/Object/name/text/Object/languageCode      			|   1  	|     String    	|     Language code |
+| roomTypes/roomType/Object/name/text/Object/description      			|   0..1  	|      String   	|   RoomType Description |
+| roomTypes/roomType/Object/name/text/Object/value      			|    0..1 	|     String    	|   Room name    |
+| roomTypes/roomType/Object/quantity     		| 0..1  	| String  	|               Quantity of this RoomType            |
+| roomTypes/roomType/Object/dimension       		| 0..1  	|  String 	|            Dimension                   |
 | roomTypes/roomType/Object/descriptions   		| 0..1  	|   	| Room Descriptions same structure hotelDescriptions/description/description  |
 | roomTypes/roomType/Object/medias       		| 0..1  	|   	|   Room Medias     same structure medias      |
 | roomTypes/roomType/Object/valuableAttribute       		| 0..1  	|   	|   Room Attributes.  same structure hotelAttributes       |
