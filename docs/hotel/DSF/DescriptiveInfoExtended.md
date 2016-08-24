@@ -872,13 +872,13 @@ A maximum time of **180000** milliseconds is permitted before the connection is 
 | Town          			| 1     	| String  	| Town                                        |
 | ZipCode       			| 1     	| String  	| ZipCode                                      |
 | CountryISOCode 			| 1     	| String  	| Country ISO code for Country-specific addresses                              |
-| AvailDestination 			| 0..1  	|      	| Destination that can be searched in Availability
-|| @code         			| 1     	| String  | Destination code e.g. LON                            |
-| @name         			| 1     	| String 	| Destination name e.g. London                         |
+| AvailDestination 			| 0..1  	|      	| Destination that can be searched in Availability|
+| AvailDestination/code         			| 1     	| String  | Destination code e.g. LON                            |
+| AvailDestination/name         			| 1     	| String 	| Destination name e.g. London                         |
 | GeographicDestination 		| 1     	|    All destinations provided by the supplier not just in Availability                       |
-| @code         			| 1     	| String  	| Destination code.                             |
-| @name         			| 1     	| String  	| Destination name.                             |
-| @avail        			| 1     	| Boolean 	| Indicates if it can be requested in availability.|
+| GeographicDestination/code         			| 1     	| String  	| Destination code.                             |
+| GeographicDestination/name         			| 1     	| String  	| Destination name.                             |
+| GeographicDestination/avail        			| 1     	| Boolean 	| Indicates if it can be requested in availability.|
 | Latitude      			| 1     	| String  	| Latitude.                                     |
 | Longitude     			| 1     	| String  	| Longitude.                                    |
 | Contact       			| 0..1  	|         	|Hotel Contact.                                      |
@@ -890,9 +890,11 @@ A maximum time of **180000** milliseconds is permitted before the connection is 
 | BookingContact/Email 			| 1     	| String  	| Email.                                        |
 | BookingContact/Telephone 		| 1     	| String  	| Telephone.                                    |
 | BookingContact/Fax 			| 1     	| String  	| Fax.                                          |
-| PropertyType  			|       	|         	|                                               |
-| PropertyType/Code  			| 1     	| String  	| Poperty Code.                                 |
-| PropertyType/Text  			| 1     	| Text    	| Property Text.                                |
+| propertyType  			|       	|         	|                                               |
+| propertyType/code  			| 1     	| String  	| Poperty Code.                                 |
+| propertyType/text  			| 1     	| Text    	| Property Text.                                |
+| propertyType/text/languageCode | | | |
+| propertyType/text/name | | | |
 | Chains        			| 1     	|         	|                                               |
 | Chains/Code  				| 1     	| String  	| Chain Code.                                   |
 | Chains/Name  				| 1     	| String  	| Chain Name.                                   |
@@ -901,30 +903,111 @@ A maximum time of **180000** milliseconds is permitted before the connection is 
 | Languages/language      		| 1..n  	| String  	| Languages spoken at the hotel.                |
 | PaymentOptions/Cards 			| 1     	|         	| List of cards allowed.                        |
 | PaymentOptions/Cards/Card 		| 1..n  	|         	| Type card allowed.                            |
-| @code>   				| 1     	| String  	| Code card (see in *Lists of Data* (VI,AX,BV,CA...)). |
-| ExclusiveDeal 			| 0..1  	| Boolean 	| Indicates that a Hotel is an Exclusive Deal.|
-| NumberOfRooms 			| 0..1  	| Integer 	| Total rooms of hotel.   	                |
-| HotelAttributes 			| 0..1  	|         	|                                               |
-| HotelAttributes/Attributes 		| 0..1  	| Attributes 	|                                               |
-| HotelDescriptions 			| 0..1  	| Descriptions 	|                                               |
-| HotelDescriptions/Description 	| 1     	|         	|                                               |
-| RoomTypes     			| 0..1  	|         	|                                               |
-| RoomTypes/RoomType     		| 1..n  	|         	|                                               |
-| RoomType/Code      			| 1     	| String  	| Room Code.                                    |
-| RoomType/TypeId       		| 0..1  	| String  	| Room Type Id.                                 |
-| RoomType/Name      			| 1     	|         	| Room Name.                                    |
-| RoomType/Quantity      		| 1     	| Integer 	| Room Quantity.                                |
-| RoomType/Descriptions      		| 1     	| Descriptions 	| Room Descriptions.                            |
-| RoomType/RoomAttributes      		| 1     	| Attributes 	| Room Attributes.                              |
-| RoomType/Medias      			| 1     	| Medias  	| Room Medias                                   |
-| Medias        			| 1..n  	| Media   	|                                               |
-| Attributes/Attribute    		| 1..n  	|         	| Attributes                                 	|
-| Attribute/Context     		| 1..n  	|         	| ContextItem                                 	|
-| Attribute/Data     			| 1     	|         	| Data                                    	|
-| Description/Context   		| 1..n  	|         	| ContextItem                                 	|
-| Description/text   			| 1..n  	|         	| Text                                        	|
-
-
+| PaymentOptions/Cards/Card/code   				| 1     	| String  	| Code card (see in *Lists of Data* (VI,AX,BV,CA...)). |
+| exclusiveDeal 			| 0..1  	| Boolean 	| Indicates that a Hotel is an Exclusive Deal.|
+| numberOfRooms 			| 0..1  	| Integer 	| Total rooms of hotel.   	                |
+| hotelAttributes 			| 0..1  	|         	|                                               |
+| hotelAttributes/Object 		| 1..n  	|  Attribute	|                                               |
+| hotelAttributes/Object/context 		| 1..n  	|  	|                                               |
+| hotelAttributes/Object/context/Object 		| 1..n  	|  	|                                               |
+| hotelAttributes/Object/context/Object/contextItem 		| 1  	|  	|                                               |
+| hotelAttributes/Object/context/Object/contextItem/Object 		| 1  	|  	|                                               |
+| hotelAttributes/Object/context/Object/contextItem/Object/code 		| 0..1  	|  	|                                               |
+| hotelAttributes/Object/context/Object/contextItem/Object/id 		| 1  	|  	|                                               |
+| hotelAttributes/Object/context/Object/contextItem/Object/parentRefId 		| 0..1  	|  	|                                          |
+| hotelAttributes/Object/context/Object/contextItem/Object/schema 		| 0..1  	|  	|                                               |
+| hotelAttributes/Object/context/Object/contextItem/Object/text 		| 0..1  	|  	|                                               |
+| hotelAttributes/Object/context/Object/contextItem/Object/text/Object 		| 0..1  	|  	|                                         |
+| hotelAttributes/Object/context/Object/contextItem/Object/text/Object/languageCode | | | |
+| hotelAttributes/Object/context/Object/contextItem/Object/text/Object/name | | | |
+| hotelAttributes/Object/context/Object/contextItem/Object/text/Object/description | | | |
+| hotelAttributes/Object/context/Object/contextItem/Object/text/Object/value | | | |
+| hotelAttributes/Object/data 		| 1 	|  	|                                               |
+| hotelAttributes/Object/data/id 		| 1 	|  	|                                               |
+| hotelAttributes/Object/data/type 		| 1 	|  	|                                               |
+| hotelAttributes/Object/data/understand 		| 1 	|  	|                                               |
+| hotelAttributes/Object/data/value 		| 1 	|  	|                                               |
+| hotelAttributes/Object/data/value/Object 		| 1 	|  	|                                               |
+| hotelAttributes/Object/data/value/Object/value 		| 1 	|  	|                                               |
+| hotelAttributes/Object/data/text 		| 1 	|  	|                                               |
+| hotelAttributes/Object/data/text/Object 		| 1 	|  	|                                               |
+| hotelAttributes/Object/data/text/Object/langaugeCode 		| 1 	|  	|                                               |
+| hotelAttributes/Object/data/text/Object/name 		| 1 	|  	|                                               |
+| hotelAttributes/Object/data/text/Object/description 		| 1 	|  	|                                               |    
+| hotelAttributes/Object/data/text/Object/value 		| 1 	|  	|                                               |  
+| hotelAttributes/Object/data/analyzersSpecified		| 1 	|  	|                                               |
+| hotelDescriptions 			| 0..1  	| Descriptions 	|                                               |
+| hotelDescriptions/description/description 	| 0..1     	|         	|                                               |
+| hotelDescriptions/description/description/Object 	| 1..n    	|         	|        Descriptions                            |
+| hotelDescriptions/description/description/Object/context 		| 1..n  	|  	|                                               |
+| hotelDescriptions/description/description/Object/context/Object 		| 1..n  	|  	|                                               |
+| hotelDescriptions/description/description/Object/context/Object/contextItem 		| 1  	|  	|                                         |
+| hotelDescriptions/description/description/Object/context/Object/contextItem/Object 		| 1..n  	|  	|                    |
+| hotelDescriptions/description/description/Object/context/Object/contextItem/Object/code 		| 0..1  	|  	|               |
+| hotelDescriptions/description/description/Object/context/Object/contextItem/Object/id 		| 1  	|  	|                    |
+| hotelDescriptions/description/description/Object/context/Object/contextItem/Object/parentRefId 		| 0..1  	|  	|                   |
+| hotelDescriptions/description/description/Object/context/Object/contextItem/Object/schema 		| 0..1  	|  	|                        |
+| hotelDescriptions/description/description/Object/context/Object/contextItem/Object/text 		| 0..1  	|  	|                        |
+| hotelDescriptions/description/description/Object/context/Object/contextItem/Object/text/Object 		| 0..1  	|  	|                |
+| hotelDescriptions/description/description/Object/context/Object/contextItem/Object/text/Object/languageCode | 0..1| | |
+| hotelDescriptions/description/description/Object/context/Object/contextItem/Object/text/Object/name | 0..1 | | |
+| hotelDescriptions/description/description/Object/context/Object/contextItem/Object/text/Object/description | 0..1 | | |
+| hotelDescriptions/description/description/Object/context/Object/contextItem/Object/text/Object/value | 0..1 | | |
+| hotelDescriptions/description/description/Object/text 		| 1 	|  	|                                               |
+| hotelDescriptions/description/description/Object/text/Object  		| 1 	|  	|                                               |
+| hotelDescriptions/description/description/Object/text/Object/languageCode  		| 0..1 	|  	|                                      |
+| hotelDescriptions/description/description/Object/text/Object/name  		| 0..1 	|  	|                                      |
+| hotelDescriptions/description/description/Object/text/Object/description  		| 0..1 	|  	|                                      |
+| hotelDescriptions/description/description/Object/text/Object/value  		| 0..1 	|  	|                                      |
+| roomTypes     			| 0..1  	|         	|                                               |
+| roomTypes/roomType     		| 0..1 	|         	|                                               |
+| roomTypes/roomType/Object     		| 1..n 	|         	|                                               |
+| roomTypes/roomType/Object/code      			| 1     	| String  	| Room Code.                                    |
+| roomTypes/roomType/Object/typeId       		| 0..1  	| String  	| Room Type Id.                                 |
+| roomTypes/roomType/Object/name      			| 1     	|         	| Room Name.                                    |
+| roomTypes/roomType/Object/name/text      			|     	|         	|                                     |
+| roomTypes/roomType/Object/name/text/Object      			|     	|         	|                                     |
+| roomTypes/roomType/Object/name/text/Object/languageCode      			|   1  	|         	|                                     |
+| roomTypes/roomType/Object/name/text/Object/name      			|    0..1 	|         	|                                     |
+| roomTypes/roomType/Object/name/text/Object/description      			|   0..1  	|         	|                                     |
+| roomTypes/roomType/Object/name/text/Object/value      			|    0..1 	|         	|                                     |
+| roomTypes/roomType/Object/quantity     		| 0..1  	|   	|                                 |
+| roomTypes/roomType/Object/dimension       		| 0..1  	|   	|                               |
+| roomTypes/roomType/Object/descriptions   		| 0..1  	|   	| Room Descriptions same structure hotelDescriptions/description/description  |
+| roomTypes/roomType/Object/medias       		| 0..1  	|   	|   Room Medias     same structure medias      |
+| roomTypes/roomType/Object/valuableAttribute       		| 0..1  	|   	|   Room Attributes.  same structure hotelAttributes       |
+| medias        			| 0..1  	| Medias   	|                                               |
+| medias/media        			| 0..1  	| Media   	|                                               |
+| medias/media/Object       			| 1..n  	| Media   	|                                               |
+| medias/media/Object/context      			| 0..1  	| Media   	|                                               |
+| medias/media/Object/context/Object 		| 1..n  	|  	|                                               |
+| medias/media/Object/context/Object/contextItem 		| 1  	|  	|                                         |
+| medias/media/Object/context/Object/contextItem/Object 		| 1..n  	|  	|                    |
+| medias/media/Object/context/Object/contextItem/Object/code 		| 0..1  	|  	|               |
+| medias/media/Object/context/Object/contextItem/Object/id 		| 1  	|  	|                    |
+| medias/media/Object/context/Object/contextItem/Object/parentRefId 		| 0..1  	|  	|                   |
+| medias/media/Object/context/Object/contextItem/Object/schema 		| 0..1  	|  	|                        |
+| medias/media/Object/context/Object/contextItem/Object/text 		| 0..1  	|  	|                        |
+| medias/media/Object/context/Object/contextItem/Object/text/Object 		| 0..1  	|  	|                |
+| medias/media/Object/context/Object/contextItem/Object/text/Object/languageCode | 0..1| | |
+| medias/media/Object/context/Object/contextItem/Object/text/Object/name | 0..1 | | |
+| medias/media/Object/context/Object/contextItem/Object/text/Object/description | 0..1 | | |
+| medias/media/Object/valuableAattribute      			| 0..1  	| Media   	|                                               |
+| medias/media/Object/photos      			| 0..1  	| Photos   	|                                               |
+| medias/media/Object/photos/photo      			| 0..1  	| Photo   	|                                               |
+| medias/media/Object/photos/photo/Object     			| 1..n  	|    	|                                               |
+| medias/media/Object/photos/photo/Object/witdh     			| 0..1  	|    	|                                               |
+| medias/media/Object/photos/photo/Object/height    			| 0..1 	|    	|                                               |
+| medias/media/Object/photos/photo/Object/thumbnail   			| 0..1 	|    	|                                               |
+| medias/media/Object/photos/photo/Object/url    			| 0..1  	|    	|                                               |
+| medias/media/Object/videos      			| 0..1  	| Photos   	|                                               |
+| medias/media/Object/videos/video      			| 0..1  	| Photo   	|                                               |
+| medias/media/Object/videos/video/Object     			| 1..n  	|    	|                                               |
+| medias/media/Object/videos/video/Object/url    			| 0..1  	|    	|                                               |
+| medias/media/Object/others      			| 0..1  	| Photos   	|                                               |
+| medias/media/Object/others/other      			| 0..1  	| Photo   	|                                               |
+| medias/media/Object/others/other/Object     			| 1..n  	|    	|                                               |
+| medias/media/Object/others/other/Object/url    			| 0..1  	|    	|                                               |
 
 ### Response Format
 
