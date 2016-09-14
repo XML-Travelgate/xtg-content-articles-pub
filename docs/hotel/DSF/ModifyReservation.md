@@ -11,7 +11,7 @@ permalink: /docs/hotel/DSF/ModifyReservation
 ### Method Goals
 
 
-This message confirms a modification
+This message confirms a booking change
 
 
 
@@ -32,8 +32,8 @@ The XML returned contains a booking confirmation
 ### Remarks
 
 
-The maximum time, that is permitted in our system, before the connection
-is closed, is of **180000** milliseconds.
+The maximum time permitted in our system before the connection
+is closed is **180000** milliseconds.
 
 
 
@@ -117,10 +117,10 @@ is closed, is of **180000** milliseconds.
 | **Element**				| **Number**	| **Type**	| **Description**						|
 | ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
 | ModifyReservationRQ  			| 1      	|		| Root node.							|
-| OnRequest            			| 1  		| Boolean	| Indicates if you want to receive the on request options in AvailRS, as long as the provider returns it in this call (see StaticConfiguration).	|
-| Nationality          			| 0..1		| String	| Nationality of the Holder (use ISO3166_1_alfa_2). This informations will be mandatory depending on the provider, as long as the provider returns it in this call (see StaticConfiguration).		|
-| Reservation          			| 1      	|		| Reservaton data.						|
-| Reservation/Locators 			| 1      	|		| Information of the locators (it is mandatory indicate one of two, or client or provider).	|
+| OnRequest            			| 1  		| Boolean	| Indicates if you want to receive the on request options in AvailRS, as long as the supplier returns it in this call (see StaticConfiguration).	|
+| Nationality          			| 0..1		| String	| Nationality of the Holder (use ISO3166_1_alfa_2). This informations is mandatory depending on the supplier, as long as the supplier returns it in this call (see StaticConfiguration).		|
+| Reservation          			| 1      	|		| Reservation data.						|
+| Reservation/Locators 			| 1      	|		| Locators id (it is mandatory indicate one of two, or client or provider).	|
 | Reservation/Locators/Client		| 0..1		| String	| Client locator.						|
 | Reservation/Locators/Provider		| 0..1		| String	| Provider locator.						|
 | Reservation/Currency 			| 1  		| String	| Currency code.						|
@@ -175,9 +175,9 @@ is closed, is of **180000** milliseconds.
 | PaymentType/CardCode 			| 1      	|		| Indicates the card type.					|
 | PaymentType/Number   			| 1  		| Decimal	| Number of the credit card.					|
 | PaymentType/Holder   			| 1  		| String	| Holder of the credit card.					|
-| PaymentType/ValidityDate		| 1      	|		| Validity date.						|
-| PaymentType/ValidityDate/Month	| 1  		| Decimal	| Month of the validity date.					|
-| PaymentType/ValidityDate/Year		| 1  		| Decimal	| Year of the validity date.					|
+| PaymentType/ValidityDate		| 1      	|		| Expiry date.						|
+| PaymentType/ValidityDate/Month	| 1  		| Decimal	| Month of the expiry date.					|
+| PaymentType/ValidityDate/Year		| 1  		| Decimal	| Year of the expiry date.					|
 | PaymentType/CVC      			| 1  		| Decimal	| CVC of the credit card.					|
 | Parameters           			| 0..1    	|		| Parameters for additional information (element returned in ModifyValuationRS).	|
 | Parameters/Parameter 			| 1..n    	|		| List of parameter.    					|
@@ -218,5 +218,5 @@ is closed, is of **180000** milliseconds.
 | @commission				| 1  		| Decimal	| Commission ( -1 = not specified (will come indicated with the provider contract ), 0 = net price, X = % of the commission that applies to the amount).	|
 | Remarks				| 0..1		| String	| Remarks.							|
 | BillingSupplierCode			| 0..1		| String	| Indicates which typo of billing.				|
-| Payable				| 0..1		| String	| Indicates which typo of payment.				|
+| Payable				| 0..1		| String	| Indicates which type of payment.				|
 
