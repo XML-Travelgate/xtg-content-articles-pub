@@ -381,7 +381,7 @@ Currently, the client can configure the following BusinessRules:
 | MealPlans/MealPlan/Options /Option/Rooms/Room /DailyRatePlans | 0..1 | | Specifies the daily rate, as long as the supplier returns it in this method (see StaticConfiguration in order to verify if a supplier implements it).  |
 | MealPlans/MealPlan/Options /Option/Rooms/Room /DailyRatePlans/DailyRatePlan | 1..n | | Specifies the rates for each day.		|
 | @effectiveDate 			| 1 		| String 	| Start date in which the rate becomes effective.		|
-| @expireDate 				| 1 		| String 	| End date in which the rate expires.			|
+| @expireDate 				| 1 		| String 	| Expirty date of rate.			|
 | @code 				| 1 		| String 	| Indicates the supplier's rate code. This code specifies the rate applied to those days.	|
 | MealPlans/MealPlan/Options /Option/Rooms/Room /Price | 1 | 		| Room price.							|
 | @currency 				| 1 		| String 	| Currency code.						|
