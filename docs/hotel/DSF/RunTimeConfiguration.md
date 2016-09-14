@@ -11,21 +11,21 @@ permalink: /docs/hotel/DSF/RuntimeConfiguration
 ### Method Goals
 
 
-This message lets you know the provider configuration template.
+This message returns a template of the supplier's configuration.
 
 
 
 ### Request Format
 
 
-The request does not require any elements empty request.
+The request does not require any elements, it is an empty request.
 
 
 
 ### Response Format
 
 
-The returned XML contains a template of all fields used by the provider.
+The returned XML contains a template of all fields used by the supplier.
 
 
 
