@@ -11,16 +11,15 @@ permalink: /docs/hotel/DSF/ModifyValuation
 ### Method Goals
 
 
-This message lets you know if it is possible a modify, and new price of
-that.
+This message lets you know if it is possible to modify a booking and the proposed new price.
 
 
 
 ### Request Format
 
 
-The request require the reservation and all modifications will be apply
-( these will depend on what is specified in the *StaticConfiguration* ).
+The request requires the reservation details and the changes you want to make.
+(As always, please check if the supplier allows for changes in the booking and what these changes are - you can find this info in the *StaticConfiguration*).
 
 
 
@@ -34,8 +33,8 @@ The XML returned contains a simulation of the new booking.
 ### Remarks
 
 
-The maximum time, that is permitted in our system, before the connection
-is closed, is of **180000** milliseconds.
+The maximum time permitted in our system before the connection
+is closed is **180000** milliseconds.
 
 
 
@@ -113,48 +112,48 @@ is closed, is of **180000** milliseconds.
 | **Element**					| **Number**	| **Type**	| **Description**					|
 | --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
 | ModifyValuationRQ     			| 1      	|		| Root node.						|
-| OnRequest             			| 1  		| Boolean	| Indicates if you want to receive the on request options in AvailRS, as long as the provider returns it in this call (see StaticConfiguration).	|
-| Nationality           			| 0..1		| String	| Nationality of the Holder (use ISO3166_1_alfa_2). This informations will be mandatory depending on the provider, as long as the provider returns it in this call (see StaticConfiguration).  |
-| BlockOption           			| 1  		| Boolean	| Indicates if you want to block the option selected in AvailRS, as long as the provider allow it in this call (see StaticConfiguration).	|
+| OnRequest             			| 1  		| Boolean	| Indicates if you want to receive the on request options in AvailRS, as long as the supplier returns it in this call (see StaticConfiguration).	|
+| Nationality           			| 0..1		| String	| Nationality of the Holder (use ISO3166_1_alfa_2). This informations will be mandatory depending on the supplier, as long as the supplier returns it in this call (see StaticConfiguration).  |
+| BlockOption           			| 1  		| Boolean	| Indicates if you want to block the option selected in AvailRS, as long as the supplier allows it in this call (see StaticConfiguration).	|
 | Reservation           			| 1      	|		| Reservation data.					|
-| Reservation/Locators  			| 1      	|		| Information of the locators (it is mandatory indicate one of two, or client or provider).	|
+| Reservation/Locators  			| 1      	|		| Locators info (it is mandatory to indicate either the client's or supplier's).	|
 | Reservation/Locators/Client			| 0..1		| String	| Client locator.					|
-| Reservation/Locators/Provides			| 0..1		| String	| Provider locator.					|
+| Reservation/Locators/Provides			| 0..1		| String	| Supplier locator.					|
 | Reservation/Currency  			| 1  		| String	| Currency code.					|
 | Reservation/StartDate 			| 1  		| String	| Start date of booking.				|
 | Reservation/EndDate   			| 1  		| String	| End date of booking.					|
-| Reservation/CreationDate			| 1  		| String	| Creation date of booking.				|
+| Reservation/CreationDate			| 1  		| String	| Date the booking was created.				|
 | Modifications         			| 1      	|		| Modifications.					|
-| Modifications/ModifyStartDateAddDays		| 0..1    	|		| Add days of check-in.					|
-| Modifications/ModifyStartDateAddDays /StartDate | 1  		| String	| New check-in.						|
-| Modifications/ModifyStartDateSubtractDays	| 0..1    	|		| Subtract days of check-in.				|
-| Modifications/ModifyStartDateSubtractDays /StartDate | 1  	| String	| New check-in.						|
-| Modifications/ModifyEndDateAddDays 		| 0..1    	|		| Add days of check-out.				|
-| Modifications/ModifyEndDateAddDays /EndDate	| 1  		| String	| New check-out.					|
-| Modifications/ModifyEndtDateSubtractDays	| 0..1    	|		| Subtract days of check-out.				|
-| Modifications/ModifyEndtDateSubtractDays /EndDate | 1  	| String	| New check-out.					|
-| Modifications/ModifyHolder			| 0..1    	|		| Modify holder.					|
+| Modifications/ModifyStartDateAddDays		| 0..1    	|		|Move the check-in date forward.					|
+| Modifications/ModifyStartDateAddDays /StartDate | 1  		| String	| New check-in date.						|
+| Modifications/ModifyStartDateSubtractDays	| 0..1    	|		| Move the check-in date back.				|
+| Modifications/ModifyStartDateSubtractDays /StartDate | 1  	| String	| New check-in date.						|
+| Modifications/ModifyEndDateAddDays 		| 0..1    	|		| Move the check-out date back.				|
+| Modifications/ModifyEndDateAddDays /EndDate	| 1  		| String	| New check-out date.					|
+| Modifications/ModifyEndtDateSubtractDays	| 0..1    	|		| Move the check-out date forward.				|
+| Modifications/ModifyEndtDateSubtractDays /EndDate | 1  	| String	| New check-out date.					|
+| Modifications/ModifyHolder			| 0..1    	|		| Modify holder of booking.					|
 | Modifications/ModifyHolder/Holder		| 1     	|		| New holder.						|
-| @name            				| 1  		| String	| Holder name.						|
-| @surname         				| 1  		| String	| Holder surname.					|
-| Modifications/ModifyRoomsAddRooms		| 0..1    	|		| Add Rooms structure.					|
-| Modifications/ModifyRoomsAddRooms/Rooms	| 1      	|		| Rooms Add.						|
-| Modifications/ModifyRoomsAddRooms/Rooms /Room	| 1..n    	|		| Room Add.						|
+| @name            				| 1  		| String	| Holder's name.						|
+| @surname         				| 1  		| String	| Holder's surname.					|
+| Modifications/ModifyRoomsAddRooms		| 0..1    	|		| Add Rooms.					|
+| Modifications/ModifyRoomsAddRooms/Rooms	| 1      	|		| Add another Room to booking.						|
+| Modifications/ModifyRoomsAddRooms/Rooms /Room	| 1..n    	|		| Details of new room.						|
 | @code            				| 1  		| String	| Room code.						|
 | Modifications/ModifyRoomsAddRooms /Rooms/Room/PaxGuests | 1   |   		| List of passenger.					|
 | Modifications/ModifyRoomsAddRooms /Rooms/Room/PaxGuests/PaxGuest | 1..n |   	| Detail of each passenger.				|
 | @age             				| 1  		| String	| Age pax.						|
 | Modifications/ModifyRoomsAddRooms /Rooms/Room/PaxGuests/PaxGuest /GivenName | 1 | String | Given Name.				| 
 | Modifications/ModifyRoomsAddRooms /Rooms/Room/PaxGuests/PaxGuest /SurName | 1 | String | Surname.					|
-| Modifications/ModifyRoomsRemoveRooms		| 0..1    	|		| Remove Rooms structure.				|
-| Modifications/ModifyRoomsRemoveRooms/Rooms	| 1      	|		| Rooms Remove.						|
-| Modifications/ModifyRoomsRemoveRooms /Rooms/Room | 1..n    	|		| Room Remove.						|
+| Modifications/ModifyRoomsRemoveRooms		| 0..1    	|		| Cancel rooms.				|
+| Modifications/ModifyRoomsRemoveRooms/Rooms	| 1      	|		| List of rooms to be cancelled .						|
+| Modifications/ModifyRoomsRemoveRooms /Rooms/Room | 1..n    	|		| Details of the room to be cancelled.						|
 | @code            				| 1  		| String	| Room code.						|
-| Modifications/ModifyRoomsRemoveRooms /Rooms/Room/Price | 1    |  		| Price Room.						|
+| Modifications/ModifyRoomsRemoveRooms /Rooms/Room/Price | 1    |  		| Room Price .						|
 | @currency        				| 1  		| String	| Currency code.					|
-| @amount          				| 1  		| Decimal	| Room Amount.						|
-| @binding         				| 1  		| Boolean	| Identifies if is the price is binding ( When true the sale price returned **must** not be less than the price informed.  |
-| @commission      				| 1  		| Decimal	| Commission (-1 = not specified (will come indicated with the provider contract), 0 = net price, X = % of the commission that applies to the amount).	|
+| @amount          				| 1  		| Decimal	| Room Cost.						|
+| @binding         				| 1  		| Boolean	| Identifies if the price is binding (When true, the sale price returned must not be less than the price informed.  |
+| @commission      				| 1  		| Decimal	| Commission: -1 = not specified (information available in contract with the supplier ), 0 = net price, X = % of the commission applied to the amount.	|
 | Modifications/ModifyRoomsRemoveRooms /Rooms/Room/PaxGuests | 1 |     		| List of passenger.					|
 | Modifications/ModifyRoomsRemoveRooms /Rooms/Room/PaxGuests/PaxGuest | 1..n |  | Detail of each passenger.				|
 | @age             				| 1  		| String	| Age pax.						|
@@ -201,11 +200,11 @@ is closed, is of **180000** milliseconds.
 | ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
 | ModifyValuationRS			| 1       	|		| Root node.							|
 | Status   				| 1       	|		| Status option (OK = available, RQ = on request).		|
-| ModifyPenalty				| 1       	|		| Price of penalty modification.				|
+| ModifyPenalty				| 1       	|		| Booking change fee  .				|
 | @currency				| 1 	 	| String	| Currency code.						|
-| @amount				| 1  		| Decimal	| Penalty Amount.						|
-| @binding				| 1  		| Boolean	| Identifies if is the price is binding ( When true the sale price returned **must** not be less than the price informed. |
-| @commission				| 1  		| Decimal	| Commission ( -1 = not specified (will come indicated with the provider contract ), 0 = net price, X = % of the commission that applies to the amount).	|
+| @amount				| 1  		| Decimal	| Fee amount.						|
+| @binding				| 1  		| Boolean	| Identifies if the price is binding (When true, the sale price returned must not be less than the price informed. |
+| @commission				| 1  		| Decimal	| Commission: -1 = not specified (information available in contract with the supplier ), 0 = net price, X = % of the commission applied to the amount.	|
 | HotelReservation			| 1       	|		| HotelReservation.						|
 | HotelReservation/Remarks		| 0..1		| String	| Remarks.							|
 | HotelReservation/PaymentOptions	| 0..1     	|		| New total reservation price.					|
@@ -219,9 +218,9 @@ is closed, is of **180000** milliseconds.
 | @amount				| 1   		| Decimal	| Reservation Amount.						|
 | @binding				| 1  		| Boolean	| Identifies if is the price is binding ( When true the sale price returned **must** not be less than the price informed. |
 | @commission				| 1  		| Decimal	| Commission ( -1 = not specified (will come indicated with the provider contract ), 0 = net price, X = % of the commission that applies to the amount).	|
-| CancelPenalties			| 0..1     	|		| New information of cancellation policies with the modifications.  |
+| CancelPenalties			| 0..1     	|		| New cancellation policies after booking changes.  |
 | @nonRefundable			| 1  		| Boolean	| Indicate if this option is nonRefundable (true or false).	|
-| CancelPenalties/CancelPenalty		| 0..n     	|		| Listing cancellation penalties.				|
+| CancelPenalties/CancelPenalty		| 0..n     	|		| Listing of cancellation penalties.				|
 | CancelPenalties/CancelPenalty /HoursBefore | 1  	| String	| Number of hours prior to arrival day in which this Cancellation policy applies.	|
 | CancelPenalties/CancelPenalty /Penalty | 1       	|		| Contains the value to apply.					|
 | @type					| 1  		| String	| Type of penalty Possible values: "Noches" (nights) , "Porcentaje" (percentage) ,"Importe" (price value).  |
