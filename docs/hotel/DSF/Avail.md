@@ -115,10 +115,10 @@ is closed.
 | @code           			| 1     	| String	| Native destination code as returned by supplier in *HotelList* or *AvailDestinationTree*.	|
 | StartDate            			| 1     	| String	| 'Search from' date.						|
 | EndDate              			| 1     	| String	| 'Search til' date.						|
-| Currency             			| 0..1  	| String	| Currency requested if supported by supplier. If not, this value will be ignored.	|
-| Nationality          			| 0..1  	| String	| Nationality of the guest (use ISO3166_1_alfa_2). This information is mandatory **depending** on the supplier. (see StaticConfiguration in order to verify if a supplier implements it).	|
-| Markets              			| 0..1         	|		| List of Market requested (see StaticConfiguration in order to verify if a supplier implements it).				|
-| Markets/Market       			| 0..n  	| String	| Targeted zone/ country/ Point of sale.			|
+| Currency             			| 1  	| String	| Currency requested if supported by supplier. If not, this value will be ignored.	|
+| Nationality          			| 1  	| String	| Nationality of the guest (use ISO3166_1_alfa_2). This information is mandatory **depending** on the supplier. (see StaticConfiguration in order to verify if a supplier implements it).	|
+| Markets              			| 1         	|		| List of Market requested (see StaticConfiguration in order to verify if a supplier implements it).				|
+| Markets/Market       			| 1..n  	| String	| Targeted zone/ country/ Point of sale.			|
 | RoomCandidates/RoomCandidate 		| 1..n         	|		| Room required.						|
 | @id             			| 1     	| Integer	| Id of the requested room (starting at 1).			|
 | RoomCandidates/RoomCandidate /Paxes/Pax | 1..n        |		|  Pax required.  						|
