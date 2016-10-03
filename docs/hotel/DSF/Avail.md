@@ -76,7 +76,7 @@ is closed.
         <Currency>EUR</Currency>
         <Nationality>ES</Nationality>
         <Markets>
-            <Market>SP</Market>
+            <Market>ES</Market>
             <Market>EN</Market>
             ....
         </Markets>
