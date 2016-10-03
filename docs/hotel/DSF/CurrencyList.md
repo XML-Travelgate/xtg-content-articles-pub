@@ -11,10 +11,7 @@ permalink: /docs/hotel/DSF/CurrencyList
 ### Method Goals
 
 
-This method returns a list of currencies, provided that the supplier has
-this petition implemented in there systems on an availability level,
-with this meaning that the provider can use different currencies in the
-availability.
+This method returns a list of currencies the supplier supports in Avail.
 
 
 
@@ -29,16 +26,6 @@ The request does not require any elements. Empty request.
 
 
 The result returns a list of currencies.
-
-
-
-### Remarks
-
-
-This petition is still in a working progress. There are no integration
-that have this petition implemented, but they will be added, provided
-that the supplier returns said information.
-
 
 
 ### CurrenyListRQ Example
