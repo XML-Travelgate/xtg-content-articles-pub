@@ -110,7 +110,7 @@ is closed.
 | EndDate       				| 1  		| String	| End date to search rates.				|
 | MealPlanCode  				| 1  		| String	| MealPlan code.					|
 | HotelCode     				| 1  		| String	| Hotel code.						|
-| Nationality   				| 0..1		| String	| Nationality of the Holder (use ISO3166_1_alfa_2). This informations will be mandatory depending on the supplier (see StaticConfiguration in order to verify if a supplier implements it).  |
+| Nationality   				| 1		| String	| Nationality of the Holder (use ISO3166_1_alfa_2 , see StaticConfiguration in order to verify if a supplier implements it).  |
 | Price         				| 1      	|		| Total price of this valuation.			|
 | @currency					| 1  		| String	| Currency code.					|
 | @amount  					| 1  		| Decimal	| Option Amount.					|
