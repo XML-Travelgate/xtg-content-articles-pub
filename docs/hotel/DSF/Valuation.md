@@ -48,6 +48,7 @@ Our system allows for a maximum of **180000** milliseconds before the connection
    <HotelCode>6259</HotelCode>
    <PaymentType>MerchantPay</PaymentType>
    <OptionType>Hotel</OptionType>
+   <Nationality>ES</Nationality>
    <Parameters>
        <Parameter key = "ID1" value = "ID#1#VR"/>
        <Parameter key = "ID2" value = "ID#2#FGR#45187#10-5"/>
@@ -88,7 +89,7 @@ Our system allows for a maximum of **180000** milliseconds before the connection
 | HotelCode                              | 1          | String   | Hotel code.     |
 | PaymentType                            | 1          | String   | Indicates payment type. |
 | OptionType                             | 1          | String   | Indicates option types. |
-| Nationality                            | 0..1       | String   | Guest nationality (use ISO3166_1_alfa_2). This informations is mandatory for some suppliers only. |
+| Nationality                            | 1       | String   | Guest nationality (use ISO3166_1_alfa_2). |
 | Rooms                                  | 1          |          | Rooms in this option (room list). |
 | Rooms/Room                             | 1..n       |          | Room Details. |
 | @id                                    | 1          | String   | Room Identifier. |
