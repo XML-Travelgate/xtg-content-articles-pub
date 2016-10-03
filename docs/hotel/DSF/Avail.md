@@ -115,8 +115,8 @@ is closed.
 | @code           			| 1     	| String	| Native destination code as returned by supplier in *HotelList* or *AvailDestinationTree*.	|
 | StartDate            			| 1     	| String	| 'Search from' date.						|
 | EndDate              			| 1     	| String	| 'Search til' date.						|
-| Currency             			| 1  	| String	| Currency requested if supported by supplier. If not, this value will be ignored.	|
-| Nationality          			| 1  	| String	| Nationality of the guest (use ISO3166_1_alfa_2). This information is mandatory **depending** on the supplier. (see StaticConfiguration in order to verify if a supplier implements it).	|
+| Currency             			| 1  	| String	| Currency requested if supported by supplier. 	|
+| Nationality          			| 1  	| String	| Nationality of the guest (use ISO3166_1_alfa_2). This information is mandatory. (see StaticConfiguration in order to verify if a supplier implements it).	|
 | Markets              			| 1         	|		| List of Market requested (see StaticConfiguration in order to verify if a supplier implements it).				|
 | Markets/Market       			| 1..n  	| String	| Targeted zone/ country/ Point of sale.			|
 | RoomCandidates/RoomCandidate 		| 1..n         	|		| Room required.						|
