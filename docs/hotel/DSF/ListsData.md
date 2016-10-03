@@ -11,8 +11,7 @@ permalink: /docs/hotel/DSF/ListData
 ### Method Goals
 
 
-This paragraph aims to describe all of our lists with data.
-
+This paragraph aims to return all of the data lists used in our system: language codes, error codes,currency list, credit cards, nationality and market.
 
 
 ### Language Codes
