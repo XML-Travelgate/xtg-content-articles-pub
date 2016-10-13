@@ -160,7 +160,8 @@ is closed.
                         <DailyRatePlan
                             effectiveDate = "28/01/2014"
                             expireDate = "29/01/2014"
-                            code = "XAD"/>
+                            code = "XAD"
+                            name = "Flexy Rate Only Adults"/>
                       </DailyRatePlans>
                     </Room>
                   </Rooms>
@@ -193,7 +194,8 @@ is closed.
                         <DailyRatePlan
                             effectiveDate = "28/01/2014"
                             expireDate = "29/01/2014"
-                            code = "XAT"/>
+                            code = "XAT"
+                            name="Flexy Rate"/>
                     </DailyRatePlans>
                     </Room>
                   </Rooms>
@@ -383,6 +385,7 @@ Currently, the client can configure the following BusinessRules:
 | @effectiveDate 			| 1 		| String 	| Start date in which the rate becomes effective.		|
 | @expireDate 				| 1 		| String 	| Expirty date of rate.			|
 | @code 				| 1 		| String 	| Indicates the supplier's rate code. This code specifies the rate applied to those days.	|
+| @name 				| 0		| String 	| Indicates the supplier's rate name.	|
 | MealPlans/MealPlan/Options /Option/Rooms/Room /Price | 1 | 		| Room price.							|
 | @currency 				| 1 		| String 	| Currency code.						|
 | @amount 				| 1 		| Decimal 	| Room Amount.							|
