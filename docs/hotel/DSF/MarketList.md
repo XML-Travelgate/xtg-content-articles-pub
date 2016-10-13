@@ -1,6 +1,6 @@
 ---
 title: MarketList
-keywords: hotel, data structure, market list , market , markets , list
+keywords: hotel, data structure, market list, market, markets, list
 search: Hotel - Data Structure - MarketList
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/DSF/MarketList
