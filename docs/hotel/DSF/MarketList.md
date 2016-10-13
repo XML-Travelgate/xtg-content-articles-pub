@@ -70,7 +70,7 @@ Most suppliers use a standard ISO - 3166_1_alfa_2, but it depends on each indivi
             </Market>
             <Market>
                 <Code>PT</Code>
-                <Name>Portugal/Name>
+                <Name>Portugal</Name>
             </Market>
             …
             <Market/>
