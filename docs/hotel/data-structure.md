@@ -22,6 +22,7 @@ The integration will have the following methods:
 | RoomList                  | RoomListRQ                  | RoomListRS                  | No           | Returns available room types. |
 | MealPlanList              | MealPlanListRQ              | MealPlanListRS              | Yes          | Returns a list of available boards. |
 | CategoryList              | CategoryListRQ              | CategoryListRS              | Yes  	       | Returns a list of available categories. |
+| MarketList              | MarketListRQ              | MarketListRS              | No  	       | Returns a list of available markets. |
 | Avail                     | AvailRQ                     | AvailRS                     | Yes          | Makes an availability request. |
 | Valuation                 | ValuationRQ                 | ValuationRS                 | Yes          | Retrieves a booking quote (pre-book). |
 | Reservation               | ReservationRQ               | ReservationRS               | Yes          | Makes a booking. |
