@@ -150,6 +150,14 @@ minimum stay, list of languages supported ...
         <InformTiket>false</InformTiket>
         <ImplementsDescriptiveInfoExtended>false</ImplementsDescriptiveInfoExtended>
         <InformNumberOfUnits>true</InformNumberOfUnits>     
+        <AgeRange>
+           <Age min = "0" max = "2"/>
+           <Age min = "3" max = "12"/>
+           <Age min = "13" max = "999"/>
+        </AgeRange>
+        <DestinationRegex>
+            <Regex>HOT</Regex>
+        </DestinationRegex>
     </StaticConfigurationRS>
 ~~~
 
@@ -239,7 +247,12 @@ minimum stay, list of languages supported ...
 | InformTiket          			| 1   		| Boolean	| Informs of the possible option type Hotel+Ticket.	|
 | ImplementsDescriptive InfoExtended	| 1   		| Boolean	|Indicates whether the new DescriptiveInfo is implemented.	|
 | InformNumberOfUnits  			| 1   		| Boolean	| Indicates the number of units available per room.  |
- 
+| AgeRange  			| 0..1   		| 	|  The age range used by the supplier. |
+| AgeRange /Age  			| 1..n   		| 	|  Age range |
+| @min 			| 1   		| String	| Minimum age in range |
+| @max 			| 1		| String	|  Max age in range |
+| DestinationRegex			| 0..1		| 	| List of regex. |
+| DestinationRegex /Regex			| 1..n		| String | Regex. |
 
 
 ### Detailed description
