@@ -35,6 +35,7 @@ Hotel XSD Schemas describing the request and response XML structures can be down
    19. [ModifyReservation](/docs/hotel/DSF/ModifyReservation)
    20. [CurrencyList](/docs/hotel/DSF/CurrencyList)
    21. [Lists of Data](/docs/hotel/DSF/ListData)
+   22. [MarketList](/docs/hotel/DSF/MarketList)
 4. [Soap Example](/docs/hotel/soap-examples)
 
 
