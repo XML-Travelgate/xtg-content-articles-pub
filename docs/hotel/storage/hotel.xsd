@@ -287,6 +287,7 @@
     <xs:attribute name="effectiveDate" type="xs:string" />
     <xs:attribute name="expireDate" type="xs:string" />
 	<xs:attribute name="code" type="xs:string" />
+	<xs:attribute name="name" type="xs:string" />	
   </xs:complexType>  
   <xs:complexType name="Features">
     <xs:sequence>
@@ -1314,12 +1315,14 @@
           <xs:element minOccurs="1" maxOccurs="1" name="InformCancelPoliciesReservationRead" type="xs:boolean" />
           <xs:element minOccurs="1" maxOccurs="1" name="InformCancelPoliciesReservationList" type="xs:boolean" />
           <xs:element minOccurs="1" maxOccurs="1" name="InformCancelPoliciesAvail" type="xs:boolean" />
-          <xs:element minOccurs="1" maxOccurs="1" name="InformChangesPolicies" type="xs:boolean" />
-          <xs:element minOccurs="1" maxOccurs="1" name="ImplementsDeltaPrice" type="xs:boolean" />
-		  <xs:element minOccurs="1" maxOccurs="1" name="RequiredAllPassengers" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="InformModificationPolicies" type="xs:boolean" />		  
+          <xs:element minOccurs="1" maxOccurs="1" name="ImplementsDeltaPrice" type="xs:boolean" />		           	
+		  <xs:element minOccurs="1" maxOccurs="1" name="RequiredAllPassengers" type="xs:boolean" />		
           <xs:element minOccurs="0" maxOccurs="1" name="ModifyTransactions" type="ModifyTransactions" />
+		  <xs:element minOccurs="0" maxOccurs="1" name="ImplementsDailyPrice" type="xs:boolean" />		  
+          <xs:element minOccurs="0" maxOccurs="1" name="ImplementsOffersAvail" type="xs:boolean" />	
+          <xs:element minOccurs="0" maxOccurs="1" name="ImplementsRemarksAvail" type="xs:boolean" />				  
 		  <xs:element minOccurs="1" maxOccurs="1" name="InformNRFRateByRoom" type="xs:boolean" />
-		  <xs:element minOccurs="0" maxOccurs="1" name="CurrencyList" type="CurrencyList" />
 		  <xs:element minOccurs="0" maxOccurs="1" name="AllowsCurrencyAvail" type="xs:boolean" />
 		  <xs:element minOccurs="1" maxOccurs="1" name="SearchTypeMultiRoom" type="xs:boolean" />
 		  <xs:element minOccurs="1" maxOccurs="1" name="InformCancelPoliciesModify" type="xs:boolean" />
@@ -1346,17 +1349,36 @@
           <xs:element minOccurs="0" maxOccurs="1" name="InformHoneymoonRate" type="xs:boolean" />	
           <xs:element minOccurs="0" maxOccurs="1" name="ImplementsProviderLocatorCancel" type="xs:boolean" />	
           <xs:element minOccurs="0" maxOccurs="1" name="ImplementsClientLocatorCancel" type="xs:boolean" />		  
-          <xs:element minOccurs="0" maxOccurs="1" name="NumMarketsAllowed" type="xs:boolean" />	
+          <xs:element minOccurs="0" maxOccurs="1" name="ImplementsDescriptiveInfoExtended" type="xs:boolean" />			
+          <xs:element minOccurs="0" maxOccurs="1" name="NumMarketsAllowed" type="xs:boolean" />			  
           <xs:element minOccurs="0" maxOccurs="1" name="InformTiket" type="xs:boolean" />	
-          <xs:element minOccurs="0" maxOccurs="1" name="ImplementsDescriptiveInfoExtended" type="xs:boolean" />	
           <xs:element minOccurs="0" maxOccurs="1" name="InformNumberOfUnits" type="xs:boolean" />	
-          <xs:element minOccurs="0" maxOccurs="1" name="ImplementsNationality" type="xs:boolean" />	
-          <xs:element minOccurs="0" maxOccurs="1" name="RequiredMarkets" type="xs:boolean" />			  
+          <xs:element minOccurs="0" maxOccurs="1" name="ImplementsNationality" type="xs:boolean" />	 		  
+          <xs:element minOccurs="0" maxOccurs="1" name="RequiredMarkets" type="xs:boolean" />	
+          <xs:element minOccurs="0" maxOccurs="1" name="AgeRange" type="AgeRange" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DestinationRegex" type="DestinationRegex" />		  
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
+  <xs:complexType name="AgeRange">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Age" type="Age" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="Age">
+    <xs:attribute name="min" type="xs:string" />
+    <xs:attribute name="max" type="xs:string" />
+  </xs:complexType>
+  
+    <xs:complexType name="DestinationRegex">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Regex" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  
   <xs:complexType name="ModifyTransactions">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ModifyTransaction" type="ModifyTransaction" />
@@ -1399,7 +1421,7 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Language" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-    <xs:complexType name="CurrencyList">
+  <xs:complexType name="CurrencyList">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="CurrencyCode" type="xs:string" />
     </xs:sequence>
@@ -1630,6 +1652,36 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Currency">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Code" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  
+    <xs:element name="MarketListRQ" nillable="true" type="MarketListRQ" />
+    <xs:complexType name="MarketListRQ">
+      <xs:complexContent mixed="false">
+          <xs:extension base="HotelBaseRQ" />
+      </xs:complexContent>
+    </xs:complexType> 
+
+<xs:element name="MarketListRS" nillable="true" type="MarketListRS" />
+  <xs:complexType name="MarketListRS">
+    <xs:complexContent mixed="false">
+      <xs:extension base="HotelBaseRS">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Markets" type="MarketList" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MarketList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Market" type="Market" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Market">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="1" name="Code" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
