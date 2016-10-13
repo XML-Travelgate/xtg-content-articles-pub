@@ -198,5 +198,19 @@ permalink: /docs/hotel/change-log
 **Version 1.0.17:** Date 27/06/2016
 
  :  Code (Picture) in DescriptiveInfoRS.
+  
+ |
+
+ **Version 1.0.18:** Date 31/10/2016
+
+ :  Name (DailyRatePlan) in AvailRS.
+ 
+ :  New method MarketList.
+ 
+ :  AgeRange in StaticConfiguration.
+ 
+ :  DestinationRegex in StaticConfiguration.
+ 
+ 
 
 
