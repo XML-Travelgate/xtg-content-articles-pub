@@ -66,6 +66,7 @@ specific objects related to the operation
 19. [ModifyReservation](/docs/hotel/DSF/ModifyReservation)
 20. [CurrencyList](/docs/hotel/DSF/CurrencyList)
 21. [Lists of Data](/docs/hotel/DSF/ListData)
+22. [MarketList](/docs/hotel/DSF/MarketList)
 
 
 
