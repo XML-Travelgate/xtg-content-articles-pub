@@ -205,7 +205,7 @@ can have four values: OK, RQ, CN and UN.
 - *LaterPay*: The payment is managed by the hotel. The customer will use a credit-card as a guarantee for the hotel and the payment
 will be completed at check in.
 - *CardBookingPay*: The payment is managed by the supplier. The payment is effectuated at the time of booking.
-- *CardChekInPay*: The payment is managed by the supplier. The payment is effectuated at check in in the hotel. the ReservationRQ 
+- *CardChekInPay*: The payment is managed by the supplier. The payment is effectuated at check in in the hotel. 
 
 
 ~~~xml
@@ -246,7 +246,7 @@ the integration implements it, we assume that the price
 range is 0 and the process will continue (price is lower
 or equal to the price showed in valuation).
 
-This field is implemented if it's native to the supplier or if it another availability/valuation request needs to be done in Reservation. In case the supplier blocks the option in valuation, reservation
+This field is implemented if it's native to the supplier or if another availability/valuation request needs to be done in Reservation. In case the supplier blocks the option in valuation, reservation
 will be done automatically in reservation method. This information is available in the Static configuration of
 each supplier.
 
