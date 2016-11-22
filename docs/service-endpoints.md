@@ -6,7 +6,9 @@ sidebar: mydoc_sidebar
 permalink: /docs/service-endpoints/
 ---
 
-# Service Endpoints
+# Service Endpoints (To be used for Testing Purposes only)
+
+You will be sent Production endpoints alongside your live access configuration once you have passed our certification process. 
 
 
 WSDLs describing the structure of an XML request and response are available
