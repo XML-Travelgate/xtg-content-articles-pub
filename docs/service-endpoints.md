@@ -10,7 +10,6 @@ permalink: /docs/service-endpoints/
 
 You will be sent Production endpoints alongside your live access configuration once you have passed our certification process. 
 
-
 WSDLs describing the structure of an XML request and response are available
 through the following URLs:
 
