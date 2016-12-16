@@ -52,7 +52,7 @@ You can request a new Integration at any time by filling out the form below. Jus
 the supplier beforehand and let them know that you want to **connect through XML Travelgate**.
 
 
-[New Integration Request Form](http://bit.ly/290vrWE)
+[New Integration Request Form](https://form.jotformeu.com/xmltravelgate/new-integration-request-form)
 
 
 Each time you activate a new supplier using our API we need to have your credentials to their system. We need them because some suppliers work differently depending on who is connecting to them. To make sure it all runs smoothly we use your credentials to ascertain the integration works specifically for you.
