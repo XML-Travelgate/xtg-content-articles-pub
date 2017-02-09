@@ -400,7 +400,7 @@ Should be used in order to determine maximum number of Hotels, Cities, Zones or 
 Customer must use this value in order to make single or multiple Avail Requests.
 
 Different approaches can be taken in order to get better performance combinations. 
-Number of hotels per destination, total number of requests, supplier characteristics... or some other factors can be used in order to determine best approach.
+Number of hotels per destination, total number of requests, supplier response times... or some other factors can be used in order to determine best approach implemented by customer.
 
 
 **BusinessRules:**
