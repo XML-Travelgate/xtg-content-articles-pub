@@ -387,7 +387,7 @@ is closed.
 
 ### Detailed description
 
-** Understanding MaxNumberHotels, Cities, Zones or GeoCodes **
+**Understanding MaxNumberHotels, Cities, Zones or GeoCodes:**
 
 As explained in [StaticConfigurationRS Description](/docs/hotel/DSF/StaticConfiguration):
 
