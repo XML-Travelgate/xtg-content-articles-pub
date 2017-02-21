@@ -289,45 +289,7 @@ is closed.
     </AvailRS>
 ~~~
 
-
-### Detailed description
-
-
-**BusinessRules:**
-
-BusinessRules uses *optionsQuota*, go to [Common-Elements](/hotel/DSF/Common-Elements) for more
-information.
-
-This tag will only be used for suppliers availability responses
-returning a very large number of options, about 20.000+ in same
-response.
-
-Currently, the client can configure the following BusinessRules:
-
-* *CheaperAmount*:
-
-  The cheapest options is returned without exceeding the
-  *optionsQuota* limit.
-
-* *RoomType*: 
-
-  The options are filtered using a limited combination of
-  rooms types. First, we group same room types so you receive
-  options with the same type/classificatory (For example:
-  Standard-Standard-Standard-Standard, Junior-Junior-Junior-Junior...). Then
-  we combine the cheapest rooms with the remaining rooms, always
-  checking for duplicates and without execeeding the *optionsQuota* limit.
-
-  If the client sets BusinessRules value, then these will be applied
-  when number of options returned exceeds *optionsQuota*. If the client
-  does not set any BusinessRules values, then the *CheaperAmount*
-  BusinessRule is applied by default.
-
-
-
 ### AvailRS Description
-
-
 
 | **Element**				| **Number**	| **Type**	| **Description**						|
 | ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
@@ -423,6 +385,37 @@ Currently, the client can configure the following BusinessRules:
 
 
 ### Detailed description
+
+**BusinessRules:**
+
+BusinessRules uses *optionsQuota*, go to [Common-Elements](/hotel/DSF/Common-Elements) for more
+information.
+
+This tag will only be used for suppliers availability responses
+returning a very large number of options, about 20.000+ in same
+response.
+
+Currently, the client can configure the following BusinessRules:
+
+* *CheaperAmount*:
+
+  The cheapest options is returned without exceeding the
+  *optionsQuota* limit.
+
+* *RoomType*: 
+
+  The options are filtered using a limited combination of
+  rooms types. First, we group same room types so you receive
+  options with the same type/classificatory (For example:
+  Standard-Standard-Standard-Standard, Junior-Junior-Junior-Junior...). Then
+  we combine the cheapest rooms with the remaining rooms, always
+  checking for duplicates and without execeeding the *optionsQuota* limit.
+
+  If the client sets BusinessRules value, then these will be applied
+  when number of options returned exceeds *optionsQuota*. If the client
+  does not set any BusinessRules values, then the *CheaperAmount*
+  BusinessRule is applied by default.
+
 
 
 **Price, binding price and commission:**
