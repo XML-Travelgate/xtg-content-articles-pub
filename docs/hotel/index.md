@@ -8,9 +8,6 @@ permalink: /docs/hotel/index
 
  **Contents:**
 
-Hotel XSD Schemas describing the request and response XML structures can be downloaded from [here](/docs/hotel/hotel.xsd).
-
-
 1. [Change Log](/docs/hotel/change-log)
 2. [Hotel FAQ](/docs/hotel/FAQ)
 3. [Data Structure](/docs/hotel/data-structure)
