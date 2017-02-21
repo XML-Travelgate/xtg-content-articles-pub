@@ -51,9 +51,7 @@ Once you have decided which suppliers you want to connect to, you need to get in
 You can request a new Integration at any time by filling out the form below. Just remember to **arrange a contract** with
 the supplier beforehand and let them know that you want to **connect through XML Travelgate**.
 
-
-[New Integration Request Form](https://form.jotformeu.com/xmltravelgate/new-integration-request-form)
-
+[New Integration Request Form](https://connect.xmltravelgate.com/)
 
 Each time you activate a new supplier using our API we need to have your credentials to their system. We need them because some suppliers work differently depending on who is connecting to them. To make sure it all runs smoothly we use your credentials to ascertain the integration works specifically for you.
 We also use them to download the product the supplier has assigned to you. As you already know, we promise to deliver static content (hotel list, hotel details, destination tree, etc) in less than 3 minutes and in order to do this for some of our suppliers we need to pre-cache that data on our side.
