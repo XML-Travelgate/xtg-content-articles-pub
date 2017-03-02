@@ -1,5 +1,5 @@
 ---
-title: Hotel PUSH API Docs''s documentation!
+title: Hotel PUSH API documentation
 keywords: index
 search: Hotel-Push - Index
 sidebar: mydoc_sidebar
