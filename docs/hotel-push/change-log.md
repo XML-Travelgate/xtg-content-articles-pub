@@ -84,6 +84,6 @@ permalink: /docs/hotel-push/change-log
 
  :  Added Price per occupancy in HotelRatePlanNotif and HotelRatePlanRetrieve.
 
- :  Added explanation of the 3 different types of price charging supported.
+ :  Added explanation about the 3 different types of price charging supported.
 
 
