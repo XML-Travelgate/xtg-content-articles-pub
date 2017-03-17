@@ -393,7 +393,7 @@ Hotel codes or other destination codes must be defined using information specifi
 
 *MaxNumberHotels*, *MaxNumberCities*, *MaxNumberZones* and *MaxNumberGeoCodes* indicates how client should group avail requests to supplier.
 
-It's the client's resposability to do performance tests in order to determine what's the best strategy regarding group destinations in an Avail Request. This strategy may vary depending on time execution, response size or other client's expectations.
+It's the client's resposability to do performance tests in order to determine what's the best strategy regarding group destinations in an Avail Request. This strategy may vary depending on execution time, response size or other client's expectations.
 
 
 **BusinessRules:**
