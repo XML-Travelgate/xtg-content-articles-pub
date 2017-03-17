@@ -383,8 +383,18 @@ is closed.
 | @name 				| 1 		| String 	| Contains the name of the offer.				|
 
 
-
 ### Detailed description
+
+**AvailDestinations:**
+
+AvailDestinations indicates what destinations will be requested to the supplier. 
+
+Hotel codes or other destination codes must be defined using information specified in  [StaticConfigurationRS Description](/docs/hotel/DSF/StaticConfiguration).
+
+*MaxNumberHotels*, *MaxNumberCities*, *MaxNumberZones* and *MaxNumberGeoCodes* indicates how client should group avail requests to supplier.
+
+It's the client's resposability to do performance tests in order to determine what's the best strategy regarding group destinations in an Avail Request. This strategy may vary depending on time execution, response size or other client's expectations.
+
 
 **BusinessRules:**
 
@@ -496,7 +506,6 @@ depends on the supplier's request.
 
 **Note:** *Once the age as been established for each pax then it must not be
 modified in the remaining methods, like for example in valuation.*   
-
 
 
 
