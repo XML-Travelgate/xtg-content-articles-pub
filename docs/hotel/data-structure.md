@@ -7,6 +7,7 @@ permalink: /docs/hotel/data-structure
 ---
 
 The structure of the API specification follows a standard. This document intends to explain every aspect of this structure and their fields. 
+You can also download the XSD file containing each and every data structures of the API from [here](/articles-pub/docs/hotel/storage/hotel.xsd)
 
 The integration will have the following methods:
 
