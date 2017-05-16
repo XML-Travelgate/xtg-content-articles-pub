@@ -9,6 +9,16 @@ permalink: /docs/hotel/data-structure
 The structure of the API specification follows a standard. This document intends to explain every aspect of this structure and their fields. 
 You can also download the XSD file containing each and every data structures of the API from [here](/articles-pub/docs/hotel/storage/hotel.xsd)
 
+You can read about what changes might and what changes might not cause an error, below:
+
+* Changes that can cause an error:
+  * Removing a field from XSD.
+  * Modifying the type of field or attribute. For example, passing a string type to numeric.
+  
+* Changes that cannot cause an error:
+  * Adding a new element or attribute.
+  * Modifying the order of elements or attributes.
+
 The integration will have the following methods:
 
 
