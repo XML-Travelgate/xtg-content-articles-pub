@@ -591,7 +591,9 @@ in the availability method.
 -   The rate **honeymoon** is applied to those who just got married and
     is determined by each supplier. Check *remarks* for more details.
 
+**Offers:**
 
+Depending on the supplier, the information concerning offers can be displayed at a room level or in the option level in AvailRS.
 
 **Status options:**
 
