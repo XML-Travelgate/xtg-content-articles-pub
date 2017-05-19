@@ -590,6 +590,11 @@ in the availability method.
     determined by each supplier.Check *remarks* for more details.
 -   The rate **honeymoon** is applied to those who just got married and
     is determined by each supplier. Check *remarks* for more details.
+-   The rate **publicServant** is applicable to public servants only.
+-   The rate **unemployed** is applied to those without work.
+-   The rate **vip** is applied to VIP and is at the discretion of the supplier.
+-   The rate **b2b** is only available for sale via B2B/travel agency.
+-   The rate **b2c** is only available for sale via B2C.
 
 **Offers:**
 
