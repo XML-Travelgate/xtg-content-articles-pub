@@ -38,6 +38,7 @@ This paragraph aims to return all of the data lists used in our system: language
 |  101         	| System Exception (Exception not controlled or not classified as general exception).			|
 |  102         	| Supplier Error.					|
 |  104         	| Timeout (Timeout during the execution of an operation (look in the common attribute timeout )).		|
+|  105         	| Communication Error. 		|
 |  204         	| Supplier returns 0 results in availability.									|
 |  205         	| The Supplier doesn't accept the distribution RQ.								|
 |  206         	| The Supplier doesn't accept the dates RQ.									|
