@@ -92,7 +92,7 @@ Most suppliers use a standard ISO - 3166_1_alfa_2, but it depends on each indivi
 | Market	| 1..n          	| 		| Market.			|
 | Market/Code	| 1         	| String		| Code.			|
 | Market/Name	| 1          	| String		| Name.			|
-| Market/GroupCode	| 1          	| String		| Indicates if the supplier groups different markets together and what the group is called.			|
+| Market/GroupCode	| 0..1          	| String		| Indicates if the supplier groups different markets together and what the group is called.			|
 
 **GroupCode:**
 
