@@ -28,22 +28,22 @@ The request does not require any elements. Empty request.
 The result returns a list of currencies.
 
 
-### CurrenyListRQ Example
+### CurrencyListRQ Example
 
 
 ~~~xml
-    <CurrenyListRQ>
-    </CurrenyListRQ>
+    <CurrencyListRQ>
+    </CurrencyListRQ>
 ~~~
 
 
-### CurrenyListRQ Description
+### CurrencyListRQ Description
 
 
 
 | **Element**			| **Number**	| **Type**	| **Description**			|
 | ----------------------------- | ------------- | ------------- | ------------------------------------- |
-| CurrenyListRQ			| 1          	|		| Root node.				|
+| CurrencyListRQ			| 1          	|		| Root node.				|
 
 
 
