@@ -67,10 +67,12 @@ Most suppliers use a standard ISO - 3166_1_alfa_2, but it depends on each indivi
             <Market>
                 <Code>ES</Code>
                 <Name>Spain</Name>
+                <GroupCode>Europe</GroupCode>
             </Market>
             <Market>
                 <Code>PT</Code>
                 <Name>Portugal</Name>
+                <GroupCode>Europe</GroupCode>
             </Market>
             …
             <Market/>
@@ -90,6 +92,10 @@ Most suppliers use a standard ISO - 3166_1_alfa_2, but it depends on each indivi
 | Market	| 1..n          	| 		| Market.			|
 | Market/Code	| 1         	| String		| Code.			|
 | Market/Name	| 1          	| String		| Name.			|
+| Market/GroupCode	| 1          	| String		| Indicates if the supplier groups different markets together and what the group is called.			|
 
+**GroupCode:**
+
+Use this option to see if the supplier groups different markets in a single group, so you can get the same prices/options if two markets belong to the same group.
                        
 
