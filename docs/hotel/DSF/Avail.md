@@ -169,6 +169,11 @@ is closed.
                   <Offers>
                     <Offer code = "EBI" name = "Early booking"/>
                   </Offers>
+                  <Fees>
+                    <Fee includedPriceOption = "true" description = "TaxAndServiceFee">
+                        <Price currency = "EUR" amount = "8.11" binding = "false" commission = "-1"/>
+                    </Fee>
+                  </Fees>
                 </Option>
               </Options>
             </MealPlan>
@@ -178,6 +183,9 @@ is closed.
                   <Rooms>
                     <Room id = "4146" roomCandidateRefId = "1" code = "TWN#STAND" description = "Twin Standard" nonRefundable = "false" numberOfUnits = "5">
                       <Price currency = "EUR" amount = "42.90" binding = "false" commission = "-1"/>
+                      <Offers>
+                        <Offer code = "EBI" name = "Early booking"/>
+                      </Offers>
                     <Beds sharedBed = "false">
                         <Bed numberOfBeds = "2" type = "Twin"/>
                     </Beds>
@@ -325,6 +333,10 @@ is closed.
 | @description 				| 1 		| String 	| Room description.						|
 | @nonRefundable 			| 0..1 		| String 	| Identifies if the room is refundable or not.			|
 | @numberOfUnits 			| 0..1 		| Integer 	| Number of rooms available with the same type (see StaticConfiguration).	|
+| MealPlans/MealPlan/Options /Option/Rooms/Room/Offers | 0..1 	| 		| The supplier returns in response which offer is applicable for each room (see StaticConfiguration in order to verify if a supplier implements it).	|
+| MealPlans/MealPlan/Options /Option/Rooms/Room/Offers/Offer | 1..n | 		| List of offers.						|
+| @code 				| 1 		| String 	| Contains the code to identify a offer.			|
+| @name 				| 1 		| String 	| Contains the name of the offer.				|
 | MealPlans/MealPlan/Options /Option/Rooms/Room/Beds | 0..1 | 		| Detail of beds (see StaticConfiguration in order to verify if a supplier implements it).						|
 | @sharedBed 				| 0..1 		| Boolean 	| Specifies if the beds in the room are shared.			|
 | MealPlans/MealPlan/Options /Option/Rooms/Room /Beds/Bed | 0..n | 	| Identifies types of beds.					|
@@ -353,7 +365,6 @@ is closed.
 | @amount 				| 1 		| Decimal 	| Room Amount.							|
 | @binding 				| 1 		| Boolean 	| Identifies if is the price is binding (When true the sale price returned **must** not be less than the price informed).|
 | @commission 				| 1 		| Decimal 	| Commission: -1 = not specified (information available in  contract with the supplier ), 0 = net price, X = % of the commission applied to the amount.  |
-| 	| 		|								|
 | MealPlans/MealPlan/Options /Option/Price | 1 		| 		| Option price ( it is the total price of option).		|
 | @currency 				| 1 		| String 	| Currency code.						|
 | @amount 				| 1 		| Decimal 	| Option Amount.						|
@@ -381,6 +392,15 @@ is closed.
 | MealPlans/MealPlan/Options /Option/Offers/Offer | 1..n | 		| List of offers.						|
 | @code 				| 1 		| String 	| Contains the code to identify a offer.			|
 | @name 				| 1 		| String 	| Contains the name of the offer.				|
+| MealPlans/MealPlan/Options /Option/Fees					    | 0..1       | 	    | Contains a list of fees. |
+| MealPlans/MealPlan/Options /Option/Fees/Fee				    | 1..n       |      | Contains details of the fee. |
+| @includedPriceOption			    | 1		 | Boolean  | Indicates if the fee is included or not in the final price. |
+| @description				    | 1          | String   | Remarks regarding fee. |
+| MealPlans/MealPlan/Options /Option/Fees/Fee/Price			    | 1          |          | Contains details of price. |
+| @currency 				    | 1          | String   | Currency code. |
+| @amount 				    | 1          | Decimal  | Fee Amount. |
+| @binding				    | 1          | Boolean  | Identifies if is the price is binding (When true the sale price returned must not be less than the price informed. |
+| @commission				    | 1          | Decimal  | Commission: -1 = not specified (indicated in contract with supplier), 0 = net price, X = % of the commission applied to the amount. |
 
 
 ### Detailed description
