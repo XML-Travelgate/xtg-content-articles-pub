@@ -394,61 +394,61 @@ Clarification - All information contained within the Avail section, relates to t
 | Batch/InformExclusiveDeal			| 1        	| Boolean	| The supplier indicates if a Hotel is an Exclusive Deal in HotelList and/or DescriptiveInfo.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/HotelList			| 1        	| 	| Contains information regarding HotelList.		|
-| Batch/HotelList/StaticType			| 1        	| String	| Informs the static type.		|
+| Batch/HotelList/StaticType			| 1        	| Enum	| Informs the static type.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/HotelList/Languages			| 1        	| 	| 	List of languages.		|
 | Batch/HotelList/Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/DescriptiveInfo			| 1        	| 	| Contains information regarding DescriptiveInfo.		|
-| Batch/DescriptiveInfo/StaticType			| 1        	| String	| Informs the static type.		|
+| Batch/DescriptiveInfo/StaticType			| 1        	| Enum	| Informs the static type.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/DescriptiveInfo/Languages			| 1        	| 	| 	List of languages.		|
 | Batch/DescriptiveInfo/Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/GeographicDestinationTree			| 1        	| 	| Contains information regarding GeographicDestinationTree.		|
-| Batch/GeographicDestinationTree/StaticType			| 1        	| String	| Informs the static type.		|
+| Batch/GeographicDestinationTree/StaticType			| 1        	| Enum	| Informs the static type.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/GeographicDestinationTree/Languages			| 1        	| 	| 	List of languages.		|
 | Batch/GeographicDestinationTree/ Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/AvailDestinationTree			| 1        	| 	| Contains information regarding AvailDestinationTree.		|
-| Batch/AvailDestinationTree/StaticType			| 1        	| String	| Informs the static type.		|
+| Batch/AvailDestinationTree/StaticType			| 1        	| Enum	| Informs the static type.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/AvailDestinationTree/Languages			| 1        	| 	| 	List of languages.		|
 | Batch/AvailDestinationTree/Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/RoomList			| 1        	| 	| Contains information regarding RoomList.		|
-| Batch/RoomList/StaticType			| 1        	| String	| Informs the static type.		|
+| Batch/RoomList/StaticType			| 1        	| Enum	| Informs the static type.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/RoomList/Languages			| 1        	| 	| 	List of languages.		|
 | Batch/RoomList/Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/MealPlanList			| 1        	| 	| Contains information regarding MealPlanList.		|
-| Batch/MealPlanList/StaticType			| 1        	| String	| Informs the static type.		|
+| Batch/MealPlanList/StaticType			| 1        	| Enum	| Informs the static type.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/MealPlanList/Languages			| 1        	| 	| 	List of languages.		|
 | Batch/MealPlanList/Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/CategoryList			| 1        	| 	| Contains information regarding CategoryList.		|
-| Batch/CategoryList/StaticType			| 1        	| String	| Informs the static type.		|
+| Batch/CategoryList/StaticType			| 1        	| Enum	| Informs the static type.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/CategoryList/Languages			| 1        	| 	| 	List of languages.		|
 | Batch/CategoryList/Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/DescriptiveInfoExtended			| 1        	| 	| Contains information regarding DescriptiveInfoExtended.		|
-| Batch/DescriptiveInfoExtended/StaticType			| 1        	| String	| Informs the static type.		|
+| Batch/DescriptiveInfoExtended/StaticType			| 1        	| Enum	| Informs the static type.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/DescriptiveInfoExtended/Languages			| 1        	| 	| 	List of languages.		|
 | Batch/DescriptiveInfoExtended/Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/MarketList			| 1        	| 	| Contains information regarding MarketList.		|
-| Batch/MarketList/StaticType			| 1        	| String	| Informs the static type.		|
+| Batch/MarketList/StaticType			| 1        	| Enum	| Informs the static type.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/MarketList/Languages			| 1        	| 	| 	List of languages.		|
 | Batch/MarketList/Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/CurrencyList			| 1        	| 	| Contains information regarding CurrencyList.	|
-| Batch/CurrencyList/StaticType			| 1        	| String	| Informs the static type.		|
+| Batch/CurrencyList/StaticType			| 1        	| Enum	| Informs the static type.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/CurrencyList/Languages			| 1        	| 	| 	List of languages.		|
 | Batch/CurrencyList/Languages/Language			| 1..n        	| String	| Language code.		|
