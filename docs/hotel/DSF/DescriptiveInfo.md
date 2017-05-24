@@ -247,7 +247,7 @@ is **180000** milliseconds.
 | Images/Picture/Ordered		| 0..1 		| String	| Images should be ordered from 1 onward. 1 is top.		|
 | Images/Picture/Description		| 0..1    		| String	| Description.							|
 | Images/Picture/Code			| 0..1    		| String	| Code.								|
-| Images/Picture/UpgradeUTCDate			| 0..1    		| Date	| Indicates the upgrade date of the picture.	|
+| Images/Picture/UpgradeUTCDate			| 0..1    		| Date	| Indicates the upgrade date of the picture in UTC format.	|
 | LocationType				| 0..1 		| String	| Location code.							|
 | PaymentOptions			| 0..1 		| String	| Type of cards allowed by the supplier. This tag is only mandatory if payment type is different than *MerchantPay*.	 |
 | PaymentOptions/Cards/Cards		| 1          	|		| List of cards allowed.					|
