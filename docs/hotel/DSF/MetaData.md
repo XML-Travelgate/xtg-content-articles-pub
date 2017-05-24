@@ -488,4 +488,4 @@ Some tags were renamed, so that they follow a certain standard of coherence. Wit
 
 **Batch:**
 
-*Static type:* This is the same thing explained in: http://tech.xmltravelgate.com/docs/hotel/DSF/StaticConfiguration#detailed-description
+*Static type:* This is the same thing explained in [Avail](/docs/hotel/DSF/Avail)
