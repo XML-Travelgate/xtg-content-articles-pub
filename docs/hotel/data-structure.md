@@ -76,6 +76,7 @@ specific objects related to the operation
 20. [CurrencyList](/docs/hotel/DSF/CurrencyList)
 21. [Lists of Data](/docs/hotel/DSF/ListData)
 22. [MarketList](/docs/hotel/DSF/MarketList)
+23. [MetaData](/docs/hotel/DSF/MetaData)
 
 
 
