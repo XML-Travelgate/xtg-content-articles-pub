@@ -260,7 +260,7 @@ Clarification - All information contained within the Avail section, relates to t
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Avail/Destinations/MaxNumberGeoCodes			| 1        	| Integer	| Maximum number of GeoCodes that can be requested.|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
-| Avail/Destinations/MaxNumberGeoCodesRecommended			| 1        	| Integer	| Maximum number of GeoCodes recommended by the supplier.|
+| Avail/Destinations/ MaxNumberGeoCodesRecommended			| 1        	| Integer	| Maximum number of GeoCodes recommended by the supplier.|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Avail/Destinations/HotelSameDestinationRestriction			| 1        	| Boolean | If the supplier allows the availability for N hotels, this tag indicates whether those hotels must be within the same destination.			|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
@@ -409,7 +409,7 @@ Clarification - All information contained within the Avail section, relates to t
 | Batch/GeographicDestinationTree/StaticType			| 1        	| String	| Informs the static type.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/GeographicDestinationTree/Languages			| 1        	| 	| 	List of languages.		|
-| Batch/GeographicDestinationTree/Languages/Language			| 1..n        	| String	| Language code.		|
+| Batch/GeographicDestinationTree/ Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/AvailDestinationTree			| 1        	| 	| Contains information regarding AvailDestinationTree.		|
 | Batch/AvailDestinationTree/StaticType			| 1        	| String	| Informs the static type.		|
@@ -462,7 +462,7 @@ Clarification - All information contained within the Avail section, relates to t
 
 ### Detailed description
 
-**reviewDate:**
+**reviewDate attribute:**
 
 The attribute called reviewDate will let you know when the field was last reviewed, thus ensuring that you can trust the information as being up to date.
 
@@ -478,14 +478,14 @@ Some tags were renamed, so that they follow a certain standard of coherence. Wit
 
 - *Allows:* It indicates whether an optional field in our RQ is allowed to display additional items. For example the onrequest in availability.
 
-+**Avail:**+
+**Avail:**
 
 *MaxNumberHotelsRecommended, MaxNumberCitiesRecommended, MaxNumberZonesRecommended, MaxNumberGeoCodesRecommended:* These tags indicate what the recommended number of Cities/Hotels/Zones or Geocodes is for each supplier are. This means that even if a supplier allows for a search of up to 500 at a time, they may recommend that you do not exceed 200, thus way avoiding TimeOut errors and showing results in time. In the majority of cases the maximum number of hotels allowed is the same as the recommended number of hotels (MaxNumberHotels = MaxNumberHotelsRecommended). There are, however, a few cases in which it can be different.
 
-+**Reservation Read, ReservationList:**+
+**Reservation Read, ReservationList:**
 
 *InformPriceCancel:* In case the booking status is CN, this field allows us to show the price of the cancellation and not the price of the booking. 
 
-+**Batch:**+
+**Batch:**
 
 *Static type:* This is the same thing explained in: http://tech.xmltravelgate.com/docs/hotel/DSF/StaticConfiguration#detailed-description
