@@ -1,7 +1,7 @@
 ---
 title: MetaData
 keywords: hotel, data structure, meta data
-search: Hotel - Data Structure - Metadata
+search: Hotel - Data Structure - MetaData
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/DSF/MetaData
 ---
