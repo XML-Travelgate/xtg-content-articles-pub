@@ -42,7 +42,7 @@ The integration will have the following methods:
 | Static Configuration       | Static ConfigurationRQ       | StaticC onfigurationRS       | Yes          | Retrieves the supplier’s static configuration. |
 | ModifyValuation           | ModifyValuationRQ           | ModifyValuationRS           | No           | Requests a possible booking change. |
 | ModifyReservation         | Modify ReservationRQ         |  Modify ReservationRS        | No           | Confirms booking change. |
-
+| MetaData         | MetaDataRQ         |  MetaDataRS        | No           | Meta data information. |
 
 Each request sent to  **service url** requires a node called *rqXML*. The current method's input object travels inside this node.
 
