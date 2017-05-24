@@ -24,11 +24,21 @@ The request does not require any elements - empty request.
 ### Response Format
 
 
-The XML response contains many elements of the supplier's meta data: number of
-hotels, number of cities and number of areas available, maximum number of
-*roomcandidate*, maximum number of paxes in a *roomcandidate*, release days,
-minimum stay, list of languages supported ...
+The XML response contains many elements of the supplier's meta data: number of hotels, number of cities and number of areas available, maximum number of *roomcandidate*, maximum number of paxes in a *roomcandidate*, release days, minimum stay, 
+list of languages supported ...
 
+And it is separated in the following sections:
+
+- Avail
+- Valuation
+- Reservation
+- ReservationRead
+- ReservationList
+- Cancel
+- Batch
+- Generic
+
+Clarification - All information contained within the Avail section, relates to the availability method, all information contained withing the Valuation section, relates to the valuation method, etc.
 
 
 ### MetaDataRQ Example
@@ -275,9 +285,9 @@ minimum stay, list of languages supported ...
 | Avail/MaxPaxInAllRooms			| 1        	| Integer | Total amount of paxs that can be requested in the same avail request.	|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Avail/RequiredRoomWithSamePaxConfiguration			| 1        	| 	| Indicates whether all of the distributions must have the same configuration.		|
-| Avail/RequiredRoomWithSamePaxConfiguration/SamePaxNumber			| 1        	| Boolean	| Indicates whether it is necessary that the number of guests be the same in all of the configurations.		|
+| Avail/RequiredRoomWithSamePaxConfiguration/ SamePaxNumber			| 1        	| Boolean	| Indicates whether it is necessary that the number of guests be the same in all of the configurations.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
-| Avail/RequiredRoomWithSamePaxConfiguration/SamePaxAge			| 1        	| Boolean	| Indicates whether all of the guests in a particular distribution must be the same age.		|
+| Avail/RequiredRoomWithSamePaxConfiguration/ SamePaxAge			| 1        	| Boolean	| Indicates whether all of the guests in a particular distribution must be the same age.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Avail/RateRules			| 1        	| 	| List of rate rule types.		|
 | Avail/RateRules/RateRule			| 1..n        	| Enum	| Rate rules supported by the supplier (You can check these Rate conditions in our Avail section).		|
@@ -449,3 +459,33 @@ minimum stay, list of languages supported ...
 | Generic/AllowsOnRequest			| 1        	| Boolean	| If true, the supplier informs the onrequest status option in Avail, Valuation, and Reservation.	|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 
+
+### Detailed description
+
+**reviewDate:**
+
+The attribute called reviewDate will let you know when the field was last reviewed, thus ensuring that you can trust the information as being up to date.
+
+**Tags structure:**
+
+Some tags were renamed, so that they follow a certain standard of coherence. With this in mind, we will differentiate between 4 types of tags, depending on how it starts:
+
+- *Implements:* It shows whether a call has been implemented or not.
+
+- *Inform:* It indicates whether the information provided in our RS lets you see any optional fields such as rates.
+
+- *Required:* It indicates whether any field, either in our RQ or in our RS, is required, in order for the logs to be valid. For example, whether the Nationality field is required or whether it is required to implement the list of rooms because we do not provide a description for them.
+
+- *Allows:* It indicates whether an optional field in our RQ is allowed to display additional items. For example the onrequest in availability.
+
++**Avail:**+
+
+*MaxNumberHotelsRecommended, MaxNumberCitiesRecommended, MaxNumberZonesRecommended, MaxNumberGeoCodesRecommended:* These tags indicate what the recommended number of Cities/Hotels/Zones or Geocodes is for each supplier are. This means that even if a supplier allows for a search of up to 500 at a time, they may recommend that you do not exceed 200, thus way avoiding TimeOut errors and showing results in time. In the majority of cases the maximum number of hotels allowed is the same as the recommended number of hotels (MaxNumberHotels = MaxNumberHotelsRecommended). There are, however, a few cases in which it can be different.
+
++**Reservation Read, ReservationList:**+
+
+*InformPriceCancel:* In case the booking status is CN, this field allows us to show the price of the cancellation and not the price of the booking. 
+
++**Batch:**+
+
+*Static type:* This is the same thing explained in: http://tech.xmltravelgate.com/docs/hotel/DSF/StaticConfiguration#detailed-description
