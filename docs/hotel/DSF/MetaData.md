@@ -488,4 +488,4 @@ Some tags were renamed, so that they follow a certain standard of coherence. Wit
 
 **Batch:**
 
-*Static type:* This is the same thing explained in [Avail](/docs/hotel/DSF/Avail)
+*Static type:* These parameters are XMLTravelgate’s internal parameters. They define the type of download each method has for each supplier. If the parameter value is set as online, the method runs a direct call to the supplier’s system because the method takes less than 4 minutes. Any other value will signify that the process takes more than 4 minutes, which means we have to cache the information in our BBDD (the methods with this feature are updated every week).
