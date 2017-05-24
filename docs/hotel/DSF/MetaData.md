@@ -66,175 +66,175 @@ Clarification - All information contained within the Avail section, relates to t
     <operationImplemented>true</operationImplemented>
     <Avail>
         <Destinations>
-            <MaxNumberHotels reviewDate = "">0</MaxNumberHotels>
-            <MaxNumberHotelsRecommended reviewDate = "">0</MaxNumberHotelsRecommended>
-            <MaxNumberCities reviewDate = "">0</MaxNumberCities>
-            <MaxNumberCitiesRecommended reviewDate = "">0</MaxNumberCitiesRecommended>
-            <MaxNumberZones reviewDate = "">0</MaxNumberZones>
-            <MaxNumberZonesRecommended reviewDate = "">0</MaxNumberZonesRecommended>
-            <MaxNumberGeoCodes reviewDate = "">0</MaxNumberGeoCodes>
-            <MaxNumberGeoCodesRecommended reviewDate = "">0</MaxNumberGeoCodesRecommended>
-            <HotelSameDestinationRestriction reviewDate = "">false</HotelSameDestinationRestriction>
-            <DestinationSameCountryRestriction reviewDate = "">false</DestinationSameCountryRestriction>
+            <MaxNumberHotels reviewDate = "20/06/2015">0</MaxNumberHotels>
+            <MaxNumberHotelsRecommended reviewDate = "20/06/2015">0</MaxNumberHotelsRecommended>
+            <MaxNumberCities reviewDate = "20/06/2015">0</MaxNumberCities>
+            <MaxNumberCitiesRecommended reviewDate = "20/06/2015">0</MaxNumberCitiesRecommended>
+            <MaxNumberZones reviewDate = "20/06/2015">0</MaxNumberZones>
+            <MaxNumberZonesRecommended reviewDate = "20/06/2015">0</MaxNumberZonesRecommended>
+            <MaxNumberGeoCodes reviewDate = "20/06/2015">0</MaxNumberGeoCodes>
+            <MaxNumberGeoCodesRecommended reviewDate = "20/06/2015">0</MaxNumberGeoCodesRecommended>
+            <HotelSameDestinationRestriction reviewDate = "20/06/2015">false</HotelSameDestinationRestriction>
+            <DestinationSameCountryRestriction reviewDate = "20/06/2015">false</DestinationSameCountryRestriction>
         </Destinations>
-        <AllowsCurrency reviewDate = "">false</AllowsCurrency>
-        <AllowsBusinessRules reviewDate = "">false</AllowsBusinessRules>
-        <NumMarketsAllowed reviewDate = "">0</NumMarketsAllowed>
-        <Release reviewDate = "">0</Release>
-        <MinimumStay reviewDate = "">0</MinimumStay>
-        <MaxStay reviewDate = "">0</MaxStay>
-        <MaxNumberRoomCandidates reviewDate = "">0</MaxNumberRoomCandidates>
-        <MaxPaxInRoomCandidates reviewDate = "">0</MaxPaxInRoomCandidates>
-        <MaxPaxInAllRooms reviewDate = "">0</MaxPaxInAllRooms>
+        <AllowsCurrency reviewDate = "20/06/2015">false</AllowsCurrency>
+        <AllowsBusinessRules reviewDate = "20/06/2015">false</AllowsBusinessRules>
+        <NumMarketsAllowed reviewDate = "20/06/2015">0</NumMarketsAllowed>
+        <Release reviewDate = "20/06/2015">0</Release>
+        <MinimumStay reviewDate = "20/06/2015">0</MinimumStay>
+        <MaxStay reviewDate = "20/06/2015">0</MaxStay>
+        <MaxNumberRoomCandidates reviewDate = "20/06/2015">0</MaxNumberRoomCandidates>
+        <MaxPaxInRoomCandidates reviewDate = "20/06/2015">0</MaxPaxInRoomCandidates>
+        <MaxPaxInAllRooms reviewDate = "20/06/2015">0</MaxPaxInAllRooms>
         <RequiredRoomWithSamePaxConfiguration>
-            <SamePaxNumber reviewDate = "">false</SamePaxNumber>
-            <SamePaxAge reviewDate = "">false</SamePaxAge>
+            <SamePaxNumber reviewDate = "20/06/2015">false</SamePaxNumber>
+            <SamePaxAge reviewDate = "20/06/2015">false</SamePaxAge>
         </RequiredRoomWithSamePaxConfiguration>
         <RateRules>
-            <RateRule reviewDate = "">NonRefundable</RateRule>
-            <RateRule reviewDate = "">largeFamily</RateRule>
+            <RateRule reviewDate = "20/06/2015">NonRefundable</RateRule>
+            <RateRule reviewDate = "20/06/2015">largeFamily</RateRule>
         </RateRules>
         <Beds>
-            <InformNumberOfUnits reviewDate = "">false</InformNumberOfUnits>
-            <InformSharedBed reviewDate = "">false</InformSharedBed>
-            <InformBedType reviewDate = "">false</InformBedType>
-            <InformNumberOfBeds reviewDate = "">false</InformNumberOfBeds>
+            <InformNumberOfUnits reviewDate = "20/06/2015">false</InformNumberOfUnits>
+            <InformSharedBed reviewDate = "20/06/2015">false</InformSharedBed>
+            <InformBedType reviewDate = "20/06/2015">false</InformBedType>
+            <InformNumberOfBeds reviewDate = "20/06/2015">false</InformNumberOfBeds>
         </Beds>
-        <InformBindingPrice reviewDate = "">false</InformBindingPrice>
-        <InformCancelPolicies reviewDate = "">false</InformCancelPolicies>
-        <InformRemarks reviewDate = "">false</InformRemarks>
+        <InformBindingPrice reviewDate = "20/06/2015">false</InformBindingPrice>
+        <InformCancelPolicies reviewDate = "20/06/2015">false</InformCancelPolicies>
+        <InformRemarks reviewDate = "20/06/2015">false</InformRemarks>
         <PaymentTypes>
-            <PaymentType reviewDate = "">MerchantPay</PaymentType>
-            <PaymentType reviewDate = "">LaterPay</PaymentType>
+            <PaymentType reviewDate = "20/06/2015">MerchantPay</PaymentType>
+            <PaymentType reviewDate = "20/06/2015">LaterPay</PaymentType>
         </PaymentTypes>
         <OptionTypes>
-            <OptionType reviewDate = "">Hotel</OptionType>
+            <OptionType reviewDate = "20/06/2015">Hotel</OptionType>
         </OptionTypes>
         <Languages>
-            <Language reviewDate = "">en</Language>
-            <Language reviewDate = "">es</Language>
+            <Language reviewDate = "20/06/2015">en</Language>
+            <Language reviewDate = "20/06/2015">es</Language>
         </Languages>
-        <InformDailyPrice reviewDate = "">false</InformDailyPrice>
-        <InformDailyRatePlan reviewDate = "">false</InformDailyRatePlan>
-        <InformOffers reviewDate = "">false</InformOffers>
-        <InformNRFRateByRoom reviewDate = "">false</InformNRFRateByRoom>
+        <InformDailyPrice reviewDate = "20/06/2015">false</InformDailyPrice>
+        <InformDailyRatePlan reviewDate = "20/06/2015">false</InformDailyRatePlan>
+        <InformOffers reviewDate = "20/06/2015">false</InformOffers>
+        <InformNRFRateByRoom reviewDate = "20/06/2015">false</InformNRFRateByRoom>
         <AgeRange reviewDate = "11/11/2016">
             <Age min = "2" max = "5"/>
         </AgeRange>
-        <InformFees reviewDate = "">false</InformFees>
+        <InformFees reviewDate = "20/06/2015">false</InformFees>
     </Avail>
     <Valuation>
-        <AllowsBlockOption reviewDate = "">false</AllowsBlockOption>
-        <InformBindingPrice reviewDate = "">false</InformBindingPrice>
-        <InformNRFRate reviewDate = "">false</InformNRFRate>
-        <InformRemarks reviewDate = "">false</InformRemarks>
-        <InformCancelPolicies reviewDate = "">false</InformCancelPolicies>
-        <InformCancelPoliciesDescription reviewDate = "">false</InformCancelPoliciesDescription>
-        <InformFees reviewDate = "">false</InformFees>
+        <AllowsBlockOption reviewDate = "20/06/2015">false</AllowsBlockOption>
+        <InformBindingPrice reviewDate = "20/06/2015">false</InformBindingPrice>
+        <InformNRFRate reviewDate = "20/06/2015">false</InformNRFRate>
+        <InformRemarks reviewDate = "20/06/2015">false</InformRemarks>
+        <InformCancelPolicies reviewDate = "20/06/2015">false</InformCancelPolicies>
+        <InformCancelPoliciesDescription reviewDate = "20/06/2015">false</InformCancelPoliciesDescription>
+        <InformFees reviewDate = "20/06/2015">false</InformFees>
     </Valuation>
     <Reservation>
-        <AllowsDeltaPrice reviewDate = "">false</AllowsDeltaPrice>
-        <RequiredAllPassengers reviewDate = "">false</RequiredAllPassengers>
-        <AllowsRemarks reviewDate = "">false</AllowsRemarks>
-        <AllowsUrlCard reviewDate = "">false</AllowsUrlCard>
-        <InformBillingSupplier reviewDate = "">false</InformBillingSupplier>
-        <InformPrice reviewDate = "">false</InformPrice>
+        <AllowsDeltaPrice reviewDate = "20/06/2015">false</AllowsDeltaPrice>
+        <RequiredAllPassengers reviewDate = "20/06/2015">false</RequiredAllPassengers>
+        <AllowsRemarks reviewDate = "20/06/2015">false</AllowsRemarks>
+        <AllowsUrlCard reviewDate = "20/06/2015">false</AllowsUrlCard>
+        <InformBillingSupplier reviewDate = "20/06/2015">false</InformBillingSupplier>
+        <InformPrice reviewDate = "20/06/2015">false</InformPrice>
     </Reservation>
     <ReservationRead>
-        <Implements reviewDate = "">false</Implements>
-        <AllowsProvideLocator reviewDate = "">false</AllowsProvideLocator>
-        <AllowsClientLocator reviewDate = "">false</AllowsClientLocator>
-        <InformCancelPolicies reviewDate = "">false</InformCancelPolicies>
-        <InformPriceCancel reviewDate = "">false</InformPriceCancel>
+        <Implements reviewDate = "20/06/2015">false</Implements>
+        <AllowsProvideLocator reviewDate = "20/06/2015">false</AllowsProvideLocator>
+        <AllowsClientLocator reviewDate = "20/06/2015">false</AllowsClientLocator>
+        <InformCancelPolicies reviewDate = "20/06/2015">false</InformCancelPolicies>
+        <InformPriceCancel reviewDate = "20/06/2015">false</InformPriceCancel>
     </ReservationRead>
     <ReservationList>
-        <Implements reviewDate = "">false</Implements>
-        <AllowsCreationDate reviewDate = "">false</AllowsCreationDate>
-        <AllowsCheckDate reviewDate = "">false</AllowsCheckDate>
-        <InformCancelPolicies reviewDate = "">false</InformCancelPolicies>
-        <InformPriceCancel reviewDate = "">false</InformPriceCancel>
+        <Implements reviewDate = "20/06/2015">false</Implements>
+        <AllowsCreationDate reviewDate = "20/06/2015">false</AllowsCreationDate>
+        <AllowsCheckDate reviewDate = "20/06/2015">false</AllowsCheckDate>
+        <InformCancelPolicies reviewDate = "20/06/2015">false</InformCancelPolicies>
+        <InformPriceCancel reviewDate = "20/06/2015">false</InformPriceCancel>
     </ReservationList>
     <Cancel>
-        <Implements reviewDate = "">false</Implements>
-        <AllowsProvideLocator reviewDate = "">false</AllowsProvideLocator>
-        <AllowsClientLocator reviewDate = "">false</AllowsClientLocator>
-        <InformPriceCancel reviewDate = "">false</InformPriceCancel>
+        <Implements reviewDate = "20/06/2015">false</Implements>
+        <AllowsProvideLocator reviewDate = "20/06/2015">false</AllowsProvideLocator>
+        <AllowsClientLocator reviewDate = "20/06/2015">false</AllowsClientLocator>
+        <InformPriceCancel reviewDate = "20/06/2015">false</InformPriceCancel>
     </Cancel>
     <Batch>
-        <InformExclusiveDeal reviewDate = "">false</InformExclusiveDeal>
+        <InformExclusiveDeal reviewDate = "20/06/2015">false</InformExclusiveDeal>
         <HotelList>
-            <StaticType reviewDate = "">NotImplemented</StaticType>
+            <StaticType reviewDate = "20/06/2015">NotImplemented</StaticType>
             <Languages>
-                <Language reviewDate = "">en</Language>
-                <Language reviewDate = "">es</Language>
+                <Language reviewDate = "20/06/2015">en</Language>
+                <Language reviewDate = "20/06/2015">es</Language>
             </Languages>
         </HotelList>
         <DescriptiveInfo>
-            <StaticType reviewDate = "">NotImplemented</StaticType>
+            <StaticType reviewDate = "20/06/2015">NotImplemented</StaticType>
             <Languages>
-                <Language reviewDate = "">en</Language>
-                <Language reviewDate = "">es</Language>
+                <Language reviewDate = "20/06/2015">en</Language>
+                <Language reviewDate = "20/06/2015">es</Language>
             </Languages>
         </DescriptiveInfo>
         <GeographicDestinationTree>
-            <StaticType reviewDate = "">NotImplemented</StaticType>
+            <StaticType reviewDate = "20/06/2015">NotImplemented</StaticType>
             <Languages>
-                <Language reviewDate = "">en</Language>
-                <Language reviewDate = "">es</Language>
+                <Language reviewDate = "20/06/2015">en</Language>
+                <Language reviewDate = "20/06/2015">es</Language>
             </Languages>
         </GeographicDestinationTree>
         <AvailDestinationTree>
-            <StaticType reviewDate = "">NotImplemented</StaticType>
+            <StaticType reviewDate = "20/06/2015">NotImplemented</StaticType>
             <Languages>
-                <Language reviewDate = "">en</Language>
+                <Language reviewDate = "20/06/2015">en</Language>
             </Languages>
         </AvailDestinationTree>
         <RoomList>
-            <StaticType reviewDate = "">NotImplemented</StaticType>
+            <StaticType reviewDate = "20/06/2015">NotImplemented</StaticType>
             <Languages>
-                <Language reviewDate = "">en</Language>
-                <Language reviewDate = "">es</Language>
+                <Language reviewDate = "20/06/2015">en</Language>
+                <Language reviewDate = "20/06/2015">es</Language>
             </Languages>
         </RoomList>
         <MealPlanList>
-            <StaticType reviewDate = "">NotImplemented</StaticType>
+            <StaticType reviewDate = "20/06/2015">NotImplemented</StaticType>
             <Languages>
-                <Language reviewDate = "">en</Language>
-                <Language reviewDate = "">es</Language>
+                <Language reviewDate = "20/06/2015">en</Language>
+                <Language reviewDate = "20/06/2015">es</Language>
             </Languages>
         </MealPlanList>
         <CategoryList>
-            <StaticType reviewDate = "">NotImplemented</StaticType>
+            <StaticType reviewDate = "20/06/2015">NotImplemented</StaticType>
             <Languages>
-                <Language reviewDate = "">en</Language>
-                <Language reviewDate = "">es</Language>
+                <Language reviewDate = "20/06/2015">en</Language>
+                <Language reviewDate = "20/06/2015">es</Language>
             </Languages>
         </CategoryList>
         <DescriptiveInfoExtended>
-            <StaticType reviewDate = "">NotImplemented</StaticType>
+            <StaticType reviewDate = "20/06/2015">NotImplemented</StaticType>
             <Languages>
-                <Language reviewDate = "">en</Language>
-                <Language reviewDate = "">es</Language>
+                <Language reviewDate = "20/06/2015">en</Language>
+                <Language reviewDate = "20/06/2015">es</Language>
             </Languages>
         </DescriptiveInfoExtended>
         <MarketList>
-            <StaticType reviewDate = "">NotImplemented</StaticType>
+            <StaticType reviewDate = "20/06/2015">NotImplemented</StaticType>
             <Languages>
-                <Language reviewDate = "">en</Language>
-                <Language reviewDate = "">es</Language>
+                <Language reviewDate = "20/06/2015">en</Language>
+                <Language reviewDate = "20/06/2015">es</Language>
             </Languages>
         </MarketList>
         <CurrencyList>
-            <StaticType reviewDate = "">NotImplemented</StaticType>
+            <StaticType reviewDate = "20/06/2015">NotImplemented</StaticType>
             <Languages>
-                <Language reviewDate = "">en</Language>
-                <Language reviewDate = "">es</Language>
+                <Language reviewDate = "20/06/2015">en</Language>
+                <Language reviewDate = "20/06/2015">es</Language>
             </Languages>
         </CurrencyList>
     </Batch>
     <Generic>
-        <RequiredNationality reviewDate = "">false</RequiredNationality>
-        <AllowsOnRequest reviewDate = "">false</AllowsOnRequest>
+        <RequiredNationality reviewDate = "20/06/2015">false</RequiredNationality>
+        <AllowsOnRequest reviewDate = "20/06/2015">false</AllowsOnRequest>
     </Generic>
 </MetaDataRS>
 ~~~
