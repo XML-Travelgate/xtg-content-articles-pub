@@ -288,7 +288,8 @@ These parameters are XMLTravelgate's internal parameters. They define the type o
 -   **ImplementsDescriptiveInfoExtended**
 -   **InformNumberOfUnits**
 
-
+**Important:**
+In the future, this method will be deprecated as MetaData is the new and improved version of StaticConfiguration. Once we have all of our integrations adapted, we will inform you, as this method will no longer receive updates.
 
 
 
