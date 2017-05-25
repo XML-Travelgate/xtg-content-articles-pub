@@ -210,7 +210,22 @@ permalink: /docs/hotel/change-log
  :  AgeRange in StaticConfiguration.
  
  :  DestinationRegex in StaticConfiguration.
+   
+ |
+
+ **Version 1.0.19:** Date 19/06/2017
+
+ :  Offers returned at stage room and fees at stage option in AvailRS.
  
+ :  GroupCode in MarketListRS 
+ 
+ :  UpgradeUTCDate in DescriptiveInfoRS
+ 
+ :  Added new rate conditions in AvailRS
+ 
+ :  Added 105 error type
+ 
+ :  New method MetaData.
  
 
 
