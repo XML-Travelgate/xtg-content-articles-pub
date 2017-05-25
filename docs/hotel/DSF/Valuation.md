@@ -48,6 +48,8 @@ Our system allows for a maximum of **180000** milliseconds before the connection
    <HotelCode>6259</HotelCode>
    <PaymentType>MerchantPay</PaymentType>
    <OptionType>Hotel</OptionType>
+   <OnRequest>false</OnRequest>
+   <BlockOption>false</BlockOption>
    <Nationality>ES</Nationality>
    <Parameters>
        <Parameter key = "ID1" value = "ID#1#VR"/>
