@@ -246,7 +246,7 @@ is closed.
                     <POIs>
                       <POI code = "8A" Description = "Andorra">
                         <Services>
-                          <Service type = "SkiPass" code = "F1" description = "Forfait" durationType = "libre" quantity = "5" unit = "Hour"></Service>
+                          <Service type = "SkiPass" code = "F1" description = "Forfait" durationType = "open" quantity = "5" unit = "Hour"></Service>
                         </Services>
                       </POI>
                     </POIs>
@@ -271,7 +271,7 @@ is closed.
                     <POIs>
                       <POI code = "8A" Description = "Andorra">
                         <Services>
-                          <Service type = "SkiPass" code = "F1" description = "Forfait" durationType = "libre" quantity = "2" unit = "Day"></Service>
+                          <Service type = "SkiPass" code = "F1" description = "Forfait" durationType = "open" quantity = "2" unit = "Day"></Service>
                         </Services>
                       </POI>
                     </POIs>
@@ -647,7 +647,7 @@ Case 2:
       <POI code = "8A" Description = "Andorra">
         <Services>
           <Service type = "SkiPass" code = "F1"
-          description = "Forfait" durationType = "libre"
+          description = "Forfait" durationType = "open"
           quantity = "5" unit = "Hour">
           </Service>
         </Services>
@@ -667,7 +667,7 @@ Case 3:
       <POI code = "8A" Description = "Andorra">
         <Services>
           <Service type = "SkiPass" code = "F1"
-          description = "Forfait" durationType = "libre"
+          description = "Forfait" durationType = "open"
           quantity = "2" unit = "Day">
           </Service>
         </Services>
