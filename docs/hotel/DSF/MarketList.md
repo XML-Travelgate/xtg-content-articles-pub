@@ -63,6 +63,7 @@ Most suppliers use a standard ISO - 3166_1_alfa_2, but it depends on each indivi
 
 ~~~xml
     <MarketListRS>
+        <UpgradeUTCDate>2016-10-18T13:18:03+02:00</UpgradeUTCDate>
         <Markets>
             <Market>
                 <Code>ES</Code>
@@ -88,6 +89,7 @@ Most suppliers use a standard ISO - 3166_1_alfa_2, but it depends on each indivi
 
 | **Element**		| **Number** | **Type** | **Description**	|
 | --------------------- | ---------- | -------- | --------------------- |
+| MarketListRS/UpgradeUTCDate		| 1       	|	DateTime	| Indicates the update date of the information in UTC format.	|
 | MarketListRS/Markets	| 1          |		| Root node, list of markets.		|
 | Market	| 1..n          	| 		| Market.			|
 | Market/Code	| 1         	| String		| Code.			|
