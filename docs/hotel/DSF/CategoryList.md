@@ -61,6 +61,7 @@ The maximum time permitted in our system before the connection is closed is **24
 
 ~~~xml
     <CategoryListRS>
+        <UpgradeUTCDate>2016-10-18T13:18:03+02:00</UpgradeUTCDate>
         <Categories>
             <Category>
                 <Code>3*</Code>
@@ -83,6 +84,7 @@ The maximum time permitted in our system before the connection is closed is **24
 
 | **Element**			| **Number**	| **Type**	| **Description**		|
 | ----------------------------- | ------------- | ------------- | ----------------------------- |
+| CategoryListRS/UpgradeUTCDate		| 1       	|	DateTime	| Indicates the update date of the information in UTC format.	|
 | CategoryListRS/Categories		| 1          	|		| Root node, list of categories.			|
 | Category    	| 1..n          	| 		|         Category.			|
 | Category/Code	| 1         	| String		| Code.			|
