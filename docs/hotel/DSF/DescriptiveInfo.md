@@ -68,6 +68,7 @@ is **180000** milliseconds.
 
 ~~~xml
     <DescriptiveInfoRS>
+    <UpgradeUTCDate>2016-10-18T13:18:03+02:00</UpgradeUTCDate>
     <Hotel>
         <Code>70</Code>
         <Name>Nice Stay</Name>
@@ -198,6 +199,7 @@ is **180000** milliseconds.
 
 | **Element**				| **Number**	| **Type**	| **Description**						|
 | ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
+| DescriptiveInfoRS/UpgradeUTCDate		| 1       	|	DateTime	| Indicates the update date of the information in UTC format.	|
 | DescriptiveInfoRS/Hotel		| 0..n       	|		| Root node. Hotel sheet.					|
 | Code       				| 1    		| String	| Code.								|
 | Name       				| 1    		| String	| Name.								|
@@ -247,7 +249,7 @@ is **180000** milliseconds.
 | Images/Picture/Ordered		| 0..1 		| String	| Images should be ordered from 1 onward. 1 is top.		|
 | Images/Picture/Description		| 0..1    		| String	| Description.							|
 | Images/Picture/Code			| 0..1    		| String	| Code.								|
-| Images/Picture/UpgradeUTCDate			| 0..1    		| Date	| Indicates the upgrade date of the picture in UTC format.	|
+| Images/Picture/UpgradeUTCDate			| 0..1    		| DateTime	| Indicates the upgrade date of the picture in UTC format.	|
 | LocationType				| 0..1 		| String	| Location code.							|
 | PaymentOptions			| 0..1 		| String	| Type of cards allowed by the supplier. This tag is only mandatory if payment type is different than *MerchantPay*.	 |
 | PaymentOptions/Cards/Cards		| 1          	|		| List of cards allowed.					|
