@@ -64,6 +64,7 @@ The **ContinuationToken** can be used in this request - the specification can be
 
 ~~~xml
     <HotelListRS>
+        <UpgradeUTCDate>2016-10-18T13:18:03+02:00</UpgradeUTCDate>
         <Hotels>
             <Hotel>
                 <Code>5</Code>              
@@ -132,6 +133,7 @@ The **ContinuationToken** can be used in this request - the specification can be
 
 | **Element**				| **Number**	| **Type**	| **Description**						|
 | ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
+| HotelListRS/UpgradeUTCDate		| 1       	|	DateTime	| Indicates the update date of the information in UTC format.	|
 | HotelListRS/Hotels/Hotel		| 0..n       	|		| Root node. Hotel sheet.          				|
 | Code       				| 1    		| String	| Internal code to perform availability and/or supplier code.	|
 | ProviderCode				| 0..1 		| String	| Internal code established by the supplier (see StaticConfiguration). |
