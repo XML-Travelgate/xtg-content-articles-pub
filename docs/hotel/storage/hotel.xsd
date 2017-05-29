@@ -903,6 +903,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="HotelBaseRS">
         <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="UpgradeUTCDate" type="xs:dateTime" />		
           <xs:element minOccurs="0" maxOccurs="1" name="MealPlans" type="MealPlans" />
         </xs:sequence>
       </xs:extension>
@@ -926,6 +927,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="HotelBaseRS">
         <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="UpgradeUTCDate" type="xs:dateTime" />		
           <xs:element minOccurs="0" maxOccurs="1" name="RoomsInfo" type="RoomsInfo" />
         </xs:sequence>
       </xs:extension>
@@ -961,6 +963,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="HotelBaseRS">
         <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="UpgradeUTCDate" type="xs:dateTime" />		
           <xs:element minOccurs="0" maxOccurs="unbounded" name="DestinationTree" type="DestinationTreeGeographic" />
         </xs:sequence>
       </xs:extension>
@@ -984,6 +987,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="HotelBaseRS">
         <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="UpgradeUTCDate" type="xs:dateTime" />		
           <xs:element minOccurs="0" maxOccurs="unbounded" name="DestinationTree" type="DestinationTreeAvail" />
         </xs:sequence>
       </xs:extension>
@@ -1263,6 +1267,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="HotelBaseRS">
         <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="UpgradeUTCDate" type="xs:dateTime" />		
           <xs:element minOccurs="0" maxOccurs="1" name="Categories" type="Categories" />
         </xs:sequence>
       </xs:extension>
@@ -1654,6 +1659,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="HotelBaseRS">
         <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="UpgradeUTCDate" type="xs:dateTime" />		
           <xs:element minOccurs="0" maxOccurs="1" name="Currencies" type="Currencies" />
         </xs:sequence>
       </xs:extension>
@@ -1684,6 +1690,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="HotelBaseRS">
         <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="UpgradeUTCDate" type="xs:dateTime" />		
           <xs:element minOccurs="0" maxOccurs="1" name="Markets" type="MarketList" />
         </xs:sequence>
       </xs:extension>
