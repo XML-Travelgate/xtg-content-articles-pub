@@ -9,19 +9,19 @@ permalink: /docs/hotel/change-log
 
  **Version 1.0.19:** Date 19/06/2017
 
- :  **Offers returned at stage room and fees at stage option in AvailRS.** Depending on the supplier, the information concerning offers can be displayed either at room level or at option level. Furthermore, we will show at stage option the information relative to fees from now on.
+ *  **Offers returned at stage room and fees at stage option in AvailRS.** Depending on the supplier, the information concerning offers can be displayed either at room level or at option level. Furthermore, we will show at stage option the information relative to fees from now on.
  
- :  **GroupCode in MarketListRS.** Use this option to see if the supplier groups different markets in a single group, so you can get the same prices/options if two markets belong to the same group.
+ *  **GroupCode in MarketListRS.** Use this option to see if the supplier groups different markets in a single group, so you can get the same prices/options if two markets belong to the same group.
  
- :  **UpgradeUTCDate in DescriptiveInfoRS.** With this new tag you can check the upgrade date of the picture in UTC format.
+ *  **UpgradeUTCDate in DescriptiveInfoRS.** With this new tag you can check the upgrade date of the picture in UTC format.
  
- :  **Added new rate conditions in AvailRS.** Specifically, publicServant and unemployed. 
+ *  **Added new rate conditions in AvailRS.** Specifically, publicServant and unemployed. 
  
- :  **Added 105 error type.** Used for communication errors.
+ *  **Added 105 error type.** Used for communication errors.
  
- :  **New method MetaData.** This method provides information about the meta data of the supplier so that it can be effectively configured.
+ *  **New method MetaData.** This method provides information about the meta data of the supplier so that it can be effectively configured.
  
- :  **Added UpgradeUTCDate in DescriptiveInfoRS, HotelListRS, AvailDestinationTreeRS, GeographicDestinationTreeRS, CategoryListRS, MealPlanListRS, RoomListRS, CurrencyListRS and MarketListRS.** For each method, this tag was added to show when the information was last updated.
+ *  **Added UpgradeUTCDate in DescriptiveInfoRS, HotelListRS, AvailDestinationTreeRS, GeographicDestinationTreeRS, CategoryListRS, MealPlanListRS, RoomListRS, CurrencyListRS and MarketListRS.** For each method, this tag was added to show when the information was last updated.
  
 |
  
