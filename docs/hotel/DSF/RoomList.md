@@ -63,6 +63,7 @@ This message must be implemented solely in case the supplier does not return roo
 
 ~~~xml
     <RoomListRS>
+        <UpgradeUTCDate>2016-10-18T13:18:03+02:00</UpgradeUTCDate>
         <RoomsInfo>
              <RoomInfo>
                  <Code>STD</Code>
@@ -85,6 +86,7 @@ This message must be implemented solely in case the supplier does not return roo
 
 | **Element**		| **Number**	| **Type**	| **Description**	|
 | --------------------- | ------------- | ------------- | --------------------- |
+| RoomListRS/UpgradeUTCDate		| 1       	|	DateTime	| Indicates the update date of the information in UTC format.	|
 | RoomListRS/RoomsInfo 		| 1          	|		| Root node, list of rooms		|
 |RoomInfo | 1..n ||Room info.|
 |RoomInfo/Code | 1 | String | Code. |
