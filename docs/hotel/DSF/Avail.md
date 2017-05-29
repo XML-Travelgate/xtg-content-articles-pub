@@ -690,7 +690,7 @@ can enjoy until 2 days of skipass in between the check in and check out.
 
 **Fees:**
 
-If the supplier is returning fees, we need to know whether those have to be paid when the consumer gets to the hotel or beforehand. Taking into account the type of payment of the option and that payment of the fees is MANDATORY:
+If the supplier is returning fees, we need to know whether those have to be paid when the consumer gets to the hotel or beforehand. Keep in mind the type of payment for the option and that payment of the fees is MANDATORY:
 
 * MerchantPay/CardBookingPay/CardChekInPay: if includedPriceOption = True the amount of the fee is already included in the price and is paid at the time of booking. If, however, includedPriceOption = False, said fee have to be paid in the hotel.
 
