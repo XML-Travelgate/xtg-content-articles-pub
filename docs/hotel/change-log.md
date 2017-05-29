@@ -217,15 +217,17 @@ permalink: /docs/hotel/change-log
 
  :  Offers returned at stage room and fees at stage option in AvailRS.
  
- :  GroupCode in MarketListRS 
+ :  GroupCode in MarketListRS. 
  
- :  UpgradeUTCDate in DescriptiveInfoRS
+ :  UpgradeUTCDate in DescriptiveInfoRS.
  
- :  Added new rate conditions in AvailRS
+ :  Added new rate conditions in AvailRS.
  
- :  Added 105 error type
+ :  Added 105 error type.
  
  :  New method MetaData.
+ 
+ :  Added UpgradeUTCDate in DescriptiveInfoRS, HotelListRS, AvailDestinationTreeRS, GeographicDestinationTreeRS, CategoryListRS, MealPlanListRS, RoomListRS, CurrencyListRS and MarketListRS.
  
 
 
