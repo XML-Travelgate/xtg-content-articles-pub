@@ -7,79 +7,123 @@ permalink: /docs/hotel/change-log
 ---
 
 
-**Version 1.0.1:** Date 11/01/2012
+ **Version 1.0.19:** Date 19/06/2017
 
- :  Specified Common Elements Added Appendices.
+ :  **Offers returned at stage room and fees at stage option in AvailRS.** Depending on the supplier, the information concerning offers can be displayed either at room level or at option level. Furthermore, we will show at stage option the information relative to fees from now on.
+ 
+ :  **GroupCode in MarketListRS.** Use this option to see if the supplier groups different markets in a single group, so you can get the same prices/options if two markets belong to the same group.
+ 
+ :  **UpgradeUTCDate in DescriptiveInfoRS.** With this new tag you can check the upgrade date of the picture in UTC format.
+ 
+ :  **Added new rate conditions in AvailRS.** Specifically, publicServant and unemployed. 
+ 
+ :  **Added 105 error type.** Used for communication errors.
+ 
+ :  **New method MetaData.** This method provides information about the meta data of the supplier so that it can be effectively configured.
+ 
+ :  **Added UpgradeUTCDate in DescriptiveInfoRS, HotelListRS, AvailDestinationTreeRS, GeographicDestinationTreeRS, CategoryListRS, MealPlanListRS, RoomListRS, CurrencyListRS and MarketListRS.** For each method, this tag was added to show when the information was last updated.
+ 
+|
+ 
+ **Version 1.0.18:** Date 31/10/2016
+
+ :  Name (DailyRatePlan) in AvailRS.
+ 
+ :  New method MarketList.
+ 
+ :  AgeRange in StaticConfiguration.
+ 
+ :  DestinationRegex in StaticConfiguration.
+   
+ |
+ 
+ **Version 1.0.17:** Date 27/06/2016
+
+ :  Code (Picture) in DescriptiveInfoRS.
+  
+ |
+ 
+ **Version 1.0.16:** Date 03/05/2016
+
+ :  Currency in AvailRQ.
+
+ :  Markets in AvailRQ.
+
+ :  NumberOfUnits in AvailRQ.
+
+ :  ProviderCode in HotelListRS.
+
+ :  NumMarketsAllowed in StaticConfiguration.
+
+ :  InformTiket in StaticConfiguration.
+
+ :  InformNumberOfUnits in StaticConfiguration.
+
+ :  ImplementsDescriptiveInfoExtended in StaticConfiguration.
+ 
+ |
+ 
+ **Version 1.0.15:** Date 29/02/2016
+
+ :  New BusinessRules (RoomType) in AvailRQ.
+
+ :  ImplementsProviderLocatorCancel in StaticConfiguration.
+
+ :  ImplementsClientLocatorCancel in StaticConfiguration.
 
 |
 
-**Version 1.0.2:** Date 20/02/2012
+**Version 1.0.14:** Date 01/02/2016
 
- :  AvailDestinationTree specified destinations only attackable on availability Added ISO country code in response Hotel.
-
-|
-
-**Version 1.0.3:** Date 09/04/2012
-
- :  New type errors in Valuation.
+ :  ContinuationToken in Common Elements (use in HotelList call).
 
 |
 
-**Version 1.0.4:** Date 13/06/2012
+**Version 1.0.13:** Date 18/01/2016
 
- :  Larger PDI structure to charge hotel + ticket.
+ :  BusinessRules in AvailRQ.
 
- :  Add ProveedorFacturacionExterna in confirmacionRS.
+ :  ImplementsBusinessRules in StaticConfiguration.
 
-|
+ :  OptionsQuota in Common-Elements.
 
-**Version 1.0.5:** Date 30/07/2012
-
- :  Correcting errors in the documentation.
-
- :  Add Promotions / Specials Offers in disponibilidadRS option.
+ :  PropertyCategory in HotelList and DescriptiveInfo.
 
 |
 
-**Version 1.0.6:** Date 30/08/2012
+**Version 1.0.12:** Date 09/12/2015
 
- :  Implemented three new calls: ReservationList, RuntimeConfigurationand StaticConfiguration.
+ :  Nationality in Avail, Valuation, ModifyValuation and ModifyReservation request.
 
- :  Added attribute element level NuevaOpcion Offer.
+ :  New rate conditions: largeFamily and honeymoon.
 
- :  Appendix of countries and currencies.
+ :  RequiredNationality in StaticConfiguration.
 
-|
+ :  Inform60Rate in StaticConfiguration.
 
-**Version 1.0.7:** Date 11/03/2013
+ :  Inform65Rate in StaticConfiguration.
 
- :  Product specification download.
+ :  InformCanaryResidentRate in StaticConfiguration
 
- :  Added element geographical destination in hotel.
+ :  InformBalearicResidentRate in StaticConfiguration.
 
- :  Implemented new call: GeographicDestinationTree.
+ :  InformLargeFamilyRate in StaticConfiguration.
 
-|
-
-**Version 1.0.8:** Date 17/03/2014
-
- :  Bed information in AvailRS.
+ :  InformHoneymoonRate in StaticConfiguration.
 
 |
 
-**Version 1.0.9:** Date 27/03/2014
+**Version 1.0.11:** Date 17/11/2015
 
- :  Modify booking.
+ :  BusinessRule in AvailRQ.
 
-| 
+ :  AvailableModifications in ReservationRead.
 
-**Version 1.0.9:** Date 30/11/2014
+ :  ImplementsBusinessRule in StaticConfiguration.
 
- :  New Wiki look & Feel, now using Sphinx reST.
+ :  InformAvailableModificationsInReservationRead in StaticConfiguration. 
 
- :  Add hotel XSDs.
-
- :  Improvement documentation PaymentType, CardInfo and MasterCodes.
+ :  GiataId.
 
 |
 
@@ -111,123 +155,76 @@ permalink: /docs/hotel/change-log
 
 |
 
-**Version 1.0.11:** Date 17/11/2015
+**Version 1.0.9:** Date 30/11/2014
 
- :  BusinessRule in AvailRQ.
+ :  New Wiki look & Feel, now using Sphinx reST.
 
- :  AvailableModifications in ReservationRead.
+ :  Add hotel XSDs.
 
- :  ImplementsBusinessRule in StaticConfiguration.
-
- :  InformAvailableModificationsInReservationRead in StaticConfiguration. 
-
- :  GiataId.
+ :  Improvement documentation PaymentType, CardInfo and MasterCodes.
 
 |
 
-**Version 1.0.12:** Date 09/12/2015
+**Version 1.0.9:** Date 27/03/2014
 
- :  Nationality in Avail, Valuation, ModifyValuation and ModifyReservation request.
+ :  Modify booking.
 
- :  New rate conditions: largeFamily and honeymoon.
+| 
 
- :  RequiredNationality in StaticConfiguration.
+**Version 1.0.8:** Date 17/03/2014
 
- :  Inform60Rate in StaticConfiguration.
-
- :  Inform65Rate in StaticConfiguration.
-
- :  InformCanaryResidentRate in StaticConfiguration
-
- :  InformBalearicResidentRate in StaticConfiguration.
-
- :  InformLargeFamilyRate in StaticConfiguration.
-
- :  InformHoneymoonRate in StaticConfiguration.
+ :  Bed information in AvailRS.
 
 |
 
-**Version 1.0.13:** Date 18/01/2016
+**Version 1.0.7:** Date 11/03/2013
 
- :  BusinessRules in AvailRQ.
+ :  Product specification download.
 
- :  ImplementsBusinessRules in StaticConfiguration.
+ :  Added element geographical destination in hotel.
 
- :  OptionsQuota in Common-Elements.
-
- :  PropertyCategory in HotelList and DescriptiveInfo.
+ :  Implemented new call: GeographicDestinationTree.
 
 |
 
-**Version 1.0.14:** Date 01/02/2016
+**Version 1.0.6:** Date 30/08/2012
 
- :  ContinuationToken in Common Elements (use in HotelList call).
+ :  Implemented three new calls: ReservationList, RuntimeConfigurationand StaticConfiguration.
 
-|
+ :  Added attribute element level NuevaOpcion Offer.
 
-**Version 1.0.15:** Date 29/02/2016
-
- :  New BusinessRules (RoomType) in AvailRQ.
-
- :  ImplementsProviderLocatorCancel in StaticConfiguration.
-
- :  ImplementsClientLocatorCancel in StaticConfiguration.
+ :  Appendix of countries and currencies.
 
 |
 
-**Version 1.0.16:** Date 03/05/2016
+**Version 1.0.5:** Date 30/07/2012
 
- :  Currency in AvailRQ.
+ :  Correcting errors in the documentation.
 
- :  Markets in AvailRQ.
+ :  Add Promotions / Specials Offers in disponibilidadRS option.
 
- :  NumberOfUnits in AvailRQ.
+|
 
- :  ProviderCode in HotelListRS.
+**Version 1.0.4:** Date 13/06/2012
 
- :  NumMarketsAllowed in StaticConfiguration.
+ :  Larger PDI structure to charge hotel + ticket.
 
- :  InformTiket in StaticConfiguration.
+ :  Add ProveedorFacturacionExterna in confirmacionRS.
 
- :  InformNumberOfUnits in StaticConfiguration.
+|
 
- :  ImplementsDescriptiveInfoExtended in StaticConfiguration.
- 
- |
+**Version 1.0.3:** Date 09/04/2012
 
-**Version 1.0.17:** Date 27/06/2016
+ :  New type errors in Valuation.
 
- :  Code (Picture) in DescriptiveInfoRS.
-  
- |
+|
 
- **Version 1.0.18:** Date 31/10/2016
+**Version 1.0.2:** Date 20/02/2012
 
- :  Name (DailyRatePlan) in AvailRS.
- 
- :  New method MarketList.
- 
- :  AgeRange in StaticConfiguration.
- 
- :  DestinationRegex in StaticConfiguration.
-   
- |
+ :  AvailDestinationTree specified destinations only attackable on availability Added ISO country code in response Hotel.
 
- **Version 1.0.19:** Date 19/06/2017
+|
 
- :  Offers returned at stage room and fees at stage option in AvailRS.
- 
- :  GroupCode in MarketListRS. 
- 
- :  UpgradeUTCDate in DescriptiveInfoRS.
- 
- :  Added new rate conditions in AvailRS.
- 
- :  Added 105 error type.
- 
- :  New method MetaData.
- 
- :  Added UpgradeUTCDate in DescriptiveInfoRS, HotelListRS, AvailDestinationTreeRS, GeographicDestinationTreeRS, CategoryListRS, MealPlanListRS, RoomListRS, CurrencyListRS and MarketListRS.
- 
+**Version 1.0.1:** Date 11/01/2012
 
-
+ :  Specified Common Elements Added Appendices.
