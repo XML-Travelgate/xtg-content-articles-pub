@@ -64,6 +64,7 @@ If the supplier has more than 100 mealplan codes, or more than 20 codes for one 
 
 ~~~xml
     <MealPlanListRS>
+        <UpgradeUTCDate>2016-10-18T13:18:03+02:00</UpgradeUTCDate>
         <MealPlans>
             <MealPlan>
                 <Code>BB</Code>
@@ -87,6 +88,7 @@ If the supplier has more than 100 mealplan codes, or more than 20 codes for one 
 
 | **Element**		| **Number** | **Type** | **Description**	|
 | --------------------- | ---------- | -------- | --------------------- |
+| MealPlanListRS/UpgradeUTCDate		| 1       	|	DateTime	| Indicates the update date of the information in UTC format.	|
 | MealPlanListRS/MealPlans	| 1          |		| Root node, list of mealplans.		|
 | MealPlan	| 1..n          	| 		| MealPlan.			|
 | MealPlan/Code	| 1         	| String		| Code.			|
