@@ -62,6 +62,7 @@ The maximum time permitted in our system before the connection is closed is **24
 
 ~~~xml
     <AvailDestinationTreeRS>
+        <UpgradeUTCDate>2016-10-18T13:18:03+02:00</UpgradeUTCDate>
         <DestinationTree code = "ES" name = "España">
             <DestinationLeaf code = "BAL"/>
             <DestinationLeaf code = "AST"/>
@@ -94,6 +95,7 @@ The maximum time permitted in our system before the connection is closed is **24
 | **Element**			| **Number** | **Type** | **Description**	|
 | ----------------------------- | ---------- | -------- | --------------------- |
 | AvailDestinationTreeRS	| 1          |          | Root node.		|
+| UpgradeUTCDate		| 1       	|	DateTime	| Indicates the update date of the information in UTC format.	|
 | DestinationTree		| 0..n       | 		| Father node.		|
 | @code | 1 | String | Destination code.|
 | @name | 1 | String | Destination name.|
