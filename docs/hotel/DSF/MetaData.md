@@ -27,7 +27,7 @@ The request does not require any elements - empty request.
 The XML response contains many elements of the supplier's meta data: number of hotels, number of cities and number of areas available, maximum number of *roomcandidate*, maximum number of paxes in a *roomcandidate*, release days, minimum stay, 
 list of languages supported ...
 
-And it is separated in the following sections:
+It is separated in the following sections:
 
 - Avail
 - Valuation
@@ -38,7 +38,7 @@ And it is separated in the following sections:
 - Batch
 - Generic
 
-Clarification - All information contained within the Avail section, relates to the availability method, all information contained withing the Valuation section, relates to the valuation method, etc.
+Clarification - All information contained within the Avail section relates to the availability method and all information contained within the Valuation section, relates to the valuation method, and so on.
 
 
 ### MetaDataRQ Example
