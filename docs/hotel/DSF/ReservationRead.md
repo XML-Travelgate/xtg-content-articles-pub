@@ -27,6 +27,7 @@ The request requires one of the following data depending on supplier:
 -   *CreationDate*: the booking date
 -   *StardDate*: the check-in date
 -   *EndDate*: the check-out date
+-   *HotelCode*: Hotel code
 
 
 
@@ -58,6 +59,7 @@ is closed.
         <StartDate>28/01/2014</StartDate>
         <EndDate>29/01/2014</EndDate>
         <CreationDate>17/01/2014</CreationDate>
+        <HotelCode>AAA</HotelCode>
     </ReservationReadRQ>
 ~~~
 
@@ -76,6 +78,7 @@ is closed.
 | StartDate  		| 1    		| String	| Start date of booking. 				|
 | EndDate    		| 1    		| String	| End date of booking.					|
 | CreationDate		| 1    		| String	| Creation date of booking.				|
+| HotelCode		| 1    		| String	| Hotel code.				|
 
 
 
