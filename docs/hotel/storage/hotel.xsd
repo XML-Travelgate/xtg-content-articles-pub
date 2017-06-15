@@ -323,10 +323,7 @@
       <xs:enumeration value="largeFamily" />
       <xs:enumeration value="honeymoon" />
       <xs:enumeration value="publicServant" />	 
-      <xs:enumeration value="unemployed" />	 
-      <xs:enumeration value="vip" />	 
-      <xs:enumeration value="b2c" />	
-      <xs:enumeration value="b2b" />		  
+      <xs:enumeration value="unemployed" />	 		  
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="RangeDates">
@@ -686,6 +683,7 @@
           <xs:element minOccurs="0" maxOccurs="1" name="EndDate" type="xs:string" />
           <xs:element minOccurs="0" maxOccurs="1" name="CreationDate" type="xs:string" />
           <xs:element minOccurs="0" maxOccurs="1" name="Currency" type="xs:string" />
+		  <xs:element minOccurs="0" maxOccurs="1" name="HotelCode" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
