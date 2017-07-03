@@ -143,7 +143,7 @@ The **ContinuationToken** can be used in this request - the specification can be
 | Name       				| 1    		| String	| Name.								|
 | Address    				| 1    		| String	| Address.							|
 | Town       				| 1    		| String	| Town.								|
-| ZipCode    				| 1    		| String	| ZipCode.							|
+| ZipCode    				| 0..1    		| String	| ZipCode.							|
 | CountryISOCode			| 1    		| String	| CountryISOCode.						|
 | AvailDestination			| 0..1       	|		| Avail Destination (will only be returned if requested in availability, and the type is CTY).  |
 | @code      				| 1    		| String	| Destination code.						|
@@ -152,9 +152,9 @@ The **ContinuationToken** can be used in this request - the specification can be
 | @code      				| 1    		| String	| Destination code.						|
 | @name      				| 1    		| String	| Destination name.						|
 | @avail      				| 1    		| Boolean	| Indicates if it is allowed in availability.		|
-| Latitude   				| 1    		| String	| Latitude.							|
-| Longitude  				| 1    		| String	| Longitude.							|
-| Contact    				| 1          	|		| Contact.							|
+| Latitude   				| 0..1    		| String	| Latitude.							|
+| Longitude  				| 0..1    		| String	| Longitude.							|
+| Contact    				| 0..1          	|		| Contact.							|
 | Contact/Email				| 1    		| String	| Email.							|
 | Contact/Telephone			| 1    		| String	| Telephone.							|
 | Contact/Fax				| 1    		| String	| Fax. 								|
