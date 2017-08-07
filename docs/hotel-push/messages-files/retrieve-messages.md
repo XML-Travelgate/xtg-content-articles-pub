@@ -929,7 +929,7 @@ seller reservations.
               </ResGuest>
             </ResGuests>
             <ResGlobalInfo>
-              <Total AmountBeforeTax = "500.00" AmountAfterTax = "500.00" CurrencyCode = "USD"/>
+              <Total AmountBeforeTax = "200.00" AmountAfterTax = "200.00" CurrencyCode = "USD"/>
               <Guarantee PaymentCode = "MerchantPayment"/>
               <HotelReservationIDs>
                 <HotelReservationID ResID_Value = "123456" ResID_SourceContext = "Client"/>
