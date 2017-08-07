@@ -174,6 +174,33 @@ seller. XTG will process data and response with error code if needed.
 | @value      			| 1  		| String	| New - You will create an hotel. Remove - You will remove all the hotel setup. |
 
 
+### HotelRatePlanInventoryNotifRS
+
+
+Success Response
+
+
+~~~xml
+    <HotelRatePlanInventoryNotifResponse xmlns="http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
+             <HotelRatePlanInventoryNotifResult>
+                <Success xmlns="http://www.opentravel.org/OTA/2003/05"/>
+             </HotelRatePlanInventoryNotifResult>
+    </HotelRatePlanInventoryNotifResponse>
+~~~
+
+
+Error Response
+
+
+~~~xml
+    <HotelRatePlanInventoryNotifResponse xmlns="http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
+         <HotelRatePlanInventoryNotifResult>
+            <Errors xmlns="http://www.opentravel.org/OTA/2003/05">
+               <Error Language="en" ShortText="Unexpected error" Code="-1">Hotel 1610 already exists in CP.</Error>
+            </Errors>
+         </HotelRatePlanInventoryNotifResult>
+      </HotelRatePlanInventoryNotifResponse>
+~~~
 
 
 ### HotelRatePlanNotif
