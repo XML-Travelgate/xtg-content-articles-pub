@@ -16,7 +16,7 @@ Provider will send an HotelRatePlanInventoryNotifRQ message to push the Hotel se
 seller. XTG will process data and response with error code if needed.
 
 
-### HotelRatePlanNotifRQ
+### HotelRatePlanInventoryNotifRQ
 ~~~xml
 <HotelRatePlanInventoryNotif xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
     <request PrimaryLangID = "ES" Version = "0">
