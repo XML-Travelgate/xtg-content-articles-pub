@@ -677,9 +677,9 @@ adult and the price for 2 additional adults.
 ~~~
 
 
-There is no price for one adult, so it wont be available.
+There is no price for one adult, so it won't be available.
 
-There is no price for two adults, so it wont be available.
+There is no price for two adults, so it won't be available.
 
 The price of three Adults will be 150 = 3\*(150/3).
 
@@ -726,10 +726,6 @@ Room uses = 1-0-0, 2-0-0, 3-0-0, 1-1-0, 3-1-0.
 We load the price per room but also the price for 1 additional adult and
 the price for 1 additional child.
 
-NOTE: the AdditionalGuestAmount Type in price per room has to be
-default. Exclusive type not allowed.
-
-
 ~~~xml
     <BaseByGuestAmts>
         <BaseByGuestAmt Type = "25" AmountAfterTax="100.00"/>
@@ -745,11 +741,11 @@ The price of one Adult will be 100.
 
 The price of two Adults will be 100.
 
-The price of three Adults will be 120 = 100 + 20.
+The price of three Adults will be 170 = 100 + (100/2 + 20).
 
-The price of one Adult and one Child will be 110 = 100 + 10.
+The price of one Adult and one Child will be 100.
 
-The price of three Adults and one Child will be 130 = 100 + 20 + 10.
+The price of three Adults and one Child will be 230 = 100 + (100/2 + 20) + (100/2 + 10).
 
 
 
@@ -764,7 +760,7 @@ We load the price per room but also the price for 1 additional adult.
 
 ~~~xml
     <BaseByGuestAmts>
-        <BaseByGuestAmt Type = "25" AmountAfterTax="100.00"/>
+        <BaseByGuestAmt Type = "25" AmountAfterTax="120.00"/>
     </BaseByGuestAmts>
     <AdditionalGuestAmounts>
         <AdditionalGuestAmount MaxAdditionalGuests = "1" Amount = "20.00" AgeQualifyingCode = "10" />
@@ -772,13 +768,13 @@ We load the price per room but also the price for 1 additional adult.
 ~~~
 
 
-The price of one Adult will be 100.
+The price of one Adult will be 120.
 
-The price of two Adults will be 100.
+The price of two Adults will be 120.
 
-The price of three Adults will be 100.
+The price of three Adults will be 120.
 
-The price of four Adults will be 120 = 100 + 20.
+The price of four Adults will be 180 = 120 + (120/3 + 20).
 
 
 
@@ -953,7 +949,7 @@ to seller. XTG will process data and response with error code if needed.
 | AvailStatusMessages/AvailStatusMessage/StatusApplicationControl | 1 |	 |						|
 | @Start				| 1	     | Date	| Start date.						|
 | @End  				| 1	     | Date	| End date.						|
-| @RatePlanCode				| 0..1	     | String	| Rate Plan Code. If not specified then all rates containing @InvCode Room will be updated. |
+| @RatePlanCode				| 1	     | String	| Rate Plan Code.  |
 | @InvCode				| 0..1	     | String	| Room Code. Not used for derived rates.		|
 | @InvType				| 0..1	     | String	| Product type (ROOM). Not used for derived rates.	|
 | @Mon  				| 1	     | Boolean	| Indicates whether the AvailStatusMessage data applies to Mondays. |
@@ -1023,5 +1019,4 @@ Error Response
 |  7            	| Incomplete AdditionalGuestAmount values			|
 |  8            	| SellableProduct not found					|
 |  9            	| Room not found in SellableProduct				|
-
 
