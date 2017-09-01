@@ -123,6 +123,26 @@ will return a list of all active rooms and configurations.
                 <MealsIncluded MealPlanCodes = "8"/>
               </Rate>
             </Rates>
+            <Offers>
+              <Offer OfferCode="Offer1FN" OfferStatusType="Active">
+                 <OfferRules>
+                    <OfferRule>
+                       <DateRestriction Start="9/1/2017 12:00:00 AM" End="9/1/2017 12:00:00 AM"/>
+                       <LengthsOfStay ArrivalDateBased="false">
+                         <LengthOfStay Time="2" MinMaxMessageType="MinLOS"/>
+                         <LengthOfStay Time="5" MinMaxMessageType="MaxLOS"/>
+                       </LengthsOfStay>
+                       <DOW_Restrictions>
+                          <AvailableDaysOfWeek Mon="true" Tue="true" Weds="true" Thur="true" Fri="true" Sat="true" Sun="true"/>
+                       </DOW_Restrictions>
+                    </OfferRule>
+              </OfferRules>
+              <Discount NightsDiscounted="1" DiscountPattern="First"/>
+              <OfferDescription>
+                 <Text>Offer 1 Night Free</Text>
+              </OfferDescription>
+             </Offer>
+            </Offers>
             <SellableProducts>
               <SellableProduct InvCode = "STD1" InvType = "ROOM" InvStatusType = "Active" InvTypeCode="ROOMSTD1">
                 <GuestRoom>
@@ -305,6 +325,28 @@ occupancies. STD2 room has 2 possible occupations: 2 adults + 1 child or
 | @CardCode        			   | 1     	 | String   | Contains the credit card code. See Credit Card Codes list in section 7.6.4. |
 | RatePlans/RatePlan/Rates/Rate/MealsIncluded | 0..1	 |	    | Present if board is included with this rate.	|
 | @MealPlanCodes			   | 1 		 | Integer  | OTA MPT Code. 					|
+| RatePlans/RatePlan/Offers    | 0..1    |          | Node that contains the offers a rate can have
+| RatePlans/RatePlan/Offers|Offer | 1..n    |          | Offer itself
+| @OfferCode                   | 1      | Integer   | Code to identify the Offer
+| @OfferStatusType             | 1      | String    | Active or Deactivated
+| RatePlans/RatePlan/Offers|Offer|OfferRules | 1    |          | Node that contains the OfferRules
+| RatePlans/RatePlan/Offers|Offer|OfferRules|OfferRule | 1    |          | Rules that need to happen in order to apply the offer
+| RatePlans/RatePlan/Offers|Offer|OfferRules|OfferRule|DateRestriction | 0..1   |          | Dates that restrict the offer
+| @Start                       | 1      | Date     | Date in which the offer starts 
+| @End                         | 1      | Date     | Date in which the offer ends
+| RatePlans/RatePlan/Offers|Offer|OfferRules|OfferRule|LenghtsOfStay | 0..1  |          | Node that contains Lengh of Stays
+| @ArrivalDateBased            | 1      | Boolean  | 
+| RatePlans/RatePlan/Offers|Offer|OfferRules|OfferRule|LenghtsOfStay|LengthOfStay | 1..n  |          | Length of Stay Restrictions
+| @Time                        | 1      | Integer   | Days of the Lenght of Stay
+| @MinMaxMessageType           | 1      | String    | MinLOS or MaxLOS
+| RatePlans/RatePlan/Offers|Offer|OfferRules|OfferRule|DOW_Restrictions | 1    |          | Node that contains Days of The Week rules
+| RatePlans/RatePlan/Offers|Offer|OfferRules|OfferRule|DOW_Restrictions|AvailableDaysOfWeek | 1    |          | Offer days available
+| @Mon...Sun                   | 1      | Boolean   | Days from Monday to Sunday. If false, the offer does not apply on that day
+| RatePlans/RatePlan/Offers|Offer|Discount | 1    |          | Discount that the offer would have. Currently, only free nights allowed
+| @NightsDiscounted            | 1      | Integer   | Number of nights that would be substracted from the final price
+| @DiscountPattern             | 1      | String   | First, last or cheapest night/s to be discounted
+| RatePlans/RatePlan/Offers|Offer|OfferDescription | 1    |          | Description of the Offer 
+| RatePlans/RatePlan/Offers|Offer|OfferDescription|Text | 1    | String    | Where the text goes 
 | RatePlans/RatePlan/SellableProducts	   | 0..1    	 |	    | List of sellable products. In derived rates, if it is not present it applies to all rooms. In other cases, it informs the rooms that applies. |
 | RatePlans/RatePlan/SellableProducts/SellableProduct | 0..n |	    | Present if rooms associed with this rate.		|
 | @InvCode    				   | 1 		 | Integer  | Sellable Product Code.				|
