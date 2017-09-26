@@ -88,8 +88,7 @@ is **180000** milliseconds.
             <Telephone>91547880</Telephone>
             <Fax>910200200</Fax>
         </BookingContact>
-        <CategoryCode>4 Stars</CategoryCode>
-        <Type>H</Type>
+        <CategoryCode>4 Stars</CategoryCode>    
         <ShortDescription>the hotel.....</ShortDescription>
         <LongDescription>the hotel....</LongDescription>
         <HowToGet></HowToGet>
@@ -214,8 +213,8 @@ is **180000** milliseconds.
 | @code      				| 1    		| String	| Destination code.						|
 | @name      				| 1    		| String	| Destination name.						|
 | @avail     				| 1    		| Boolean	| Indicates if the code can be used in Avail.		|
-| Latitude   				| 1    		| String	| Latitude.							|
-| Longitude  				| 1    		| String	| Longitude.							|
+| Latitude   				| 0..1    		| String	| Latitude.							|
+| Longitude  				| 0..1    		| String	| Longitude.							|
 | Contact    				| 0..1       	|		| Hotel contact information.							|
 | Contact/Email				| 1    		| String	| Email.							|
 | Contact/Telephone			| 1    		| String	| Telephone.							|
