@@ -248,7 +248,9 @@ Booking cancellation penalties are affected by the following elements:
 
 -   **Currency:** currency of the penalty fee.
 
+**Final buying price:** 
 
+Buying price delivered in the valuation method will prevail over any other price returned in either avail or reservation
 
 **Note:** 
 
