@@ -250,4 +250,7 @@ This field is implemented if it's native to the supplier or if another availabil
 will be done automatically in reservation method. This information is available in the Static configuration of
 each supplier.
 
+**Final buying price:** 
+
+Buying price delivered in the valuation method will prevail over any other price returned in either avail or reservation
 
