@@ -250,7 +250,7 @@ Booking cancellation penalties are affected by the following elements:
 
 **Final buying price:** 
 
-If the price in the reservaion is lower, we recommend taking into account the price in valuation, given that it is the price which the end customer will see. The price in reservation should always be kept in mind, especially in case it is higher than the one in valuation.
+If the price in the reservation is lower, we recommend taking into account the price in valuation, given that it is the price which the end customer will see. The price in reservation should always be kept in mind, especially in case it is higher than the one in valuation.
 
 **Note:** 
 
