@@ -249,3 +249,34 @@ or equal to the price showed in valuation).
 This field is implemented if it's native to the supplier or if another availability/valuation request needs to be done in Reservation. In case the supplier blocks the option in valuation, reservation
 will be done automatically in reservation method. This information is available in the Static configuration of
 each supplier.
+
+### Price difference between the Reservation and Valuation methods
+
+We cannot guarantee that the price will be returned in Reservation, given that this is something which depends on the supplier, and unless they provide us the price in their response, there is no way for us to return it to you.
+
+If the price returned in Reservation method is different than the one returned in the Valuation method, 4 cases could occur. Below, we have explained each of these cases and what should be done if either of them occur:
+
+**Case 1:**
+
+The price in Reservation is lower than the price in Valuation. The selling price for the final customer will be the one in valuation, as this is the one that will be accepted by them at the time of booking. The final price that you should pay the supplier will be the price in Reservation.
+
+**Case 2:**
+
+The price in Reservation is higher than the price in valuation:
+
+**Case 2.1:**
+
+The supplier allows DeltaPrice and you allow a price change of, for example, up to €10, indicating it in through our DeltaPrice field (explained in the previous section):
+
+Valuation: <Price currency = "EUR" amount = "110" binding = "false" commission = "0"/>
+Reserva: <Price currency = "EUR" amount = "110" binding = "false" commission = "0"/>
+
+When making reservation, you must pay the supplier €110, given that you have decided not to lose the booking even though the price has increased with €10 compared to Valuation.
+
+**Case 2.2:**
+
+The supplier allows DeltaPrice and you DO NOT allow price change. In this case we will return an error, as you do not permit a higher reservation price than the one already established in Valuation.
+
+**Case 2.3:**
+
+The supplier DOES NOT allow DeltaPrice. If the supplier returns a higher price in Reservation than he does in Valuation, then the difference should be reported, as you have not specified in any way that the price can be changed. In this case the supplier has to cover the price change.
