@@ -268,8 +268,14 @@ The price in Reservation is higher than the price in valuation:
 
 The supplier allows DeltaPrice and you allow a price change of, for example, up to €10, indicating it in through our DeltaPrice field (explained in the previous section):
 
-Valuation: <Price currency = "EUR" amount = "110" binding = "false" commission = "0"/>
-Reserva: <Price currency = "EUR" amount = "110" binding = "false" commission = "0"/>
+Valuation: 
+~~~xml 
+<Price currency = "EUR" amount = "110" binding = "false" commission = "0"/>
+~~~
+Reservation: 
+~~~xml 
+<Price currency = "EUR" amount = "110" binding = "false" commission = "0"/>
+~~~
 
 When making reservation, you must pay the supplier €110, given that you have decided not to lose the booking even though the price has increased with €10 compared to Valuation.
 
