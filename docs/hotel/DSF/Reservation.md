@@ -75,6 +75,14 @@ is closed.
         <PaymentType>MerchantPay</PaymentType>
         <Rooms>
             <Room id = "4582" roomCandidateRefId = "1" code = "506" description = "Double Standard.."/>
+            <Preferences>
+                <Preference type = "Smoker"/>
+                <Preference type = "NonSmoker"/>
+                <Preference type = "ExtraBed"/>
+                <Preference type = "Cradle"/>
+                <Preference type = "DoubleBed"/>
+                <Preference type = "TwinBeds"/>
+            </Preferences>
         </Rooms>
         <RoomCandidates>
             <RoomCandidate id = "1">
@@ -85,6 +93,15 @@ is closed.
             </RoomCandidate>
         </RoomCandidates>
         <Remarks>I want it a double bed.</Remarks>
+        <Preferences>
+            <Preference type = "ContiguosRooms"/>
+            <Preference type = "Wedding"/>
+            <Preference type = "LateArrival">14:00</Preference>
+            <Preference type = "LateCheckOut"/>
+            <Preference type = "GroundFloor"/>
+            <Preference type = "TopFlor"/>
+            <Preference type = "WithoutVoucher"/>
+        </Preferences>
     </ReservationRQ>
 ~~~
 
@@ -130,12 +147,18 @@ is closed.
 | @roomCandidateRefId				| 1  		| Integer	| Room candidate identifier.				|
 | @code    					| 1  		| String	| Room code.						|
 | @description					| 1  		| String	| Room description.					|
+| Rooms/Preferences    				| 0..1    	|		| Preference filters at room level. 					|
+| Rooms/Preferences/Preference   				| 1..n    	|		| Each filter of preference and its values. 		|
+| @type   				| 1    	|		| Type of preference allowed. See types allowed in ** PreferenceType:**  					|
 | RoomCandidates/RoomCandidate			| 1..n    	|		| Room required.					|
 | @id      					| 1  		| Integer	| Id of the requested room (starting at 1).		|
 | RoomCandidates/RoomCandidate/Paxes/Pax	| 1..n    	|		| Pax required.						|
 | @age     					| 1  		| Integer	| Passenger age. 					|
 | @id      					| 1  		| Integer	| Passenger id (starting at 1). 			|
 | Remarks       				| 0..1    	| 		| Any customer comments for the supplier to consider (see StaticConfiguration in order to verify if a supplier implements it).	|
+| Preferences    				| 0..1    	|		| Preference filters at the option / general level. 					|
+| Preferences/Preference   				| 1..n    	|		| Each filter of preference and its values. 		|
+| @type   				| 1    	|		| Type of preference allowed. See types allowed in ** PreferenceType:**  					|
   
 
 
@@ -176,6 +199,21 @@ is closed.
 
 ### Detailed description
 
+**PreferenceType**: The types that allow, the possible values are:
+    - Smoker
+    - NonSmoker
+    - ExtraBed
+    - Cradle
+    - DoubleBed
+    - TwinBeds
+    - ContiguosRooms
+    - Wedding
+    - LateArrival
+    - LateCheckOut
+    - EarlyCheckIn
+    - GroundFloor
+    - TopFlor
+    - WithoutVoucher
 
 **ResStatus:**
 
