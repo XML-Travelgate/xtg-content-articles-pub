@@ -5,7 +5,14 @@ search: Hotel - Change Log
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/change-log
 ---
+**Version 1.0.20:** Date 11/12/2017
 
+ *  **New tags Metadata: PaxTypeRangeInRoomCandidates**: Definition of the restrictions of the guests in the room.
+ *  **New tags Metadata: AllowsPreferences**: Definition of the preferences that the provider allows in the request of the reservation.
+ *  **New atribute in AgeRange/Age@type**: Type of guest according to the age range.
+ *  **New filters in Reservation Request**: With this tag you can define preferences filters at the hotel or room level if the provider allows it.
+
+|
 
  **Version 1.0.19:** Date 19/06/2017
 
