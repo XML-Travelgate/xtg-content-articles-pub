@@ -83,13 +83,23 @@ Clarification - All information contained within the Avail section relates to th
         <Release reviewDate = "20/06/2015">0</Release>
         <MinimumStay reviewDate = "20/06/2015">0</MinimumStay>
         <MaxStay reviewDate = "20/06/2015">0</MaxStay>
-        <MaxNumberRoomCandidates reviewDate = "20/06/2015">0</MaxNumberRoomCandidates>
-        <MaxPaxInRoomCandidates reviewDate = "20/06/2015">0</MaxPaxInRoomCandidates>
-        <MaxPaxInAllRooms reviewDate = "20/06/2015">0</MaxPaxInAllRooms>
-        <RequiredRoomWithSamePaxConfiguration>
-            <SamePaxNumber reviewDate = "20/06/2015">false</SamePaxNumber>
-            <SamePaxAge reviewDate = "20/06/2015">false</SamePaxAge>
-        </RequiredRoomWithSamePaxConfiguration>
+        <RoomCandidates>
+            <MaxNumberRoomCandidates reviewDate = "20/06/2015">0</MaxNumberRoomCandidates>
+            <PaxTypeRangeInRoomCandidates reviewDate = "20/06/2015">
+                <Candidate type = "Adult" min = "1" max = "3"/>
+                <Candidate type = "Child" min = "0" max = "2"/>
+                <Candidate type = "Infant" min = "0" max = "0"/>
+            </PaxTypeRangeInRoomCandidates>
+            <MaxPaxInRoomCandidates reviewDate = "20/06/2015">0</MaxPaxInRoomCandidates>
+            <MaxPaxInAllRooms reviewDate = "20/06/2015">0</MaxPaxInAllRooms>
+            <RequiredRoomWithSamePaxConfiguration>
+                <SamePaxNumber reviewDate = "20/06/2015">false</SamePaxNumber>
+                <SamePaxAge reviewDate = "20/06/2015">false</SamePaxAge>
+            </RequiredRoomWithSamePaxConfiguration>
+            <AgeRange reviewDate = "11/11/2016">
+                <Age type = "Child" min = "2" max = "5"/>
+            </AgeRange>
+        <RoomCandidates>
         <RateRules>
             <RateRule reviewDate = "20/06/2015">NonRefundable</RateRule>
             <RateRule reviewDate = "20/06/2015">largeFamily</RateRule>
@@ -118,9 +128,6 @@ Clarification - All information contained within the Avail section relates to th
         <InformDailyRatePlan reviewDate = "20/06/2015">false</InformDailyRatePlan>
         <InformOffers reviewDate = "20/06/2015">false</InformOffers>
         <InformNRFRateByRoom reviewDate = "20/06/2015">false</InformNRFRateByRoom>
-        <AgeRange reviewDate = "11/11/2016">
-            <Age min = "2" max = "5"/>
-        </AgeRange>
         <InformFees reviewDate = "20/06/2015">false</InformFees>
     </Avail>
     <Valuation>
@@ -139,6 +146,20 @@ Clarification - All information contained within the Avail section relates to th
         <AllowsUrlCard reviewDate = "20/06/2015">false</AllowsUrlCard>
         <InformBillingSupplier reviewDate = "20/06/2015">false</InformBillingSupplier>
         <InformPrice reviewDate = "20/06/2015">false</InformPrice>
+        <AllowsPreferences>
+            <Preference hotel = "false" room = "true">
+                <PreferenceType>Smoker</PreferenceType>
+                <Value mandatory = "false"/>
+            </Preference>
+            <Preference hotel = "false" room = "true">
+                <PreferenceType>ExtraBed</PreferenceType>
+                <Value mandatory = "false"/>
+            </Preference>
+            <Preference hotel = "true" room = "false">
+                <PreferenceType>LateArrival</PreferenceType>
+                <Value mandatory = "true" type = "numeric"/>
+            </Preference>
+        </AllowsPreferences>
     </Reservation>
     <ReservationRead>
         <Implements reviewDate = "20/06/2015">false</Implements>
@@ -278,17 +299,30 @@ Clarification - All information contained within the Avail section relates to th
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Avail/MaxStay			| 1        	| Integer	| Maximum number of days allowed for booking.  |
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
-| Avail/MaxNumberRoomCandidates			| 1        	| Integer | Maximum number of room candidates that can be requested in the same avail request.		|
+| Avail/RoomCandidates			| 1        	|  | Contains information about the restrictions of the rooms.		|
+| Avail/RoomCandidates/MaxNumberRoomCandidates			| 1        	| Integer | Maximum number of room candidates that can be requested in the same avail request.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
-| Avail/MaxPaxInRoomCandidates			| 1        	| Integer | Maximum number paxs in same room that can be requested in the same avail request.		|
+| Avail/RoomCandidates/PaxTypeRangeInRoomCandidates			| 0..1        	|  | Contains information about the age restrictions of the guests in a room.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
-| Avail/MaxPaxInAllRooms			| 1        	| Integer | Total amount of paxs that can be requested in the same avail request.	|
+| Avail/RoomCandidates/PaxTypeRangeInRoomCandidates/Candidate			| 1        	|  | Guest restrictions for each candidate type in a room.		|
+| @type		| 1        	| Enum | Candidate classification type.(Adult, Child, Infant)		|
+| @min		| 1        	| Integer | Minimum required number of guest of this type.		|
+| @max		| 1        	| Integer | Maximum number of guest of this type allowed.		|
+| Avail/RoomCandidates/MaxPaxInRoomCandidates			| 1        	| Integer | Maximum number paxs in same room that can be requested in the same avail request.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
-| Avail/RequiredRoomWithSamePaxConfiguration			| 1        	| 	| Indicates whether all of the distributions must have the same configuration.		|
-| Avail/RequiredRoomWithSamePaxConfiguration/ SamePaxNumber			| 1        	| Boolean	| Indicates whether it is necessary that the number of guests be the same in all of the configurations.		|
+| Avail/RoomCandidates/MaxPaxInAllRooms			| 1        	| Integer | Total amount of paxs that can be requested in the same avail request.	|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
-| Avail/RequiredRoomWithSamePaxConfiguration/ SamePaxAge			| 1        	| Boolean	| Indicates whether all of the guests in a particular distribution must be the same age.		|
+| Avail/RoomCandidates/RequiredRoomWithSamePaxConfiguration			| 1        	| 	| Indicates whether all of the distributions must have the same configuration.		|
+| Avail/RoomCandidates/RequiredRoomWithSamePaxConfiguration/SamePaxNumber			| 1        	| Boolean	| Indicates whether it is necessary that the number of guests be the same in all of the configurations.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
+| Avail/RoomCandidates/RequiredRoomWithSamePaxConfiguration/SamePaxAge			| 1        	| Boolean	| Indicates whether all of the guests in a particular distribution must be the same age.		|
+| @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
+| Avail/RoomCandidates/AgeRange			| 0..1        	| 	| The age range used by the supplier.		|
+| @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
+| Avail/RoomCandidates/AgeRange/Age			| 1..n        	| 	| Age range.	|
+| @type 		| 1   		| String	| Type of classification according to age.(Adult, Child, Infant) |
+| @min 			| 1   		| String	| Minimum age in range. |
+| @max 			| 1		| String	|  Max age in range. |
 | Avail/RateRules			| 1        	| 	| List of rate rule types.		|
 | Avail/RateRules/RateRule			| 1..n        	| Enum	| Rate rules supported by the supplier (You can check these Rate conditions in our Avail section).		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
@@ -324,11 +358,6 @@ Clarification - All information contained within the Avail section relates to th
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Avail/InformNRFRateByRoom			| 1        	| Boolean	| The supplier can inform in availability if the room is non-refundable. 		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
-| Avail/AgeRange			| 0..1        	| 	| The age range used by the supplier.		|
-| @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
-| Avail/AgeRange/Age			| 1..n        	| 	| Age range.	|
-| @min 			| 1   		| String	| Minimum age in range. |
-| @max 			| 1		| String	|  Max age in range. |
 | Avail/InformFees			| 1        	| Boolean 	| Informs if the supplier returns fees.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Valuation			| 1        	| 	| Valuation node.		|
@@ -359,6 +388,14 @@ Clarification - All information contained within the Avail section relates to th
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Reservation/InformPrice			| 1        	| Boolean 	| The supplier informs the booking price.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
+| Reservation/AllowsPreferences			| 0..1        	|  	| Preference filters allowed by the provider.		|
+| Reservation/AllowsPreferences/Preference		| 1        	|  	| Each filter of preference and its values.		|
+| @hotel		| 1        	| Boolean 	|  At the option / general level.		|
+| @room		| 1        	| Boolean 	|  At the room level.		|
+| Reservation/AllowsPreferences/Preference/PreferenceType		| 1        	|  	| Type of preference allowed. See types allowed in ** Reservation:** .		|
+| Reservation/AllowsPreferences/Preference/Value		| 1        	|  	| Definition of the type of preference.		|
+| @mandatory		| 1        	| Boolean 	| If it is necessary to pass a value in the Preference tag in reservation request.		|
+| @type		| 0..1       	| String 	| Type of the required value. (string, numeric, boolean)		|
 | ReservationRead			| 1        	| 	| ReservationRead node.		|
 | ReservationRead/Implements			| 1        	| Boolean	| Informs if the supplier implements this method.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
@@ -481,6 +518,61 @@ Some tags were renamed, so that they follow a certain standard of coherence. Wit
 **Avail:**
 
 *MaxNumberHotelsRecommended, MaxNumberCitiesRecommended, MaxNumberZonesRecommended, MaxNumberGeoCodesRecommended:* These tags indicate what the recommended number of Cities/Hotels/Zones or Geocodes is for each supplier are. This means that even if a supplier allows for a search of up to 500 at a time, they may recommend that you do not exceed 200, thus way avoiding TimeOut errors and showing results in time. In the majority of cases the maximum number of hotels allowed is the same as the recommended number of hotels (MaxNumberHotels = MaxNumberHotelsRecommended). There are, however, a few cases in which it can be different.
+
+**Reservation:**
+
+*AllowsPreferences:* In this tag it indicates what types of preferences the provider allows at the hotel and / or room level.
+
+   - **Preference**: Each of these tags will specify the type of preference allowed and at what level it can be requested
+    - hotel => at the option / general level.
+    - room => at room level.
+   - **PreferenceType**: The types that allow, the possible values are:
+    - Smoker
+    - NonSmoker
+    - ExtraBed
+    - Cradle
+    - DoubleBed
+    - TwinBeds
+    - ContiguosRooms
+    - Wedding
+    - LateArrival
+    - LateCheckOut
+    - EarlyCheckIn
+    - GroundFloor
+    - TopFlor
+    - WithoutVoucher
+                    
+   - **Value** :
+    - **mandatory**: Here we will specify if it is necessary to pass a value in the Preference tag in reservation request.
+    - **type**: Then you must specify the type of value that can be sent in tag type. This type is an Enum that could be:
+        - string
+        - numeric
+        - boolean
+                 
+   - **Example 1**:
+     - MetaData:
+     ~~~xml
+         <Preference hotel = "false" room = "true">
+            <PreferenceType>Smoker</PreferenceType>
+            <Value mandatory = "false"/>
+         </Preference>
+     ~~~
+     - Reservation:
+     ~~~xml
+          <Preference type = "Smoker"></Preference>
+     ~~~
+   - **Example 2**:
+     - MetaData:
+     ~~~xml
+         <Preference hotel = "false" room = "true">
+            <PreferenceType>LateArrival</PreferenceType>
+            <Value mandatory = "true" type = "string"/>
+         </Preference>
+     ~~~
+     - Reservation:
+     ~~~xml
+          <Preference type = "LateArrival">14:00</Preference>
+     ~~~
 
 **Reservation Read, ReservationList:**
 

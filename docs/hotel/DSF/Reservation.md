@@ -75,6 +75,14 @@ is closed.
         <PaymentType>MerchantPay</PaymentType>
         <Rooms>
             <Room id = "4582" roomCandidateRefId = "1" code = "506" description = "Double Standard.."/>
+            <Preferences>
+                <Preference type = "Smoker"/>
+                <Preference type = "NonSmoker"/>
+                <Preference type = "ExtraBed"/>
+                <Preference type = "Cradle"/>
+                <Preference type = "DoubleBed"/>
+                <Preference type = "TwinBeds"/>
+            </Preferences>
         </Rooms>
         <RoomCandidates>
             <RoomCandidate id = "1">
@@ -85,6 +93,15 @@ is closed.
             </RoomCandidate>
         </RoomCandidates>
         <Remarks>I want it a double bed.</Remarks>
+        <Preferences>
+            <Preference type = "ContiguosRooms"/>
+            <Preference type = "Wedding"/>
+            <Preference type = "LateArrival">14:00</Preference>
+            <Preference type = "LateCheckOut"/>
+            <Preference type = "GroundFloor"/>
+            <Preference type = "TopFlor"/>
+            <Preference type = "WithoutVoucher"/>
+        </Preferences>
     </ReservationRQ>
 ~~~
 
@@ -130,12 +147,18 @@ is closed.
 | @roomCandidateRefId				| 1  		| Integer	| Room candidate identifier.				|
 | @code    					| 1  		| String	| Room code.						|
 | @description					| 1  		| String	| Room description.					|
+| Rooms/Preferences    				| 0..1    	|		| Preference filters at room level. 					|
+| Rooms/Preferences/Preference   				| 1..n    	|		| Each filter of preference and its values. 		|
+| @type   				| 1    	|		| Type of preference allowed. See types allowed in ** PreferenceType:**  					|
 | RoomCandidates/RoomCandidate			| 1..n    	|		| Room required.					|
 | @id      					| 1  		| Integer	| Id of the requested room (starting at 1).		|
 | RoomCandidates/RoomCandidate/Paxes/Pax	| 1..n    	|		| Pax required.						|
 | @age     					| 1  		| Integer	| Passenger age. 					|
 | @id      					| 1  		| Integer	| Passenger id (starting at 1). 			|
 | Remarks       				| 0..1    	| 		| Any customer comments for the supplier to consider (see StaticConfiguration in order to verify if a supplier implements it).	|
+| Preferences    				| 0..1    	|		| Preference filters at the option / general level. 					|
+| Preferences/Preference   				| 1..n    	|		| Each filter of preference and its values. 		|
+| @type   				| 1    	|		| Type of preference allowed. See types allowed in ** PreferenceType:**  					|
   
 
 
@@ -176,6 +199,21 @@ is closed.
 
 ### Detailed description
 
+**PreferenceType**: The types that allow, the possible values are:
+    - Smoker
+    - NonSmoker
+    - ExtraBed
+    - Cradle
+    - DoubleBed
+    - TwinBeds
+    - ContiguosRooms
+    - Wedding
+    - LateArrival
+    - LateCheckOut
+    - EarlyCheckIn
+    - GroundFloor
+    - TopFlor
+    - WithoutVoucher
 
 **ResStatus:**
 
@@ -250,4 +288,39 @@ This field is implemented if it's native to the supplier or if another availabil
 will be done automatically in reservation method. This information is available in the Static configuration of
 each supplier.
 
+### Price difference between the Reservation and Valuation methods
 
+We cannot guarantee that the price will be returned in Reservation, given that this is something which depends on the supplier, and unless they provide us the price in their response, there is no way for us to return it to you.
+
+If the price returned in Reservation method is different than the one returned in the Valuation method, 4 cases could occur. Below, we have explained each of these cases and what should be done if either of them occur:
+
+**Case 1:**
+
+The price in Reservation is lower than the price in Valuation. The selling price for the final customer will be the one in valuation, as this is the one that will be accepted by them at the time of booking. The final price that you should pay the supplier will be the price in Reservation.
+
+**Case 2:**
+
+The price in Reservation is higher than the price in valuation:
+
+**Case 2.1:**
+
+The supplier allows DeltaPrice and you allow a price change of, for example, up to €10, indicating it in through our DeltaPrice field (explained in the previous section):
+
+Valuation: 
+~~~xml 
+<Price currency = "EUR" amount = "110" binding = "false" commission = "0"/>
+~~~
+Reservation: 
+~~~xml 
+<Price currency = "EUR" amount = "110" binding = "false" commission = "0"/>
+~~~
+
+When making reservation, you must pay the supplier €110, given that you have decided not to lose the booking even though the price has increased with €10 compared to Valuation.
+
+**Case 2.2:**
+
+The supplier allows DeltaPrice and you DO NOT allow price change. In this case we will return an error, as you do not permit a higher reservation price than the one already established in Valuation.
+
+**Case 2.3:**
+
+The supplier DOES NOT allow DeltaPrice. If the supplier returns a higher price in Reservation than he does in Valuation, then the difference should be reported, as you have not specified in any way that the price can be changed. In this case the supplier has to cover the price change.

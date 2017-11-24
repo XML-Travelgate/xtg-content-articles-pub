@@ -243,6 +243,7 @@
 	  <xs:element minOccurs="0" maxOccurs="1" name="DailyRatePlans" type="ArrayOfDailyRatePlan" />	  
 	  <xs:element minOccurs="0" maxOccurs="1" name="Features" type="Features" />
 	  <xs:element minOccurs="0" maxOccurs="1" name="Offers" type="Offers" />	  
+	  <xs:element minOccurs="0" maxOccurs="1" name="Preferences" type="Preferences" />		  
     </xs:sequence>
     <xs:attribute name="id" type="xs:string" />
     <xs:attribute name="roomCandidateRefId" type="xs:int" use="required" />
@@ -399,6 +400,8 @@
     </xs:sequence>
     <xs:attribute name="includedPriceOption" type="xs:boolean" use="required" />
     <xs:attribute name="description" type="xs:string" />
+    <xs:attribute name="mandatory" type="xs:boolean"/>
+    <xs:attribute name="refundable" type="xs:boolean"/>			
   </xs:complexType>
   <xs:complexType name="CancelPenalties">
     <xs:sequence>
@@ -604,9 +607,22 @@
           <xs:element minOccurs="0" maxOccurs="1" name="Rooms" type="RoomsAvail" />
           <xs:element minOccurs="0" maxOccurs="1" name="RoomCandidates" type="RoomCandidates" />
 		  <xs:element minOccurs="0" maxOccurs="1" name="Remarks" type="xs:string" />
+		  <xs:element minOccurs="0" maxOccurs="1" name="Preferences" type="Preferences" />		  
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Preferences">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Preference" type="Preference" />
+    </xs:sequence>
+  </xs:complexType>  
+  <xs:complexType name="Preference">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="type" type="ePreferenceType" />
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
   <xs:complexType name="DeltaPrice">
     <xs:attribute name="amount" type="xs:string" />
@@ -822,7 +838,25 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
+  <xs:simpleType name="ePreferenceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Smoker" />
+      <xs:enumeration value="NonSmoker" />
+      <xs:enumeration value="ExtraBed" />
+	  <xs:enumeration value="Cradle" />
+	  <xs:enumeration value="DoubleBed" />
+	  <xs:enumeration value="TwinBeds" />
+	  <xs:enumeration value="ContiguosRooms" />
+	  <xs:enumeration value="Wedding" />
+	  <xs:enumeration value="LateArrival" />
+	  <xs:enumeration value="LateCheckOut" />
+	  <xs:enumeration value="EarlyCheckIn" />
+	  <xs:enumeration value="GroundFloor" />	  
+	  <xs:enumeration value="TopFlor" />	  
+	  <xs:enumeration value="WithoutVoucher" />	  	  
+    </xs:restriction>
+  </xs:simpleType>  
 
 
 
@@ -1390,6 +1424,14 @@
     <xs:attribute name="max" type="xs:string" />
   </xs:complexType>
   
+  <xs:simpleType name="ePaxType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Adult" />
+      <xs:enumeration value="Child" />
+      <xs:enumeration value="Infant" />
+    </xs:restriction>
+  </xs:simpleType>
+  
     <xs:complexType name="DestinationRegex">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Regex" type="xs:string" />
@@ -1830,12 +1872,7 @@
       <xs:element minOccurs="0" maxOccurs="1" name="Release" type="IntegerText" />
       <xs:element minOccurs="0" maxOccurs="1" name="MinimumStay" type="IntegerText" />
       <xs:element minOccurs="0" maxOccurs="1" name="MaxStay" type="IntegerText" />
-      <xs:element minOccurs="0" maxOccurs="1" name="MaxNumberRoomCandidates" type="IntegerText" />
-      <xs:element minOccurs="0" maxOccurs="1" name="MaxPaxInRoomCandidates" type="IntegerText" />
-      <xs:element minOccurs="0" maxOccurs="1" name="MaxPaxInAllRooms" type="IntegerText" />
-      <xs:element minOccurs="0" maxOccurs="1" name="RequiredRoomWithSamePaxConfiguration" type="RequiredRoomWithSamePaxConfiguration" />
-      <xs:element minOccurs="0" maxOccurs="1" name="RateRules" type="MetaDataRateRules" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Beds" type="MetaDataAvailBeds" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RoomCandidates" type="MetaDataRoomCandidates" />
       <xs:element minOccurs="0" maxOccurs="1" name="InformBindingPrice" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="InformCancelPolicies" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="InformRemarks" type="BooleanText" />
@@ -1846,7 +1883,6 @@
       <xs:element minOccurs="0" maxOccurs="1" name="InformDailyRatePlan" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="InformOffers" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="InformNRFRateByRoom" type="BooleanText" />
-      <xs:element minOccurs="0" maxOccurs="1" name="AgeRange" type="MetaDataAgeRange" />
       <xs:element minOccurs="0" maxOccurs="1" name="InformFees" type="BooleanText" />
     </xs:sequence>
   </xs:complexType>  
@@ -1865,13 +1901,40 @@
       <xs:element minOccurs="0" maxOccurs="1" name="DestinationSameCountryRestriction" type="BooleanText" />
     </xs:sequence>
   </xs:complexType> 
-  <xs:element name="RequiredRoomWithSamePaxConfiguration" nillable="true" type="RequiredRoomWithSamePaxConfiguration" />  
+
+  <xs:complexType name="MetaDataRoomCandidates">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="MaxNumberRoomCandidates" type="IntegerText" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PaxTypeRangeInRoomCandidates" type="MetaDataPaxTypeRangeInRoomCandidates" />	  
+      <xs:element minOccurs="0" maxOccurs="1" name="MaxPaxInRoomCandidates" type="IntegerText" />	  
+      <xs:element minOccurs="0" maxOccurs="1" name="MaxPaxInAllRooms" type="IntegerText" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RequiredRoomWithSamePaxConfiguration" type="RequiredRoomWithSamePaxConfiguration" />	  
+      <xs:element minOccurs="0" maxOccurs="1" name="RateRules" type="MetaDataRateRules" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Beds" type="MetaDataAvailBeds" />	  
+      <xs:element minOccurs="0" maxOccurs="1" name="AgeRange" type="MetaDataAgeRange" />	  
+    </xs:sequence>
+  </xs:complexType>   
+
+  <xs:complexType name="MetaDataPaxTypeRangeInRoomCandidates">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Candidate" type="MetaDataCandidate" />
+    </xs:sequence>
+   <xs:attribute name="reviewDate" type="xs:string" />
+  </xs:complexType> 
+  
+  <xs:complexType name="MetaDataCandidate">
+    <xs:attribute name="type" type="ePaxType" use="required" />  
+    <xs:attribute name="min" type="xs:int" use="required" />
+    <xs:attribute name="max" type="xs:int" use="required" />
+  </xs:complexType> 
+  
   <xs:complexType name="RequiredRoomWithSamePaxConfiguration">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="1" name="SamePaxNumber" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="SamePaxAge" type="BooleanText" />
     </xs:sequence>
   </xs:complexType> 
+  
   <xs:element name="MetaDataRateRules" nillable="true" type="MetaDataRateRules" />
   <xs:complexType name="MetaDataRateRules">
     <xs:sequence>
@@ -1938,6 +2001,7 @@
   </xs:complexType>
   <xs:element name="MetaDataAge" nillable="true" type="MetaDataAge" />
   <xs:complexType name="MetaDataAge">
+    <xs:attribute name="type" type="ePaxType" use="required" />  
     <xs:attribute name="min" type="xs:int" use="required" />
     <xs:attribute name="max" type="xs:int" use="required" />
   </xs:complexType>  
@@ -1962,8 +2026,31 @@
       <xs:element minOccurs="0" maxOccurs="1" name="AllowsUrlCard" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="InformBillingSupplier" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="InformPrice" type="BooleanText" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AllowsPreferences" type="MetaDataPreferences" />	  
     </xs:sequence>
   </xs:complexType> 
+  
+ <xs:complexType name="MetaDataPreferences">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Preference" type="MetaDataPreference" />
+    </xs:sequence>
+   <xs:attribute name="reviewDate" type="xs:string" />
+  </xs:complexType> 
+  
+  <xs:complexType name="MetaDataPreference">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PreferenceType" type="ePreferenceType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Value" type="MetaDataPreferenceValue" />	  
+    </xs:sequence>
+   <xs:attribute name="hotel" type="xs:boolean" />	
+   <xs:attribute name="room" type="xs:boolean" />   
+  </xs:complexType>   
+  
+  <xs:complexType name="MetaDataPreferenceValue">
+    <xs:attribute name="mandatory" type="xs:boolean" />  
+    <xs:attribute name="type" type="eTypeMetaData" />
+  </xs:complexType>  
+  
   <xs:element name="MetaDataReservationRead" nillable="true" type="MetaDataReservationRead" />
   <xs:complexType name="MetaDataReservationRead">
     <xs:sequence>

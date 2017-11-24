@@ -170,7 +170,7 @@ is closed.
                     <Offer code = "EBI" name = "Early booking"/>
                   </Offers>
                   <Fees>
-                    <Fee includedPriceOption = "true" description = "TaxAndServiceFee">
+                    <Fee includedPriceOption = "true" description = "TaxAndServiceFee" mandatory ="true" refundable="false">
                         <Price currency = "EUR" amount = "8.11" binding = "false" commission = "-1"/>
                     </Fee>
                   </Fees>
@@ -396,6 +396,8 @@ is closed.
 | MealPlans/MealPlan/Options /Option/Fees/Fee				    | 1..n       |      | Contains details of the fee. |
 | @includedPriceOption			    | 1		 | Boolean  | Indicates if the fee is included or not in the final price. |
 | @description				    | 1          | String   | Remarks regarding fee. |
+| @mandatory 				    | 1          | Boolean   | If the fee is obligatory, depending on the includedPriceOption to know if it is paid at the time of booking or at the hotel. In case it is false, it could be a fee such as "cleaning" that the consumer could hire if he wanted. |
+| @refundable 				    | 1          | Boolean   | This field will serve to know if the rate to be paid is returned, for example when it is a deposit type that is returned once the stay ends. |
 | MealPlans/MealPlan/Options /Option/Fees/Fee/Price			    | 1          |          | Contains details of price. |
 | @currency 				    | 1          | String   | Currency code. |
 | @amount 				    | 1          | Decimal  | Fee Amount. |

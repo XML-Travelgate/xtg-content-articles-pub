@@ -21,7 +21,7 @@ seller. XTG will process data and response with error code if needed.
 <HotelRatePlanInventoryNotif xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
     <request PrimaryLangID = "ES" Version = "0">
         <RatePlans HotelCode = "1" xmlns = "http://www.opentravel.org/OTA/2003/05">
-            <RatePlan Duration = "0" CurrencyCode = "EUR" RatePlanCode = "BAR" RatePlanStatusType = "Active">
+            <RatePlan Duration = "0" CurrencyCode = "EUR" RatePlanCode = "BAR" RatePlanStatusType = "Active" Start = "2016-01-01" End = "2016-05-01">
                 <Rates>
                     <Rate>
                         <AdditionalGuestAmounts>
@@ -122,6 +122,8 @@ seller. XTG will process data and response with error code if needed.
 | @RatePlanNotifType			| 0..1	     | String	| New, Delta or Remove |
 | @RatePlanStatusType			    | 1		 | String   | Active or Deactivated.				|
 | @CurrencyCode				| 0..1	     | String	| ISO Currency (EUR). Not used for derived rates.	|
+| @Start      				    | 0..1 	 | Date	    | Start date of the rate booking window (Booking Dates for wich the rate will be available). |
+| @End        				    | 0..1	 | Date     | End date of the rate booking window (Booking Dates for wich the rate will be available). |
 | RatePlans/BookingRules		    | 0..1       |	    | Present if exists booking rules for the given RatePlan.|
 | BookingRules/BookingRule		    | 1..n       |	    | Booking rules.					|
 | @Code       				    | 0..1	 | String   | Code of the booking rule (empty if are viewships conditions). |
@@ -168,6 +170,7 @@ seller. XTG will process data and response with error code if needed.
 | @RoomTypeCode    				   | 1 		 | String  | Room Code.				|
 | @RoomID    				   | 1 		 | Integer  | Room Id.				|
 | RatePlans/RatePlan/SellableProduct/GuestRoom/Description/Text | 1 | String | Room description.			|
+| RatePlans/RatePlan/Description/Text |	1 |	String |	Rate description. 			|
 | TPA_Extensions			   	| 0..1    	|		| Optional, only added when create or delete an hotel. |
 | TPA_Extensions/Attribute            		| 1       	|		|							|
 | @key        			| 1  		| String	| HotelNotifType.						|
