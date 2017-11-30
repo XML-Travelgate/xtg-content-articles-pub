@@ -200,6 +200,10 @@ seller. XTG will process data and response with error code if needed.
 </HotelRatePlanInventoryNotif>
 ~~~
 
+
+**Example for Offers**
+
+
 ~~~xml
 <HotelRatePlanInventoryNotif xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
     <request PrimaryLangID = "ES" Version = "0">
