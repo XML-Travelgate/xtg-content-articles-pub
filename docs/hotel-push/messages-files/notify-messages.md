@@ -32,68 +32,68 @@ seller. XTG will process data and response with error code if needed.
                             <GuaranteePayment PaymentCode = "MerchantPayment"/>
                             <GuaranteePayment PaymentCode="DirectPayment">
                                 <AcceptedPayments>
-									<AcceptedPayment>
-										<PaymentCard CardCode="VI" />
-									</AcceptedPayment>
-									<AcceptedPayment>
-									  <PaymentCard CardCode="AX" />
-									</AcceptedPayment>
-									<AcceptedPayment>
-									  <PaymentCard CardCode="CA" />
-									</AcceptedPayment>
-									<AcceptedPayment>
-									  <PaymentCard CardCode="DS" />
-									</AcceptedPayment>
-									<AcceptedPayment>
-									  <PaymentCard CardCode="L" />
-									</AcceptedPayment>
-									<AcceptedPayment>
-									  <PaymentCard CardCode="EU" />
-									</AcceptedPayment>
+				    <AcceptedPayment>
+				      <PaymentCard CardCode="VI" />
+				    </AcceptedPayment>
+				    <AcceptedPayment>
+				      <PaymentCard CardCode="AX" />
+				    </AcceptedPayment>
+				    <AcceptedPayment>
+				      <PaymentCard CardCode="CA" />
+				    </AcceptedPayment>
+				    <AcceptedPayment>
+				      <PaymentCard CardCode="DS" />
+				    </AcceptedPayment>
+				    <AcceptedPayment>
+				      <PaymentCard CardCode="L" />
+				    </AcceptedPayment>
+				    <AcceptedPayment>
+				      <PaymentCard CardCode="EU" />
+				    </AcceptedPayment>
                                 </AcceptedPayments>
                             </GuaranteePayment>
                             <GuaranteePayment PaymentCode="BookingDatePayment">
                                 <AcceptedPayments>
-									<AcceptedPayment>
-									  <PaymentCard CardCode="VI" />
-									</AcceptedPayment>
-									<AcceptedPayment>
-									  <PaymentCard CardCode="AX" />
-									</AcceptedPayment>
-									<AcceptedPayment>
-									  <PaymentCard CardCode="CA" />
-									</AcceptedPayment>
-									<AcceptedPayment>
-									  <PaymentCard CardCode="DS" />
-									</AcceptedPayment>
-									<AcceptedPayment>
-									  <PaymentCard CardCode="L" />
-									</AcceptedPayment>
-									<AcceptedPayment>
-									  <PaymentCard CardCode="EU" />
-									</AcceptedPayment>
+				    <AcceptedPayment>
+				      <PaymentCard CardCode="VI" />
+				    </AcceptedPayment>
+				    <AcceptedPayment>
+				      <PaymentCard CardCode="AX" />
+				    </AcceptedPayment>
+				    <AcceptedPayment>
+				      <PaymentCard CardCode="CA" />
+				    </AcceptedPayment>
+				    <AcceptedPayment>
+				      <PaymentCard CardCode="DS" />
+				    </AcceptedPayment>
+				    <AcceptedPayment>
+				      <PaymentCard CardCode="L" />
+				    </AcceptedPayment>
+				    <AcceptedPayment>
+				      <PaymentCard CardCode="EU" />
+				    </AcceptedPayment>
                                 </AcceptedPayments>
                             </GuaranteePayment>
                             <GuaranteePayment PaymentCode="ArrivalDatePayment">
                                 <AcceptedPayments>
-									<AcceptedPayment>
-									  <PaymentCard CardCode="VI" />
-									</AcceptedPayment>
-									<AcceptedPayment>
-									  <PaymentCard CardCode="AX" />
-									</AcceptedPayment>
-									<AcceptedPayment>
-									  <PaymentCard CardCode="CA" />
-									</AcceptedPayment>
-									<AcceptedPayment>
-									  <PaymentCard CardCode="DS" />
-									</AcceptedPayment>
-									<AcceptedPayment>
-									  <PaymentCard CardCode="L" />
-									</AcceptedPayment>
-									<AcceptedPayment>
-									  <PaymentCard CardCode="EU" />
-									</AcceptedPayment>
+				    <AcceptedPayment>
+				      <PaymentCard CardCode="VI" />
+				    </AcceptedPayment>
+				    <AcceptedPayment>
+				      <PaymentCard CardCode="AX" />
+				    </AcceptedPayment>
+				    <AcceptedPayment>
+				      <PaymentCard CardCode="CA" />
+				    </AcceptedPayment>
+				    <AcceptedPayment>
+				      <PaymentCard CardCode="DS" />
+				    </AcceptedPayment>
+				    <AcceptedPayment>
+				      <PaymentCard CardCode="L" />
+				    </AcceptedPayment>
+				    <AcceptedPayment>
+				      <PaymentCard CardCode="EU" />
+				    </AcceptedPayment>
                                 </AcceptedPayments>
                             </GuaranteePayment>
                         </PaymentPolicies>
@@ -187,7 +187,7 @@ seller. XTG will process data and response with error code if needed.
     <request PrimaryLangID = "ES" Version = "0">
         <RatePlans HotelCode = "1" xmlns = "http://www.opentravel.org/OTA/2003/05">
             <RatePlan BaseRatePlanCode = "BAR" RatePlanStatusType = "Active" RatePlanCode = "DERIVED" RateReturn = "false">
-				<RatePlanInclusionsType>
+		<RatePlanInclusionsType>
                     <RatePlanInclusionDescription>
                         <Name>BaseMealPlanSupplement</Name>
                     </RatePlanInclusionDescription>
