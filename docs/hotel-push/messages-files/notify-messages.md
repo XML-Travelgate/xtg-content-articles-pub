@@ -30,6 +30,72 @@ seller. XTG will process data and response with error code if needed.
                         </AdditionalGuestAmounts>
                         <PaymentPolicies>
                             <GuaranteePayment PaymentCode = "MerchantPayment"/>
+                            <GuaranteePayment PaymentCode="DirectPayment">
+                                <AcceptedPayments>
+									<AcceptedPayment>
+										<PaymentCard CardCode="VI" />
+									</AcceptedPayment>
+									<AcceptedPayment>
+									  <PaymentCard CardCode="AX" />
+									</AcceptedPayment>
+									<AcceptedPayment>
+									  <PaymentCard CardCode="CA" />
+									</AcceptedPayment>
+									<AcceptedPayment>
+									  <PaymentCard CardCode="DS" />
+									</AcceptedPayment>
+									<AcceptedPayment>
+									  <PaymentCard CardCode="L" />
+									</AcceptedPayment>
+									<AcceptedPayment>
+									  <PaymentCard CardCode="EU" />
+									</AcceptedPayment>
+                                </AcceptedPayments>
+                            </GuaranteePayment>
+                            <GuaranteePayment PaymentCode="BookingDatePayment">
+                                <AcceptedPayments>
+									<AcceptedPayment>
+									  <PaymentCard CardCode="VI" />
+									</AcceptedPayment>
+									<AcceptedPayment>
+									  <PaymentCard CardCode="AX" />
+									</AcceptedPayment>
+									<AcceptedPayment>
+									  <PaymentCard CardCode="CA" />
+									</AcceptedPayment>
+									<AcceptedPayment>
+									  <PaymentCard CardCode="DS" />
+									</AcceptedPayment>
+									<AcceptedPayment>
+									  <PaymentCard CardCode="L" />
+									</AcceptedPayment>
+									<AcceptedPayment>
+									  <PaymentCard CardCode="EU" />
+									</AcceptedPayment>
+                                </AcceptedPayments>
+                            </GuaranteePayment>
+                            <GuaranteePayment PaymentCode="ArrivalDatePayment">
+                                <AcceptedPayments>
+									<AcceptedPayment>
+									  <PaymentCard CardCode="VI" />
+									</AcceptedPayment>
+									<AcceptedPayment>
+									  <PaymentCard CardCode="AX" />
+									</AcceptedPayment>
+									<AcceptedPayment>
+									  <PaymentCard CardCode="CA" />
+									</AcceptedPayment>
+									<AcceptedPayment>
+									  <PaymentCard CardCode="DS" />
+									</AcceptedPayment>
+									<AcceptedPayment>
+									  <PaymentCard CardCode="L" />
+									</AcceptedPayment>
+									<AcceptedPayment>
+									  <PaymentCard CardCode="EU" />
+									</AcceptedPayment>
+                                </AcceptedPayments>
+                            </GuaranteePayment>
                         </PaymentPolicies>
                         <MealsIncluded MealPlanCodes = "14"/>
                     </Rate>
@@ -112,6 +178,29 @@ seller. XTG will process data and response with error code if needed.
 
 ~~~
 
+
+**Example for Derived RatePlan**
+
+
+~~~xml
+<HotelRatePlanInventoryNotif xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
+    <request PrimaryLangID = "ES" Version = "0">
+        <RatePlans HotelCode = "1" xmlns = "http://www.opentravel.org/OTA/2003/05">
+            <RatePlan BaseRatePlanCode = "BAR" RatePlanStatusType = "Active" RatePlanCode = "DERIVED" RateReturn = "false">
+				<RatePlanInclusionsType>
+                    <RatePlanInclusionDescription>
+                        <Name>BaseMealPlanSupplement</Name>
+                    </RatePlanInclusionDescription>
+                </RatePlanInclusionsType>
+                <Description>
+                    <Text>Derived Rate</Text>
+                </Description>
+            </RatePlan>
+        </RatePlans>
+</HotelRatePlanInventoryNotif>
+~~~
+
+
 | **Element**				| **Number** | **Type**	| **Description**					|
 | ------------------------------------- | ---------- | -------- | ----------------------------------------------------- |
 | HotelRatePlanInventoryNotif/request		| 1 	     |		| Root Node.						|
@@ -119,6 +208,8 @@ seller. XTG will process data and response with error code if needed.
 | @HotelCode				| 1	     | String	| Hotel code whose information is provided by the method. |
 | RatePlans/RatePlan			| 0..n	     |		| Present if rate exists.				|
 | @RatePlanCode				| 1	     | String	| Rate code.						|
+| @BaseRatePlanCode			| 0..1	     | String	| Rate code of the base RatePlan. Only used for derived rates. |
+| @RateReturn			| 0..1	     | String	| Indicates if the Derived Rate Code should be passed to the channel manager in booking notifications or the Base Rate Code. Only used for derived rates. |
 | @RatePlanNotifType			| 0..1	     | String	| New, Delta or Remove |
 | @RatePlanStatusType			    | 1		 | String   | Active or Deactivated.				|
 | @CurrencyCode				| 0..1	     | String	| ISO Currency (EUR). Not used for derived rates.	|
@@ -170,6 +261,9 @@ seller. XTG will process data and response with error code if needed.
 | @RoomTypeCode    				   | 1 		 | String  | Room Code.				|
 | @RoomID    				   | 1 		 | Integer  | Room Id.				|
 | RatePlans/RatePlan/SellableProduct/GuestRoom/Description/Text | 1 | String | Room description.			|
+| RatePlans/RatePlan/RatePlanInclusionsType |	0..1 |	 Only used for derived rates. |	 			|
+| RatePlans/RatePlan/RatePlanInclusionsType/RatePlanInclusionDescription |	1 |	 Only used for derived rates. |	 			|
+| RatePlans/RatePlan/RatePlanInclusionsType/RatePlanInclusionDescription/Name |	1 |	 |	If present, derived rate will apply base rate meal plan supplements. Value = BaseMealPlanSupplement. Only used for derived rates.			|
 | RatePlans/RatePlan/Description/Text |	1 |	String |	Rate description. 			|
 | TPA_Extensions			   	| 0..1    	|		| Optional, only added when create or delete an hotel. |
 | TPA_Extensions/Attribute            		| 1       	|		|							|
@@ -367,7 +461,7 @@ seller. XTG will process data and response with error code if needed.
 | @AdjustUpIndicator			| 0..1	     | Boolean	| When true, the adjusted amount or adjusted percentage is added to the amount specified for the base rate plan to determine the derived rate amount. When false, the adjusted amount or adjusted percentage is subtracted from the amount specified for the base rate plan to determine the derived rate amount. Only used for derived rates. |
 | RatePlans/RatePlan/Rates/Rate/BaseByGuestAmts | 0..1 | Different types of price can come in the same BaseByGuestAmts element.	|							|
 | RatePlans/RatePlan/Rates/Rate/BaseByGuestAmts/BaseByGuestAmt | 1..n |	|						|
-| @AmountAfterTax			| 1	     | Decimal	| Total amount for @NumberOfGuests by day indicated.	|
+| @AmountAfterTax			| 1	     | Decimal	| Total amount for @NumberOfGuests by day indicated. This amount doesn't include tax.	|
 | @NumberOfGuests			| 0..1	     | Integer	| How many adults are the @AmountAfterTax for day indicated. If @NumberOfGuests is not informed then @Type must be informed. The maximum @NumberOfGuests is the standard occupancy of the room. |
 | @Type  				| 0..1	     | Integer	| Amounts are per Room or per Occupancy instead of per Pax. If @Type=25. If @Type=14, price is per occupancy, @Code is mandatory and @NumberOfGuests and AdditionalGuestAmounts are not allowed. |
 | @Code  				| 0..1	     | String	| Mandatory if @Type=14. The occupancy code is defined by AdultNumber-ChildNumber-InfantNumber. @Code for an occupancy of 2 adults, 1 child and 0 babies would be "2-1-0". |
