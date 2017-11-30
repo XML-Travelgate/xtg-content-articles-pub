@@ -200,6 +200,38 @@ seller. XTG will process data and response with error code if needed.
 </HotelRatePlanInventoryNotif>
 ~~~
 
+~~~xml
+<HotelRatePlanInventoryNotif xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
+    <request PrimaryLangID = "ES" Version = "0">
+        <RatePlans HotelCode = "1" xmlns = "http://www.opentravel.org/OTA/2003/05">
+            <RatePlan BaseRatePlanCode = "BAR" RatePlanStatusType = "Active" RatePlanCode = "DERIVED" RateReturn = "false">
+	        <Offers>
+		    <Offer OfferCode="offer" OfferStatusType="Active">
+			<OfferRules>
+			    <OfferRule>
+				<LengthsOfStay ArrivalDateBased="false">
+				    <LengthOfStay Time="2" MinMaxMessageType="MinLOS" />
+				    <LengthOfStay Time="6" MinMaxMessageType="MaxLOS" />
+				</LengthsOfStay>
+				<DOW_Restrictions>
+				    <AvailableDaysOfWeek Mon="true" Tue="true" Weds="true" Thur="true" Fri="true" Sat="true" Sun="true" />
+				</DOW_Restrictions>
+				<Inventories>
+                      		    <Inventory InvCode="1BDAPT" />
+                    		</Inventories>
+			    </OfferRule>
+			</OfferRules>
+			<Discount NightsDiscounted="1" DiscountPattern="Last" />
+			<OfferDescription>
+			    <Text>Offer Test</Text>
+			</OfferDescription>
+		    </Offer>
+		</Offers>
+            </RatePlan>
+        </RatePlans>
+</HotelRatePlanInventoryNotif>
+~~~
+
 
 | **Element**				| **Number** | **Type**	| **Description**					|
 | ------------------------------------- | ---------- | -------- | ----------------------------------------------------- |
@@ -265,6 +297,32 @@ seller. XTG will process data and response with error code if needed.
 | RatePlans/RatePlan/RatePlanInclusionsType/RatePlanInclusionDescription |	1 |	 Only used for derived rates. |	 			|
 | RatePlans/RatePlan/RatePlanInclusionsType/RatePlanInclusionDescription/Name |	1 |	 |	If present, derived rate will apply base rate meal plan supplements. Value = BaseMealPlanSupplement. Only used for derived rates.			|
 | RatePlans/RatePlan/Description/Text |	1 |	String |	Rate description. 			|
+| RatePlans/RatePlan/Offers | 0..1 |  | List of Offers |
+| RatePlans/RatePlan/Offers/Offer | 1..n |  | 			|
+| @OfferCode | 1 | String | Offer code. |
+| @OfferStatusType | 1 | String | Active or Deactivated. |
+| RatePlans/RatePlan/Offers/Offer/OfferRules | 1 |  | 			|
+| RatePlans/RatePlan/Offers/Offer/OfferRules/OfferRule | 1 |  | 			|
+| RatePlans/RatePlan/Offers/Offer/OfferRules/OfferRule/LengthsOfStay | 1 |  | 			|
+| RatePlans/RatePlan/Offers/Offer/OfferRules/OfferRule/LengthsOfStay/LengthOfStay | 1..2 | |						|
+| @Time 				| 1	     | Integer	| Indicates the number of nights for this stay.	|
+| @MinMaxMessageType			| 1	     | String	| (MinLOS, MaxLOS) Indicates the minimum or maximum stay for his Offer. |
+| RatePlans/RatePlan/Offers/Offer/OfferRules/OfferRule/DOW_Restrictions | 1 |  | 			|
+| RatePlans/RatePlan/Offers/Offer/OfferRules/OfferRule/DOW_Restrictions/AvailableDaysOfWeek | 1 |  | 			|
+| @Mon  				| 1	     | Boolean	| Indicates whether the Offer data applies to Mondays. |
+| @Tue  				| 1	     | Boolean	| Indicates whether the Offer data applies to Tuesdays. |
+| @Weds 				| 1	     | Boolean	| Indicates whether the Offer data applies to Wednesdays. |
+| @Thur 				| 1	     | Boolean	| Indicates whether the Offer data applies to Thursdays. |
+| @Fri  				| 1	     | Boolean	| Indicates whether the Offer data applies to Fridays. |
+| @Sat  				| 1	     | Boolean	| Indicates whether the Offer data applies to Saturdays. |
+| @Sun  				| 1      | Boolean	| Indicates whether the Offer data applies to Sundays. |
+| RatePlans/RatePlan/Offers/Offer/OfferRules/OfferRule/Inventories | 0..1 |  | 	Rooms wich the offer will apply to. If no Inventory are sent, the offer will apply for all the rooms in the Rate.		|
+| RatePlans/RatePlan/Offers/Offer/OfferRules/OfferRule/Inventories/Inventory | 1..n |  | 		|
+| @InvCode | 1 | String | Room code. |
+| RatePlans/RatePlan/Offers/Offer/Dicount | 1 |  | 			|
+| @NightsDiscounted | 1 | String | Nights the offer will discount from the total stay amount. |
+| @DiscountPattern | 1 | String | Booking night/s the offer will dicount. Possible values are First, Last or Cheapest.  |
+| RatePlans/RatePlan/Offers/Offer/OfferDescription/Text | 1 | String | Offer desription. |
 | TPA_Extensions			   	| 0..1    	|		| Optional, only added when create or delete an hotel. |
 | TPA_Extensions/Attribute            		| 1       	|		|							|
 | @key        			| 1  		| String	| HotelNotifType.						|
