@@ -283,8 +283,33 @@ seller. XTG will process data and response with error code if needed.
               <SellableProduct InvCode = "43" InvType = "ROOM"/>
             </SellableProducts>
             <Supplements>
-              <Supplement Start = "2013-04-01" End = "2013-12-31" Amount = "20.00" InvCode = "1" SupplementType = "Board" ChargeTypeCode = "2-0-0"/>
-              <Supplement Start = "2013-04-01" End = "2013-12-31" Amount = "30.00" InvCode = "1" SupplementType = "Board" ChargeTypeCode = "3-0-0"/>
+              <Supplement Start = "2013-04-01" End = "2013-12-31" AgeQualifyingCode = "10" Amount = "20.00" InvCode = "1" SupplementType = "Board"/>
+              <Supplement Start = "2013-04-01" End = "2013-12-31" AgeQualifyingCode = "8" Amount = "10.00" InvCode = "1" SupplementType = "Board"/>
+            </Supplements>
+          </RatePlan>
+          <RatePlan RatePlanCode = "TAR333" CurrencyCode = "EUR" SuplementsNotifTypeSpecified = "true" SuplementsNotifType = "Overlay" RatePlanStatusType = "Deactivated">
+            <Rates>
+              <Rate Start = "2014-01-01" End = "2014-02-01">
+                <BaseByGuestAmts>
+                  <BaseByGuestAmt Type = "25" AmountAfterTax = "150.00"/>
+                  <BaseByGuestAmt Type = "14" Code = "2-0-0" AmountAfterTax = "150.00"/>
+                  <BaseByGuestAmt Type = "14" Code = "3-0-0" AmountAfterTax = "180.00"/>
+                  <BaseByGuestAmt NumberOfGuests = "1" AmountAfterTax = "100.00"/>
+                  <BaseByGuestAmt NumberOfGuests = "2" AmountAfterTax = "130.00"/>
+                  <BaseByGuestAmt NumberOfGuests = "3" AmountAfterTax = "195.00"/>
+                </BaseByGuestAmts>
+                <AdditionalGuestAmounts>
+                  <AdditionalGuestAmount MaxAdditionalGuests = "1" Percent = "40.00" AgeQualifyingCode = "8"/>
+                  <AdditionalGuestAmount MaxAdditionalGuests = "2" Percent = "20.00" AgeQualifyingCode = "8"/>
+                </AdditionalGuestAmounts>
+              </Rate>
+            </Rates>
+            <SellableProducts>
+              <SellableProduct InvCode = "43" InvType = "ROOM"/>
+            </SellableProducts>
+            <Supplements>
+              <Supplement Start = "2014-01-01" End = "2014-02-01" AgeQualifyingCode = "10" Amount = "20.00" InvCode = "1" SupplementType = "Board"/>
+              <Supplement Start = "2014-01-01" End = "2014-02-01" AgeQualifyingCode = "8" Amount = "10.00" InvCode = "1" SupplementType = "Board"/>
             </Supplements>
           </RatePlan>
         </RatePlans>
@@ -340,18 +365,19 @@ seller. XTG will process data and response with error code if needed.
 | @AdjustedPercentage			| 0..1	     | Decimal	| The percentage off the base rate plan amount used to determine the price of this derived rate plan. Only used for derived rates. |
 | @AdjustedAmount			| 0..1	     | Decimal	| The amount which should be added to the base rate plan to determine the price of this derived rate plan. Only used for derived rates. |
 | @AdjustUpIndicator			| 0..1	     | Boolean	| When true, the adjusted amount or adjusted percentage is added to the amount specified for the base rate plan to determine the derived rate amount. When false, the adjusted amount or adjusted percentage is subtracted from the amount specified for the base rate plan to determine the derived rate amount. Only used for derived rates. |
-| RatePlans/RatePlan/Rates/Rate/BaseByGuestAmts | 0..1 |	|							|
+| RatePlans/RatePlan/Rates/Rate/BaseByGuestAmts | 0..1 | Different types of price can come in the same BaseByGuestAmts element.	|							|
 | RatePlans/RatePlan/Rates/Rate/BaseByGuestAmts/BaseByGuestAmt | 1..n |	|						|
 | @AmountAfterTax			| 1	     | Decimal	| Total amount for @NumberOfGuests by day indicated.	|
 | @NumberOfGuests			| 0..1	     | Integer	| How many adults are the @AmountAfterTax for day indicated. If @NumberOfGuests is not informed then @Type must be informed. The maximum @NumberOfGuests is the standard occupancy of the room. |
-| @Type  				| 0..1	     | Integer	| Amounts are per Room or per Occupancy instead of per Pax. If @Type=25, price is per room, 1 BaseByGuestAmt is allowed and @NumberOfGuests and AdditionalGuestAmounts are not allowed. If @Type=14, price is per occupancy, @Code is mandatory and @NumberOfGuests and AdditionalGuestAmounts are not allowed. |
+| @Type  				| 0..1	     | Integer	| Amounts are per Room or per Occupancy instead of per Pax. If @Type=25. If @Type=14, price is per occupancy, @Code is mandatory and @NumberOfGuests and AdditionalGuestAmounts are not allowed. |
 | @Code  				| 0..1	     | String	| Mandatory if @Type=14. The occupancy code is defined by AdultNumber-ChildNumber-InfantNumber. @Code for an occupancy of 2 adults, 1 child and 0 babies would be "2-1-0". |
 | RatePlans/RatePlan/Rates/Rate/AdditionalGuestAmounts	| 0..1 | | Not used for derived rates.				|
 | RatePlans/RatePlan/Rates/Rate/AdditionalGuestAmounts/AdditionalGuestAmount | 1..n | | Price and information about the additional pax (children, infants or extra adults). |
 | @MaxAdditionalGuests			| 1	    | Integer	| Number of additional pax, one node for each additional pax, int the above example has one for first child, and one for second. |
 | @Type  				| 0..1	    | String	| OTA AmountDeterminationType. If not specified then the price is a supplement, if @Type is Exclusive then the the price is absolute. |
 | @AgeQualifyingCode			| 1	    | Integer	| (10 - Adult,8 - Child,7 - Infant).			|
-| @Amount				| 1	    | Decimal	| Price for each additional pax.			|
+| @Amount				| 0..1	    | Decimal	| Price for each additional pax.			|
+| @Percent				| 0..1	    | Decimal	| Percent for each additional pax.			|
 | RatePlans/Supplements			| 0..1	    | 		|  Present if supplements by board exists. Not used for derived rates. |
 | RatePlans/Supplements/Supplement	| 1..n	    |		|							|
 | @Start 				| 1	    | Date	| Start date of this supplement.			|
@@ -936,6 +962,14 @@ to seller. XTG will process data and response with error code if needed.
             </LengthsOfStay>
             <RestrictionStatus MinAdvancedBookingOffset = "5"/>
           </AvailStatusMessage>
+          <AvailStatusMessage>
+            <StatusApplicationControl Sun = "true" Sat = "true" Fri = "true" Thur = "true" Weds = "true" Tue = "true" Mon = "true" RatePlanCode = "DRV" Start = "2014-08-01" End = "2014-08-15"/>
+            <LengthsOfStay ArrivalDateBased = "true">
+              <LengthOfStay Time = "5" TimeUnit = "Day" MinMaxMessageType = "MinLOS"/>
+              <LengthOfStay Time = "10" TimeUnit = "Day" MinMaxMessageType = "MaxLOS"/>
+            </LengthsOfStay>
+            <RestrictionStatus Restriction="Master" Status="Close" />
+          </AvailStatusMessage>
         </AvailStatusMessages>
       </request>
     </HotelAvailNotif>
@@ -963,14 +997,14 @@ to seller. XTG will process data and response with error code if needed.
 | @Sat  				| 1	     | Boolean	| Indicates whether the AvailStatusMessage data applies to Saturdays. |
 | @Sun  				| 1          | Boolean	| Indicates whether the AvailStatusMessage data applies to Sundays. |
 | AvailStatusMessages/AvailStatusMessage/LengthsOfStay | 0..1 |	|							|
-| AvailStatusMessages/AvailStatusMessage/LengthsOfStay/LengthOfStay | 1..2 | |						|
 | @ArrivalDateBased			| 0..1	     | Boolean	| When its true, the minimum and maximum stay is checked ONLY the first day of the availability, when false or not indicated, the minimum and maximum stay is checked all the availability days. If both values are needed two AvailStatusMessage must be send. |
+| AvailStatusMessages/AvailStatusMessage/LengthsOfStay/LengthOfStay | 1..2 | |						|
 | @Time 				| 1	     | Integer	| Indicates the number of @TimeUnit for this stay.	|
 | @TimeUnit				| 1	     | String	| Day.							|
 | @MinMaxMessageType			| 1	     | String	| (MinLOS, MaxLOS) Indicates the minimum or maximum stay for his AvailStatusMessage. |
 | AvailStatusMessages/AvailStatusMessage/RestrictionStatus | 0..1 |  |							|
-| @Status				| 0..1	     | String	| (Open, Close). Not used for derived rates.		|
-| @Restriction				| 0..1	     | String	| Master. This is the master availability. If master availability is ‘Closed’, the product is not bookable if any of the stay dates includes one of the dates specified by the Application Control element. If master availability is ‘Open’, additional restrictions on arrival and departure may be placed (Master, Arrival, Departure). Not used for derived rates. |
+| @Status				| 0..1	     | String	| (Open, Close).		|
+| @Restriction				| 0..1	     | String	| Master. This is the master availability. If master availability is ‘Closed’, the product is not bookable if any of the stay dates includes one of the dates specified by the Application Control element. If master availability is ‘Open’, additional restrictions on arrival and departure may be placed (Master, Arrival, Departure). |
 | @MinAdvancedBookingOffset		| 0..1	     | Integer	| Minimum number of days before the check-in date after which the product is not available to be booked. This restriction is usually used to offer discounts on early bookings. |
 | @MaxAdvancedBookingOffset		| 0..1	     | Integer	| Maximum number of days before the check-in date after which the product is not available to be booked. This restriction is usually used to offer last minute discounts on unsold inventory. |
 | @SellThroughOpenIndicator		| 0..1	     | Boolean	| When @Status is open, in this element you can indicate this room or room/ratePlan can be sold without limit(like BookingLimit=MaxInteger). Not used for derived rates. |
@@ -1013,13 +1047,14 @@ Error Response
 
 | **Error Code**	| **Error Description**						|
 | --------------------- | ------------------------------------------------------------- |
-| -1           		| Validation error						|
-|  1            	| POS credentials not found					|
-|  2            	| HotelCode or RatePlanList not found				|
-|  3            	| Rates not found						|
-|  4            	| Incomplete Rate values					|
-|  6            	| Incomplete AvailStatusMessage StatusApplicationControl Values	|
-|  7            	| Incomplete AdditionalGuestAmount values			|
-|  8            	| SellableProduct not found					|
-|  9            	| Room not found in SellableProduct				|
+| -1           		| Unexpected error						|
+|  1           		| Validation error						|
+| 10             	| HotelCode not found				|
+| 11            	| Invalid Dates					|
+| 14            	| Invalid Derived Rate			|
+| 22            	| Rooms not found						|
+| 23            	| Rates not found						|
+| 30            	| Occupancy Error	|
+| 31            	| RatePlan_Rate Error					|
+| 38            	| POS credentials not found					|
 
