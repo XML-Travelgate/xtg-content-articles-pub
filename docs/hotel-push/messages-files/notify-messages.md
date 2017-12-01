@@ -21,7 +21,7 @@ seller. XTG will process data and response with error code if needed.
 <HotelRatePlanInventoryNotif xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
     <request PrimaryLangID = "ES" Version = "0">
         <RatePlans HotelCode = "1" xmlns = "http://www.opentravel.org/OTA/2003/05">
-            <RatePlan Duration = "0" CurrencyCode = "EUR" RatePlanCode = "BAR" RatePlanStatusType = "Active" Start = "2016-01-01" End = "2016-05-01">
+            <RatePlan Duration = "0" CurrencyCode = "EUR" RatePlanCode = "BAR" RatePlanStatusType = "Active">
                 <Rates>
                     <Rate>
                         <AdditionalGuestAmounts>
@@ -307,12 +307,12 @@ seller. XTG will process data and response with error code if needed.
 | @OfferStatusType | 1 | String | Active or Deactivated. |
 | RatePlans/RatePlan/Offers/Offer/OfferRules | 1 |  | 			|
 | RatePlans/RatePlan/Offers/Offer/OfferRules/OfferRule | 1 |  | 			|
-| RatePlans/RatePlan/Offers/Offer/OfferRules/OfferRule/LengthsOfStay | 1 |  | 			|
-| RatePlans/RatePlan/Offers/Offer/OfferRules/OfferRule/LengthsOfStay/LengthOfStay | 1..2 | |						|
+| .../OfferRules/OfferRule/LengthsOfStay | 1 |  | 			|
+| .../OfferRules/OfferRule/LengthsOfStay/LengthOfStay | 1..2 | |						|
 | @Time 				| 1	     | Integer	| Indicates the number of nights for this stay.	|
 | @MinMaxMessageType			| 1	     | String	| (MinLOS, MaxLOS) Indicates the minimum or maximum stay for his Offer. |
-| RatePlans/RatePlan/Offers/Offer/OfferRules/OfferRule/DOW_Restrictions | 1 |  | 			|
-| RatePlans/RatePlan/Offers/Offer/OfferRules/OfferRule/DOW_Restrictions/AvailableDaysOfWeek | 1 |  | 			|
+| .../OfferRule/DOW_Restrictions | 1 |  | 			|
+| .../OfferRule/DOW_Restrictions/AvailableDaysOfWeek | 1 |  | 			|
 | @Mon  				| 1	     | Boolean	| Indicates whether the Offer data applies to Mondays. |
 | @Tue  				| 1	     | Boolean	| Indicates whether the Offer data applies to Tuesdays. |
 | @Weds 				| 1	     | Boolean	| Indicates whether the Offer data applies to Wednesdays. |
@@ -527,8 +527,8 @@ seller. XTG will process data and response with error code if needed.
 | @NumberOfGuests			| 0..1	     | Integer	| How many adults are the @AmountAfterTax for day indicated. If @NumberOfGuests is not informed then @Type must be informed. The maximum @NumberOfGuests is the standard occupancy of the room. |
 | @Type  				| 0..1	     | Integer	| Amounts are per Room or per Occupancy instead of per Pax. If @Type=25. If @Type=14, price is per occupancy, @Code is mandatory and @NumberOfGuests and AdditionalGuestAmounts are not allowed. |
 | @Code  				| 0..1	     | String	| Mandatory if @Type=14. The occupancy code is defined by AdultNumber-ChildNumber-InfantNumber. @Code for an occupancy of 2 adults, 1 child and 0 babies would be "2-1-0". |
-| RatePlans/RatePlan/Rates/Rate/AdditionalGuestAmounts	| 0..1 | | Not used for derived rates.				|
-| RatePlans/RatePlan/Rates/Rate/AdditionalGuestAmounts/AdditionalGuestAmount | 1..n | | Price and information about the additional pax (children, infants or extra adults). |
+| .../Rate/AdditionalGuestAmounts	| 0..1 | | Not used for derived rates.				|
+| .../AdditionalGuestAmounts/AdditionalGuestAmount | 1..n | | Price and information about the additional pax (children, infants or extra adults). |
 | @MaxAdditionalGuests			| 1	    | Integer	| Number of additional pax, one node for each additional pax, int the above example has one for first child, and one for second. |
 | @Type  				| 0..1	    | String	| OTA AmountDeterminationType. If not specified then the price is a supplement, if @Type is Exclusive then the the price is absolute. |
 | @AgeQualifyingCode			| 1	    | Integer	| (10 - Adult,8 - Child,7 - Infant).			|
