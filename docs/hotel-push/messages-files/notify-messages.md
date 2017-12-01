@@ -410,7 +410,7 @@ seller. XTG will process data and response with error code if needed.
               <Supplement Start = "2007-04-01" End = "2007-12-31" AgeQualifyingCode = "8" Amount = "10.00" InvCode = "1" SupplementType = "Board"/>
             </Supplements>
           </RatePlan>
-          <RatePlan RatePlanCode = "TAR333" CurrencyCode = "EUR" SuplementsNotifTypeSpecified = "true" SuplementsNotifType = "Overlay" RatePlanStatusType = "Deactivated">
+          <RatePlan RatePlanCode = "TAR333" CurrencyCode = "EUR" RatePlanStatusType = "Deactivated">
             <Rates>
               <Rate Start = "2013-04-01" End = "2013-12-31">
                 <BaseByGuestAmts>
@@ -426,7 +426,7 @@ seller. XTG will process data and response with error code if needed.
               <Supplement Start = "2013-04-01" End = "2013-12-31" AgeQualifyingCode = "8" Amount = "10.00" InvCode = "1" SupplementType = "Board"/>
             </Supplements>
           </RatePlan>
-          <RatePlan RatePlanCode = "TAR333" CurrencyCode = "EUR" SuplementsNotifTypeSpecified = "true" SuplementsNotifType = "Overlay" RatePlanStatusType = "Deactivated">
+          <RatePlan RatePlanCode = "TAR333" CurrencyCode = "EUR" RatePlanStatusType = "Deactivated">
             <Rates>
               <Rate Start = "2013-04-01" End = "2013-12-31">
                 <BaseByGuestAmts>
@@ -443,7 +443,7 @@ seller. XTG will process data and response with error code if needed.
               <Supplement Start = "2013-04-01" End = "2013-12-31" AgeQualifyingCode = "8" Amount = "10.00" InvCode = "1" SupplementType = "Board"/>
             </Supplements>
           </RatePlan>
-          <RatePlan RatePlanCode = "TAR333" CurrencyCode = "EUR" SuplementsNotifTypeSpecified = "true" SuplementsNotifType = "Overlay" RatePlanStatusType = "Deactivated">
+          <RatePlan RatePlanCode = "TAR333" CurrencyCode = "EUR" RatePlanStatusType = "Deactivated">
             <Rates>
               <Rate Start = "2014-01-01" End = "2014-02-01">
                 <BaseByGuestAmts>
@@ -513,8 +513,6 @@ seller. XTG will process data and response with error code if needed.
 | @RatePlanStatusType			| 0..1	     | String	| Active or Deactivated (You can save prices with initial status deactivated if you want). If this attribute is missing, the price will be saved as active. |
 | @BaseRatePlanCode			| 0..1	     | String	| Rate code of the base RatePlan. Only used for derived rates. |
 | @CurrencyCode				| 0..1	     | String	| ISO Currency (EUR). Not used for derived rates.	|
-| _@SuplementsNotifTypeSpecified	| 0..1	     | Boolean	| Rate code. Not used for derived rates.		|
-| _@SuplementsNotifType			| 0..1	     | String	| Possible values are Overlay or Delta. If not specified or Delta, Supplements will not be overwritten. If Overlay supplements will be overwritten. Not used for derived rates. |
 | RatePlans/RatePlan/Rates/Rate		| 1	     |		|							|
 | @Start 				| 1	     | Date	| Start date of rate.					|
 | @End   				| 1	     | Date	| End date of rate.					|
