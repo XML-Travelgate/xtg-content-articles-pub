@@ -54,6 +54,10 @@ permalink: /docs/hotel-push/code-lists
 | 18       | Family American			|
 | 19       | Breakfast				|
 | 20       | Modified				|
+| 255      | Full board And Drinks  				|
+| 256      | Half board And Drinks				|
+| 257      | All inclusive Premium				|
+| 258      | Gala Dinner				|
 
 
 
