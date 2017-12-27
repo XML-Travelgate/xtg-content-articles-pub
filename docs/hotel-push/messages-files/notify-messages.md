@@ -21,7 +21,7 @@ seller. XTG will process data and response with error code if needed.
 <HotelRatePlanInventoryNotif xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
     <request PrimaryLangID = "ES" Version = "0">
         <RatePlans HotelCode = "1" xmlns = "http://www.opentravel.org/OTA/2003/05">
-            <RatePlan Duration = "0" CurrencyCode = "EUR" RatePlanCode = "BAR" RatePlanStatusType = "Active">
+            <RatePlan Duration = "0" CurrencyCode = "EUR" RatePlanCode = "BAR" RatePlanStatusType = "Active" RatePlanNotifType = "New">
                 <Rates>
                     <Rate>
                         <AdditionalGuestAmounts>
