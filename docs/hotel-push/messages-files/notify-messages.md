@@ -101,7 +101,7 @@ seller. XTG will process data and response with error code if needed.
                     </Rate>
                 </Rates>
                 <SellableProducts>
-                    <SellableProduct InvCode = "STD" InvType = "ROOM" InvStatusType = "Active">
+                    <SellableProduct InvCode = "STD" InvType = "ROOM" InvStatusType = "Active" InvNotifType = "New">
                         <GuestRoom>
                             <Quantities StandardNumBeds = "2"/>
                             <Occupancy MinOccupancy = "2" MaxOccupancy = "2" AgeQualifyingCode = "10"/>
@@ -111,7 +111,7 @@ seller. XTG will process data and response with error code if needed.
                             </Description>
                         </GuestRoom>
                     </SellableProduct>
-                    <SellableProduct InvCode = "STD" InvType = "ROOM" InvStatusType = "Active">
+                    <SellableProduct InvCode = "STD" InvType = "ROOM" InvStatusType = "Active" InvNotifType = "New">
                         <GuestRoom>
                             <Quantities StandardNumBeds = "2"/>
                             <Occupancy MinOccupancy = "2" MaxOccupancy = "2" AgeQualifyingCode = "10"/>
@@ -122,7 +122,7 @@ seller. XTG will process data and response with error code if needed.
                             </Description>
                         </GuestRoom>
                     </SellableProduct>
-                    <SellableProduct InvCode = "STD" InvType = "ROOM" InvStatusType = "Active">
+                    <SellableProduct InvCode = "STD" InvType = "ROOM" InvStatusType = "Active" InvNotifType = "New">
                         <GuestRoom>
                             <Quantities StandardNumBeds = "2"/>
                             <Occupancy MinOccupancy = "1" MaxOccupancy = "1" AgeQualifyingCode = "10"/>
@@ -134,7 +134,7 @@ seller. XTG will process data and response with error code if needed.
                             </Description>
                         </GuestRoom>
                     </SellableProduct>
-                    <SellableProduct InvCode = "JSUIT" InvType = "ROOM" InvStatusType = "Active">
+                    <SellableProduct InvCode = "JSUIT" InvType = "ROOM" InvStatusType = "Active" InvNotifType = "New">
                         <GuestRoom>
                             <Quantities StandardNumBeds = "2"/>
                             <Occupancy MinOccupancy = "1" MaxOccupancy = "1" AgeQualifyingCode = "10"/>
@@ -144,7 +144,7 @@ seller. XTG will process data and response with error code if needed.
                             </Description>
                         </GuestRoom>
                     </SellableProduct>
-                    <SellableProduct InvCode = "JSUIT" InvType = "ROOM" InvStatusType = "Active">
+                    <SellableProduct InvCode = "JSUIT" InvType = "ROOM" InvStatusType = "Active" InvNotifType = "New">
                         <GuestRoom>
                             <Quantities StandardNumBeds = "2"/>
                             <Occupancy MinOccupancy = "2" MaxOccupancy = "2" AgeQualifyingCode = "10"/>
@@ -154,7 +154,7 @@ seller. XTG will process data and response with error code if needed.
                             </Description>
                         </GuestRoom>
                     </SellableProduct>
-                    <SellableProduct InvCode = "JSUIT" InvType = "ROOM" InvStatusType = "Active">
+                    <SellableProduct InvCode = "JSUIT" InvType = "ROOM" InvStatusType = "Active" InvNotifType = "New"> 
                         <GuestRoom>
                             <Quantities StandardNumBeds = "2"/>
                             <Occupancy MinOccupancy = "3" MaxOccupancy = "3" AgeQualifyingCode = "10"/>
@@ -210,7 +210,7 @@ seller. XTG will process data and response with error code if needed.
         <RatePlans HotelCode = "1" xmlns = "http://www.opentravel.org/OTA/2003/05">
             <RatePlan BaseRatePlanCode = "BAR" RatePlanStatusType = "Active" RatePlanCode = "DERIVED" RateReturn = "false">
 	        <Offers>
-		    <Offer OfferCode="offer" OfferStatusType="Active">
+		    <Offer OfferCode="offer" OfferStatusType="Active" OfferNotifType = "New">
 			<OfferRules>
 			    <OfferRule>
 				<LengthsOfStay ArrivalDateBased="false">
@@ -286,6 +286,7 @@ seller. XTG will process data and response with error code if needed.
 | @InvCode    				   | 1 		 | Integer  | Sellable Product Code.				|
 | @InvType    				   | 1 		 | Integer  | Sellable product type (ROOM).			|
 | @InvStatusType			   | 1 	 	 | String   | Active or Deactivated.				|
+| @InvNotifType			| 0..1	     | String	| New, Delta or Remove |
 | RatePlans/RatePlan/SellableProduct/GuestRoom | 1..n	 |	    |							|
 | RatePlans/RatePlan/SellableProduct/GuestRoom/Quantities | 1 |	    |     						|
 | @StandardNumBeds			   | 1 		 | Integer  | Standard occupation of room. 			|
@@ -305,6 +306,7 @@ seller. XTG will process data and response with error code if needed.
 | RatePlans/RatePlan/Offers/Offer | 1..n |  | 			|
 | @OfferCode | 1 | String | Offer code. |
 | @OfferStatusType | 1 | String | Active or Deactivated. |
+| @OfferNotifType			| 0..1	     | String	| New, Delta or Remove |
 | RatePlans/RatePlan/Offers/Offer/OfferRules | 1 |  | 			|
 | RatePlans/RatePlan/Offers/Offer/OfferRules/OfferRule | 1 |  | 			|
 | .../OfferRules/OfferRule/LengthsOfStay | 1 |  | 			|
