@@ -1815,14 +1815,14 @@
       <xs:enumeration value="xml" />
     </xs:restriction>
   </xs:simpleType>  
-  <xs:element name="MetaDataRQ" type="MetaDataStaticConfigurationRQ" />
-  <xs:complexType name="MetaDataStaticConfigurationRQ">
+  <xs:element name="MetaDataRQ" type="MetaDataRQ" />
+  <xs:complexType name="MetaDataRQ">
     <xs:complexContent mixed="false">
       <xs:extension base="HotelBaseRQ" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="MetaDataRS" type="MetaDataStaticConfigurationRS" />
-  <xs:complexType name="MetaDataStaticConfigurationRS">
+  <xs:element name="MetaDataRS" type="MetaDataRS" />
+  <xs:complexType name="MetaDataRS">
     <xs:complexContent mixed="false">
       <xs:extension base="HotelBaseRS">
         <xs:sequence>
