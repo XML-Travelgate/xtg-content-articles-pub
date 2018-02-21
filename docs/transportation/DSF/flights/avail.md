@@ -159,17 +159,17 @@ is of **25000** milliseconds.
 | @id              			| 1  		| Integer	| Unique identifier of the Passenger.			|
 | @age             			| 1  		| Integer	| Age of the Passenger.					|
 | Passengers/Passenger/Bonuses		| 0..1    	|		| Possible discount or bonuses.				|
-| @resident        			| 0..1  		| String	| [Resident discount type.](#availabilityrq-enumerate-description)						|
+| @resident        			| 0..1  		| String	| [Resident discount type.](#availability-enumerate-description)						|
 | @largeFamily     			| 0..1  		| String	| Family discount type: N(None), F1(Large family), F2 (Special large family).|
 | @discountCardCode		| 0..1	| String	| Discount card code.|
-| @discountCard		| 0..1	| String	| [Discount card type.](#availabilityrq-enumerate-description)|
+| @discountCard		| 0..1	| String	| [Discount card type.](#availability-enumerate-description)|
 | Passengers/Passenger/Bonuses/<br>DiscountCards	| 0..1	|	| Contains a list of DiscountCards.|
-| Passengers/Passenger/Bonuses/<br>DiscountCard|
+| Passengers/Passenger/Bonuses/<br>DiscountCards/DiscountCard|
 | @code	| 1	| String | Discount card code.|
 | @id	| 1	| String	| Unique identifier of discound card.|
-| @type	| 1	| String	| [Discount card type.](#availabilityrq-enumerate-description)|
+| @type	| 1	| String	| [Discount card type.](#availability-enumerate-description)|
 | Passengers/Passenger/Bonuses/<br>PaxTypeCodes		| 0..1	|		| Contains a list of PaxTypeCodes.|
-| Passengers/Passenger/Bonuses/<br>PaxTypeCode	| 0..n	|	| Contains the code type of the passenger.|
+| Passengers/Passenger/Bonuses/<br>PaxTypeCodes/PaxTypeCode	| 0..n	|	| Contains the code type of the passenger.|
 | @code		| 1		| String	| Code type of the passenger.|
 | Preferences           		| 0..1      	|		| Availability Preferences.				|
 | @cabinClass      			| 0..1  		| String	| Preferred cabin class: N(None: don't apply by default), F(First), C(Business), Y(Economy), CAMAROTE(Cabin), YP(Economy Plus). 	|
@@ -191,7 +191,7 @@ is of **25000** milliseconds.
 | @key	| 1	| String	| Attribute key.
 | @value	| 1	| String	| Attribute value.
 | SpecialSupplements	| 0..1	|	|	Contains a list of SpecialSupplements.
-| SpecialSupplement		| 0..n	|	|	Contains information about the Special Supplement
+| SpecialSupplements/SpecialSupplement		| 0..n	|	|	Contains information about the Special Supplement
 | @id	| 1	| String	| Unique identifier of the supplement.|
 | @code	| 1	| String	| Supplement code.|
 | @height	| 0..1	| Integer	| Dimension of the supplement: height.|
@@ -211,71 +211,7 @@ is of **25000** milliseconds.
 | @id	| 1	| Integer	| Unique identifier of the vehicle.|
 | @height	| 0..1	| Integer	| Dimension of the vehicle: height.|
 | @length	| 0..1	| Integer	| Dimension of the vehicle: length.|
-| @type	| 1	| String	| [Type of vehicle.](#availabilityrq-enumerate-description)|
-
-
-### AvailabilityRQ Enumerate description
-
-| **Element**				| **Possible Values**	| **Description**						|
-| ------------------------- | --------------------- | ------------------ |
-| @discountCard        		| N | None |
-| 							| NINYO |  |
-| 							| JOVEN | |
-| 							| ESCAPADA | |
-| 							| SENIOR | |
-| 							| THALYS_CORPORATE | |
-| 							| FORFAIT_LYS | |
-| 							| ABO_FREQUENCE_1ST_AND_2ND | |
-| 							| ABO_FORFAIT_1ST_AND_2ND | |
-| 							| BAHN_CARD_REDUCTION | |
-| 							| BAHN_CARD_25 | |
-| 							| SWITZERLAND_50 | |
-| 							| SWITZERLAND_100 | |
-| 							| EJERCITO_AIRE | |
-| 							| EJERCITO_TIERRA | |
-| 							| FUERZAS_NAVALES | |
-| 							| GUARDIA_CIVIL | |
-| 							| FREQUENT_FLYER | |
-| 							| CARTA_ARGENTO | |
-| 							| CARTA_FRECCIA | |
-| 							| UK_ANNUAL_GOLD | |
-| 							| UK_CHILD_DISABILITY | |
-| 							| UK_DISABILITY | |
-| 							| UK_FAMILY_FRIENDS | |
-| 							| UK_GROUPSAVE3 | |
-| 							| UK_GROUPSAVE4 | |
-| 							| UK_HM_ARMED_FORCES | |
-| 							| UK_JOBCENTRE_PLUS | |
-| 							| UK_NETWORK | |
-| 							| UK_SENIOR | |
-| 							| UK_TWO_TOGETHER | |
-| 							| UK_YOUTH | |
-| 							| UK_GROUPSAVE | |
-| @resident					| N | None |
-| 							| BP | Balearic Islands resident flying to mainland |
-| 							| BI | Balearic Islands resident flying to another balearic island |
-| 							| DC | Canarian Islands resident flying to another Canarian Island |
-| 							| RC | Canarian Islands resident flying to mainland |
-| 							| RM | Ceuta/Melilla resident |
-| 							| STR | Italian resident  discount |
-| 							| ELB | Italian resident Elba |
-| 							| SDG | Italian resident Sardegna |
-| 							| SLC | Italian resident Sicily |
-| 							| RE | Ceuta |
-| Vehicles/Vehicle/@type	| N  | None  |
-| 							| Turismo  | Touring  |
-| 							| Todoterreno  | All terrain  |
-| 							| Monovolumen  | Minivan  |
-| 							| CiclomotorMax50  | Moped max 50kg.  |
-| 							| MotocicletaMin50Max250  | Motorcicle min 50kg. max 250kg.  |
-| 							| MotocicletaMin250Max500  | Motorcicle min 250kg. max 500kg.  |
-| 							| MotocicletaMin500  | Motorcicle min 500kg.  |
-| 							| Bicicleta  | Bike  |
-| 							| Furgoneta  | Van  |
-| 							| VehiculoLargoMax6  | Long vehicle max 6m.  |
-| 							| VehiculoEmision0  | Zero emissions vehicle  |
-| 							| Caravana  | Caravan  |
-| 							| Remolque  | Trailer  |
+| @type	| 1	| String	| [Type of vehicle.](#availability-enumerate-description)|
 
 
 
@@ -520,7 +456,7 @@ is of **25000** milliseconds.
 | Transportation              		| 1     	|		| Contains all of the Segments and Fares.		|
 | @totalFares            		| 1 		| Integer	| Total number of Fares. 				|
 | Transportation/Segments     		| 1     	|		| Contains a list of the Segments.			|
-| Transportation/Segments /Segment	| 1..n    	|		| Contains the information of the segment.		|
+| Transportation/Segments/Segment	| 1..n    	|		| Contains the information of the segment.		|
 | @id                    		| 1 		| Integer	| Unique identifier of the segment. 			|
 | @transportationId      		| 1 		| String	| Unique Id of the transportation. 			|
 | @transportationType    		| 1 		| String	| Transport type: V ( Flight ), T ( Train ), B ( Bus ), S() & F ( Ferry ).	|
@@ -563,9 +499,9 @@ is of **25000** milliseconds.
 | @cityCode        			| 1  		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
 | @name						| 0..1			| String	| Location long name.|
 | @type						| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
-| Transportation/Segments /Segment/<br>TechnicalStops | 0..1 |   		| Contains a list of TechnicalStops.		|
+| Transportation/Segments/Segment/<br>TechnicalStops | 0..1 |   		| Contains a list of TechnicalStops.		|
 | @totalTechnicalStops   		| 1 		| Integer	| Total number of TechnicalStops. 			|
-| Transportation/Segments /Segment/<br>TechnicalStops/TechnicalStop | 1..n | | Contains the details of the TechnicalStop.	|
+| Transportation/Segments/Segment/<br>TechnicalStops/TechnicalStop | 1..n | | Contains the details of the TechnicalStop.	|
 | @location              		| 1 		| String	| TechnicalStop location.				|
 | @stopDate              		| 1 		| Date		| Approx. stop date and time. 				|
 | @departureDate         		| 1 		| Date		| Approx. departure date and time.  			|
@@ -574,7 +510,8 @@ is of **25000** milliseconds.
 | @id                    		| 1 		| Integer	| Unique identifier of the Fare.  			|
 | @providerCode          		| 1 		| String	| Provider code.					|
 | @fareType              		| 1 		| String	| Fare type: OW ( one way ), RT ( round trip ), OJ ( Open jaw ) & CT ( Circle trip ).	|
-| @familyFare            		| 0..1 		| String	| Optional family fare ( the same name of the petition ). Flights parameter. |
+| @familyFare            		| 0..1 		| String	| Family fare name of the Fare. |
+| Transportation/Fares/Fare/HasObFees        		| 1 		| Boolean	| If true then there is an extra fee for using credit card.   |
 | Transportation/Fares/Fare/Conditions	| 1 |	| Contains a list of Fare Conditions. |
 | Transportation/Fares/Fare/Conditions/<br>Condition	| 1 |	| Contains details of the Condition that applies to the condition. |
 | @cia	| 1	| String	| Carrier applying the condition.	|
@@ -582,35 +519,49 @@ is of **25000** milliseconds.
 | @id	| 1	| String	| Unique id of the condition.	|
 | @language	| 1	| String	| Language in which the condition is written.	|
 | @Text | 1	| String	| Description of the condition.	|
-| Transportation/Fares/Fare/Conditions/<br>Condition/Paragraph	| 1 |	| List of Sentences and titles. |
+| Transportation/Fares/Fare/Conditions/<br>Condition/Paragraph	| 1 | | List of Sentences and titles. |
 | @title | 1	| String	| Title content.	|
-| Transportation/Fares/Fare/Conditions/<br>Condition/Paragraph/Sentence	| 1 |	| List of Sentences contents. |
+| Transportation/Fares/Fare/Conditions/<br>Condition/Paragraph/Sentence	| 1 | String	| List of Sentences contents. |
 | Transportation/Fares/Fare/Options          		| 1     	|		| Contains a list of Fare Options.	|
-| Transportation/Fares/Fare/Options/Option   		| 1..n    	|		| Contains details of the Fare Options. |
-| @id                    		| 1 		| Integer	| Deprecated attribute. 				|
-| @availJourneyRef       		| 1  		| Integer	| Reference number of the availability Journey. 	|
+| Transportation/Fares/Fare/Options/Option   		| 1..n    	|		| Contains details of the Fare Option.	|
+| @id                    		| 1 		| Integer	| Unique identifier of the Option.	|
+| @availJourneyRef       		| 1  		| Integer	| Reference id of the AvailabilityRQ Journey. 		|
 | @numStopOver           		| 1 		| Integer	| Number of StopOvers. If -1, then we cannot know how many StopOvers via XML. |
 | @carrier               		| 1 		| String	| Validating carrier.					|
-| Fares/Fare/Options/Option/SegmentReferences | 1  	|    		| Contains a list of SegmentReferences.			|
-| Fares/Fare/Options/Option/SegmentReferences /SegmentReference | 1..n | | Contains details of the SegmentReference of each option.|
+| @familyFare            		| 0..1 		| String	| Family fare name of the Option. |
+| Transportation/Fares/Fare/Options/Option/SegmentReferences | 1  	|    		| Contains a list of SegmentReferences.	|
+| Transportation/Fares/Fare/Options/Option/SegmentReferences<br>/SegmentReference | 1..n | | Contains details of the SegmentReference of each option.|
 | @segmentRef            		| 1 		| Integer	| Reference of the Segment. 				|
-| Fares/Fare/Options /Option/SegmentReferences /SegmentReference/SegmentClasses | 1 | | Contains a list of SegmentClasses.	|
-| Fares/Fare/Options /Option/SegmentReferences /SegmentReference/SegmentClasses /SegmentClass | 1..n | | Contains details of the SegmentClass.   |
+| Transportation/Fares/Fare/Options /Option/SegmentReferences<br>/SegmentReference/SegmentClasses | 1 | | Contains a list of SegmentClasses.	|
+| Transportation/Fares/Fare/Options /Option/SegmentReferences<br>/SegmentReference/SegmentClasses/SegmentClass | 1..n | | Contains details of the SegmentClass.   |
 | @cabinClass            		| 1 		| String	| Cabin class of the seat: N (Not specified), Y (Tourist), C (Business), F (First), CA (Cabin, only for ferries), YP (Tourist Plus).	|
-| @class                 		| 1 		| String	| Fare class.						|
+| @class                 		| 1 		| String	| Fare class. |
 | @paxRef               	 	| 1 		| Integer	| Passenger reference. 					|
 | @fareBasis             		| 1 		| String	| Identifier of the fare.				|
 | @fareType              		| 1 		| String	| Fare type: PUB ( Public ), PRI ( Private ), NEGO ( Negotiated ) and CORP ( Corporate ).	|
 | @avail                 		| 1 		| Integer	| Available seats remaining for this class (In flights, the maximum is 9).  |
-| Fares/Fare/Options /Option/SegmentReferences /SegmentReference/ReservationTokens | 0..1 |  | Specific attribute used for each provider.	|
-| Fares/Fare/Options /Option/SegmentReferences /SegmentReference/ReservationTokens /Attribute | 0..n |  | Type of attribute.	|
+| Transportation/Fares/Fare/Options/Option/SegmentReferences<br>/SegmentReference/SegmentClasses/SegmentClass<br>/Modifiable | 0..1 |  | Contains the information of the modifiable fare.	|
+| @Description                 		| 1 		| String	| Modification description. |
+| @amount                 			| 1 		| Decimal	| Modification amount. |
+| @modifiable                 		| 1 		| Boolean	| If true, the fare allows this modification. |
+| @currency                 		| 1 		| String	| Modification currency. |
+| @amountType                 		| 1 		| String	| Modification amount type: AMOUNT (Fare amount), FEE (Fee amount), TOTAL (Total fare amount), PERCENTUAL (Percentual amount). |
+| Transportation/Fares/Fare/Options/Option/SegmentReferences<br>/SegmentReference/SegmentClasses/SegmentClass<br>/CancellationPolicies | 0..1 |  | Contains a list of CancellationPolicies.	|
+| Transportation/Fares/Fare/Options/Option/SegmentReferences<br>/SegmentReference/SegmentClasses/SegmentClass<br>/CancellationPolicies | 1..n |  |Contains details of the CancelationPolicy.	|
+| @fromDate                 		| 1 		| Date	| Date of the begining of the policy. |
+| @amount                 			| 1 		| Decimal	| Policy amount. |
+| @refundable                 		| 1 		| Boolean	| If true, the fare allows the refundation. |
+| @currency                 		| 1 		| String	| Policy currency. |
+| @amountType                 		| 1 		| String	| Policy amount type: AMOUNT (Fare amount), FEE (Fee amount), TOTAL (Total fare amount), PERCENTUAL (Percentual amount). |
+| Transportation/Fares/Fare/Options/Option/SegmentReferences<br>/SegmentReference/ReservationTokens | 0..1 |  | Specific attribute used for each provider.	|
+| Transportation/Fares/Fare/Options/Option/SegmentReferences<br>/SegmentReference/ReservationTokens/Attribute | 0..n |  | Type of attribute.	|
 | @key                   		| 1 		| String	| Contains the keyword/ Id to identify a parameter.	|
 | @value                 		| 1 		| String	| Contains the value of the parameter.			|
-| Fares/Fare/Options /Option/BaggageTypes | 0..1    	|		| Contains a list of BaggageTypes.			|
-| Fares/Fare/Options/Option/BaggageTypes /BaggageType	| 1..n |  	| Contains details of BaggageType.			|
-| Fares/Fare/Options/Option/BaggageTypes /BaggageType/Baggage | 1 |    | Specific attribute used for each provider. 		|
+| Transportation/Fares/Fare/Options/Option/BaggageTypes | 0..1    	|		| Contains a list of BaggageTypes.	|
+| Transportation/Fares/Fare/Options/Option/BaggageTypes/BaggageType	| 1..n |  	| Contains details of BaggageType.	|
 | @checkingType          		| 1 		| String	| Specifies the checkin type: OnLine and Airport.	|
-| @appliesSegments       		| 1 		| String	| Type applied to the segment: Departure and Return.	|
+| @appliesSegments       		| 1 		| String	| Type applied to the segment: All (all journeys), Ida(ongoing), Vuelta(return), Ref(segment ref).		|
+| Transportation/Fares/Fare/Options/Option/BaggageTypes<br>/BaggageType/Baggage | 1 |    | Details of the baggage. 		|
 | @id                    		| 1 		| String	| Unique identifier of the Baggage.			|
 | @type                  		| 1 		| String	| Type of baggage: Bag, Bike, Wheelchair, Skis and BabyTrolley.|
 | @quantity              		| 1 		| Integer	| Baggage quantity.  					|
@@ -620,39 +571,189 @@ is of **25000** milliseconds.
 | @code                  		| 1 		| String	| Code of the Baggage.					|
 | @carrier               		| 1 		| String	| Carrier.						|
 | @needToken             		| 1 		| Boolean	| Reserve token mandatory.				|
-| Fares/Fare/AmountBreakdown  		| 1     	|		| Breakdown of the fare amount.				|
+| @reservationToken             		| 1 		| String| Reserve token.|
+| @description             		| 1 		| String| Baggage description.|
+| Transportation/Fares/Fare/Options/Option/BaggageTypes<br>/BaggageType/Baggage/BaggageCharge | 1 |    | Details of the baggage charge.|
+| @fixAmount             		| 1 		| Decimal| Total fixed amount.|
+| @appliesFixAmount             		| 1 		| String| The fixed amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| @minFixAmount             		| 1 		| Decimal| Minimal fixed amount.|
+| @minAmountPercentage             		| 1 		| Decimal| Minimal percentage amount.|
+| @currency             		| 1 		| String| Currency.|
+| @percentage             		| 1 		| Decimal| Total percentage amount.|
+| @percentageApplied             		| 1 		| String| The percentage amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| Transportation/Fares/Fare/Options/Option/SpecialSupplements	| 0..1	|	|	Contains a list of SpecialSupplements.
+| Transportation/Fares/Fare/Options/Option/SpecialSupplements<br>/SpecialSupplement		| 0..n	|	|	Contains information about the Special Supplement	|
+| @id	| 1	| String	| Unique identifier of the supplement.|
+| @code	| 1	| String	| Supplement code.|
+| @height	| 0..1	| Integer	| Dimension of the supplement: height.|
+| @width	| 0..1	| Integer	| Dimension of the supplement: width.|
+| @length	| 0..1	| Integer	| Dimension of the supplement: length.|
+| @weight	| 0..1	| Integer	| Dimension of the supplement: weight.|
+| @quantity	| 0..1	| Integer	| Quantity of supplements.|
+| @description	| 0..1	| String	| Description of the supplement|
+| @carrier	| 1	| String	| Carrier selling the supplement.|
+| @estado	| 0..1	| String	| Status of the supplement: N(None), INC(Included in the price), CHA(Avalilable with charges), NOF(Not offered).|
+| @needToken	| 1	| Boolean	| If true, the field @reservationToken should be filled|
+| @type	| 1	| String	| Type of supplement: Miscelaneous, Seat, Meal, Pet, Lounge, Baggage, Canoe, PreferentialBoarding, Bike, Trailer, Seguro, Embarque_Prioritario, Acceso_Preferente, Bloqueo_Tarifa, Special_Assistance.|
+| @reservationToken	| 0..1	| String	| Reservation Token of the supplement.|
+| @ownTransportation	| 0..1	| Boolean	| If true, the supplement includes own transportation cage.|
+| Transportation/Fares/Fare/Options/Option/Emissions  		| 1     	|		| Contains a list of Issuances.	|
+| Transportation/Fares/Fare/Options/Option/Emissions<br>/Emission  		| 1     	|		| Contains the key of the Issuance.|
+| Transportation/Fares/Fare/SpecialSupplements	| 0..1	|	|	Contains a list of SpecialSupplements.
+| Transportation/Fares/Fare/SpecialSupplements<br>/SpecialSupplement		| 0..n	|	|	Contains information about the Special Supplement	|
+| @id	| 1	| String	| Unique identifier of the supplement.|
+| @code	| 1	| String	| Supplement code.|
+| @height	| 0..1	| Integer	| Dimension of the supplement: height.|
+| @width	| 0..1	| Integer	| Dimension of the supplement: width.|
+| @length	| 0..1	| Integer	| Dimension of the supplement: length.|
+| @weight	| 0..1	| Integer	| Dimension of the supplement: weight.|
+| @quantity	| 0..1	| Integer	| Quantity of supplements.|
+| @description	| 0..1	| String	| Description of the supplement|
+| @carrier	| 1	| String	| Carrier selling the supplement.|
+| @estado	| 0..1	| String	| Status of the supplement: N(None), INC(Included in the price), CHA(Avalilable with charges), NOF(Not offered).|
+| @needToken	| 1	| Boolean	| If true, the field @reservationToken should be filled|
+| @type	| 1	| String	| Type of supplement: Miscelaneous, Seat, Meal, Pet, Lounge, Baggage, Canoe, PreferentialBoarding, Bike, Trailer, Seguro, Embarque_Prioritario, Acceso_Preferente, Bloqueo_Tarifa, Special_Assistance.|
+| @reservationToken	| 0..1	| String	| Reservation Token of the supplement.|
+| @ownTransportation	| 0..1	| Boolean	| If true, the supplement includes own transportation cage.|
+| @key              		| 1 		| String	| Issuance key.					|
+| Transportation/Fares/Fare/AmountBreakdown  		| 1     	|		| Breakdown of the fare amount.		|
 | @currency              		| 1 		| String	| Currency code of the fare.				|
 | @totalAmount           		| 1 		| Decimal	| Total amount. with taxes and other charges included.	|
 | @notCommissionableAmount		| 1 		| Decimal	| Total amount that can not be commissioned.  		|
 | @commission            		| 1 		| Decimal	| Commission. 						|
-| Fares/Fare/AmountBreakdown /ChargeBreakdowns | 0..1   |		| Contains a list of breakdown amounts ( taxes, mandatory charges.. ).	|
-| Fares/Fare/AmountBreakdown /ChargeBreakdowns/ChargeBreakdown | 1..n |	| Contains details of the BreakdownAmount.		|
-| @type                  		| 1 		| String	| Charge type.						|
-| @amount                		| 1    	 	|		| Charge amount.					|
-| Fares/Fare/AmountBreakdown /ChargeBreakdowns/ChargeBreakdown /Concept | 0..1 | | Contains a list of breakdown amounts ( taxes, mandatory charges.. ).|
-| @id                    		| 1 		| String	| Indicates if the conditions are of one way ( with a 0 ) or round trip ( with a 1 ). Ferries parameter.	|
-| @language              		| 1 		| String	| Language.						|
-| Fares/Fare/AmountBreakdown /ChargeBreakDowns/ChargeBreakdown /Concept/Text | 1 | String | Remarks.				|
-| Fares/Fare/AmountBreakdown /PaxBreakdown | 0..1    	|		| Contains a list of breakdown amounts for each passenger ( ADT amount, etc. ).|
-| Fares/Fare/AmountBreakdown /PaxBreakdowns/PaxBreakdown | 0..n | 	| Contains details of breakdown amounts for each passenger.|
+| Fares/Fare/AmountBreakdown<br>/ChargeBreakdowns | 0..1   |		| Contains a list of breakdown amounts ( taxes, mandatory charges.. ).	|
+| Transportation/Fares/Fare/AmountBreakdown<br>/ChargeBreakdowns/ChargeBreakdown | 1..n |	| Contains details of the BreakdownAmount.	|
+| @type                  		| 1 		| String	| [Type of charge.](#availability-enumerate-description) |
+| @amount                		| 1    	 	| Decimal	| Charge amount.				|
+| @included				| 1		| Boolean	| If true, the charge is included to the total fare amount |
+| Transportation/Fares/Fare/AmountBreakdown<br>/ChargeBreakdowns/ChargeBreakdown<br>/Concept | 0..1 | | Contains details of the charge.|
+| @id                    		| 1 		| String	| Unique id of the Concept	|
+| @language              		| 1 		| String	| Language.			|
+| @cia              		| 1 		| String	| Carrier.			|
+| @code              		| 1 		| String	| Concept code.			|
+| Transportation/Fares/Fare/AmountBreakdown<br>/ChargeBreakDowns/ChargeBreakdown<br>/Concept/Text | 1 | String | Remarks.	|
+| Transportation/Fares/Fare/AmountBreakdown<br>/ChargeBreakDowns/ChargeBreakdown<br>/Concept/Paragraph | 1 |  | Contains a list of Sentences and titles.	|
+| @title	| 1	| String	| Title.	|
+| Transportation/Fares/Fare/AmountBreakdown<br>/ChargeBreakDowns/ChargeBreakdown<br>/Concept/Paragraph/Sentence | 1 | String | Sentence|
+| Transportation/Fares/Fare/AmountBreakdown<br>/PaxBreakdown | 0..1    	|		| Contains a list of breakdown amounts for each passenger ( ADT amount, etc. ).|
+| Transportation/Fares/Fare/AmountBreakdown<br>/PaxBreakdowns/PaxBreakdown | 0..n | 	| Contains details of breakdown amounts for each passenger.|
 | @paxType               		| 1 		| String	| Passenger type: ADT ( Adult ), CHD ( Child ) & INF ( Infant ).|
 | @amount                		| 1 		| Decimal	| Total amount, with taxes included, associated to the passenger.	|
-| @taxes                 		| 1 		| Integer	| If they exist, taxes are applied for this passenger type. |
-| @tasaDU                		| 1 		| Integer	| Deprecated. 						|
-| Fares/Fare/PaxConfigurations		| 1     	|		| Contains a list of PaxConfiguration.			|
-| Fares/Fare/PaxConfigurations /PaxConfiguration | 1..n |   		| Contains details of PaxConfiguration.			|
+| @taxes                 		| 1 		| Decimal	| If they exist, taxes are applied for this passenger type. |
+| @tasaDU                		| 1 		| Decimal	| DU taxes. 						|
+| @fees                			| 1 		| Decimal	| Fees. 						|
+| Transportation/Fares/Fare/AmountBreakdown<br>/PaxBreakdowns/PaxBreakdown<br>/Taxes | 0..1 | 	| Contains a list of Taxes.|
+| Transportation/Fares/Fare/AmountBreakdown<br>/PaxBreakdowns/PaxBreakdown<br>/Taxes/Tax | 0..n | 	| Code and amount of each tax.|
+| @code				| 1	| String	| Code.	|
+| @amount				| 1	| Decimal	| Amount.	|
+| Transportation/Fares/Fare/PaxConfigurations		| 1     	|		| Contains a list of PaxConfiguration.	|
+| Transportation/Fares/Fare/PaxConfigurations<br>/PaxConfiguration | 1..n |   		| Contains details of PaxConfiguration.	|
 | @id                    		| 1 		| Integer	| Unique identifier of the PaxConfiguration. 		|
 | @paxRef                		| 1 		| Integer	| Reference to the passenger Id from the request. 	|
 | @age                   		| 1 		| Integer	| Age of the passenger. 				|
+| @nacionality                   	| 1 		| String	| Nacionality of the passenger. 			|
 | @paxType               		| 1 		| String	| Passenger type based on the age of the passenger: ADT (Adult), CHD (Child), INF (Infant), YOU (Young) and SEN (Senior).	|
-| Fares/Fare/PaxConfigurations /PaxConfiguration/AppliedBonuses | 0..1 | | Applied discounts.					|
-| @resident              		| 1 		| String	| Resident discount type: N(None), BP(Balearic Islands resident flying to mainland), BI(Balearic Islands resident flying to another balearic island), DC(Canarian Islands resident flying to another Canarian Island), RC(Canarian Islands resident flying to mainland),RM(Ceuta/Melilla resident), STR(Italian resident  discount), ELB(Italian resident Elba), SDG(Italian resident Sardegna), SCL(Italian resident Sicily), RE(Ceuta).	|
+| Transportation/Fares/Fare/PaxConfigurations<br>/PaxConfiguration/AppliedBonuses | 0..1 | | Applied discounts.			|
+| @resident              	| 1 		| String	| [Resident discount type.](#availability-enumerate-description)|
 | @largeFamily           		| 1 		| String	| Family discount type: N(None), F1(Large family), F2 (Special large family). |
-| @discountCard          		| 1 		| String	| Discount card type (for more details, see information below).|
-| Fares/Fare/PaxConfigurations /PaxConfiguration/AppliedBonuses /PaxTypeCodes | 0..1 |  | Contains a list of PaxTypeCodes.	|
-| Fares/Fare/PaxConfigurations /PaxConfiguration/AppliedBonuses /PaxTypeCodes/PaxTypeCode | 0..n |  | Contains details of the PTC.|
-| @code                  		| 1 		| String	| String with the PTC code.				|
-| Fares/Fare/HasObFees        		| 1 		| Boolean	| If true then there is an extra fee for using credit card.   |
+| @discountCardCode		| 0..1	| String	| Discount card code.|
+| @discountCard		| 0..1	| String	| [Discount card type.](#availability-enumerate-description)|
+| Transportation/Fares/Fare/PaxConfigurations<br>/PaxConfiguration/AppliedBonuses<br>/DiscountCards	| 0..1	|	| Contains a list of DiscountCards.|
+| Transportation/Fares/Fare/PaxConfigurations<br>/PaxConfiguration/AppliedBonuses<br>/DiscountCards/DiscountCard|
+| @code	| 1	| String | Discount card code.|
+| @id	| 1	| String	| Unique identifier of discound card.|
+| @type	| 1	| String	| [Discount card type.](#availability-enumerate-description)|
+| Fares/Fare/PaxConfigurations<br>/PaxConfiguration/AppliedBonuses<br>/PaxTypeCodes		| 0..1	|		| Contains a list of PaxTypeCodes.|
+| Transportation/Fares/Fare/PaxConfigurations<br>/PaxConfiguration/AppliedBonuses<br>/PaxTypeCodes/PaxTypeCode	| 0..n	|	| Contains the code type of the passenger.|
+| @code		| 1		| String	| Code type of the passenger.|
+
+
+### Availability Enumerate description
+
+| **Element**				| **Possible Values**	| **Description**	|
+| ------------------------- | --------------------- | ------------------ |
+| @discountCard        					| N | None |
+| 							| NINYO |  |
+| 							| JOVEN | |
+| 							| ESCAPADA | |
+| 							| SENIOR | |
+| 							| THALYS_CORPORATE | |
+| 							| FORFAIT_LYS | |
+| 							| ABO_FREQUENCE_1ST_AND_2ND | |
+| 							| ABO_FORFAIT_1ST_AND_2ND | |
+| 							| BAHN_CARD_REDUCTION | |
+| 							| BAHN_CARD_25 | |
+| 							| SWITZERLAND_50 | |
+| 							| SWITZERLAND_100 | |
+| 							| EJERCITO_AIRE | |
+| 							| EJERCITO_TIERRA | |
+| 							| FUERZAS_NAVALES | |
+| 							| GUARDIA_CIVIL | |
+| 							| FREQUENT_FLYER | |
+| 							| CARTA_ARGENTO | |
+| 							| CARTA_FRECCIA | |
+| 							| UK_ANNUAL_GOLD | |
+| 							| UK_CHILD_DISABILITY | |
+| 							| UK_DISABILITY | |
+| 							| UK_FAMILY_FRIENDS | |
+| 							| UK_GROUPSAVE3 | |
+| 							| UK_GROUPSAVE4 | |
+| 							| UK_HM_ARMED_FORCES | |
+| 							| UK_JOBCENTRE_PLUS | |
+| 							| UK_NETWORK | |
+| 							| UK_SENIOR | |
+| 							| UK_TWO_TOGETHER | |
+| 							| UK_YOUTH | |
+| 							| UK_GROUPSAVE | |
+| @resident						| N | None |
+| 							| BP | Balearic Islands resident flying to mainland |
+| 							| BI | Balearic Islands resident flying to another balearic island |
+| 							| DC | Canarian Islands resident flying to another Canarian Island |
+| 							| RC | Canarian Islands resident flying to mainland |
+| 							| RM | Ceuta/Melilla resident |
+| 							| STR | Italian resident  discount |
+| 							| ELB | Italian resident Elba |
+| 							| SDG | Italian resident Sardegna |
+| 							| SLC | Italian resident Sicily |
+| 							| RE | Ceuta |
+| Vehicles/Vehicle/@type				| N  | None  |
+| 							| Turismo  | Touring  |
+| 							| Todoterreno  | All terrain  |
+| 							| Monovolumen  | Minivan  |
+| 							| CiclomotorMax50  | Moped max 50kg.  |
+| 							| MotocicletaMin50Max250  | Motorcicle min 50kg. max 250kg.  |
+| 							| MotocicletaMin250Max500  | Motorcicle min 250kg. max 500kg.  |
+| 							| MotocicletaMin500  | Motorcicle min 500kg.  |
+| 							| Bicicleta  | Bike  |
+| 							| Furgoneta  | Van  |
+| 							| VehiculoLargoMax6  | Long vehicle max 6m.  |
+| 							| VehiculoEmision0  | Zero emissions vehicle  |
+| 							| Caravana  | Caravan  |
+| 							| Remolque  | Trailer  |
+| Fares/Fare/AmountBreakdown<br>/ChargeBreakdowns/ChargeBreakdown/@type				| TASA  | Tax  |
+| 							| TARJETA  | Card  |
+| 							| EQUIPAJE  | Baggage  |
+| 							| CHECKIN  | Checkin  |
+| 							| GASTOS_CIA  | Carrier charges  |
+| 							| TASA_DU  | DU Taxes  |
+| 							| IMPORTE_BASE  | Base import  |
+| 							| DESCUENTO  | Discount  |
+| 							| VEHICULO  | Vehicle  |
+| 							| GASTOS_BANCARIOS  | Bank charges  |
+| 							| GASTOS_CONVERSION_DIVISA  | Currency conversion charges  |
+| 							| FEE_VEHICULO  | Vehicle fee  |
+| 							| FEE  | Fee  |
+| 							| ASIENTO  | Seat  |
+| 							| SUPLEMENTO  | Supplement  |
+| 							| TRAVELCARD  | Travel card  |
+| 							| MASCOTA  | Pet  |
+| 							| FEE_MASCOTA  | Pet fee  |
+| 							| SEGURO  | Ensurance  |
+| 							| ACCESO_PREFERENTE  | Fast Track  |
+| 							| EMBARQUE_PRIORITARIO  | Priority Boarding  |
+| 							| BLOQUEO_TARIFA  | Fare lock |
+| 							| ASISTENCIA_ESPECIAL  | Special assistance  |
+| 							| PENALTY  | Penalty  |
 
 
 ### Detailed description
