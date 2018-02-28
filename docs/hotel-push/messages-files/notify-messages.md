@@ -22,6 +22,21 @@ seller. XTG will process data and response with error code if needed.
     <request PrimaryLangID = "ES" Version = "0">
         <RatePlans HotelCode = "1" xmlns = "http://www.opentravel.org/OTA/2003/05">
             <RatePlan Duration = "0" CurrencyCode = "EUR" RatePlanCode = "BAR" RatePlanStatusType = "Active" RatePlanNotifType = "New">
+		<BookingRules>
+		    <BookingRule>
+			<CancelPenalties>
+			    <CancelPenalty>
+				<Deadline OffsetTimeUnit = "Day" OffsetUnitMultiplier = "20" OffsetDropTime = "BeforeArrival"/>
+				<AmountPercent NmbrOfNights = "3"/>
+			    </CancelPenalty>
+			    <CancelPenalty Start = "2018-03-01" End = "2018-03-06">
+				<Deadline OffsetTimeUnit = "Day" OffsetUnitMultiplier = "10" OffsetDropTime = "BeforeArrival"/>
+                                <AmountPercent Amount = "10"/>
+			    </CancelPenalty>
+			    <CancelPenalty NonRefundable = "true" Start = "2018-03-13" End = "2018-03-15"/>
+			</CancelPenalties>
+		    </BookingRule>
+		</BookingRules>
                 <Rates>
                     <Rate>
                         <AdditionalGuestAmounts>
@@ -165,6 +180,13 @@ seller. XTG will process data and response with error code if needed.
                         </GuestRoom>
                     </SellableProduct>
                 </SellableProducts>
+		<Taxes>
+		    <Tax Amount = "20" ChargeFrequency = "true">
+			<TaxDescription>
+			    <Text>city</Text>
+			</TaxDescription>
+		    </Tax>
+		</Taxes>
                 <Description>
                     <Text>bb</Text>
                 </Description>
@@ -298,6 +320,13 @@ seller. XTG will process data and response with error code if needed.
 | @RoomTypeCode    				   | 1 		 | String  | Room Code.				|
 | @RoomID    				   | 1 		 | Integer  | Room Id.				|
 | RatePlans/RatePlan/SellableProduct/GuestRoom/Description/Text | 1 | String | Room description.			|
+| RatePlans/RatePlan/Taxes | 0..1 |	 |	 			|
+| RatePlans/RatePlan/Taxes/Tax | 1..n |	 | Tax to apply to the room prices of the rate 			|
+| @Amount/Percent | 1 | Decimal | Indicates that the tax will be applied relative to an amoount or a percentage 		|
+| @ChargeFrequency | 0..1 | Boolean | If true indicates that tax is applied relative to the Amount of Nights booked  |
+| @ChargeUnit | 0..1 | Boolean | If true indicates that tax is applied relative to the Amount of Paxes booked  |
+| RatePlans/RatePlan/Taxes/Tax/TaxDescription | 1 |	 |  			|
+| RatePlans/RatePlan/Taxes/Tax/TaxDescription/Text | 1 | String	 | Description of tax type 			|
 | RatePlans/RatePlan/RatePlanInclusionsType |	0..1 |	 Only used for derived rates. |	 			|
 | RatePlans/RatePlan/RatePlanInclusionsType/RatePlanInclusionDescription |	1 |	 Only used for derived rates. |	 			|
 | RatePlans/RatePlan/RatePlanInclusionsType/RatePlanInclusionDescription/Name |	1 |	 |	If present, derived rate will apply base rate meal plan supplements. Value = BaseMealPlanSupplement. Only used for derived rates.			|
