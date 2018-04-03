@@ -7,6 +7,7 @@
         <xs:sequence>
           <xs:element minOccurs="1" maxOccurs="1" name="SearchType" type="eTypeSearch" />
           <xs:element minOccurs="1" maxOccurs="1" name="CancellationPolicies" type="xs:boolean" />
+		  <xs:element minOccurs="1" maxOccurs="1" name="RoomCancellationPolicies" type="xs:boolean" />
 		  <xs:element minOccurs="1" maxOccurs="1" name="OnRequest" type="xs:boolean" />
 		  <xs:element minOccurs="0" maxOccurs="1" name="BusinessRules" type="eTypeBusinessRule" />		  
           <xs:element minOccurs="0" maxOccurs="1" name="AvailDestinations" type="AvailDestinations" />
@@ -238,6 +239,8 @@
   <xs:complexType name="RoomAvail">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="1" name="Price" type="Price" />
+	  <xs:element minOccurs="0" maxOccurs="1" name="Fees" type="Fees" />
+	  <xs:element minOccurs="0" maxOccurs="1" name="CancelPenalties" type="CancelPenalties" />
 	  <xs:element minOccurs="0" maxOccurs="1" name="Beds" type="Beds" />	  
       <xs:element minOccurs="0" maxOccurs="1" name="DailyPrices" type="ArrayOfDailyPrice" />
 	  <xs:element minOccurs="0" maxOccurs="1" name="DailyRatePlans" type="ArrayOfDailyRatePlan" />	  
@@ -669,6 +672,7 @@
       <xs:extension base="HotelBaseRS">
         <xs:sequence>
           <xs:element minOccurs="0" maxOccurs="1" name="ProviderLocator" type="xs:string" />
+		  <xs:element minOccurs="0" maxOccurs="1" name="PropertyReservationNumber" type="xs:string" />		  
           <xs:element minOccurs="1" maxOccurs="1" name="ResStatus" type="eEstadoReserva" />
           <xs:element minOccurs="0" maxOccurs="1" name="Price" type="Price" />
           <xs:element minOccurs="0" maxOccurs="1" name="BillingSupplierCode" type="xs:string" />
@@ -708,6 +712,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="1" name="Client" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="Provider" type="xs:string" />
+	  <xs:element minOccurs="0" maxOccurs="1" name="Property" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ReservationReadRS" nillable="true" type="ReservationReadRS" />
@@ -1051,6 +1056,7 @@
       <xs:element minOccurs="0" maxOccurs="1" name="ProviderCode" type="xs:string" />	  
       <xs:element minOccurs="0" maxOccurs="1" name="GiataId" type="GiataId" />
       <xs:element minOccurs="0" maxOccurs="1" name="GiataFormatCode" type="xs:string" />
+	  <xs:element minOccurs="0" maxOccurs="1" name="Airports" type="Airports" />	  
       <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="Address" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="Town" type="xs:string" />
@@ -1093,7 +1099,17 @@
 	  	<xs:attribute name="source" type="xs:string" />
       </xs:extension>  
     </xs:simpleContent>
-  </xs:complexType>   
+  </xs:complexType>
+  <xs:complexType name="Airports">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Airport" type="Airport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Airport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="IATACode" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="ContactInfo">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="1" name="Email" type="xs:string" />
@@ -1868,6 +1884,7 @@
       <xs:element minOccurs="0" maxOccurs="1" name="Destinations" type="MetaDataAvailDestinations" />
       <xs:element minOccurs="0" maxOccurs="1" name="AllowsCurrency" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="AllowsBusinessRules" type="BooleanText" />
+	  <xs:element minOccurs="0" maxOccurs="1" name="ImplementsCombination" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="NumMarketsAllowed" type="IntegerText" />
       <xs:element minOccurs="0" maxOccurs="1" name="Release" type="IntegerText" />
       <xs:element minOccurs="0" maxOccurs="1" name="MinimumStay" type="IntegerText" />
@@ -1875,6 +1892,7 @@
       <xs:element minOccurs="0" maxOccurs="1" name="RoomCandidates" type="MetaDataRoomCandidates" />
       <xs:element minOccurs="0" maxOccurs="1" name="InformBindingPrice" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="InformCancelPolicies" type="BooleanText" />
+	  <xs:element minOccurs="0" maxOccurs="1" name="InformRoomCancelPolicies" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="InformRemarks" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="PaymentTypes" type="MetaDataPaymentTypes" />
       <xs:element minOccurs="0" maxOccurs="1" name="OptionTypes" type="MetaDataOptionTypes" />
@@ -1884,6 +1902,7 @@
       <xs:element minOccurs="0" maxOccurs="1" name="InformOffers" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="InformNRFRateByRoom" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="InformFees" type="BooleanText" />
+	  <xs:element minOccurs="0" maxOccurs="1" name="InformRoomFees" type="BooleanText" />
     </xs:sequence>
   </xs:complexType>  
   <xs:element name="MetaDataAvailDestinations" nillable="true" type="MetaDataAvailDestinations" />
@@ -2026,7 +2045,8 @@
       <xs:element minOccurs="0" maxOccurs="1" name="AllowsUrlCard" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="InformBillingSupplier" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="InformPrice" type="BooleanText" />
-      <xs:element minOccurs="0" maxOccurs="1" name="AllowsPreferences" type="MetaDataPreferences" />	  
+      <xs:element minOccurs="0" maxOccurs="1" name="AllowsPreferences" type="MetaDataPreferences" />
+	  <xs:element minOccurs="0" maxOccurs="1" name="InformPropertyReservationNumber" type="BooleanText" />	  	  
     </xs:sequence>
   </xs:complexType> 
   
@@ -2059,6 +2079,7 @@
       <xs:element minOccurs="0" maxOccurs="1" name="AllowsClientLocator" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="InformCancelPolicies" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="InformPriceCancel" type="BooleanText" />
+	  <xs:element minOccurs="0" maxOccurs="1" name="InformPropertyReservationNumber" type="BooleanText" />	  
     </xs:sequence>
   </xs:complexType>  
   <xs:element name="MetaDataReservationList" nillable="true" type="MetaDataReservationList" />
@@ -2068,7 +2089,8 @@
       <xs:element minOccurs="0" maxOccurs="1" name="AllowsCreationDate" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="AllowsCheckDate" type="BooleanText" />
       <xs:element minOccurs="0" maxOccurs="1" name="InformCancelPolicies" type="BooleanText" />
-      <xs:element minOccurs="0" maxOccurs="1" name="InformPriceCancel" type="BooleanText" />
+      <xs:element minOccurs="0" maxOccurs="1" name="InformPriceCancel" type="BooleanText" />	  
+	  <xs:element minOccurs="0" maxOccurs="1" name="InformPropertyReservationNumber" type="BooleanText" />	
     </xs:sequence>
   </xs:complexType>  
   <xs:element name="MetaDataCancel" nillable="true" type="MetaDataCancel" />
@@ -2120,10 +2142,8 @@
   </xs:complexType>
   <xs:simpleType name="eStaticTypes">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="OnLine" />
-      <xs:enumeration value="OffLine" />
-      <xs:enumeration value="OffLineCompleted" />
-      <xs:enumeration value="OnLineCompleted" />
+      <xs:enumeration value="Offline" />
+      <xs:enumeration value="OfflineCompleted" />
       <xs:enumeration value="NotImplemented" />
     </xs:restriction>
   </xs:simpleType>  
