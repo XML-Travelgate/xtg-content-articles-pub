@@ -84,6 +84,7 @@ is closed, is of **240000** milliseconds.
                 <Locators>
                     <Client>2196</Client>
                     <Provider>1AAAA966</Provider>
+                    <Property>HCN8273</Property>
                 </Locators>
                 <Hotel>
                     <Name>LAS VEGAS (BENIDORM)</Name>
