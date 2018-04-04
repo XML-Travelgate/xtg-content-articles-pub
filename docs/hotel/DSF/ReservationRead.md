@@ -90,6 +90,7 @@ is closed.
           <Locators>
                     <Client>2578478</Client>
                     <Provider>10TTT31</Provider>
+                    <Property>HCN8273</Property>
                 </Locators>
                 <Hotel>
                     <Name>LEO</Name>
@@ -128,6 +129,7 @@ is closed.
 | Locators   				   | 1 |		|Information about the locators.|
 | Locators/Client			| 0..1 		| String	| Client locator.				|
 | Locators/Provider			| 0..1 		| String	| Supplier locator.				|
+| Locators/Property			| 0..1 		| String	| Property locator(see Metadata method in order to verify if a supplier implements it).				|
 | Hotel      				| 0..1       	|		| Hotel reservation.				|
 | Hotel/Code 				| 1 		| String	| Hotel Code.					|
 | Hotel/Name 				| 0..1 		| String	| Hotel Name.					|
