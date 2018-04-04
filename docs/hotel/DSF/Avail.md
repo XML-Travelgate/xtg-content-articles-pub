@@ -64,6 +64,7 @@ is closed.
 ~~~xml
     <AvailRQ>
         <CancellationPolicies>false</CancellationPolicies>
+        <RoomCancellationPolicies>false</RoomCancellationPolicies>
         <OnRequest>false</OnRequest>
         <BusinessRules>CheaperAmount</BusinessRules>
         <AvailDestinations> list of destinations
@@ -108,6 +109,7 @@ is closed.
 | ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
 | AvailRQ               		| 1            	|		| Root node.							|
 | CancellationPolicies 			| 1     	| Boolean	| Indicates if you want to receive the cancellation policies in AvailRS, as long as the supplier returns it in this method (see StaticConfiguration in order to verify if a supplier implements it).	|
+| RoomCancellationPolicies 			| 1     	| Boolean	| Indicates if you want to receive the cancellation policies at room level in AvailRS, as long as the supplier returns it in this method (see Metadata method in order to verify if a supplier implements it).	|
 | OnRequest            			| 1     	| Boolean	| Indicates if you want to receive the onrequest options in AvailRS, as long as the supplier returns it in this method (see StaticConfiguration in order to verify if a supplier implements it).		|
 | BusinessRules        			| 1            	|		| Indicates the business rules the client wants to apply in availability, as long as the supplier returns it in this method (see StaticConfiguration in order to verify if a supplier implements it).	|
 | AvailDestinations/Destination		| 1..n         	|		| Contains the list of destinations filters (hotels or cities or zones or geocodes). The number of Destinations is defined in StaticConfiguration.	|
@@ -141,6 +143,17 @@ is closed.
                   <Rooms>
                     <Room id = "4145" roomCandidateRefId = "1" code = "DBL#STAND" description = "Doble Standard" nonRefundable = "false" numberOfUnits = "5" >
                       <Price currency = "EUR" amount = "36.20" binding = "false" commission = "-1"/>
+                      <Fees>
+                          <Fee includedPriceOption = "true" description = "TaxAndServiceFee" mandatory = "true" refundable = "false">
+                              <Price currency = "EUR" amount = "8.11" binding = "false" commission = "-1"/>
+                          </Fee>
+                      </Fees>
+                      <CancelPenalties nonRefundable = "false">
+                          <CancelPenalty>
+                              <HoursBefore>24</HoursBefore>
+                              <Penalty type = "Importe" currency = "EUR">20</Penalty>
+                          </CancelPenalty>
+                      </CancelPenalties>
                       <Beds sharedBed = "false">
                         <Bed numberOfBeds = "1" type = "Doble"/>
                       </Beds>
@@ -162,7 +175,7 @@ is closed.
                             expireDate = "29/01/2014"
                             code = "XAD"
                             name = "Flexy Rate Only Adults"/>
-                      </DailyRatePlans>
+                      </DailyRatePlans>                      
                     </Room>
                   </Rooms>
                   <Price currency = "EUR" amount = "36.20" binding = "false" commission = "-1"/>
@@ -365,6 +378,22 @@ is closed.
 | @amount 				| 1 		| Decimal 	| Room Amount.							|
 | @binding 				| 1 		| Boolean 	| Identifies if is the price is binding (When true the sale price returned **must** not be less than the price informed).|
 | @commission 				| 1 		| Decimal 	| Commission: -1 = not specified (information available in  contract with the supplier ), 0 = net price, X = % of the commission applied to the amount.  |
+| MealPlans/MealPlan/Options /Option/Rooms/Room/Fees					    | 0..1       | 	    | Contains a list of fees. |
+| MealPlans/MealPlan/Options /Option/Rooms/Room/Fees/Fee				    | 1..n       |      | Contains details of the fee. |
+| @includedPriceOption			    | 1		 | Boolean  | Indicates if the fee is included or not in the final price. |
+| @description				    | 1          | String   | Remarks regarding fee. |
+| @mandatory 				    | 1          | Boolean   | If the fee is obligatory, depending on the includedPriceOption to know if it is paid at the time of booking or at the hotel. In case it is false, it could be a fee such as "cleaning" that the consumer could hire if he wanted. |
+| @refundable 				    | 1          | Boolean   | This field will serve to know if the rate to be paid is returned, for example when it is a deposit type that is returned once the stay ends. |
+| MealPlans/MealPlan/Options /Option/Rooms/Room/Fees/Fee/Price			    | 1          |          | Contains details of price. |
+| @currency 				    | 1          | String   | Currency code. |
+| @amount 				    | 1          | Decimal  | Fee Amount. |
+| @binding				    | 1          | Boolean  | Identifies if is the price is binding (When true the sale price returned must not be less than the price informed. |
+| @commission				    | 1          | Decimal  | Commission: -1 = not specified (indicated in contract with supplier), 0 = net price, X = % of the commission applied to the amount. |
+| MealPlans/MealPlan/Options /Option/Rooms/Room/CancelPenalties /CancelPenalty | 0..1|  | List of cancellation penalties. (see StaticConfiguration in order to verify if a supplier implements it)				|
+| MealPlans/MealPlan/Options /Option/Rooms/Room/CancelPenalties /CancelPenalty/HoursBefore| 1 | String | Number of hours prior to arrival day in which this Cancellation policy applies. | 
+| MealPlans/MealPlan/Options /Option/Rooms/Room/CancelPenalties /CancelPenalty | 1..n| | Contains the value to apply.				|
+| @type 				| 1 		| String 	| Type of penalty -possible values: "Noches" (nights), "Porcentaje" (percentage), "Importe" (price value).  |
+| @currency 				| 1 		| String 	| Currency code.						|
 | MealPlans/MealPlan/Options /Option/Price | 1 		| 		| Option price ( it is the total price of option).		|
 | @currency 				| 1 		| String 	| Currency code.						|
 | @amount 				| 1 		| Decimal 	| Option Amount.						|
