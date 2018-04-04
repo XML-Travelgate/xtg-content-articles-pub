@@ -169,6 +169,7 @@ is closed.
 ~~~xml
     <ReservationRS>
         <ProviderLocator>102</ProviderLocator>
+        <PropertyReservationNumber>HCN8273</PropertyReservationNumber>
         <ResStatus>OK</ResStatus>
         <Price currency = "EUR" amount = "36.20" binding = "false" commission = "-1"/>
     </ReservationRS>
@@ -183,6 +184,7 @@ is closed.
 | --------------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
 | ReservationRS					| 1       	|		| Root node.						|
 | ProviderLocator 				| 1  		| String	| Booking ID in the Supplier´s system					|
+| PropertyReservationNumber 				| 0..1  		| String	| Booking Number in the property´s system (see Metadata method in order to verify if a supplier implements it).	|
 | ResStatus					| 1  		| String	| reservation status  (OK = confirmed, RQ = on request, CN = cancelled, UN = unknown.	|
 | Price  					| 0..1     	|		| Total price of this reservation (see StaticConfiguration in order to verify if a supplier implements it).				|
 | @currency					| 1  		| String	| Currency code.					|
