@@ -112,6 +112,9 @@ Clarification - All information contained within the Avail section relates to th
         </Beds>
         <InformBindingPrice reviewDate = "20/06/2015">false</InformBindingPrice>
         <InformCancelPolicies reviewDate = "20/06/2015">false</InformCancelPolicies>
+        <InformRoomCancelPolicies reviewDate = "20/06/2015">false</InformRoomCancelPolicies>
+        <ImplementsCombination reviewDate = "20/06/2015">false</ImplementsCombination>
+        <InformRoomFees reviewDate = "20/06/2015">false</InformRoomFees>
         <InformRemarks reviewDate = "20/06/2015">false</InformRemarks>
         <PaymentTypes>
             <PaymentType reviewDate = "20/06/2015">MerchantPay</PaymentType>
@@ -141,6 +144,7 @@ Clarification - All information contained within the Avail section relates to th
     </Valuation>
     <Reservation>
         <AllowsDeltaPrice reviewDate = "20/06/2015">false</AllowsDeltaPrice>
+        <InformPropertyReservationNumber reviewDate = "20/06/2015">false</InformPropertyReservationNumber>
         <RequiredAllPassengers reviewDate = "20/06/2015">false</RequiredAllPassengers>
         <AllowsRemarks reviewDate = "20/06/2015">false</AllowsRemarks>
         <AllowsUrlCard reviewDate = "20/06/2015">false</AllowsUrlCard>
@@ -163,6 +167,7 @@ Clarification - All information contained within the Avail section relates to th
     </Reservation>
     <ReservationRead>
         <Implements reviewDate = "20/06/2015">false</Implements>
+        <InformPropertyReservationNumber reviewDate = "20/06/2015">false</InformPropertyReservationNumber>
         <AllowsProvideLocator reviewDate = "20/06/2015">false</AllowsProvideLocator>
         <AllowsClientLocator reviewDate = "20/06/2015">false</AllowsClientLocator>
         <InformCancelPolicies reviewDate = "20/06/2015">false</InformCancelPolicies>
@@ -170,6 +175,7 @@ Clarification - All information contained within the Avail section relates to th
     </ReservationRead>
     <ReservationList>
         <Implements reviewDate = "20/06/2015">false</Implements>
+        <InformPropertyReservationNumber reviewDate = "20/06/2015">false</InformPropertyReservationNumber>
         <AllowsCreationDate reviewDate = "20/06/2015">false</AllowsCreationDate>
         <AllowsCheckDate reviewDate = "20/06/2015">false</AllowsCheckDate>
         <InformCancelPolicies reviewDate = "20/06/2015">false</InformCancelPolicies>
@@ -184,6 +190,7 @@ Clarification - All information contained within the Avail section relates to th
     <Batch>
         <InformExclusiveDeal reviewDate = "20/06/2015">false</InformExclusiveDeal>
         <HotelList>
+            <StaticType reviewDate = "20/06/2015">NotImplemented</StaticType>
             <Languages>
                 <Language reviewDate = "20/06/2015">en</Language>
                 <Language reviewDate = "20/06/2015">es</Language>
@@ -197,29 +204,34 @@ Clarification - All information contained within the Avail section relates to th
             </Languages>
         </DescriptiveInfo>
         <GeographicDestinationTree>
+            <StaticType reviewDate = "20/06/2015">NotImplemented</StaticType>
             <Languages>
                 <Language reviewDate = "20/06/2015">en</Language>
                 <Language reviewDate = "20/06/2015">es</Language>
             </Languages>
         </GeographicDestinationTree>
         <AvailDestinationTree>
+            <StaticType reviewDate = "20/06/2015">NotImplemented</StaticType>
             <Languages>
                 <Language reviewDate = "20/06/2015">en</Language>
             </Languages>
         </AvailDestinationTree>
         <RoomList>
+            <StaticType reviewDate = "20/06/2015">NotImplemented</StaticType>
             <Languages>
                 <Language reviewDate = "20/06/2015">en</Language>
                 <Language reviewDate = "20/06/2015">es</Language>
             </Languages>
         </RoomList>
         <MealPlanList>
+            <StaticType reviewDate = "20/06/2015">NotImplemented</StaticType>
             <Languages>
                 <Language reviewDate = "20/06/2015">en</Language>
                 <Language reviewDate = "20/06/2015">es</Language>
             </Languages>
         </MealPlanList>
         <CategoryList>
+            <StaticType reviewDate = "20/06/2015">NotImplemented</StaticType>
             <Languages>
                 <Language reviewDate = "20/06/2015">en</Language>
                 <Language reviewDate = "20/06/2015">es</Language>
@@ -233,12 +245,14 @@ Clarification - All information contained within the Avail section relates to th
             </Languages>
         </DescriptiveInfoExtended>
         <MarketList>
+            <StaticType reviewDate = "20/06/2015">NotImplemented</StaticType>
             <Languages>
                 <Language reviewDate = "20/06/2015">en</Language>
                 <Language reviewDate = "20/06/2015">es</Language>
             </Languages>
         </MarketList>
         <CurrencyList>
+            <StaticType reviewDate = "20/06/2015">NotImplemented</StaticType>
             <Languages>
                 <Language reviewDate = "20/06/2015">en</Language>
                 <Language reviewDate = "20/06/2015">es</Language>
@@ -331,6 +345,12 @@ Clarification - All information contained within the Avail section relates to th
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Avail/InformCancelPolicies			| 1        	| Boolean	| Returns cancellation policies.	|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
+| Avail/InformRoomCancelPolicies 			| 1        	| Boolean	| Returns cancellation policies at room level.	|
+| @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
+| Avail/InformRoomFees			| 1        	| Boolean	| Returns fees at room level.	|
+| @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
+| Avail/ImplementsCombination			| 1        	| Boolean	| Informs whether the integration allows room combination or not.	|
+| @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Avail/InformRemarks			| 1        	| Boolean	| Space available for any remarks or comments aimed at the client.	|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Avail/PaymentTypes			| 1        	| 	| List of payment types accepted by the supplier.		|
@@ -370,6 +390,8 @@ Clarification - All information contained within the Avail section relates to th
 | Reservation			| 1        	| 	| Reservation node.		|
 | Reservation/AllowsDeltaPrice			| 1        	| Boolean	| Allows a margin stipulated by the client for booking with a higher price (delta).		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
+| Reservation/InformPropertyReservationNumber			| 1        	| Boolean	| Informs if the supplier returns the property reservation number.		|
+| @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Reservation/RequiredAllPassengers			| 1        	| Boolean	| Required data for all passengers (names and surnames).		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Reservation/AllowsRemarks			| 1        	| Boolean	| Informs if the supplier allows send remarks.		|
@@ -389,6 +411,8 @@ Clarification - All information contained within the Avail section relates to th
 | @mandatory		| 1        	| Boolean 	| If it is necessary to pass a value in the Preference tag in reservation request.		|
 | @type		| 0..1       	| String 	| Type of the required value. (string, numeric, boolean)		|
 | ReservationRead			| 1        	| 	| ReservationRead node.		|
+| ReservationRead/InformPropertyReservationNumber			| 1        	| Boolean	| Informs if the supplier returns the property reservation number.		|
+| @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | ReservationRead/Implements			| 1        	| Boolean	| Informs if the supplier implements this method.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | ReservationRead/AllowsProvideLocator			| 1        	| Boolean	| The supplier allows provider locator.		|
@@ -401,6 +425,8 @@ Clarification - All information contained within the Avail section relates to th
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | ReservationList			| 1        	| 	| ReservationList node.		|
 | ReservationList/Implements			| 1        	| Boolean	| Informs if the supplier implements this method.	|
+| @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
+| ReservationList/InformPropertyReservationNumber			| 1        	| Boolean	| Informs if the supplier returns the property reservation number.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | ReservationList/AllowsCreationDate			| 1        	| Boolean	| The supplier allows search by creation date.	|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
@@ -423,6 +449,8 @@ Clarification - All information contained within the Avail section relates to th
 | Batch/InformExclusiveDeal			| 1        	| Boolean	| The supplier indicates if a Hotel is an Exclusive Deal in HotelList and/or DescriptiveInfo.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/HotelList			| 1        	| 	| Contains information regarding HotelList.		|
+| Batch/HotelList/StaticType			| 1        	| Enum	| Informs the static type.The possible values are:	Offline, OfflineCompleted or NotImplemented.	|
+| @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed.  |
 | Batch/HotelList/Languages			| 1        	| 	| 	List of languages.		|
 | Batch/HotelList/Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
@@ -433,22 +461,32 @@ Clarification - All information contained within the Avail section relates to th
 | Batch/DescriptiveInfo/Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/GeographicDestinationTree			| 1        	| 	| Contains information regarding GeographicDestinationTree.		|
+| Batch/GeographicDestinationTree/StaticType			| 1        	| Enum	| Informs the static type.The possible values are:	Offline, OfflineCompleted or NotImplemented.	|
+| @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed.  |
 | Batch/GeographicDestinationTree/Languages			| 1        	| 	| 	List of languages.		|
 | Batch/GeographicDestinationTree/ Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/AvailDestinationTree			| 1        	| 	| Contains information regarding AvailDestinationTree.		|
+| Batch/AvailDestinationTree/StaticType			| 1        	| Enum	| Informs the static type.The possible values are:	Offline, OfflineCompleted or NotImplemented.	|
+| @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed.  |
 | Batch/AvailDestinationTree/Languages			| 1        	| 	| 	List of languages.		|
 | Batch/AvailDestinationTree/Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/RoomList			| 1        	| 	| Contains information regarding RoomList.		|
+| Batch/RoomList/StaticType			| 1        	| Enum	| Informs the static type.The possible values are:	Offline, OfflineCompleted or NotImplemented.	|
+| @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed.  |
 | Batch/RoomList/Languages			| 1        	| 	| 	List of languages.		|
 | Batch/RoomList/Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/MealPlanList			| 1        	| 	| Contains information regarding MealPlanList.		|
+| Batch/MealPlanList/StaticType			| 1        	| Enum	| Informs the static type.The possible values are:	Offline, OfflineCompleted or NotImplemented.	|
+| @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed.  |
 | Batch/MealPlanList/Languages			| 1        	| 	| 	List of languages.		|
 | Batch/MealPlanList/Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/CategoryList			| 1        	| 	| Contains information regarding CategoryList.		|
+| Batch/CategoryList/StaticType			| 1        	| Enum	| Informs the static type.The possible values are:	Offline, OfflineCompleted or NotImplemented.	|
+| @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed.  |
 | Batch/CategoryList/Languages			| 1        	| 	| 	List of languages.		|
 | Batch/CategoryList/Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
@@ -459,10 +497,14 @@ Clarification - All information contained within the Avail section relates to th
 | Batch/DescriptiveInfoExtended/Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/MarketList			| 1        	| 	| Contains information regarding MarketList.		|
+| Batch/MarketList/StaticType			| 1        	| Enum	| Informs the static type.The possible values are:	Offline, OfflineCompleted or NotImplemented.	|
+| @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed.  |
 | Batch/MarketList/Languages			| 1        	| 	| 	List of languages.		|
 | Batch/MarketList/Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
 | Batch/CurrencyList			| 1        	| 	| Contains information regarding CurrencyList.	|
+| Batch/CurrencyList/StaticType			| 1        	| Enum	| Informs the static type.The possible values are:	Offline, OfflineCompleted or NotImplemented.	|
+| @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed.  |
 | Batch/CurrencyList/Languages			| 1        	| 	| 	List of languages.		|
 | Batch/CurrencyList/Languages/Language			| 1..n        	| String	| Language code.		|
 | @reviewDate 			| 1   		| String	| Informs of the date when the field was last reviewed. |
