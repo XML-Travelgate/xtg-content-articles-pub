@@ -71,6 +71,11 @@ The **ContinuationToken** can be used in this request - the specification can be
                 <GiataId source = "http://urlGiata">1200</GiataId>
                 <Name>BADAJOZ</Name>
                 <Address>CTRA.NACIONAL V, KM 393</Address>
+                <Airports>
+                    <Airport>
+                        <IATACode>BJZ</IATACode>
+                    </Airport>
+                </Airports>
                 <Town>BADAJOZ</Town>
                 <ZipCode>06002</ZipCode>
                 <CountryISOCode>ES</CountryISOCode>
@@ -142,6 +147,9 @@ The **ContinuationToken** can be used in this request - the specification can be
 | @value     				| 0..1 		| String	| Giata code (more on detailed description)	|
 | Name       				| 1    		| String	| Name.								|
 | Address    				| 1    		| String	| Address.							|
+| Airports 				| 0..1       	|		| List of airports.							|
+| Airports/Airport			| 1..n       	|		| Specific airport near the hotel.	|
+| Airports/Airport/IATACode		| 1    		| String	| IATA airport Code.								|
 | Town       				| 1    		| String	| Town.								|
 | ZipCode    				| 0..1    		| String	| ZipCode.							|
 | CountryISOCode			| 1    		| String	| CountryISOCode.						|
