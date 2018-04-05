@@ -73,6 +73,11 @@ is **180000** milliseconds.
         <Code>70</Code>
         <Name>Nice Stay</Name>
         <Address>Avenue Doctor Brown S/N</Address>
+        <Airports>
+            <Airport>
+                <IATACode>LON</IATACode>
+            </Airport>
+        </Airports>
         <Town>London</Town>
         <ZipCode>21449</ZipCode>
         <CountryISOCode>UK</CountryISOCode>
@@ -203,6 +208,9 @@ is **180000** milliseconds.
 | Code       				| 1    		| String	| Code.								|
 | Name       				| 1    		| String	| Name.								|
 | Address    				| 1    		| String	| Address.							|
+| Airports 				| 0..1       	|		| List of airports.							|
+| Airports/Airport			| 1..n       	|		| Specific airport near the hotel.	|
+| Airports/Airport/IATACode		| 1    		| String	| IATA airport Code.								|
 | Town       				| 1    		| String	| Town.    							|
 | ZipCode    				| 1    		| String	| ZipCode.							|
 | CountryISOCode			| 1    		| String	| Country ISOCode.						|
