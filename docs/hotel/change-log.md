@@ -5,6 +5,15 @@ search: Hotel - Change Log
 sidebar: mydoc_sidebar
 permalink: /docs/hotel/change-log
 ---
+**Version 1.0.21:** Date 25/04/2018
+
+ *  **CancelPolicies and fees returned at stage room in AvailRS.** Depending on the supplier, the information concerning CancelPolicies and fees can be displayed at room level. To receive the CancelPolicies at room level, it is necessary to send the tag RoomCancellationPolicies in the AvailRQ.
+ *  **Property reservation number in ReservationRS, ReservationReadRS and ReservationListRS.** Depending on the supplier, you will receive the property reservation number in addition to the supplier locator.
+ *  **IATA airport codes in DescriptiveInfoRS and HotelListRS** Depending on the supplier, you will receive the codes for the airports near a specific hotel.
+ *  **New Metadata tags.** InformRoomCancelPolicies, InformRoomFees, ImplementsCombination and InformPropertyReservationNumber. 
+
+|
+
 **Version 1.0.20:** Date 11/12/2017
 
  *  **New tags Metadata: PaxTypeRangeInRoomCandidates**: Definition of the restrictions of the guests in the room.
