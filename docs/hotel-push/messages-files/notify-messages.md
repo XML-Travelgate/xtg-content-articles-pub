@@ -36,6 +36,18 @@ seller. XTG will process data and response with error code if needed.
 			    <CancelPenalty NonRefundable = "true" Start = "2018-03-13" End = "2018-03-15"/>
 			</CancelPenalties>
 		    </BookingRule>
+		    <BookingRule>
+                	<Viewerships>
+			   <Viewership>
+                    	       <LocationCodes LocationCodesInclusive = "true">
+                      	           <LocationCode CountryCode = "ES"/>
+                               </LocationCodes>
+                           </Viewership>
+                           <Viewership>
+                               <LocationCodes LocationCodesInclusive = "false"/>
+                           </Viewership>
+                        </Viewerships>
+                     </BookingRule>
 		</BookingRules>
                 <Rates>
                     <Rate>
@@ -288,6 +300,12 @@ seller. XTG will process data and response with error code if needed.
 | @Percent    				    | 0..1	 | Decimal  | Percent of the total amount that will be charged in case of cancellation applying the current cancel penalty. NmbrOfNights, Percent or Amount must be present. |
 | @Amount     				    | 0..1	 | Decimal  | Amount that will be charged in case of cancellation applying the current cancel penalty. NmbrOfNights, Percent or Amount must be present. |
 | @CurrencyCode				    | 0..1	 | String   | Currency code of the amount. Must be present if amount is present. |
+| BookingRule/Viewerships		    | 0..1       |	    | Present if exits viewerships conditions. 		|
+| BookingRule/Viewerships/Viewership	    | 1..n	 |	    |							|
+| BookingRule/Viewerships/Viewership/LocationCodes | 1   |	    | One node for each viewership condition.		|
+| @LocationCodesInclusive		    | 1 	 | Boolean  | When its true this rate can be request for next countryCode, when false can not be requested from this country. |
+| BookingRule/Viewerships/Viewership/LocationCodes/LocationCode | 0..1 |  | If is missing, applies to all countryCode againthe other viewership condition. |
+| @CountryCode				   | 1 		 | String   | Country ISO2 code from can or can not be requested this rate. |
 | RatePlans/RatePlan/Rates		| 1	     |		|							|
 | RatePlans/RatePlan/Rates/Rate		| 1..n	     |		|							|
 | RatePlans/RatePlan/Rates/AdditionalGuestAmounts		| 1	     |		|							|
