@@ -64,7 +64,7 @@ The response object contains the status of the request and any possible errors a
 | filterAuditData                      | 1          |          | Activates transaction data sent & received in the supplier's native format. |
 | filterAuditData/registerTransactions | 1          | Boolean  | Returns all the transactions (XMLs) exchanged with the supplier.|
 | optionsQuota                         | 0..1       | Integer  | Sets the max number of options by MealPlan. |
-| ContinuationToken                    | 0..1       | String   | Internal Token to identify the next set of HotelList. |
+| ContinuationToken                    | 0..1       | String   | Internal Token to identify the next set of HotelList or RoomList. |
 | @expectedRange                       | 0..1       | Integer  |  	Number of hotels expected in HotelList call. |
 | Configuration                        | 1          |          | The info required to access the supplier's system. |
 | Configuration/User                   | 0..1       | String   | User code to connect to supplier. |
@@ -125,8 +125,8 @@ This new tag will be used only for those suppliers returning a very large number
 | HotelBaseRS                       | 1          |          | Root node.     |
 | echoToken                         | 0..1       | String   | Echo token to be returned in response (used for test purposes only). |
 | OperationImplemented              | 1          | Boolean  | Informs whether the method has been implemented by the supplier. |
-| ContinuationToken                 | 0..1       | String   | Internal Token to identify the next set of HotelList. |
-| @expectedRange                    | 0..1       | Integer  | Number of hotels expected in HotelList call. |
+| ContinuationToken                 | 0..1       | String   | Internal Token to identify the next set of HotelList or the next set of RoomList. |
+| @expectedRange                    | 0..1       | Integer  | Number of hotels/rooms expected in HotelList/RoomList call. |
 | applicationErrors                 | 0..n       |          | Application errors reported by supplier. |
 | applicationErrors/type            | 1          | String   | Error Type as specified by XML Travelgate. |
 | applicationErrors/code            | 1          | String   | Native error code reported by supplier. |
@@ -146,19 +146,19 @@ This new tag will be used only for those suppliers returning a very large number
 
 **ContinuationToken:**
 
-This new tag is useful to split the hotel list response. This is done
+This new tag is useful to split the hotel list or room list response. This is done
 because there are suppliers with a large amount of hotels (over
-250.000). In those cases, the response has to be split in order to
-retrieve all the hotels available. In case that ContinuationToken is not sent, the
-HotelList returns a maximum of 250.000 hotels. Using this
+200.000) or rooms (over 200.000). In those cases, the response has to be split in order to
+retrieve all the hotels/rooms available. In case that ContinuationToken is not sent, the
+HotelList and RoomList return a maximum of 200.000 hotels/rooms. Using this
 ContinuationToken and the attribute *expectedRange* the client may
-decide the number of hotels expected in each HotelList call. If the
-supplier has more than 250.000 hotels, in order to get 100% of the hotels available, the client will need to use the
-ContinuationToken returned inside the HotelListRS response until the
+decide the number of hotels/rooms expected in each HotelList/RoomList call. If the
+supplier has more than 200.000 hotels/rooms, in order to get 100% of the hotels/rooms available, the client will need to use the
+ContinuationToken returned inside the HotelListRS/RoomListRS response until the
 ContinuationToken field is no longer returned in the response (see the example
-in Common Elements RS). Once the tag is not returned the hotel list is
+in Common Elements RS). Once the tag is not returned the hotel list or the room list are
 complete. The value of this tag is an internal Token identifying
-the next set of HotelList to be returned.
+the next set of HotelList/RoomList to be returned.
 
 **expectedRange** :
 
@@ -167,5 +167,5 @@ The number of hotels returned is set in the expectedRange value, although it
 is possible to get more hotels than requested. This means that
 if the client requests 1000 hotels, the response may contain a range between
 1000 to 1999 hotels. In the case this value is not set, the maximum
-hotel range is 250.000. We strongly recommend using multiples of one thousand.
+hotel range is 200.000. We strongly recommend using multiples of one thousand.
 
