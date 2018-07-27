@@ -1,4 +1,4 @@
----
+﻿---
 title: Static Configuration
 keywords: activities, data structure, static configuration
 search: Activities - Data Structure - Static Configuration
@@ -29,24 +29,17 @@ The request only requires the provider code and credentials.
 The response contains a list of basic information about the limitations
 of the integration / provider.
 
-**OpenAvailability**
+#### OpenAvailability
+| **Type** | **Description** |
+| ---------| --------------- | 
+|false| Need specify passangers in avail request. In response, provider return price of option that you specify.|
+|true| Not neccesary specify passangers in avail request. In this case provider return all possible participant typesthat can provide, and you can choose the participants types that you are interested.|
 
--   OpenAvailability = false: Need specify passangers in avail request.
-    In response, provider return price of option that you specify.
--   OpenAvailability = true: Not neccesary specify passangers in avail
-    request. In this case provider return all possible participant types
-    that can provide, and you can choose the participants types that you
-    are interested.
-
-**Range**
-
--   Range = R: Range date, means that provider return options beetwen
-    range of dates send in Avail request, anyone who is between these
-    dates.
--   Range = S: Specific date, means that provider return options for
-    specific range of dates send in Avail request.
-
-
+#### Range
+| **Type** | **Description** |
+| ---------| --------------- | 
+|R| Range date, means that provider return options beetwen range of dates send in Avail request, anyone who is between these dates.|
+|S| Specific date, means that provider return options for specific range of dates send in Avail request.|
 
 ### StaticConfigurationRQ Example
 
@@ -135,7 +128,10 @@ of the integration / provider.
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
-| StaticConfigurationRS			| 1       	|		| Root node.					|
+| AvailabilityByRegion | 1  		| Boolean | Indicates is it is posible to get availability by Region |
+| AvailabilityByPosition | 1  		| Boolean | Indicates is it is posible to get availability by Position |
+| AvailabilityByTourActivityID | 1  		| Boolean | Indicates is it is posible to get availability by TourActivityID|
+| AvailabilityByMultipleTourActivitySearch| 1  		| Boolean | Indicates is it is posible to get availability by MultipleTourActivitySearch|
 | NumOfDestinations			| 1  		| Integer	| Number of destination that specific integration can provider/returned in one same Avail. |
 | NumOfEvents				| 1  		| Integer	| Number of TourActivityID that specific integration can provider/returned in one same Avail. |
 | NumOfEventTypes			| 1  		| Integer	| Number of Category Code that specific integration can provider/returned in one same Avail. |

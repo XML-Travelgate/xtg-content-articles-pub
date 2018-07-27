@@ -1,4 +1,4 @@
----
+﻿---
 title: Search
 keywords: activities, data structure, search
 search: Activities - Data Structure -  Search
@@ -29,15 +29,13 @@ The response contains information of each activity that provider return.
 
 
 
+
 ### AvailRQ Example
 
 
 
 ~~~xml
-	<OTA_TourActivitySearchRQ 
-		xmlns:xsd = "http://www.w3.org/2001/XMLSchema" 
-		xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" 
-		PrimaryLangID = "es">
+	<OTA_TourActivitySearchRQ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" PrimaryLangID="es">
 		<!-- Node for Country/Region filter -->
 		<SearchCriteria>
 			<CountryCode>ES</CountryCode>
@@ -53,9 +51,8 @@ The response contains information of each activity that provider return.
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
-| OTA_TourActivitySearchRQ		| 1         	|		| Root node.					|
 | @PrimaryLangID      			| 1   		| String	| Language code (ISO 3166-1 alpha-2) format.	|
-| SearchCriteria    			| 0..n      	|		| Adds filters to the activity search.		|
+| SearchCriteria    			| 0..n      	|				| Adds filters to the activity search.		|
 | SearchCriteria/CountryCode		| 0..1      	| String	| Filter by ISO Country Code.           	|
 | SearchCriteria/RegionCode     	| 0..1		| String	| Filter by region Code.           	|
 
@@ -67,16 +64,14 @@ The response contains information of each activity that provider return.
 
 
 ~~~xml
-    <OTA_TourActivitySearchRS 
-		xmlns:xsd = "http://www.w3.org/2001/XMLSchema" 
-		xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
+    <OTA_TourActivitySearchRS xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 		<TourActivityInfo>
-			<BasicInfo Name = "PortAventura Park" TourActivityID = "2840"/>
+			<BasicInfo Name="PortAventura Park" TourActivityID="2840"/>
 			<CategoryAndType>
-				<Category Code = "APRTEM" Extension = "Other_"/>
+				<Category Code="APRTEM" Extension="Other_"/>
 			</CategoryAndType>
 			<Location>
-				<Region RegionCode = "Costa Dorada" RegionName = "Tarragona"/>
+				<Region RegionCode="Costa Dorada" RegionName="Tarragona"/>
 				<Address>
 					<AddressLine/>
 					<CityName>Costa Dorada</CityName>
@@ -87,12 +82,12 @@ The response contains information of each activity that provider return.
 			</Location>
 		</TourActivityInfo>
 		<TourActivityInfo>
-			<BasicInfo Name = "PortAventura Caribe Aquatic Park" TourActivityID = "2843"/>
+			<BasicInfo Name="PortAventura Caribe Aquatic Park" TourActivityID="2843"/>
 			<CategoryAndType>
-				<Category Code = "APRTEM" Extension = "Other_"/>
+				<Category Code="APRTEM" Extension="Other_"/>
 			</CategoryAndType>
 			<Location>
-				<Region RegionCode = "Costa Dorada" RegionName = "Tarragona"/>
+				<Region RegionCode="Costa Dorada" RegionName="Tarragona"/>
 				<Address>
 					<AddressLine>Av. de l'Alcalde Pere Molas, km 2</AddressLine>
 					<CityName>Costa Dorada</CityName>
@@ -103,12 +98,12 @@ The response contains information of each activity that provider return.
 			</Location>
 		</TourActivityInfo>
 		<TourActivityInfo>
-			<BasicInfo Name = "Packs Promocionales" TourActivityID = "2841"/>
+			<BasicInfo Name="Packs Promocionales" TourActivityID="2841"/>
 			<CategoryAndType>
-				<Category Code = "APRTEM" Extension = "Other_"/>
+				<Category Code="APRTEM" Extension="Other_"/>
 			</CategoryAndType>
 			<Location>
-				<Region RegionCode = "Costa Dorada" RegionName = "Tarragona"/>
+				<Region RegionCode="Costa Dorada" RegionName="Tarragona"/>
 				<Address>
 					<AddressLine/>
 					<CityName>Costa Dorada</CityName>
@@ -131,7 +126,6 @@ The response contains information of each activity that provider return.
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
-| OTA TourActivitySearchRS  		| 1      	|		| Root node.					|
 | TourActivityInfo         		| 0..n    	|		| Information about specific ticket.		|
 | TourActivityInfo/BasicInfo		| 1..1    	|		| Basic Information of ticket.			|
 | @Name                   		| 0..1		| String	| Name of ticket.				|
@@ -139,17 +133,30 @@ The response contains information of each activity that provider return.
 | TourActivityInfo/BasicInfo/MultipleTourActivitySearch		| 0..1    	|		| In case of multiple activities, contains oll the ticket codes (not used in Search). |
 | TourActivityInfo/BasicInfo/MultipleTourActivitySearch/TourActivityID		| 1..n    	|		| Code of ticket (not used in Search). |
 | TourActivityInfo/BasicInfo/IncludedServices		| 0..n    	| Text	| Description of the services included on the activity. |
-| TourActivityInfo/Extra		| 0..n      	| 		| Extras in the activity. |
+| TourActivityInfo/Extra		| 0..n      	| 		| List of extras in the activity. |
 | @SupplierCode		| 0..1      	| String		| Activity extra supplier code. |
 | @Name		| 0..1      	| String		| Activity extra name. |
 | @Quantity		| 0..1      	| Integer		| Quantity of extras. |
 | @Description		| 0..1      	| String		| Description about the extra. |
-| TourActivityInfo/Extra/Pricing		| 0..1      	| 		| Information about dates range on which you can enjoy the activity. |
+| TourActivityInfo/Extra/Pricing		| 0..1      	| 		| Information about pricing of the Extra. |
 | TourActivityInfo/Extra/Pricing/Rate		| 0..1      	| 		| Information about the rate involved on the pricing. |
 | @RateID            		| 1..1		| String	| Indicates the code of the rate.			|
 | @Name            		| 1..1		| String	| Indicates the name of the rate.			|
 | @isNominative            		| 1..1		| Boolean	| True if it is a nominative rate.			|
 | @hiddenRate            		| 0..1		| Boolean	| True if it is a hidden/opaque rate.			|
+| TourActivityInfo/Extra/Pricing/IncludedCharges		| 0..1      	| 		| Information about the included charges. |
+| TourActivityInfo/Extra/Pricing/IncludedCharges/includedCharge		| 0..n      	| 		| List of the included charges. |
+| @code		| 0..1      	| 	String	| included charge code. |
+| @description		| 0..1      	| 	String	| Information about the included charge. |
+| @name		| 0..1      	| 	String	| included charge name. |
+| @type		| 0..1      	| 	String	| included charge type. |
+| TourActivityInfo/Extra/Pricing/IncludedCharges/includedCharge/summary		| 0..1      	| 		| Summary of the pricing. |
+| @amount	| 0..1      	| 	String	| Total amount. |
+| @Commission	| 0..1      	| 	String	| Amount commission. |
+| @currencyCode 	| 0..1      	| 	String	| Amount currency. ISO 4217. For example: *EUR* |
+| @IsBinding	 | 0..1      	| 	String	|  |
+| @IsTTOO 	| 0..1      	| 	String	|  TourOperator price.|
+| @referencePriceAmount 	| 0..1      	| 	String	|  |
 | TourActivityInfo/Extra/Pricing/Rate/CancellationPolicies		| 0..1      	| 		| List of rate's cancellation policies. |
 | TourActivityInfo/Extra/Pricing/Rate/CancellationPolicies/CancellationPolicy		| 1..n      	| 		| Cancellation policy. |
 | @amount            		| 1..1		| Decimal	| Value of the penalty.			|
@@ -170,8 +177,8 @@ The response contains information of each activity that provider return.
 | @Percentage          		| 0..1    	| String	| Percentage of the price . |
 | @Total         		| 0..1    	| String	| Total amount. |
 | TourActivityInfo/Extra/Pricing/Summary/PricingType		| 0..1		| String	| Specifies type of the option price, if value = Other then is mandatory specify Extension type. |
-| @Extension               		| 0..1		| String	| Specifies type of the option price.		|
-| @Text               		| 0..1		| String	| Specifies the applicability of the price (Per person/per group/Other).	|
+| @Extension               		| 0..1		| String	| Specifies type of the option price.	(see Table *eExtensionPricingType*)	|
+| @Text               		| 0..1		| String	| Specifies the applicability of the price. (see Table *ePricingType*)	|
 | TourActivityInfo/Extra/Pricing/IncludedCharges		| 0..1		| 	| List of charges included in the pricing. |
 | TourActivityInfo/Extra/Pricing/IncludedCharges		| 1..n		| String	| List of charges included in the pricing. |
 | @code                   		| 1..1		| String	| Charge code.			|
@@ -179,6 +186,9 @@ The response contains information of each activity that provider return.
 | @name                     		| 0..1		| String	| Charge name.			|
 | @description                     		| 0..1		| String	| Charge description.			|
 | TourActivityInfo/Extra/Pricing/IncludedCharges/Summary		| 0..1		| 	| Charge summary price (same as the explained in "TourActivityInfo/Extra/Pricing/Summary"). |
+| TourActivityInfo/Extra/Pricing/IncludedTaxes		| 0..1		| | List of taxes included in the pricing. |
+| TourActivityInfo/Extra/Pricing/IncludedTaxes		| 1..n		| String	| List of taxes included in the pricing. |
+| @id                     		| 0..1		| Enum	| tax type. (See table of eTaxId)		|
 | TourActivityInfo/Extra/Pricing/ParticipantCategory		| 0..n		| String	| Specifies price and participant category.	|
 | @age                     		| 1..1		| Integer	| Maximum age of participant category.			|
 | @minAge                     		| 0..1		| Integer	| Minimum age of participant category.			|
@@ -186,8 +196,9 @@ The response contains information of each activity that provider return.
 | @refId                     		| 0..1		| Integer	| Reference ID of the participant category.			|
 | @minPax                     		| 0..1		| Integer	| Minimum number of passengers allowed for the participant category.			|
 | @maxPax                     		| 0..1		| Integer	| Maximum number of passengers allowed for the participant category.			|
-| TourActivityInfo/Extra/Pricing/ParticipantCategory/QualifierInfo | 1..1	| String	| Specifies participant type (Adult, Young, Children or Babie). If value = Other then then is mandatory specify Extension provider type. |
-| @Extension               		| 1..1		| String	| Specifies provider code of participant category. |
+| TourActivityInfo/Extra/Pricing/ParticipantCategory/QualifierInfo | 1..1	| String	| |
+| @Extension               		| 0..1		| String	| Specifies provider code of participant category. |
+| @Text               		| 1..1		| Enum| Specifies participant type. (See Table)|
 | TourActivityInfo/Extra/Pricing/ParticipantCategory/Price	| 1..1      	|		| Specific price for each participantCategory.	|
 | @Amount                  		| 1  		| Decimal	| ParticipantCategory price.			|
 | @CurrencyCode            		| 0..1		| String	| Currency code (ISO 4217).			|
@@ -241,9 +252,16 @@ The response contains information of each activity that provider return.
 | @minPax               		| 0..1		| Integer	| Promotion minimum passenger number. |
 | @maxPax               		| 0..1		| Integer	| Promotion maximum passenger number. |
 | @description               		| 0..1		| String	| Promotion description. |
+| TourActivityInfo/Extra/Pricing/ParticipantCategory/Conditions| 0..1	| | List of conditions|
+| TourActivityInfo/Extra/Pricing/ParticipantCategory/Conditions/Condition| 1..n	| | Elements of the list |
+|@conditionType|1..1| | (see table eConditionType)|
 | TourActivityInfo/Extra/Pricing/Promotion/Summary | 0..n | | Promotion summary price (same as the explained on "TourActivityInfo/Extra/Pricing/Summary"). |
 | TourActivityInfo/Extra/Pricing/Promotion/ParticipantCategory | 0..1 | | Affected participantCategories. |
 | TourActivityInfo/Extra/Pricing/Promotion/ParticipantCategory/ParticipantCategory | 0..n | | Affected participantCategory (same as the explained in "TourActivityInfo/Extra/Pricing/ParticipantCategory"). |
+| TourActivityInfo/Extra/Pricing/ValidCountries| 0..1 | | List of valid countries to sell. |
+| TourActivityInfo/Extra/Pricing/ValidCountries/ValidCountries| 1..n | | List of valid countries to sell. |
+| @code                   		| 1  		| String | Country code. (ISO Alpha-2) 	|
+| @name                   		| 1  		| String | Country name.  	|
 | TourActivityInfo/Schedule		| 0..1      	|		| Information about dates range on which you can enjoy the activity. |
 | TourActivityInfo/Schedule/Summary	| 0..1      	|		| Information dates range that you apply availability. |
 | @Start                   		| 1  		| Date		| Start date that you apply availability. 	|
@@ -282,6 +300,8 @@ The response contains information of each activity that provider return.
 | TourActivityInfo/Location/Address/CityName		| 0..1		| String	| City name.			|
 | TourActivityInfo/Location/Address/PostalCode		| 0..1		| String	| Post Office Code number.			|
 | TourActivityInfo/Location/Address/County  		| 0..1		| String	| County or Region Name.			|
+| TourActivityInfo/Location/Address/CountyIso  		| 0..1		| String	| Country code (ISO Alpha-2)			|
+| TourActivityInfo/Location/Address/CountyName  		| 0..1		| String	| County Name.			|
 | TourActivityInfo/Locoation/Address/StateProv		| 0..1		| String	| State of province.			|
 | TourActivityInfo/PickupDropoffList		| 0..1		| 	| List of Pickup and Dropoff locations.			|
 | TourActivityInfo/PickupDropoffList/PickupDropoff		| 1..n		| 	| Pickup and/or Dropoff location.			|
@@ -318,7 +338,7 @@ The response contains information of each activity that provider return.
 | TourActivityInfo/Description/Multimedia/MultimediaDescription/ImageItems/ImageItem | 0..n || Information for each image.		|
 | TourActivityInfo/Description/Multimedia/MultimediaDescription/ImageItems/ImageItem/ImageFormat | 0..n || Url image.			|
 | TourActivityInfo/Description/Multimedia/MultimediaDescription/ImageItems/ImageItem/ImageFormat/URL | 0..1 | String | Access to image url.|
-| TourActivityInfo/Pricing                  		| 0..1      	|		| Price for option if OpenAvailability = false and price for each  participantCategory if OpenAvailability = true (same as the explained in "TourActivityInfo/Extra/Pricing"). |
+| TourActivityInfo/Pricing                  		| 0..1      	|		| Price for option if OpenAvailability = false and price for each  participantCategory if OpenAvailability = true (same as the explained in "TourActivityInfo/Extra/Pricing"). (not in use) |
 | TourActivityInfo/SupplierOperator                  		| 0..n      	|		| Information about the offices/operators. |
 | TourActivityInfo/SupplierOperator/Name                  		| 0..1      	|		| Name of the office/operator. |
 | @Code               		| 1..1      	| String	| Office/operator code. 		|
@@ -340,15 +360,69 @@ The response contains information of each activity that provider return.
 | @name            		| 1..1		| String	| Indicates the name of the rate.			|
 | @isNominative            		| 0..1		| Boolean	| True if it is a nominative rate.			|
 | @hiddenRate            		| 0..1		| Boolean	| True if it is a hidden/opaque rate.			|
-| @release            		| 0..1		| Integer	| Indicates the code of the rate.			|
+| @release            		| 0..1		| Integer	| 		|
 | @dateFrom            		| 0..1		| Date	| Indicates the beggining of the Activity Rate.			|
 | @dateTo            		| 0..1		| Date	| Indicates the ending of the Activity Rate.			|
 | TourActivityInfo/ActivityRates/ActivityRate/CancellationPolicies		| 0..1      	| 		| List of rate's cancellation policies. |
-| TourActivityInfo/ActivityRates/ActivityRate/CancellationPolicies/CancellationPolicy		| 0..n      	| 		| Cancellation policy. |
+| TourActivityInfo/ActivityRates/ActivityRate/CancellationPolicies/CancellationPolicy		| 1..n      	| 		| Cancellation policy. |
+|@amount		| 0..1   	|String 		| Amount to pay to cancellation. |
+|@noRefundable		| 1..1   	|Boolean| (see table noRefundable) |
+|@penaltyType		| 1..1   	|Enum| (see table ePenaltyType) |
 | TourActivityInfo/ActivityRates/ActivityRate/RateParticipants		| 0..1      	| 		| Price per passenger category. |
 | @minPax            		| 0..1		| Date	| Rate minimum passenger number.			|
 | @maxPax            		| 0..1		| Date	| Rate maximum passenger number.			|
-| TourActivityInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory		| 0..n      	| 		| ParticipantCategories on the rate (same as the explained in "TourActivityInfo/Extra/Pricing/ParticipantCategory"). |
+| TourActivityInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory		| 0..n      	| 		| ParticipantCategories on the rate (same as the explained in "TourActivityInfo/Extra/Pricing/ParticipantCategory").|
 
 
+### Types tables
+
+#### eExtensionPricingType 
+| **Type** | **Description** |
+| ---------| --------------- | 
+|Other| |
+|PerGroupPerDay| Amount per group day|
+|PerPersonPerDay| Amount per person day|
+|PerTotal|  Total amount|
+|PerPerson| Amount per person |
+
+#### ePricingType 
+| **Type** | **Description** |
+| ---------| --------------- | 
+|Other| |
+|PerGroup| Amount per group|
+|PerPerson| Amount per person|
+
+#### eQualifierType 
+| **Type** | **Description** |
+| ---------| --------------- | 
+|Adult| |
+|Children| |
+|Infant||
+|Other| Is mandatory specify Extension provider type.|
+|Young| |
+|Senior| |
+
+#### eTaxId 
+| **Type** | **Description** |
+| ---------| --------------- | 
+|V| |
+|G| |
+|O| |
+
+#### ePenaltyType 
+| **Type** | **Description** |
+| ---------| --------------- | 
+|PERCENTUAL| Amount is % 
+|PER_DAY|Total Amount is per day |
+|TOTAL_AMOUNT| Amount is the total to pay|
+
+#### eConditionType
+| **Type** | **Description** |
+| ---------| --------------- | 
+|Generic| |
+|Disabled| |
+|Student| |
+|Resident| |
+|LargeFamility| |
+|Retired| |
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: Cancel
 keywords: activities, data structure, cancel
 search: Activities - Data Structure - Cancel
@@ -42,7 +42,7 @@ Not implemented by all suppliers
 
 
 ~~~xml
-    <OTA_TourActivityCancelRQ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PrimaryLangID = "es">
+    <OTA_TourActivityCancelRQ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PrimaryLangID="es">
       <Confirmation ID="1283479#1" type="PROVIDER" />
     </OTA_TourActivityCancelRQ>
 ~~~
@@ -55,11 +55,10 @@ Not implemented by all suppliers
 
 | **Element**					| **Number**	| **Type**	| **Description**			|
 | --------------------------------------------- | ------------- | ------------- | ------------------------------------- |
-| OTA_TourActivityCancelRQ			| 1             |		| Root node.				|
 | @PrimaryLangID      				| 1      	| String	| Language code (ISO 3166-1 alpha-2) format. |
 | Confirmation        				| 1             |		| Contains information of the activity booked. |
 | @ID                 				| 1      	| String 	| Activity booked identifier.		|
-| @type               				| 1      	| String 	| Activity booked type (Possible values: "PROVIDER"). |
+| @type               				| 1      	| String 	| Activity booked type. See table of eLocatorType. |
 
 
 
@@ -91,20 +90,35 @@ Not implemented by all suppliers
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
-| OTA_TourActivityCancelRS		| 1           	|		| Root node.					|
 | @PrimaryLangID    			| 1    		| String	| Language code (ISO 3166-1 alpha-2) format.	|
-| Confirmation      			| 1           	|		| Contains information of the activity booked.	|
-| @ID               			| 1    		| String	| Activity booked identifier.			|
-| @type             			| 1    		| String	| Activity booked type (Possible values: "PROVIDER").|
 | Reservation       			| 1           	|		| Information about reservation status.		|
-| @ResStatus        			| 1    		| Enum  	| Information about reservation status (Possibles types: "Cancel" or "Unknow"). |
-| CancelConfirmation			| 1           	|		| Contains information of the activity booked.	|
-| CancelConfirmation/UniqueID		| 1           	|		| Contains information of the activity booked.	|
+| @ResStatus        			| 1    		| Enum  	| Information about reservation status.
+ |
+| Reservation/CancelConfirmation			| 1           	|		| Contains information of the activity booked.	|
+| Reservation/CancelConfirmation/UniqueID		| 1           	|		| Contains information of the activity booked.	|
 | @ID               			| 1    		| String	| Activity booked identifier.			|
-| @type             			| 1    		| String	| Activity booked type (Possible values: "PROVIDER").|
-| ReservationInfo   			| 1           	|		| Information about price after cancellation call. |
-| ReservationInfo/Pricing/Summary	| 0..1        	|		| Summary price for option, this element we return if OpenAvailability = false. |
-| @Amount           			| 0..1 		| Decimal	| Option price. 				|
-| @CurrencyCode     			| 0..1 		| String 	|Currency code (ISO 4217).			|
+| @type             			| 1    		| String	| Activity booked type See table of eLocatorType.|
+| Reservation/ReservationInfo   			| 1           	|		| Information about price after cancellation call. |
+| Reservation/ReservationInfo/Pricing/Summary	| 0..1        	|		| Summary of cancelation price. (if supplier informed us.) |
+| @Amount           			| 1 		| Decimal	| price amount. 				|
+| @CurrencyCode     			| 1 		| String 	|Currency code (ISO 4217).			|
+| @Commission     			| 0..1 		| String 	|Percentage commission.			|
 
+### Types tables
 
+######## eStatusType
+Indicates the status of the reservation.
+| **Type** | **Description** |
+| ---------| --------------- | 
+|Cancel| Cancelation has been done correctly. |
+|OnRequest| Cancellation is on request. (not canceled) |
+|Unknow| An error occures during the cancelation process |
+
+#### eLocatorType 
+Indicates which type of locator is sent.
+| **Type** | **Description** |
+| ---------| --------------- | 
+|Client| locator get in our request.|
+|Provider| locator send by the supplier |
+|Ticket|locator for specific ticket |
+|Other| Other type of locator.|
