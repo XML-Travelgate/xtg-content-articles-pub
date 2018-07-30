@@ -1,4 +1,4 @@
-﻿---
+---
 title: Reservation Read
 keywords: activities, data structure, reservation read
 search: Activities - Data Structure - Reservation Read
@@ -42,7 +42,10 @@ Not implemented by all suppliers
 
 
 ~~~xml
-    <OTA_ReadRQ> xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" PrimaryLangID="es">
+    <OTA_ReadRQ
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	 PrimaryLangID="es">
         <UniqueID ID="1283712#1" Type="PROVIDER"/>
     </OTA_ReadRQ>
 ~~~
@@ -60,7 +63,7 @@ Not implemented by all suppliers
 | UniqueID  			| 1         |		| Contains information of the activity booked. 	|
 | @ID       			| 1    		| String	| Activity booked identifier.			|
 | @type     			| 1    		| String	| Activity booked type (Possible values: "PROVIDER" or "CLIENT"). Usually by provider locator. |
-| ReadRequests 			| 0..1          |		| To retrieve activities booked by dates. (Only if suppler allows it)	|
+| ReadRequests 			| 0..1      |		| To retrieve activities booked by dates. (Only if suppler allows it)	|
 | @Start       			| 1    		| Date	| start date of search.			|
 | @End      			| 1    		| Date	| end date of search.			|
 | @DateType				| 1    		| Enum	| See table of eDateReservationType.|
@@ -134,8 +137,9 @@ Not implemented by all suppliers
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
-|Detail|1		|		|	List of reservations details.	|
-|@ResStatus	| 1 |  Enum | See table of eStatusType.|
+| OTA_TourActivityResRetrieveRS			| 1         |		| Root node.					|
+| Detail|1		|		|	List of reservations details.	|
+| @ResStatus	| 1 |  Enum | See table of eStatusType.|
 | Detail/Confirmation	| 1      	|		| Contains information of the activity booked.	|
 | @ID                  			| 1  		| String	| Activity booked identifier.			|
 | @type                			| 1  		| String	| Activity booked type See table of eLocatorType.|
@@ -150,7 +154,7 @@ Not implemented by all suppliers
 | @OtherInfo          			| 0..1		| String	| Other instructions pertaining to the pickup/dropoff. |
 | ParticipantCategory 			| 0..n    	|		| Information about participant type, specifying age for each participant. |
 | @Age                			| 1 		| Integer	| Age of participant.				|
-| Detail/Pricing/ParticipantCategory/QualifierInfo | 0..1	| String	| Specifies participant type (Adult, Children or Babie). If value = "Other_" then then is mandatory specify Extension provider type. |
+| Detail/Pricing/ParticipantCategory/QualifierInfo | 0..1	| String	| Specifies participant type (Adult, Children or Baby). If value = "Other_" then then is mandatory specify Extension provider type. |
 | Detail/Pricing/ParticipantCategory/Price	| 1     	|		| Specific price for each participantCategory.	|
 | @Amount             			| 1 		| String	| ParticipantCategory price.			|
 | @CurrencyCode       			| 0..1		| String	| Currency code (ISO 4217).			|
@@ -158,28 +162,28 @@ Not implemented by all suppliers
 | Detail/Pricing/ParticipantCategory/TPA_Extensions/DynamicToken | 0..1 | String | Inform about the participant types to valuate (if more than one type, the participant Types must be separated by ";"). |
 | Detail/Pricing/ParticipantCategory/TPA_Extensions/Issue | 0..1 |   		| Contains information about ticket printing. 	|
 | @Mandatory          			| 0..1		| Boolean	| Specifies if the ticket should be printed by the client. |
-|Detail/Location | 1      	|		| Information of the location.		|
-|Detail/Location/Region          		| 1      	|		| Describes regional information.		|
+| Detail/Location | 1      	|		| Information of the location.		|
+| Detail/Location/Region          		| 1      	|		| Describes regional information.		|
 | @RegionCode              		| 1  		| String	| Specifies a region code.			|
 | @RegionName              		| 1  		| String	| Specifies the region name.			|
-|Detail/Location/Address         		| 0..1    	|		| Identifies the physical address of the tour departure and/or activity location. |
-|Detail/Location/Address/AddressLine		| 0..1		| String	| These lines will contain free form address details.|
-|Detail/Location/Address/CityName| 0..1		| String	| Contains the city name.|
-|Detail/Location/Address/countryCode| 0..1		| String	| Contains the supplier country code.|
-|Detail/Location/Address/countryISO| 0..1		| String	| Contains the country code in format ISO ISO 3166-1 alpha-2 |
-|Detail/Location/Address/CityName| 0..1		| String	| Contains the city name.|
-|Detail/Location/Address/CityName| 0..1		| String	| Contains the city name.|
-|Detail/Location/Address/PostalCode		| 0..1		| String	| Post Office Code number.			|
-|Detail/Location/Address/County  		| 0..1		| String	| County name.	|		
-|Detail/Location/Address/StateProv| 0..1		| String	| Province/stat|
-|Detail/Location/Position| 0..1		| | Position of location. 	|
+| Detail/Location/Address         		| 0..1    	|		| Identifies the physical address of the tour departure and/or activity location. |
+| Detail/Location/Address/AddressLine		| 0..1		| String	| These lines will contain free form address details.|
+| Detail/Location/Address/CityName| 0..1		| String	| Contains the city name.|
+| Detail/Location/Address/countryCode| 0..1		| String	| Contains the supplier country code.|
+| Detail/Location/Address/countryISO| 0..1		| String	| Contains the country code in format ISO ISO 3166-1 alpha-2 |
+| Detail/Location/Address/CityName| 0..1		| String	| Contains the city name.|
+| Detail/Location/Address/CityName| 0..1		| String	| Contains the city name.|
+| Detail/Location/Address/PostalCode		| 0..1		| String	| Post Office Code number.			|
+| Detail/Location/Address/County  		| 0..1		| String	| County name.	|		
+| Detail/Location/Address/StateProv| 0..1		| String	| Province/stat|
+| Detail/Location/Position| 0..1		| | Position of location. 	|
 | @Latitude| 1  		| String	| 			|
 | @Longitude| 1  		| String	| 			|
-|Detail/Location/PositionArea| 0..1 |  | Information of pickup area.|
-|Detail/Location/PositionArea/position| 1..n |  | list of position|
+| Detail/Location/PositionArea| 0..1 |  | Information of pickup area.|
+| Detail/Location/PositionArea/position| 1..n |  | list of position|
 | @latitude| 1   		| String| Latitude position.	|
 | @longitude| 1   		| String|  Longitude position. |
-|Detail/Location/Region | 1      	|		| Describes regional information.		|
+| Detail/Location/Region | 1      	|		| Describes regional information.		|
 | Detail/Schedule		| 1      	|		| Information about dates range on which you can enjoy the activity. |
 | Detail/Schedule/Summary	| 1      	|		| Information dates range that you apply availability. |
 | @Start                   		| 1  		| Date		| Start date that you apply availability. 	|
@@ -187,15 +191,15 @@ Not implemented by all suppliers
 | Detail/Schedule/Detail	| 1..n    	|		| Information when activity starts and attributes that we need to send between calls. |
 | @id                     		| 1  		| String| Detail id.	|
 | Detail/Schedule/Detail/OperationTimes | 0..1 |		| Information when activity starts.		|
-| Detail/Schedule/Detail/OperationTimes/OperationTime | 0..1 || Information when activity starts and infromation about the seats number.		|
+| Detail/Schedule/Detail/OperationTimes/OperationTime | 0..1 || Information when activity starts and information about the seats number.		|
 | Detail/Schedule/Detail/OperationTimes/OperationTime/Start| 0..1		| Date		| Start date activity.|
 | Detail/Schedule/Detail/OperationTimes/OperationTime/End| 0..1		| Date		| End date activity.|
 | @occupiedSeats| 0..1  		| Integer| 		|
 | @totalSeats| 0..1  		| Integer| 		|
 | @totalSeatsForSale| 0..1  		| Integer| 		|
 | Detail/Schedule/Detail/TPA_Extensions | 0..1 |		| Necessary information that we need to send between calls. |
-|Detail/SupplierOperator| 0..n | Date |List the suppliers that operates the activity. |
-|Detail/SupplierOperator/Name| 1 | Date |Basic information of supplier. |
+| Detail/SupplierOperator| 0..n | Date |List the suppliers that operates the activity. |
+| Detail/SupplierOperator/Name| 1 | Date |Basic information of supplier. |
 | @Code| 1   		| String|  Supplier code. |
 | @CodeContext| 1   		| Enum|  See table of eSupplierOperatorCodeContext. |
 | @CompanyShortName| 1   		| String|  Supplier name. |
@@ -205,77 +209,77 @@ Not implemented by all suppliers
 
 #### eDateReservationType
 | **Type** | **Description** |
-| ---------| --------------- | 
-|ArrivalDate| Start date of activity.|
-|CreateDate| Date of reservationDetails. |
-|DepartureDate| End date of activity. |
+| --------- | --------------- | 
+| ArrivalDate | Start date of activity. |
+| CreateDate | Date of reservationDetails. |
+| DepartureDate | End date of activity. |
 
 #### eStatusType
 | **Type** | **Description** |
-| ---------| --------------- | 
-|Confirmed| Reservation is confirmed. |
-|OnRequest| Reservation is onRequest, nor confirmed yet.  |
-|Unknow| An error during the confirmation|
+| --------- | --------------- | 
+| Confirmed | Reservation is confirmed. |
+| OnRequest | Reservation is onRequest, nor confirmed yet.  |
+| Unknown | An error during the confirmation |
 
 
 #### eConditionType 
 Indicates the condition that the person must meet.
 | **Type** | **Description** |
-| ---------| --------------- | 
-|Generic| |
-|Disabled| |
-|Student| |
-|Resident|  |
-|LargeFamily|  |
-|Retired| |
+| --------- | --------------- | 
+| Generic | |
+| Disabled | |
+| Student | |
+| Resident |  |
+| LargeFamily |  |
+| Retired | |
 
 #### eSupplierOperatorCodeContext
 Indicates the type of supplier code.
 | **Type** | **Description** |
-| ---------| --------------- | 
-|Internal|Our supplier code.|
-|External| Code returned by supplier.|
+| --------- | --------------- | 
+| Internal | Our supplier code. |
+| External | Code returned by supplier.|
 
 #### eExtensionClassType
 | **Type** | **Description** |
 | ---------| --------------- | 
-|Cultural||
-|EcoAdventure| |
-|Educational| |
-|FamilyFun| |
-|FoodBeverage| |
-|Free| |
-|Other_| |
-|Romantic| |
-|SportsRecreation| |
-|WheelchairAccess| |
+| Cultural | |
+| EcoAdventure | |
+| Educational | |
+| FamilyFun | |
+| FoodBeverage | |
+| Free | |
+| Other_ | |
+| Romantic | |
+| SportsRecreation | |
+| WheelchairAccess | |
 
 #### eQualifierInfo 
-Indicates the type of a Participant. The range of what is considered an adult, chilren,infant, etc is particular to each supplier.
+Indicates the type of a Participant. The range of what is considered an adult, children, infant, etc is particular to each supplier.
 | **Type** | **Description** |
-| ---------| --------------- | 
-|Adult| |
-|Children| |
-|Infant| |
-|Other| |
-|Young| |
-|Senior| |
+| --------- | --------------- | 
+| Adult | |
+| Children | |
+| Infant | |
+| Other | |
+| Young | |
+| Senior | |
 
 #### eExtensionPricingType
 | **Type** | **Description** |
-| ---------| --------------- | 
-|Other| |
-|PerGroupPerDay| |
-|PerPersonPerDay| |
-|PerTotal| |
-|PerPerson| |
+| --------- | --------------- | 
+| Other | |
+| PerGroupPerDay | |
+| PerPersonPerDay | |
+| PerTotal | |
+| PerPerson | |
 
 #### eLocatorType 
 Indicates which type of locator is sent.
 | **Type** | **Description** |
 | ---------| --------------- | 
-|Client| locator get in our request.|
-|Provider| locator send by the supplier |
-|Ticket|locator for specific ticket |
-|Other| Other type of locator.|
+| Client | Locator get in our request. |
+| Provider | Locator send by the supplier |
+| Ticket |Locator for specific ticket |
+| Other | Other type of locator. |
 

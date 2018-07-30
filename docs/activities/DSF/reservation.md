@@ -1,4 +1,4 @@
-﻿
+
 ---
 title: Reservation
 keywords: activities, data structure, reservation
@@ -64,6 +64,7 @@ permalink: /docs/activities/DSF/reservation
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
+| OTA_TourActivityBookRQ|	1	|		|		Root node.		|		
 | @PrimaryLangID     			| 1  		| String	| Language code (ISO 3166-1 alpha-2) format.	|
 | ContactDetail      			| 0..1    	|		| Information about holder client.    		|
 | ContactDetail/BirthDate		| 0..1		| Date		| Holder BirthDate.				|
@@ -85,7 +86,7 @@ permalink: /docs/activities/DSF/reservation
 | BookingInfo/ParticipantInfo		| 1..n    	|		| Information about all participants.		|
 | @OtherInfo         			| 0..1		| String	| Other instructions pertaining to the pickup/dropoff. |
 | BookingInfo/ParticipantInfo/Individual | 1      	|		| Information about each participant.		|
-| @LeadCustomerInd   			| 1  		| Boolean	| When 'true', indicates that this is the 'lead' participantr (i.e., the primary contact making the booking). |
+| @LeadCustomerInd   			| 1  		| Boolean	| When 'true', indicates that this is the 'lead' participant (i.e., the primary contact making the booking). |
 | @Age               			| 1  		| Integer	| Age of participant.  				|
 | BookingInfo/ParticipantInfo/Individual/GivenName | 1 	| String	| Participant Name.				|
 | BookingInfo/ParticipantInfo/Individual/Surname | 1 	| String	| Participant Surname.				|
@@ -93,7 +94,7 @@ permalink: /docs/activities/DSF/reservation
 | Pricing/ParticipantCategory/Price	| 1      	|		| Specific price for each participantCategory.	|
 | @Amount            			| 1  		| String	| ParticipantCategory price.			|
 | @CurrencyCode      			| 0..1		| String	| Currency code (ISO 4217).			|
-| @Commission | 0..1		| decimal | Percentual commisison of Amount |
+| @Commission | 0..1		| decimal | Percentage commission of Amount |
 | Pricing/ParticipantCategory/TPA_Extensions | 0..1    	|		| Necessary information that we need send  between calls. |
 | Pricing/ParticipantCategory/TPA_Extensions/DynamicToken | 0..1 | String | Inform about the participant types to valuate (if more than one type, the participant Types  must be separated by ";"). |
 | Pricing/ParticipantCategory/TPA_Extensions/Issue | 0..1 |   		| Contains information about ticket printing.	|
@@ -150,8 +151,9 @@ permalink: /docs/activities/DSF/reservation
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
-|ReservationDetails| 1 | | information of the reservation done.|
-|@ResStatus	| 1 |  Enum | See table of eStatusType.|
+| OTA_TourActivityBookRS|	1	|		|		Root node.		|		
+| ReservationDetails| 1 | | information of the reservation done.|
+| @ResStatus	| 1 |  Enum | See table of eStatusType.|
 | ReservationDetails/Confirmation	| 1      	|		| Contains information of the activity booked.	|
 | @ID                  			| 1  		| String	| Activity booked identifier.			|
 | @type                			| 1  		| String	| Activity booked type See table of eLocatorType.|
@@ -166,7 +168,7 @@ permalink: /docs/activities/DSF/reservation
 | @OtherInfo          			| 0..1		| String	| Other instructions pertaining to the pickup/dropoff. |
 | ParticipantCategory 			| 0..n    	|		| Information about participant type, specifying age for each participant. |
 | @Age                			| 1 		| Integer	| Age of participant.				|
-| ReservationDetails/Pricing/ParticipantCategory/QualifierInfo | 0..1	| String	| Specifies participant type (Adult, Children or Babie). If value = "Other_" then then is mandatory specify Extension provider type. |
+| ReservationDetails/Pricing/ParticipantCategory/QualifierInfo | 0..1	| String	| Specifies participant type (Adult, Children or Baby). If value = "Other_" then then is mandatory specify Extension provider type. |
 | ReservationDetails/Pricing/ParticipantCategory/Price	| 1     	|		| Specific price for each participantCategory.	|
 | @Amount             			| 1 		| String	| ParticipantCategory price.			|
 | @CurrencyCode       			| 0..1		| String	| Currency code (ISO 4217).			|
@@ -174,28 +176,28 @@ permalink: /docs/activities/DSF/reservation
 | ReservationDetails/Pricing/ParticipantCategory/TPA_Extensions/DynamicToken | 0..1 | String | Inform about the participant types to valuate (if more than one type, the participant Types must be separated by ";"). |
 | ReservationDetails/Pricing/ParticipantCategory/TPA_Extensions/Issue | 0..1 |   		| Contains information about ticket printing. 	|
 | @Mandatory          			| 0..1		| Boolean	| Specifies if the ticket should be printed by the client. |
-|ReservationDetails/Location | 1      	|		| Information of the location.		|
-|ReservationDetails/Location/Region          		| 1      	|		| Describes regional information.		|
+| ReservationDetails/Location | 1      	|		| Information of the location.		|
+| ReservationDetails/Location/Region          		| 1      	|		| Describes regional information.		|
 | @RegionCode              		| 1  		| String	| Specifies a region code.			|
 | @RegionName              		| 1  		| String	| Specifies the region name.			|
-|ReservationDetails/Location/Address         		| 0..1    	|		| Identifies the physical address of the tour departure and/or activity location. |
-|ReservationDetails/Location/Address/AddressLine		| 0..1		| String	| These lines will contain free form address details.|
-|ReservationDetails/Location/Address/CityName| 0..1		| String	| Contains the city name.|
-|ReservationDetails/Location/Address/countryCode| 0..1		| String	| Contains the supplier country code.|
-|ReservationDetails/Location/Address/countryISO| 0..1		| String	| Contains the country code in format ISO ISO 3166-1 alpha-2 |
-|ReservationDetails/Location/Address/CityName| 0..1		| String	| Contains the city name.|
-|ReservationDetails/Location/Address/CityName| 0..1		| String	| Contains the city name.|
-|ReservationDetails/Location/Address/PostalCode		| 0..1		| String	| Post Office Code number.			|
-|ReservationDetails/Location/Address/County  		| 0..1		| String	| County name.	|		
-|ReservationDetails/Location/Address/StateProv| 0..1		| String	| Province/stat|
-|ReservationDetails/Location/Position| 0..1		| | Position of location. 	|
+| ReservationDetails/Location/Address         		| 0..1    	|		| Identifies the physical address of the tour departure and/or activity location. |
+| ReservationDetails/Location/Address/AddressLine		| 0..1		| String	| These lines will contain free form address details.|
+| ReservationDetails/Location/Address/CityName| 0..1		| String	| Contains the city name.|
+| ReservationDetails/Location/Address/countryCode| 0..1		| String	| Contains the supplier country code.|
+| ReservationDetails/Location/Address/countryISO| 0..1		| String	| Contains the country code in format ISO ISO 3166-1 alpha-2 |
+| ReservationDetails/Location/Address/CityName| 0..1		| String	| Contains the city name.|
+| ReservationDetails/Location/Address/CityName| 0..1		| String	| Contains the city name.|
+| ReservationDetails/Location/Address/PostalCode		| 0..1		| String	| Post Office Code number.			|
+| ReservationDetails/Location/Address/County  		| 0..1		| String	| County name.	|		
+| ReservationDetails/Location/Address/StateProv| 0..1		| String	| Province/stat|
+| ReservationDetails/Location/Position| 0..1		| | Position of location. 	|
 | @Latitude| 1  		| String	| 			|
 | @Longitude| 1  		| String	| 			|
-|ReservationDetails/Location/PositionArea| 0..1 |  | Information of pickup area.|
-|ReservationDetails/Location/PositionArea/position| 1..n |  | list of position|
+| ReservationDetails/Location/PositionArea| 0..1 |  | Information of pickup area.|
+| ReservationDetails/Location/PositionArea/position| 1..n |  | list of position|
 | @latitude| 1   		| String| Latitude position.	|
 | @longitude| 1   		| String|  Longitude position. |
-|ReservationDetails/Location/Region | 1      	|		| Describes regional information.		|
+| ReservationDetails/Location/Region | 1      	|		| Describes regional information.		|
 | ReservationDetails/Schedule		| 1      	|		| Information about dates range on which you can enjoy the activity. |
 | ReservationDetails/Schedule/Summary	| 1      	|		| Information dates range that you apply availability. |
 | @Start                   		| 1  		| Date		| Start date that you apply availability. 	|
@@ -203,15 +205,15 @@ permalink: /docs/activities/DSF/reservation
 | ReservationDetails/Schedule/Detail	| 1..n    	|		| Information when activity starts and attributes that we need to send between calls. |
 | @id                     		| 1  		| String| Detail id.	|
 | ReservationDetails/Schedule/Detail/OperationTimes | 0..1 |		| Information when activity starts.		|
-| ReservationDetails/Schedule/Detail/OperationTimes/OperationTime | 0..1 || Information when activity starts and infromation about the seats number.		|
+| ReservationDetails/Schedule/Detail/OperationTimes/OperationTime | 0..1 || Information when activity starts and information about the seats number.		|
 | ReservationDetails/Schedule/Detail/OperationTimes/OperationTime/Start| 0..1		| Date		| Start date activity.|
 | ReservationDetails/Schedule/Detail/OperationTimes/OperationTime/End| 0..1		| Date		| End date activity.|
 | @occupiedSeats| 0..1  		| Integer| 		|
 | @totalSeats| 0..1  		| Integer| 		|
 | @totalSeatsForSale| 0..1  		| Integer| 		|
 | ReservationDetails/Schedule/Detail/TPA_Extensions | 0..1 |		| Necessary information that we need to send between calls. |
-|ReservationDetails/SupplierOperator| 0..n | Date |List the suppliers that operates the activity. |
-|ReservationDetails/SupplierOperator/Name| 1 | Date |Basic information of supplier. |
+| ReservationDetails/SupplierOperator| 0..n | Date |List the suppliers that operates the activity. |
+| ReservationDetails/SupplierOperator/Name| 1 | Date |Basic information of supplier. |
 | @Code| 1   		| String|  Supplier code. |
 | @CodeContext| 1   		| Enum|  See table of eSupplierOperatorCodeContext. |
 | @CompanyShortName| 1   		| String|  Supplier name. |
@@ -220,71 +222,71 @@ permalink: /docs/activities/DSF/reservation
 
 #### eStatusType
 | **Type** | **Description** |
-| ---------| --------------- | 
-|Confirmed| Reservation is confirmed. |
-|OnRequest| Reservation is onRequest, nor confirmed yet.  |
-|Unknow| An error during the confirmation|
+| --------- | --------------- | 
+| Confirmed | Reservation is confirmed. |
+| OnRequest | Reservation is onRequest, nor confirmed yet.  |
+| Unknown | An error during the confirmation|
 
 #### eConditionType 
 Indicates the condition that the person must meet.
 | **Type** | **Description** |
-| ---------| --------------- | 
-|Generic| |
-|Disabled| |
-|Student| |
-|Resident|  |
-|LargeFamily|  |
-|Retired| |
+| --------- | --------------- | 
+| Generic | |
+| Disabled | |
+| Student | |
+| Resident |  |
+| LargeFamily |  |
+| Retired | |
 
 #### eSupplierOperatorCodeContext
 Indicates the type of supplier code.
 | **Type** | **Description** |
-| ---------| --------------- | 
-|Internal|Our supplier code.|
-|External| Code returned by supplier.|
+| --------- | --------------- | 
+| Internal | Our supplier code.|
+| External | Code returned by supplier.|
 
 #### eExtensionClassType
 | **Type** | **Description** |
-| ---------| --------------- | 
-|Cultural||
-|EcoAdventure| |
-|Educational| |
-|FamilyFun| |
-|FoodBeverage| |
-|Free| |
-|Other_| |
-|Romantic| |
-|SportsRecreation| |
-|WheelchairAccess| |
+| --------- | --------------- | 
+| Cultural ||
+| EcoAdventure | |
+| Educational | |
+| FamilyFun | |
+| FoodBeverage | |
+| Free | |
+| Other_ | |
+| Romantic | |
+| SportsRecreation | |
+| WheelchairAccess | |
 
 #### eQualifierInfo 
-Indicates the type of a Participant. The range of what is considered an adult, chilren,infant, etc is particular to each supplier.
+Indicates the type of a Participant. The range of what is considered an adult, children, infant, etc is particular to each supplier.
 | **Type** | **Description** |
-| ---------| --------------- | 
-|Adult| |
-|Children| |
-|Infant| |
-|Other| |
-|Young| |
-|Senior| |
+| --------- | --------------- | 
+| Adult | |
+| Children | |
+| Infant | |
+| Other | |
+| Young | |
+| Senior | |
 
 #### eExtensionPricingType
 | **Type** | **Description** |
 | ---------| --------------- | 
-|Other| |
-|PerGroupPerDay| |
-|PerPersonPerDay| |
-|PerTotal| |
-|PerPerson| |
+| Other | |
+| PerGroupPerDay | |
+| PerPersonPerDay | |
+| PerTotal | |
+| PerPerson | |
 
 #### eLocatorType 
 Indicates which type of locator is sent.
 | **Type** | **Description** |
 | ---------| --------------- | 
-|Client| locator get in our request.|
-|Provider| locator send by the supplier |
-|Ticket|locator for specific ticket |
-|Other| Other type of locator.|
+| Client | locator get in our request.|
+| Provider | locator send by the supplier |
+| Ticket | locator for specific ticket |
+| Other | Other type of locator.|
 
 
 

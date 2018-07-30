@@ -1,4 +1,4 @@
-﻿---
+---
 title: Search
 keywords: activities, data structure, search
 search: Activities - Data Structure -  Search
@@ -30,12 +30,14 @@ The response contains information of each activity that provider return.
 
 
 
-### AvailRQ Example
+### SearchRQ Example
 
 
 
 ~~~xml
-	<OTA_TourActivitySearchRQ xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" PrimaryLangID="es">
+	<OTA_TourActivitySearchRQ 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" PrimaryLangID = "es">
 		<!-- Node for Country/Region filter -->
 		<SearchCriteria>
 			<CountryCode>ES</CountryCode>
@@ -44,27 +46,30 @@ The response contains information of each activity that provider return.
 ~~~
 
 
-### AvailRQ Description
+### SearchRQ Description
 
 
 
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
-| @PrimaryLangID      			| 1   		| String	| Language code (ISO 3166-1 alpha-2) format.	|
-| SearchCriteria    			| 0..n      	|				| Adds filters to the activity search.		|
-| SearchCriteria/CountryCode		| 0..1      	| String	| Filter by ISO Country Code.           	|
-| SearchCriteria/RegionCode     	| 0..1		| String	| Filter by region Code.           	|
+|OTA_TourActivitySearchRQ 		| 1	|	|	Root node.		|
+| @PrimaryLangID      			| 1   	| String	| Language code (ISO 3166-1 alpha-2) format.	|
+| SearchCriteria    			| 0..n  |			| Adds filters to the activity search.		|
+| SearchCriteria/CountryCode	| 0..1  | String	| Filter by ISO Country Code.           	|
+| SearchCriteria/RegionCode     | 0..1  | String	| Filter by region Code.           	|
 
 
 
 
-### AvailRS Example
+### SearchRS Example
 
 
 
 ~~~xml
-    <OTA_TourActivitySearchRS xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <OTA_TourActivitySearchRS 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 		<TourActivityInfo>
 			<BasicInfo Name="PortAventura Park" TourActivityID="2840"/>
 			<CategoryAndType>
@@ -119,18 +124,19 @@ The response contains information of each activity that provider return.
 ~~~
 
 
-### AvailRS Description
+### SearchRS Description
 
 
 
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
+| OTA_TourActivitySearchRS |	1	|			|	Root node.		|
 | TourActivityInfo         		| 0..n    	|		| Information about specific ticket.		|
 | TourActivityInfo/BasicInfo		| 1..1    	|		| Basic Information of ticket.			|
 | @Name                   		| 0..1		| String	| Name of ticket.				|
 | @TourActivityID          		| 1..1		| String	| Code of ticket.				|
-| TourActivityInfo/BasicInfo/MultipleTourActivitySearch		| 0..1    	|		| In case of multiple activities, contains oll the ticket codes (not used in Search). |
+| TourActivityInfo/BasicInfo/MultipleTourActivitySearch		| 0..1    	|		| In case of multiple activities, contains all the ticket codes (not used in Search). |
 | TourActivityInfo/BasicInfo/MultipleTourActivitySearch/TourActivityID		| 1..n    	|		| Code of ticket (not used in Search). |
 | TourActivityInfo/BasicInfo/IncludedServices		| 0..n    	| Text	| Description of the services included on the activity. |
 | TourActivityInfo/Extra		| 0..n      	| 		| List of extras in the activity. |
@@ -161,7 +167,7 @@ The response contains information of each activity that provider return.
 | TourActivityInfo/Extra/Pricing/Rate/CancellationPolicies/CancellationPolicy		| 1..n      	| 		| Cancellation policy. |
 | @amount            		| 1..1		| Decimal	| Value of the penalty.			|
 | @dateFrom            		| 1..1		| DateTime	| Date from which the penalty is applied.			|
-| @penaltyType            		| 0..1		| 	| Indicates the type of penalty (Percentual / Per day / Total amount).			|
+| @penaltyType            		| 0..1		| Enum	| Indicates the type of penalty. See table ePenaltyType.			|
 | @NoRefundable            		| 1..1		| Boolean	| True if it is no refundable.			|
 | TourActivityInfo/Extra/Pricing/Summary          		| 0..1    	|		| Summary price for option, this element we return if OpenAvailability = false. |
 | @Amount                  		| 1..1		| Decimal	| Option price.					|
@@ -198,37 +204,37 @@ The response contains information of each activity that provider return.
 | @maxPax                     		| 0..1		| Integer	| Maximum number of passengers allowed for the participant category.			|
 | TourActivityInfo/Extra/Pricing/ParticipantCategory/QualifierInfo | 1..1	| String	| |
 | @Extension               		| 0..1		| String	| Specifies provider code of participant category. |
-| @Text               		| 1..1		| Enum| Specifies participant type. (See Table)|
+| @Text               		| 1..1		| Enum | Specifies participant type. (See Table)|
 | TourActivityInfo/Extra/Pricing/ParticipantCategory/Price	| 1..1      	|		| Specific price for each participantCategory.	|
 | @Amount                  		| 1  		| Decimal	| ParticipantCategory price.			|
 | @CurrencyCode            		| 0..1		| String	| Currency code (ISO 4217).			|
 | @IsBinding            		| 0..1		| Boolean	| Tells if price is binding.			|
-| @Commission            		| 0..1		| Decimal	| Commision of the price.			|
+| @Commission            		| 0..1		| Decimal	| Commission of the price.			|
 | TourActivityInfo/Extra/Pricing/ParticipantCategory/TPA_Extensions | 0..1    	|		| Necessary information that we need send between calls. |
 | TourActivityInfo/Extra/Pricing/ParticipantCategory/TPA_Extensions/Seat | 0..1 |		| Information about location of seat.		|
 | TourActivityInfo/Extra/Pricing/ParticipantCategory/TPA_Extensions/Seat/Level | 0..1 |		| Information about level/floor of seat.	|
 | @id                      		| 0..1		| String	| Provider code about location of seat.		|
 | @description             		| 0..1		| String	| Description about location of seat.		|
 | @totalSeats                      		| 0..1		| Integer	| Number of seats.		|
-| @totalSeatsForSale                      		| 0..1		| Integer	| Number of saleable seats.		|
+| @totalSeatsForSale                      		| 0..1		| Integer	| Number of salable seats.		|
 | @occupiedSeats                      		| 0..1		| Integer	| Number of occupied seats.		|
 | TourActivityInfo/Extra/Pricing/ParticipantCategory/TPA_Extensions/Seat/Area | 0..1 |   		| Area where the site is located.		|
 | @id                      		| 0..1		| String	| Provider code about location of seat.		|
 | @description             		| 0..1		| String	| Description about location of seat.		|
 | @totalSeats                      		| 0..1		| Integer	| Number of seats.		|
-| @totalSeatsForSale                      		| 0..1		| Integer	| Number of saleable seats.		|
+| @totalSeatsForSale                      		| 0..1		| Integer	| Number of salable seats.		|
 | @occupiedSeats                      		| 0..1		| Integer	| Number of occupied seats.		|
 | TourActivityInfo/Extra/Pricing/ParticipantCategory/TPA_Extensions/Seat/Zone | 0..1 |    		| Zone where the site is located.		|
 | @id                      		| 0..1		| String	| Provider code about location of seat.		|
 | @description             		| 0..1		| String	| Description about location of seat.		|
 | @totalSeats                      		| 0..1		| Integer	| Number of seats.		|
-| @totalSeatsForSale                      		| 0..1		| Integer	| Number of saleable seats.		|
+| @totalSeatsForSale                      		| 0..1		| Integer	| Number of salable seats.		|
 | @occupiedSeats                      		| 0..1		| Integer	| Number of occupied seats.		|
 | TourActivityInfo/Extra/Pricing/ParticipantCategory/TPA_Extensions/Seat/Sector | 0..1 |    	| Sector where the site is located.		|
 | @id                      		| 0..1		| String	| Provider code about location of seat.		|
 | @description             		| 0..1		| String	| Description about location of seat.		|
 | @totalSeats                      		| 0..1		| Integer	| Number of seats.		|
-| @totalSeatsForSale                      		| 0..1		| Integer	| Number of saleable seats.		|
+| @totalSeatsForSale                      		| 0..1		| Integer	| Number of salable seats.		|
 | @occupiedSeats                      		| 0..1		| Integer	| Number of occupied seats.		|
 | TourActivityInfo/Extra/Pricing/ParticipantCategory/TPA_Extensions/Seat/UrlSitting | 0..1 | String	| Specify the interface provider access where client can choose seat. |
 | TourActivityInfo/Extra/Pricing/ParticipantCategory/TPA_Extensions/Confirmation | 0..1 | 	| Contains the locator of confirmation. | 
@@ -254,7 +260,7 @@ The response contains information of each activity that provider return.
 | @description               		| 0..1		| String	| Promotion description. |
 | TourActivityInfo/Extra/Pricing/ParticipantCategory/Conditions| 0..1	| | List of conditions|
 | TourActivityInfo/Extra/Pricing/ParticipantCategory/Conditions/Condition| 1..n	| | Elements of the list |
-|@conditionType|1..1| | (see table eConditionType)|
+| @conditionType | 1..1 | | (see table eConditionType) |
 | TourActivityInfo/Extra/Pricing/Promotion/Summary | 0..n | | Promotion summary price (same as the explained on "TourActivityInfo/Extra/Pricing/Summary"). |
 | TourActivityInfo/Extra/Pricing/Promotion/ParticipantCategory | 0..1 | | Affected participantCategories. |
 | TourActivityInfo/Extra/Pricing/Promotion/ParticipantCategory/ParticipantCategory | 0..n | | Affected participantCategory (same as the explained in "TourActivityInfo/Extra/Pricing/ParticipantCategory"). |
@@ -272,7 +278,7 @@ The response contains information of each activity that provider return.
 | @Start                   		| 1..1		| Date		| Start date activity.				|
 | @End                     		| 1..1		| Date		| End date activity. 				|
 | @totalSeats                      		| 0..1		| Integer	| Number of seats.		|
-| @totalSeatsForSale                      		| 0..1		| Integer	| Number of saleable seats.		|
+| @totalSeatsForSale                      		| 0..1		| Integer	| Number of salable seats.		|
 | @occupiedSeats                      		| 0..1		| Integer	| Number of occupied seats.		|
 | TourActivityInfo/Schedule/Detail/OperationTimes/OperationTime/Duration                     		| 0..1		| 	| Duration of the activity.		|
 | @value                      		| 0..1		| Integer	| Value of the duration.		|
@@ -327,7 +333,7 @@ The response contains information of each activity that provider return.
 | @Amount		| 1..1		| Decimal	| Price amount.			|
 | @currencyCode		| 1..1		| String	| Currency ISO code.			|
 | @IsBinding		| 0..1		| Boolean	| True if it is a binding price.			|
-| @Commission		| 0..1		| Decimal	| Commision applied to the price.			|
+| @Commission		| 0..1		| Decimal	| Commission applied to the price.			|
 | @referencePriceAmount		| 0..1		| Decimal	| Quantity of passengers of this type.			|
 | TourActivityInfo/Description              		| 1..1    	|		| Images and descriptions of the activity.	|
 | TourActivityInfo/Description/ShortDescription		| 1..1		| String	| Short description of the activity.		|
@@ -361,13 +367,13 @@ The response contains information of each activity that provider return.
 | @isNominative            		| 0..1		| Boolean	| True if it is a nominative rate.			|
 | @hiddenRate            		| 0..1		| Boolean	| True if it is a hidden/opaque rate.			|
 | @release            		| 0..1		| Integer	| 		|
-| @dateFrom            		| 0..1		| Date	| Indicates the beggining of the Activity Rate.			|
+| @dateFrom            		| 0..1		| Date	| Indicates the beginning of the Activity Rate.			|
 | @dateTo            		| 0..1		| Date	| Indicates the ending of the Activity Rate.			|
 | TourActivityInfo/ActivityRates/ActivityRate/CancellationPolicies		| 0..1      	| 		| List of rate's cancellation policies. |
 | TourActivityInfo/ActivityRates/ActivityRate/CancellationPolicies/CancellationPolicy		| 1..n      	| 		| Cancellation policy. |
-|@amount		| 0..1   	|String 		| Amount to pay to cancellation. |
-|@noRefundable		| 1..1   	|Boolean| (see table noRefundable) |
-|@penaltyType		| 1..1   	|Enum| (see table ePenaltyType) |
+| @amount		| 0..1   	|String 		| Amount to pay to cancellation. |
+| @noRefundable		| 1..1   	|Boolean | (see table noRefundable) |
+| @penaltyType		| 1..1   	|Enum | (see table ePenaltyType) |
 | TourActivityInfo/ActivityRates/ActivityRate/RateParticipants		| 0..1      	| 		| Price per passenger category. |
 | @minPax            		| 0..1		| Date	| Rate minimum passenger number.			|
 | @maxPax            		| 0..1		| Date	| Rate maximum passenger number.			|
@@ -378,51 +384,51 @@ The response contains information of each activity that provider return.
 
 #### eExtensionPricingType 
 | **Type** | **Description** |
-| ---------| --------------- | 
-|Other| |
-|PerGroupPerDay| Amount per group day|
-|PerPersonPerDay| Amount per person day|
-|PerTotal|  Total amount|
-|PerPerson| Amount per person |
+| --------- | --------------- | 
+| Other | |
+| PerGroupPerDay | Amount per group day|
+| PerPersonPerDay | Amount per person day|
+| PerTotal |  Total amount|
+| PerPerson | Amount per person |
 
 #### ePricingType 
 | **Type** | **Description** |
 | ---------| --------------- | 
-|Other| |
-|PerGroup| Amount per group|
-|PerPerson| Amount per person|
+| Other | |
+| PerGroup | Amount per group|
+| PerPerson | Amount per person|
 
 #### eQualifierType 
 | **Type** | **Description** |
-| ---------| --------------- | 
-|Adult| |
-|Children| |
-|Infant||
-|Other| Is mandatory specify Extension provider type.|
-|Young| |
-|Senior| |
+| --------- | --------------- | 
+| Adult | |
+| Children | |
+| Infant | |
+| Other | Is mandatory specify Extension provider type. |
+| Young | |
+| Senior | |
 
 #### eTaxId 
 | **Type** | **Description** |
-| ---------| --------------- | 
-|V| |
-|G| |
-|O| |
+| --------- | --------------- | 
+| V | |
+| G | |
+| O | |
 
 #### ePenaltyType 
 | **Type** | **Description** |
-| ---------| --------------- | 
-|PERCENTUAL| Amount is % 
-|PER_DAY|Total Amount is per day |
-|TOTAL_AMOUNT| Amount is the total to pay|
+| --------- | --------------- | 
+| PERCENTUAL | Amount is % |
+| PER_DAY | Total Amount is per day |
+| TOTAL_AMOUNT | Amount is the total to pay|
 
 #### eConditionType
 | **Type** | **Description** |
-| ---------| --------------- | 
-|Generic| |
-|Disabled| |
-|Student| |
-|Resident| |
-|LargeFamility| |
-|Retired| |
+| --------- | --------------- | 
+| Generic | |
+| Disabled | |
+| Student | |
+| Resident | |
+| LargeFamility | |
+| Retired | |
 

@@ -1,4 +1,4 @@
-﻿
+
 ---
 title: Valuation
 keywords: activities, data structure, valuation
@@ -80,6 +80,7 @@ permalink: /docs/activities/DSF/valuation
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
+| OTA_TourActivityBookRQ 		| 1 		|  			| Root node.|
 | @PrimaryLangID      			| 1  		| String	| Language code (ISO 3166-1 alpha-2) format.	|
 | BookingInfo         			| 0..1     	|		| Information about specific ticket. 		|
 | BookingInfo/BasicInfo			| 1     	|		| If need search by activity provider code.	|
@@ -92,43 +93,43 @@ permalink: /docs/activities/DSF/valuation
 | BookingInfo/Schedule/Detail	| 1..n    	|		| Information when activity starts and attributes that we need to send between calls. |
 | @id                     		| 1  		| String| Detail id.	|
 | BookingInfo/Schedule/Detail/OperationTimes | 0..1 |		| Information when activity starts.		|
-| BookingInfo/Schedule/Detail/OperationTimes/OperationTime | 0..1 || Information when activity starts and infromation about the seats number.		|
+| BookingInfo/Schedule/Detail/OperationTimes/OperationTime | 0..1 || Information when activity starts and information about the seats number.		|
 | BookingInfo/Schedule/Detail/OperationTimes/OperationTime/Start| 0..1		| Date		| Start date activity.|
 | BookingInfo/Schedule/Detail/OperationTimes/OperationTime/End| 0..1		| Date		| End date activity.|
 | @occupiedSeats| 0..1  		| Integer| 		|
 | @totalSeats| 0..1  		| Integer| 		|
 | @totalSeatsForSale| 0..1  		| Integer| 		|
 | BookingInfo/Schedule/Detail/TPA_Extensions | 0..1 |		| Necessary information that we need to send between calls. |
-|BookingInfo/Location | 1      	|		| Information of the location.		|
-|BookingInfo/Location/Region          		| 1      	|		| Describes regional information.		|
+| BookingInfo/Location | 1      	|		| Information of the location.		|
+| BookingInfo/Location/Region          		| 1      	|		| Describes regional information.		|
 | @RegionCode              		| 1  		| String	| Specifies a region code.			|
 | @RegionName              		| 1  		| String	| Specifies the region name.			|
-|BookingInfo/Location/Address         		| 0..1    	|		| Identifies the physical address of the tour departure and/or activity location. |
-|BookingInfo/Location/Address/AddressLine		| 0..1		| String	| These lines will contain free form address details.|
-|BookingInfo/Location/Address/CityName| 0..1		| String	| Contains the city name.|
-|BookingInfo/Location/Address/countryCode| 0..1		| String	| Contains the supplier country code.|
-|BookingInfo/Location/Address/countryISO| 0..1		| String	| Contains the country code in format ISO ISO 3166-1 alpha-2 |
-|BookingInfo/Location/Address/CityName| 0..1		| String	| Contains the city name.|
-|BookingInfo/Location/Address/CityName| 0..1		| String	| Contains the city name.|
-|BookingInfo/Location/Address/PostalCode		| 0..1		| String	| Post Office Code number.			|
-|BookingInfo/Location/Address/County  		| 0..1		| String	| County name.	|		
-|BookingInfo/Location/Address/StateProv| 0..1		| String	| Province/stat|
-|BookingInfo/Location/Position| 0..1		| | Position of location. 	|
-| @Latitude| 1  		| String	| 			|
-| @Longitude| 1  		| String	| 			|
-|BookingInfo/Location/PositionArea| 0..1 |  | Information of pickup area.|
-|BookingInfo/Location/PositionArea/position| 1..n |  | list of position|
+| BookingInfo/Location/Address         		| 0..1    	|		| Identifies the physical address of the tour departure and/or activity location. |
+| BookingInfo/Location/Address/AddressLine		| 0..1		| String	| These lines will contain free form address details.|
+| BookingInfo/Location/Address/CityName | 0..1		| String	| Contains the city name.|
+| BookingInfo/Location/Address/countryCode | 0..1		| String	| Contains the supplier country code.|
+| BookingInfo/Location/Address/countryISO | 0..1		| String	| Contains the country code in format ISO ISO 3166-1 alpha-2 |
+| BookingInfo/Location/Address/CityName | 0..1		| String	| Contains the city name.|
+| BookingInfo/Location/Address/CityName | 0..1		| String	| Contains the city name.|
+| BookingInfo/Location/Address/PostalCode		| 0..1		| String	| Post Office Code number.			|
+| BookingInfo/Location/Address/County  		| 0..1		| String	| County name.	|		
+| BookingInfo/Location/Address/StateProv | 0..1		| String	| Province/stat|
+| BookingInfo/Location/Position | 0..1		|  | Position of location. 	|
+| @Latitude | 1  		| String	| 			|
+| @Longitude | 1  		| String	| 			|
+| BookingInfo/Location/PositionArea| 0..1 |  | Information of pickup area.|
+| BookingInfo/Location/PositionArea/position| 1..n |  | list of position|
 | @latitude| 1   		| String| Latitude position.	|
 | @longitude| 1   		| String|  Longitude position. |
-|BookingInfo/Location/Region | 1      	|		| Describes regional information.		|
+| BookingInfo/Location/Region | 1      	|		| Describes regional information.		|
 | @RegionCode              		| 1  		| String	| Specifies a region code.			|
 | @RegionName              		| 1  		| String	| Specifies the region name.			|
-|BookingInfo/ParticipantCount    			| 0..n      	|		| Information about participant type, specifying age for each participant. |
+| BookingInfo/ParticipantCount    			| 0..n      	|		| Information about participant type, specifying age for each participant. |
 | @id                			| 0..1 		| Integer	| Age of participant.				|
 | @Age                			| 1   		| Integer	| Age of participant.				|
 | @Quantity           			| 1   		| Integer	| Number of participant with same age.		|
-| @Condition           			| 1   		| Enum| See table of eConditionType		|
-|BookingInfo/ActivityRates/ActivityRate/| 1..n    	|		| 	Information of the  rate selected|
+| @Condition           			| 1   		| Enum | See table of eConditionType		|
+| BookingInfo/ActivityRates/ActivityRate/| 1..n    	|		| 	Information of the  rate selected|
 | @hiddenRate| 1  		| Boolean| 	|
 | @isNominative| 1  		| Boolean| 	|
 | @name| 1  		| Boolean| Rate name.	|
@@ -137,53 +138,53 @@ permalink: /docs/activities/DSF/valuation
 | @dateTo| 0..1  		| Date|Date to which the rate is available. |
 | @RateCode| 1  		| String| Id to identify the rate of an activity. |
 | @release| 0..1  		| Integer| Not in use.  |
-|BookingInfo/ActivityRates/ActivityRate/CancellationPolicies| 0..1 |		| 	List of cancellation policies information.|
-|BookingInfo/ActivityRates/ActivityRate/CancellationPolicies/CancellationPolicies| 1..n |		| Infromation of a cancellation policies.	|
+| BookingInfo/ActivityRates/ActivityRate/CancellationPolicies| 0..1 |		| 	List of cancellation policies information.|
+| BookingInfo/ActivityRates/ActivityRate/CancellationPolicies/CancellationPolicies| 1..n |		| Information of a cancellation policies.	|
 | @Amount| 1  		| String| Amount to pay for cancellation.|
 | @NoRefundable| 1  		| Boolean| True if the reservation is not refundable.|
 | @DateFrom| 1  		| Date| Date from which the cancellation policy applies.|
 | @PenaltyType| 1  		| Enum| See table of ePenaltyType.	|
-|BookingInfo/ActivityRates/ActivityRate/BasicRateInfo| 1 	|		| 	Basic information of the rate.|
-|BookingInfo/ActivityRates/ActivityRate/BasicRateInfo/Description| 1 	|		| Description of the rate.|
-| @longDescription| 1  		| String | The long decription of the rate.	|
-| @shortDescription| 1  		| String | The short decription of the rate.	|
-|BookingInfo/ActivityRates/ActivityRate/BasicRateInfo/Description/multimedia| 0..1 |		| Contains multimedia data. |
-|BookingInfo/ActivityRates/ActivityRate/BasicRateInfo/Description/multimedia/MultimediaDescription| 0..1 |		| Contains multimedia data. |
-|BookingInfo/ActivityRates/ActivityRate/BasicRateInfo/Description/multimedia/MultimediaDescription/ImageItems| 0..1 |		| Array of images. |
-|BookingInfo/ActivityRates/ActivityRate/BasicRateInfo/Description/multimedia/MultimediaDescription/ImageItems/ImageItem| 1..n |		| List of URL to images.|
-|BookingInfo/ActivityRates/ActivityRate/BasicRateInfo/Description/multimedia/MultimediaDescription/ImageItems/ImageItem/ImageFormat| 1..n |		| |
+| BookingInfo/ActivityRates/ActivityRate/BasicRateInfo| 1 	|		| 	Basic information of the rate.|
+| BookingInfo/ActivityRates/ActivityRate/BasicRateInfo/Description| 1 	|		| Description of the rate.|
+| @longDescription| 1  		| String | The long description of the rate.	|
+| @shortDescription| 1  		| String | The short description of the rate.	|
+| BookingInfo/ActivityRates/ActivityRate/BasicRateInfo/Description/multimedia| 0..1 |		| Contains multimedia data. |
+| BookingInfo/ActivityRates/ActivityRate/BasicRateInfo/Description/multimedia/MultimediaDescription| 0..1 |		| Contains multimedia data. |
+| BookingInfo/ActivityRates/ActivityRate/BasicRateInfo/Description/multimedia/MultimediaDescription/ImageItems| 0..1 |		| Array of images. |
+| BookingInfo/ActivityRates/ActivityRate/BasicRateInfo/Description/multimedia/MultimediaDescription/ImageItems/ImageItem| 1..n |		| List of URL to images.|
+| BookingInfo/ActivityRates/ActivityRate/BasicRateInfo/Description/multimedia/MultimediaDescription/ImageItems/ImageItem/ImageFormat| 1..n |		| |
 | @URL| 1  | String | url to get an image.	|
-|BookingInfo/ActivityRates/ActivityRate/RateParticipants| 1 	|		| 	List of participants.|
-| @maxAge| 0..1  | Integer | Maximum age permited by supplier.	|
-| @minAge| 0..1  | Integer | Minimum age permited by supplier.	|
-|BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory| 0..n 	|		| 	Participant information.|
-| @minAge| 0..1  | Integer | Minimum age permited for this paxType.	|
-| @maxAge| 0..1  | Integer | Maximum age permited for this paxType.	|
+| BookingInfo/ActivityRates/ActivityRate/RateParticipants| 1 	|		| 	List of participants.|
+| @maxAge| 0..1  | Integer | Maximum age permitted by supplier.	|
+| @minAge| 0..1  | Integer | Minimum age permitted by supplier.	|
+| BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory| 0..n 	|		| 	Participant information.|
+| @minAge| 0..1  | Integer | Minimum age permitted for this paxType.	|
+| @maxAge| 0..1  | Integer | Maximum age permitted for this paxType.	|
 | @age| 0..1  | Integer | Age of participant.	|
-| @id| 1  | Integer | To identify the partipicpanttype of this rate.	|
+| @id| 1  | Integer | To identify the participanttype of this rate.	|
 | @isTTOO| 0..1  | Boolean| If true the rate is for TourOperator.	|
-|BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/QualifierInfo| 1 	|		| Indicate the type of participant.|
+| BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/QualifierInfo| 1 	|		| Indicate the type of participant.|
 | @age| 0..1  | String| Has to be informed if text=other	|
 | @text| 1  | Enum| See table of eQualifierInfo	|
-|BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/Conditions| 0..1 	|		| List of special conditions of pax to this rate.|
-|BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/Conditions/Conditions| 0..1n	|		| Conditions type.|
+| BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/Conditions| 0..1 	|		| List of special conditions of pax to this rate.|
+| BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/Conditions/Conditions| 0..1n	|		| Conditions type.|
 | @type| 1  | Enum| See table of eConditionType	|
-|BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/Price| 0..1 	|		| Information abput the price of this participant type.|
+| BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/Price| 0..1 	|		| Information about the price of this participant type.|
 | @Amount| 1  | Decimal| Amount of the participant type for this rate.	|
-| @Commission| 1  | Decimal| Commission aplicate to the amount. Format Percentual(%)	|
+| @Commission| 1  | Decimal| Commission applied to the amount. Format Percentage(%)	|
 | @CurrencyCode| 1  | String| Indicated the currency code of the Amount, Format ISO-4217	|
 | @IsBinding| 0..1  | Boolean| If true the rate has to be sold with the amount indicated.|
 | @referencePriceAmount| 0..1  | Decimal| A supplier can send the price which should be sold to be competitive. |
-|BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/TPA_Extensions| 0..1 	|		|Aditional information need between calls. |
+| BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/TPA_Extensions| 0..1 	|		|Additional information need between calls. |
 | BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/TPA_Extensions/Attributes | 0..1 |	| Attributes that we need to send between calls.	|
 | BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/TPA_Extensions/Attributes/Attribute | 0..n || Attributes that we need to send between calls.|
 | @key| 1  		| string| 		|
 | @value| 1  		| string| 		|
-| BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/TPA_Extensions/Confirmation| 0..n || locator confirmation. Not used in Availability.|
+| BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/TPA_Extensions/Confirmation | 0..n |  | Locator confirmation. Not used in Availability.|
 | @id| 1  		| string| 		|
 | @type| 1  		| Enum| 	See table of eLocatorType.	|
-| BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/TPA_Extensions/DynamicToken | 0..1 || |
-| BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/TPA_Extensions/Issue| 0..1 || Information about ticket.|
+| BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/TPA_Extensions/DynamicToken | 0..1 |  | |
+| BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/TPA_Extensions/Issue| 0..1 |  | Information about ticket.|
 | @Mandatory| 1  		| Boolean| |
 | BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/TPA_Extensions/Issue/Tickets| 0..1 || List of tickets id.|
 | BookingInfo/ActivityRates/ActivityRate/RateParticipants/ParticipantCategory/TPA_Extensions/Issue/Tickets/ticket| 1..n || ticket information.|
@@ -215,33 +216,33 @@ permalink: /docs/activities/DSF/valuation
 | @occupiedSeats| 0..1  		| Integer| 		|
 | @totalSeats| 0..1  		| Integer| 		|
 | @totalSeatsForSale| 0..1  		| Integer| 		|
-|BookingInfo/ActivityRates/ActivityRate/Summary| 1 	|		| 	Summary of this rate.|
+| BookingInfo/ActivityRates/ActivityRate/Summary| 1 	|		| 	Summary of this rate.|
 | @Amount| 1  | Decimal| Total Amount of this rate.	|
-| @Commission| 1  | Decimal| Commission aplicate to the amount. Format Percentual(%)	|
+| @Commission| 1  | Decimal| Commission applied to the amount. Format Percentage(%)	|
 | @CurrencyCode| 1  | String| Indicated the currency code of the Amount, Format ISO-4217	|
 | @IsBinding| 0..1  | Boolean| If true the rate has to be sold with the amount indicated.|
 | @referencePriceAmount| 0..1  | Decimal| A supplier can send the price which should be sold to be competitive. |
 | @isTTOO| 0..1  | Boolean| If true the rate is for TourOperator.	|
-|BookingInfo/ActivityRates/ActivityRate/Summary/PricingType| 1 |	| 	Indicates the pricing type.|
-| @text| 1  | Enum| See table of ePricingType.	|
-| @Extension| 1  | Enum| used if text is Other. See table eExtensionPricingType.	|
-|BookingInfo/ActivityRates/ActivityRate/Summary/TaxAmounts| 0..1 |	| Taxes included in Amount.|
-|BookingInfo/ActivityRates/ActivityRate/Summary/TaxAmounts/TaxAmount| 1 |	| Tax information.|
+| BookingInfo/ActivityRates/ActivityRate/Summary/PricingType| 1 |	| 	Indicates the pricing type.|
+| @text| 1  | Enum | See table of ePricingType.	|
+| @Extension| 1  | Enum | used if text is Other. See table eExtensionPricingType.	|
+| BookingInfo/ActivityRates/ActivityRate/Summary/TaxAmounts| 0..1 |	| Taxes included in Amount.|
+| BookingInfo/ActivityRates/ActivityRate/Summary/TaxAmounts/TaxAmount| 1 |	| Tax information.|
 | @Description| 0..1  | String| Description tax	|
 | @Percentage| 0..1  | String| Percentage from the amount.	|
 | @Total| 0..1  | String| Amount tax.	|
-|BookingInfo/ActivityRates/ActivityRate/Summary/ValidCountries| 0..1 |	| List of valid countries for this rate.|
-|BookingInfo/ActivityRates/ActivityRate/Summary/ValidCountries/ValidCountry| 1..n |	| Information of the country. |
-| @Name| 1  | String| AName of the country.ount tax.	|
+| BookingInfo/ActivityRates/ActivityRate/Summary/ValidCountries| 0..1 |	| List of valid countries for this rate.|
+| BookingInfo/ActivityRates/ActivityRate/Summary/ValidCountries/ValidCountry| 1..n |	| Information of the country. |
+| @Name| 1  | String| The Name of the country.	|
 | @Code| 1  | String| Country code in format **3166-1 alpha-2**	|
-|BookingInfo/Option| 1 |	| Information of an option.|
+| BookingInfo/Option| 1 |	| Information of an option.|
 | @refActivityRate| 1  | String| reference of the rate (rate Code)|
 | @refDetail| 1  | String| reference of the dates (Detail id)	|
 | @refLocation| 1  | String|reference of a location (location id) 	|
-|BookingInfo/Options/Option/Promotions| 1 |	| List of included in rate.|
-|BookingInfo/Options/Option/Promotions/Promotion| 1 |	| |
-| @code| 1  | String|modality code of supplier.|
-|BookingInfo/Options/Option/Promotions/Promotion/Description| 1 |String	| Short description|
+| BookingInfo/Options/Option/Promotions| 1 |	| List of included in rate.|
+| BookingInfo/Options/Option/Promotions/Promotion | 1 |	 |  |
+| @code| 1  | String|modality code of supplier. |
+| BookingInfo/Options/Option/Promotions/Promotion/Description |  1  |String	| Short description|
 
 
 
@@ -368,6 +369,7 @@ Temporada baja a las 22.00 horas; temporada alta a las 24.00 horas.&lt;br /&gt;&
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------- |
+| OTA_TourActivityBookRS 	| 1 		| 			| Root node. |
 | ReservationDetails/BasicInfo			| 1     	|		| Basic information of activity.	|
 | @Name               			| 0..1		| String	| Name of ticket.				|
 | @TourActivityID     			| 0..1		| String	| Code of ticket, mandatory if need search by activity provider code. |
@@ -387,28 +389,28 @@ Temporada baja a las 22.00 horas; temporada alta a las 24.00 horas.&lt;br /&gt;&
 | ReservationDetails/Pricing/ParticipantCategory/TPA_Extensions/DynamicToken | 0..1 | String | Inform about the participant types to valuate (if more than one type, the participant Types must be separated by ";"). |
 | ReservationDetails/Pricing/ParticipantCategory/TPA_Extensions/Issue | 0..1 |   		| Contains information about ticket printing. 	|
 | @Mandatory          			| 0..1		| Boolean	| Specifies if the ticket should be printed by the client. |
-|ReservationDetails/Location | 1      	|		| Information of the location.		|
-|ReservationDetails/Location/Region          		| 1      	|		| Describes regional information.		|
+| ReservationDetails/Location | 1      	|		| Information of the location.		|
+| ReservationDetails/Location/Region          		| 1      	|		| Describes regional information.		|
 | @RegionCode              		| 1  		| String	| Specifies a region code.			|
 | @RegionName              		| 1  		| String	| Specifies the region name.			|
-|ReservationDetails/Location/Address         		| 0..1    	|		| Identifies the physical address of the tour departure and/or activity location. |
-|ReservationDetails/Location/Address/AddressLine		| 0..1		| String	| These lines will contain free form address details.|
-|ReservationDetails/Location/Address/CityName| 0..1		| String	| Contains the city name.|
-|ReservationDetails/Location/Address/countryCode| 0..1		| String	| Contains the supplier country code.|
-|ReservationDetails/Location/Address/countryISO| 0..1		| String	| Contains the country code in format ISO ISO 3166-1 alpha-2 |
-|ReservationDetails/Location/Address/CityName| 0..1		| String	| Contains the city name.|
-|ReservationDetails/Location/Address/CityName| 0..1		| String	| Contains the city name.|
-|ReservationDetails/Location/Address/PostalCode		| 0..1		| String	| Post Office Code number.			|
-|ReservationDetails/Location/Address/County  		| 0..1		| String	| County name.	|		
-|ReservationDetails/Location/Address/StateProv| 0..1		| String	| Province/stat|
-|ReservationDetails/Location/Position| 0..1		| | Position of location. 	|
+| ReservationDetails/Location/Address         		| 0..1    	|		| Identifies the physical address of the tour departure and/or activity location. |
+| ReservationDetails/Location/Address/AddressLine		| 0..1		| String	| These lines will contain free form address details.|
+| ReservationDetails/Location/Address/CityName| 0..1		| String	| Contains the city name.|
+| ReservationDetails/Location/Address/countryCode| 0..1		| String	| Contains the supplier country code.|
+| ReservationDetails/Location/Address/countryISO| 0..1		| String	| Contains the country code in format ISO ISO 3166-1 alpha-2 |
+| ReservationDetails/Location/Address/CityName| 0..1		| String	| Contains the city name.|
+| ReservationDetails/Location/Address/CityName| 0..1		| String	| Contains the city name.|
+| ReservationDetails/Location/Address/PostalCode		| 0..1		| String	| Post Office Code number.			|
+| ReservationDetails/Location/Address/County  		| 0..1		| String	| County name.	|		
+| ReservationDetails/Location/Address/StateProv| 0..1		| String	| Province/stat|
+| ReservationDetails/Location/Position| 0..1		| | Position of location. 	|
 | @Latitude| 1  		| String	| 			|
 | @Longitude| 1  		| String	| 			|
-|ReservationDetails/Location/PositionArea| 0..1 |  | Information of pickup area.|
-|ReservationDetails/Location/PositionArea/position| 1..n |  | list of position|
-| @latitude| 1   		| String| Latitude position.	|
-| @longitude| 1   		| String|  Longitude position. |
-|ReservationDetails/Location/Region | 1      	|		| Describes regional information.		|
+| ReservationDetails/Location/PositionArea| 0..1 |  | Information of pickup area.|
+| ReservationDetails/Location/PositionArea/position| 1..n |  | list of position|
+| @latitude| 1   		| String | Latitude position.	|
+| @longitude| 1   		| String |  Longitude position. |
+| ReservationDetails/Location/Region | 1      	|		| Describes regional information.		|
 | ReservationDetails/Schedule		| 1      	|		| Information about dates range on which you can enjoy the activity. |
 | ReservationDetails/Schedule/Summary	| 1      	|		| Information dates range that you apply availability. |
 | @Start                   		| 1  		| Date		| Start date that you apply availability. 	|
@@ -416,17 +418,17 @@ Temporada baja a las 22.00 horas; temporada alta a las 24.00 horas.&lt;br /&gt;&
 | ReservationDetails/Schedule/Detail	| 1..n    	|		| Information when activity starts and attributes that we need to send between calls. |
 | @id                     		| 1  		| String| Detail id.	|
 | ReservationDetails/Schedule/Detail/OperationTimes | 0..1 |		| Information when activity starts.		|
-| ReservationDetails/Schedule/Detail/OperationTimes/OperationTime | 0..1 || Information when activity starts and infromation about the seats number.		|
-| ReservationDetails/Schedule/Detail/OperationTimes/OperationTime/Start| 0..1		| Date		| Start date activity.|
-| ReservationDetails/Schedule/Detail/OperationTimes/OperationTime/End| 0..1		| Date		| End date activity.|
+| ReservationDetails/Schedule/Detail/OperationTimes/OperationTime | 0..1 |  | Information when activity starts and information about the seats number.		|
+| ReservationDetails/Schedule/Detail/OperationTimes/OperationTime/Start | 0..1		| Date		| Start date activity.|
+| ReservationDetails/Schedule/Detail/OperationTimes/OperationTime/End | 0..1		| Date		| End date activity.|
 | @occupiedSeats| 0..1  		| Integer| 		|
-| @totalSeats| 0..1  		| Integer| 		|
+| @totalSeats| 0..1  		| Integer | 		|
 | @totalSeatsForSale| 0..1  		| Integer| 		|
 | ReservationDetails/Schedule/Detail/TPA_Extensions | 0..1 |		| Necessary information that we need to send between calls. |
-|TourActivityInfo/SupplierOperator| 0..n | Date |List the suppliers that operates the activity. |
-|TourActivityInfo/SupplierOperator/Name| 1 | Date |Basic information of supplier. |
+| TourActivityInfo/SupplierOperator | 0..n | Date |List the suppliers that operates the activity. |
+| TourActivityInfo/SupplierOperator/Name | 1 | Date |Basic information of supplier. |
 | @Code| 1   		| String|  Supplier code. |
-| @CodeContext| 1   		| Enum|  See table of eSupplierOperatorCodeContext. |
+| @CodeContext| 1   		| Enum |  See table of eSupplierOperatorCodeContext. |
 | @CompanyShortName| 1   		| String|  Supplier name. |
 
 ### Types tables
@@ -434,60 +436,60 @@ Temporada baja a las 22.00 horas; temporada alta a las 24.00 horas.&lt;br /&gt;&
 #### eConditionType 
 Indicates the condition that the person must meet.
 | **Type** | **Description** |
-| ---------| --------------- | 
-|Generic| |
-|Disabled| |
-|Student| |
-|Resident|  |
-|LargeFamily|  |
-|Retired| |
+| --------- | --------------- | 
+| Generic | |
+| Disabled | |
+| Student | |
+| Resident |  |
+| LargeFamily |  |
+| Retired | |
 
 #### eSupplierOperatorCodeContext
 Indicates the type of supplier code.
 | **Type** | **Description** |
-| ---------| --------------- | 
-|Internal|Our supplier code.|
-|External| Code returned by supplier.|
+| --------- | --------------- | 
+| Internal | Our supplier code.|
+| External | Code returned by supplier. |
 
 #### eExtensionClassType
 | **Type** | **Description** |
-| ---------| --------------- | 
-|Cultural||
-|EcoAdventure| |
-|Educational| |
-|FamilyFun| |
-|FoodBeverage| |
-|Free| |
-|Other_| |
-|Romantic| |
-|SportsRecreation| |
-|WheelchairAccess| |
+| --------- | --------------- | 
+| Cultural | |
+| EcoAdventure | |
+| Educational | |
+| FamilyFun | |
+| FoodBeverage | |
+| Free | |
+| Other_ | |
+| Romantic | |
+| SportsRecreation | |
+| WheelchairAccess | |
 
 #### ePenaltyType 
 Indicates the type of a policy penalty.
 | **Type** | **Description** |
-| ---------| --------------- | 
-|PERCENTUAL| Indicates from the total Amount of the reservation.|
-|PER_DAY|Not used. |
-|TOTAL_AMONT| Amount to pay.|
+| --------- | --------------- | 
+| PERCENTUAL | Indicates from the total Amount of the reservation. |
+| PER_DAY |Not used. |
+| TOTAL_AMONT | Amount to pay.|
 
 #### eQualifierInfo 
-Indicates the type of a Participant. The range of what is considered an adult, chilren,infant, etc is particular to each supplier.
+Indicates the type of a Participant. The range of what is considered an adult, children, infant, etc is particular to each supplier.
 | **Type** | **Description** |
-| ---------| --------------- | 
-|Adult| |
-|Children| |
-|Infant| |
-|Other| |
-|Young| |
-|Senior| |
+| --------- | --------------- | 
+| Adult | |
+| Children | |
+| Infant | |
+| Other | |
+| Young | |
+| Senior | |
 
 #### eExtensionPricingType
 | **Type** | **Description** |
-| ---------| --------------- | 
-|Other| |
-|PerGroupPerDay| |
-|PerPersonPerDay| |
-|PerTotal| |
-|PerPerson| |
+| --------- | --------------- | 
+| Other | |
+| PerGroupPerDay | |
+| PerPersonPerDay | |
+| PerTotal | |
+| PerPerson | |
 

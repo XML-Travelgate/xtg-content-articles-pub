@@ -11,7 +11,7 @@ permalink: /docs/activities/DSF/runtimeconfiguration
 ### Method Goals
 
 
-This method returns a list of "atributos" that should be included in
+This method returns a list of Attributes that should be included in
 each request for the selected provider.
 
 
@@ -26,7 +26,7 @@ The request only requires the provider code.
 ### Response Format
 
 
-The response contains a list of "atributo".
+The response contains a list of Attribute.
 
 
 
