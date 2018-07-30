@@ -38,5 +38,5 @@ For any questions or comments please send us an email to:
 -   <hotel@xmltravelgate.com>
 -   <transfers@xmltravelgate.com>
 -   <car@xmltravelgate.com>
--   <actividades@xmltravelgate.com>
+-   <activities@xmltravelgate.com>
 -   <transportation@xmltravelgate.com>
