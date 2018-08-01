@@ -1,4 +1,3 @@
-
 ---
 title: Valuation
 keywords: activities, data structure, valuation
@@ -376,7 +375,7 @@ Temporada baja a las 22.00 horas; temporada alta a las 24.00 horas.&lt;br /&gt;&
 | ReservationDetails/ReservationDetails/CategoryAndType		| 0..1    	|		| Category of Ticket.				|
 | ReservationDetails/ReservationDetails/CategoryAndType/Category 	| 0..1    	|		| Category of Ticket.				|
 | @Code               			| 0..1		| String	| A category code from a predefined list, if Extension = "Other" then will be provider code. |
-| @Extension          			| 0..1		| String	1 Enter a category here if you have selected "Other" from the pre-defined list. |
+| @Extension          			| 0..1		| String	| Enter a category here if you have selected "Other" from the pre-defined list. |
 | ReservationDetails/PickupDropoff	| 0..1    	|		| The pickup and/or dropoff information if transportation is provided to/ from the tour/activity location. |
 | @OtherInfo          			| 0..1		| String	| Other instructions pertaining to the pickup/dropoff. |
 | ParticipantCategory 			| 0..n    	|		| Information about participant type, specifying age for each participant. |
@@ -434,7 +433,9 @@ Temporada baja a las 22.00 horas; temporada alta a las 24.00 horas.&lt;br /&gt;&
 ### Types tables
 
 #### eConditionType 
+
 Indicates the condition that the person must meet.
+
 | **Type** | **Description** |
 | --------- | --------------- | 
 | Generic | |
@@ -445,7 +446,9 @@ Indicates the condition that the person must meet.
 | Retired | |
 
 #### eSupplierOperatorCodeContext
+
 Indicates the type of supplier code.
+
 | **Type** | **Description** |
 | --------- | --------------- | 
 | Internal | Our supplier code.|
@@ -466,7 +469,9 @@ Indicates the type of supplier code.
 | WheelchairAccess | |
 
 #### ePenaltyType 
+
 Indicates the type of a policy penalty.
+
 | **Type** | **Description** |
 | --------- | --------------- | 
 | PERCENTUAL | Indicates from the total Amount of the reservation. |
@@ -474,7 +479,9 @@ Indicates the type of a policy penalty.
 | TOTAL_AMONT | Amount to pay.|
 
 #### eQualifierInfo 
+
 Indicates the type of a Participant. The range of what is considered an adult, children, infant, etc is particular to each supplier.
+
 | **Type** | **Description** |
 | --------- | --------------- | 
 | Adult | |

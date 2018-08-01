@@ -1,4 +1,3 @@
-
 ---
 title: Avail
 keywords: activities, data structure, avail
@@ -463,7 +462,9 @@ StaticConfiguration call).
 ### Types tables
 
 #### eConditionType 
+
 Indicates the condition that the person must meet.
+
 | **Type** 	| **Description** |
 | --------- | --------------- | 
 | Generic | |
@@ -474,7 +475,9 @@ Indicates the condition that the person must meet.
 | Retired | |
 
 #### eSupplierOperatorCodeContext
+
 Indicates the type of supplier code.
+
 | **Type** | **Description** |
 | ---------| --------------- | 
 | Internal | Our supplier code. |
@@ -482,6 +485,7 @@ Indicates the type of supplier code.
 
 #### eLocatorType 
 Indicates which type of locator is sent.
+
 | **Type** | **Description** |
 | ---------| --------------- | 
 | Client | locator get in our request. |
@@ -504,7 +508,9 @@ Indicates which type of locator is sent.
 | WheelchairAccess | |
 
 #### ePenaltyType 
+
 Indicates the type of a policy penalty.
+
 | **Type** | **Description** |
 | ---------| --------------- | 
 | PERCENTUAL | Indicates from the total Amount of the reservation. |
@@ -512,7 +518,9 @@ Indicates the type of a policy penalty.
 | TOTAL_AMONT | Amount to pay. |
 
 #### eQualifierInfo 
+
 Indicates the type of a Participant. The range of what is considered an adult, children, infant, etc is particular to each supplier.
+
 | **Type** | **Description** |
 | ---------| --------------- | 
 | Adult | |

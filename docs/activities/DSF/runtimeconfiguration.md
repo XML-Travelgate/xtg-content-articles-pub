@@ -1,4 +1,4 @@
-﻿---
+---
 title: Run Time Configuration
 keywords: activities, data structure, run time configuration
 search: Activities - Data Structure - Run Time Configuration

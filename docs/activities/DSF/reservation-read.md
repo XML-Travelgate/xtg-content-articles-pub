@@ -149,7 +149,7 @@ Not implemented by all suppliers
 | Detail/Detail/CategoryAndType		| 0..1    	|		| Category of Ticket.				|
 | Detail/Detail/CategoryAndType/Category 	| 0..1    	|		| Category of Ticket.				|
 | @Code               			| 0..1		| String	| A category code from a predefined list, if Extension = "Other" then will be provider code. |
-| @Extension          			| 0..1		| String	1 Enter a category here if you have selected "Other" from the pre-defined list. |
+| @Extension          			| 0..1		| String	| Enter a category here if you have selected "Other" from the pre-defined list. |
 | Detail/PickupDropoff	| 0..1    	|		| The pickup and/or dropoff information if transportation is provided to/ from the tour/activity location. |
 | @OtherInfo          			| 0..1		| String	| Other instructions pertaining to the pickup/dropoff. |
 | ParticipantCategory 			| 0..n    	|		| Information about participant type, specifying age for each participant. |
@@ -223,7 +223,9 @@ Not implemented by all suppliers
 
 
 #### eConditionType 
+
 Indicates the condition that the person must meet.
+
 | **Type** | **Description** |
 | --------- | --------------- | 
 | Generic | |
@@ -234,7 +236,9 @@ Indicates the condition that the person must meet.
 | Retired | |
 
 #### eSupplierOperatorCodeContext
+
 Indicates the type of supplier code.
+
 | **Type** | **Description** |
 | --------- | --------------- | 
 | Internal | Our supplier code. |
@@ -255,7 +259,9 @@ Indicates the type of supplier code.
 | WheelchairAccess | |
 
 #### eQualifierInfo 
+
 Indicates the type of a Participant. The range of what is considered an adult, children, infant, etc is particular to each supplier.
+
 | **Type** | **Description** |
 | --------- | --------------- | 
 | Adult | |
@@ -275,7 +281,9 @@ Indicates the type of a Participant. The range of what is considered an adult, c
 | PerPerson | |
 
 #### eLocatorType 
+
 Indicates which type of locator is sent.
+
 | **Type** | **Description** |
 | ---------| --------------- | 
 | Client | Locator get in our request. |
