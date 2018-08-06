@@ -103,7 +103,7 @@ StaticConfiguration call).
 | @End                			| 1   		| Date 		| End date that you apply availability.		|
 | TourActivityInfo/CategoryAndType/Category | 0..1      |		| Category of Ticket.				|
 | @Code               			| 0..1		| String	| A category code from a predefined list, if Extension="Other" then will be provider code. |
-| @Extension          			| 0..1		| String	| Enter a category here if you have selected "Other" from the pre-defined list. |
+| @Extension          			| 0..1		| String	| Enter a category here if you have selected "Other" from the pre-defined list.|
 | TourActivityInfo/CategoryAndType	| 0..1      	|		| Category of Ticket.				|
 | TourActivityInfo/CategoryAndType/Category | 0..1      |		| Category of Ticket.				|
 | @Code               			| 0..1		| String	| A category code from a predefined list, if Extension="Other" then will be provider code. |
@@ -229,8 +229,6 @@ StaticConfiguration call).
       </TypeTags>
     </CategoryAndType>
   </TourActivityInfo>
-                    .
-                    .
     </OTA_TourActivityAvailRS>
 ~~~
 
@@ -365,8 +363,8 @@ StaticConfiguration call).
 | TourActivityInfo/ActivityRates/ActivityRate/BasicRateInfo/Description/multimedia| 0..1 |		| Contains multimedia data. |
 | TourActivityInfo/ActivityRates/ActivityRate/BasicRateInfo/Description/multimedia/MultimediaDescription| 0..1 |		| Contains multimedia data. |
 | TourActivityInfo/ActivityRates/ActivityRate/BasicRateInfo/Description/multimedia/MultimediaDescription/ImageItems| 0..1 |		| Array of images. |
-| TourActivityInfo/ActivityRates/ActivityRate/BasicRateInfo/Description/multimedia/MultimediaDescription/ImageItems/ImageItem| 1..n |		| List of URL to images.|
-| TourActivityInfo/ActivityRates/ActivityRate/BasicRateInfo/Description/multimedia/MultimediaDescription/ImageItems/ImageItem/ImageFormat| 1..n |		| |
+| TourActivityInfo/ActivityRates/ActivityRate/BasicRateInfo/Description/multimedia/MultimediaDescription/ImageItems/ImageItem| 1..n || List of URL to images.|
+|TourActivityInfo/ActivityRates/ActivityRate/BasicRateInfo/Description/multimedia/MultimediaDescription/ImageItems/ImageItem/ImageFormat| 1..n |		| |
 | @URL| 1  | String | url to get an image.	|
 | TourActivityInfo/ActivityRates/ActivityRate/RateParticipants| 1 	|		| 	List of participants.|
 | @maxAge| 0..1  | Integer | Maximum age permitted by supplier.	|
@@ -538,8 +536,3 @@ Indicates the type of a Participant. The range of what is considered an adult, c
 | PerPersonPerDay | |
 | PerTotal | |
 | PerPerson | |
-
-
-
-
-
