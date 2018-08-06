@@ -107,16 +107,20 @@ Not implemented by all suppliers
 
 ### Types tables
 
-######## eStatusType
+#### eStatusType
+
 Indicates the status of the reservation.
+
 | **Type** | **Description** |
 | ---------| --------------- | 
 | Cancel | Cancellation has been done correctly. |
 | OnRequest | Cancellation is on request. (not canceled) |
 | Unknow | An error occurs during the cancellation process |
 
-#### eLocatorType 
+#### eLocatorType
+
 Indicates which type of locator is sent.
+
 | **Type** | **Description** |
 | ---------| --------------- | 
 | Client | Locator get in our request.|
