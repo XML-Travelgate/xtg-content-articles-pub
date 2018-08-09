@@ -1,5 +1,5 @@
 ---
-title: Activities API Docs''s documentation!
+title: Activities API documentation
 keywords: index activities
 search: Activities - Index
 sidebar: mydoc_sidebar
