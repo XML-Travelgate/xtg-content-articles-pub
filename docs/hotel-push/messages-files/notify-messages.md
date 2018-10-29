@@ -323,8 +323,9 @@ seller. XTG will process data and response with error code if needed.
 | @MealPlanCodes			   | 1 		 | Integer  | OTA MPT Code. 					|				|
 | RatePlans/RatePlan/SellableProducts	   | 0..1    	 |	    | List of sellable products. In derived rates, if it is not present it applies to all rooms. In other cases, it informs the rooms that applies. |
 | SellableProducts/SellableProduct | 0..n |	    | Present if rooms associed with this rate.		|
-| @InvCode    				   | 1 		 | Integer  | Sellable Product Code.				|
-| @InvType    				   | 1 		 | Integer  | Sellable product type (ROOM).			|
+| @InvCode    				   | 1 		 | String   | Sellable Product Code.				|
+| @InvTypeCode    			   | 0..1 	 | String   | External information about the room (own code, own description, etc.)|
+| @InvType    				   | 1 		 | String   | Sellable product type (ROOM).			|
 | @InvStatusType			   | 1 	 	 | String   | Active or Deactivated.				|
 | @InvNotifType			| 0..1	     | String	| New, Delta or Remove |
 | RatePlans/RatePlan/SellableProduct/GuestRoom | 1..n	 |	    |							|
