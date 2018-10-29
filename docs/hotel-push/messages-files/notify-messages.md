@@ -20,7 +20,7 @@ seller. XTG will process data and response with error code if needed.
 ~~~xml
 <HotelRatePlanInventoryNotif xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
     <request PrimaryLangID = "ES" Version = "0">
-        <RatePlans HotelCode = "1" xmlns = "http://www.opentravel.org/OTA/2003/05">
+        <RatePlans HotelCode = "1" HotelStatusType = "Active" xmlns = "http://www.opentravel.org/OTA/2003/05">
             <RatePlan Duration = "0" CurrencyCode = "EUR" RatePlanCode = "BAR" RatePlanStatusType = "Active" RatePlanNotifType = "New">
 		<BookingRules>
 		    <BookingRule>
@@ -219,7 +219,7 @@ seller. XTG will process data and response with error code if needed.
 ~~~xml
 <HotelRatePlanInventoryNotif xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
     <request PrimaryLangID = "ES" Version = "0">
-        <RatePlans HotelCode = "1" xmlns = "http://www.opentravel.org/OTA/2003/05">
+        <RatePlans HotelCode = "1" HotelStatusType = "Active" xmlns = "http://www.opentravel.org/OTA/2003/05">
             <RatePlan BaseRatePlanCode = "BAR" RatePlanStatusType = "Active" RatePlanCode = "DERIVED" RateReturn = "false">
 		<RatePlanInclusionsType>
                     <RatePlanInclusionDescription>
@@ -241,7 +241,7 @@ seller. XTG will process data and response with error code if needed.
 ~~~xml
 <HotelRatePlanInventoryNotif xmlns = "http://schemas.xmltravelgate.com/hubpush/provider/2012/10">
     <request PrimaryLangID = "ES" Version = "0">
-        <RatePlans HotelCode = "1" xmlns = "http://www.opentravel.org/OTA/2003/05">
+        <RatePlans HotelCode = "1"  HotelStatusType = "Active" xmlns = "http://www.opentravel.org/OTA/2003/05">
             <RatePlan BaseRatePlanCode = "BAR" RatePlanStatusType = "Active" RatePlanCode = "DERIVED" RateReturn = "false">
 	        <Offers>
 		    <Offer OfferCode="offer" OfferStatusType="Active" OfferNotifType = "New">
@@ -276,6 +276,7 @@ seller. XTG will process data and response with error code if needed.
 | HotelRatePlanInventoryNotif/request		| 1 	     |		| Root Node.						|
 | RatePlans			   	| 1   	     |		|							|
 | @HotelCode				| 1	     | String	| Hotel code whose information is provided by the method. |
+| @HotelStatusType			| 1	     | String	| Active or Deactivated.				        |
 | RatePlans/RatePlan			| 0..n	     |		| Present if rate exists.				|
 | @RatePlanCode				| 1	     | String	| Rate code.						|
 | @BaseRatePlanCode			| 0..1	     | String	| Rate code of the base RatePlan. Only used for derived rates. |
