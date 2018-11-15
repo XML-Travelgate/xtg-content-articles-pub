@@ -1,4 +1,4 @@
----
+﻿---
 title: Valuation
 keywords: transportation, data structure, flights, valuation
 search: Transportation - Flights - Data Structure - Valuation
@@ -43,8 +43,7 @@ the business rules.
 The returned XML is very similar to the result in the Availability call.
 The main difference is that there is only one node Option returned. The
 totalAmount is definitive. Sometimes this method will fail since the
-selected Option at Availability may not be available for this stage. In
-this case the integration returns an error code 301 ( link missing ).
+selected Option at Availability may not be available for this stage.
 
 
 
@@ -146,87 +145,194 @@ the selected Option.
 
 | **Element**				| **Number**	| **Type**	| **Description**							|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------------------------------- |
-| ValuationRQ                 		| 1     	|		| Root node. 								|
-| Itineraries                 		| 1     	|		| List of Itineraries.							|
-| Itineraries/Itinerary       		| 1..n    	|		| Details of the Itinerary.  						|
-| @id                    		| 1 		| Integer	| Unique identifier of the Itinerary.					|
-| @fareRef	               		| 1 		| Integer	| Reference identifier to the original Fare. Flights parameter.  	|
-| @HasObFees             		| 1 		| Boolean	| If true then there is an extra fee for using credit card.  		|
-| @carrier               		| 1 		| String	| Validating carrier. Flights parameter.				|
-| Itineraries/Itinerary /Conditions	| 0..1    	|		| Contains a list of Conditions.  					|
-| Itineraries/Itinerary /Conditions/Condition | 0..n    |		| Contains details of the Condition.					|
-| @id                    		| 1 		| String	| Indicates if the conditions are of one way ( with a 0 ) or round trip ( with a 1 ). Ferries parameter.	|
-| @language              		| 1 		| String	| Language.								|
-| Itineraries/Itinerary /Conditions/Condition /Text | 1 | String	| Remarks.								|
-| Itineraries/Itinerary /Journeys	| 0..1    	|		| Contains a list of Journeys.   					|
-| Itineraries/Itinerary /Journeys/Journey | 0..n    	|		| Contains details of the Journeys.					|
-| @id                    		| 1 		| Integer	| Unique identifier of the Journey in scope.  				|
-| @duration              		| 1 		| Integer	| Duration of the Journey in minutes.  					|
-| Itineraries/Itinerary /Journeys/Journey/Segments | 0..1 |   		| Contains a list of Segments associated to the Journey.		|
-| Itineraries/Itinerary /Journeys/Journey/Segments /Segment | 0..n   |	| Contains details of the SegmentInfo.					|
-| @id                    		| 1 		| Integer	| Unique SegmentInfo identifier.					|
-| Itineraries/Itinerary /Journeys/Journey/Segments /Segment/SegmentInfo | 0..n | | Contains information of the SegmentInfo.			|
-| @id                    		| 1 		| Integer	| Unique identifier of the SegmentInfo. 				|
-| @transportationId      		| 1 		| String	| Unique Id of the transportation.					|
-| @transportationType    		| 1 		| String	| Transport type: F ( Flight ), T ( Train ), B ( Bus ) & F ( Ferry ).	|
-| @operatinCarrier       		| 1 		| String	| Company which operates the transportation.				|
-| @marketingCarrier      		| 1 		| String	| Company which commercializes the transportation.			|
-| @departureTerminal     		| 1 		| String	| Departure terminal.							|
-| @arrivalTerminal       		| 1  		| String	| Arrival terminal.							|
-| @departureDate         		| 1 		| Date		| Departure date. 							|
-| @arrivalDate           		| 1 		| Date		| Arrival date.								|
-| @segmentDuration       		| 1 		| Integer	| Transport duration ( in minutes ). 					|
-| @planeType             		| 1 		| String	| Plane type. Flights parameter.					|
-| @maxCheckinDate        		| 1 		| String	| Maximum date to make the check-in.					|
-| @segmentStatus         		| 1 		| String	| SegmentInfo status: HK (OK), TK (Change of programming), UC (Unconfirmed), UN( Unable), NO (No action taken) & UD (Undefined).  |
-| @hasTechnicalStop      		| 1 		| Boolean	| If true, the SegmentInfo has a technical stop.			|
-| @electronicTicket      		| 1 		| Boolean	| If true, the SegmentInfo uses a electronic ticket.			|
+| ValuationRQ                 		| 1     	|		| Root node.|
+| Itineraries                 		| 1     	|		| Contains a list of Itineraries.|
+| Itineraries/Itinerary       		| 1..n    	|		| Details of the Itinerary.|
+| @id                    		| 1 		| Integer	| Unique identifier of the Itinerary.|
+| @fareRef	               		| 1 		| String	| Reference identifier to the original Fare.|
+| @hasObFees             		| 1 		| Boolean	| If true then there is an extra fee for using credit card.|
+| @carrier               		| 1 		| String	| Validating carrier.|
+| Itineraries/Itinerary/Conditions	| 1 |	| Contains a list of Fare Conditions. |
+| Itineraries/Itinerary/Conditions/Condition	| 1 |	| Contains details of the Condition that applies to the condition. |
+| @cia	| 1	| String	| Carrier applying the condition.	|
+| @code	| 1	| String	| Code of the condition.	|
+| @id	| 1	| String	| Unique id of the condition.	|
+| @language	| 1	| String	| Language in which the condition is written.	|
+| @Text | 1	| String	| Description of the condition.	|
+| Transportation/Fares/Fare/Conditions/<br>Condition/Paragraph	| 1 | | List of Sentences and titles. |
+| @title | 1	| String	| Title content.	|
+| Transportation/Fares/Fare/Conditions/<br>Condition/Paragraph/Sentence	| 1 | String	| List of Sentences contents. |
+| Itineraries/Itinerary/Journeys	| 0..1    	|		| Contains a list of Journeys.|
+| Itineraries/Itinerary/Journeys/Journey | 0..n    	|		| Contains details of the Journeys.|
+| @id     | 1 		| Integer	| Unique identifier of the Journey in scope.|
+| @duration   | 0..1 		| Integer	| Duration of the Journey in minutes. |
+| @familyFare | 0..1 		| String	| Family fare name of the Journey.|
+| @checkinStart   | 0..1 		| Date	| Checkin start date. |
+| @checkinEnd   | 0..1 		| Date	| Checkin end date. |
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments | 1 |   		| Contains a list of Segments associated to the Journey.|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment | 1..n   |	| Contains details of the SegmentInfo.|
+| @id      | 1 		| Integer	| Unique SegmentInfo identifier.|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentInfo | 1 | | Contains information of the Segment.|
+| @id     | 1 		| Integer	| Unique identifier of the SegmentInfo.|
+| @transportationId     | 1 		| String	| Unique Id of the transportation.|
+| @transportationType    		| 1 		| String	| Transport type: V ( Flight ), T ( Train ), B ( Bus ), S() & F ( Ferry ).	|
+| @transportationName    		| 1 		| String	| Name of the transportation.	|
+| @transportationCode	| 1	| String	| Code of the transportation. |
+| @operatingCarrier      		| 1 		| String	| Company which operates the transportation.		|
+| @marketingCarrier      		| 1 		| String	| Company which commercializes the transportation.	|
+| @departureTerminal     | 1 		| String	| Departure terminal.|
+| @arrivalTerminal       		| 1 		| String	| Arrival terminal.|
+| @departureDate         		| 1 		| Date		| Departure date.|
+| @arrivalDate           		| 1 		| Date		| Arrival date. |
+| @segmentDuration       		| 1 		| Integer	| Transport duration ( in minutes ).|
+| @segmentStatus	| 1	| String	| Segment status: HK (Holding confirmed), TK(Confirming new flight times), UC(Unable to confirm), UN(Flight cancelled by airline), NO (No action taken), UD (Undefined). |
+| @planeType | 1 		| String	| Plane type. Flights parameter.|
+| @maxCheckinDate     | 1 		| String	| Maximum date to make the check-in.|
+| @hasTechnicalStop   | 1 | Boolean	| If true, the segment has a technical stop. 		|
+| @electronicTicket      		| 1 		| Boolean	| If true, the segment uses a electronic ticket. 	| 
 | @secureFlight          		| 0..1		| Boolean	| If true, the provider requires extra information of the passengers. Flights parameter.	|
-| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /SegmentInfo/OriginLoc | 1 |  | Origin location.					|
+| Transportation/Segments/Segment/OriginLoc | 1     	|		| Origin location.					|
 | @type                  		| 1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).	|
-| @code                  		| 1 		| String	| Location code.							|
-| @cityCode	              		| 1 		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.	|
-| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /SegmentInfo/DestinationLoc | 1 |  | Destination location.				|
-| @type                  		| 1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).	|
-| @code                  		| 1 		| String	| Location code.							|
+| @code                  		| 1 		| String	| Location code.					|
+| @name	| 1 		| String	| Location full name.	|
+| @radius					| 0..1			| Integer	| Area radius from location.|
 | @cityCode              		| 1 		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.	|
-| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /SegmentClasses | 0..1 |  | Contains a list of SegmentClasses.			|
-| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /SegmentClasses/SegmentClass | 0..n 1  | Contains details of the SegmentClass.	|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/OriginLoc/<br>AlternativeLocations	| 0..1		|	| Contains a list of AlternativeLocations.|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/OriginLoc/<br>AlternativeLocations/AlternativeLocation	| 0..n	|	| Contains the information of the alternative location.|
+| @code						| 1			| String	| Location code.|
+| @cityCode        			| 1  		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
+| @name						| 0..1			| String	| Location long name.|
+| @type						| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/DestinationLoc | 1   |  		| Destination location.					|
+| @type  | 1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).	|
+| @code                  		| 1 		| String	| Location code. 					|
+| @name	| 1 		| String	| Location full name.	|
+| @radius					| 0..1			| Integer	| Area radius from location.|
+| @cityCode              		| 1 		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.	||
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/<br>DestinationLoc/AlternativeLocations	| 0..1		|	| Contains a list of AlternativeLocations.
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/<br>DestinationLoc/AlternativeLocations/<br>AlternativeLocation	| 0..n	|	| Contains the information of the alternative location.|
+| @code						| 1			| String	| Location code.|
+| @cityCode        			| 1  		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
+| @name						| 0..1			| String	| Location long name.|
+| @type						| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/TechnicalStops | 0..1 |   		| Contains a list of TechnicalStops.		|
+| @totalTechnicalStops   | 1 		| Integer	| Total number of TechnicalStops.|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/TechnicalStops/<br>TechnicalStop | 1..n | | Contains the details of the TechnicalStop.|
+| @location          | 1 		| String	| TechnicalStop location.|
+| @stopDate       | 1 		| Date		| Approx. stop date and time.|
+| @departureDate    | 1 		| Date		| Approx. departure date and time.|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses | 0..1 |  | Contains a list of SegmentClasses.|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses | 1 | | Contains a list of SegmentClasses.	|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass | 1..n | | Contains details of the SegmentClass.   |
 | @cabinClass            		| 1 		| String	| Cabin class of the seat: N (Not specified), Y (Tourist), C (Business), F (First), CA (Cabin, only for ferries), YP (Tourist Plus).	|
-| @class                 		| 1 		| String	| Fare class.								|
-| @paxRef                		| 1 		| Integer 	| Reference for the passenger which is using this fare in the transport.  |
-| @fareBasis             		| 1 		| String	| Fare basis.								|
-| @fareType              		| 1 		| String	| Fare type: PUB ( Public ), PRI ( Private ), NEGO ( Negotiated ) & CORP ( Corporate ).	|
+| @class                 		| 1 		| String	| Fare class. |
+| @paxRef               	 	| 1 		| Integer	| Passenger reference. 					|
+| @fareBasis             		| 1 		| String	| Identifier of the fare.				|
+| @fareType              		| 1 		| String	| Fare type: PUB ( Public ), PRI ( Private ), NEGO ( Negotiated ) and CORP ( Corporate ).	|
 | @avail                 		| 1 		| Integer	| Available seats remaining for this class (In flights, the maximum is 9).  |
-| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /ReservationToken | 0..1 |  | Contains specific attributes of each provider.		|
-| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /ReservationToken/Attribute | 0..n |  | Contains details of the attribute.		|
-| @key                   		| 1 		| String	| Keyword or id to identify a parameter.				|
-| @value                 		| 1 		| String	| Value of the parameter.						|
-| Itineraries/Itinerary/AmountBreakdown	| 1     	|		| Contains details of the AmountBreakdown.				|
-| @currency              		| 1 		| String	| Currency code of the fare.						|
-| @totalAmount           		| 1 		| Decimal	| Total amount. with taxes and other charges included.			|
-| @notCommissionableAmount		| 1 		| Decimal	| Total amount that can not be commissioned.				|
-| @commission            		| 1 		| Decimal	| Commission.  								|
-| Itineraries/Itinerary /AmountBreakdown/ChargeBreakdowns | 0..1  |  	|  Contains a list of ChargeBreakdowns.					|
-| Itineraries/Itinerary /AmountBreakdown/PaxBreakdowns | 0..1 |  | Contains a list of breakdown amounts for each passenger ( ADT amount, etc. ). |
-| Itineraries/Itinerary /AmountBreakdown/PaxBreakdowns /PaxBreakdown | 0..n |   | Contains details of breakdown amounts for each passenger.	|
-| @paxType               		| 1 		| String	| Passenger type: ADT ( Adult ), CHD ( Child ) & INF ( Infant ).	|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass/Modifiable | 0..1 |  | Contains the information of the modifiable fare.	|
+| @Description                 		| 1 		| String	| Modification description. |
+| @amount                 			| 1 		| Decimal	| Modification amount. |
+| @modifiable                 		| 1 		| Boolean	| If true, the fare allows this modification. |
+| @currency                 		| 1 		| String	| Modification currency. |
+| @amountType                 		| 1 		| String	| Modification amount type: AMOUNT (Fare amount), FEE (Fee amount), TOTAL (Total fare amount), PERCENTUAL (Percentual amount). |
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass/CancellationPolicies | 0..1 |  | Contains a list of CancellationPolicies.	|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass/CancellationPolicies/<br>CancellationPolicy | 1..n |  |Contains details of the CancelationPolicy.	|
+| @fromDate                 		| 1 		| Date	| Date of the begining of the policy. |
+| @amount                 			| 1 		| Decimal	| Policy amount. |
+| @refundable                 		| 1 		| Boolean	| If true, the fare allows the refundation. |
+| @currency                 		| 1 		| String	| Policy currency. |
+| @amountType                 		| 1 		| String	| Policy amount type: AMOUNT (Fare amount), FEE (Fee amount), TOTAL (Total fare amount), PERCENTUAL (Percentual amount).|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/ReservationTokens | 0..1 |  | Specific attribute used for each provider.|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/ReservationTokens/<br>Attribute | 0..n |  | Type of attribute.|
+| @key   | 1 		| String	| Contains the keyword/ Id to identify a parameter.	|
+| @value     | 1 		| String	| Contains the value of the parameter.|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/CheckinInformation | 0..1 |  | Checkin information.|
+| @openingTime | 1 		| Date	| Checkin opening time.|
+| @closingTime | 1 		| Date	| Checkin closing time.|
+| @estimatedCheckinTime | 1 		| Date	| Estimated checkin time.|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/CheckinInformation/<br>Status | 1 |  | Status checkin information.|
+| @isAvailable | 1 		| Boolean	| If true, the cheking is available.|
+| @direction | 1 		| String	| Direction of the journey about to checkin: DEPARTURE (Outbound), RETURN (Inbound), IDA_VUELTA (Outbound and Inbound).|
+| @status | 1 		| String	| Status of the checkin: UNDEFINED, IN_PROGRESS, ERROR, COMPLETE, UNCONFIRMED.|
+| Itineraries/Itinerary/AmountBreakdown  		| 1     	|		| Breakdown of the fare amount.|
+| @currency  | 1 		| String	| Currency code of the fare.|
+| @totalAmount           		| 1 		| Decimal	| Total amount. with taxes and other charges included.|
+| @notCommissionableAmount		| 1 		| Decimal	| Total amount that can not be commissioned.  		|
+| @commission            		| 1 		| Decimal	| Commission. 						|
+| Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakdowns | 0..1   |		| Contains a list of breakdown amounts ( taxes, mandatory charges.. ).	|
+| Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakdowns/ChargeBreakdown | 1..n |	| Contains details of the BreakdownAmount.	|
+| @type                  		| 1 		| String	| [Type of charge.](#valuation-enumerate-description) |
+| @amount                		| 1    	 	| Decimal	| Charge amount.				|
+| @included				| 1		| Boolean	| If true, the charge is included to the total fare amount |
+| Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakdowns/ChargeBreakdown<br>/Concept | 0..1 | | Contains details of the charge.|
+| @id                    		| 1 		| String	| Unique id of the Concept	|
+| @language              		| 1 		| String	| Language.			|
+| @cia              		| 1 		| String	| Carrier.			|
+| @code              		| 1 		| String	| Concept code.			|
+| Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakDowns/ChargeBreakdown<br>/Concept/Text | 1 | String | Remarks.	|
+| Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakDowns/ChargeBreakdown<br>/Concept/Paragraph | 1 |  | Contains a list of Sentences and titles.	|
+| @title	| 1	| String	| Title.	|
+| Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakDowns/ChargeBreakdown/<br>Concept/Paragraph/Sentence | 1 | String | Sentence|
+| Itineraries/Itinerary/AmountBreakdown/<br>PaxBreakdown | 0..1    	|		| Contains a list of breakdown amounts for each passenger ( ADT amount, etc. ).|
+| Itineraries/Itinerary/AmountBreakdown/<br>PaxBreakdowns/PaxBreakdown | 0..n | 	| Contains details of breakdown amounts for each passenger.|
+| @paxType               		| 1 		| String	| Passenger type: ADT ( Adult ), CHD ( Child ) & INF ( Infant ).|
 | @amount                		| 1 		| Decimal	| Total amount, with taxes included, associated to the passenger.	|
-| @taxes                 		| 1 		| Integer	| If they exist, taxes are applied for this passenger type. 		|
-| @tasaDU                		| 1 		| Integer	| Deprecated.								|
-| Itineraries/Itinerary/PaxConfigurations | 1     	|		| Contains a list of PaxConfigurations.					|
-| Itineraries/Itinerary /PaxConfigurations/PaxConfiguration | 1 |  	| Contains details of the PaxConfiguration.				|
-| @id                    		| 1 		| Integer	| Unique identifier of the PaxConfiguration.  				|
-| @paxRef                		| 1 		| Integer	| Reference to the passenger Id from the request. 			|
-| @age                   		| 1 		| Integer	| Age of the passenger.							|
+| @taxes                 		| 1 		| Decimal	| If they exist, taxes are applied for this passenger type. |
+| @tasaDU                		| 1 		| Decimal	| DU taxes. 						|
+| @fees                			| 1 		| Decimal	| Fees. 						|
+| Itineraries/Itinerary/AmountBreakdown/<br>PaxBreakdowns/PaxBreakdown/<br>Taxes | 0..1 | 	| Contains a list of Taxes.|
+| Itineraries/Itinerary/AmountBreakdown/<br>PaxBreakdowns/PaxBreakdown/<br>Taxes/Tax | 0..n | 	| Code and amount of each tax.|
+| @code				| 1	| String	| Code.	|
+| @amount				| 1	| Decimal	| Amount.	|
+| Itineraries/Itinerary/PaxConfigurations		| 1     	|		| Contains a list of PaxConfiguration.	|
+| Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration | 1..n |   		| Contains details of PaxConfiguration.	|
+| @id                    		| 1 		| Integer	| Unique identifier of the PaxConfiguration. 		|
+| @paxRef                		| 1 		| Integer	| Reference to the passenger Id from the request. 	|
+| @age                   		| 1 		| Integer	| Age of the passenger. 				|
+| @nacionality                   	| 1 		| String	| Nacionality of the passenger. 			|
 | @paxType               		| 1 		| String	| Passenger type based on the age of the passenger: ADT (Adult), CHD (Child), INF (Infant), YOU (Young) and SEN (Senior).	|
-| Fares/Fare/PaxConfigurations /PaxConfiguration/AppliedBonuses | 0..1 | | Applied discounts.							|
-| @resident              		| 1 		| String	| Resident discount type: N(None), BP(Balearic Islands resident flying to mainland), BI(Balearic Islands resident flying to another balearic island), DC(Canarian Islands resident flying to another Canarian Island), RC(Canarian Islands resident flying to mainland),RM(Ceuta/Melilla resident), STR(Italian resident discount), ELB(Italian resident Elba), SDG(Italian resident Sardegna), SCL(Italian resident Sicily).	|
-| @largeFamily           		| 1 		| String	| Family discount type: N(None), F1(Large family), F2 (Special large family). 1
-| @discountCard          		| 1 		| String	| Discount card type (for more details, see information below).		|
-| Fares/Fare/PaxConfigurations /PaxConfiguration/AppliedBonuses /PaxTypeCodes | 0..1 |  | Contains a list of PaxTypeCodes.			|
-| Fares/Fare/PaxConfigurations /PaxConfiguration/AppliedBonuses /PaxTypeCodes/PaxTypeCode | 0..n |   | Contains details of the PTC.		|
-| @code                  		| 1 		| String	| String with the PTC code.						|
+| Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses | 0..1 | | Applied discounts.			|
+| @resident              	| 1 		| String	| [Resident discount type.](#valuation-enumerate-description)|
+| @largeFamily           		| 1 		| String	| Family discount type: N(None), F1(Large family), F2 (Special large family). |
+| @discountCardCode		| 0..1	| String	| Discount card code.|
+| @discountCard		| 0..1	| String	| [Discount card type.](#valuation-enumerate-description)|
+| Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>DiscountCards	| 0..1	|	| Contains a list of DiscountCards.|
+| Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>DiscountCards/DiscountCard|
+| @code	| 1	| String | Discount card code.|
+| @id	| 1	| String	| Unique identifier of discound card.|
+| @type	| 1	| String	| [Discount card type.](#valuation-enumerate-description)|
+| Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>PaxTypeCodes		| 0..1	|		| Contains a list of PaxTypeCodes.|
+| Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>PaxTypeCodes/PaxTypeCode	| 0..n	|	| Contains the code type of the passenger.|
+| @code		| 1		| String	| Code type of the passenger.|
+| Itineraries/Itinerary/Emissions	| 0..1	|	| Contains a list of Issuances.|
+| Itineraries/Itinerary/Emissions/<br>Emission	| 0..n	|	| Contains the key of the Issuance.|
+| @key		| 1		| String	| Key of the Issuance.|
+| Preferences	| 0..1	|	| Valuation preferences.|
+| @paymentMethods		| 1		| Boolean	| If true, the Valuation will return the list of payment methods available for the Itineraries.|
+| @baggageTypes		| 1		| Boolean	| If true, the Valuation will return the list of baggage allowance available for the Itineraries.|
+| @specialSupplements		| 1		| Boolean	| If true, the Valuation will return the list of special suplements available for the Itineraries.|
+| @extendedFareRules		| 1		| Boolean	| If true, the Valuation will return a list of detailed fare rules of the Itineraries.|
+| @summarizedFareRules		| 1		| Boolean	| If true, the Valuation will return a list of summarired fare rules of the Itineraries.|
+| @seating		| 1		| Boolean	| If true, the Valuation will return the list of seats available in the plane.|
+| @pagoPlazos		| 1		| Boolean	| If true, the Valuation will return the list of partial payment rules (installments) available for the Itineraries.|
+| SpecialSupplements	| 0..1	|	|	Contains a list of SpecialSupplements.
+| SpecialSupplements/SpecialSupplement		| 0..n	|	|	Contains information about the Special Supplement	|
+| @id	| 1	| String	| Unique identifier of the supplement.|
+| @code	| 1	| String	| Supplement code.|
+| @height	| 0..1	| Integer	| Dimension of the supplement: height.|
+| @width	| 0..1	| Integer	| Dimension of the supplement: width.|
+| @length	| 0..1	| Integer	| Dimension of the supplement: length.|
+| @weight	| 0..1	| Integer	| Dimension of the supplement: weight.|
+| @quantity	| 0..1	| Integer	| Quantity of supplements.|
+| @description	| 0..1	| String	| Description of the supplement|
+| @carrier	| 1	| String	| Carrier selling the supplement.|
+| @estado	| 0..1	| String	| Status of the supplement: N(None), INC(Included in the price), CHA(Avalilable with charges), NOF(Not offered).|
+| @needToken	| 1	| Boolean	| If true, the field @reservationToken should be filled|
+| @type	| 1	| String	| Type of supplement: Miscelaneous, Seat, Meal, Pet, Lounge, Baggage, Canoe, PreferentialBoarding, Bike, Trailer, Seguro, Embarque_Prioritario, Acceso_Preferente, Bloqueo_Tarifa, Special_Assistance.|
+| @reservationToken	| 0..1	| String	| Reservation Token of the supplement.|
+| @ownTransportation	| 0..1	| Boolean	| If true, the supplement includes own transportation cage.|
+| @key              		| 1 		| String	| Issuance key.					|
 
 
 
@@ -544,89 +650,169 @@ the selected Option.
 
 | **Element**				| **Number**	| **Type**	| **Description**							|
 | ------------------------------------- | ------------- | ------------- | --------------------------------------------------------------------- |
-| ValuationRS                 		| 1     	|		| Root node.								|
-| Itineraries                 		| 1     	|		| List of Itineraries.							|
-| Itineraries/Itinerary       		| 1..n    	|		| Details of the Itinerary.    						|
-| @id                    		| 1 		| Integer	| Unique identifier of the Itinerary.					|
-| @fareRef               		| 1 		| Integer	| Reference identifier to the original Fare. Flights parameter.  	|
-| @HasObFees             		| 1 		| Boolean 	| If true then there is an extra fee for using credit card.  		|
-| @carrier               		| 1 		| String	| Validating carrier. Flights parameter.				|
-| Itineraries/Itinerary/Conditions	| 0..1    	|		| Contains a list of Conditions.					|
-| Itineraries/Itinerary/Journeys	| 0..1    	|		| Contains a list of Journeys.  					|
-| Itineraries/Itinerary /Journeys/Journey | 0..n    	|		| Contains details of the Journeys.					|
-| @id                    		| 1 		| Integer	| Unique identifier of the Journey in scope.				|
-| @duration              		| 1 		| Integer	| Duration of the Journey in minutes.					|
-| Itineraries/Itinerary/Journeys /Journey/Segments | 0..1 |   		| Contains a list of Segments associated to the Journey.		|
-| Itineraries/Itinerary/Journeys /Journey/Segments/Segment | 0..n |   	| Contains details of the SegmentInfo.					|
-| @id                    		| 1 		| Integer	| Unique SegmentInfo identifier.					|
-| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /SegmentInfo | 0..n |  | Contains information of the SegmentInfo.			|
-| @id                    		| 1 		| Integer	| Unique identifier of the SegmentInfo.					|
-| @transportationId      		| 1 		| String	| Unique Id of the transportation.					|
-| @transportationType    		| 1 		| String	| Transport type: F ( Flight ), T ( Train ), B ( Bus ) & F ( Ferry ).	|
-| @operatinCarrier       		| 1 		| String	| Company which operates the transportation.				|
-| @marketingCarrier      		| 1 		| String	| Company which commercializes the transportation.			|
-| @departureTerminal     		| 1 		| String	| Departure terminal.							|
-| @arrivalTerminal       		| 1 		| String	| Arrival terminal.							|
-| @departureDate         		| 1 		| Date		| Departure date.							|
-| @arrivalDate           		| 1 		| Date		| Arrival date.								|
-| @segmentDuration       		| 1  		| Integer	| Transport duration ( in minutes ).					|
-| @planeType             		| 1 		| String	| Plane type. Flights parameter.					|
-| @maxCheckinDate        		| 1 		| String	| Maximum date to make the check-in.					|
-| @segmentStatus         		| 1 		| String 	| SegmentInfo status: HK (OK), TK (Change of programming), UC (Unconfirmed), UN( Unable), NO (No action taken) & UD (Undefined). |
-| @hasTechnicalStop      		| 1 		| Boolean	| If true, the SegmentInfo has a technical stop.			|
-| @electronicTicket      		| 1 		| Boolean	| If true, the SegmentInfo uses a electronic ticket.			|
+| ValuationRS                 		| 1     	|		| Root node.|
+| Itineraries                 		| 1     	|		| Contains a list of Itineraries.|
+| Itineraries/Itinerary       		| 1..n    	|		| Details of the Itinerary.|
+| @id                    		| 1 		| Integer	| Unique identifier of the Itinerary.|
+| @fareRef	               		| 1 		| String	| Reference identifier to the original Fare.|
+| @hasObFees             		| 1 		| Boolean	| If true then there is an extra fee for using credit card.|
+| @carrier               		| 1 		| String	| Validating carrier.|
+| Itineraries/Itinerary/Conditions	| 1 |	| Contains a list of Fare Conditions. |
+| Itineraries/Itinerary/Conditions/Condition	| 1 |	| Contains details of the Condition that applies to the condition. |
+| @cia	| 1	| String	| Carrier applying the condition.	|
+| @code	| 1	| String	| Code of the condition.	|
+| @id	| 1	| String	| Unique id of the condition.	|
+| @language	| 1	| String	| Language in which the condition is written.	|
+| @Text | 1	| String	| Description of the condition.	|
+| Transportation/Fares/Fare/Conditions/<br>Condition/Paragraph	| 1 | | List of Sentences and titles. |
+| @title | 1	| String	| Title content.	|
+| Transportation/Fares/Fare/Conditions/<br>Condition/Paragraph/Sentence	| 1 | String	| List of Sentences contents. |
+| Itineraries/Itinerary/Journeys	| 0..1    	|		| Contains a list of Journeys.|
+| Itineraries/Itinerary/Journeys/Journey | 0..n    	|		| Contains details of the Journeys.|
+| @id     | 1 		| Integer	| Unique identifier of the Journey in scope.|
+| @duration   | 0..1 		| Integer	| Duration of the Journey in minutes. |
+| @familyFare | 0..1 		| String	| Family fare name of the Journey.|
+| @checkinStart   | 0..1 		| Date	| Checkin start date. |
+| @checkinEnd   | 0..1 		| Date	| Checkin end date. |
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments | 1 |   		| Contains a list of Segments associated to the Journey.|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment | 1..n   |	| Contains details of the SegmentInfo.|
+| @id      | 1 		| Integer	| Unique SegmentInfo identifier.|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentInfo | 1 | | Contains information of the Segment.|
+| @id     | 1 		| Integer	| Unique identifier of the SegmentInfo.|
+| @transportationId     | 1 		| String	| Unique Id of the transportation.|
+| @transportationType    		| 1 		| String	| Transport type: V ( Flight ), T ( Train ), B ( Bus ), S() & F ( Ferry ).	|
+| @transportationName    		| 1 		| String	| Name of the transportation.	|
+| @transportationCode	| 1	| String	| Code of the transportation. |
+| @operatingCarrier      		| 1 		| String	| Company which operates the transportation.		|
+| @marketingCarrier      		| 1 		| String	| Company which commercializes the transportation.	|
+| @departureTerminal     | 1 		| String	| Departure terminal.|
+| @arrivalTerminal       		| 1 		| String	| Arrival terminal.|
+| @departureDate         		| 1 		| Date		| Departure date.|
+| @arrivalDate           		| 1 		| Date		| Arrival date. |
+| @segmentDuration       		| 1 		| Integer	| Transport duration ( in minutes ).|
+| @segmentStatus	| 1	| String	| Segment status: HK (Holding confirmed), TK(Confirming new flight times), UC(Unable to confirm), UN(Flight cancelled by airline), NO (No action taken), UD (Undefined). |
+| @planeType | 1 		| String	| Plane type. Flights parameter.|
+| @maxCheckinDate     | 1 		| String	| Maximum date to make the check-in.|
+| @hasTechnicalStop   | 1 | Boolean	| If true, the segment has a technical stop. 		|
+| @electronicTicket      		| 1 		| Boolean	| If true, the segment uses a electronic ticket. 	| 
 | @secureFlight          		| 0..1		| Boolean	| If true, the provider requires extra information of the passengers. Flights parameter.	|
-| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /SegmentInfo/OriginLoc | 1 |   | Origin location.					|
-| @type                 		| 1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).		|
-| @code                  		| 1 		| String	| Location code.							|
-| @cityCode              		| 1 		| Boolean 	| If true, the field code indicates a city code, if false, it will indicate an airport code.	|
-| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /SegmentInfo/DestinationLoc | 1  |   | Destination location.				|
-| @type                  		| 1 		| String 	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).	|
-| @code                  		| 1 		| String	| Location code.							|
+| Transportation/Segments/Segment/OriginLoc | 1     	|		| Origin location.					|
+| @type                  		| 1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).	|
+| @code                  		| 1 		| String	| Location code.					|
+| @name	| 1 		| String	| Location full name.	|
+| @radius					| 0..1			| Integer	| Area radius from location.|
 | @cityCode              		| 1 		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.	|
-| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /SegmentClasses | 0..1 |   | Contains a list of SegmentClasses.			|
-| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /SegmentClasses/SegmentClass | 0..n |   | Contains details of the SegmentClass.	|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/OriginLoc/<br>AlternativeLocations	| 0..1		|	| Contains a list of AlternativeLocations.|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/OriginLoc/<br>AlternativeLocations/AlternativeLocation	| 0..n	|	| Contains the information of the alternative location.|
+| @code						| 1			| String	| Location code.|
+| @cityCode        			| 1  		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
+| @name						| 0..1			| String	| Location long name.|
+| @type						| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/DestinationLoc | 1   |  		| Destination location.					|
+| @type  | 1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).	|
+| @code                  		| 1 		| String	| Location code. 					|
+| @name	| 1 		| String	| Location full name.	|
+| @radius					| 0..1			| Integer	| Area radius from location.|
+| @cityCode              		| 1 		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.	||
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/<br>DestinationLoc/AlternativeLocations	| 0..1		|	| Contains a list of AlternativeLocations.
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/<br>DestinationLoc/AlternativeLocations/<br>AlternativeLocation	| 0..n	|	| Contains the information of the alternative location.|
+| @code						| 1			| String	| Location code.|
+| @cityCode        			| 1  		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
+| @name						| 0..1			| String	| Location long name.|
+| @type						| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/TechnicalStops | 0..1 |   		| Contains a list of TechnicalStops.		|
+| @totalTechnicalStops   | 1 		| Integer	| Total number of TechnicalStops.|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/TechnicalStops/<br>TechnicalStop | 1..n | | Contains the details of the TechnicalStop.|
+| @location          | 1 		| String	| TechnicalStop location.|
+| @stopDate       | 1 		| Date		| Approx. stop date and time.|
+| @departureDate    | 1 		| Date		| Approx. departure date and time.|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses | 0..1 |  | Contains a list of SegmentClasses.|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses | 1 | | Contains a list of SegmentClasses.	|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass | 1..n | | Contains details of the SegmentClass.   |
 | @cabinClass            		| 1 		| String	| Cabin class of the seat: N (Not specified), Y (Tourist), C (Business), F (First), CA (Cabin, only for ferries), YP (Tourist Plus).	|
-| @class                 		| 1 		| String	| Fare class.								|
-| @paxRef                		| 1 		| Integer	| Reference for the passenger which is using this fare in the transport.  |
-| @fareBasis             		| 1 		| String	| Fare basis.								|
-| @fareType              		| 1 		| String	| Fare type: PUB ( Public ), PRI ( Private ), NEGO ( Negotiated ) & CORP ( Corporate ).	|
-| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /ReservationToken | 0..1 |   | Contains specific attributes of each provider.	|
-| Itineraries/Itinerary/Journeys /Journey/Segments/Segment /ReservationToken/Attribute | 0..n |   | Contains details of the attribute.		|
-| @key                   		| 1 		| String	| Keyword or id to identify a parameter.		|
-| @value                 		| 1 		| String	| Value of the parameter.				|
-| Itineraries/Itinerary /AmountBreakdown | 1     	|		| Contains details of the AmountBreakdown.		|
-| @currency              		| 1 		| String	| Currency code of the fare.				|
-| @totalAmount           		| 1 		| Decimal	| Total amount. with taxes and other charges included.	|
-| @notCommissionableAmount		| 1 		| Decimal	| Total amount that can not be commissioned.		|
-| @commission            		| 1 		| Decimal	| Commission.						|
-| Itineraries/Itinerary /AmountBreakdown/ChargeBreakdowns | 0..1 |  	| Contains a list of ChargeBreakdowns.			|
-| Itineraries/Itinerary /AmountBreakdown/ChargeBreakdowns /ChargeBreakdown | 1..n |   | Contains details of the ChargeBreakdown.	|
-| @type                  		| 1 		| String	| ChargeBreakdown type.					|
-| @amount                		| 1 		| Decimal	|Total amount, with taxes included, associated to the passenger.  |
-| Itineraries/Itinerary /AmountBreakdown/ChargeBreakdowns /ChargeBreakdown/Concept | 1  |   | Charge concept.			|
-| @id                    		| 1 		| String	| Indicates if the conditions are of one way ( with a 0 ) or round trip ( with a 1 ). Ferries parameter.	|
-| @language              		| 1 		| String	| Language.						|
-| Itineraries/Itinerary /AmountBreakdown/ChargeBreakdowns /ChargeBreakdown/Concept/Text | 1 | String | Remarks.			|
-| Itineraries/Itinerary /AmountBreakdown/PaxBreakdowns | 0..1  |  	| Contains a list of breakdown amounts for each passenger ( ADT amount, etc. ).	|
-| Itineraries/Itinerary /AmountBreakdown/PaxBreakdowns /PaxBreakdown | 0..n |  | Contains details of breakdown amounts for each passenger. |
-| @paxType               		| 1 		| String	| Passenger type: ADT ( Adult ), CHD ( Child ) & INF ( Infant ).   |
-| @amount                		| 1 		| Decimal	| Total amount, with taxes included, associated to the passenger.  |
-| @taxes                 		| 1 		| Integer	| If they exist, taxes are applied for this passenger type.	|
-| @tasaDU                		| 1 		| Integer	| Deprecated.						|
-| Itineraries/Itinerary /PaxConfigurations | 1     	|		| Contains a list of PaxConfigurations.			|
-| Itineraries/Itinerary /PaxConfigurations/PaxConfiguration | 1  |   	| Contains details of the PaxConfiguration.		|
-| @id                    		| 1 		| Integer	| Unique identifier of the PaxConfiguration.		|
-| @paxRef                		| 1 		| Integer	| Reference to the passenger Id from the request.	|
-| @age                   		| 1 		| Integer	| Age of the passenger.					|
-| @paxType               		| 1 		| String	| Passenger type based on the age of the passenger: ADT (Adult), CHD (Child), INF (Infant), YOU (Young) and SEN (Senior).|
-| Itineraries/Itinerary /PaxConfigurations/PaxConfiguration /AppliedBonuses | 0..1 |   | Applied discounts.			|
-| @resident              		| 1 		| String	| Resident discount type: N(None), BP(Balearic Islands resident flying  to mainland), BI(Balearic Islands resident flying to another balearic  island), DC(Canarian Islands resident flying to another Canarian Island), RC(Canarian Islands resident flying  to mainland),RM(Ceuta/Melilla resident), STR(Italian resident discount), ELB(Italian resident  Elba), SDG(Italian resident Sardegna), SCL(Italian resident Sicily).	|
-| @largeFamily           		| 1 		| String	| Family discount type: N(None), F1(Large family), F2 (Special large family).	|
-| @discountCard          		| 1 		| String	| Discount card type (for more details, see information below).  |
-| Itineraries/Itinerary /PaxConfigurations/PaxConfiguration /AppliedBonuses/PaxTypeCodes | 0..1 |   | Contains a list of PaxTypeCodes.	|
-| Itineraries/Itinerary /PaxConfigurations/PaxConfiguration /AppliebBonuses/PaxTypeCodes /PaxTypeCode | 0..n |   | Contains details of the PTC.|
-| @code                  		| 1 		| String	| String with the PTC code.				|
+| @class                 		| 1 		| String	| Fare class. |
+| @paxRef               	 	| 1 		| Integer	| Passenger reference. 					|
+| @fareBasis             		| 1 		| String	| Identifier of the fare.				|
+| @fareType              		| 1 		| String	| Fare type: PUB ( Public ), PRI ( Private ), NEGO ( Negotiated ) and CORP ( Corporate ).	|
+| @avail                 		| 1 		| Integer	| Available seats remaining for this class (In flights, the maximum is 9).  |
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass/Modifiable | 0..1 |  | Contains the information of the modifiable fare.	|
+| @Description                 		| 1 		| String	| Modification description. |
+| @amount                 			| 1 		| Decimal	| Modification amount. |
+| @modifiable                 		| 1 		| Boolean	| If true, the fare allows this modification. |
+| @currency                 		| 1 		| String	| Modification currency. |
+| @amountType                 		| 1 		| String	| Modification amount type: AMOUNT (Fare amount), FEE (Fee amount), TOTAL (Total fare amount), PERCENTUAL (Percentual amount). |
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass/CancellationPolicies | 0..1 |  | Contains a list of CancellationPolicies.	|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass/CancellationPolicies/<br>CancellationPolicy | 1..n |  |Contains details of the CancelationPolicy.	|
+| @fromDate                 		| 1 		| Date	| Date of the begining of the policy. |
+| @amount                 			| 1 		| Decimal	| Policy amount. |
+| @refundable                 		| 1 		| Boolean	| If true, the fare allows the refundation. |
+| @currency                 		| 1 		| String	| Policy currency. |
+| @amountType                 		| 1 		| String	| Policy amount type: AMOUNT (Fare amount), FEE (Fee amount), TOTAL (Total fare amount), PERCENTUAL (Percentual amount).|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/ReservationTokens | 0..1 |  | Specific attribute used for each provider.|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/ReservationTokens/<br>Attribute | 0..n |  | Type of attribute.|
+| @key   | 1 		| String	| Contains the keyword/ Id to identify a parameter.	|
+| @value     | 1 		| String	| Contains the value of the parameter.|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/CheckinInformation | 0..1 |  | Checkin information.|
+| @openingTime | 1 		| Date	| Checkin opening time.|
+| @closingTime | 1 		| Date	| Checkin closing time.|
+| @estimatedCheckinTime | 1 		| Date	| Estimated checkin time.|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/CheckinInformation/<br>Status | 1 |  | Status checkin information.|
+| @isAvailable | 1 		| Boolean	| If true, the cheking is available.|
+| @direction | 1 		| String	| Direction of the journey about to checkin: DEPARTURE (Outbound), RETURN (Inbound), IDA_VUELTA (Outbound and Inbound).|
+| @status | 1 		| String	| Status of the checkin: UNDEFINED, IN_PROGRESS, ERROR, COMPLETE, UNCONFIRMED.|
+| Itineraries/Itinerary/AmountBreakdown  		| 1     	|		| Breakdown of the fare amount.|
+| @currency  | 1 		| String	| Currency code of the fare.|
+| @totalAmount           		| 1 		| Decimal	| Total amount. with taxes and other charges included.|
+| @notCommissionableAmount		| 1 		| Decimal	| Total amount that can not be commissioned.  		|
+| @commission            		| 1 		| Decimal	| Commission. 						|
+| Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakdowns | 0..1   |		| Contains a list of breakdown amounts ( taxes, mandatory charges.. ).	|
+| Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakdowns/ChargeBreakdown | 1..n |	| Contains details of the BreakdownAmount.	|
+| @type                  		| 1 		| String	| [Type of charge.](#valuation-enumerate-description) |
+| @amount                		| 1    	 	| Decimal	| Charge amount.				|
+| @included				| 1		| Boolean	| If true, the charge is included to the total fare amount |
+| Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakdowns/ChargeBreakdown<br>/Concept | 0..1 | | Contains details of the charge.|
+| @id                    		| 1 		| String	| Unique id of the Concept	|
+| @language              		| 1 		| String	| Language.			|
+| @cia              		| 1 		| String	| Carrier.			|
+| @code              		| 1 		| String	| Concept code.			|
+| Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakDowns/ChargeBreakdown<br>/Concept/Text | 1 | String | Remarks.	|
+| Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakDowns/ChargeBreakdown<br>/Concept/Paragraph | 1 |  | Contains a list of Sentences and titles.	|
+| @title	| 1	| String	| Title.	|
+| Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakDowns/ChargeBreakdown/<br>Concept/Paragraph/Sentence | 1 | String | Sentence|
+| Itineraries/Itinerary/AmountBreakdown/<br>PaxBreakdown | 0..1    	|		| Contains a list of breakdown amounts for each passenger ( ADT amount, etc. ).|
+| Itineraries/Itinerary/AmountBreakdown/<br>PaxBreakdowns/PaxBreakdown | 0..n | 	| Contains details of breakdown amounts for each passenger.|
+| @paxType               		| 1 		| String	| Passenger type: ADT ( Adult ), CHD ( Child ) & INF ( Infant ).|
+| @amount                		| 1 		| Decimal	| Total amount, with taxes included, associated to the passenger.	|
+| @taxes                 		| 1 		| Decimal	| If they exist, taxes are applied for this passenger type. |
+| @tasaDU                		| 1 		| Decimal	| DU taxes. 						|
+| @fees                			| 1 		| Decimal	| Fees. 						|
+| Itineraries/Itinerary/AmountBreakdown/<br>PaxBreakdowns/PaxBreakdown/<br>Taxes | 0..1 | 	| Contains a list of Taxes.|
+| Itineraries/Itinerary/AmountBreakdown/<br>PaxBreakdowns/PaxBreakdown/<br>Taxes/Tax | 0..n | 	| Code and amount of each tax.|
+| @code				| 1	| String	| Code.	|
+| @amount				| 1	| Decimal	| Amount.	|
+| Itineraries/Itinerary/PaxConfigurations		| 1     	|		| Contains a list of PaxConfiguration.	|
+| Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration | 1..n |   		| Contains details of PaxConfiguration.	|
+| @id                    		| 1 		| Integer	| Unique identifier of the PaxConfiguration. 		|
+| @paxRef                		| 1 		| Integer	| Reference to the passenger Id from the request. 	|
+| @age                   		| 1 		| Integer	| Age of the passenger. 				|
+| @nacionality                   	| 1 		| String	| Nacionality of the passenger. 			|
+| @paxType               		| 1 		| String	| Passenger type based on the age of the passenger: ADT (Adult), CHD (Child), INF (Infant), YOU (Young) and SEN (Senior).	|
+| Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses | 0..1 | | Applied discounts.			|
+| @resident              	| 1 		| String	| [Resident discount type.](#valuation-enumerate-description)|
+| @largeFamily           		| 1 		| String	| Family discount type: N(None), F1(Large family), F2 (Special large family). |
+| @discountCardCode		| 0..1	| String	| Discount card code.|
+| @discountCard		| 0..1	| String	| [Discount card type.](#valuation-enumerate-description)|
+| Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>DiscountCards	| 0..1	|	| Contains a list of DiscountCards.|
+| Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>DiscountCards/DiscountCard|
+| @code	| 1	| String | Discount card code.|
+| @id	| 1	| String	| Unique identifier of discound card.|
+| @type	| 1	| String	| [Discount card type.](#valuation-enumerate-description)|
+| Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>PaxTypeCodes		| 0..1	|		| Contains a list of PaxTypeCodes.|
+| Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>PaxTypeCodes/PaxTypeCode	| 0..n	|	| Contains the code type of the passenger.|
+| @code		| 1		| String	| Code type of the passenger.|
+| Itineraries/Itinerary/Emissions	| 0..1	|	| Contains a list of Issuances.|
+| Itineraries/Itinerary/Emissions/<br>Emission	| 0..n	|	| Contains the key of the Issuance.|
+| @key		| 1		| String	| Key of the Issuance.|
 
 
 
@@ -735,3 +921,90 @@ functionality is the same has SupplementsRQ.
 | @title                  		| 1  		| String	| Title.						|
 | Conditions/Condition/Paragraph /Sentence | 0..n	| String	| Sentences of the fare rule.				|
 
+
+### Valuation Enumerate description
+
+| **Element**				| **Possible Values**	| **Description**	|
+| ------------------------- | --------------------- | ------------------ |
+| @discountCard        					| N | None |
+| 							| NINYO |  |
+| 							| JOVEN | |
+| 							| ESCAPADA | |
+| 							| SENIOR | |
+| 							| THALYS_CORPORATE | |
+| 							| FORFAIT_LYS | |
+| 							| ABO_FREQUENCE_1ST_AND_2ND | |
+| 							| ABO_FORFAIT_1ST_AND_2ND | |
+| 							| BAHN_CARD_REDUCTION | |
+| 							| BAHN_CARD_25 | |
+| 							| SWITZERLAND_50 | |
+| 							| SWITZERLAND_100 | |
+| 							| EJERCITO_AIRE | |
+| 							| EJERCITO_TIERRA | |
+| 							| FUERZAS_NAVALES | |
+| 							| GUARDIA_CIVIL | |
+| 							| FREQUENT_FLYER | |
+| 							| CARTA_ARGENTO | |
+| 							| CARTA_FRECCIA | |
+| 							| UK_ANNUAL_GOLD | |
+| 							| UK_CHILD_DISABILITY | |
+| 							| UK_DISABILITY | |
+| 							| UK_FAMILY_FRIENDS | |
+| 							| UK_GROUPSAVE3 | |
+| 							| UK_GROUPSAVE4 | |
+| 							| UK_HM_ARMED_FORCES | |
+| 							| UK_JOBCENTRE_PLUS | |
+| 							| UK_NETWORK | |
+| 							| UK_SENIOR | |
+| 							| UK_TWO_TOGETHER | |
+| 							| UK_YOUTH | |
+| 							| UK_GROUPSAVE | |
+| @resident						| N | None |
+| 							| BP | Balearic Islands resident flying to mainland |
+| 							| BI | Balearic Islands resident flying to another balearic island |
+| 							| DC | Canarian Islands resident flying to another Canarian Island |
+| 							| RC | Canarian Islands resident flying to mainland |
+| 							| RM | Ceuta/Melilla resident |
+| 							| STR | Italian resident  discount |
+| 							| ELB | Italian resident Elba |
+| 							| SDG | Italian resident Sardegna |
+| 							| SLC | Italian resident Sicily |
+| 							| RE | Ceuta |
+| Vehicles/Vehicle/@type				| N  | None  |
+| 							| Turismo  | Touring  |
+| 							| Todoterreno  | All terrain  |
+| 							| Monovolumen  | Minivan  |
+| 							| CiclomotorMax50  | Moped max 50kg.  |
+| 							| MotocicletaMin50Max250  | Motorcicle min 50kg. max 250kg.  |
+| 							| MotocicletaMin250Max500  | Motorcicle min 250kg. max 500kg.  |
+| 							| MotocicletaMin500  | Motorcicle min 500kg.  |
+| 							| Bicicleta  | Bike  |
+| 							| Furgoneta  | Van  |
+| 							| VehiculoLargoMax6  | Long vehicle max 6m.  |
+| 							| VehiculoEmision0  | Zero emissions vehicle  |
+| 							| Caravana  | Caravan  |
+| 							| Remolque  | Trailer  |
+| Fares/Fare/AmountBreakdown<br>/ChargeBreakdowns/ChargeBreakdown/<br>@type				| TASA  | Tax  |
+| 							| TARJETA  | Card  |
+| 							| EQUIPAJE  | Baggage  |
+| 							| CHECKIN  | Checkin  |
+| 							| GASTOS_CIA  | Carrier charges  |
+| 							| TASA_DU  | DU Taxes  |
+| 							| IMPORTE_BASE  | Base import  |
+| 							| DESCUENTO  | Discount  |
+| 							| VEHICULO  | Vehicle  |
+| 							| GASTOS_BANCARIOS  | Bank charges  |
+| 							| GASTOS_CONVERSION_DIVISA  | Currency conversion charges  |
+| 							| FEE_VEHICULO  | Vehicle fee  |
+| 							| FEE  | Fee  |
+| 							| ASIENTO  | Seat  |
+| 							| SUPLEMENTO  | Supplement  |
+| 							| TRAVELCARD  | Travel card  |
+| 							| MASCOTA  | Pet  |
+| 							| FEE_MASCOTA  | Pet fee  |
+| 							| SEGURO  | Ensurance  |
+| 							| ACCESO_PREFERENTE  | Fast Track  |
+| 							| EMBARQUE_PRIORITARIO  | Priority Boarding  |
+| 							| BLOQUEO_TARIFA  | Fare lock |
+| 							| ASISTENCIA_ESPECIAL  | Special assistance  |
+| 							| PENALTY  | Penalty  |

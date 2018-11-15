@@ -1,4 +1,4 @@
----
+﻿---
 title: Avail
 keywords: transportation, data structure, flights, avail
 search: Transportation - Flights - Data Structure - Avail
@@ -22,7 +22,7 @@ will always return all of the results returned by the provider.
 
 The common part of an availability request is very straight forward. It
 only requires the destination/s, the travelling dates, the paxes and the
-indication of the trip type: one way trip or a round trip.
+indication of the trip type.
 
 
 
@@ -57,9 +57,6 @@ are already included in the total price.
 
 
 This method **must** be called **before** the Valuation method.
-
-The maximum time that our systems permits before closing the connexion
-is of **25000** milliseconds.
 
 
 
@@ -563,7 +560,7 @@ is of **25000** milliseconds.
 | @appliesSegments       		| 1 		| String	| Type applied to the segment: All (all journeys), Ida(ongoing), Vuelta(return), Ref(segment ref).		|
 | Transportation/Fares/Fare/Options/Option/BaggageTypes<br>/BaggageType/Baggage | 1 |    | Details of the baggage. 		|
 | @id                    		| 1 		| String	| Unique identifier of the Baggage.			|
-| @type                  		| 1 		| String	| Type of baggage: Bag, Bike, Wheelchair, Skis and BabyTrolley.|
+| @type                  		| 1 		| String	| Type of baggage: Bag, Bike, Wheelchair, Skis, BabyTrolley and HandBaggage.|
 | @quantity              		| 1 		| Integer	| Baggage quantity.  					|
 | @maxWeightPerUnit      		| 1 		| Integer	| Maximum weight of the baggage.  			| 
 | @maxTotalWeight        		| 1 		| Integer	| Maximum weight of ALL the baggage.			|
@@ -577,7 +574,9 @@ is of **25000** milliseconds.
 | @fixAmount             		| 1 		| Decimal| Total fixed amount.|
 | @appliesFixAmount             		| 1 		| String| The fixed amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
 | @minFixAmount             		| 1 		| Decimal| Minimal fixed amount.|
+| @maxFixAmount             		| 1 		| Decimal| Maximal fixed amount.|
 | @minAmountPercentage             		| 1 		| Decimal| Minimal percentage amount.|
+| @maxAmountPercentage             		| 1 		| Decimal| Maximal percentage amount.|
 | @currency             		| 1 		| String| Currency.|
 | @percentage             		| 1 		| Decimal| Total percentage amount.|
 | @percentageApplied             		| 1 		| String| The percentage amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
