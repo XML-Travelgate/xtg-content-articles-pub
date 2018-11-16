@@ -664,9 +664,9 @@ the selected Option.
 | @id	| 1	| String	| Unique id of the condition.	|
 | @language	| 1	| String	| Language in which the condition is written.	|
 | @Text | 1	| String	| Description of the condition.	|
-| Transportation/Fares/Fare/Conditions/<br>Condition/Paragraph	| 1 | | List of Sentences and titles. |
+| Itineraries/Itinerary/Conditions/Condition/<br>Paragraph	| 1 | | List of Sentences and titles. |
 | @title | 1	| String	| Title content.	|
-| Transportation/Fares/Fare/Conditions/<br>Condition/Paragraph/Sentence	| 1 | String	| List of Sentences contents. |
+| Itineraries/Itinerary/Conditions/Condition/<br>Paragraph/Sentence	| 1 | String	| List of Sentences contents. |
 | Itineraries/Itinerary/Journeys	| 0..1    	|		| Contains a list of Journeys.|
 | Itineraries/Itinerary/Journeys/Journey | 0..n    	|		| Contains details of the Journeys.|
 | @id     | 1 		| Integer	| Unique identifier of the Journey in scope.|
@@ -696,7 +696,7 @@ the selected Option.
 | @hasTechnicalStop   | 1 | Boolean	| If true, the segment has a technical stop. 		|
 | @electronicTicket      		| 1 		| Boolean	| If true, the segment uses a electronic ticket. 	| 
 | @secureFlight          		| 0..1		| Boolean	| If true, the provider requires extra information of the passengers. Flights parameter.	|
-| Transportation/Segments/Segment/OriginLoc | 1     	|		| Origin location.					|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/OriginLoc | 1     	|		| Origin location.					|
 | @type                  		| 1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).	|
 | @code                  		| 1 		| String	| Location code.					|
 | @name	| 1 		| String	| Location full name.	|
@@ -714,8 +714,8 @@ the selected Option.
 | @name	| 1 		| String	| Location full name.	|
 | @radius					| 0..1			| Integer	| Area radius from location.|
 | @cityCode              		| 1 		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.	||
-| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/<br>DestinationLoc/AlternativeLocations	| 0..1		|	| Contains a list of AlternativeLocations.
-| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/<br>DestinationLoc/AlternativeLocations/<br>AlternativeLocation	| 0..n	|	| Contains the information of the alternative location.|
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/DestinationLoc/<br>AlternativeLocations	| 0..1		|	| Contains a list of AlternativeLocations.
+| Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/DestinationLoc/<br>AlternativeLocations/AlternativeLocation	| 0..n	|	| Contains the information of the alternative location.|
 | @code						| 1			| String	| Location code.|
 | @cityCode        			| 1  		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
 | @name						| 0..1			| String	| Location long name.|
@@ -813,13 +813,11 @@ the selected Option.
 | Itineraries/Itinerary/Emissions	| 0..1	|	| Contains a list of Issuances.|
 | Itineraries/Itinerary/Emissions/<br>Emission	| 0..n	|	| Contains the key of the Issuance.|
 | @key		| 1		| String	| Key of the Issuance.|
-
+| OptionalCharges	| 0..1	|	| Deprecated.|
+| BaggageCharges | 0..1	|	| Deprecated.|
 
 
 ### ValuationSupplements
-
-
-  
 
 This option is only shown when requested in Preferences node. The
 functionality is the same has SupplementsRQ.
@@ -828,98 +826,179 @@ functionality is the same has SupplementsRQ.
 
 | **Element**				| **Number**	| **Type**	| **Description**					|
 | ------------------------------------- | ------------- | ------------- | ----------------------------------------------------- |
-| Supplements                  		| 1      	|		| Supplements node in ValuationRS.			|
+| Supplements        | 1      	|		| Supplements node in ValuationRS.|
 | PaymentMethods                 	| 0..1    	|		| Contains a list of paymentMethods.   			|
-| PaymentMethods/PaymentMethod 		| 1..n    	|		| Contains paymentMethod details.			|
-| @paymentType            		| 1  		| String	| Payment Type (CreditCard, ElectronicBanking).		|
-| @cardType               		| 1  		| String	| Card type with a provider format.			|
-| PaymentMethods/PaymentMehotd /PaymentCharge | 1      	|		| Charge of this payment.				|
-| @currency               		| 1  		| String	| Currency code of the supplement.			|
-| @fixAmount              		| 1 	 	| Decimal	| Fix amount.						|
-| @minFixAmount           		| 1  		| Decimal	| Minimum fix amount to be applied.  			|
-| @appliesFixAmount       		| 1  		| String	| Fix amount applies: ByPassenger, BySegment, BaseAmount, Taxes, ForAdt (by adult), ForChd (by child) and ForInf (by infant).	|
-| @percentage             		| 1  		| Decimal	| Percentage.						|
-| @minAmountPercentage    		| 1  		| Decimal	| Minimum percentage charge.				|
-| @percentageApplied      		| 1  		| String	| Percentage applied: ByPassenger, BySegment, BaseAmount, Taxes, ForAdt (by adult), ForChd (by child) and ForInf (by infant).	|
-| BaggageTypes                 		| 0..1    	|		| List of Baggage information.     			|
-| BaggageTypes/BaggageType     		| 1..n    	|		| Baggage information.     				|
-| @checkInType            		| 1  		| String	| Check-in type (OnLine, Airport).			|
-| @appliesSegments        		| 1  		| String	| Segments in which is applied: All, Departure, Return, Ref.  |
-| BaggageTypes/BaggageType /Baggage	| 1..n    	|		| Baggage description and charge.   			|
-| @id                     		| 1  		| String	| Unique identifier of the Baggage.			|
-| @type                   		| 1  		| String	| Type of baggage: Bag, Bike, Wheelchair, Skis and BabyTrolley.  |
-| @quantity               		| 1  		| Integer	| Baggage quantity.					| 
-| @maxWeightPerUnit       		| 1  		| Integer	| Maximum weight of the baggage.			|
-| @maxTotalWeight         		| 1  		| Integer	| Maximum weight of ALL the baggage.			|
-| @paymentInAirpot        		| 1  		| Boolean 	| Determines whether the pay is in station. 		|
-| @code                   		| 1  		| String	| Code of the Baggage.					|
-| @carrier                		| 1  		| String	| Carrier.						|
-| @needToken              		| 1  		| Boolean	| Reserve token mandatory.				|
-| BaggaesInfos/BaggageType /Baggage/BaggageCharge | 1  	|    		| Charge of this payment.				|
-| @currency               		| 1  		| String	| Currency code of the supplement.			|
-| @fixAmount              		| 1  		| Decimal	| Fix amount.						|
-| @minFixAmount           		| 1  		| Decimal	| Minimum fix amount to be applied.   			|
-| @appliesFixamount       		| 1  		| String	| Fix amount applies: ByPassenger, BySegment, BaseAmount, Taxes, ForAdt (by adult), ForChd (by child) and ForInf (by infant).	|
-| @percentage             		| 1  		| Decimal	| Percentage.						|
-| @minamountPercentage    		| 1  		| Decimal	| Minimum percentage charge.				|
-| @percentageApplied      		| 1  		| String	| Percentage applied: ByPassenger, BySegment, BaseAmount, Taxes, ForAdt (by adult), ForChd (by child) and ForInf (by infant).	|
-| BaggageTypes/BaggageType /References	| 0..1    	|		| Contains a list References.				|
-| BaggageTypes/BaggageType /References/SegmentReferences | 0..1 |   	| List of SegmentInfo References.			|
-| BaggageTypes/BaggageType /References/SegmentReferences /SegmentReference | 0..n |   | SegmentInfo Reference.			|
-| @itineraryRef           		| 1  		| Integer	| Itinerary Reference.   				|
-| @journeyRef             		| 1  		| Integer	|Journey Reference.					|
-| @segmentRef             		| 1  		| Integer	| SegmentInfo Reference.				|
-| BaggageTypes/BaggageType /References/PaxReferences | 0..1 |   	| List of references to passengers related to the baggage information.|
-| BaggageTypes/BaggageType /References/PaxReferences /PaxReference | 0..n |   | Contains PaxReference details.  		|
-| @paxRef                 		| 1  		| Integer	| Unique identifier of the PaxReference. 		|
-| Seating                      		| 0..1    	|		| Seating availability.     				|
-| Seating/BlockRules           		| 0..n    	|		| Blocks of references.    				|
-| Seating/BlockRules/BlockRule 		| 0..n    	|		| Block of references.     				|
-| Seating/BlockRules/BlockRule/References | 0..1    	|		| List of references to Blocks (seating details), Segments and Passengers.	|
-| Seating/BlockRules/BlockRule /References/BlockReferences | 0..1 |   	| References to block elements. 			|
-| Seating/BlockRules/BlockRule /References/BlockReferences /BlockReference | 0..n |   | List of references.			|
-| @blockTypeRef           		| 1  		| String	| Referenced block type: UNASSIGNED(Unassigned), AIRLINE (Airline). |
-| @blockRef               		| 1  		| Integer	| Reference to block id.  				|
-| Seating/BlockRules/BlockRule /References/PaxReferences | 0..1 |   	| References to Passenger.				|
-| Seating/BlockRules/BlockRule /References/PaxReferences /PaxReference | 0..n |   | Reference to a Passenger.			|
-| @paxRef                 		| 1  		| Integer	| The id number of the passenger referenced. 		|
-| Seating/BlockRules/BlockRule /BlockPrice | 0..1  	|  		| Price element.					|
-| Seating/BlockRules/BlockRule /BlockPrice/Amount | 1  	|    		| Amount by type.					|
-| @currency               		| 1  		| String	| Currency code of the amount.				|
+| PaymentMethods/PaymentMethod 		| 1..n    	|	| Contains paymentMethod details.|
+| @paymentType            		| 1  		| String	| Payment Type: CreditCard, ElectronicBanking.|
+| @cardType               		| 1  		| String	| Card type with a provider format.|
+| PaymentMethods/PaymentMethod/<br>PaymentCharges | 0..1      	|		| Contains a list of Payment Charges.|
+| PaymentMethods/PaymentMethod/<br>PaymentCharges/PaymentCharge | 1..n      	|		| Charge applied to the Booking when this paymed method is used.|
+| @fixAmount             		| 1 		| Decimal| Total fixed amount.|
+| @appliesFixAmount             		| 1 		| String| The fixed amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| @minFixAmount             		| 1 		| Decimal| Minimal fixed amount.|
+| @maxFixAmount             		| 1 		| Decimal| Maximal fixed amount.|
+| @minAmountPercentage             		| 1 		| Decimal| Minimal percentage amount.|
+| @maxAmountPercentage             		| 1 		| Decimal| Maximal percentage amount.|
+| @currency             		| 1 		| String| Currency.|
+| @percentage             		| 1 		| Decimal| Total percentage amount.|
+| @percentageApplied             		| 1 		| String| The percentage amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| BaggageTypes                 		| 0..1    	|		| Contains a list of Baggage information.|
+| BaggageTypes/BaggageType     | 1..n    	|		| Baggage information.|
+| @checkInType        | 1  		| String	| Check-in type: OnLine & Airport.|
+| @appliesSegments        		| 1  		| String	| Segments in which is applied: All, Departure, Return, Ref (only the segment references indicated in the node SegmentReferences).|
+| BaggageTypes/BaggageType/<br>References		| 0..1	|	|	References for the Baggage Type.|
+| BaggageTypes/BaggageType/<br>References/SegmentReferences		| 0..1	|	|	Contains a list of segment references for the Baggage Type.|
+| BaggageTypes/BaggageType/<br>References/SegmentReferences/<br>SegmentReference		| 1..n	|	|	Segment reference.|
+| @itineraryRef | 1 		| Integer| Unique identifier of the Itinerary.|
+| @journeyRef | 1 		| Integer| Unique identifier of the Journey.|
+| @segmentRef | 1 		| Integer| Unique identifier of the Segment.|
+| BaggageTypes/BaggageType/<br>References/PaxReferences		| 0..1	|	|	Contains a list of passenger references for the Baggage Type.|
+| BaggageTypes/BaggageType/<br>References/PaxReferences/<br>PaxReference		| 1..n	|	|	Passenger reference.|
+| @paxRef | 1 		| String| Reference to the passenger.|
+| BaggageTypes/BaggageType/Baggage | 1..n |    | Details of the baggage. 		|
+| @id                    		| 1 		| String	| Unique identifier of the Baggage.			|
+| @type                  		| 1 		| String	| Type of baggage: Bag, Bike, Wheelchair, Skis, BabyTrolley and HandBaggage.|
+| @quantity              		| 1 		| Integer	| Baggage quantity.|
+| @maxWeightPerUnit      | 1 		| Integer	| Maximum weight of the baggage.| 
+| @maxTotalWeight        		| 1 		| Integer	| Maximum weight of ALL the baggage.|
+| @paymentInAirpot       		| 1 		| Boolean	| Determines whether the pay is in station.|
+| @code     | 1 		| String	| Code of the Baggage.|
+| @carrier               		| 1 		| String	| Carrier.|
+| @needToken     | 1 		| Boolean	| Reserve token mandatory.|
+| @reservationToken             		| 1 		| String| Reserve token.|
+| @description             		| 1 		| String| Baggage description.|
+| BaggageTypes/BaggageType/Baggage/<br>BaggageCharge | 1 |    | Details of the baggage charge.|
+| @fixAmount             		| 1 		| Decimal| Total fixed amount.|
+| @appliesFixAmount             		| 1 		| String| The fixed amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| @minFixAmount             		| 1 		| Decimal| Minimal fixed amount.|
+| @maxFixAmount             		| 1 		| Decimal| Maximal fixed amount.|
+| @minAmountPercentage             		| 1 		| Decimal| Minimal percentage amount.|
+| @maxAmountPercentage             		| 1 		| Decimal| Maximal percentage amount.|
+| @currency             		| 1 		| String| Currency.|
+| @percentage             		| 1 		| Decimal| Total percentage amount.|
+| @percentageApplied             		| 1 		| String| The percentage amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| SpecialSupplements	| 0..1	|	|	Contains a list of SpecialSupplements.
+| SpecialSupplements/SpecialSupplement		| 0..n	|	|	Contains information about the Special Supplement	|
+| @id	| 1	| String	| Unique identifier of the supplement.|
+| @code	| 1	| String	| Supplement code.|
+| @height	| 0..1	| Integer	| Dimension of the supplement: height.|
+| @width	| 0..1	| Integer	| Dimension of the supplement: width.|
+| @length	| 0..1	| Integer	| Dimension of the supplement: length.|
+| @weight	| 0..1	| Integer	| Dimension of the supplement: weight.|
+| @quantity	| 0..1	| Integer	| Quantity of supplements.|
+| @description	| 0..1	| String	| Description of the supplement|
+| @carrier	| 1	| String	| Carrier selling the supplement.|
+| @estado	| 0..1	| String	| Status of the supplement: N(None), INC(Included in the price), CHA(Avalilable with charges), NOF(Not offered).|
+| @needToken	| 1	| Boolean	| If true, the field @reservationToken should be filled|
+| @type	| 1	| String	| Type of supplement: Miscelaneous, Seat, Meal, Pet, Lounge, Baggage, Canoe, PreferentialBoarding, Bike, Trailer, Seguro, Embarque_Prioritario, Acceso_Preferente, Bloqueo_Tarifa, Special_Assistance.|
+| @reservationToken	| 0..1	| String	| Reservation Token of the supplement.|
+| @ownTransportation	| 0..1	| Boolean	| If true, the supplement includes own transportation cage.|
+| SpecialSupplements/SpecialSupplement/<br>References		| 0..1	|	|	References for the Special Supplement.|
+| SpecialSupplements/SpecialSupplement/<br>References/SegmentReferences		| 0..1	|	|	Contains a list of segment references for the Special Supplement.|
+| SpecialSupplements/SpecialSupplement/<br>References/SegmentReferences/<br>SegmentReference		| 1..n	|	|	Segment reference.|
+| @itineraryRef | 1 		| Integer| Unique identifier of the Itinerary.|
+| @journeyRef | 1 		| Integer| Unique identifier of the Journey.|
+| @segmentRef | 1 		| Integer| Unique identifier of the Segment.|
+| SpecialSupplements/SpecialSupplement/<br>References/PaxReferences		| 0..1	|	|	Contains a list of passenger references for the Special Supplement.|
+| SpecialSupplements/SpecialSupplement/<br>References/PaxReferences/PaxReference		| 1..n	|	|	Passenger reference.|
+| @paxRef | 1 		| String| Reference to the passenger.|
+| SpecialSupplements/SpecialSupplement/<br>SupplementCharge		| 0..1	|	|	Details of the special supplement charge.|
+| @fixAmount             		| 1 		| Decimal| Total fixed amount.|
+| @appliesFixAmount             | 1 		| String| The fixed amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| @minFixAmount             		| 1 		| Decimal| Minimal fixed amount.|
+| @maxFixAmount             		| 1 		| Decimal| Maximal fixed amount.|
+| @minAmountPercentage             		| 1 		| Decimal| Minimal percentage amount.|
+| @maxAmountPercentage             		| 1 		| Decimal| Maximal percentage amount.|
+| @currency             		| 1 		| String| Currency.|
+| @percentage             		| 1 		| Decimal| Total percentage amount.|
+| @percentageApplied             		| 1 		| String| The percentage amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| Seating        | 0..1    	|		| Seating availability.|
+| Seating/BlockRules    | 0..1    	|		| Contains a list of Block Rules.|
+| Seating/BlockRules/BlockRule 		| 0..n    	|		| Block Rules.|
+| Seating/BlockRules/BlockRule/References | 0..1    	|		| References for the Block Rule.|
+| Seating/BlockRules/BlockRule/References/<br>BlockReferences		| 0..1	|	|	Contains a list of references to block elements.|
+| Seating/BlockRules/BlockRule/References/<br>BlockReferences/BlockReference | 0..n |   | Block element reference.			|
+| @blockTypeRef     | 1  		| String	| Block type: CABIN (The entire cabin of the plane).|
+| @blockRef      | 1  		| Integer	| Block reference.|
+| Seating/BlockRules/BlockRule/References/<br>SegmentReferences		| 0..1	|	|	Contains a list of segment references for the Block Rule.|
+| Seating/BlockRules/BlockRule/References/<br>SegmentReferences/SegmentReference		| 1..n	|	|	Segment reference.|
+| @itineraryRef | 1 		| Integer| Unique identifier of the Itinerary.|
+| @journeyRef | 1 		| Integer| Unique identifier of the Journey.|
+| @segmentRef | 1 		| Integer| Unique identifier of the Segment.|
+| Seating/BlockRules/BlockRule/References/<br>PaxReferences		| 0..1	|	|	Contains a list of passenger references for the Special Supplement.|
+| Seating/BlockRules/BlockRule/References/<br>PaxReferences/PaxReference		| 1..n	|	|	Passenger reference.|
+| @paxRef | 1 		| String| Reference to the passenger.|
+| Seating/BlockRules/BlockRule/BlockPrice | 0..1  	|  		| Price element.|
+| Seating/BlockRules/BlockRule/BlockPrice/<br>Amount | 1  	|    | Amount by type.|
+| @currency    | 1  		| String	| Currency code of the amount.				|
 | @amount                 		| 1  		| Decimal	| Amount.						|
-| @amountType             		| 1  		| String	| Amount type: AMOUNT (Amount), FEE (Service Fee), TOTAL (Total), PERCENTUAL (Percentual).	|
-| Seating/Blocks                  	| 0..1    	|		| Seating details.   					|
-| Seating/Blocks/Block         		| 0..n    	|		| Cabin block.						|
-| @type                   		| 1  		| String	| Type (CABIN).						|
-| @id                     		| 1  		| Integer	| Unique id.						|
-| Seating/Blocks/Block /Blocks/Block 	| 0..n    	|		| Row block.  						|
-| @type                   		| 1  		| String	| Type (ROW).						|
-| @id                     		| 1  		| Integer	| Unique id.						|
-| @number                 		| 1  		| Integer	| Row number.						|
-| Seating/Blocks/Block/Blocks /Block/Blocks/Block | 0..n  |   		| Seat block.						|
-| @type                   		| 1  		| String	| Type (SEAT).						|
-| @id                     		| 1  		| Integer	| Unique id. 						|
-| @number                 		| 1  		| String	| Seat identifier.					|
-| @token                  		| 1  		| String	| Reserve token.					|
-| Seating/Blocks/Block/Blocks /Block/Blocks/Block /Availability | 0..1 |  | Availability of the seat.				|
-| @isAvailable            		| 1  		| String	| Indicates whether the seat is available.		|
-| Seating/Blocks/Block/Blocks /Block/Blocks/Block /BlockAttributes | 0..1 |   | Seat attributes.   				|
-| Seating/Blocks/Block/Blocks /Block/Blocks/Block /BlockAttributes/BlockAttribute | 0..n |  | Seat attribute.                   |
-| @type                   		| 1  		| String	| Seat type (OVER_WING, MIDDLE, AISLE, WINDOW, COMPARTMENT, LAVATORY, LUGGAGE).	|
-| SpecialSupplements           		| 0..1    	|		| Ancillaries.      					|
-| SpecialSupplements/SpecialSupplement	| 0..n    	|		| List of ancillaries.					|
-| @id                     		| 1  		| String	| Identifier.						|
-| @type                   		| 1  		| String	| Ancillary type (Miscellaneous, Seat, Meal, Pet, Lounge, Baggage). |
-| @quantity               		| 1  		| Integer	| Quantity.						|
-| @code                   		| 1  		| String	| Code from the provider.				|
-| @needToken              		| 1  		| Boolean	| Reserve token mandatory.  				|
-| @description            		| 1  		| String	| Description.						|
-| Conditions                   		| 0..1    	|		| List of applied fare conditions. 			|
-| Conditions/Condition            	| 1..n    	|		| Fare condition.   					|
-| @id                     		| 1  		| String	| Typified id for the fare rule.			|
-| Conditions/Condition/Paragraph	| 0..n    	|		| Group of sentences.					|
-| @title                  		| 1  		| String	| Title.						|
-| Conditions/Condition/Paragraph /Sentence | 0..n	| String	| Sentences of the fare rule.				|
+| @amountType             		| 1  		| String	| Amount type: AMOUNT (Amount), FEE (Service Fee), TOTAL (Total), PERCENTUAL (Percentual).|
+| Seating/Blocks     | 0..1    	|		| Contains a list of seating blocks.|
+| Seating/Blocks/Block    | 0..n    	|		| Seating details.|
+| @type   | 1  		| String	| Block type: CABIN (The entire cabin of the plane).|
+| @id     | 1  		| Integer	| Unique id.|
+| Seating/Blocks/Block/References/<br>SegmentReferences		| 0..1	|	|	Contains a list of segment references for the Block.|
+| Seating/Blocks/Block/References/<br>SegmentReferences/SegmentReference		| 1..n	|	|	Segment reference.|
+| @itineraryRef | 1 		| Integer| Unique identifier of the Itinerary.|
+| @journeyRef | 1 		| Integer| Unique identifier of the Journey.|
+| @segmentRef | 1 		| Integer| Unique identifier of the Segment.|
+| Seating/Blocks/Block/Blocks | 1    	|		| Contains a list of row blocks.|
+| Seating/Blocks/Block/Blocks/Block 	| 0..n    	|		| Row block.|
+| @type    	| 1  		| String	| Block type: ROW|
+| @id     	| 1  		| Integer	| Unique row id.|
+| @number   | 1  		| Integer	| Row number in the cabin.|
+| Seating/Blocks/Block/Blocks/Block/<br>Blocks | 1    	|		| Contains a list of seat blocks.|
+| Seating/Blocks/Block/Blocks/Block/<br>Blocks/Block | 0..n  |   	| Seat block.|
+| @type      | 1  		| String	| Block type: SEAT.						|
+| @id       | 1  		| Integer	| Unique seat id. 						|
+| @number    	| 1  		| String	| Seat identifier.					|
+| @token    	| 1  		| String	| Reservation seat token.					|
+| Seating/Blocks/Block/Blocks/Block/<br>Blocks/Block/Availability | 0..1 |  | Availability of the seat.|
+| @isAvailable  | 1  		| String	| Indicates whether the seat is available.|
+| Seating/Blocks/Block/Blocks/Block/<br>Blocks/Block/BlockAttributes | 0..1 |   | Contains a list of Seat attributes.|
+| Seating/Blocks/Block/Blocks/Block/<br>Blocks/Block/BlockAttributes/<br>BlockAttribute | 0..n |  | Seat attribute.|
+| @type                   		| 1  		| String	| [Seat type.](#valuation-enumerate-description)|
+| Conditions	| 0..1 |	| Contains a list of applied fare conditions.|
+| Conditions/Condition	| 1 |	| Details of the condition. |
+| @cia	| 1	| String	| Carrier applying the condition.	|
+| @code	| 1	| String	| Code of the condition.	|
+| @id	| 1	| String	| Unique id of the condition.	|
+| @language	| 1	| String	| Language in which the condition is written.	|
+| @Text | 1	| String	| Description of the condition.	|
+| Transportation/Fares/Fare/Conditions/<br>Condition/Paragraph	| 1 | | List of Sentences and titles. |
+| @title | 1	| String	| Title content.	|
+| Transportation/Fares/Fare/Conditions/<br>Condition/Paragraph/Sentence	| 1 | String	| List of Sentences contents. |
+| SummarizedConditions | 0..1 |	| Summarized applied fare conditions.|
+| SummarizedConditions/FareRuleTypes | 0..1 |	| Contains a list of fare rules.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType | 1..n |	| Fare rule details.|
+| @id	| 1	| String	| Unique id of the fare rule.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/TicketingRules | 0..1 |	| Ticketing rules details.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/TicketingRules/<br>DatesTypes | 0..n |	| Contains a list of Date type elements.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/TicketingRules/<br>DatesTypes/DatesType | 0..n |	| Date details.|
+| @type	| 1	| String	| Date type.|
+| @date	| 1	| Date	| Ticketing date.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/MinimumStayRules | 0..1 |	| Minimum stay rules details.|
+| @location | 1	| String	| Location concerning the minimum stay.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/MinimumStayRules/<br>DatesTypes | 0..n |	| Contains a list of Date type elements.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/MinimumStayRules/<br>DatesTypes/DatesType | 0..n |	| Date details.|
+| @type	| 1	| String	| Date type.|
+| @date	| 1	| Date	| Date.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/MaximumStayRules | 0..1 |	| Maximum stay rules details.|
+| @location | 1	| String	| Location concerning the maximum stay.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/MaximumStayRules/<br>DatesTypes | 0..n |	| Contains a list of Date type elements.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/MaximumStayRules/<br>DatesTypes/DatesType | 0..n |	| Date details.|
+| @type	| 1	| String	| Date type.|
+| @date	| 1	| Date	| Date.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/Penalty | 0..1 |	| Penaly rules details.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/Penalty/<br>DatesTypes | 0..n |	| Contains a list of Date type elements.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/Penalty/<br>DatesTypes/DatesType | 0..n |	| Date details.|
+| @type	| 1	| String	| Date type.|
+| @date	| 1	| Date	| Date.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/Penalty/AmountTypes | 0..n |	| Contains a list of amount types.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/Penalty/AmountTypes/<br>AmountType | 0..n |	| Amount details.|
+| @type	| 1	| String	| Date type.|
+| @date	| 1	| Date	| Date.|
+| @type	| 1	| String	| Date type.|
 
 
 ### Valuation Enumerate description
@@ -1008,3 +1087,27 @@ functionality is the same has SupplementsRQ.
 | 							| BLOQUEO_TARIFA  | Fare lock |
 | 							| ASISTENCIA_ESPECIAL  | Special assistance  |
 | 							| PENALTY  | Penalty  |
+| BlockAttribute/@type		| OVER_WING | Over wing seat|
+| 							| MIDDLE  | Middle seat |
+| 							| AISLE  | Aisle seat  |
+| 							| WINDOW  | Window seat  |
+| 							| COMPARTMENT  | Compartment |
+| 							| LAVATORY | Lavatory |
+| 							| LUGGAGE | Luggage seat |
+| 							| PHONE | Phone seat |
+| 							| POWER | Power |
+| 							| TABLE | Table |
+| 							| EXITROW | Emergency exit |
+| 							| FEETBLOCKED | Feet blocked seat |
+| 							| NO_CHILD | No childs allowed seat |
+| 							| NO_INFANT | No infants allowed seat |
+| 							| XL_SEAT | XL seat |
+| 							| RESTRICTED | Seat with some kind of restriction |
+| 							| HANDICAP | Special seat for handicap people |
+| 							| QUIET | Quiet seat |
+| 							| GROUPS | Groups seat |
+| 							| NO_PET | No pets allowed seat |
+| 							| BULKHEAD | Bulk head seat |
+| 							| BLOCKED | Blocked seat |
+| 							| UNKNOWN | Unknown characterstic |
+| 							| LAST_OFF | Last off |
