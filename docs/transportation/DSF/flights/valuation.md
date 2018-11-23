@@ -298,7 +298,7 @@ the selected Option.
 | @discountCardCode		| 0..1	| String	| Discount card code.|
 | @discountCard		| 0..1	| String	| [Discount card type.](#valuation-enumerate-description)|
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>DiscountCards	| 0..1	|	| Contains a list of DiscountCards.|
-| Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>DiscountCards/DiscountCard|
+| Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>DiscountCards/DiscountCard| 1..n	|	| DiscountCard details.|
 | @code	| 1	| String | Discount card code.|
 | @id	| 1	| String	| Unique identifier of discound card.|
 | @type	| 1	| String	| [Discount card type.](#valuation-enumerate-description)|
@@ -332,7 +332,6 @@ the selected Option.
 | @type	| 1	| String	| Type of supplement: Miscelaneous, Seat, Meal, Pet, Lounge, Baggage, Canoe, PreferentialBoarding, Bike, Trailer, Seguro, Embarque_Prioritario, Acceso_Preferente, Bloqueo_Tarifa, Special_Assistance.|
 | @reservationToken	| 0..1	| String	| Reservation Token of the supplement.|
 | @ownTransportation	| 0..1	| Boolean	| If true, the supplement includes own transportation cage.|
-| @key              		| 1 		| String	| Issuance key.					|
 
 
 
@@ -965,9 +964,9 @@ functionality is the same has SupplementsRQ.
 | @id	| 1	| String	| Unique id of the condition.	|
 | @language	| 1	| String	| Language in which the condition is written.	|
 | @Text | 1	| String	| Description of the condition.	|
-| Transportation/Fares/Fare/Conditions/<br>Condition/Paragraph	| 1 | | List of Sentences and titles. |
+| Conditions/Condition/Paragraph	| 1 | | List of Sentences and titles. |
 | @title | 1	| String	| Title content.	|
-| Transportation/Fares/Fare/Conditions/<br>Condition/Paragraph/Sentence	| 1 | String	| List of Sentences contents. |
+| Conditions/Condition/Paragraph/Sentence	| 1 | String	| List of Sentences contents. |
 | SummarizedConditions | 0..1 |	| Summarized applied fare conditions.|
 | SummarizedConditions/FareRuleTypes | 0..1 |	| Contains a list of fare rules.|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType | 1..n |	| Fare rule details.|
@@ -998,7 +997,59 @@ functionality is the same has SupplementsRQ.
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/Penalty/AmountTypes/<br>AmountType | 0..n |	| Amount details.|
 | @type	| 1	| String	| Date type.|
 | @date	| 1	| Date	| Date.|
+| @currency | 1	| String	| Date type.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/Penalty/RestrictionTypes | 0..n |	| Contains a list of restriction types.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/Penalty/RestrictionTypes/<br>RestrictionType | 0..n |	| Restriction details.|
+| @type	| 1	| String	| Restriction type.|
+| @application | 1	| Boolean | If true, the restriction applies to the fare.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/ReissueRules | 0..1 |	| Reissue rules details.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/ReissueRules/<br>DatesTypes | 0..n |	| Contains a list of Date type elements.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/ReissueRules/<br>DatesTypes/DatesType | 0..n |	| Date details.|
 | @type	| 1	| String	| Date type.|
+| @date	| 1	| Date	| Date.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/ReissueRules/AmountTypes | 0..n |	| Contains a list of amount types.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/ReissueRules/AmountTypes/<br>AmountType | 0..n |	| Amount details.|
+| @type	| 1	| String	| Date type.|
+| @date	| 1	| Date	| Date.|
+| @currency | 1	| String	| Date type.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/ReissueRules/RestrictionTypes | 0..n |	| Contains a list of restriction types.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/ReissueRules/RestrictionTypes/<br>RestrictionType | 0..n |	| Restriction details.|
+| @type	| 1	| String	| Restriction type.|
+| @application | 1	| Boolean | If true, the restriction applies to the fare.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/RefundRules| 0..1 |	| Refund rules details.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/RefundRules/<br>DatesTypes | 0..n |	| Contains a list of Date type elements.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/RefundRules/<br>DatesTypes/DatesType | 0..n |	| Date details.|
+| @type	| 1	| String	| Date type.|
+| @date	| 1	| Date	| Date.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/RefundRules/AmountTypes | 0..n |	| Contains a list of amount types.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/RefundRules/AmountTypes/<br>AmountType | 0..n |	| Amount details.|
+| @type	| 1	| String	| Date type.|
+| @date	| 1	| Date	| Date.|
+| @currency | 1	| String	| Date type.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/RefundRules/RestrictionTypes | 0..n |	| Contains a list of restriction types.|
+| SummarizedConditions/FareRuleTypes/<br>FareRuleType/RefundRules/RestrictionTypes/<br>RestrictionType | 0..n |	| Restriction details.|
+| @type	| 1	| String	| Restriction type.|
+| @application | 1	| Boolean | If true, the restriction applies to the fare.|
+| SummarizedConditions/FareRuleApplicabilities | 0..1 |	| Contains a list of fare rules aplicability.|
+| SummarizedConditions/FareRuleApplicabilities/<br>FareRulesApplicability | 1..n |	| Contains a list of fare rules aplicability.|
+| SummarizedConditions/FareRuleApplicabilities/<br>FareRulesApplicability/OriginDestinationIds | 0..1 |	| Contains a list of Origin Destination identificators.|
+| SummarizedConditions/FareRuleApplicabilities/<br>FareRulesApplicability/OriginDestinationIds/<br>OriginDestinationId | 1..n |	| List of Origin and Destinations pairs involved in the fare rule.|
+| @origin| 1	| String	| Origin.|
+| @destination	| 1	| String	| Destination.|
+| SummarizedConditions/FareRuleApplicabilities/<br>FareRulesApplicability/PaxReferences | 0..1 |	| Contains a list of pasengers involved in the fare rules.|
+| SummarizedConditions/FareRuleApplicabilities/<br>FareRulesApplicability/PaxReferences/<br>PaxReference| 1..n |	| List of references to pasengers related to the fare rule.|
+| @paxRef| 1	| String	| Reference to a specific pasenger.|
+| SummarizedConditions/FareRuleApplicabilities/<br>FareRulesApplicability/FareRulesReferences | 0..1 |	| Contains a list of fare rules. |
+| SummarizedConditions/FareRuleApplicabilities/<br>FareRulesApplicability/FareRulesReferences/<br>FareRulesReference| 1..n |	| List of references to fare rules.|
+| @FareRulesRefType | 1	| String	| Reference to a fare rule.|
+| Installments | 0..1 |	| Contains a list of Installments. |
+| Installments/Installment | 1..n |	| Installment details. |
+| @number | 1	| Integer | Number of installments.|
+| @currency | 1	| String	| Currency.|
+| Installments/Installment/PaymentCharge | 0..1 |	| First installment amount. |
+| Installments/Installment/InterestRate | 0..1 |	| Interest rate. |
+| Installments/Installment/<br>RemainingInstallmentAmount | 0..1 |	| Remaining installment amount. |
+| Installments/Installment/<br>RemainingInstallmentTotalAmount | 0..1 |	| Remaining installment total amount. |
 
 
 ### Valuation Enumerate description
