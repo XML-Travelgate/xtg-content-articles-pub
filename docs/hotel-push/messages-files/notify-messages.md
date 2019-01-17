@@ -1247,7 +1247,9 @@ Error Response
 
 ### HotelResNotif
 
-If the Channel manager allows reservation delivery. During the booking process, we will send a HotelResNotifRQ message to the Channel to inform about the reservations. 
+Only implements if the Channel manager allows reservation delivery. 
+
+During the booking process, we will send a HotelResNotifRQ message to the Channel to inform about the reservations. 
 The Channel will process the booking info and will inform us of the reservation status. TGX will process the response from the Channel's system and will proceed with the reservation process.
 
 If the Channel has the booking locator of the reservation, they can send it in the HotelResNotifRS.
@@ -1640,7 +1642,9 @@ Error Response
 
 ### CancelNotif
 
-If the Channel manager allows cancellation delivery. During the cancellation process, we will send a CancelNotifRQ message to the Channel to inform of the cancellation. 
+Only implements if the Channel Manager allows cancellation delivery. 
+
+During the cancellation process, we will send a CancelNotifRQ message to the Channel to inform of the cancellation. 
 The Channel will process the cancellation info and will inform us of the reservation status. TGX will process the response from the Channel's system and will proceed with the cancellation process.
 
 Note that if the cancellation into the Channel system fails, it will be considered NOK and we will inform the OTA with an error.
