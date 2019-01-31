@@ -1927,20 +1927,20 @@ Note that if the cancellation into the Channel system fails, it will be consider
 Success Response
 
 ~~~xml
-    <OTA_HotelResRS>
+    <OTA_HotelResNotifRS>
       <Success xmlns = "http://www.opentravel.org/OTA/2003/05"/>
-    </OTA_HotelResRS>
+    </OTA_HotelResNotifRS>
 ~~~
 
 
 Error Response
 
 ~~~xml
-    <OTA_HotelResRS>
+    <OTA_HotelResNotifRS>
       <Errors xmlns = "http://www.opentravel.org/OTA/2003/05">
         <Error ShortText = "Cancellation error" Code = "60">Reservation doesn't exist</Error>
       </Errors>
-    </OTA_HotelResRS>
+    </OTA_HotelResNotifRS>
 ~~~
 
 
