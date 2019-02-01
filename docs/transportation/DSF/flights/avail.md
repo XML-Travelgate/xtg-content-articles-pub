@@ -1,4 +1,4 @@
-﻿---
+---
 title: Avail
 keywords: transportation, data structure, flights, avail
 search: Transportation - Flights - Data Structure - Avail
