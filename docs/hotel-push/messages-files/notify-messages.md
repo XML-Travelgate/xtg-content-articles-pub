@@ -1261,199 +1261,198 @@ Note that if the reservation into the Channel system fails, it will be considere
 **Example for MerchantPayment**
 
 ~~~xml
-	<OTA_HotelResRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" ResResponseType = "Committed" xmlns = "http://www.opentravel.org/OTA/2003/05">
-		<HotelReservations>
-			<HotelReservation CreateDateTime = "2018-08-01T09:07:28.5074165Z" ResStatus = "Confirmed">
-				<RoomStays>
-					<RoomStay>
-						<RoomTypes>
-							<RoomType RoomTypeCode = "STD" RoomID = "1">
-								<RoomDescription>
-									<Text>Standard</Text>
-								</RoomDescription>
-							</RoomType>
-						</RoomTypes>
-						<RatePlans>
-							<RatePlan RatePlanCode = "BAR" PriceViewableInd = "false">
-								<RatePlanDescription>
-									<Text>Best Available Rate</Text>
-								</RatePlanDescription>
-								<Commission Percent = "20"/>
-								<Guarantee PaymentCode = "MerchantPayment"/>
-							</RatePlan>
-						</RatePlans>
-						<RoomRates>
-							<RoomRate BookingCode = "1|30#30|1|2018-08-17|5|488654|38644|3|0|0" EffectiveDate = "2018-08-17" ExpireDate = "2018-08-22" RoomTypeCode = "STD" InvBlockCode = "3" NumberOfUnits = "37" RatePlanCode = "BAR" RoomID = "1">
-								<Rates>
-									<Rate EffectiveDate = "2018-08-17" ExpireDate = "2018-08-18">
-										<Base AmountBeforeTax = "201.37" AmountAfterTax = "201.37" CurrencyCode = "EUR" Type = "25"/>
-										<CancelPolicies>
-											<CancelPenalty PolicyCode = "c25b8026-5ca2-49ce-b62c-fe0b4945de01"/>
-										</CancelPolicies>
-									</Rate>
-									<Rate EffectiveDate = "2018-08-18" ExpireDate = "2018-08-19">
-										<Base AmountBeforeTax = "219.19" AmountAfterTax = "219.19" CurrencyCode = "EUR" Type = "25"/>
-									</Rate>
-									<Rate EffectiveDate = "2018-08-19" ExpireDate = "2018-08-20">
-										<Base AmountBeforeTax = "130.09" AmountAfterTax = "130.09" CurrencyCode = "EUR" Type = "25"/>
-									</Rate>
-									<Rate EffectiveDate = "2018-08-20" ExpireDate = "2018-08-21">
-										<Base AmountBeforeTax = "156.82" AmountAfterTax = "156.82" CurrencyCode = "EUR" Type = "25"/>
-									</Rate>
-									<Rate EffectiveDate = "2018-08-21" ExpireDate = "2018-08-22">
-										<Base AmountBeforeTax = "165.73" AmountAfterTax = "165.73" CurrencyCode = "EUR" Type = "25"/>
-									</Rate>
-								</Rates>
-								<Total AmountBeforeTax = "873.20" AmountAfterTax = "873.20" CurrencyCode = "EUR"/>
-							</RoomRate>
-						</RoomRates>
-						<CancelPenalties>
-							<CancelPenalty PolicyCode = "c25b8026-5ca2-49ce-b62c-fe0b4945de01" NonRefundable = "false">
-								<Deadline AbsoluteDeadline = "2018-08-16" OffsetTimeUnit = "Day" OffsetUnitMultiplier = "1" OffsetDropTime = "BeforeArrival"/>
-								<AmountPercent NmbrOfNights = "1" CurrencyCode = "EUR"/>
-							</CancelPenalty>
-						</CancelPenalties>
-						<BasicPropertyInfo HotelCode = "1" HotelName = "Test Hotel"/>
-						<Comments>
-							<Comment>
-								<Text>Customer comments...</Text>
-							</Comment>
-						</Comments>
-						<ServiceRPHs>
-							<ServiceRPH RPH = "1"/>
-							<ServiceRPH RPH = "2"/>
-						</ServiceRPHs>
-					</RoomStay>
-				</RoomStays>
-				<ResGuests>
-					<ResGuest ResGuestRPH = "1" AgeQualifyingCode = "10">
-						<Profiles>
-							<ProfileInfo>
-								<Profile>
-									<Customer>
-										<PersonName>
-											<NamePrefix>Mr</NamePrefix>
-											<GivenName>John</GivenName>
-											<Surname>Doe</Surname>
-										</PersonName>
-									</Customer>
-								</Profile>
-							</ProfileInfo>
-						</Profiles>
-						<GuestCounts>
-							<GuestCount Age = "30"/>
-						</GuestCounts>
-					</ResGuest>
-					<ResGuest ResGuestRPH = "2" AgeQualifyingCode = "10">
-						<Profiles>
-							<ProfileInfo>
-								<Profile>
-									<Customer>
-										<PersonName>
-											<NamePrefix>Mr</NamePrefix>
-											<GivenName>xxxxxxx</GivenName>
-											<Surname>xxxxxx</Surname>
-										</PersonName>
-									</Customer>
-								</Profile>
-							</ProfileInfo>
-						</Profiles>
-						<GuestCounts>
-							<GuestCount Age = "30"/>
-						</GuestCounts>
-					</ResGuest>
-				</ResGuests>
-				<ResGlobalInfo>
-					<Guarantee PaymentCode = "MerchantPayment"/>
-					<Total AmountBeforeTax = "873.20" AmountAfterTax = "873.20" CurrencyCode = "EUR"/>
-					<HotelReservationIDs>
-						<HotelReservationID ResID_Value = "**clientLocator**" ResID_SourceContext = "Client"/>
-						<HotelReservationID ResID_Value = "**internalLocator**" ResID_SourceContext = "Internal"/>
-					</HotelReservationIDs>
-					<Profiles>
-						<ProfileInfo>
-							<Profile>
-								<Customer>
-									<PersonName>
-										<NamePrefix>Mr</NamePrefix>
-										<GivenName>xxxxxx</GivenName>
-										<Surname>xxxxx</Surname>
-									</PersonName>
-									<Telephone PhoneTechType = "1" PhoneNumber = "900000000"/>
-									<Email EmailType = "1">"***agency_email@agency.com***"</Email>
-									<Address Type = "1">
-										<AddressLine>Address</AddressLine>
-										<CityName>Address</CityName>
-										<PostalCode>07121</PostalCode>
-										<CountryName>ES</CountryName>
-									</Address>
-								</Customer>
-							</Profile>
-						</ProfileInfo>
-					</Profiles>
-				</ResGlobalInfo>
-			</HotelReservation>
-		</HotelReservations>
-		<Success/>
-	</OTA_HotelResRS>
-
+    <OTA_HotelResRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" ResResponseType = "Committed" xmlns = "http://www.opentravel.org/OTA/2003/05">
+      <HotelReservations>
+        <HotelReservation CreateDateTime = "2018-08-01T09:07:28.5074165Z" ResStatus = "Confirmed">
+          <RoomStays>
+            <RoomStay>
+              <RoomTypes>
+                <RoomType RoomTypeCode = "STD" RoomID = "1">
+                  <RoomDescription>
+                    <Text>Standard</Text>
+                  </RoomDescription>
+                </RoomType>
+              </RoomTypes>
+              <RatePlans>
+                <RatePlan RatePlanCode = "BAR" PriceViewableInd = "false">
+                  <RatePlanDescription>
+                    <Text>Best Available Rate</Text>
+                  </RatePlanDescription>
+                  <Commission Percent = "20"/>
+                  <Guarantee PaymentCode = "MerchantPayment"/>
+                </RatePlan>
+              </RatePlans>
+              <RoomRates>
+                <RoomRate BookingCode = "1|30#30|1|2018-08-17|5|488654|38644|3|0|0" EffectiveDate = "2018-08-17" ExpireDate = "2018-08-22" RoomTypeCode = "STD" InvBlockCode = "3" NumberOfUnits = "37" RatePlanCode = "BAR" RoomID = "1">
+                  <Rates>
+                    <Rate EffectiveDate = "2018-08-17" ExpireDate = "2018-08-18">
+                      <Base AmountBeforeTax = "201.37" AmountAfterTax = "201.37" CurrencyCode = "EUR" Type = "25"/>
+                      <CancelPolicies>
+                        <CancelPenalty PolicyCode = "c25b8026-5ca2-49ce-b62c-fe0b4945de01"/>
+                      </CancelPolicies>
+                    </Rate>
+                    <Rate EffectiveDate = "2018-08-18" ExpireDate = "2018-08-19">
+                      <Base AmountBeforeTax = "219.19" AmountAfterTax = "219.19" CurrencyCode = "EUR" Type = "25"/>
+                    </Rate>
+                    <Rate EffectiveDate = "2018-08-19" ExpireDate = "2018-08-20">
+                      <Base AmountBeforeTax = "130.09" AmountAfterTax = "130.09" CurrencyCode = "EUR" Type = "25"/>
+                    </Rate>
+                    <Rate EffectiveDate = "2018-08-20" ExpireDate = "2018-08-21">
+                      <Base AmountBeforeTax = "156.82" AmountAfterTax = "156.82" CurrencyCode = "EUR" Type = "25"/>
+                    </Rate>
+                    <Rate EffectiveDate = "2018-08-21" ExpireDate = "2018-08-22">
+                      <Base AmountBeforeTax = "165.73" AmountAfterTax = "165.73" CurrencyCode = "EUR" Type = "25"/>
+                    </Rate>
+                  </Rates>
+                  <Total AmountBeforeTax = "873.20" AmountAfterTax = "873.20" CurrencyCode = "EUR"/>
+                </RoomRate>
+              </RoomRates>
+              <CancelPenalties>
+                <CancelPenalty PolicyCode = "c25b8026-5ca2-49ce-b62c-fe0b4945de01" NonRefundable = "false">
+                  <Deadline AbsoluteDeadline = "2018-08-16" OffsetTimeUnit = "Day" OffsetUnitMultiplier = "1" OffsetDropTime = "BeforeArrival"/>
+                  <AmountPercent NmbrOfNights = "1" CurrencyCode = "EUR"/>
+                </CancelPenalty>
+              </CancelPenalties>
+              <BasicPropertyInfo HotelCode = "1" HotelName = "Test Hotel"/>
+              <Comments>
+                <Comment>
+                  <Text>Customer comments...</Text>
+                </Comment>
+              </Comments>
+              <ServiceRPHs>
+                <ServiceRPH RPH = "1"/>
+                <ServiceRPH RPH = "2"/>
+              </ServiceRPHs>
+            </RoomStay>
+          </RoomStays>
+          <ResGuests>
+            <ResGuest ResGuestRPH = "1" AgeQualifyingCode = "10">
+              <Profiles>
+                <ProfileInfo>
+                  <Profile>
+                    <Customer>
+                      <PersonName>
+                        <NamePrefix>Mr</NamePrefix>
+                        <GivenName>John</GivenName>
+                        <Surname>Doe</Surname>
+                      </PersonName>
+                    </Customer>
+                  </Profile>
+                </ProfileInfo>
+              </Profiles>
+              <GuestCounts>
+                <GuestCount Age = "30"/>
+              </GuestCounts>
+            </ResGuest>
+            <ResGuest ResGuestRPH = "2" AgeQualifyingCode = "10">
+              <Profiles>
+                <ProfileInfo>
+                  <Profile>
+                    <Customer>
+                      <PersonName>
+                        <NamePrefix>Mr</NamePrefix>
+                        <GivenName>xxxxxxx</GivenName>
+                        <Surname>xxxxxx</Surname>
+                      </PersonName>
+                    </Customer>
+                  </Profile>
+                </ProfileInfo>
+              </Profiles>
+              <GuestCounts>
+                <GuestCount Age = "30"/>
+              </GuestCounts>
+            </ResGuest>
+          </ResGuests>
+          <ResGlobalInfo>
+            <Guarantee PaymentCode = "MerchantPayment"/>
+            <Total AmountBeforeTax = "873.20" AmountAfterTax = "873.20" CurrencyCode = "EUR"/>
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Value = "**clientLocator**" ResID_SourceContext = "Client"/>
+              <HotelReservationID ResID_Value = "**internalLocator**" ResID_SourceContext = "Internal"/>
+            </HotelReservationIDs>
+            <Profiles>
+              <ProfileInfo>
+                <Profile>
+                  <Customer>
+                    <PersonName>
+                      <NamePrefix>Mr</NamePrefix>
+                      <GivenName>xxxxxx</GivenName>
+                      <Surname>xxxxx</Surname>
+                    </PersonName>
+                    <Telephone PhoneTechType = "1" PhoneNumber = "900000000"/>
+                    <Email EmailType = "1">"***agency_email@agency.com***"</Email>
+                    <Address Type = "1">
+                      <AddressLine>Address</AddressLine>
+                      <CityName>Address</CityName>
+                      <PostalCode>07121</PostalCode>
+                      <CountryName>ES</CountryName>
+                    </Address>
+                  </Customer>
+                </Profile>
+              </ProfileInfo>
+            </Profiles>
+          </ResGlobalInfo>
+        </HotelReservation>
+      </HotelReservations>
+      <Success/>
+    </OTA_HotelResRS>
 ~~~~
 
 
 **Example for VCC Payment**
 
 ~~~xml
-	<OTA_HotelResRS>
-		<HotelReservations>
-			<HotelReservation CreateDateTime = "2018-08-01T08:44:18.7584388Z" ResStatus = "Confirmed">
-				 ..
-				<ResGlobalInfo>
-					<Guarantee PaymentCode = "DirectPayment">
-						<GuaranteesAccepted>
-							<GuaranteeAccepted>
-								<PaymentCard ExpireDate = "0614" CardCode = "VI">
-									<CardHolderName>John Smith</CardHolderName>
-									<CardNumber>
-										<PlainText>4321432143214327</PlainText>
-									</CardNumber>
-									<SeriesCode>
-										<PlainText>123</PlainText>
-									</SeriesCode>
-								</PaymentCard>
-							</GuaranteeAccepted>
-						</GuaranteesAccepted>
-					</Guarantee>
-					..
-				</ResGlobalInfo>
-			</HotelReservation>
-		</HotelReservations>
-	</OTA_HotelResRS>
+    <OTA_HotelResRS>
+      <HotelReservations>
+        <HotelReservation CreateDateTime = "2018-08-01T08:44:18.7584388Z" ResStatus = "Confirmed">
+          ..
+          <ResGlobalInfo>
+            <Guarantee PaymentCode = "DirectPayment">
+              <GuaranteesAccepted>
+                <GuaranteeAccepted>
+                  <PaymentCard ExpireDate = "0614" CardCode = "VI">
+                    <CardHolderName>John Smith</CardHolderName>
+                    <CardNumber>
+                      <PlainText>4321432143214327</PlainText>
+                    </CardNumber>
+                    <SeriesCode>
+                      <PlainText>123</PlainText>
+                    </SeriesCode>
+                  </PaymentCard>
+                </GuaranteeAccepted>
+              </GuaranteesAccepted>
+            </Guarantee>
+            ..
+          </ResGlobalInfo>
+        </HotelReservation>
+      </HotelReservations>
+    </OTA_HotelResRS>
 ~~~~
 
 **Example for VCC Payment with URL**
 
 ~~~xml
-	<OTA_HotelResRS>
-		<HotelReservations>
-			<HotelReservation CreateDateTime = "2018-08-01T08:44:18.7584388Z" ResStatus = "Confirmed">
-				 ..
-				<ResGlobalInfo>
-					<Guarantee PaymentCode = "DirectPayment">
-						<GuaranteesAccepted>
-							<GuaranteeAccepted>
-								<PaymentCard>
-									<TPA_Extensions>
-										<Param key = "URL" value = "http://www.exampleUrl.com/"/>
-									</TPA_Extensions>
-								</PaymentCard>
-							</GuaranteeAccepted>
-						</GuaranteesAccepted>
-					</Guarantee>
-					..
-				</ResGlobalInfo>
-			</HotelReservation>
-		</HotelReservations>
-	</OTA_HotelResRS>
+    <OTA_HotelResRS>
+      <HotelReservations>
+        <HotelReservation CreateDateTime = "2018-08-01T08:44:18.7584388Z" ResStatus = "Confirmed">
+          ..
+          <ResGlobalInfo>
+            <Guarantee PaymentCode = "DirectPayment">
+              <GuaranteesAccepted>
+                <GuaranteeAccepted>
+                  <PaymentCard>
+                    <TPA_Extensions>
+                      <Param key = "URL" value = "http://www.exampleUrl.com/"/>
+                    </TPA_Extensions>
+                  </PaymentCard>
+                </GuaranteeAccepted>
+              </GuaranteesAccepted>
+            </Guarantee>
+            ..
+          </ResGlobalInfo>
+        </HotelReservation>
+      </HotelReservations>
+    </OTA_HotelResRS>
 ~~~~
 
 
@@ -1560,8 +1559,8 @@ Note that if the reservation into the Channel system fails, it will be considere
 | @value  				| 1 		| String	| URL where the Credit card details are stored. |
 | ResGlobalInfo/HotelReservationIDs	| 1     	|		| Node containing the ids of the reservation.	|
 | HotelReservationIDs/HotelReservationID | 2     	|		| Node containing information of one reservation id. |
-| @ResIDValue_				| 1 		| String	| Value of the id.				|
-| @ResIDSourceContext_			| 1 		| String	| Id context.					|
+| @ResIDValue				| 1 		| String	| Value of the id.				|
+| @ResIDSourceContext			| 1 		| String	| Id context.					|
 | ResGlobalInfo/Profiles		| 1     	|		| Node containing information about the profiles of the reservation. |
 | Profiles/ProfileInfo			| 1     	|		| Node containing information about the profile of the reservation. |
 | ProfileInfo/Profile			| 1     	|		| Node containing information about the profile of the reservation. |
@@ -1597,18 +1596,18 @@ Note that if the reservation into the Channel system fails, it will be considere
 Success Response
 
 ~~~xml
-	<OTA_HotelResNotifRS Timestamp="2018-09-12T23:09:08+03:00">
-		<HotelReservations>
-			<HotelReservation ResStatus = "Confirmed">
-				<ResGlobalInfo>
-					<HotelReservationIDs>
-						<HotelReservationID ResID_Value = "**providerLocator**" ResID_SourceContext = "Provider"/>
-					</HotelReservationIDs>
-				</ResGlobalInfo>
-			</HotelReservation>
-		</HotelReservations>
-		<Success xmlns = "http://www.opentravel.org/OTA/2003/05"/>
-	</OTA_HotelResNotifRS>
+    <OTA_HotelResNotifRS Timestamp = "2018-09-12T23:09:08+03:00">
+      <HotelReservations>
+        <HotelReservation ResStatus = "Confirmed">
+          <ResGlobalInfo>
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Value = "**providerLocator**" ResID_SourceContext = "Provider"/>
+            </HotelReservationIDs>
+          </ResGlobalInfo>
+        </HotelReservation>
+      </HotelReservations>
+      <Success xmlns = "http://www.opentravel.org/OTA/2003/05"/>
+    </OTA_HotelResNotifRS>
 ~~~
 
 
@@ -1616,8 +1615,8 @@ Error Response
 
 ~~~xml
     <OTA_HotelResNotifRS>
-      <Errors xmlns="http://www.opentravel.org/OTA/2003/05">
-        <Error ShortText="Confirmation error" Code="50">Hotel doesn't exist</Error>
+      <Errors xmlns = "http://www.opentravel.org/OTA/2003/05">
+        <Error ShortText = "Confirmation error" Code = "50">Hotel doesn't exist</Error>
       </Errors>
     </OTA_HotelResNotifRS>
 ~~~
@@ -1635,8 +1634,8 @@ Error Response
 | ResGlobalInfo				| 1     	|		| Node containing general information about the reservation. |
 | ResGlobalInfo/HotelReservationIDs	| 1     	|		| Node containing the ids of the reservation.	|
 | HotelReservationIDs/HotelReservationID | 2     	|		| Node containing information of one reservation id. |
-| @ResIDValue_				| 1 		| String	| Value of the id.				|
-| @ResIDSourceContext_			| 1 		| String	| Id context.					|
+| @ResIDValue				| 1 		| String	| Value of the id.				|
+| @ResIDSourceContext			| 1 		| String	| Id context.					|
 
 
 
@@ -1652,141 +1651,141 @@ Note that if the cancellation into the Channel system fails, it will be consider
 ### CancelNotifRQ
 
 ~~~xml
-	<OTA_HotelResRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" ResResponseType = "Cancelled" xmlns = "http://www.opentravel.org/OTA/2003/05">
-		<HotelReservations>
-			<HotelReservation CreateDateTime = "2018-08-01T09:07:28.5074165Z" ResStatus = "Cancelled">
-				<RoomStays>
-					<RoomStay>
-						<RoomTypes>
-							<RoomType RoomTypeCode = "STD" RoomID = "1">
-								<RoomDescription>
-									<Text>Standard</Text>
-								</RoomDescription>
-							</RoomType>
-						</RoomTypes>
-						<RatePlans>
-							<RatePlan RatePlanCode = "BAR" PriceViewableInd = "false">
-								<RatePlanDescription>
-									<Text>Best Available Rate</Text>
-								</RatePlanDescription>
-								<Commission Percent = "20"/>
-								<Guarantee PaymentCode = "MerchantPayment"/>
-							</RatePlan>
-						</RatePlans>
-						<RoomRates>
-							<RoomRate BookingCode = "1|30#30|1|2018-08-17|5|488654|38644|3|0|0" EffectiveDate = "2018-08-17" ExpireDate = "2018-08-22" RoomTypeCode = "STD" InvBlockCode = "3" NumberOfUnits = "37" RatePlanCode = "BAR" RoomID = "1">
-								<Rates>
-									<Rate EffectiveDate = "2018-08-17" ExpireDate = "2018-08-18">
-										<Base AmountBeforeTax = "201.37" AmountAfterTax = "201.37" CurrencyCode = "EUR" Type = "25"/>
-										<CancelPolicies>
-											<CancelPenalty PolicyCode = "c25b8026-5ca2-49ce-b62c-fe0b4945de01"/>
-										</CancelPolicies>
-									</Rate>
-									<Rate EffectiveDate = "2018-08-18" ExpireDate = "2018-08-19">
-										<Base AmountBeforeTax = "219.19" AmountAfterTax = "219.19" CurrencyCode = "EUR" Type = "25"/>
-									</Rate>
-									<Rate EffectiveDate = "2018-08-19" ExpireDate = "2018-08-20">
-										<Base AmountBeforeTax = "130.09" AmountAfterTax = "130.09" CurrencyCode = "EUR" Type = "25"/>
-									</Rate>
-									<Rate EffectiveDate = "2018-08-20" ExpireDate = "2018-08-21">
-										<Base AmountBeforeTax = "156.82" AmountAfterTax = "156.82" CurrencyCode = "EUR" Type = "25"/>
-									</Rate>
-									<Rate EffectiveDate = "2018-08-21" ExpireDate = "2018-08-22">
-										<Base AmountBeforeTax = "165.73" AmountAfterTax = "165.73" CurrencyCode = "EUR" Type = "25"/>
-									</Rate>
-								</Rates>
-								<Total AmountBeforeTax = "873.20" AmountAfterTax = "873.20" CurrencyCode = "EUR"/>
-							</RoomRate>
-						</RoomRates>
-						<CancelPenalties>
-							<CancelPenalty PolicyCode = "c25b8026-5ca2-49ce-b62c-fe0b4945de01" NonRefundable = "false">
-								<Deadline AbsoluteDeadline = "2018-08-16" OffsetTimeUnit = "Day" OffsetUnitMultiplier = "1" OffsetDropTime = "BeforeArrival"/>
-								<AmountPercent NmbrOfNights = "1" CurrencyCode = "EUR"/>
-							</CancelPenalty>
-						</CancelPenalties>
-						<BasicPropertyInfo HotelCode = "1" HotelName = "Test Hotel"/>
-						<Comments>
-							<Comment>
-								<Text>Customer comments...</Text>
-							</Comment>
-						</Comments>
-						<ServiceRPHs>
-							<ServiceRPH RPH = "1"/>
-							<ServiceRPH RPH = "2"/>
-						</ServiceRPHs>
-					</RoomStay>
-				</RoomStays>
-				<ResGuests>
-					<ResGuest ResGuestRPH = "1" AgeQualifyingCode = "10">
-						<Profiles>
-							<ProfileInfo>
-								<Profile>
-									<Customer>
-										<PersonName>
-											<NamePrefix>Mr</NamePrefix>
-											<GivenName>John</GivenName>
-											<Surname>Doe</Surname>
-										</PersonName>
-									</Customer>
-								</Profile>
-							</ProfileInfo>
-						</Profiles>
-						<GuestCounts>
-							<GuestCount Age = "30"/>
-						</GuestCounts>
-					</ResGuest>
-					<ResGuest ResGuestRPH = "2" AgeQualifyingCode = "10">
-						<Profiles>
-							<ProfileInfo>
-								<Profile>
-									<Customer>
-										<PersonName>
-											<NamePrefix>Mr</NamePrefix>
-											<GivenName>xxxxxxx</GivenName>
-											<Surname>xxxxxx</Surname>
-										</PersonName>
-									</Customer>
-								</Profile>
-							</ProfileInfo>
-						</Profiles>
-						<GuestCounts>
-							<GuestCount Age = "30"/>
-						</GuestCounts>
-					</ResGuest>
-				</ResGuests>
-				<ResGlobalInfo>
-					<Guarantee PaymentCode = "MerchantPayment"/>
-					<Total AmountBeforeTax = "873.20" AmountAfterTax = "873.20" CurrencyCode = "EUR"/>
-					<HotelReservationIDs>
-						<HotelReservationID ResID_Value = "**clientLocator**" ResID_SourceContext = "Client"/>
-						<HotelReservationID ResID_Value = "**internalLocator**" ResID_SourceContext = "Internal"/>
-					</HotelReservationIDs>
-					<Profiles>
-						<ProfileInfo>
-							<Profile>
-								<Customer>
-									<PersonName>
-										<NamePrefix>Mr</NamePrefix>
-										<GivenName>xxxxxx</GivenName>
-										<Surname>xxxxx</Surname>
-									</PersonName>
-									<Telephone PhoneTechType = "1" PhoneNumber = "900000000"/>
-									<Email EmailType = "1">"***agency_email@agency.com***"</Email>
-									<Address Type = "1">
-										<AddressLine>Address</AddressLine>
-										<CityName>Address</CityName>
-										<PostalCode>07121</PostalCode>
-										<CountryName>ES</CountryName>
-									</Address>
-								</Customer>
-							</Profile>
-						</ProfileInfo>
-					</Profiles>
-				</ResGlobalInfo>
-			</HotelReservation>
-		</HotelReservations>
-		<Success/>
-	</OTA_HotelResRS>
+    <OTA_HotelResRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" ResResponseType = "Cancelled" xmlns = "http://www.opentravel.org/OTA/2003/05">
+      <HotelReservations>
+        <HotelReservation CreateDateTime = "2018-08-01T09:07:28.5074165Z" ResStatus = "Cancelled">
+          <RoomStays>
+            <RoomStay>
+              <RoomTypes>
+                <RoomType RoomTypeCode = "STD" RoomID = "1">
+                  <RoomDescription>
+                    <Text>Standard</Text>
+                  </RoomDescription>
+                </RoomType>
+              </RoomTypes>
+              <RatePlans>
+                <RatePlan RatePlanCode = "BAR" PriceViewableInd = "false">
+                  <RatePlanDescription>
+                    <Text>Best Available Rate</Text>
+                  </RatePlanDescription>
+                  <Commission Percent = "20"/>
+                  <Guarantee PaymentCode = "MerchantPayment"/>
+                </RatePlan>
+              </RatePlans>
+              <RoomRates>
+                <RoomRate BookingCode = "1|30#30|1|2018-08-17|5|488654|38644|3|0|0" EffectiveDate = "2018-08-17" ExpireDate = "2018-08-22" RoomTypeCode = "STD" InvBlockCode = "3" NumberOfUnits = "37" RatePlanCode = "BAR" RoomID = "1">
+                  <Rates>
+                    <Rate EffectiveDate = "2018-08-17" ExpireDate = "2018-08-18">
+                      <Base AmountBeforeTax = "201.37" AmountAfterTax = "201.37" CurrencyCode = "EUR" Type = "25"/>
+                      <CancelPolicies>
+                        <CancelPenalty PolicyCode = "c25b8026-5ca2-49ce-b62c-fe0b4945de01"/>
+                      </CancelPolicies>
+                    </Rate>
+                    <Rate EffectiveDate = "2018-08-18" ExpireDate = "2018-08-19">
+                      <Base AmountBeforeTax = "219.19" AmountAfterTax = "219.19" CurrencyCode = "EUR" Type = "25"/>
+                    </Rate>
+                    <Rate EffectiveDate = "2018-08-19" ExpireDate = "2018-08-20">
+                      <Base AmountBeforeTax = "130.09" AmountAfterTax = "130.09" CurrencyCode = "EUR" Type = "25"/>
+                    </Rate>
+                    <Rate EffectiveDate = "2018-08-20" ExpireDate = "2018-08-21">
+                      <Base AmountBeforeTax = "156.82" AmountAfterTax = "156.82" CurrencyCode = "EUR" Type = "25"/>
+                    </Rate>
+                    <Rate EffectiveDate = "2018-08-21" ExpireDate = "2018-08-22">
+                      <Base AmountBeforeTax = "165.73" AmountAfterTax = "165.73" CurrencyCode = "EUR" Type = "25"/>
+                    </Rate>
+                  </Rates>
+                  <Total AmountBeforeTax = "873.20" AmountAfterTax = "873.20" CurrencyCode = "EUR"/>
+                </RoomRate>
+              </RoomRates>
+              <CancelPenalties>
+                <CancelPenalty PolicyCode = "c25b8026-5ca2-49ce-b62c-fe0b4945de01" NonRefundable = "false">
+                  <Deadline AbsoluteDeadline = "2018-08-16" OffsetTimeUnit = "Day" OffsetUnitMultiplier = "1" OffsetDropTime = "BeforeArrival"/>
+                  <AmountPercent NmbrOfNights = "1" CurrencyCode = "EUR"/>
+                </CancelPenalty>
+              </CancelPenalties>
+              <BasicPropertyInfo HotelCode = "1" HotelName = "Test Hotel"/>
+              <Comments>
+                <Comment>
+                  <Text>Customer comments...</Text>
+                </Comment>
+              </Comments>
+              <ServiceRPHs>
+                <ServiceRPH RPH = "1"/>
+                <ServiceRPH RPH = "2"/>
+              </ServiceRPHs>
+            </RoomStay>
+          </RoomStays>
+          <ResGuests>
+            <ResGuest ResGuestRPH = "1" AgeQualifyingCode = "10">
+              <Profiles>
+                <ProfileInfo>
+                  <Profile>
+                    <Customer>
+                      <PersonName>
+                        <NamePrefix>Mr</NamePrefix>
+                        <GivenName>John</GivenName>
+                        <Surname>Doe</Surname>
+                      </PersonName>
+                    </Customer>
+                  </Profile>
+                </ProfileInfo>
+              </Profiles>
+              <GuestCounts>
+                <GuestCount Age = "30"/>
+              </GuestCounts>
+            </ResGuest>
+            <ResGuest ResGuestRPH = "2" AgeQualifyingCode = "10">
+              <Profiles>
+                <ProfileInfo>
+                  <Profile>
+                    <Customer>
+                      <PersonName>
+                        <NamePrefix>Mr</NamePrefix>
+                        <GivenName>xxxxxxx</GivenName>
+                        <Surname>xxxxxx</Surname>
+                      </PersonName>
+                    </Customer>
+                  </Profile>
+                </ProfileInfo>
+              </Profiles>
+              <GuestCounts>
+                <GuestCount Age = "30"/>
+              </GuestCounts>
+            </ResGuest>
+          </ResGuests>
+          <ResGlobalInfo>
+            <Guarantee PaymentCode = "MerchantPayment"/>
+            <Total AmountBeforeTax = "873.20" AmountAfterTax = "873.20" CurrencyCode = "EUR"/>
+            <HotelReservationIDs>
+              <HotelReservationID ResID_Value = "**clientLocator**" ResID_SourceContext = "Client"/>
+              <HotelReservationID ResID_Value = "**internalLocator**" ResID_SourceContext = "Internal"/>
+            </HotelReservationIDs>
+            <Profiles>
+              <ProfileInfo>
+                <Profile>
+                  <Customer>
+                    <PersonName>
+                      <NamePrefix>Mr</NamePrefix>
+                      <GivenName>xxxxxx</GivenName>
+                      <Surname>xxxxx</Surname>
+                    </PersonName>
+                    <Telephone PhoneTechType = "1" PhoneNumber = "900000000"/>
+                    <Email EmailType = "1">"***agency_email@agency.com***"</Email>
+                    <Address Type = "1">
+                      <AddressLine>Address</AddressLine>
+                      <CityName>Address</CityName>
+                      <PostalCode>07121</PostalCode>
+                      <CountryName>ES</CountryName>
+                    </Address>
+                  </Customer>
+                </Profile>
+              </ProfileInfo>
+            </Profiles>
+          </ResGlobalInfo>
+        </HotelReservation>
+      </HotelReservations>
+      <Success/>
+    </OTA_HotelResRS>
 ~~~~
 
 | **Element**				| **Number**	| **Type**	| **Description**				|
@@ -1892,8 +1891,8 @@ Note that if the cancellation into the Channel system fails, it will be consider
 | @value  				| 1 		| String	| URL where the Credit card details are stored. |
 | ResGlobalInfo/HotelReservationIDs	| 1     	|		| Node containing the ids of the reservation.	|
 | HotelReservationIDs/HotelReservationID | 2     	|		| Node containing information of one reservation id. |
-| @ResIDValue_				| 1 		| String	| Value of the id.				|
-| @ResIDSourceContext_			| 1 		| String	| Id context.					|
+| @ResIDValue				| 1 		| String	| Value of the id.				|
+| @ResIDSourceContext			| 1 		| String	| Id context.					|
 | ResGlobalInfo/Profiles		| 1     	|		| Node containing information about the profiles of the reservation. |
 | Profiles/ProfileInfo			| 1     	|		| Node containing information about the profile of the reservation. |
 | ProfileInfo/Profile			| 1     	|		| Node containing information about the profile of the reservation. |
@@ -1928,20 +1927,20 @@ Note that if the cancellation into the Channel system fails, it will be consider
 Success Response
 
 ~~~xml
-	<OTA_HotelResRS>
-		<Success xmlns = "http://www.opentravel.org/OTA/2003/05"/>
-	</OTA_HotelResRS>
+    <OTA_HotelResNotifRS>
+      <Success xmlns = "http://www.opentravel.org/OTA/2003/05"/>
+    </OTA_HotelResNotifRS>
 ~~~
 
 
 Error Response
 
 ~~~xml
-    <OTA_HotelResRS>
-        <Errors xmlns="http://www.opentravel.org/OTA/2003/05">
-          <Error ShortText="Cancellation error" Code="60">Reservation doesn't exist</Error>
-		</Errors>
-    </OTA_HotelResRS>
+    <OTA_HotelResNotifRS>
+      <Errors xmlns = "http://www.opentravel.org/OTA/2003/05">
+        <Error ShortText = "Cancellation error" Code = "60">Reservation doesn't exist</Error>
+      </Errors>
+    </OTA_HotelResNotifRS>
 ~~~
 
 
