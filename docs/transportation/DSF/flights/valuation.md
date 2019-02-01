@@ -1,4 +1,4 @@
-﻿---
+---
 title: Valuation
 keywords: transportation, data structure, flights, valuation
 search: Transportation - Flights - Data Structure - Valuation
