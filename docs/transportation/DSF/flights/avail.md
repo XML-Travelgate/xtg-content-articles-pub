@@ -59,54 +59,6 @@ are already included in the total price.
 This method **must** be called **before** the Valuation method.
 
 
-
-### AvailabilityRQ Example
-
-
-~~~xml
-    <AvailabilityRQ travelType = "RT">
-        <timeoutMilliseconds>999900</timeoutMilliseconds>
-        <source>
-            <agencyCode>logitravel</agencyCode>
-            <languageCode>es</languageCode>
-        </source>
-        <filterAuditData/>
-        <Configuration>
-            <Credentials user="XXX"/>
-            <Attributes>
-                <Attribute key="test" value="true"/>
-                <Attribute key="AgencyName" value="XXX"/>
-            </Attributes>
-        </Configuration>
-        <ClientConfiguration currencyCode="EUR"/>
-		<Journeys>
-            <Journey id="0" departureDate="30/11/2017" departureTime="" action="N">
-                <OriginLoc type="A" code="AMS" cityCode="false"/>
-                <DestinationLoc type="A" code="AGP" cityCode="false"/>
-            </Journey>
-            <Journey id="1" departureDate="07/12/2017" departureTime="" action="N">
-                <OriginLoc type="A" code="AGP" cityCode="false"/>
-                <DestinationLoc type="A" code="AMS" cityCode="false"/>
-            </Journey>
-        </Journeys>
-        <Passengers>
-            <Passenger id="0" age="30">
-                <Bonuses resident="N" largeFamily="N" discountCard="N"/>
-            </Passenger>
-            <Passenger id="1" age="8">
-                <Bonuses resident="N" largeFamily="N" discountCard="N"/>
-            </Passenger>
-        </Passengers>     
-        <Preferences cabinClass="N" lowCostIncluded="false" onlyNonStop="false" onlyTrain="false" allowOverNight="false" trainIncluded="false" cheapestFares="false" brandedFares="false">
-            <lightAvail>false</lightAvail>
-            <ConnexionCompanies>
-                <ConnexionCompany carrier="IB" mode="INCLUDED" />
-            </ConnexionCompanies>
-        </Preferences>
-    </AvailabilityRQ> 
-~~~
-
-
 ### AvailabilityRQ Description
 
 
@@ -210,225 +162,6 @@ This method **must** be called **before** the Valuation method.
 | @length	| 0..1	| Integer	| Dimension of the vehicle: length.|
 | @type	| 1	| String	| [Type of vehicle.](#availability-enumerate-description)|
 
-
-
-
-### AvailabilityRS Example
-
-
-~~~xml
-        <AvailabilityRS>
-        <auditData>
-        </auditData>
-        <operationImplemented>true</operationImplemented>
-        <ResponseStatus tipoTrayecto="IDA" tipoPet="OW" estado="ok"/>
-        <Transportation totalFares="50">
-            <Segments>
-                <Segment id="0" transportationId="VY8367" transportationType="A" operatingCarrier="VY" marketingCarrier="VY" arrivalTerminal="3" departureDate="2017-11-30T15:25:00+01:00" arrivalDate="2017-11-30T18:20:00+01:00" segmentDuration="175" maxCheckinDate="0001-01-01T00:00:00" planeType="320" segmentStatus="HK" electronicTicket="true" hasTechnicalStop="false" secureFlight="false">
-                    <OriginLoc type="A" code="AMS" cityCode="false"/>
-                    <DestinationLoc type="A" code="AGP" cityCode="false"/>
-                </Segment>
-                <Segment id="1" transportationId="VY8366" transportationType="A" operatingCarrier="VY" marketingCarrier="VY" departureTerminal="3" departureDate="2017-12-07T11:35:00+01:00" arrivalDate="2017-12-07T14:45:00+01:00" segmentDuration="190" maxCheckinDate="0001-01-01T00:00:00" planeType="320" segmentStatus="HK" electronicTicket="true" hasTechnicalStop="false" secureFlight="false">
-                    <OriginLoc type="A" code="AGP" cityCode="false"/>
-                    <DestinationLoc type="A" code="AMS" cityCode="false"/>
-                </Segment>
-                <Segment id="2" transportationId="IB5403" transportationType="A" operatingCarrier="VY" marketingCarrier="IB" departureTerminal="3" arrivalTerminal="3" departureDate="2017-11-30T15:25:00+01:00" arrivalDate="2017-11-30T18:20:00+01:00" segmentDuration="175" maxCheckinDate="0001-01-01T00:00:00" planeType="320" segmentStatus="HK" electronicTicket="true" hasTechnicalStop="false" secureFlight="false">
-                    <OriginLoc type="A" code="AMS" cityCode="false"/>
-                    <DestinationLoc type="A" code="AGP" cityCode="false"/>
-                </Segment>
-                <Segment id="3" transportationId="IB5402" transportationType="A" operatingCarrier="VY" marketingCarrier="IB" departureTerminal="3" arrivalTerminal="3" departureDate="2017-12-07T11:35:00+01:00" arrivalDate="2017-12-07T14:45:00+01:00" segmentDuration="190" maxCheckinDate="0001-01-01T00:00:00" planeType="320" segmentStatus="HK" electronicTicket="true" hasTechnicalStop="false" secureFlight="false">
-                    <OriginLoc type="A" code="AGP" cityCode="false"/>
-                    <DestinationLoc type="A" code="AMS" cityCode="false"/>
-                </Segment>
-            </Segments>
-            <Fares>
-                <Fare id="0" providerCode="GAL" fareType="RT">
-                    <Conditions/>
-                    <Options>
-                        <Option id="0" availabilityJourneyRef="0" numStopOvers="0" carrier="VY">
-                            <SegmentReferences>
-                                <SegmentReference segmentRef="0">
-                                    <SegmentClasses>
-                                        <SegmentClass cabinClass="Y" class="P" paxRef="0" fareBasis="PRT0BAG" fareType="PUB" avail="4"/>
-                                        <SegmentClass cabinClass="Y" class="P" paxRef="1" fareBasis="PRT0BAG" fareType="PUB" avail="4"/>
-                                    </SegmentClasses>
-                                    <ReservationTokens>
-                                        <Attribute key="KeySegment" value="gUaMn/3R2BKAgMhZAAAAAA=="/>
-                                        <Attribute key="Group" value="0"/>
-                                        <Attribute key="Source" value="A"/>
-                                        <Attribute key="linkAvailability" value="False"/>
-                                        <Attribute key="ParticipantLevel" value="Secure Sell"/>
-                                        <Attribute key="ETicket" value="0"/>
-                                        <Attribute key="Polled" value="No polled avail exists"/>
-                                        <Attribute key="OfPlane" value="False"/>
-                                        <Attribute key="OptionalServices" value="False"/>
-                                        <Attribute key="Cabin" value="Economy"/>
-                                        <Attribute key="Vendor" value="1G"/>
-                                        <Attribute key="BrandedFares" value="false"/>
-                                    </ReservationTokens>
-                                </SegmentReference>
-                            </SegmentReferences>
-                            <Emissions/>
-                            <BaggageTypes>
-                                <BaggageType checkinType="OnLine" appliesSegments="Ref">
-                                    <References>
-                                        <SegmentReferences>
-                                            <SegmentReference itineraryRef="0" journeyRef="0" segmentRef="0"/>
-                                        </SegmentReferences>
-                                    </References>
-                                    <Baggage type="Bag" quantity="0" maxWeightPerUnit="0" maxTotalWeight="0" paymentInAirport="false" needToken="false"/>
-                                </BaggageType>
-                            </BaggageTypes>
-                        </Option>
-                        <Option id="1" availabilityJourneyRef="1" numStopOvers="0" carrier="VY">
-                            <SegmentReferences>
-                                <SegmentReference segmentRef="1">
-                                    <SegmentClasses>
-                                        <SegmentClass cabinClass="Y" class="P" paxRef="0" fareBasis="PRT0BAG" fareType="PUB" avail="4"/>
-                                        <SegmentClass cabinClass="Y" class="P" paxRef="1" fareBasis="PRT0BAG" fareType="PUB" avail="4"/>
-                                    </SegmentClasses>
-                                    <ReservationTokens>
-                                        <Attribute key="KeySegment" value="gUaMn/3R2BKAiMhZAAAAAA=="/>
-                                        <Attribute key="Group" value="1"/>
-                                        <Attribute key="Source" value="A"/>
-                                        <Attribute key="linkAvailability" value="False"/>
-                                        <Attribute key="ParticipantLevel" value="Secure Sell"/>
-                                        <Attribute key="ETicket" value="0"/>
-                                        <Attribute key="Polled" value="No polled avail exists"/>
-                                        <Attribute key="OfPlane" value="False"/>
-                                        <Attribute key="OptionalServices" value="False"/>
-                                        <Attribute key="Cabin" value="Economy"/>
-                                        <Attribute key="Vendor" value="1G"/>
-                                        <Attribute key="BrandedFares" value="false"/>
-                                    </ReservationTokens>
-                                </SegmentReference>
-                            </SegmentReferences>
-                            <Emissions/>
-                            <BaggageTypes>
-                                <BaggageType checkinType="OnLine" appliesSegments="Ref">
-                                    <References>
-                                        <SegmentReferences>
-                                            <SegmentReference itineraryRef="0" journeyRef="0" segmentRef="1"/>
-                                        </SegmentReferences>
-                                    </References>
-                                    <Baggage type="Bag" quantity="0" maxWeightPerUnit="0" maxTotalWeight="0" paymentInAirport="false" needToken="false"/>
-                                </BaggageType>
-                            </BaggageTypes>
-                        </Option>
-                    </Options>
-                    <AmountBreakdown currency="EUR" totalAmount="192.22" nonCommissionableAmount="0" commission="-1">
-                        <ChargeBreakdowns/>
-                        <PaxBreakdowns>
-                            <PaxBreakdown paxType="ADT" amount="96.11" taxes="58.11" fees="0" tasaDU="0"/>
-                            <PaxBreakdown paxType="CHD" amount="96.11" taxes="58.11" fees="0" tasaDU="0"/>
-                        </PaxBreakdowns>
-                    </AmountBreakdown>
-                    <PaxConfigurations>
-                        <PaxConfiguration id="0" paxRef="0" age="30" paxType="ADT">
-                            <AppliedBonuses resident="N" largeFamily="N" discountCard="N"/>
-                        </PaxConfiguration>
-                        <PaxConfiguration id="1" paxRef="1" age="8" paxType="CHD">
-                            <AppliedBonuses resident="N" largeFamily="N" discountCard="N"/>
-                        </PaxConfiguration>
-                    </PaxConfigurations>
-                    <HasObFees>false</HasObFees>
-                </Fare>
-                <Fare id="1" providerCode="GAL" fareType="RT">
-                    <Conditions/>
-                    <Options>
-                        <Option id="0" availabilityJourneyRef="0" numStopOvers="0" carrier="IB">
-                            <SegmentReferences>
-                                <SegmentReference segmentRef="2">
-                                    <SegmentClasses>
-                                        <SegmentClass cabinClass="Y" class="F" paxRef="0" fareBasis="FRTNVY" fareType="PUB" avail="9"/>
-                                        <SegmentClass cabinClass="Y" class="F" paxRef="1" fareBasis="FRTNVY" fareType="PUB" avail="9"/>
-                                    </SegmentClasses>
-                                    <ReservationTokens>
-                                        <Attribute key="KeySegment" value="gUaMn/3R2BKAkMhZAAAAAA=="/>
-                                        <Attribute key="Group" value="0"/>
-                                        <Attribute key="Source" value="A"/>
-                                        <Attribute key="linkAvailability" value="True"/>
-                                        <Attribute key="ParticipantLevel" value="Secure Sell"/>
-                                        <Attribute key="ETicket" value="0"/>
-                                        <Attribute key="Polled" value="Polled avail exists"/>
-                                        <Attribute key="OfPlane" value="False"/>
-                                        <Attribute key="OptionalServices" value="False"/>
-                                        <Attribute key="Cabin" value="Economy"/>
-                                        <Attribute key="Vendor" value="1G"/>
-                                        <Attribute key="BrandedFares" value="false"/>
-                                    </ReservationTokens>
-                                </SegmentReference>
-                            </SegmentReferences>
-                            <Emissions/>
-                            <BaggageTypes>
-                                <BaggageType checkinType="OnLine" appliesSegments="Ref">
-                                    <References>
-                                        <SegmentReferences>
-                                            <SegmentReference itineraryRef="0" journeyRef="0" segmentRef="2"/>
-                                        </SegmentReferences>
-                                    </References>
-                                    <Baggage type="Bag" quantity="1" maxWeightPerUnit="0" maxTotalWeight="0" paymentInAirport="false" needToken="false"/>
-                                </BaggageType>
-                            </BaggageTypes>
-                        </Option>
-                        <Option id="1" availabilityJourneyRef="1" numStopOvers="0" carrier="IB">
-                            <SegmentReferences>
-                                <SegmentReference segmentRef="3">
-                                    <SegmentClasses>
-                                        <SegmentClass cabinClass="Y" class="F" paxRef="0" fareBasis="FRTNVY" fareType="PUB" avail="9"/>
-                                        <SegmentClass cabinClass="Y" class="F" paxRef="1" fareBasis="FRTNVY" fareType="PUB" avail="9"/>
-                                    </SegmentClasses>
-                                    <ReservationTokens>
-                                        <Attribute key="KeySegment" value="gUaMn/3R2BKAmMhZAAAAAA=="/>
-                                        <Attribute key="Group" value="1"/>
-                                        <Attribute key="Source" value="A"/>
-                                        <Attribute key="linkAvailability" value="True"/>
-                                        <Attribute key="ParticipantLevel" value="Secure Sell"/>
-                                        <Attribute key="ETicket" value="0"/>
-                                        <Attribute key="Polled" value="Polled avail exists"/>
-                                        <Attribute key="OfPlane" value="False"/>
-                                        <Attribute key="OptionalServices" value="False"/>
-                                        <Attribute key="Cabin" value="Economy"/>
-                                        <Attribute key="Vendor" value="1G"/>
-                                        <Attribute key="BrandedFares" value="false"/>
-                                    </ReservationTokens>
-                                </SegmentReference>
-                            </SegmentReferences>
-                            <Emissions/>
-                            <BaggageTypes>
-                                <BaggageType checkinType="OnLine" appliesSegments="Ref">
-                                    <References>
-                                        <SegmentReferences>
-                                            <SegmentReference itineraryRef="0" journeyRef="0" segmentRef="3"/>
-                                        </SegmentReferences>
-                                    </References>
-                                    <Baggage type="Bag" quantity="1" maxWeightPerUnit="0" maxTotalWeight="0" paymentInAirport="false" needToken="false"/>
-                                </BaggageType>
-                            </BaggageTypes>
-                        </Option>
-                    </Options>
-                    <AmountBreakdown currency="EUR" totalAmount="232.22" nonCommissionableAmount="0" commission="-1">
-                        <ChargeBreakdowns/>
-                        <PaxBreakdowns>
-                            <PaxBreakdown paxType="ADT" amount="116.11" taxes="63.11" fees="0" tasaDU="0"/>
-                            <PaxBreakdown paxType="CHD" amount="116.11" taxes="63.11" fees="0" tasaDU="0"/>
-                        </PaxBreakdowns>
-                    </AmountBreakdown>
-                    <PaxConfigurations>
-                        <PaxConfiguration id="0" paxRef="0" age="30" paxType="ADT">
-                            <AppliedBonuses resident="N" largeFamily="N" discountCard="N"/>
-                        </PaxConfiguration>
-                        <PaxConfiguration id="1" paxRef="1" age="8" paxType="CHD">
-                            <AppliedBonuses resident="N" largeFamily="N" discountCard="N"/>
-                        </PaxConfiguration>
-                    </PaxConfigurations>
-                    <HasObFees>false</HasObFees>
-                </Fare>
-            </Fares>
-        </Transportation>
-        <OptionalsCharges/>
-    </AvailabilityRS>
-~~~
 
 
 ### AvailabilityRS Description
@@ -819,3 +552,576 @@ Therefore the total price will be:
 Amount breakdown:
 
 | Total  |  Amount: (DesgloseADT \* numADT) + (DesgloseCHD \* numCHD) + (DesgloseINF \* numINF) = **310€**
+
+
+
+### Possible Operations (Examples)
+
+**Operation 1 - One way request:**
+
+Search for 1 journey with 1 adult (ADT), 1 child (CHD) and 1 infant (INF).
+
+AvailabilityRQ:
+
+~~~xml
+<AvailabilityRQ travelType="OW">
+	<Journeys>
+		<Journey id="0" departureDate="18/12/2018" departureTime="" action="N">
+			<OriginLoc type="A" code="PMI" cityCode="false"/>
+			<DestinationLoc type="A" code="MAD" cityCode="false"/>
+		</Journey>
+	</Journeys>
+	<Passengers>
+		<Passenger id="0" age="30">
+			<Bonuses resident="N" largeFamily="N" discountCard="N"/>
+		</Passenger>
+		<Passenger id="1" age="8">
+			<Bonuses resident="N" largeFamily="N" discountCard="N"/>
+		</Passenger>
+		<Passenger id="2" age="1">
+			<Bonuses resident="N" largeFamily="N" discountCard="N"/>
+		</Passenger>
+	</Passengers>
+	<Preferences cabinClass="N" lowCostIncluded="false" onlyNonStop="false" onlyTrain="false" allowOverNight="false" trainIncluded="false" cheapestFares="false" brandedFares="false">
+		<lightAvail>false</lightAvail>
+	</Preferences>
+</AvailabilityRQ>
+~~~
+
+AvailabilityRS:
+
+~~~xml
+<AvailabilityRS>
+	<Transportation totalFares="2">
+		<Segments>
+			<Segment id="0" transportationId="D86770" transportationType="A" operatingCarrier="D8" marketingCarrier="D8" arrivalTerminal="2" departureDate="2018-12-18T07:25:00" arrivalDate="2018-12-18T08:50:00" segmentDuration="0" maxCheckinDate="0001-01-01T00:00:00" planeType="73H" segmentStatus="HK" electronicTicket="true" hasTechnicalStop="false" secureFlight="false">
+				<OriginLoc type="A" code="PMI" cityCode="false"/>
+				<DestinationLoc type="A" code="MAD" cityCode="false"/>
+			</Segment>
+			<Segment id="1" transportationId="UX6072" transportationType="A" operatingCarrier="UX" marketingCarrier="UX" arrivalTerminal="1" departureDate="2018-12-18T17:05:00" arrivalDate="2018-12-18T17:55:00" segmentDuration="0" maxCheckinDate="0001-01-01T00:00:00" planeType="73H" segmentStatus="HK" electronicTicket="true" hasTechnicalStop="false" secureFlight="false">
+				<OriginLoc type="A" code="PMI" cityCode="false"/>
+				<DestinationLoc type="A" code="BCN" cityCode="false"/>
+			</Segment>
+			<Segment id="2" transportationId="UX2159" transportationType="A" operatingCarrier="UX" marketingCarrier="UX" departureTerminal="1" arrivalTerminal="2" departureDate="2018-12-18T20:40:00" arrivalDate="2018-12-18T22:05:00" segmentDuration="0" maxCheckinDate="0001-01-01T00:00:00" planeType="332" segmentStatus="HK" electronicTicket="true" hasTechnicalStop="false" secureFlight="false">
+				<OriginLoc type="A" code="BCN" cityCode="false"/>
+				<DestinationLoc type="A" code="MAD" cityCode="false"/>
+			</Segment>
+			<Segment id="3" transportationId="UX6060" transportationType="A" operatingCarrier="UX" marketingCarrier="UX" arrivalTerminal="1" departureDate="2018-12-18T13:30:00" arrivalDate="2018-12-18T14:20:00" segmentDuration="0" maxCheckinDate="0001-01-01T00:00:00" planeType="73H" segmentStatus="HK" electronicTicket="true" hasTechnicalStop="false" secureFlight="false">
+				<OriginLoc type="A" code="PMI" cityCode="false"/>
+				<DestinationLoc type="A" code="BCN" cityCode="false"/>
+			</Segment>
+		</Segments>
+		<Fares>
+			<Fare id="0" providerCode="AMD" fareType="OW">
+				<Conditions>
+					<Condition id="PEN">
+						<Text>TICKETS ARE NON-REFUNDABLE</Text>
+					</Condition>
+					<Condition id="LTD">
+						<Text>LAST TKT DTE, 11DEC18, - SEE ADV PURCHASE</Text>
+					</Condition>
+				</Conditions>
+				<Options>
+					<Option id="0" availabilityJourneyRef="0" numStopOvers="0" carrier="DY">
+						<SegmentReferences>
+							<SegmentReference segmentRef="0">
+								<SegmentClasses>
+									<SegmentClass cabinClass="Y" class="T" paxRef="0" fareBasis="TJIPPI" fareType="PUB" avail="9"/>
+									<SegmentClass cabinClass="Y" class="T" paxRef="1" fareBasis="TJIPPI" fareType="PUB" avail="9"/>
+									<SegmentClass cabinClass="Y" class="T" paxRef="2" fareBasis="TJIPPI" fareType="PUB" avail="9"/>
+								</SegmentClasses>
+								<ReservationTokens>
+									<Attribute key="LtdProv" value="111218"/>
+									<Attribute key="Ltd" value="11/12/2018"/>
+									<Attribute key="claseCabina" value="N"/>
+									<Attribute key="breakPoint" value="Y"/>
+									<Attribute key="fareType" value="PUB"/>
+								</ReservationTokens>
+							</SegmentReference>
+						</SegmentReferences>
+						<Emissions/>
+						<BaggageTypes>
+							<BaggageType checkinType="OnLine" appliesSegments="Ref">
+								<References>
+									<SegmentReferences>
+										<SegmentReference itineraryRef="0" journeyRef="0" segmentRef="0"/>
+									</SegmentReferences>
+								</References>
+								<Baggage type="Bag" quantity="2" maxWeightPerUnit="0" maxTotalWeight="0" paymentInAirport="false" needToken="false"/>
+							</BaggageType>
+						</BaggageTypes>
+					</Option>
+				</Options>
+				<AmountBreakdown currency="EUR" totalAmount="98.23" nonCommissionableAmount="0" commission="-1">
+					<ChargeBreakdowns/>
+					<PaxBreakdowns>
+						<PaxBreakdown paxType="ADT" amount="45.01" taxes="10.01" fees="0" tasaDU="0"/>
+						<PaxBreakdown paxType="CHD" amount="45.01" taxes="10.01" fees="0" tasaDU="0"/>
+						<PaxBreakdown paxType="INF" amount="8.21" taxes="8.21" fees="0" tasaDU="0"/>
+					</PaxBreakdowns>
+				</AmountBreakdown>
+				<PaxConfigurations>
+					<PaxConfiguration id="0" paxRef="0" age="30" paxType="ADT">
+						<AppliedBonuses resident="N" largeFamily="N" discountCard="N"/>
+					</PaxConfiguration>
+					<PaxConfiguration id="1" paxRef="1" age="8" paxType="CHD">
+						<AppliedBonuses resident="N" largeFamily="N" discountCard="N"/>
+					</PaxConfiguration>
+					<PaxConfiguration id="2" paxRef="2" age="1" paxType="INF">
+						<AppliedBonuses resident="N" largeFamily="N" discountCard="N"/>
+					</PaxConfiguration>
+				</PaxConfigurations>
+				<HasObFees>false</HasObFees>
+			</Fare>
+			<Fare id="1" providerCode="AMD" fareType="OW">
+				<Conditions>
+					<Condition id="PEN">
+						<Text>TICKETS ARE NON-REFUNDABLE</Text>
+					</Condition>
+					<Condition id="LTD">
+						<Text>LAST TKT DTE, 12DEC18, - SEE ADV PURCHASE</Text>
+					</Condition>
+					<Condition id="APM">
+						<Text>PRIVATE RATES USED *F*</Text>
+					</Condition>
+				</Conditions>
+				<Options>
+					<Option id="0" availabilityJourneyRef="0" numStopOvers="1" carrier="UX">
+						<SegmentReferences>
+							<SegmentReference segmentRef="1">
+								<SegmentClasses>
+									<SegmentClass cabinClass="Y" class="Z" paxRef="0" fareBasis="ZDPROW5L" fareType="PRI" avail="9"/>
+									<SegmentClass cabinClass="Y" class="Z" paxRef="1" fareBasis="ZDPROW5L" fareType="PRI" avail="9"/>
+									<SegmentClass cabinClass="Y" class="Z" paxRef="2" fareBasis="ZDPROW5L" fareType="PRI" avail="9"/>
+								</SegmentClasses>
+								<ReservationTokens>
+									<Attribute key="LtdProv" value="121218"/>
+									<Attribute key="Ltd" value="12/12/2018"/>
+									<Attribute key="claseCabina" value="N"/>
+									<Attribute key="breakPoint" value="Y"/>
+									<Attribute key="fareType" value="PRI"/>
+								</ReservationTokens>
+							</SegmentReference>
+							<SegmentReference segmentRef="2">
+								<SegmentClasses>
+									<SegmentClass cabinClass="Y" class="Z" paxRef="0" fareBasis="ZDOW5L" fareType="PRI" avail="9"/>
+									<SegmentClass cabinClass="Y" class="Z" paxRef="1" fareBasis="ZDOW5L" fareType="PRI" avail="9"/>
+									<SegmentClass cabinClass="Y" class="Z" paxRef="2" fareBasis="ZDOW5L" fareType="PRI" avail="9"/>
+								</SegmentClasses>
+								<ReservationTokens>
+									<Attribute key="LtdProv" value="121218"/>
+									<Attribute key="Ltd" value="12/12/2018"/>
+									<Attribute key="claseCabina" value="N"/>
+									<Attribute key="breakPoint" value="Y"/>
+									<Attribute key="fareType" value="PRI"/>
+								</ReservationTokens>
+							</SegmentReference>
+						</SegmentReferences>
+						<Emissions/>
+						<BaggageTypes>
+							<BaggageType checkinType="OnLine" appliesSegments="Ref">
+								<References>
+									<SegmentReferences>
+										<SegmentReference itineraryRef="0" journeyRef="0" segmentRef="1"/>
+										<SegmentReference itineraryRef="0" journeyRef="0" segmentRef="2"/>
+									</SegmentReferences>
+								</References>
+								<Baggage type="Bag" quantity="0" maxWeightPerUnit="0" maxTotalWeight="0" paymentInAirport="false" needToken="false"/>
+							</BaggageType>
+						</BaggageTypes>
+					</Option>
+					<Option id="1" availabilityJourneyRef="0" numStopOvers="1" carrier="UX">
+						<SegmentReferences>
+							<SegmentReference segmentRef="3">
+								<SegmentClasses>
+									<SegmentClass cabinClass="Y" class="Z" paxRef="0" fareBasis="ZDPROW5L" fareType="PRI" avail="9"/>
+									<SegmentClass cabinClass="Y" class="Z" paxRef="1" fareBasis="ZDPROW5L" fareType="PRI" avail="9"/>
+									<SegmentClass cabinClass="Y" class="Z" paxRef="2" fareBasis="ZDPROW5L" fareType="PRI" avail="9"/>
+								</SegmentClasses>
+								<ReservationTokens>
+									<Attribute key="LtdProv" value="121218"/>
+									<Attribute key="Ltd" value="12/12/2018"/>
+									<Attribute key="claseCabina" value="N"/>
+									<Attribute key="breakPoint" value="Y"/>
+									<Attribute key="fareType" value="PRI"/>
+								</ReservationTokens>
+							</SegmentReference>
+							<SegmentReference segmentRef="2">
+								<SegmentClasses>
+									<SegmentClass cabinClass="Y" class="Z" paxRef="0" fareBasis="ZDOW5L" fareType="PRI" avail="9"/>
+									<SegmentClass cabinClass="Y" class="Z" paxRef="1" fareBasis="ZDOW5L" fareType="PRI" avail="9"/>
+									<SegmentClass cabinClass="Y" class="Z" paxRef="2" fareBasis="ZDOW5L" fareType="PRI" avail="9"/>
+								</SegmentClasses>
+								<ReservationTokens>
+									<Attribute key="LtdProv" value="121218"/>
+									<Attribute key="Ltd" value="12/12/2018"/>
+									<Attribute key="claseCabina" value="N"/>
+									<Attribute key="breakPoint" value="Y"/>
+									<Attribute key="fareType" value="PRI"/>
+								</ReservationTokens>
+							</SegmentReference>
+						</SegmentReferences>
+						<Emissions/>
+						<BaggageTypes>
+							<BaggageType checkinType="OnLine" appliesSegments="Ref">
+								<References>
+									<SegmentReferences>
+										<SegmentReference itineraryRef="0" journeyRef="0" segmentRef="3"/>
+										<SegmentReference itineraryRef="0" journeyRef="0" segmentRef="2"/>
+									</SegmentReferences>
+								</References>
+								<Baggage type="Bag" quantity="0" maxWeightPerUnit="0" maxTotalWeight="0" paymentInAirport="false" needToken="false"/>
+							</BaggageType>
+						</BaggageTypes>
+					</Option>
+				</Options>
+				<AmountBreakdown currency="EUR" totalAmount="126.66" nonCommissionableAmount="0" commission="-1">
+					<ChargeBreakdowns/>
+					<PaxBreakdowns>
+						<PaxBreakdown paxType="ADT" amount="51.22" taxes="20.22" fees="0" tasaDU="0"/>
+						<PaxBreakdown paxType="CHD" amount="51.22" taxes="20.22" fees="0" tasaDU="0"/>
+						<PaxBreakdown paxType="INF" amount="24.22" taxes="20.22" fees="0" tasaDU="0"/>
+					</PaxBreakdowns>
+				</AmountBreakdown>
+				<PaxConfigurations>
+					<PaxConfiguration id="0" paxRef="0" age="30" paxType="ADT">
+						<AppliedBonuses resident="N" largeFamily="N" discountCard="N"/>
+					</PaxConfiguration>
+					<PaxConfiguration id="1" paxRef="1" age="8" paxType="CHD">
+						<AppliedBonuses resident="N" largeFamily="N" discountCard="N"/>
+					</PaxConfiguration>
+					<PaxConfiguration id="2" paxRef="2" age="1" paxType="INF">
+						<AppliedBonuses resident="N" largeFamily="N" discountCard="N"/>
+					</PaxConfiguration>
+				</PaxConfigurations>
+				<HasObFees>false</HasObFees>
+			</Fare>
+		</Fares>
+	</Transportation>
+</AvailabilityRS>
+~~~
+
+**Operation 2 - Round trip request:**
+
+Search for 2 journies, outbound destination = inbound origin,  with 2 adults (ADT).
+
+AvailabilityRQ:
+
+~~~xml
+<AvailabilityRQ travelType="RT">
+  <Journeys>
+    <Journey id="0" departureDate="18/12/2018" departureTime="" action="N">
+      <OriginLoc type="A" code="PMI" cityCode="false"/>
+      <DestinationLoc type="A" code="MAD" cityCode="false"/>
+    </Journey>
+    <Journey id="1" departureDate="25/12/2018" departureTime="" action="N">
+      <OriginLoc type="A" code="MAD" cityCode="false"/>
+      <DestinationLoc type="A" code="PMI" cityCode="false"/>
+    </Journey>
+  </Journeys>
+  <Passengers>
+    <Passenger id="0" age="30">
+      <Bonuses resident="N" largeFamily="N" discountCard="N"/>
+    </Passenger>
+    <Passenger id="1" age="30">
+      <Bonuses resident="N" largeFamily="N" discountCard="N"/>
+    </Passenger>
+  </Passengers>
+  <Preferences cabinClass="N" lowCostIncluded="false" onlyNonStop="false" onlyTrain="false" allowOverNight="false" trainIncluded="false" cheapestFares="false" brandedFares="false">
+    <lightAvail>false</lightAvail>
+  </Preferences>
+</AvailabilityRQ>
+~~~
+
+AvailabilityRS:
+
+~~~xml
+<AvailabilityRS>
+  <Transportation totalFares="3">
+    <Segments>
+      <Segment id="0" transportationId="D86770" transportationType="A" operatingCarrier="D8" marketingCarrier="D8" arrivalTerminal="2" departureDate="2018-12-18T07:25:00" arrivalDate="2018-12-18T08:50:00" segmentDuration="0" maxCheckinDate="0001-01-01T00:00:00" planeType="73H" segmentStatus="HK" electronicTicket="true" hasTechnicalStop="false" secureFlight="false">
+        <OriginLoc type="A" code="PMI" cityCode="false"/>
+        <DestinationLoc type="A" code="MAD" cityCode="false"/>
+      </Segment>
+      <Segment id="1" transportationId="UX6096" transportationType="A" operatingCarrier="UX" marketingCarrier="UX" arrivalTerminal="2" departureDate="2018-12-18T21:00:00" arrivalDate="2018-12-18T22:25:00" segmentDuration="0" maxCheckinDate="0001-01-01T00:00:00" planeType="73H" segmentStatus="HK" electronicTicket="true" hasTechnicalStop="false" secureFlight="false">
+        <OriginLoc type="A" code="PMI" cityCode="false"/>
+        <DestinationLoc type="A" code="MAD" cityCode="false"/>
+      </Segment>
+      <Segment id="2" transportationId="UX6031" transportationType="A" operatingCarrier="UX" marketingCarrier="UX" departureTerminal="2" departureDate="2018-12-25T08:30:00" arrivalDate="2018-12-25T09:50:00" segmentDuration="0" maxCheckinDate="0001-01-01T00:00:00" planeType="E90" segmentStatus="HK" electronicTicket="true" hasTechnicalStop="false" secureFlight="false">
+        <OriginLoc type="A" code="MAD" cityCode="false"/>
+        <DestinationLoc type="A" code="PMI" cityCode="false"/>
+      </Segment>
+      <Segment id="3" transportationId="UX6013" transportationType="A" operatingCarrier="UX" marketingCarrier="UX" departureTerminal="2" departureDate="2018-12-25T10:15:00" arrivalDate="2018-12-25T11:35:00" segmentDuration="0" maxCheckinDate="0001-01-01T00:00:00" planeType="73H" segmentStatus="HK" electronicTicket="true" hasTechnicalStop="false" secureFlight="false">
+        <OriginLoc type="A" code="MAD" cityCode="false"/>
+        <DestinationLoc type="A" code="PMI" cityCode="false"/>
+      </Segment>
+      <Segment id="4" transportationId="UX6067" transportationType="A" operatingCarrier="UX" marketingCarrier="UX" departureTerminal="2" departureDate="2018-12-25T13:50:00" arrivalDate="2018-12-25T15:10:00" segmentDuration="0" maxCheckinDate="0001-01-01T00:00:00" planeType="73H" segmentStatus="HK" electronicTicket="true" hasTechnicalStop="false" secureFlight="false">
+        <OriginLoc type="A" code="MAD" cityCode="false"/>
+        <DestinationLoc type="A" code="PMI" cityCode="false"/>
+      </Segment>
+      <Segment id="5" transportationId="UX6049" transportationType="A" operatingCarrier="UX" marketingCarrier="UX" departureTerminal="2" departureDate="2018-12-25T21:45:00" arrivalDate="2018-12-25T23:05:00" segmentDuration="0" maxCheckinDate="0001-01-01T00:00:00" planeType="73H" segmentStatus="HK" electronicTicket="true" hasTechnicalStop="false" secureFlight="false">
+        <OriginLoc type="A" code="MAD" cityCode="false"/>
+        <DestinationLoc type="A" code="PMI" cityCode="false"/>
+      </Segment>
+    </Segments>
+    <Fares>
+      <Fare id="0" providerCode="AMD" fareType="OW">
+        <Conditions>
+          <Condition id="PEN">
+            <Text>TICKETS ARE NON-REFUNDABLE</Text>
+          </Condition>
+          <Condition id="LTD">
+            <Text>LAST TKT DTE, 11DEC18,  - SEE ADV PURCHASE</Text>
+          </Condition>
+        </Conditions>
+        <Options>
+          <Option id="0" availabilityJourneyRef="0" numStopOvers="0" carrier="DY">
+            <SegmentReferences>
+              <SegmentReference segmentRef="0">
+                <SegmentClasses>
+                  <SegmentClass cabinClass="Y" class="T" paxRef="0" fareBasis="TJIPPI" fareType="PUB" avail="9"/>
+                  <SegmentClass cabinClass="Y" class="T" paxRef="1" fareBasis="TJIPPI" fareType="PUB" avail="9"/>
+                </SegmentClasses>
+                <ReservationTokens>
+                  <Attribute key="LtdProv" value="111218"/>
+                  <Attribute key="Ltd" value="11/12/2018"/>
+                  <Attribute key="claseCabina" value="N"/>
+                  <Attribute key="breakPoint" value="Y"/>
+                  <Attribute key="fareType" value="PUB"/>
+                </ReservationTokens>
+              </SegmentReference>
+            </SegmentReferences>
+            <Emissions/>
+            <BaggageTypes>
+              <BaggageType checkinType="OnLine" appliesSegments="Ref">
+                <References>
+                  <SegmentReferences>
+                    <SegmentReference itineraryRef="0" journeyRef="0" segmentRef="0"/>
+                  </SegmentReferences>
+                </References>
+                <Baggage type="Bag" quantity="2" maxWeightPerUnit="0" maxTotalWeight="0" paymentInAirport="false" needToken="false"/>
+              </BaggageType>
+            </BaggageTypes>
+          </Option>
+        </Options>
+        <AmountBreakdown currency="EUR" totalAmount="90.02" nonCommissionableAmount="0" commission="-1">
+          <ChargeBreakdowns/>
+          <PaxBreakdowns>
+            <PaxBreakdown paxType="ADT" amount="45.01" taxes="10.01" fees="0" tasaDU="0"/>
+          </PaxBreakdowns>
+        </AmountBreakdown>
+        <PaxConfigurations>
+          <PaxConfiguration id="0" paxRef="0" age="30" paxType="ADT">
+            <AppliedBonuses resident="N" largeFamily="N" discountCard="N"/>
+          </PaxConfiguration>
+          <PaxConfiguration id="1" paxRef="1" age="30" paxType="ADT">
+            <AppliedBonuses resident="N" largeFamily="N" discountCard="N"/>
+          </PaxConfiguration>
+        </PaxConfigurations>
+        <HasObFees>false</HasObFees>
+      </Fare>
+      <Fare id="3" providerCode="AMD" fareType="OW">
+        <Conditions>
+          <Condition id="PEN">
+            <Text>TICKETS ARE NON-REFUNDABLE</Text>
+          </Condition>
+          <Condition id="LTD">
+            <Text>LAST TKT DTE, 12DEC18,  - SEE ADV PURCHASE</Text>
+          </Condition>
+          <Condition id="APM">
+            <Text>PRIVATE RATES USED *F*</Text>
+          </Condition>
+        </Conditions>
+        <Options>
+          <Option id="0" availabilityJourneyRef="1" numStopOvers="0" carrier="UX">
+            <SegmentReferences>
+              <SegmentReference segmentRef="5">
+                <SegmentClasses>
+                  <SegmentClass cabinClass="Y" class="U" paxRef="0" fareBasis="UDOW5L" fareType="PRI" avail="9"/>
+                  <SegmentClass cabinClass="Y" class="U" paxRef="1" fareBasis="UDOW5L" fareType="PRI" avail="9"/>
+                </SegmentClasses>
+                <ReservationTokens>
+                  <Attribute key="LtdProv" value="121218"/>
+                  <Attribute key="Ltd" value="12/12/2018"/>
+                  <Attribute key="claseCabina" value="N"/>
+                  <Attribute key="breakPoint" value="Y"/>
+                  <Attribute key="fareType" value="PRI"/>
+                </ReservationTokens>
+              </SegmentReference>
+            </SegmentReferences>
+            <Emissions/>
+            <BaggageTypes>
+              <BaggageType checkinType="OnLine" appliesSegments="Ref">
+                <References>
+                  <SegmentReferences>
+                    <SegmentReference itineraryRef="0" journeyRef="1" segmentRef="64"/>
+                  </SegmentReferences>
+                </References>
+                <Baggage type="Bag" quantity="0" maxWeightPerUnit="0" maxTotalWeight="0" paymentInAirport="false" needToken="false"/>
+              </BaggageType>
+            </BaggageTypes>
+          </Option>
+        </Options>
+        <AmountBreakdown currency="EUR" totalAmount="220.64" nonCommissionableAmount="0" commission="-1">
+          <ChargeBreakdowns/>
+          <PaxBreakdowns>
+            <PaxBreakdown paxType="ADT" amount="110.32" taxes="20.32" fees="0" tasaDU="0"/>
+          </PaxBreakdowns>
+        </AmountBreakdown>
+        <PaxConfigurations>
+          <PaxConfiguration id="0" paxRef="0" age="30" paxType="ADT">
+            <AppliedBonuses resident="N" largeFamily="N" discountCard="N"/>
+          </PaxConfiguration>
+          <PaxConfiguration id="1" paxRef="1" age="30" paxType="ADT">
+            <AppliedBonuses resident="N" largeFamily="N" discountCard="N"/>
+          </PaxConfiguration>
+        </PaxConfigurations>
+        <HasObFees>false</HasObFees>
+      </Fare>
+      <Fare id="26" providerCode="AMD" fareType="RT">
+        <Conditions>
+          <Condition id="PEN">
+            <Text>TICKETS ARE NON-REFUNDABLE</Text>
+          </Condition>
+          <Condition id="LTD">
+            <Text>LAST TKT DTE, 12DEC18,  - SEE ADV PURCHASE</Text>
+          </Condition>
+          <Condition id="APM">
+            <Text>PRIVATE RATES USED *F*</Text>
+          </Condition>
+        </Conditions>
+        <Options>
+          <Option id="0" availabilityJourneyRef="0" numStopOvers="0" carrier="UX">
+            <SegmentReferences>
+              <SegmentReference segmentRef="1">
+                <SegmentClasses>
+                  <SegmentClass cabinClass="Y" class="N" paxRef="0" fareBasis="NSUBRT5L" fareType="PRI" avail="9"/>
+                  <SegmentClass cabinClass="Y" class="N" paxRef="1" fareBasis="NSUBRT5L" fareType="PRI" avail="9"/>
+                </SegmentClasses>
+                <ReservationTokens>
+                  <Attribute key="LtdProv" value="121218"/>
+                  <Attribute key="Ltd" value="12/12/2018"/>
+                  <Attribute key="claseCabina" value="N"/>
+                  <Attribute key="breakPoint" value="Y"/>
+                  <Attribute key="fareType" value="PRI"/>
+                </ReservationTokens>
+              </SegmentReference>
+            </SegmentReferences>
+            <Emissions/>
+            <BaggageTypes>
+              <BaggageType checkinType="OnLine" appliesSegments="Ref">
+                <References>
+                  <SegmentReferences>
+                    <SegmentReference itineraryRef="0" journeyRef="0" segmentRef="31"/>
+                  </SegmentReferences>
+                </References>
+                <Baggage type="Bag" quantity="0" maxWeightPerUnit="0" maxTotalWeight="0" paymentInAirport="false" needToken="false"/>
+              </BaggageType>
+            </BaggageTypes>
+          </Option>
+          <Option id="1" availabilityJourneyRef="1" numStopOvers="0" carrier="UX">
+            <SegmentReferences>
+              <SegmentReference segmentRef="2">
+                <SegmentClasses>
+                  <SegmentClass cabinClass="Y" class="N" paxRef="0" fareBasis="NSUBRT5L" fareType="PRI" avail="9"/>
+                  <SegmentClass cabinClass="Y" class="N" paxRef="1" fareBasis="NSUBRT5L" fareType="PRI" avail="9"/>
+                </SegmentClasses>
+                <ReservationTokens>
+                  <Attribute key="LtdProv" value="121218"/>
+                  <Attribute key="Ltd" value="12/12/2018"/>
+                  <Attribute key="claseCabina" value="N"/>
+                  <Attribute key="breakPoint" value="Y"/>
+                  <Attribute key="fareType" value="PRI"/>
+                </ReservationTokens>
+              </SegmentReference>
+            </SegmentReferences>
+            <Emissions/>
+            <BaggageTypes>
+              <BaggageType checkinType="OnLine" appliesSegments="Ref">
+                <References>
+                  <SegmentReferences>
+                    <SegmentReference itineraryRef="0" journeyRef="1" segmentRef="55"/>
+                  </SegmentReferences>
+                </References>
+                <Baggage type="Bag" quantity="0" maxWeightPerUnit="0" maxTotalWeight="0" paymentInAirport="false" needToken="false"/>
+              </BaggageType>
+            </BaggageTypes>
+          </Option>
+          <Option id="2" availabilityJourneyRef="1" numStopOvers="0" carrier="UX">
+            <SegmentReferences>
+              <SegmentReference segmentRef="3">
+                <SegmentClasses>
+                  <SegmentClass cabinClass="Y" class="N" paxRef="0" fareBasis="NSUBRT5L" fareType="PRI" avail="9"/>
+                  <SegmentClass cabinClass="Y" class="N" paxRef="1" fareBasis="NSUBRT5L" fareType="PRI" avail="9"/>
+                </SegmentClasses>
+                <ReservationTokens>
+                  <Attribute key="LtdProv" value="121218"/>
+                  <Attribute key="Ltd" value="12/12/2018"/>
+                  <Attribute key="claseCabina" value="N"/>
+                  <Attribute key="breakPoint" value="Y"/>
+                  <Attribute key="fareType" value="PRI"/>
+                </ReservationTokens>
+              </SegmentReference>
+            </SegmentReferences>
+            <Emissions/>
+            <BaggageTypes>
+              <BaggageType checkinType="OnLine" appliesSegments="Ref">
+                <References>
+                  <SegmentReferences>
+                    <SegmentReference itineraryRef="0" journeyRef="1" segmentRef="56"/>
+                  </SegmentReferences>
+                </References>
+                <Baggage type="Bag" quantity="0" maxWeightPerUnit="0" maxTotalWeight="0" paymentInAirport="false" needToken="false"/>
+              </BaggageType>
+            </BaggageTypes>
+          </Option>
+          <Option id="3" availabilityJourneyRef="1" numStopOvers="0" carrier="UX">
+            <SegmentReferences>
+              <SegmentReference segmentRef="4">
+                <SegmentClasses>
+                  <SegmentClass cabinClass="Y" class="N" paxRef="0" fareBasis="NSUBRT5L" fareType="PRI" avail="9"/>
+                  <SegmentClass cabinClass="Y" class="N" paxRef="1" fareBasis="NSUBRT5L" fareType="PRI" avail="9"/>
+                </SegmentClasses>
+                <ReservationTokens>
+                  <Attribute key="LtdProv" value="121218"/>
+                  <Attribute key="Ltd" value="12/12/2018"/>
+                  <Attribute key="claseCabina" value="N"/>
+                  <Attribute key="breakPoint" value="Y"/>
+                  <Attribute key="fareType" value="PRI"/>
+                </ReservationTokens>
+              </SegmentReference>
+            </SegmentReferences>
+            <Emissions/>
+            <BaggageTypes>
+              <BaggageType checkinType="OnLine" appliesSegments="Ref">
+                <References>
+                  <SegmentReferences>
+                    <SegmentReference itineraryRef="0" journeyRef="1" segmentRef="57"/>
+                  </SegmentReferences>
+                </References>
+                <Baggage type="Bag" quantity="0" maxWeightPerUnit="0" maxTotalWeight="0" paymentInAirport="false" needToken="false"/>
+              </BaggageType>
+            </BaggageTypes>
+          </Option>
+        </Options>
+        <AmountBreakdown currency="EUR" totalAmount="196.24" nonCommissionableAmount="0" commission="-1">
+          <ChargeBreakdowns/>
+          <PaxBreakdowns>
+            <PaxBreakdown paxType="ADT" amount="98.12" taxes="28.12" fees="0" tasaDU="0"/>
+          </PaxBreakdowns>
+        </AmountBreakdown>
+        <PaxConfigurations>
+          <PaxConfiguration id="0" paxRef="0" age="30" paxType="ADT">
+            <AppliedBonuses resident="N" largeFamily="N" discountCard="N"/>
+          </PaxConfiguration>
+          <PaxConfiguration id="1" paxRef="1" age="30" paxType="ADT">
+            <AppliedBonuses resident="N" largeFamily="N" discountCard="N"/>
+          </PaxConfiguration>
+        </PaxConfigurations>
+        <HasObFees>false</HasObFees>
+      </Fare>
+    </Fares>
+  </Transportation>
+  <OptionalsCharges/>
+</AvailabilityRS>
+~~~
