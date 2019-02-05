@@ -63,8 +63,8 @@ Not implemented by all suppliers
 | **Element**			| **Number**	| **Type**	| **Description**			|
 | ----------------------------- | ------------- | ------------- | ------------------------------------- |
 | CancellationRQ              	| 1     	|		| Root node.				|
-| Locator                     	| 1     	|		| Contains a list of Tickets.		|
-| CancellationCosts           	| 1     	|		| Contains details of the Ticket.	|
+| Locator                     	| 1     	|	String	| Contains the booking's locator that want to be cancelled	|
+| CancellationCosts           	| 0..1    	|	Decimal	| Contains the amount of cancellation costs.	|
 
 
 
@@ -73,8 +73,9 @@ Not implemented by all suppliers
 
 
 ~~~xml
-    <CancellationRS>
-    </CancellationRS>
+<CancellationRS>
+  <ResponseStatus tripType="DEPARTURE" petitionType="OW" status="ok" />
+</CancellationRS>
 ~~~
 
 
@@ -82,19 +83,7 @@ Not implemented by all suppliers
 
 
 
-| **Element**				| **Number**	| **Type**	| **Description**						|
+| **Element**				| **Number**	| **Type**	| **Description**					
 | ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
-| CancellationRS                	| 1    		|		| Root node.							|
-| AmountBreakdown               	| 1    		|		| Contains details of the AmountBreakdown.			|
-| @currency                		| 1 		| String	| Currency code of the fare.					|
-| @totalAmount             		| 1 		| Decimal	| Total amount. with taxes and other charges included.		|
-| @notCommissionableAmount 		| 1 		| Decimal	| Total amount that can not be commissioned.			|
-| @commission              		| 1 		| Decimal	| Commission.							|
-| Itineraries/Itinerary /AmountBreakdown/ChargeBreakdowns | 0..1 |  	| Contains a list of ChargeBreakdowns.				|
-| Itineraries/Itinerary /AmountBreakdown/PaxBreakdowns | 0..1 |  	| Contains a list of breakdown amounts for each Passenger ( ADT amount, etc. ).	|
-| Itineraries/Itinerary /AmountBreakdown/PaxBreakdowns /PaxBreakdown | 0..n |  | Contains details of breakdown amounts for each Passenger. |
-| @paxType                 		| 1 		| String	| Passenger type: ADT ( Adult ), CHD ( Child ) & INF ( Infant ).  |
-| @amount                  		| 1 		| Decimal	| Total amount, with taxes included, associated to the Passenger.  |
-| @taxes                  		| 1 		| Integer	| If they exist, taxes are applied for this Passenger type.	|
-| @tasaDU                  		| 1 		| Integer	| Deprecated.							|
+| CancellationRS                	| 1    		|		| Root node.										|
 

@@ -53,30 +53,3 @@ dunno m8
 |@currency|1|String|Currency code of the amount.|
 |@amount|1|Decimal|Amount.|
 |@amountType|1| |[Amount Type.](#amount-type-enumerate-description)|
-
-##[WIP]
-
-###Amount Type Enumerate Description
-| **Element**				| **Possible Values**	| **Description**	|
-| ------------------------- | --------------------- | ------------------ |
-| @paymentType              | N                     | None |
-| 							| AMOUNT                | |
-| 							| FEE                   | |
-| 							| TOTAL                 | |
-| 							| PERCENTUAL            | |
-
-### Payment Type Enumerate Description
-| **Element**				| **Possible Values**	| **Description**	|
-| ------------------------- | --------------------- | ------------------ |
-| @paymentType              | N                     | None |
-| 							| CASH                  | |
-|                           | CARD                  | |
-|                           | EMIT                  | |
-
-### Emission Type Enumerate Description
-| **Element**				| **Possible Values**	| **Description**	|
-| ------------------------- | --------------------- | ------------------ |
-| @type        				| N                     | None |
-| 							| Air                   |Passenger tickets  |
-| 							| Extra                 |Ancillaries (bags, seats, etc.) |
-| 							| All                   |Both |
