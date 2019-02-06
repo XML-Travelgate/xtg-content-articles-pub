@@ -53,7 +53,7 @@ permalink: /docs/transportation
 | SPECIAL_ASSISTANCE  | Special assistance  |
 | PENALTY  | Penalty  |
 
-### Block type 
+### Block Attribute Type 
 
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
@@ -90,6 +90,7 @@ permalink: /docs/transportation
 | FARE | Only fare will be refunded |
 | TAXES | Only taxes will be refunded |
 | AUTO | GDS automatic ticket change |
+| PARTIAL | Partial refund. Not all journeys |
 
 ### Refund process type
 
@@ -174,7 +175,6 @@ permalink: /docs/transportation
 
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
-| N                     | None |
 | AIR                   |Passenger tickets  |
 | EXTRA                 |Ancillaries (bags, seats, etc.) |
 | ALL                   |Both |
@@ -185,7 +185,7 @@ permalink: /docs/transportation
 | --------------------- | ------------------ |
 | N                     |None |
 | KF					|Keep flights and fares  |
-| K						|Keep flights) |
+| K						|Keep flights |
 | C						|Change journey |
 | A						|Add journey|
 | R						|Remove journey|
@@ -294,3 +294,159 @@ permalink: /docs/transportation
 | RESIDENT_ID						||
 | FOREIGN_PASSPORT						||
 | BIRTH_NOTIFICATION        ||
+
+### Access Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| WEB                        |Web|
+| WS					    |Web Service|
+
+### Ticket Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| PAPER                        ||
+| ETICKET					    ||
+| EXTRA					    ||
+
+### Ticket Status Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| OPEN                          ||
+| CONFIRMED					    ||
+| VOIDED					    ||
+| REFUNDED                      ||
+
+### Amount Applies To Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| BY_RESERVATION                          ||
+| BY_PASSENGER					    ||
+| BY_SEGMENT					    ||
+| BASE_FARE                      ||
+| TAXES         ||
+| FOR_ADT ||
+| FOR_CHD ||
+| FOR_INF ||
+
+### Checkin Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| ONLINE                        ||
+| AIRPORT					    ||
+
+### Segment Applies To Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| ALL                           ||
+| OUTBOUND					    ||
+|INBOUND                        ||
+|REF                            ||
+
+### Supplement Payment Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| CREDIT_CARD                           ||
+| ELECTRONIC_BANKING					    ||
+
+### Filter Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| INCLUDED                           ||
+| EXCLUDED                          ||
+
+### Optional Element Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| RM                           |Remark|
+| SSR                          |Special Service Request|
+| OSI                          |Other Service Information|
+
+### Fare Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| PUB                           |Public fare|
+| PRI                           |Private fare|
+| NEGO                          |Negotiated fare|
+| CORP                          |Corporate fare|
+
+### Block Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| CABIN                           ||
+| ROW                           ||
+| SEAT                              ||
+| UPPERCABIN                         |Upper deck in double-deck aircraft|
+
+### Logical Operation Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| NONE                           ||
+| AND                         ||
+| OR                              ||
+
+### Verified Resident Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| N                           ||
+| CHECKED                     |Spanish Resident SARA Verification passed|
+| NOT_CHECKED                 |Spanish Resident SARA Verification failed|
+
+### Spanish Discount Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| RESIDENT                           ||
+| LARGE_FAMILY                     |Spanish Resident SARA Verification passed|
+
+### Checkin Status Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| UNDEFINED||
+| IN_PROGRESS                     |Spanish Resident SARA Verification passed|
+| ERROR||
+| COMPLETE||
+| UNCONFIRMED||
+
+### Large Family Discount Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| N||
+| F1|General Large Family|
+| F2|Special Large Family|
+
+### Segment Status Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| HK| Okey|
+| TK|Change of programation|
+| UC|Unconfirmed|
+| UN|Unable|
+| NO|No action taken|
+| UD|Undefined|
+
+### Baggage Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| BAG| |
+| BIKE||
+| WHEELCHAIR||
+| SKIS||
+| BABY_TROLLEY||
+| HAND_BAGGAGE||

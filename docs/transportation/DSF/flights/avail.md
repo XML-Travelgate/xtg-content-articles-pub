@@ -90,38 +90,38 @@ This method **must** be called **before** the Valuation method.
 | @code						| 1			| String	| Location code.|
 | @cityCode        			| 1  		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
 | @name						| 0..1		| String	| Location long name.|
-| @type						| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| @type						| 0..1 		| [Location Type](../../enum.md#location-type)	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
 | Journeys/Journey/DestinationLoc		| 1      	|| Destination location.|
 | @code            			| 1  		| String	| Location code.|
 | @cityCode        			| 1  		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
 | @name						| 0..1		| String	| Location long name.|
 | @radius					| 0..1		| Integer	| Area radius from location.|
-| @type						| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| @type						| 0..1 		| [Location Type](../../enum.md#location-type)	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
 | Journeys/Journey/DestinationLoc/<br>AlternativeLocations						| 0..1	|| Contains a list of AlternativeLocations.|
 | Journeys/Journey/DestinationLoc/<br>AlternativeLocations/AlternativeLocation	| 1..n	|| Contains the information of the alternative location.|
 | @code						| 1			| String	| Location code.|
 | @cityCode        			| 1  		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
 | @name						| 0..1		| String	| Location long name.|
-| @type						| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| @type						| 0..1 		| [Location Type](../../enum.md#location-type)	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
 | Passengers            	| 1      	|			| Contains a list of Passengers.|
 | Passengers/Passenger  	| 1..n    	|			| Contains information of the Passenger.|
 | @id              			| 1  		| Integer	| Unique identifier of the Passenger.|
 | @age             			| 1  		| Integer	| Age of the Passenger.|
 | Passengers/Passenger/Bonuses						| 0..1    	|| Possible discount or bonuses.|
-| @resident        			| 0..1  	| String	| [Resident discount type](../../enum.md#resident-discount-type)|
-| @largeFamily     			| 0..1  	| String	| Family discount type: N(None), F1(Large family), F2 (Special large family).|
+| @resident        			| 0..1  	| [Resident Discount Type](../../enum.md#resident-discount-type)	| Resident discount type: BP, BI, DC, RC, RM, STR,...|
+| @largeFamily     			| 0..1  	| [Large Family Discount Type](../../enum.md#large-family-discount-type)	| Family discount type: N(None), F1(Large family), F2 (Special large family).|
 | @discountCardCode			| 0..1		| String	| Discount card code.|
-| @discountCard				| 0..1		| String	| [Discount card type](../../enum.md#discount-card-type)|
+| @discountCard				| 0..1		| [Discount Card Type](../../enum.md#discount-card-type)	| |
 | Passengers/Passenger/Bonuses/<br>DiscountCards	| 0..1	|| Contains a list of DiscountCards.|
 | Passengers/Passenger/Bonuses/<br>DiscountCards/DiscountCard		| 1..n	|| DiscountCard details.|
-| @type						| 1			| String	| [Discount card type](../../enum.md#discount-card-type)|
+| @type						| 1			| [Discount Card Type](../../enum.md#discount-card-type)	| |
 | @code						| 0..1		| String	| Discount card code.|
 | @id						| 0..1		| String	| Unique identifier of discound card.|
 | Passengers/Passenger/Bonuses/<br>PaxTypeCodes		| 0..1	|| Contains a list of PaxTypeCodes.|
 | Passengers/Passenger/Bonuses/<br>PaxTypeCodes/PaxTypeCode			| 1..n	|| Contains the code type of the passenger.|
 | @code						| 1			| String	| Code type of the passenger.|
 | Preferences           	| 0..1      |			| Availability Preferences.|
-| @cabinClass      			| 0..1  	| String	| Preferred cabin class: N(None: don't apply by default), F(First), C(Business), Y(Economy), CAMAROTE(Cabin), YP(Economy Plus). 	|
+| @cabinClass      			| 0..1  	|  [Cabin Class Type](../../enum.md#cabin-class-type)	| Preferred cabin class: N(None: don't apply by default), F(First), C(Business), Y(Economy), CAMAROTE(Cabin), YP(Economy Plus). 	|
 | @allowOverNight			| 0..1		| Boolean	| If true, allows to the provider to return flights with overnight scales.|
 | @brandedFares				| 0..1		| Boolean	| If true, the fares will contain extra information.|
 | @lowCostIncluded			| 0..1		| Boolean	| If true, lowcost options will also be requested.|
@@ -134,7 +134,7 @@ This method **must** be called **before** the Valuation method.
 | Preferences/ConnexionCompanies    				| 0..1  || List of preferred companies.|
 | Preferences/ConnexionCompanies/<br>ConnexionCompany      		| 1..n  || Preferred company.|
 | @carrier         			| 1  		| String	| Airline code.|
-| @mode            			| 1  		| String	| Mode: INCLUDED include preferred company and exclude all the others; EXCLUDED exclude only preferred company.|
+| @mode            			| 1  		|  [Filter type](../../enum.md#filter-type)	| Mode: INCLUDED include preferred company and exclude all the others; EXCLUDED exclude only preferred company.|
 | Preferences/ConnexionCompanies/<br>ConnexionCompany/Attributes	| 0..1	|| List of attributes.|
 | Preferences/ConnexionCompanies/<br>ConnexionCompany/Attributes/Attribute	| 1..n	|| Additional information key-value.|
 | @key						| 1			| String	| Attribute key.|
@@ -145,34 +145,34 @@ This method **must** be called **before** the Valuation method.
 ### AvailabilityRS Description
 
 
-| **Element**					| **Number**| **Type**	| **Description**																			   |
-| ----------------------------- | --------- | --------- | -------------------------------------------------------------------------------------------- |
+| **Element**					| **Number**| **Type**	| **Description** |																			   
+| ----------------------------- | --------- | --------- | ----------------|
 | AvailabilityRS              	| 1     	|			| Root node.|
 | Transportation              	| 1     	|			| Contains all of the Segments and Fares.|
 | @totalFares            		| 1 		| Integer	| Total number of Fares.|
 | Transportation/Segments     	| 1     	|			| Contains a list of the Segments.|
-| Transportation/Segments/Segment						| 1..n    	|| Contains the information of the segment.|
+| Transportation/Segments/Segment| 1..n    	| Contains the information of the segment.|
 | @id                    		| 1 		| Integer	| Unique identifier of the segment.|
 | @transportationId      		| 1 		| String	| Unique Id of the transportation.|
 | @operatingCarrier      		| 1 		| String	| Company which operates the transportation.|
 | @marketingCarrier      		| 1 		| String	| Company which commercializes the transportation.|
 | @departureDate         		| 1 		| Date		| Departure date.|
 | @arrivalDate           		| 1 		| Date		| Arrival date.|
-| @transportationType    		| 0..1 		| String	| Transport type: V ( Flight ), T ( Train ), B ( Bus ), S() & F ( Ferry ).|
+| @transportationType    		| 0..1 		| [Transport type](../../enum.md#transport-type)	| Transport type: A ( Flight ), T ( Train ), B ( Bus ), S( Surface ) & F ( Ferry ).|
 | @transportationName    		| 0..1 		| String	| Name of the transportation.|
 | @transportationCode			| 0..1		| String	| Code of the transportation.|
 | @departureTerminal     		| 0..1 		| String	| Departure terminal.|
 | @arrivalTerminal       		| 0..1 		| String	| Arrival terminal.|
 | @segmentDuration       		| 0..1 		| Integer	| Transport duration ( in minutes ).|
-| @segmentStatus				| 0..1		| String	| Segment status: HK (Holding confirmed), TK(Confirming new flight times), UC(Unable to confirm), UN(Flight cancelled by airline), NO (No action taken), UD (Undefined).|
+| @segmentStatus				| 0..1		| [Status Segment type](../../enum.md#status-segment-type)	| Segment status: HK (Holding confirmed), TK(Confirming new flight times), UC(Unable to confirm), UN(Flight cancelled by airline), NO (No action taken), UD (Undefined).|
 | @planeType             		| 0..1 		| String	| Plane type. Flights parameter.|
 | @maxCheckinDate        		| 0..1 		| String	| Maximum date to make the check-in.|
 | @hasTechnicalStop      		| 0..1 		| Boolean	| If true, the segment has a technical stop.|
 | @electronicTicket      		| 0..1 		| Boolean	| If true, the segment uses a electronic ticket.| 
 | @secureFlight          		| 0..1		| Boolean	| If true, the provider requires extra information of the passengers. Flights parameter.|
-| Transportation/Segments/Segment/<br>OriginLoc			| 1     	|| Origin location.|
+| Transportation/Segments/Segment/<br>OriginLoc			| 1 |   | Origin location.|
 | @code                  		| 1 		| String	| Location code.|
-| @type                  		| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| @type                  		| 0..1 		| [Location Type](../../enum.md#location-type)	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
 | @name							| 0..1 		| String	| Location full name.|
 | @radius						| 0..1		| Integer	| Area radius from location.|
 | @cityCode              		| 0..1 		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
@@ -181,10 +181,10 @@ This method **must** be called **before** the Valuation method.
 | @code							| 1			| String	| Location code.|
 | @cityCode        				| 0..1  	| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
 | @name							| 0..1		| String	| Location long name.|
-| @type							| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| @type							| 0..1 		| [Location Type](../../enum.md#location-type)	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
 | Transportation/Segments/Segment/<br>DestinationLoc	| 1   || Destination location.|
 | @code                  		| 1 		| String	| Location code.|
-| @type                  		| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| @type                  		| 0..1 		| [Location Type](../../enum.md#location-type)	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
 | @name							| 0..1 		| String	| Location full name.|
 | @radius						| 0..1		| Integer	| Area radius from location.|
 | @cityCode              		| 0..1 		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
@@ -193,7 +193,7 @@ This method **must** be called **before** the Valuation method.
 | @code							| 1			| String	| Location code.|
 | @cityCode        				| 0..1  	| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
 | @name							| 0..1		| String	| Location long name.|
-| @type							| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| @type							| 0..1 		| [Location Type](../../enum.md#location-type)	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
 | Transportation/Segments/Segment/<br>TechnicalStops	| 0..1		|| Contains a list of TechnicalStops.|
 | @totalTechnicalStops   		| 1 		| Integer	| Total number of TechnicalStops.|
 | Transportation/Segments/Segment/<br>TechnicalStops/TechnicalStop	| 0..n || Contains the details of the TechnicalStop.|
@@ -204,7 +204,7 @@ This method **must** be called **before** the Valuation method.
 | Transportation/Fares/Fare                  			| 1..n    	|| Contains details of Fare.|
 | @id                    		| 1 		| Integer	| Unique identifier of the Fare.|
 | @providerCode          		| 1 		| String	| Provider code.|
-| @fareType              		| 1 		| String	| Fare type: OW ( one way ), RT ( round trip ), OJ ( Open jaw ) & CT ( Circle trip ).|
+| @fareType              		| 1 		| [Trip type](../../enum.md#trip-type)	| Fare type: OW ( one way ), RT ( round trip ), OJ ( Open jaw ) & CT ( Circle trip ).|
 | @familyFare            		| 0..1 		| String	| Family fare name of the Fare.|
 | Transportation/Fares/Fare/HasObFees        			| 0..1 		| Boolean	| If true then there is an extra fee for using credit card.|
 | Transportation/Fares/Fare/Conditions					| 0..1		|| Contains a list of Fare Conditions.|
@@ -231,13 +231,13 @@ This method **must** be called **before** the Valuation method.
 | Transportation/Fares/Fare/Options/Option/<br>SegmentReferences/SegmentReference/<br>SegmentClasses/SegmentClass | 1..n | | Contains details of the SegmentClass.|
 | @cabinClass            		| 1 		| String	| Cabin class of the seat: N (Not specified), Y (Tourist), C (Business), F (First), CA (Cabin, only for ferries), YP (Tourist Plus).|
 | @paxRef               	 	| 1 		| Integer	| Passenger reference.|
-| @fareType              		| 1 		| String	| Fare type: PUB ( Public ), PRI ( Private ), NEGO ( Negotiated ) and CORP ( Corporate ).|
+| @fareType              		| 1 		| [Fare type](../../enum.md#fare-type)	| Fare type: PUB ( Public ), PRI ( Private ), NEGO ( Negotiated ) and CORP ( Corporate ).|
 | @class                 		| 0..1 		| String	| Fare class.|
 | @fareBasis             		| 0..1 		| String	| Identifier of the fare.|
 | @avail                 		| 0..1 		| Integer	| Available seats remaining for this class (In flights, the maximum is 9).|
 | Transportation/Fares/Fare/Options/Option/<br>SegmentReferences/SegmentReference/<br>SegmentClasses/SegmentClass/Modifiable | 0..1 || Contains the information of the modifiable fare.|
 | @modifiable                 	| 1 		| Boolean	| If true, the fare allows this modification.|
-| @amountType                 	| 1 		| String	| Modification amount type: AMOUNT (Fare amount), FEE (Fee amount), TOTAL (Total fare amount), PERCENTUAL (Percentual amount).|
+| @amountType                 	| 1 		| [Amount type](../../enum.md#amount-type)	| Modification amount type: AMOUNT (Fare amount), FEE (Fee amount), TOTAL (Total fare amount), PERCENTUAL (Percentual amount).|
 | @Description                 	| 0..1 		| String	| Modification description.|
 | @amount                 		| 0..1 		| Decimal	| Modification amount.|
 | @currency                 	| 0..1 		| String	| Modification currency.|
@@ -247,7 +247,7 @@ This method **must** be called **before** the Valuation method.
 | @fromDate                 	| 0..1 		| Date		| Date of the begining of the policy.|
 | @amount                 		| 0..1 		| Decimal	| Policy amount.|
 | @currency                 	| 0..1 		| String	| Policy currency.|
-| @amountType                 	| 0..1 		| String	| Policy amount type: AMOUNT (Fare amount), FEE (Fee amount), TOTAL (Total fare amount), PERCENTUAL (Percentual amount).|
+| @amountType                 	| 0..1 		| [Amount type](../../enum.md#amount-type)	| Policy amount type: AMOUNT (Fare amount), FEE (Fee amount), TOTAL (Total fare amount), PERCENTUAL (Percentual amount).|
 | Transportation/Fares/Fare/Options/Option/<br>SegmentReferences/SegmentReference/<br>ReservationTokens | 0..1 || Specific attribute used for each provider.|
 | Transportation/Fares/Fare/Options/Option/<br>SegmentReferences/SegmentReference/<br>ReservationTokens/Attribute | 1..n || Type of attribute.|
 | @key                   		| 1 		| String	| Contains the keyword/ Id to identify a parameter.|
@@ -255,7 +255,7 @@ This method **must** be called **before** the Valuation method.
 | Transportation/Fares/Fare/Options/Option/<br>BaggageTypes | 0..1    	|| Contains a list of BaggageTypes.|
 | Transportation/Fares/Fare/Options/Option/<br>BaggageTypes/BaggageType	| 1..n || Contains details of BaggageType.|
 | @checkInType					| 1  		| String	| Check-in type: OnLine & Airport.|
-| @appliesSegments        		| 1  		| String	| Segments in which is applied: All, Departure, Return, Ref (only the segment references indicated in the node SegmentReferences).|
+| @appliesSegments        		| 1  		| [Segment Applies type](../../enum.md#segment-applies-type)	| Segments in which is applied: ALL, OUTBOUND, INBOUND, REF (only the segment references indicated in the node SegmentReferences).|
 | Transportation/Fares/Fare/Options/Option/<br>BaggageTypes/BaggageType/<br>References		| 0..1	||	References for the Baggage Type.|
 | Transportation/Fares/Fare/Options/Option/<br>BaggageTypes/BaggageType/<br>References/SegmentReferences		| 0..1	||	Contains a list of segment references for the Baggage Type.|
 | Transportation/Fares/Fare/Options/Option/<br>BaggageTypes/BaggageType/<br>References/SegmentReferences/<br>SegmentReference		| 1..n	||	Segment reference.|
@@ -266,7 +266,7 @@ This method **must** be called **before** the Valuation method.
 | Transportation/Fares/Fare/Options/Option/<br>BaggageTypes/BaggageType/<br>References/PaxReferences/<br>PaxReference		| 1..n	||	Passenger reference.|
 | @paxRef						| 1 		| String	| Reference to the passenger.|
 | Transportation/Fares/Fare/Options/Option/<br>BaggageTypes/BaggageType/Baggage | 1..n || Details of the baggage.|
-| @type                  		| 1 		| String	| Type of baggage: Bag, Bike, Wheelchair, Skis, BabyTrolley and HandBaggage.|
+| @type                  		| 1 		| [Baggage Type](../../enum.md#baggage-type)	| Type of baggage: BAG, BIKE,...|
 | @quantity              		| 1 		| Integer	| Baggage quantity.|
 | @id                    		| 0..1 		| String	| Unique identifier of the Baggage.|
 | @maxWeightPerUnit      		| 0..1 		| Integer	| Maximum weight of the baggage.| 
@@ -280,16 +280,16 @@ This method **must** be called **before** the Valuation method.
 | Transportation/Fares/Fare/Options/Option/<br>BaggageTypes/BaggageType/Baggage/<br>BaggageCharge | 0..1 || Details of the baggage charge.|
 | @currency             		| 1 		| String	| Currency.|
 | @fixAmount             		| 0..1 		| Decimal	| Total fixed amount.|
-| @appliesFixAmount             | 0..1 		| String	| The fixed amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| @appliesFixAmount             | 0..1 		| [Amount Applies To Type](../../enum.md#amount-applies-to-type)	| The fixed amount applies to: BY_RESERVATION, BY_PASSENGER,BY_SEGMENT,...|
 | @minFixAmount             	| 0..1 		| Decimal	| Minimal fixed amount.|
 | @maxFixAmount             	| 0..1 		| Decimal	| Maximal fixed amount.|
 | @minAmountPercentage          | 0..1 		| Decimal	| Minimal percentage amount.|
 | @maxAmountPercentage          | 0..1 		| Decimal	| Maximal percentage amount.|
 | @percentage             		| 0..1 		| Decimal	| Total percentage amount.|
-| @percentageApplied            | 0..1 		| String	| The percentage amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| @percentageApplied            | 0..1 		|[Amount Applies To Type](../../enum.md#amount-applies-to-type)| The percentage amount applies to: BY_RESERVATION, BY_PASSENGER,BY_SEGMENT,...|
 | Transportation/Fares/Fare/Options/Option/<br>SpecialSupplements	| 0..1	||	Contains a list of SpecialSupplements.|
 | Transportation/Fares/Fare/Options/Option/<br>SpecialSupplements/SpecialSupplement		| 1..n	||	Contains information about the Special Supplement.|
-| @type							| 1			| String	| Type of supplement: Miscelaneous, Seat, Meal, Pet, Lounge, Baggage, Canoe, PreferentialBoarding, Bike, Trailer, Seguro, Embarque_Prioritario, Acceso_Preferente, Bloqueo_Tarifa, Special_Assistance.|
+| @type							| 1			| [Supplement Type](../../enum.md#supplement-type)	| Type of supplement: MISCELANEOUS, SEAT, MEAL, PET, LOUNGE,...|
 | @id							| 0..1		| String	| Unique identifier of the supplement.|
 | @code							| 0..1		| String	| Supplement code.|
 | @height						| 0..1		| Integer	| Dimension of the supplement: height.|
@@ -299,7 +299,7 @@ This method **must** be called **before** the Valuation method.
 | @quantity						| 0..1		| Integer	| Quantity of supplements.|
 | @description					| 0..1		| String	| Description of the supplement|
 | @carrier						| 0..1		| String	| Carrier selling the supplement.|
-| @estado						| 0..1		| String	| Status of the supplement: N(None), INC(Included in the price), CHA(Avalilable with charges), NOF(Not offered).|
+| @estado						| 0..1		| [Supplement Status Type](../../enum.md#supplement-status-type)	| Status of the supplement: N(None), INC(Included in the price), CHA(Avalilable with charges), NOF(Not offered).|
 | @needToken					| 0..1		| Boolean	| If true, the field @reservationToken should be filled|
 | @reservationToken				| 0..1		| String	| Reservation Token of the supplement.|
 | @ownTransportation			| 0..1		| Boolean	| If true, the supplement includes own transportation cage.|
@@ -315,13 +315,13 @@ This method **must** be called **before** the Valuation method.
 | Transportation/Fares/Fare/Options/Option/<br>SpecialSupplements/SpecialSupplement/<br>SupplementCharge		| 0..1	||	Details of the special supplement charge.|
 | @currency             		| 1 		| String| Currency.|
 | @fixAmount             		| 0..1 		| Decimal| Total fixed amount.|
-| @appliesFixAmount             | 0..1 		| String| The fixed amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| @appliesFixAmount             | 0..1 		| [Amount Applies To Type](../../enum.md#amount-applies-to-type)| The fixed amount applies to: RESERVATION, BY_PASSENGER, BY_SEGMENT, TAXES,...|
 | @minFixAmount             	| 0..1 		| Decimal| Minimal fixed amount.|
 | @maxFixAmount             	| 0..1 		| Decimal| Maximal fixed amount.|
 | @minAmountPercentage          | 0..1 		| Decimal| Minimal percentage amount.|
 | @maxAmountPercentage          | 0..1 		| Decimal| Maximal percentage amount.|
 | @percentage             		| 0..1 		| Decimal| Total percentage amount.|
-| @percentageApplied            | 0..1 		| String| The percentage amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| @percentageApplied            | 0..1 		| [Amount Applies To Type](../../enum.md#amount-applies-to-type)| The percentage amount applies to: RESERVATION, BY_PASSENGER, BY_SEGMENT, TAXES,...|
 | Transportation/Fares/Fare/Options/Option/<br>Emissions  				| 0..1     	|| Contains a list of Issuances.|
 | Transportation/Fares/Fare/Options/Option/<br>Emissions/Emission  		| 1..n     	|| Contains the key of the Issuance.|
 | @key							| 1			| String	| Key of the Issuance.|
@@ -333,7 +333,7 @@ This method **must** be called **before** the Valuation method.
 | Transportation/Fares/Fare/<br>AmountBreakdown/ChargeBreakdowns | 0..1   || Contains a list of breakdown amounts ( taxes, mandatory charges.. ).|
 | Transportation/Fares/Fare/<br>AmountBreakdown/ChargeBreakdowns/<br>ChargeBreakdown | 1..n || Contains details of the BreakdownAmount.|
 | @amount                		| 1    	 	| Decimal	| Charge amount.|
-| @type                  		| 0..1 		| String	| [Type of charge.](#availability-enumerate-description)|
+| @type                  		| 0..1 		| [Charge Type.](../../enum.md#charge-type)	| Type of charge|
 | @included						| 0..1		| Boolean	| If true, the charge is included to the total fare amount.|
 | Transportation/Fares/Fare/<br>AmountBreakdown/ChargeBreakdowns/<br>ChargeBreakdown/Concept | 0..1 | | Contains details of the charge.|
 | @id                    		| 0..1 		| String	| Unique id of the Concept.|
@@ -346,7 +346,7 @@ This method **must** be called **before** the Valuation method.
 | Transportation/Fares/Fare/<br>AmountBreakdown/ChargeBreakDowns/<br>ChargeBreakdown/Concept/Paragraph/<br>Sentence | 0..n | String | Sentence|
 | Transportation/Fares/Fare/<br>AmountBreakdown/PaxBreakdown | 1    	|| Contains a list of breakdown amounts for each passenger ( ADT amount, etc. ).|
 | Transportation/Fares/Fare/<br>AmountBreakdown/PaxBreakdowns/<br>PaxBreakdown | 1..n || Contains details of breakdown amounts for each passenger.|
-| @paxType               		| 1 		| String	| Passenger type: ADT ( Adult ), CHD ( Child ) & INF ( Infant ).|
+| @paxType               		| 1 		| [Passenger Type](../../enum.md#passenger-type)	| Passenger type: ADT ( Adult ), CHD ( Child ) & INF ( Infant ).|
 | @amount                		| 1 		| Decimal	| Total amount, with taxes included, associated to the passenger.|
 | @taxes                 		| 1 		| Decimal	| If they exist, taxes are applied for this passenger type.|
 | @tasaDU                		| 0..1 		| Decimal	| DU taxes.|
@@ -359,17 +359,17 @@ This method **must** be called **before** the Valuation method.
 | Transportation/Fares/Fare/<br>PaxConfigurations/PaxConfiguration | 1..n || Contains details of PaxConfiguration.|
 | @id                    		| 1 		| Integer	| Unique identifier of the PaxConfiguration.|
 | @paxRef                		| 1 		| Integer	| Reference to the passenger Id from the request.|
-| @paxType               		| 1 		| String	| Passenger type based on the age of the passenger: ADT (Adult), CHD (Child), INF (Infant), YOU (Young) and SEN (Senior).|
+| @paxType               		| 1 		| [Passenger Type](../../enum.md#passenger-type)	| Passenger type based on the age of the passenger: ADT (Adult), CHD (Child), INF (Infant), YOU (Young) and SEN (Senior).|
 | @age                   		| 0..1 		| Integer	| Age of the passenger.|
 | @nacionality                  | 0..1 		| String	| Nacionality of the passenger.|
 | Transportation/Fares/Fare/<br>PaxConfigurations/PaxConfiguration/<br>AppliedBonuses | 0..1 || Applied discounts.|
-| @resident              		| 0..1 		| String	| [Resident discount type.](#availability-enumerate-description)|
-| @largeFamily           		| 0..1 		| String	| Family discount type: N(None), F1(Large family), F2 (Special large family).|
+| @resident              		| 0..1 		| [Resident Discount Type](../../enum.md#resident-discount-type)	| Resident discount type: BP, BI, DC,RC,RM,...|
+| @largeFamily           		| 0..1 		| [Large Family Discount Type](../../enum.md#passenger-type)	| Family discount type: N(None), F1(Large family), F2 (Special large family).|
 | @discountCardCode				| 0..1		| String	| Discount card code.|
-| @discountCard					| 0..1		| String	| [Discount card type.](#availability-enumerate-description)|
+| @discountCard					| 0..1		| [Discount Card Type](../../enum.md#discount-card-type)	| Discount card type)|
 | Transportation/Fares/Fare/<br>PaxConfigurations/PaxConfiguration/<br>AppliedBonuses/DiscountCards	| 0..1	|| Contains a list of DiscountCards.|
 | Transportation/Fares/Fare/<br>PaxConfigurations/PaxConfiguration/<br>AppliedBonuses/DiscountCards/<br>DiscountCard| 1..n	|| DiscountCard details.|
-| @type							| 1			| String	| [Discount card type.](#availability-enumerate-description)|
+| @type							| 1			| [Discount Card Type](../../enum.md#discount-card-type)	| Discount card type)|
 | @code							| 0..1		| String	| Discount card code.|
 | @id							| 0..1		| String	| Unique identifier of discound card.|
 | Fares/Fare/PaxConfigurations<br>/PaxConfiguration/PaxConfiguration/<br>AppliedBonuses/PaxTypeCodes		| 0..1	|| Contains a list of PaxTypeCodes.|
