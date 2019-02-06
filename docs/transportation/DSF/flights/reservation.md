@@ -29,7 +29,7 @@ list of Passengers and the PaymentInfo, such as payment method.
 
 The result returns a list of Locators (booking codes). It can be the
 supplier's or the one sent in the request. It also returns all the
-charges associated to the booking.
+charges associated to the booking, the passengers and the tickets issued (if any).
 
 
 
