@@ -36,26 +36,6 @@ Not implemented by all suppliers
 
 
 
-### CancellationRQ Example
-
-
-~~~xml
-    <CancellationRQ>
-        <timeoutMilliseconds>18000</timeoutMilliseconds>
-        <source>
-            <languageCode>en</languageCode>
-        </source>
-        <filterAuditData>
-            <registerTransactions>false</registerTransactions>
-        </filterAuditData>
-        <Configuration>
-            <Credentials user = "xxx" password = "xxx"/>
-        </Configuration>
-        <Locator>xxx</Locator>
-    </CancellationRQ>
-~~~
-
-
 ### CancellationRQ Description
 
 
@@ -68,19 +48,7 @@ Not implemented by all suppliers
 
 
 
-
-### CancellationRS Example
-
-
-~~~xml
-<CancellationRS>
-  <ResponseStatus tripType="DEPARTURE" petitionType="OW" status="ok" />
-</CancellationRS>
-~~~
-
-
 ### CancellationRS Description
-
 
 
 | **Element**				| **Number**	| **Type**	| **Description**					

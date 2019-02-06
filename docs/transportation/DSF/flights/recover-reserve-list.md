@@ -12,201 +12,84 @@ permalink: /docs/transportation/DSF/flights/recover-reserve-list
 
 
 This method aims to return a list of bookings for a given time period
-being that either booking date or the travelling date.
+being that either booking date or the travelling date, among other filters available.
 
 
+### Request Format
 
-### RetrieveReservationListRQ Example
+The filter can be set between two time periods, search by email, origin, destination, agency, passenger name/surname, etc.
 
 
-~~~xml
-    <RetrieveReservationListRQ>
-        <Configuration/>
-        <ClientConfiguration currencyCode = "GBP"/>
-        <ReservationDate>2014-03-04T00:00:00</ReservationDate>
-        <DepartureDate>2010-09-09T00:00:00</DepartureDate>
-        <ClientEmail>client@clientmail.com</ClientEmail>
-        <OriginCode></OriginCode>
-        <DestinationCode></DestinationCode>
-        <AgencyCode></AgencyCode>
-    </RetrieveReservationListRQ>
-~~~
+### Response Format
+
+The result return a briefing of the basic information of the bookings that match the query's filters.
+
+
+### Remarks
+
+
+Not implemented by all suppliers
 
 
 ### RetrieveReservationListRQ Description
 
 
 
-| **Element**				| **Number**	| **Type**	| **Description**						|
-| ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
-| RetrieveReservationListRQ     	| 1    		|		| Root node.							|
-| ReservationDate               	| 1 		| String	| Reservation date.						|
-| DepartureDate                 	| 1 		| String	| Departure date.						|
-| ClientEmail                   	| 1 		| String	| Client's email.						|
-| OriginCode                    	| 1 		| String	| Origin code.							|
-| DestinationCode               	| 1 		| String	| Destination code.						|
-| AgencyCode                    	| 1 		| String	| Contains a list of Passengers.				|
- 
+| **Element**						| **Number**| **Type**	| **Description**													|
+| --------------------------------- | --------- | ----------|------------------------------------------------------------------	|
+| RetrieveReservationListRQ         | 1    		|			| Root node.|
+| ReservationDate                   | 0..1 		| Date		| Reservation date.|
+| DepartureDate                     | 0..1 		| Date		| First journey departure date.|
+| fechaReservaDesde                 | 0..1 		| Date		| .|
+| fechaReservaHasta                 | 0..1 		| Date		| .|
+| fechaSalidaDesde                  | 0..1 		| Date		| .|
+| fechaSalidaHasta                  | 0..1 		| Date		| .|
+| ClientEmail                       | 0..1 		| String	| Email.|
+| OriginCode                       	| 0..1 		| String	| First journey origin code.|
+| DestinationCode                   | 0..1 		| String	| First journey destination code.|
+| AgencyCode                       	| 0..1 		| String	| Agency code.|
+| numTransporte                     | 0..1 		| String	| .|
+| Passenger							| 0..1 		|			| Contains information of the Passenger.|
+| @id								| 0..1  	| Integer	| Unique identifier of the passenger.|
+| @title							| 0..1  	| String 	| Treatment: MR, MRS, CHD and INF.|
+| @name								| 1  		| String 	| Name of the Passenger.|
+| @surname        					| 1  		| String 	| Surname/s of the Passenger.|
+| @bithDate							| 0..1  	| Date 		| Date of birth.|
+| @codeDCO     						| 0..1  	| Integer 	| Consolidate document number.|
+| @documentType						| 0..1  	| String 	| Document type: NATIONAL_ID, PASSPORT, RESIDENT_ID, FOREIGN_PASSPORT, BIRTH_NOTIFICATION.|
+| @documentId						| 0..1  	| String 	| Unique identifier of the documentation.|
+| @documentExpiration  				| 0..1		| Date 		| Expiration date of the documentation.|
+| @documentExpedition  				| 0..1		| Date 		| Expedition date of the documentation.|
+| @nationality						| 0..1  	| String 	| Nationality.|
+| @gender							| 0..1  	| Char		| Gender.|
+| @language							| 0..1  	| String 	| Language.|
 
-
-
-### RetrieveReservationListRS Example
-
-
-~~~xml
-    <RetrieveReservationListRS xmlns:xsd = "http://www.w3.org/2001/XMLSchema" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance">
-        <auditData>
-            <timeStamp>2014-03-11T09:04:11.1793394+01:00</timeStamp>
-            <processTimeMilliseconds>0</processTimeMilliseconds>
-        </auditData>
-        <operationImplemented>true</operationImplemented>
-        <ResponseStatus tripType = "IDA" petitionType = "OW" status = "ok"/>
-        <ReservationList>
-            <PaymentInfo locator = "V65CQC" totalAmount = "0">
-                <OriginCode>VCE</OriginCode>
-                <DestinationCode>ORY</DestinationCode>
-                <ReservationDate>0001-01-01T00:00:00</ReservationDate>
-                <DepartureDate>2014-03-25T20:30:00</DepartureDate>
-                <MainPaxName/>
-                <HolderName>Jean Francois PRUNIER</HolderName>
-                <ProviderReservationStatus/>
-                <ReservationStatus>
-                    <ReservationStatusType>CONFIRMED</ReservationStatusType>
-                </ReservationStatus>
-            </PaymentInfo>
-            <PaymentInfo locator = "M3LIUI" totalAmount = "0">
-                <OriginCode>OPO</OriginCode>
-                <DestinationCode>AMS</DestinationCode>
-                <ReservationDate>0001-01-01T00:00:00</ReservationDate>
-                <DepartureDate>2014-05-12T16:10:00</DepartureDate>
-                <MainPaxName/>
-                <HolderName>Antonio Rui Santos Almeida</HolderName>
-                <ProviderReservationStatus/>
-                <ReservationStatus>
-                    <ReservationStatusType>CONFIRMED</ReservationStatusType>
-                </ReservationStatus>
-            </PaymentInfo>
-            <PaymentInfo locator = "V36MSL" totalAmount = "0">
-                <OriginCode>LIS</OriginCode>
-                <DestinationCode>ORY</DestinationCode>
-                <ReservationDate>0001-01-01T00:00:00</ReservationDate>
-                <DepartureDate>2014-05-25T19:30:00</DepartureDate>
-                <MainPaxName/>
-                <HolderName>Damien THERET</HolderName>
-                <ProviderReservationStatus/>
-                <ReservationStatus>
-                    <ReservationStatusType>CONFIRMED</ReservationStatusType>
-                </ReservationStatus>
-            </PaymentInfo>
-            <PaymentInfo locator = "M6WM6Z" totalAmount = "0">
-                <OriginCode>LIS</OriginCode>
-                <DestinationCode>ORY</DestinationCode>
-                <ReservationDate>0001-01-01T00:00:00</ReservationDate>
-                <DepartureDate>2014-03-19T08:50:00</DepartureDate>
-                <MainPaxName/>
-                <HolderName>maria esteves</HolderName>
-                <ProviderReservationStatus/>
-                <ReservationStatus>
-                    <ReservationStatusType>CONFIRMED</ReservationStatusType>
-                </ReservationStatus>
-            </PaymentInfo>
-            <PaymentInfo locator = "KCR8MX" totalAmount = "0">
-                <OriginCode>LIS</OriginCode>
-                <DestinationCode>ORY</DestinationCode>
-                <ReservationDate>0001-01-01T00:00:00</ReservationDate>
-                <DepartureDate>2014-03-20T08:50:00</DepartureDate>
-                <MainPaxName/>
-                <HolderName>antonio francisco alves</HolderName>
-                <ProviderReservationStatus/>
-                <ReservationStatus>
-                    <ReservationStatusType>CONFIRMED</ReservationStatusType>
-                </ReservationStatus>
-            </PaymentInfo>
-            <PaymentInfo locator = "F45R3C" totalAmount = "0">
-                <OriginCode>FNC</OriginCode>
-                <DestinationCode>OPO</DestinationCode>
-                <ReservationDate>0001-01-01T00:00:00</ReservationDate>
-                <DepartureDate>2014-05-06T17:10:00</DepartureDate>
-                <MainPaxName/>
-                <HolderName>RAFAEL GARCIA CONDE</HolderName>
-                <ProviderReservationStatus/>
-                <ReservationStatus>
-                    <ReservationStatusType>CONFIRMED</ReservationStatusType>
-                </ReservationStatus>
-            </PaymentInfo>
-            <PaymentInfo locator = "V3MIRY" totalAmount = "0">
-                <OriginCode>ORY</OriginCode>
-                <DestinationCode>NAP</DestinationCode>
-                <ReservationDate>0001-01-01T00:00:00</ReservationDate>
-                <DepartureDate>2014-04-06T16:15:00</DepartureDate>
-                <MainPaxName/>
-                <HolderName>chiara mauro</HolderName>
-                <ProviderReservationStatus/>
-                <ReservationStatus>
-                    <ReservationStatusType>CONFIRMED</ReservationStatusType>
-                </ReservationStatus>
-            </PaymentInfo>
-            <PaymentInfo locator = "IC1FGK" totalAmount = "0">
-                <OriginCode>ORY</OriginCode>
-                <DestinationCode>MIR</DestinationCode>
-                <ReservationDate>0001-01-01T00:00:00</ReservationDate>
-                <DepartureDate>2014-03-16T06:15:00</DepartureDate>
-                <MainPaxName/>
-                <HolderName>Habib KHALED</HolderName>
-                <ProviderReservationStatus/>
-                <ReservationStatus>
-                    <ReservationStatusType>CONFIRMED</ReservationStatusType>
-                </ReservationStatus>
-            </PaymentInfo>
-            <PaymentInfo locator = "A8V4FD" totalAmount = "0">
-                <OriginCode>LIS</OriginCode>
-                <DestinationCode>ORY</DestinationCode>
-                <ReservationDate>0001-01-01T00:00:00</ReservationDate>
-                <DepartureDate>2014-03-20T08:50:00</DepartureDate>
-                <MainPaxName/>
-                <HolderName>DIOGO FREITAS</HolderName>
-                <ProviderReservationStatus/>
-                <ReservationStatus>
-                    <ReservationStatusType>CONFIRMED</ReservationStatusType>
-                </ReservationStatus>
-            </PaymentInfo>
-            <PaymentInfo locator = "H4YF4C" totalAmount = "0">
-                <OriginCode>OPO</OriginCode>
-                <DestinationCode>FNC</DestinationCode>
-                <ReservationDate>0001-01-01T00:00:00</ReservationDate>
-                <DepartureDate>2014-05-17T07:50:00</DepartureDate>
-                <MainPaxName/>
-                <HolderName>Laurinda Gomes</HolderName>
-                <ProviderReservationStatus/>
-                <ReservationStatus>
-                    <ReservationStatusType>CONFIRMED</ReservationStatusType>
-                </ReservationStatus>
-            </PaymentInfo>
-        </ReservationList>
-    </RetrieveReservationListRS>
-~~~
 
 
 ### RetrieveReservationListRS Description
 
 
 
-| **Element**				| **Number**	| **Type**	| **Description**						|
-| ------------------------------------- | ------------- | ------------- | ------------------------------------------------------------- |
-| RetrieveReservationListRS     	| 1    		|		| Root node.							|
-| ReservationList               	| 1    		|		| Contains a list of Reservations.				|
-| ReservationList/PaymentInfo   	| 1..n   	|		| Contains the information of the payment.			|
-| @locator                 		| 1 		| String	| Unique identifier of the locator.				|
-| @totalAmount             		| 1 		| Decimal	| Total amount. with taxes and other charges included.		|
-| @currency                		| 1 		| String	| Currency code of the fare.					|
-| ReservationList/PaymentInfo /OriginCode | 1 		| String	| Trip origin location code.					|
-| ReservationList/PaymentInfo /DestinationCode | 1 	| String	| Trip destination location code.				|
-| ReservationList/PaymentInfo /ReservationDate | 1 	| Date		| Date on which the reservation was made.			|
-| ReservationList/PaymentInfo /DepartureDate | 1 	| Date		| Departure date.						|
-| ReservationList/PaymentInfo /MainPaxName | 1 		| String	| Name and surname of the main passenger of the reservation.	|
-| ReservationList/PaymentInfo /HolderName | 1 		| String	| Name of the holder of the reservation.			|
-| ReservationList/PaymentInfo /ReservationStatus | 1    |		| Current status of the reservation.				|
-| ReservationList/PaymentInfo /ReservationStatus /ReservationStatusType | 1 | String | Reservation status: CONFIRMED (OK), CANCELLED (Change of programming).	|
+| **Element**						| **Number**| **Type**	| **Description**													|
+| --------------------------------- | --------- | ----------|------------------------------------------------------------------	|
+| RetrieveReservationListRS     	| 1    		|			| Root node.|
+| ReservationList               	| 1    		|			| Contains a list of Reservations.|
+| ReservationList/PaymentInfo   	| 1..n   	|			| Contains some basic information of the booking.|
+| @locator                 			| 1 		| String	| Booking locator.|
+| @totalAmount             			| 0..1 		| Decimal	| Total amount.|
+| @currency                			| 0..1 		| String	| Currency code of the fare.|
+| ReservationList/PaymentInfo<br>/ReservationStatus			| 1    || Current status of the reservation.|
+| ReservationList/PaymentInfo<br>/ReservationStatus/ReservationStatusType	| 1 | String | Reservation Status type: CONFIRMED, CANCELLED.|
+| ReservationList/PaymentInfo<br>/OriginCode				| 0..1 	| String	| First journey origin code.|
+| ReservationList/PaymentInfo<br>/DestinationCode			| 0..1 	| String	| First journey destination code.|
+| ReservationList/PaymentInfo<br>/ReservationDate			| 0..1 	| Date		| Reservation date.|
+| ReservationList/PaymentInfo<br>/DepartureDate				| 0..1 	| Date		| First journey departure date.|
+| ReservationList/PaymentInfo<br>/MainPaxName				| 0..1 	| String	| Name and surname of the main passenger of the reservation.	|
+| ReservationList/PaymentInfo<br>/HolderName				| 0..1 	| String	| Name of the holder of the reservation.			|
+| Locators                       	| 0..n  	|    		| Contains details of the locator.|
+| Locators/Locator/Id            	| 1  		| String 	| Unique identifier of the locator.|
+| Locators/Locator/Type          	| 1  		| String 	| [Locator type.](#reservation-enumerate-description)|
+| Version          					| 0..1  	| String 	| Booking version.|
 
 
 
