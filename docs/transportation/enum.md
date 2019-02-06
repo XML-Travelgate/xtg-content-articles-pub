@@ -6,48 +6,10 @@ sidebar: mydoc_sidebar
 permalink: /docs/transportation
 ---
 
-### Enumerate description
-
-##### Discount card 
+# Enumerate description
 
 
-| **Possible Values**	| **Description**	|
-| --------------------- | ------------------ |
-| N | None |
-| NINYO |  |
-| JOVEN | |
-| ESCAPADA | |
-| SENIOR | |
-| THALYS_CORPORATE | |
-| FORFAIT_LYS | |
-| ABO_FREQUENCE_1ST_AND_2ND | |
-| ABO_FORFAIT_1ST_AND_2ND | |
-| BAHN_CARD_REDUCTION | |
-| BAHN_CARD_25 | |
-| SWITZERLAND_50 | |
-| SWITZERLAND_100 | |
-| EJERCITO_AIRE | |
-| EJERCITO_TIERRA | |
-| FUERZAS_NAVALES | |
-| GUARDIA_CIVIL | |
-| FREQUENT_FLYER | |
-| CARTA_ARGENTO | |
-| CARTA_FRECCIA | |
-| UK_ANNUAL_GOLD | |
-| UK_CHILD_DISABILITY | |
-| UK_DISABILITY | |
-| UK_FAMILY_FRIENDS | |
-| UK_GROUPSAVE3 | |
-| UK_GROUPSAVE4 | |
-| UK_HM_ARMED_FORCES | |
-| UK_JOBCENTRE_PLUS | |
-| UK_NETWORK | |
-| UK_SENIOR | |
-| UK_TWO_TOGETHER | |
-| UK_YOUTH | |
-| UK_GROUPSAVE | |
-
-##### Resident discount 
+### Resident discount type
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
 | N | None |
@@ -62,52 +24,37 @@ permalink: /docs/transportation
 | SLC | Italian resident Sicily |
 | RE | Ceuta |
 
-##### Vehicle type 
-| **Possible Values**	| **Description**	|
-| --------------------- | ------------------ |
-| Turismo  | Touring  |
-| Todoterreno  | All terrain  |
-| Monovolumen  | Minivan  |
-| CiclomotorMax50  | Moped max 50kg.  |
-| MotocicletaMin50Max250  | Motorcicle min 50kg. max 250kg.  |
-| MotocicletaMin250Max500  | Motorcicle min 250kg. max 500kg.  |
-| MotocicletaMin500  | Motorcicle min 500kg.  |
-| Bicicleta  | Bike  |
-| Furgoneta  | Van  |
-| VehiculoLargoMax6  | Long vehicle max 6m.  |
-| VehiculoEmision  | Zero emissions vehicle  |
-| Caravana  | Caravan  |
-| Remolque  | Trailer  |
+### Charge type 
 
-##### Charge type 
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
-| TASA  | Tax  |
-| TARJETA  | Card  |
-| EQUIPAJE  | Baggage  |
+| TAX  | Tax  |
+| CARD  | Card  |
+| BAGGAGE  | Baggage  |
 | CHECKIN  | Checkin  |
-| GASTOS_CIA  | Carrier charges  |
-| TASA_DU  | DU Taxes  |
-| IMPORTE_BASE  | Base import  |
-| DESCUENTO  | Discount  |
-| VEHICULO  | Vehicle  |
-| GASTOS_BANCARIOS  | Bank charges  |
-| GASTOS_CONVERSION_DIVISA  | Currency conversion charges  |
-| FEE_VEHICULO  | Vehicle fee  |
+| CARRIER_CHARGES  | Carrier charges  |
+| DU_TAX  | DU Taxes  |
+| BASE_AMOUNT  | Base import  |
+| DISCOUNT  | Discount  |
+| VEHICLE  | Vehicle  |
+| BANKING_CHARGES  | Bank charges  |
+| CURRENCY_CONVERSION_CHARGES  | Currency conversion charges  |
+| VEHICLE_FEE  | Vehicle fee  |
 | FEE  | Fee  |
-| ASIENTO  | Seat  |
-| SUPLEMENTO  | Supplement  |
+| SEAT  | Seat  |
+| SUPPLEMENT  | Supplement  |
 | TRAVELCARD  | Travel card  |
-| MASCOTA  | Pet  |
-| FEE_MASCOTA  | Pet fee  |
-| SEGURO  | Ensurance  |
-| ACCESO_PREFERENTE  | Fast Track  |
-| EMBARQUE_PRIORITARIO  | Priority Boarding  |
-| BLOQUEO_TARIFA  | Fare lock |
-| ASISTENCIA_ESPECIAL  | Special assistance  |
+| PET  | Pet  |
+| PET_FEE  | Pet fee  |
+| INSURANCE  | Ensurance  |
+| FAST_TRACK  | Fast Track  |
+| PRIORITY_BOARDING  | Priority Boarding  |
+| BLOCK_FARE  | Fare lock |
+| SPECIAL_ASSISTANCE  | Special assistance  |
 | PENALTY  | Penalty  |
 
-##### Block type 
+### Block type 
+
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
 | OVER_WING | Over wing seat|
@@ -135,36 +82,41 @@ permalink: /docs/transportation
 | UNKNOWN | Unknown characterstic |
 | LAST_OFF | Last off |
 
-##### Refund type
+### Refund type
+
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
-| All | Fare and taxes will be refunded |
-| Fare | Only fare will be refunded |
-| Taxes | Only taxes will be refunded |
-| Auto | GDS automatic ticket change |
+| ALL | Fare and taxes will be refunded |
+| FARE | Only fare will be refunded |
+| TAXES | Only taxes will be refunded |
+| AUTO | GDS automatic ticket change |
 
-##### Refund process type
+### Refund process type
+
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
-| Info | Informative refund operation |
-| Process | Efective refund operation |
+| INFO | Informative refund operation |
+| PROCESS | Efective refund operation |
 
-##### Refund amount type
+### Refund amount type
+
 | **Possible Values**	| **Description**	 |
 | --------------------- | ------------------ |
-| Other | Other refund amount  |
-| Tax | Tax amount |
-| Flown | For partial refund when some segment is already flown |
-| Penalty | Penalty amount|
+| OTHER | Other refund amount  |
+| TAX | Tax amount |
+| FLOWN | For partial refund when some segment is already flown |
+| PENALTY | Penalty amount|
 
-##### Pax type
+### Pax type
+
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
 | ADT | Adult  |
 | CHD | Child |
 | INF | Infant|
 
-##### Direction type
+### Direction type
+
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
 | DEPARTURE | Outbound  |
@@ -172,13 +124,15 @@ permalink: /docs/transportation
 | DEPARTURE_RETURN | Outbound and Inbound|
 
 ##### Status response type
+
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
-| ok | ok status response |
-| err | error status response|
-| timeout | timeout status response|
+| OK | ok status response |
+| ERR | error status response|
+| TIMEOUT | timeout status response|
 
-##### Trip type
+### Trip type
+
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
 | RT | Round Trip. Outbound and inbound with same origin and destination |
@@ -186,7 +140,8 @@ permalink: /docs/transportation
 | OJ | Open Jaw. Outbound and inbound with diferent origin or destination|
 | CT | Cicle Trip. Round trip with multiple destinations|
 
-##### Locator type
+### Locator type
+
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
 | PROVIDER |  Provider locator|
@@ -196,7 +151,8 @@ permalink: /docs/transportation
 | REFUND | Refund locator|
 | CHECKIN | CheckIn locator|
 
-##### Amount Type 
+### Amount Type 
+
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
 | N                     | None |
@@ -205,7 +161,8 @@ permalink: /docs/transportation
 | TOTAL                 | |
 | PERCENTUAL            | |
 
-##### Payment Type 
+### Payment Type 
+
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
 | N                     | None |
@@ -213,10 +170,127 @@ permalink: /docs/transportation
 | CARD                  | |
 | EMIT                  | |
 
-##### Issue Type
+### Issue Type
+
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
 | N                     | None |
-| Air                   |Passenger tickets  |
-| Extra                 |Ancillaries (bags, seats, etc.) |
-| All                   |Both |
+| AIR                   |Passenger tickets  |
+| EXTRA                 |Ancillaries (bags, seats, etc.) |
+| ALL                   |Both |
+
+### Journey Action Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| N                     |None |
+| KF					|Keep flights and fares  |
+| K						|Keep flights) |
+| C						|Change journey |
+| A						|Add journey|
+| R						|Remove journey|
+
+### Location Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| A                     |Airport |
+| S						|Station  |
+| P						|Port|
+
+### Special Supplement Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| MISCELANEOUS |  |
+| SEAT |  |
+| MEAL |  |
+| PET |  |
+| LOUNGE |  |
+| BAGGAGE |  |
+| CANOE |  |
+| BIKE |  |
+| TRAILER |  |
+| INSURANCE |  |
+| PRIORITY_BOARDING |  |
+| FAST_TRACK | |
+| FARE_LOCK | |
+| SPECIAL_ASSISTANCE | |
+
+### Discount card type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| N | None |
+| CHILD |  |
+| YOUNG | |
+| GET_AWAY | |
+| SENIOR | |
+| THALYS_CORPORATE | |
+| FORFAIT_LYS | |
+| ABO_FREQUENCE_1ST_AND_2ND | |
+| ABO_FORFAIT_1ST_AND_2ND | |
+| BAHN_CARD_REDUCTION | |
+| BAHN_CARD_25 | |
+| SWITZERLAND_50 | |
+| SWITZERLAND_100 | |
+| AIR_ARMY | |
+| EARTH_ARMY | |
+| NAVAL_ARMY | |
+| CIVIL_GUARD | |
+| FREQUENT_FLYER | |
+| CARTA_ARGENTO | |
+| CARTA_FRECCIA | |
+| UK_ANNUAL_GOLD | |
+| UK_CHILD_DISABILITY | |
+| UK_DISABILITY | |
+| UK_FAMILY_FRIENDS | |
+| UK_GROUPSAVE3 | |
+| UK_GROUPSAVE4 | |
+| UK_HM_ARMED_FORCES | |
+| UK_JOBCENTRE_PLUS | |
+| UK_NETWORK | |
+| UK_SENIOR | |
+| UK_TWO_TOGETHER | |
+| UK_YOUTH | |
+| UK_GROUPSAVE | |
+
+### Transport Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| A                     |Flight |
+| T						|Train  |
+| B						|Bus|
+| F						|Ferry|
+| S						|Surface|
+
+### Cabin Class Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| N                     |Unspecified |
+| Y						|Tourist |
+| C						|Business|
+| F						|First|
+| CA					|Cabin|
+| YP					|Tourist Plus|
+
+### Title Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| MR                        ||
+| MRS					    ||
+| CHD						||
+| INF						||
+
+### Document Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| NATIONAL_ID                        ||
+| PASSPORT					    ||
+| RESIDENT_ID						||
+| FOREIGN_PASSPORT						||
+| BIRTH_NOTIFICATION        ||

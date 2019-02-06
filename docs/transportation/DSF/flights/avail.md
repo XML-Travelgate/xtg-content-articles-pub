@@ -65,7 +65,7 @@ This method **must** be called **before** the Valuation method.
 | **Element**				| **Number**| **Type**	| **Description**																			   |
 | ------------------------- | --------- | --------- | -------------------------------------------------------------------------------------------- |
 | AvailabilityRQ        	| 1      	|			| Root node.|
-| @travelType      			| 1  		| String	| Indicates the travel type: one way (OW), round trip (RT), open jaw (OJ) and circle trip (CT).|
+| @travelType      			| 1  		|[Trip type](../../enum.md#trip-type)| Indicates the travel type: one way (OW), round trip (RT), open jaw (OJ) and circle trip (CT).|
 | Journeys              	| 1      	|			| Contains a list of Journeys.|
 | Journeys/Journey      	| 1..n    	|			| Contains the information about the requested Journey in the availability.|
 | @id              			| 1  		| Integer	| Unique identifier of the Journey.|
@@ -73,7 +73,7 @@ This method **must** be called **before** the Valuation method.
 | @arrivalDate				| 1			| String	| Arrival date.|
 | @departureTime   			| 0..1  	| String	| Departure time.|
 | @arrivalTime				| 0..1		| String	| Arrival time.|
-| @action					| 0..1		| String	| Indicates the type of modification to be made in a reservation (works only for AvailabilityBookingModificationRQ): N(None), KF(Keep flights and fares), K(Only keep flights), C(Change), A(Add) and R(Remove).|
+| @action					| 0..1		|[Journey Action Type](../../enum.md#journey-action-type)| Indicates the type of modification to be made in a reservation (works only for AvailabilityBookingModificationRQ): N(None), KF(Keep flights and fares), K(Only keep flights), C(Change), A(Add) and R(Remove).|
 | Journeys/Journey/AlternativeDates					| 0..1		|| Contains a range of days (before/after) the departure of the journey.|
 | @daysBefore				| 0..1		| Integer	| Range of days to travel before the departure of the journey.|
 | @daysAfter				| 0..1		| Integer	| Range of days to travel after the departure of the journey.|
@@ -84,7 +84,7 @@ This method **must** be called **before** the Valuation method.
 | @longitude				| 0..1		| String	| Indicates the longitude coordinades.|
 | @name						| 0..1		| String	| Location long name.|
 | @radius					| 0..1		| Integer	| Area radius from location.|
-| @type						| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| @type						| 0..1 		| [Location Type](../../enum.md#location-type)	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
 | Journeys/Journey/OriginLoc/<br>AlternativeLocations						| 0..1	|| Contains a list of AlternativeLocations.|
 | Journeys/Journey/OriginLoc/<br>AlternativeLocations/AlternativeLocation	| 1..n	|| Contains the information of the alternative location.|
 | @code						| 1			| String	| Location code.|
@@ -108,13 +108,13 @@ This method **must** be called **before** the Valuation method.
 | @id              			| 1  		| Integer	| Unique identifier of the Passenger.|
 | @age             			| 1  		| Integer	| Age of the Passenger.|
 | Passengers/Passenger/Bonuses						| 0..1    	|| Possible discount or bonuses.|
-| @resident        			| 0..1  	| String	| [Resident discount type.](#availability-enumerate-description)|
+| @resident        			| 0..1  	| String	| [Resident discount type](../../enum.md#resident-discount-type)|
 | @largeFamily     			| 0..1  	| String	| Family discount type: N(None), F1(Large family), F2 (Special large family).|
 | @discountCardCode			| 0..1		| String	| Discount card code.|
-| @discountCard				| 0..1		| String	| [Discount card type.](#availability-enumerate-description)|
+| @discountCard				| 0..1		| String	| [Discount card type](../../enum.md#discount-card-type)|
 | Passengers/Passenger/Bonuses/<br>DiscountCards	| 0..1	|| Contains a list of DiscountCards.|
 | Passengers/Passenger/Bonuses/<br>DiscountCards/DiscountCard		| 1..n	|| DiscountCard details.|
-| @type						| 1			| String	| [Discount card type.](#availability-enumerate-description)|
+| @type						| 1			| String	| [Discount card type](../../enum.md#discount-card-type)|
 | @code						| 0..1		| String	| Discount card code.|
 | @id						| 0..1		| String	| Unique identifier of discound card.|
 | Passengers/Passenger/Bonuses/<br>PaxTypeCodes		| 0..1	|| Contains a list of PaxTypeCodes.|
