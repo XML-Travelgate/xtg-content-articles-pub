@@ -46,7 +46,7 @@ permalink: /docs/transportation/enum
 | TRAVELCARD  | Travel card  |
 | PET  | Pet  |
 | PET_FEE  | Pet fee  |
-| INSURANCE  | Ensurance  |
+| INSURANCE  | Insurance  |
 | FAST_TRACK  | Fast Track  |
 | PRIORITY_BOARDING  | Priority Boarding  |
 | BLOCK_FARE  | Fare lock |
@@ -128,9 +128,9 @@ permalink: /docs/transportation/enum
 
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
-| OK | ok status response |
-| ERR | error status response|
-| TIMEOUT | timeout status response|
+| OK | No error found |
+| ERR | An error has been ocurred. Ex: No results found, validation error, integration error, provider error, etc|
+| TIMEOUT | Deprecated |
 
 ### Trip type
 
@@ -145,30 +145,30 @@ permalink: /docs/transportation/enum
 
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
-| PROVIDER |  Provider locator|
-| ISSUING | Issue locator|
-| CARRIER | Carrier locator|
-| SERVICE | Service locator|
-| REFUND | Refund locator|
-| CHECKIN | CheckIn locator|
+| PROVIDER |  Provider's locator|
+| ISSUING | Issue's locator|
+| CARRIER | Carrier's locator|
+| SERVICE | Service's locator|
+| REFUND | Refund's locator|
+| CHECKIN | CheckIn's locator|
 
 ### Amount Type 
 
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
 | N                     | None |
-| AMOUNT                | |
-| FEE                   | |
-| TOTAL                 | |
-| PERCENTUAL            | |
+| AMOUNT                | the value is the amount|
+| FEE                   | the value is a service fee|
+| TOTAL                 | the value is the total amount |
+| PERCENTUAL            | the value is a percentage|
 
 ### Payment Type 
 
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
 | N                     | None |
-| CASH                  | |
-| CARD                  | |
+| CASH                  | the total amount will be charged to the agency|
+| CARD                  | the payment will be done with card|
 
 ### Issue Type
 
@@ -335,8 +335,8 @@ permalink: /docs/transportation/enum
 
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
-| ONLINE                        ||
-| AIRPORT					    ||
+| ONLINE                        |The checkin must be done online|
+| AIRPORT					    |The checkin must be done in the airport|
 
 ### Segment Applies To Type
 
@@ -399,7 +399,7 @@ permalink: /docs/transportation/enum
 
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
-| N                           ||
+| N                           |None|
 | CHECKED                     |Spanish Resident SARA Verification passed|
 | NOT_CHECKED                 |Spanish Resident SARA Verification failed|
 
@@ -415,7 +415,7 @@ permalink: /docs/transportation/enum
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
 | UNDEFINED||
-| IN_PROGRESS                     |Spanish Resident SARA Verification passed|
+| IN_PROGRESS                    ||
 | ERROR||
 | COMPLETE||
 | UNCONFIRMED||

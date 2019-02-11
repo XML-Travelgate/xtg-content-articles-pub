@@ -42,9 +42,9 @@ For some suppliers the tickets must be refunded one by one (only one ticket woul
 | RefundRQ              			| 1     	|			| Root node.|
 | @penaltyAmount					| 0..1     	| Decimal	| Penalty amount.|
 | RefundProcess						| 1     	|			| Contains the operation process.|
-| @process							| 1     	| String	| Process: Info, Process.|
+| @process							| 1     	| [Refund Process Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#refund-process-type)	| Refund process type|
 | RefundType						| 1     	|			| Contains the refund type.|
-| @type								| 1     	| String	| Type: All, Fare, Taxes, Auto, Parcial.|
+| @type								| 1     	|[Refund Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#refund-type) | Refund type|
 | RefundAmounts			 			| 0..1     	|			| Contains the refund amounts|
 | RefundAmounts/RefundAmount		| 1..n     	|			| Refund amounts.|
 | @refundAmountType					| 1     	| [Refund Amount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#refund-amount-type) 	| Refund amount type.|
@@ -53,11 +53,11 @@ For some suppliers the tickets must be refunded one by one (only one ticket woul
 | Tickets							| 0..1		|			| Contains a list of the tickets to be refunded.|
 | Tickets/Ticket					| 1..n		|			| Contains the details of the ticket.|
 | @ticketNum						| 1			| String	| Ticket number.|
-| @type								| 1			| String	| Ticket type.|
+| @type								| 1			|[Ticket Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#ticket-type) | Ticket type|
 | @status							| 1			|[Ticket Status type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#ticket-status-type)|Ticket Status type|
 | @id								| 0..1		| Integer	| Unique identifier of the ticket.|
 | @paxName							| 0..1		| String	| Passenger name.|
-| @paxType							| 0..1		| String	| Passenger type based on the age of the passenger.|
+| @paxType							| 0..1		|[Passenger type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#passenger-type)|Passenger type based on the age of the passenger.|
 | @url								| 0..1		| String	| Url.|
 | Tickets/Ticket/PNRLoc				| 0..1		|			| Provider Locator associated to a Booking.|
 | @code								| 1			| String	| Locator code.|
@@ -91,7 +91,7 @@ For some suppliers the tickets must be refunded one by one (only one ticket woul
 | AmountBreakdown/<br>ChargeBreakDowns/<br>ChargeBreakdown/Concept/Paragraph/<br>Sentence | 0..n | String | Sentence|
 | AmountBreakdown/<br>PaxBreakdown							| 1    || Contains a list of breakdown amounts for each passenger ( ADT amount, etc. ).|
 | AmountBreakdown/<br>PaxBreakdowns/<br>PaxBreakdown		| 1..n || Contains details of breakdown amounts for each passenger.|
-| @paxType               			| 1 		| String	| Passenger type.|
+| @paxType               			| 1 		|[Passenger type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#passenger-type)|Passenger type|
 | @amount                			| 1 		| Decimal	| Total amount, with taxes included, associated to the passenger.|
 | @taxes                 			| 1 		| Decimal	| If they exist, taxes are applied for this passenger type.|
 | @taxesDU                			| 0..1 		| Decimal	| DU taxes.|
@@ -103,11 +103,11 @@ For some suppliers the tickets must be refunded one by one (only one ticket woul
 | Tickets							| 1			|			| Contains a list of tickets associated to the booking.|
 | Tickets/Ticket					| 1..n		|			| Contains the details of the ticket.|
 | @ticketNum						| 1			| String	| Ticket number.|
-| @type								| 1			| String	| Ticket type.|
+| @type								| 1			|[Ticket Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#ticket-type) | Ticket type|
 | @status							| 1			|[Ticket Status type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#ticket-status-type)|Ticket Status type|
 | @id								| 0..1		| Integer	| Unique identifier of the ticket.|
 | @paxName							| 0..1		| String	| Passenger name.|
-| @paxType							| 0..1		| String	| Passenger type based on the age of the passenger.|
+| @paxType							| 0..1		|[Passenger type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#passenger-type)|Passenger type based on the age of the passenger.|
 | @url								| 0..1		| String	| Url.|
 | Tickets/Ticket/PNRLoc				| 0..1		|			| Provider Locator associated to a Booking.|
 | @code								| 1			| String	| Locator code.|

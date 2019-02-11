@@ -51,7 +51,7 @@ Not implemented by all suppliers
 | numTransporte                     | 0..1 		| String	| .|
 | Passenger							| 0..1 		|			| Contains information of the Passenger.|
 | @id								| 0..1  	| Integer	| Unique identifier of the passenger.|
-| @title							| 0..1  	| String 	| The passenger's title|
+| @title							| 0..1  	|[Title type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#title-type)|Title type|
 | @name								| 1  		| String 	| Name of the Passenger.|
 | @surname        					| 1  		| String 	| Surname/s of the Passenger.|
 | @bithDate							| 0..1  	| Date 		| Date of birth.|

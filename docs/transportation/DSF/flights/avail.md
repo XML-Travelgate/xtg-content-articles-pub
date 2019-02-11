@@ -119,7 +119,7 @@ This method **must** be called **before** the Valuation method.
 | @id						| 0..1		| String	| Unique identifier of discound card.|
 | Passengers/Passenger/Bonuses/<br>PaxTypeCodes		| 0..1	|| Contains a list of PaxTypeCodes.|
 | Passengers/Passenger/Bonuses/<br>PaxTypeCodes/PaxTypeCode			| 1..n	|| Contains the code type of the passenger.|
-| @code						| 1			| String	| Code type of the passenger.|
+| @code						| 1			| String	| Discounts by passenger type|
 | Preferences           	| 0..1      |			| Availability Preferences.|
 | @cabinClass      			| 0..1  	|  [Cabin Class Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#cabin-class-type)	| Preferred cabin class|
 | @allowOverNight			| 0..1		| Boolean	| If true, allows to the provider to return flights with overnight scales.|
@@ -374,7 +374,7 @@ This method **must** be called **before** the Valuation method.
 | @id							| 0..1		| String	| Unique identifier of discound card.|
 | Fares/Fare/PaxConfigurations<br>/PaxConfiguration/PaxConfiguration/<br>AppliedBonuses/PaxTypeCodes		| 0..1	|| Contains a list of PaxTypeCodes.|
 | Transportation/Fares/Fare/<br>PaxConfigurations/PaxConfiguration/<br>AppliedBonuses/PaxTypeCodes/<br>PaxTypeCode	| 1..n	|| Contains the code type of the passenger.|
-| @code							| 1			| String	| Code type of the passenger.|
+| @code							| 1			| String	| Discounts by passenger type|
 
 
 ### Detailed description

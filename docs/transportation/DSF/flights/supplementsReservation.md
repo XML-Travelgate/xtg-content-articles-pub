@@ -73,7 +73,7 @@ Not implemented by all suppliers
 | @departureTerminal				| 0..1 		| String	| Departure terminal.|
 | @arrivalTerminal       			| 0..1 		| String	| Arrival terminal.|
 | @segmentDuration       			| 0..1 		| Integer	| Transport duration ( in minutes ).|
-| @segmentStatus					| 0..1		| String	| Segment Status|
+| @segmentStatus					| 0..1		|[Segment Status type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#segment-status-type)|Segment Status type|
 | @planeType						| 0..1 		| String	| Plane type. Flights parameter.|
 | @maxCheckinDate					| 0..1 		| Date		| Maximum date to make the check-in.|
 | @hasTechnicalStop					| 0..1		| Boolean	| If true, the segment has a technical stop.|
@@ -111,9 +111,9 @@ Not implemented by all suppliers
 | @departureDate					| 1 		| Date		| Approx. departure date and time.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses | 1 | | Contains a list of SegmentClasses.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass | 1..n || Contains details of the SegmentClass.|
-| @cabinClass            			| 1 		| String	| Cabin class of the seat|
+| @cabinClass            			| 1 		|[Cabin Class type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#cabin-class-type)|Cabin class type of the seat|
 | @paxRef               	 		| 1 		| Integer	| Passenger reference.|
-| @fareType              			| 1 		| String	| Fare type.|
+| @fareType              			| 1 		|[Fare type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#fare-type)|Fare type|
 | @class                 			| 0..1 		| String	| Fare class.|
 | @fareBasis             			| 0..1 		| String	| Identifier of the fare.|
 | @avail                 			| 0..1 		| Integer	| Available seats remaining for this class (In flights, the maximum is 9).|
@@ -163,7 +163,7 @@ Not implemented by all suppliers
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakDowns/ChargeBreakdown/<br>Concept/Paragraph/Sentence | 0..n | String | Sentence.|
 | Itineraries/Itinerary/AmountBreakdown/<br>PaxBreakdown	| 1    	|| Contains a list of breakdown amounts for each passenger ( ADT amount, etc. ).|
 | Itineraries/Itinerary/AmountBreakdown/<br>PaxBreakdowns/PaxBreakdown | 1..n || Contains details of breakdown amounts for each passenger.|
-| @paxType               			| 1 		| String	| Passenger type.|
+| @paxType               			| 1 		|[Passenger type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#passenger-type)|Passenger type|
 | @amount                			| 1 		| Decimal	| Total amount, with taxes included, associated to the passenger.|
 | @taxes                 			| 1 		| Decimal	| If they exist, taxes are applied for this passenger type.|
 | @taxesDU                			| 0..1 		| Decimal	| DU taxes.|
@@ -176,7 +176,7 @@ Not implemented by all suppliers
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration | 1..n || Contains details of PaxConfiguration.|
 | @id                    			| 1 		| Integer	| Unique identifier of the PaxConfiguration.|
 | @paxRef                			| 1 		| Integer	| Reference to the passenger Id from the request.|
-| @paxType               			| 1 		| String	| Passenger type based on the age of the passenger.|
+| @paxType               			| 1 		|[Passenger type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#passenger-type)|Passenger type based on the age of the passenger.|
 | @age                   			| 0..1 		| Integer	| Age of the passenger.|
 | @nacionality						| 0..1 		| String	| Nacionality of the passenger.|
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses | 0..1 || Applied discounts.|
@@ -198,7 +198,7 @@ Not implemented by all suppliers
 | Passengers						| 1  		|    		| Contains a list of Passengers.|
 | Passengers/Passenger				| 1..n 		|			| Contains information of the Passenger.|
 | @id								| 1  		| Integer	| Unique identifier of the passenger.|
-| @title							| 1  		| String 	| The passenger's title|
+| @title							| 1  		|[Title type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#title-type)|Title type|
 | @name								| 1  		| String 	| Name of the Passenger.|
 | @surname        					| 1  		| String 	| Surname/s of the Passenger.|
 | @bithDate							| 1  		| Date 		| Date of birth.|
@@ -264,7 +264,7 @@ Not implemented by all suppliers
 | Passengers/Passenger/SpecialPetitions/<br>Optionals		| 0..1	||	Contains a list of supplements (food, pets, etc. Used also for baggage).|
 | Passengers/Passenger/SpecialPetitions/<br>Optionals/Optional | 1..n	||	Optional element information for the reservation.|
 | @id								| 1  		| String 	| Optional id.|
-| @type								| 1  		| String 	| Optional element type|
+| @type								| 1  		|[Optional Element type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#optional-element-type)|Optional element type|
 | @specialSupplementType			| 1			|[Special Supplement type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#special-supplement-type)|Special supplement type|
 | @code								| 1  		| String 	| Code.|
 | @quantity							| 0..1  	| Decimal 	| Quantity.|
@@ -349,7 +349,7 @@ Not implemented by all suppliers
 | @telephone						| 1  		| String 	| Telephone number.|
 | @mobilephone						| 1  		| String 	| Mobile number.|
 | @fax								| 0..1  	| String 	| Fax.|
-| @passengerType					| 0..1  	| String 	| The passenger's title|
+| @passengerType					| 0..1  	|[Title type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#title-type)|Title type|
 | Client/Address 					| 1  		|    		| Contains the client's address.|
 | @zipCode							| 1  		| String 	| Zip code.|
 | @countryCode						| 1  		| String 	| Country code.|
@@ -397,7 +397,7 @@ Not implemented by all suppliers
 | @status							| 1			|[Ticket Status type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#ticket-status-type)|Ticket Status type|
 | @id								| 0..1		| Integer	| Unique identifier of the ticket.|
 | @paxName							| 0..1		| String	| Passenger name.|
-| @paxType							| 0..1		| String	| Passenger type based on the age of the passenger.|
+| @paxType							| 0..1		|[Passenger type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#passenger-type)|Passenger type based on the age of the passenger.|
 | @url								| 0..1		| String	| Url.|
 | Tickets/Ticket/PNRLoc				| 0..1		|			| Provider Locator associated to a Booking.|
 | @code								| 1			| String	| Locator code.|
