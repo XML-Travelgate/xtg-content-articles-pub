@@ -108,7 +108,7 @@ permalink: /docs/transportation/enum
 | FLOWN | For partial refund when some segment is already flown |
 | PENALTY | Penalty amount|
 
-### Pax type
+### Passenger type
 
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
@@ -169,7 +169,6 @@ permalink: /docs/transportation/enum
 | N                     | None |
 | CASH                  | |
 | CARD                  | |
-| EMIT                  | |
 
 ### Issue Type
 
@@ -323,14 +322,14 @@ permalink: /docs/transportation/enum
 
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
-| BY_RESERVATION                          ||
-| BY_PASSENGER					    ||
-| BY_SEGMENT					    ||
-| BASE_FARE                      ||
-| TAXES         ||
-| FOR_ADT ||
-| FOR_CHD ||
-| FOR_INF ||
+| BY_RESERVATION                          |Amount applies per reservation|
+| BY_PASSENGER					    |Amount applies per passenger|
+| BY_SEGMENT					    |Amount applies per each|
+| BASE_FARE                      |Amount applies to base fare|
+| TAXES         |Amount applies to taxes|
+| FOR_ADT |Amount applies per adult|
+| FOR_CHD |Amount applies per child|
+| FOR_INF |Amount applies per infant|
 
 ### Checkin Type
 
@@ -343,10 +342,10 @@ permalink: /docs/transportation/enum
 
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
-| ALL                           ||
-| OUTBOUND					    ||
-|INBOUND                        ||
-|REF                            ||
+| ALL                           |Applies to all segments|
+| OUTBOUND					    |Applies only to outbound segments|
+|INBOUND                        |Applies only to inbound segments|
+|REF                            |Applies only to referentiated segments|
 
 ### Supplement Payment Type
 
@@ -355,7 +354,7 @@ permalink: /docs/transportation/enum
 | CREDIT_CARD                           ||
 | ELECTRONIC_BANKING					    ||
 
-### Filter Type
+### Filter Mode Type
 
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |
@@ -450,3 +449,22 @@ permalink: /docs/transportation/enum
 | SKIS||
 | BABY_TROLLEY||
 | HAND_BAGGAGE||
+
+### Special Supplement Status Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| N| Unknown|
+| INC| Included|
+| CHA|Chargeable|
+| NOF|Not offered|
+
+### Reservation Status Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| CONFIRMED| Booking confirmed|
+| CANCELLED| Booking cancelled|
+| ON_REQUEST|Booking on request|
+| ON_HOLD|Booking in hold|
+| ON_HOLD_CANCELLED|Booking on hold cancelled|

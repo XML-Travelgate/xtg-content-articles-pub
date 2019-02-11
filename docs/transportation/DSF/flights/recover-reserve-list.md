@@ -51,12 +51,12 @@ Not implemented by all suppliers
 | numTransporte                     | 0..1 		| String	| .|
 | Passenger							| 0..1 		|			| Contains information of the Passenger.|
 | @id								| 0..1  	| Integer	| Unique identifier of the passenger.|
-| @title							| 0..1  	| String 	| Treatment: MR, MRS, CHD and INF.|
+| @title							| 0..1  	| String 	| The passenger's title|
 | @name								| 1  		| String 	| Name of the Passenger.|
 | @surname        					| 1  		| String 	| Surname/s of the Passenger.|
 | @bithDate							| 0..1  	| Date 		| Date of birth.|
 | @codeDCO     						| 0..1  	| Integer 	| Consolidate document number.|
-| @documentType						| 0..1  	| String 	| Document type: NATIONAL_ID, PASSPORT, RESIDENT_ID, FOREIGN_PASSPORT, BIRTH_NOTIFICATION.|
+| @documentType						| 0..1  	|[Document type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#document-type)|Document type.|
 | @documentId						| 0..1  	| String 	| Unique identifier of the documentation.|
 | @documentExpiration  				| 0..1		| Date 		| Expiration date of the documentation.|
 | @documentExpedition  				| 0..1		| Date 		| Expedition date of the documentation.|
@@ -88,7 +88,7 @@ Not implemented by all suppliers
 | ReservationList/PaymentInfo<br>/HolderName				| 0..1 	| String	| Name of the holder of the reservation.			|
 | Locators                       	| 0..n  	|    		| Contains details of the locator.|
 | Locators/Locator/Id            	| 1  		| String 	| Unique identifier of the locator.|
-| Locators/Locator/Type          	| 1  		| String 	| [Locator type.](#reservation-enumerate-description)|
+| Locators/Locator/Type          	| 1  		| [Locator type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#locator-type)| The locator's type	| 
 | Version          					| 0..1  	| String 	| Booking version.|
 
 

@@ -47,17 +47,17 @@ For some suppliers the tickets must be refunded one by one (only one ticket woul
 | @type								| 1     	| String	| Type: All, Fare, Taxes, Auto, Parcial.|
 | RefundAmounts			 			| 0..1     	|			| Contains the refund amounts|
 | RefundAmounts/RefundAmount		| 1..n     	|			| Refund amounts.|
-| @refundAmountType					| 1     	| String	| Refund amount type: Other, Tax, Flown, Penalty.|
+| @refundAmountType					| 1     	| [Refund Amount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#refund-amount-type) 	| Refund amount type.|
 | @amount							| 1     	| Decimal	| Amount value.|
 | @amountCode						| 1     	| String	| Provider amount code.|
 | Tickets							| 0..1		|			| Contains a list of the tickets to be refunded.|
 | Tickets/Ticket					| 1..n		|			| Contains the details of the ticket.|
 | @ticketNum						| 1			| String	| Ticket number.|
-| @type								| 1			| String	| Ticket type: Paper, eTicket, Extra.|
-| @status							| 1			| String	| Open, Confirmed, Voided, Refunded.|
+| @type								| 1			| String	| Ticket type.|
+| @status							| 1			|[Ticket Status type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#ticket-status-type)|Ticket Status type|
 | @id								| 0..1		| Integer	| Unique identifier of the ticket.|
 | @paxName							| 0..1		| String	| Passenger name.|
-| @paxType							| 0..1		| String	| Passenger type based on the age of the passenger: ADT (Adult), CHD (Child), INF (Infant), YOU (Young) and SEN (Senior).|
+| @paxType							| 0..1		| String	| Passenger type based on the age of the passenger.|
 | @url								| 0..1		| String	| Url.|
 | Tickets/Ticket/PNRLoc				| 0..1		|			| Provider Locator associated to a Booking.|
 | @code								| 1			| String	| Locator code.|
@@ -78,7 +78,7 @@ For some suppliers the tickets must be refunded one by one (only one ticket woul
 | AmountBreakdown/<br>ChargeBreakdowns						| 0..1   || Contains a list of breakdown amounts ( taxes, mandatory charges.. ).|
 | AmountBreakdown/<br>ChargeBreakdowns/<br>ChargeBreakdown	| 1..n || Contains details of the BreakdownAmount.|
 | @amount                			| 1    	 	| Decimal	| Charge amount.|
-| @type                  			| 0..1 		| String	| [Type of charge.](#reservation-enumerate-description)|
+| @type                  			| 0..1 		| [Type of charge.](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#charge-type) | Type of charge. |
 | @included							| 0..1		| Boolean	| If true, the charge is included to the total fare amount.|
 | AmountBreakdown/<br>ChargeBreakdowns/<br>ChargeBreakdown/Concept | 0..1 || Contains details of the charge.|
 | @id                    			| 0..1 		| String	| Unique id of the Concept.|
@@ -91,7 +91,7 @@ For some suppliers the tickets must be refunded one by one (only one ticket woul
 | AmountBreakdown/<br>ChargeBreakDowns/<br>ChargeBreakdown/Concept/Paragraph/<br>Sentence | 0..n | String | Sentence|
 | AmountBreakdown/<br>PaxBreakdown							| 1    || Contains a list of breakdown amounts for each passenger ( ADT amount, etc. ).|
 | AmountBreakdown/<br>PaxBreakdowns/<br>PaxBreakdown		| 1..n || Contains details of breakdown amounts for each passenger.|
-| @paxType               			| 1 		| String	| Passenger type: ADT ( Adult ), CHD ( Child ) & INF ( Infant ).|
+| @paxType               			| 1 		| String	| Passenger type.|
 | @amount                			| 1 		| Decimal	| Total amount, with taxes included, associated to the passenger.|
 | @taxes                 			| 1 		| Decimal	| If they exist, taxes are applied for this passenger type.|
 | @taxesDU                			| 0..1 		| Decimal	| DU taxes.|
@@ -103,18 +103,18 @@ For some suppliers the tickets must be refunded one by one (only one ticket woul
 | Tickets							| 1			|			| Contains a list of tickets associated to the booking.|
 | Tickets/Ticket					| 1..n		|			| Contains the details of the ticket.|
 | @ticketNum						| 1			| String	| Ticket number.|
-| @type								| 1			| String	| Ticket type: Paper, eTicket, Extra.|
-| @status							| 1			| String	| Open, Confirmed, Voided, Refunded.|
+| @type								| 1			| String	| Ticket type.|
+| @status							| 1			|[Ticket Status type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#ticket-status-type)|Ticket Status type|
 | @id								| 0..1		| Integer	| Unique identifier of the ticket.|
 | @paxName							| 0..1		| String	| Passenger name.|
-| @paxType							| 0..1		| String	| Passenger type based on the age of the passenger: ADT (Adult), CHD (Child), INF (Infant), YOU (Young) and SEN (Senior).|
+| @paxType							| 0..1		| String	| Passenger type based on the age of the passenger.|
 | @url								| 0..1		| String	| Url.|
 | Tickets/Ticket/PNRLoc				| 0..1		|			| Provider Locator associated to a Booking.|
 | @code								| 1			| String	| Locator code.|
 | Locators               			| 0..1  	|    		| Contains a list of locators.|
 | Locators/Locator               	| 1..n  	|    		| Contains details of the locator.|
 | Locator/Id            			| 1  		| String 	| Unique identifier of the locator.|
-| Locator/Type          			| 1  		| String 	| [Locator type.](#reservation-enumerate-description)|
+| Locator/Type          			| 1  		| [Locator type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#locator-type)| The locator's type	| 
 
 
 

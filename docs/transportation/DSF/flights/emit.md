@@ -37,10 +37,10 @@ Not all suppliers need to issue the tickets. For some suppliers, the payment inf
 | EmissionType						| 1			|			| Contains the type of emission.|
 | @type								| 1			| String	| Type: N (None), Air, Extra, All.|
 | PaymentInfo						| 0..1  	|    		| Contains the information of the payment.|
-| @paymentType						| 1  		| String 	| Payment type: CASH, CARD.|
+| @paymentType						| 1  		| String 	| Payment type.|
 | PaymentInfo/PaymentDatas       	| 0..1  	|    		| Contains a list of payment data.|
 | PaymentInfo/PaymentDatas/<br>PaymentData					| 1..n  || Contains details of the payment data.|
-| @paymentType              		| 1  		| String 	| Payment type: CASH, CARD.|
+| @paymentType              		| 1  		| String 	| Payment type.|
 | PaymentInfo/PaymentDatas/<br>PaymentData/CardInfo			| 1  	|| Contains details of the debit/credit card.|
 | @provType                 		| 1  		| String 	| Card type (provider format, for instance MC -> MasterCard). Each provider configuration indicates the available card type formats.|
 | @number                   		| 1  		| String 	| Card number.|
@@ -53,7 +53,7 @@ Not all suppliers need to issue the tickets. For some suppliers, the payment inf
 | PaymentInfo/PaymentDatas/<br>PaymentData/Amount/<br>Amount| 1..n  	|| Amount by type. It is used to specify for example the Service Fees associated to a credit card.|
 | @currency           				| 1  		| String 	| Currency.|
 | @amount           				| 1  		| Decimal 	| Amount.|
-| @amountType           			| 0..1  	| String 	| Amount Type: AMOUNT, FEE, TOTAL, PERCENTUAL.|
+| @amountType           			| 0..1  	| [Amount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-type)  	| Amount Type.|
 
 
 
@@ -65,12 +65,12 @@ Not all suppliers need to issue the tickets. For some suppliers, the payment inf
 | Passengers						| 0..1  	|    		| Contains a list of Passengers.|
 | Passengers/Passenger				| 1..n 		|			| Contains information of the Passenger.|
 | @id								| 1  		| Integer	| Unique identifier of the passenger.|
-| @title							| 1  		| String 	| Treatment: MR, MRS, CHD and INF.|
+| @title							| 1  		| String 	| The passenger's title|
 | @name								| 1  		| String 	| Name of the Passenger.|
 | @surname        					| 1  		| String 	| Surname/s of the Passenger.|
 | @bithDate							| 1  		| Date 		| Date of birth.|
 | @codeDCO     						| 0..1  	| Integer 	| Consolidate document number.|
-| @documentType						| 0..1  	| String 	| Document type: NATIONAL_ID, PASSPORT, RESIDENT_ID, FOREIGN_PASSPORT, BIRTH_NOTIFICATION.|
+| @documentType						| 0..1  	|[Document type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#document-type)|Document type.|
 | @documentId						| 0..1  	| String 	| Unique identifier of the documentation.|
 | @documentExpiration  				| 0..1		| Date 		| Expiration date of the documentation.|
 | @documentExpedition  				| 0..1		| Date 		| Expedition date of the documentation.|
@@ -79,13 +79,13 @@ Not all suppliers need to issue the tickets. For some suppliers, the payment inf
 | @language							| 0..1  	| String 	| Language.|
 | Passengers/Passenger/PaxBonusDetails 						| 0..1  || Contains details of the Passenger bonus.|
 | Passengers/Passenger/PaxBonusDetails/<br>AppliedBonuses	| 0..1  || Contains details of the applied bonus.|
-| @resident              			| 0..1 		| String	| [Resident discount type.](#reservation-enumerate-description)|
-| @largeFamily           			| 0..1 		| String	| Family discount type: N(None), F1(Large family), F2 (Special large family). |
+| @resident              			| 0..1 		|[Resident discount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#resident-discount-type)|Resident discount type.|
+| @largeFamily           			| 0..1 		|[Large Family discount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#large-family-discount-type)|Large family discount type|
 | @discountCardCode					| 0..1		| String	| Discount card code.|
-| @discountCard						| 0..1		| String	| [Discount card type.](#reservation-enumerate-description)|
+| @discountCard						| 0..1		|[Discount Card type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#discount-card-type)|Discount card type.|
 | Passengers/Passenger/PaxBonusDetails/<br>AppliedBonuses/DiscountCards	| 0..1	|| Contains a list of DiscountCards.|
 | Passengers/Passenger/PaxBonusDetails/<br>AppliedBonuses/DiscountCards/<br>DiscountCard| 1..n || DiscountCard details.|
-| @type								| 1			| String	| [Discount card type.](#reservation-enumerate-description)|
+| @type								| 1			|[Discount Card type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#discount-card-type)|Discount card type.|
 | @code								| 0..1		| String	| Discount card code.|
 | @id								| 0..1		| String	| Unique identifier of discound card.|
 | Passengers/Passenger/PaxBonusDetails/<br>AppliedBonuses/PaxTypeCodes		| 0..1	|| Contains a list of PaxTypeCodes.|
@@ -105,15 +105,15 @@ Not all suppliers need to issue the tickets. For some suppliers, the payment inf
 | @ticketRef						| 0..1  	| String 	| Reference to a Ticket id.|
 | Passengers/Passenger/PaxTickets/<br>PaxTicket/DiscountStates | 0..1	|| Contains a list of discount information status.|
 | Passengers/Passenger/PaxTickets/<br>PaxTicket/DiscountStates/DiscountState | 1..n	|| Information of the applied bonuses.|
-| @type								| 1  		| String 	| Discount Type: RESIDENT, LARGE_FAMILY|
-| @status							| 1  		| String 	| Discount status: N (None), CHECKED, NOT_CHECKED.|
+| @type								| 1  		|[Discount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#discount-type)|Discount type|
+| @status							| 1  		|[Discount status type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#discount-status)|Discount status|
 | @numAttempts						| 0..1  	| String 	| Number of retry attempts for spanish resident validation.|
 | @code								| 0..1  	| String 	| Discount/Bonus associated code provided by the supplier.|
 | Passengers/Passenger/SpecialPetitions						| 0..1	|| Contains information of the bags, seats or other supplements requested by the passenger.|
 | Passengers/Passenger/SpecialPetitions/<br>NumSuitcases	| 0..1	|| Number of bags requested by the passenger.|
 | Passengers/Passenger/SpecialPetitions/<br>PaxBaggageInfos | 0..1	|| Contains a list of PaxBaggageInfo.|
 | Passengers/Passenger/SpecialPetitions/<br>PaxBaggageInfos/PaxBaggageInfo | 1..n	|| Specifies the luggage of the passenger.|
-| @type								| 1  		| String 	| Baggage type: Bag, Bike, Wheelchair, Skis, BabyTrolley, HandBaggage.|
+| @type								| 1  		|[Baggage type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#baggage-type)|Baggage type|
 | @id								| 1  		| String 	| Baggage id.|
 | @code								| 1  		| String 	| Bag code.|
 | @weight							| 0..1  	| String 	| Weight.|
@@ -131,8 +131,8 @@ Not all suppliers need to issue the tickets. For some suppliers, the payment inf
 | Passengers/Passenger/SpecialPetitions/<br>Optionals		| 0..1	||	Contains a list of supplements (food, pets, etc. Used also for baggage).|
 | Passengers/Passenger/SpecialPetitions/<br>Optionals/Optional | 1..n	||	Optional element information for the reservation.|
 | @id								| 1  		| String 	| Optional id.|
-| @type								| 1  		| String 	| Type: RM (Remark), SSR (Special Service Request), OSI (Other Service Information).|
-| @specialSupplementType			| 1			| String 	| [Special Service type.](#reservation-enumerate-description).|
+| @type								| 1  		| String 	| Optional element type|
+| @specialSupplementType			| 1			|[Special Supplement type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#special-supplement-type)|Special supplement type|
 | @code								| 1  		| String 	| Code.|
 | @quantity							| 0..1  	| Decimal 	| Quantity.|
 | @carrier							| 0..1  	| String 	| Carrier.|
@@ -155,20 +155,20 @@ Not all suppliers need to issue the tickets. For some suppliers, the payment inf
 | Passengers/Passenger/SpecialPetitions/<br>Optionals/Optional/<br>Charge		| 0..1	||	Charge details of the optional.|
 | @currency             			| 1 		| String	| Currency.|
 | @fixAmount             			| 0..1 		| Decimal	| Total fixed amount.|
-| @appliesFixAmount					| 0..1 		| String	| The fixed amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| @appliesFixAmount					| 0..1 		|  [Amount Applies To Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-applies-to-type)	| The fixes amount application|
 | @minFixAmount             		| 0..1 		| Decimal	| Minimal fixed amount.|
 | @maxFixAmount             		| 0..1 		| Decimal	| Maximal fixed amount.|
 | @minAmountPercentage             	| 0..1 		| Decimal	| Minimal percentage amount.|
 | @maxAmountPercentage             	| 0..1 		| Decimal	| Maximal percentage amount.|
 | @percentage             			| 0..1 		| Decimal	| Total percentage amount.|
-| @percentageApplied             	| 0..1 		| String	| The percentage amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| @percentageApplied             	| 0..1 		| [Amount Applies To type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-applies-to-type)	| The percentage amount application.|
 | Passengers/Passenger/SpecialPetitions/<br>Seating			| 0..1    	|| Seating availability.|
 | Passengers/Passenger/SpecialPetitions/<br>Seating/BlockRules    | 0..1    	|| Contains a list of Block Rules.|
 | Passengers/Passenger/SpecialPetitions/<br>Seating/BlockRules/BlockRule 		| 1..n    	|| Block Rules.|
 | Passengers/Passenger/SpecialPetitions/<br>Seating/BlockRules/BlockRule/References | 1    	|| References for the Block Rule.|
 | Passengers/Passenger/SpecialPetitions/<br>Seating/BlockRules/BlockRule/References/<br>BlockReferences		| 1	||	Contains a list of references to block elements.|
 | Passengers/Passenger/SpecialPetitions/<br>Seating/BlockRules/BlockRule/References/<br>BlockReferences/BlockReference | 1..n || Block element reference.|
-| @blockTypeRef						| 1  		| String	| Block type: CABIN (The entire cabin of the plane).|
+| @blockTypeRef						| 1  		| [Block Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#block-type)	| Block type: CABIN (The entire cabin of the plane).|
 | @blockRef							| 1  		| Integer	| Block reference.|
 | Passengers/Passenger/SpecialPetitions/<br>Seating/BlockRules/BlockRule/References/<br>SegmentReferences		| 0..1	||	Contains a list of segment references for the Block Rule.|
 | Passengers/Passenger/SpecialPetitions/<br>Seating/BlockRules/BlockRule/References/<br>SegmentReferences/SegmentReference		| 1..n	||	Segment reference.|
@@ -182,10 +182,10 @@ Not all suppliers need to issue the tickets. For some suppliers, the payment inf
 | Passengers/Passenger/SpecialPetitions/<br>Seating/BlockRules/BlockRule/BlockPrice/<br>Amount | 0..1  	|| Amount by type.|
 | @currency							| 1  		| String	| Currency code of the amount.|
 | @amount                 			| 1  		| Decimal	| Amount.|
-| @amountType             			| 0..1  	| String	| Amount type: AMOUNT (Amount), FEE (Service Fee), TOTAL (Total), PERCENTUAL (Percentual).|
+| @amountType             			| 0..1  	| [Amount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-type) 	| Amount type.|
 | Passengers/Passenger/SpecialPetitions/<br>Seating/Blocks  | 1    	|| Contains a list of seating blocks.|
 | Passengers/Passenger/SpecialPetitions/<br>Seating/Blocks/Block    | 1..n    	|| Seating details.|
-| @type								| 1  		| String	| Block type: CABIN (The entire cabin of the plane).|
+| @type								| 1  		| [Block Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#block-type)	| Block type: CABIN (The entire cabin of the plane).|
 | @id								| 1  		| Integer	| Unique id.|
 | Passengers/Passenger/SpecialPetitions/<br>Seating/Blocks/Block/References/<br>SegmentReferences		| 1	||	Contains a list of segment references for the Block.|
 | Passengers/Passenger/SpecialPetitions/<br>Seating/Blocks/Block/References/<br>SegmentReferences/SegmentReference		| 1..n	||	Segment reference.|
@@ -194,12 +194,12 @@ Not all suppliers need to issue the tickets. For some suppliers, the payment inf
 | @segmentRef						| 1 		| Integer	| Unique identifier of the Segment.|
 | Passengers/Passenger/SpecialPetitions/<br>Seating/Blocks/Block/Blocks | 1    	|| Contains a list of row blocks.|
 | Passengers/Passenger/SpecialPetitions/<br>Seating/Blocks/Block/Blocks/Block 	| 1..n    	|| Row block.|
-| @type    							| 1  		| String	| Block type: ROW|
+| @type    							| 1  		| [Block Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#block-type)	| Block type: ROW|
 | @id     							| 1  		| Integer	| Unique row id.|
 | @number							| 1  		| Integer	| Row number in the cabin.|
 | Passengers/Passenger/SpecialPetitions/<br>Seating/Blocks/Block/Blocks/Block/<br>Blocks | 1    	|| Contains a list of seat blocks.|
 | Passengers/Passenger/SpecialPetitions/<br>Seating/Blocks/Block/Blocks/Block/<br>Blocks/Block | 1..n  || Seat block.|
-| @type								| 1  		| String	| Block type: SEAT.|
+| @type								| 1  		| [Block Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#block-type)	| Block type: SEAT.|
 | @id								| 1  		| Integer	| Unique seat id.|
 | @number    						| 1  		| String	| Seat identifier.|
 | @token    						| 0..1  	| String	| Reservation seat token.|
@@ -207,18 +207,18 @@ Not all suppliers need to issue the tickets. For some suppliers, the payment inf
 | @isAvailable						| 1  		| Boolean	| Indicates whether the seat is available.|
 | Passengers/Passenger/SpecialPetitions/<br>Seating/Blocks/Block/Blocks/Block/<br>Blocks/Block/BlockAttributes | 0..1 || Contains a list of Seat attributes.|
 | Passengers/Passenger/SpecialPetitions/<br>Seating/Blocks/Block/Blocks/Block/<br>Blocks/Block/BlockAttributes/<br>BlockAttribute | 1..n |  | Seat attribute.|
-| @type                   			| 1  		| String	| [Seat type.](#reservation-enumerate-description)|
+| @type                   			| 1  		| | [Block Attribute Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#block-attribute-type)	| Block Attribute type|
 | Locator               			| 1..n  	|    		| Contains details of the locator.|
 | Locator/Id            			| 1  		| String 	| Unique identifier of the locator.|
-| Locator/Type          			| 1  		| String 	| [Locator type.](#reservation-enumerate-description)|
+| Locator/Type          			| 1  		| [Locator type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#locator-type)| The locator's type	| 
 | Tickets							| 1			|			|Contains a list of tickets associated to the booking.|
 | Tickets/Ticket					| 1..n		|			| Contains the details of the ticket.|
 | @ticketNum						| 1			| String	| Ticket number.|
-| @type								| 1			| String	| Ticket type: Paper, eTicket, Extra.|
-| @status							| 1			| String	| Open, Confirmed, Voided, Refunded.|
+| @type								| 1			| String	| Ticket type.|
+| @status							| 1			|[Ticket Status type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#ticket-status-type)|Ticket Status type|
 | @id								| 0..1		| Integer	| Unique identifier of the ticket.|
 | @paxName							| 0..1		| String	| Passenger name.|
-| @paxType							| 0..1		| String	| Passenger type based on the age of the passenger: ADT (Adult), CHD (Child), INF (Infant), YOU (Young) and SEN (Senior).|
+| @paxType							| 0..1		| String	| Passenger type based on the age of the passenger.|
 | @url								| 0..1		| String	| Url.|
 | Tickets/Ticket/PNRLoc				| 0..1		|			| Provider Locator associated to a Booking.|
 | @code								| 1			| String	| Locator code.|
@@ -226,7 +226,7 @@ Not all suppliers need to issue the tickets. For some suppliers, the payment inf
 | @carrier							| 0..1		| String	| Fare carrier.|
 | @agencyCode						| 0..1		| String	| Agency code.|
 | @installmentsNum					| 0..1		| Integer	| Number of installments in which the amount will be charged to the credit card.|
-| @lastTicketingDateUTC				| 0..1		| Date		| Number of installments in which the amount will be charged to the credit card.|
+| @lastTicketingDateUTC				| 0..1		| Date		| Maximum date allowed to make the ticket emission (in UTC format)|
 | Invoice/AmountBreakdown			| 1			|			| Breakdown of the fare amount.|
 | @currency              			| 1 		| String	| Currency code of the fare.|
 | @totalAmount           			| 1 		| Decimal	| Total amount. with taxes and other charges included.	|
@@ -235,7 +235,7 @@ Not all suppliers need to issue the tickets. For some suppliers, the payment inf
 | Invoice/AmountBreakdown/<br>ChargeBreakdowns				| 0..1   || Contains a list of breakdown amounts ( taxes, mandatory charges.. ).|
 | Invoice/AmountBreakdown/<br>ChargeBreakdowns/<br>ChargeBreakdown | 1..n || Contains details of the BreakdownAmount.|
 | @amount                			| 1    	 	| Decimal	| Charge amount.|
-| @type                  			| 0..1 		| String	| [Type of charge.](#reservation-enumerate-description)|
+| @type                  			| 0..1 		| [Type of charge.](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#charge-type) | Type of charge. |
 | @included							| 0..1		| Boolean	| If true, the charge is included to the total fare amount.|
 | Invoice/AmountBreakdown/<br>ChargeBreakdowns/<br>ChargeBreakdown/Concept | 0..1 || Contains details of the charge.|
 | @id                    			| 0..1 		| String	| Unique id of the Concept.|
@@ -248,7 +248,7 @@ Not all suppliers need to issue the tickets. For some suppliers, the payment inf
 | Invoice/AmountBreakdown/<br>ChargeBreakDowns/<br>ChargeBreakdown/Concept/Paragraph/<br>Sentence | 0..n | String | Sentence|
 | Invoice/AmountBreakdown/<br>PaxBreakdown					| 1    || Contains a list of breakdown amounts for each passenger ( ADT amount, etc. ).|
 | Invoice/AmountBreakdown/<br>PaxBreakdowns/<br>PaxBreakdown| 1..n || Contains details of breakdown amounts for each passenger.|
-| @paxType               			| 1 		| String	| Passenger type: ADT ( Adult ), CHD ( Child ) & INF ( Infant ).|
+| @paxType               			| 1 		| String	| Passenger type.|
 | @amount                			| 1 		| Decimal	| Total amount, with taxes included, associated to the passenger.|
 | @taxes                 			| 1 		| Decimal	| If they exist, taxes are applied for this passenger type.|
 | @taxesDU                			| 0..1 		| Decimal	| DU taxes.|

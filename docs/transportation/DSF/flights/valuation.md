@@ -98,13 +98,13 @@ the selected Option.
 | @marketingCarrier      			| 1 		| String	| Company which commercializes the transportation.|
 | @departureDate         			| 1 		| Date		| Departure date.|
 | @arrivalDate           			| 1 		| Date		| Arrival date.|
-| @transportationType    			| 0..1 		| String	| Transport type: V ( Flight ), T ( Train ), B ( Bus ), S() & F ( Ferry ).|
+| @transportationType    			| 0..1 		| [Transport type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#transportation-type)	| Transport type|
 | @transportationName    			| 0..1 		| String	| Name of the transportation.|
 | @transportationCode				| 0..1		| String	| Code of the transportation.|
 | @departureTerminal				| 0..1 		| String	| Departure terminal.|
 | @arrivalTerminal       			| 0..1 		| String	| Arrival terminal.|
 | @segmentDuration       			| 0..1 		| Integer	| Transport duration ( in minutes ).|
-| @segmentStatus					| 0..1		| String	| Segment status: HK (Holding confirmed), TK(Confirming new flight times), UC(Unable to confirm), UN(Flight cancelled by airline), NO (No action taken), UD (Undefined).|
+| @segmentStatus					| 0..1		| [Segment Status type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#segment-status-type)	| Segment Status|
 | @planeType						| 0..1 		| String	| Plane type. Flights parameter.|
 | @maxCheckinDate					| 0..1 		| Date		| Maximum date to make the check-in.|
 | @hasTechnicalStop					| 0..1		| Boolean	| If true, the segment has a technical stop.|
@@ -112,7 +112,7 @@ the selected Option.
 | @secureFlight          			| 0..1		| Boolean	| If true, the provider requires extra information of the passengers. Flights parameter.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/OriginLoc | 1     	|| Origin location.|
 | @code                  			| 1 		| String	| Location code.|
-| @type                  			| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| @type                  			| 0..1 		| [Location type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#location-type)	| Type of station of the location|
 | @name								| 0..1 		| String	| Location full name.|
 | @radius							| 0..1		| Integer	| Area radius from location.|
 | @cityCode              			| 0..1 		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
@@ -121,10 +121,10 @@ the selected Option.
 | @code								| 1			| String	| Location code.|
 | @cityCode        					| 0..1  	| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
 | @name								| 0..1		| String	| Location long name.|
-| @type								| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| @type								| 0..1 		| [Location type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#location-type)	| Type of station of the location|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/DestinationLoc | 1   || Destination location.|
 | @code                  			| 1 		| String	| Location code.|
-| @type								| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| @type								| 0..1 		| [Location type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#location-type)	| Type of station of the location|
 | @name								| 0..1 		| String	| Location full name.|
 | @radius							| 0..1		| Integer	| Area radius from location.|
 | @cityCode              			| 0..1 		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
@@ -133,7 +133,7 @@ the selected Option.
 | @code								| 1			| String	| Location code.|
 | @cityCode        					| 0..1  	| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
 | @name								| 0..1		| String	| Location long name.|
-| @type								| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| @type								| 0..1 		| [Location type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#location-type)	| Type of station of the location|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/TechnicalStops | 0..1 || Contains a list of TechnicalStops.|
 | @totalTechnicalStops				| 1 		| Integer	| Total number of TechnicalStops.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/TechnicalStops/<br>TechnicalStop | 0..n || Contains the details of the TechnicalStop.|
@@ -142,9 +142,9 @@ the selected Option.
 | @departureDate					| 1 		| Date		| Approx. departure date and time.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses | 1 | | Contains a list of SegmentClasses.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass | 1..n || Contains details of the SegmentClass.|
-| @cabinClass            			| 1 		| String	| Cabin class of the seat: N (Not specified), Y (Tourist), C (Business), F (First), CA (Cabin, only for ferries), YP (Tourist Plus).|
+| @cabinClass            			| 1 		| [Cabin Class type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#cabin-class-type)	| Cabin class of the seat|
 | @paxRef               	 		| 1 		| Integer	| Passenger reference.|
-| @fareType              			| 1 		| String	| Fare type: PUB ( Public ), PRI ( Private ), NEGO ( Negotiated ) and CORP ( Corporate ).|
+| @fareType              			| 1 		| [Fare type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#location-type)	| Fare type.|
 | @class                 			| 0..1 		| String	| Fare class.|
 | @fareBasis             			| 0..1 		| String	| Identifier of the fare.|
 | @avail                 			| 0..1 		| Integer	| Available seats remaining for this class (In flights, the maximum is 9).|
@@ -153,14 +153,14 @@ the selected Option.
 | @Description                 		| 0..1 		| String	| Modification description.|
 | @amount                 			| 0..1 		| Decimal	| Modification amount.|
 | @currency                 		| 0..1 		| String	| Modification currency.|
-| @amountType                 		| 0..1 		| String	| Modification amount type: AMOUNT (Fare amount), FEE (Fee amount), TOTAL (Total fare amount), PERCENTUAL (Percentual amount).|
+| @amountType                 		| 0..1 		| [Amount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-type)	| Modification amount type.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass/CancellationPolicies | 0..1 || Contains a list of CancellationPolicies.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass/CancellationPolicies/<br>CancellationPolicy | 1..n ||Contains details of the CancelationPolicy.	|
 | @refundable                 		| 1 		| Boolean	| If true, the fare allows the refundation.|
 | @fromDate                 		| 0..1 		| Date		| Date of the begining of the policy.|
 | @amount                 			| 0..1 		| Decimal	| Policy amount.|
 | @currency                 		| 0..1 		| String	| Policy currency.|
-| @amountType                 		| 0..1 		| String	| Policy amount type: AMOUNT (Fare amount), FEE (Fee amount), TOTAL (Total fare amount), PERCENTUAL (Percentual amount).|
+| @amountType                 		| 0..1 		| [Amount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-type)	| Policy amount type|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/ReservationTokens | 0..1 |  | Specific attribute used for each provider.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/ReservationTokens/<br>Attribute | 1..n || Type of attribute.|
 | @key								| 1 		| String	| Contains the keyword/ Id to identify a parameter.|
@@ -171,8 +171,8 @@ the selected Option.
 | @estimatedCheckinTime				| 0..1 		| Date		| Estimated checkin time.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/CheckinInformation/<br>Status | 0..1 || Status checkin information.|
 | @isAvailable						| 0..1 		| Boolean	| If true, the cheking is available.|
-| @direction						| 0..1 		| String	| Direction of the journey about to checkin: OUTBOUND, INBOUND, OUTBOUND_INBOUND (Outbound and Inbound).|
-| @status							| 0..1 		| String	| Status of the checkin: UNDEFINED, IN_PROGRESS, ERROR, COMPLETE, UNCONFIRMED.|
+| @direction						| 0..1 		| [Direction type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#direction-type)	| Direction of the journey about to checkin.|
+| @status							| 0..1 		| [Checkin Status type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#checkin-status-type)	| Status of the checkin.|
 | Itineraries/Itinerary/AmountBreakdown  					| 1     	|| Breakdown of the fare amount.|
 | @currency							| 1 		| String	| Currency code of the fare.|
 | @totalAmount           			| 1 		| Decimal	| Total amount. with taxes and other charges included.|
@@ -181,7 +181,7 @@ the selected Option.
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakdowns | 0..1   || Contains a list of breakdown amounts ( taxes, mandatory charges.. ).|
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakdowns/ChargeBreakdown | 1..n || Contains details of the BreakdownAmount.|
 | @amount                			| 1    	 	| Decimal	| Charge amount.|
-| @type                  			| 0..1 		| String	| [Type of charge.](#reservation-enumerate-description)|
+| @type                  			| 0..1 		| [Charge type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#charge-type)	| The type of the charge|
 | @included							| 0..1		| Boolean	| If true, the charge is included to the total fare amount.|
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakdowns/ChargeBreakdown<br>/Concept | 0..1 || Contains details of the charge.|
 | @id                    			| 0..1 		| String	| Unique id of the Concept.|
@@ -194,7 +194,7 @@ the selected Option.
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakDowns/ChargeBreakdown/<br>Concept/Paragraph/Sentence | 0..n | String | Sentence.|
 | Itineraries/Itinerary/AmountBreakdown/<br>PaxBreakdown	| 1    	|| Contains a list of breakdown amounts for each passenger ( ADT amount, etc. ).|
 | Itineraries/Itinerary/AmountBreakdown/<br>PaxBreakdowns/PaxBreakdown | 1..n || Contains details of breakdown amounts for each passenger.|
-| @paxType               			| 1 		| String	| Passenger type: ADT ( Adult ), CHD ( Child ) & INF ( Infant ).|
+| @paxType               			| 1 		| [Passenger type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#passenger-type)	| Passenger type.|
 | @amount                			| 1 		| Decimal	| Total amount, with taxes included, associated to the passenger.|
 | @taxes                 			| 1 		| Decimal	| If they exist, taxes are applied for this passenger type.|
 | @taxesDU                			| 0..1 		| Decimal	| DU taxes.|
@@ -207,17 +207,17 @@ the selected Option.
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration | 1..n || Contains details of PaxConfiguration.|
 | @id                    			| 1 		| Integer	| Unique identifier of the PaxConfiguration.|
 | @paxRef                			| 1 		| Integer	| Reference to the passenger Id from the request.|
-| @paxType               			| 1 		| String	| Passenger type based on the age of the passenger: ADT (Adult), CHD (Child), INF (Infant), YOU (Young) and SEN (Senior).|
+| @paxType               			| 1 		| [Passenger type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#passenger-type)	| Passenger type based on the age of the passenger.|
 | @age                   			| 0..1 		| Integer	| Age of the passenger.|
 | @nacionality						| 0..1 		| String	| Nacionality of the passenger.|
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses | 0..1 || Applied discounts.|
-| @resident              			| 0..1 		| String	| [Resident discount type.](#reservation-enumerate-description)|
-| @largeFamily           			| 0..1 		| String	| Family discount type: N(None), F1(Large family), F2 (Special large family).|
+| @resident              			| 0..1 		| [Resident discount type.](#reservation-enumerate-description)	| Resident discount type|
+| @largeFamily           			| 0..1 		| [Large Family discount type.](#reservation-enumerate-description)	| Family discount type.|
 | @discountCardCode					| 0..1		| String	| Discount card code.|
-| @discountCard						| 0..1		| String	| [Discount card type.](#reservation-enumerate-description)|
+| @discountCard						| 0..1		| [Discount card type](#reservation-enumerate-description)	| Discount card type|
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>DiscountCards	| 0..1	|| Contains a list of DiscountCards.|
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>DiscountCards/DiscountCard| 1..n	|| DiscountCard details.|
-| @type								| 1			| String	| [Discount card type.](#reservation-enumerate-description)|
+| @type								| 1			| [Discount card type](#reservation-enumerate-description)	| Discount card type |
 | @code								| 0..1		| String	| Discount card code.|
 | @id								| 0..1		| String	| Unique identifier of discound card.|
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>PaxTypeCodes		| 0..1	|| Contains a list of PaxTypeCodes.|
@@ -277,13 +277,13 @@ the selected Option.
 | @marketingCarrier      			| 1 		| String	| Company which commercializes the transportation.|
 | @departureDate         			| 1 		| Date		| Departure date.|
 | @arrivalDate           			| 1 		| Date		| Arrival date.|
-| @transportationType    			| 0..1 		| String	| Transport type: V ( Flight ), T ( Train ), B ( Bus ), S() & F ( Ferry ).|
+| @transportationType    			| 0..1 		| [Transport type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#transport-type)	| Transport type.|
 | @transportationName    			| 0..1 		| String	| Name of the transportation.|
 | @transportationCode				| 0..1		| String	| Code of the transportation.|
 | @departureTerminal				| 0..1 		| String	| Departure terminal.|
 | @arrivalTerminal       			| 0..1 		| String	| Arrival terminal.|
 | @segmentDuration       			| 0..1 		| Integer	| Transport duration ( in minutes ).|
-| @segmentStatus					| 0..1		| String	| Segment status: HK (Holding confirmed), TK(Confirming new flight times), UC(Unable to confirm), UN(Flight cancelled by airline), NO (No action taken), UD (Undefined).|
+| @segmentStatus					| 0..1		| [Segment Status type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#status-segment-type)	| Segment status.|
 | @planeType						| 0..1 		| String	| Plane type. Flights parameter.|
 | @maxCheckinDate					| 0..1 		| Date		| Maximum date to make the check-in.|
 | @hasTechnicalStop					| 0..1		| Boolean	| If true, the segment has a technical stop.|
@@ -291,7 +291,7 @@ the selected Option.
 | @secureFlight          			| 0..1		| Boolean	| If true, the provider requires extra information of the passengers. Flights parameter.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/OriginLoc | 1     	|| Origin location.|
 | @code                  			| 1 		| String	| Location code.|
-| @type                  			| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| @type                  			| 0..1 		| [Location type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#location-type)	| Type of station of the location|
 | @name								| 0..1 		| String	| Location full name.|
 | @radius							| 0..1		| Integer	| Area radius from location.|
 | @cityCode              			| 0..1 		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
@@ -300,10 +300,10 @@ the selected Option.
 | @code								| 1			| String	| Location code.|
 | @cityCode        					| 0..1  	| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
 | @name								| 0..1		| String	| Location long name.|
-| @type								| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| @type								| 0..1 		| [Location type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#location-type)	| Type of station of the location|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/DestinationLoc | 1   || Destination location.|
 | @code                  			| 1 		| String	| Location code.|
-| @type								| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| @type								| 0..1 		| [Location type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#location-type)	| Type of station of the location|
 | @name								| 0..1 		| String	| Location full name.|
 | @radius							| 0..1		| Integer	| Area radius from location.|
 | @cityCode              			| 0..1 		| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
@@ -312,7 +312,7 @@ the selected Option.
 | @code								| 1			| String	| Location code.|
 | @cityCode        					| 0..1  	| Boolean	| If true, the field code indicates a city code, if false, it will indicate an airport code.|
 | @name								| 0..1		| String	| Location long name.|
-| @type								| 0..1 		| String	| Type of station of the location indicated with A ( AirPort ), T ( Train Station ) & P ( Port ).|
+| @type								| 0..1 		| [Location type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#location-type)	| Type of station of the location|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/TechnicalStops | 0..1 || Contains a list of TechnicalStops.|
 | @totalTechnicalStops				| 1 		| Integer	| Total number of TechnicalStops.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/TechnicalStops/<br>TechnicalStop | 0..n || Contains the details of the TechnicalStop.|
@@ -321,9 +321,9 @@ the selected Option.
 | @departureDate					| 1 		| Date		| Approx. departure date and time.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses | 1 | | Contains a list of SegmentClasses.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass | 1..n || Contains details of the SegmentClass.|
-| @cabinClass            			| 1 		| String	| Cabin class of the seat: N (Not specified), Y (Tourist), C (Business), F (First), CA (Cabin, only for ferries), YP (Tourist Plus).|
+| @cabinClass            			| 1 		| [Cabin Class type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#cabin-class-type)	| Cabin class of the seat|
 | @paxRef               	 		| 1 		| Integer	| Passenger reference.|
-| @fareType              			| 1 		| String	| Fare type: PUB ( Public ), PRI ( Private ), NEGO ( Negotiated ) and CORP ( Corporate ).|
+| @fareType              			| 1 		| [Fare Class type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#fare-class-type)	| Fare type.|
 | @class                 			| 0..1 		| String	| Fare class.|
 | @fareBasis             			| 0..1 		| String	| Identifier of the fare.|
 | @avail                 			| 0..1 		| Integer	| Available seats remaining for this class (In flights, the maximum is 9).|
@@ -332,14 +332,14 @@ the selected Option.
 | @Description                 		| 0..1 		| String	| Modification description.|
 | @amount                 			| 0..1 		| Decimal	| Modification amount.|
 | @currency                 		| 0..1 		| String	| Modification currency.|
-| @amountType                 		| 0..1 		| String	| Modification amount type: AMOUNT (Fare amount), FEE (Fee amount), TOTAL (Total fare amount), PERCENTUAL (Percentual amount).|
+| @amountType                 		| 0..1 		| [Amount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-type)	| Modification amount type.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass/CancellationPolicies | 0..1 || Contains a list of CancellationPolicies.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass/CancellationPolicies/<br>CancellationPolicy | 1..n ||Contains details of the CancelationPolicy.	|
 | @refundable                 		| 1 		| Boolean	| If true, the fare allows the refundation.|
 | @fromDate                 		| 0..1 		| Date		| Date of the begining of the policy.|
 | @amount                 			| 0..1 		| Decimal	| Policy amount.|
 | @currency                 		| 0..1 		| String	| Policy currency.|
-| @amountType                 		| 0..1 		| String	| Policy amount type: AMOUNT (Fare amount), FEE (Fee amount), TOTAL (Total fare amount), PERCENTUAL (Percentual amount).|
+| @amountType                 		| 0..1 		| [Amount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-type)	| Policy amount type|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/ReservationTokens | 0..1 |  | Specific attribute used for each provider.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/ReservationTokens/<br>Attribute | 1..n || Type of attribute.|
 | @key								| 1 		| String	| Contains the keyword/ Id to identify a parameter.|
@@ -350,8 +350,8 @@ the selected Option.
 | @estimatedCheckinTime				| 0..1 		| Date		| Estimated checkin time.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/CheckinInformation/<br>Status | 0..1 || Status checkin information.|
 | @isAvailable						| 0..1 		| Boolean	| If true, the cheking is available.|
-| @direction						| 0..1 		| String	| Direction of the journey about to checkin: OUTBOUND, INBOUND, OUTBOUND_INBOUND (Outbound and Inbound).|
-| @status							| 0..1 		| String	| Status of the checkin: UNDEFINED, IN_PROGRESS, ERROR, COMPLETE, UNCONFIRMED.|
+| @direction						| 0..1 		| [Direction type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#direction-type)	| Direction of the journey about to checkin.|
+| @status							| 0..1 		| [Checkin Status type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#status-segment-type)	| Status of the checkin.|
 | Itineraries/Itinerary/AmountBreakdown  					| 1     	|| Breakdown of the fare amount.|
 | @currency							| 1 		| String	| Currency code of the fare.|
 | @totalAmount           			| 1 		| Decimal	| Total amount. with taxes and other charges included.|
@@ -360,7 +360,7 @@ the selected Option.
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakdowns | 0..1   || Contains a list of breakdown amounts ( taxes, mandatory charges.. ).|
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakdowns/ChargeBreakdown | 1..n || Contains details of the BreakdownAmount.|
 | @amount                			| 1    	 	| Decimal	| Charge amount.|
-| @type                  			| 0..1 		| String	| [Type of charge.](#reservation-enumerate-description)|
+| @type                  			| 0..1 		| [Charge type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#charge-type)	| Charge type|
 | @included							| 0..1		| Boolean	| If true, the charge is included to the total fare amount.|
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakdowns/ChargeBreakdown<br>/Concept | 0..1 || Contains details of the charge.|
 | @id                    			| 0..1 		| String	| Unique id of the Concept.|
@@ -373,7 +373,7 @@ the selected Option.
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakDowns/ChargeBreakdown/<br>Concept/Paragraph/Sentence | 0..n | String | Sentence.|
 | Itineraries/Itinerary/AmountBreakdown/<br>PaxBreakdown	| 1    	|| Contains a list of breakdown amounts for each passenger ( ADT amount, etc. ).|
 | Itineraries/Itinerary/AmountBreakdown/<br>PaxBreakdowns/PaxBreakdown | 1..n || Contains details of breakdown amounts for each passenger.|
-| @paxType               			| 1 		| String	| Passenger type: ADT ( Adult ), CHD ( Child ) & INF ( Infant ).|
+| @paxType               			| 1 		| [Passenger type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#passenger-type)	| Passenger type.|
 | @amount                			| 1 		| Decimal	| Total amount, with taxes included, associated to the passenger.|
 | @taxes                 			| 1 		| Decimal	| If they exist, taxes are applied for this passenger type.|
 | @taxesDU                			| 0..1 		| Decimal	| DU taxes.|
@@ -386,17 +386,17 @@ the selected Option.
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration | 1..n || Contains details of PaxConfiguration.|
 | @id                    			| 1 		| Integer	| Unique identifier of the PaxConfiguration.|
 | @paxRef                			| 1 		| Integer	| Reference to the passenger Id from the request.|
-| @paxType               			| 1 		| String	| Passenger type based on the age of the passenger: ADT (Adult), CHD (Child), INF (Infant), YOU (Young) and SEN (Senior).|
+| @paxType               			| 1 		| [Passenger type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#passenger-type)	| Passenger type based on the age of the passenger.|
 | @age                   			| 0..1 		| Integer	| Age of the passenger.|
 | @nacionality						| 0..1 		| String	| Nacionality of the passenger.|
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses | 0..1 || Applied discounts.|
-| @resident              			| 0..1 		| String	| [Resident discount type.](#reservation-enumerate-description)|
-| @largeFamily           			| 0..1 		| String	| Family discount type: N(None), F1(Large family), F2 (Special large family).|
+| @resident              			| 0..1 		| [Resident Discount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#resident-discount-type)	| Resident discount type|
+| @largeFamily           			| 0..1 		| [Large Family Discount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#large-family-discount-type)	| Family discount type.|
 | @discountCardCode					| 0..1		| String	| Discount card code.|
-| @discountCard						| 0..1		| String	| [Discount card type.](#reservation-enumerate-description)|
+| @discountCard						| 0..1		| [Discount Card type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#discount-card-type)	| Discount card type|
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>DiscountCards	| 0..1	|| Contains a list of DiscountCards.|
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>DiscountCards/DiscountCard| 1..n	|| DiscountCard details.|
-| @type								| 1			| String	| [Discount card type.](#reservation-enumerate-description)|
+| @type								| 1			| [Discount Card type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#discount-card-type)	| Discount card type|
 | @code								| 0..1		| String	| Discount card code.|
 | @id								| 0..1		| String	| Unique identifier of discound card.|
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>PaxTypeCodes		| 0..1	|| Contains a list of PaxTypeCodes.|
@@ -417,23 +417,23 @@ This option is only shown when requested in Preferences node. The functionality 
 | Supplements						| 0..1      |			| Supplements node in ValuationRS.|
 | PaymentMethods                 	| 0..1    	|			| Contains a list of paymentMethods.|
 | PaymentMethods/PaymentMethod 		| 1..n    	|			| Contains paymentMethod details.|
-| @paymentType						| 1  		| String	| Payment Type: CreditCard, ElectronicBanking.|
+| @paymentType						| 1  		| [Supplement payment type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#supplement-payment-type)	| Payment Type|
 | @cardType               			| 1  		| String	| Card type with a provider format.|
 | PaymentMethods/PaymentMethod/<br>PaymentCharges			| 0..1      	|| Contains a list of Payment Charges.|
 | PaymentMethods/PaymentMethod/<br>PaymentCharges/PaymentCharge | 1..n      || Charge applied to the Booking when this paymed method is used.|
 | @fixAmount             			| 0..1 		| Decimal	| Total fixed amount.|
-| @appliesFixAmount             	| 0..1 		| String	| The fixed amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| @appliesFixAmount             	| 0..1 		| [Amount Applies To Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-applies-to-type)	| The fixed amount application|
 | @minFixAmount             		| 0..1 		| Decimal	| Minimal fixed amount.|
 | @maxFixAmount             		| 0..1 		| Decimal	| Maximal fixed amount.|
 | @minAmountPercentage             	| 0..1 		| Decimal	| Minimal percentage amount.|
 | @maxAmountPercentage             	| 0..1 		| Decimal	| Maximal percentage amount.|
 | @currency             			| 1 		| String	| Currency.|
 | @percentage             			| 0..1 		| Decimal	| Total percentage amount.|
-| @percentageApplied             	| 0..1 		| String	| The percentage amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| @percentageApplied             	| 0..1 		| [Amount Applies To Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-applies-to-type)	| The percentage amount application|
 | BaggageTypes                 		| 0..1    	|			| Contains a list of Baggage information.|
 | BaggageTypes/BaggageType			| 1..n    	|			| Baggage information.|
-| @checkInType						| 1  		| String	| Check-in type: OnLine & Airport.|
-| @appliesSegments        			| 1  		| String	| Segments in which is applied: All, Departure, Return, Ref (only the segment references indicated in the node SegmentReferences).|
+| @checkInType						| 1  		| [Checkin Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#checkin-type)		| Check-in type.|
+| @appliesSegments        			| 1  		| [Segment Applies To Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#segment-applies-to-type)		| Segments in which is applied.|
 | BaggageTypes/BaggageType/<br>References					| 0..1		||	References for the Baggage Type.|
 | BaggageTypes/BaggageType/<br>References/SegmentReferences	| 0..1		||	Contains a list of segment references for the Baggage Type.|
 | BaggageTypes/BaggageType/<br>References/SegmentReferences/<br>SegmentReference		| 1..n	||	Segment reference.|
@@ -445,7 +445,7 @@ This option is only shown when requested in Preferences node. The functionality 
 | @paxRef							| 1 		| String	| Reference to the passenger.|
 | BaggageTypes/BaggageType/Baggage	| 1..n		|			| Details of the baggage.|
 | @id                    			| 0..1 		| String	| Unique identifier of the Baggage.|
-| @type                  			| 1 		| String	| Type of baggage: Bag, Bike, Wheelchair, Skis, BabyTrolley and HandBaggage.|
+| @type                  			| 1 		| [Baggage Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#baggage-type)		| Type of baggage.|
 | @quantity              			| 1 		| Integer	| Baggage quantity.|
 | @maxWeightPerUnit					| 0..1 		| Integer	| Maximum weight of the baggage.| 
 | @maxTotalWeight        			| 0..1 		| Integer	| Maximum weight of ALL the baggage.|
@@ -457,14 +457,14 @@ This option is only shown when requested in Preferences node. The functionality 
 | @description             			| 0..1 		| String	| Baggage description.|
 | BaggageTypes/BaggageType/Baggage/<br>BaggageCharge		| 0..1 || Details of the baggage charge.|
 | @fixAmount             			| 0..1 		| Decimal	| Total fixed amount.|
-| @appliesFixAmount             	| 0..1 		| String	| The fixed amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| @appliesFixAmount             	| 0..1 		| [Amount Applies To Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-applies-to-type)	| The fixed amount application.|
 | @minFixAmount             		| 0..1 		| Decimal	| Minimal fixed amount.|
 | @maxFixAmount             		| 0..1 		| Decimal	| Maximal fixed amount.|
 | @minAmountPercentage             	| 0..1 		| Decimal	| Minimal percentage amount.|
 | @maxAmountPercentage             	| 0..1 		| Decimal	| Maximal percentage amount.|
 | @currency             			| 1 		| String	| Currency.|
 | @percentage             			| 0..1 		| Decimal	| Total percentage amount.|
-| @percentageApplied             	| 0..1 		| String	| The percentage amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| @percentageApplied             	| 0..1 		|  [Amount Applies To Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-applies-to-type)	| The percentage amount application.|
 | SpecialSupplements				| 0..1		|			| Contains a list of SpecialSupplements.|
 | SpecialSupplements/SpecialSupplement						| 1..n	||	Contains information about the Special Supplement.|
 | @id								| 0..1		| String	| Unique identifier of the supplement.|
@@ -476,9 +476,9 @@ This option is only shown when requested in Preferences node. The functionality 
 | @quantity							| 0..1		| Integer	| Quantity of supplements.|
 | @description						| 0..1		| String	| Description of the supplement|
 | @carrier							| 0..1		| String	| Carrier selling the supplement.|
-| @status							| 0..1		| String	| Status of the supplement: N(None), INC(Included in the price), CHA(Avalilable with charges), NOF(Not offered).|
+| @status							| 0..1		| [Special Supplement Status Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#special-supplement-status-type)		| Status of the supplement.|
 | @needToken						| 0..1		| Boolean	| If true, the field @reservationToken should be filled.|
-| @type								| 1			| String	| Type of supplement: Miscelaneous, Seat, Meal, Pet, Lounge, Baggage, Canoe, PreferentialBoarding, Bike, Trailer, Seguro, Embarque_Prioritario, Acceso_Preferente, Bloqueo_Tarifa, Special_Assistance.|
+| @type								| 1			| [Special Supplement Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#special-supplement-type)	| Type of supplement.|
 | @reservationToken					| 0..1		| String	| Reservation Token of the supplement.|
 | @ownTransportation				| 0..1		| Boolean	| If true, the supplement includes own transportation cage.|
 | SpecialSupplements/SpecialSupplement/<br>References		| 0..1	||	References for the Special Supplement.|
@@ -492,21 +492,21 @@ This option is only shown when requested in Preferences node. The functionality 
 | @paxRef							| 1 		| String	| Reference to the passenger.|
 | SpecialSupplements/SpecialSupplement/<br>SupplementCharge	| 0..1	||	Details of the special supplement charge.|
 | @fixAmount             			| 0..1 		| Decimal	| Total fixed amount.|
-| @appliesFixAmount					| 0..1 		| String	| The fixed amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| @appliesFixAmount					| 0..1 		|  [Amount Applies To Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-applies-to-type)	| The fixes amount application|
 | @minFixAmount             		| 0..1 		| Decimal	| Minimal fixed amount.|
 | @maxFixAmount             		| 0..1 		| Decimal	| Maximal fixed amount.|
 | @minAmountPercentage             	| 0..1 		| Decimal	| Minimal percentage amount.|
 | @maxAmountPercentage             	| 0..1 		| Decimal	| Maximal percentage amount.|
 | @currency             			| 1 		| String	| Currency.|
 | @percentage             			| 0..1 		| Decimal	| Total percentage amount.|
-| @percentageApplied             	| 0..1 		| String	| The percentage amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| @percentageApplied             	| 0..1 		| [Amount Applies To Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-applies-to-type)	| The percentage amount application.|
 | Seating							| 0..1    	|			| Seating availability.|
 | Seating/BlockRules				| 1    		|			| Contains a list of Block Rules.|
 | Seating/BlockRules/BlockRule 		| 1..n    	|			| Block Rules.|
 | Seating/BlockRules/BlockRule/References					| 1    		|| References for the Block Rule.|
 | Seating/BlockRules/BlockRule/References/<br>BlockReferences		| 1	||	Contains a list of references to block elements.|
 | Seating/BlockRules/BlockRule/References/<br>BlockReferences/BlockReference | 1..n || Block element reference.|
-| @blockTypeRef						| 1  		| String	| Block type: CABIN (The entire cabin of the plane).|
+| @blockTypeRef						| 1  		|  [Block Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#block-type)	| Block type: CABIN (The entire cabin of the plane).|
 | @blockRef							| 1  		| Integer	| Block reference.|
 | Seating/BlockRules/BlockRule/References/<br>SegmentReferences		| 0..1	||	Contains a list of segment references for the Block Rule.|
 | Seating/BlockRules/BlockRule/References/<br>SegmentReferences/SegmentReference		| 1..n	||	Segment reference.|
@@ -520,10 +520,10 @@ This option is only shown when requested in Preferences node. The functionality 
 | Seating/BlockRules/BlockRule/BlockPrice/<br>Amount		| 0..1  	|| Amount by type.|
 | @currency							| 1  		| String	| Currency code of the amount.|
 | @amount                 			| 1  		| Decimal	| Amount.|
-| @amountType             			| 0..1  	| String	| Amount type: AMOUNT (Amount), FEE (Service Fee), TOTAL (Total), PERCENTUAL (Percentual).|
+| @amountType             			| 0..1  	| [Amount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-type)	| Block amount.|
 | Seating/Blocks					| 1    		|			| Contains a list of seating blocks.|
 | Seating/Blocks/Block				| 1..n    	|			| Seating details.|
-| @type								| 1  		| String	| Block type: CABIN (The entire cabin of the plane).|
+| @type								| 1  		| [Block Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#block-type)	| Block type: CABIN (The entire cabin of the plane).|
 | @id								| 1  		| Integer	| Unique id.|
 | Seating/Blocks/Block/References/<br>SegmentReferences		| 1	||	Contains a list of segment references for the Block.|
 | Seating/Blocks/Block/References/<br>SegmentReferences/SegmentReference		| 1..n	||	Segment reference.|
@@ -532,12 +532,12 @@ This option is only shown when requested in Preferences node. The functionality 
 | @segmentRef						| 1 		| Integer	| Unique identifier of the Segment.|
 | Seating/Blocks/Block/Blocks		| 1    		|			| Contains a list of row blocks.|
 | Seating/Blocks/Block/Blocks/Block | 1..n    	|			| Row block.|
-| @type    							| 1  		| String	| Block type: ROW.|
+| @type    							| 1  		| [Block Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#block-type)	| Block type: ROW.|
 | @id     							| 1  		| Integer	| Unique row id.|
 | @number							| 1  		| Integer	| Row number in the cabin.|
 | Seating/Blocks/Block/Blocks/Block/<br>Blocks				| 1    	|| Contains a list of seat blocks.|
 | Seating/Blocks/Block/Blocks/Block/<br>Blocks/Block		| 1..n  || Seat block.|
-| @type								| 1  		| String	| Block type: SEAT.|
+| @type								| 1  		| [Block Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#block-type)	| Block type: SEAT.|
 | @id								| 1  		| Integer	| Unique seat id.|
 | @number    						| 1  		| String	| Seat identifier.|
 | @token    						| 0..1  	| String	| Reservation seat token.|
@@ -545,7 +545,7 @@ This option is only shown when requested in Preferences node. The functionality 
 | @isAvailable						| 1  		| Boolean	| Indicates whether the seat is available.|
 | Seating/Blocks/Block/Blocks/Block/<br>Blocks/Block/BlockAttributes | 0..1 || Contains a list of Seat attributes.|
 | Seating/Blocks/Block/Blocks/Block/<br>Blocks/Block/BlockAttributes/<br>BlockAttribute | 1..n || Seat attribute.|
-| @type                   			| 1  		| String	| [Seat type.](#valuation-enumerate-description)|
+| @type                   			| 1  		| [Block Attribute Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#block-attribute-type)	| Block Attribute type|
 | Conditions						| 0..1		|			| Contains a list of applied fare conditions.|
 | Conditions/Condition				| 1..n		|			| Details of the condition.|
 | @carrier							| 0..1		| String	| Carrier applying the condition.|
