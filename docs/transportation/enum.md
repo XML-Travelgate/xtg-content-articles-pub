@@ -3,7 +3,7 @@ title: Enum
 keywords: transportation, data structure, flights, enum
 search: Transportation - Flights - Data Structure - Enum
 sidebar: mydoc_sidebar
-permalink: /docs/transportation
+permalink: /docs/transportation/enum
 ---
 
 # Enumerate description

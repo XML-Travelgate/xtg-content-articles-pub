@@ -80,6 +80,26 @@ The data structure will always have common elements in all objects and the speci
 
 | **Element**						| **Number**| **Type**	| **Description**													|
 | --------------------------------- | --------- | ----------|------------------------------------------------------------------	|
+| auditData 					    | 0..1		|			| Returns the provider transaction logs if filterAuditData/registerTransactions has been set to true.|
+| auditData/processTimeMilliseconds | 1		    | Integer	| Time spend in the operation.|
+| auditData/timeStamp 				| 1		    | Date		| Timestamp when the operation begins.|
+| auditData/transactions 			| 1		    |			| Contains the RQ and RS of the provider transaction.|
+| auditData/transactions/RQ 		| 1		    | String	| Provider's request transaction.|
+| auditData/transactions/RS 		| 0..1		| String	| Provider's response transaction. In case of timeout/server communication failure with the provider, this field may not be returned.|
+| auditData/transactions/timeStamp 	| 1		    | Date		| Timestamp when the provider transaction begins.|
+| operationImplemented 				| 1		    | Boolean	| If true, the operation requested is implemented. Some suppliers does not have all the operations implemented. In that case, this filed will return false.|
+| ResponseStatus 					| 0..1		|			| Contains information regarding the operation executed.|
+| @direction 					    | 0..1		| String	| Direction of the journey about to checkin: OUTBOUND, INBOUND, OUTBOUND_INBOUND (Outbound and Inbound).|
+| @tripType 					    | 0..1		| String	| Indicates the travel type: one way (OW), round trip (RT), open jaw (OJ) and circle trip (CT).|
+| @status 					        | 1		    | String	| OK, ERROR, TIMEOUT.|
+| applicationErrors 				| 0..n		|			| List of errors occurred during the operation execution.|
+| applicationErrors/code 			| 0..1		| String			| Provider error code.|
+| applicationErrors/description 	| 0..1		| String			| Error description.|
+| applicationErrors/type 			| 0..1		| [Error types](/docs/transportation/error)			| API error type.|
+| Warnings 					        | 0..1		|			| Contains a list of warnings.|
+| Warnings/Warning 					| 1..n		|			| Warning occurred during the operation execution.|
+| @code 					        | 0..1		| [Error types](/docs/transportation/error)			| API Warning code.|
+| Warnings/Warning/text 			| 1		    | String	| Warning description.|
 
 
 

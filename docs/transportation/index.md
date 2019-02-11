@@ -21,6 +21,7 @@ permalink: /docs/transportation/index
    9. [Supplements](/docs/transportation/DSF/flights/supplements)
    10.  [ReservationSupplements](/docs/transportation/DSF/flights/supplementsReservation)
    11.  [Enumerates](/docs/transportation/enum)
+   12.  [Errors](/docs/transportation/error)
 3. [Ferries](/docs/transportation/ferries)
    1. [Common-Elements](/docs/transportation/DSF/ferries/common-elements)
    2. [Valuation](/docs/hotel/DSF/Valuation)
