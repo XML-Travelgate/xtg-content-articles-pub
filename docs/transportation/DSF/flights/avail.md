@@ -65,7 +65,7 @@ This method **must** be called **before** the Valuation method.
 | **Element**				| **Number**| **Type**	| **Description**																			   |
 | ------------------------- | --------- | --------- | -------------------------------------------------------------------------------------------- |
 | AvailabilityRQ        	| 1      	|			| Root node.|
-| TravelType      			| 1  		|[Trip type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#trip-type)| Indicates the travel type|
+| TripType      			| 1  		|[Trip type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#trip-type)| Indicates the travel type|
 | Journeys              	| 1      	|			| Contains a list of Journeys.|
 | Journeys/Journey      	| 1..n    	|			| Contains the information about the requested Journey in the availability.|
 | @id              			| 1  		| Integer	| Unique identifier of the Journey.|
