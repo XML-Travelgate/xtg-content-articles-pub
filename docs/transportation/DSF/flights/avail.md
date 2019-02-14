@@ -65,14 +65,14 @@ This method **must** be called **before** the Valuation method.
 | **Element**				| **Number**| **Type**	| **Description**																			   |
 | ------------------------- | --------- | --------- | -------------------------------------------------------------------------------------------- |
 | AvailabilityRQ        	| 1      	|			| Root node.|
-| @travelType      			| 1  		|[Trip type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#trip-type)| Indicates the travel type|
+| TravelType      			| 1  		|[Trip type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#trip-type)| Indicates the travel type|
 | Journeys              	| 1      	|			| Contains a list of Journeys.|
 | Journeys/Journey      	| 1..n    	|			| Contains the information about the requested Journey in the availability.|
 | @id              			| 1  		| Integer	| Unique identifier of the Journey.|
-| @departureDate   			| 1  		| String	| Departure date.|
-| @arrivalDate				| 1			| String	| Arrival date.|
-| @departureTime   			| 0..1  	| String	| Departure time.|
-| @arrivalTime				| 0..1		| String	| Arrival time.|
+| @departureDate   			| 1  		| String	| Departure date. Format: *dd/mm/yyyy*|
+| @arrivalDate				| 1			| String	| Arrival date. Any hour if empty|
+| @departureTime   			| 0..1  	| String	| Departure time. Format: *dd/mm/yyyy*|
+| @arrivalTime				| 0..1		| String	| Arrival time. Any hour if empty|
 | @action					| 0..1		|[Journey Action Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#journey-action-type)| Indicates the type of modification to be made in a reservation (works only for AvailabilityBookingModificationRQ)|
 | Journeys/Journey/AlternativeDates					| 0..1		|| Contains a range of days (before/after) the departure of the journey.|
 | @daysBefore				| 0..1		| Integer	| Range of days to travel before the departure of the journey.|
@@ -156,8 +156,8 @@ This method **must** be called **before** the Valuation method.
 | @transportationId      		| 1 		| String	| Unique Id of the transportation.|
 | @operatingCarrier      		| 1 		| String	| Company which operates the transportation.|
 | @marketingCarrier      		| 1 		| String	| Company which commercializes the transportation.|
-| @departureDate         		| 1 		| Date		| Departure date.|
-| @arrivalDate           		| 1 		| Date		| Arrival date.|
+| @departureDate         		| 1 		| Date		| Departure date. Example: 2019-04-15T18:25:00|
+| @arrivalDate           		| 1 		| Date		| Arrival date. Example: 2019-04-15T18:25:00|
 | @transportationType    		| 0..1 		| [Transport type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#transport-type)	| Transport type|
 | @transportationName    		| 0..1 		| String	| Name of the transportation.|
 | @transportationCode			| 0..1		| String	| Code of the transportation.|
@@ -166,7 +166,7 @@ This method **must** be called **before** the Valuation method.
 | @segmentDuration       		| 0..1 		| Integer	| Transport duration ( in minutes ).|
 | @segmentStatus				| 0..1		| [Status Segment type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#status-segment-type)	| Segment status|
 | @planeType             		| 0..1 		| String	| Plane type. Flights parameter.|
-| @maxCheckinDate        		| 0..1 		| String	| Maximum date to make the check-in.|
+| @maxCheckinDate        		| 0..1 		| String	| Maximum date to make the check-in. Not filled from provider's response |
 | @hasTechnicalStop      		| 0..1 		| Boolean	| If true, the segment has a technical stop.|
 | @electronicTicket      		| 0..1 		| Boolean	| If true, the segment uses a electronic ticket.| 
 | @secureFlight          		| 0..1		| Boolean	| If true, the provider requires extra information of the passengers. Flights parameter.|
@@ -198,8 +198,8 @@ This method **must** be called **before** the Valuation method.
 | @totalTechnicalStops   		| 1 		| Integer	| Total number of TechnicalStops.|
 | Transportation/Segments/Segment/<br>TechnicalStops/TechnicalStop	| 0..n || Contains the details of the TechnicalStop.|
 | @location              		| 1 		| String	| TechnicalStop location|
-| @stopDate              		| 1 		| Date		| Approx. stop date and time.|
-| @departureDate         		| 1 		| Date		| Approx. departure date and time.|
+| @stopDate              		| 1 		| Date		| Approx. stop date and time. Example: 2019-02-20T16:50:00|
+| @departureDate         		| 1 		| Date		| Approx. departure date and time. Example: 2019-02-20T16:50:00|
 | Transportation/Fares                       			| 1     	|| Contains a list of Fares.|
 | Transportation/Fares/Fare                  			| 1..n    	|| Contains details of Fare.|
 | @id                    		| 1 		| Integer	| Unique identifier of the Fare.|
@@ -235,19 +235,6 @@ This method **must** be called **before** the Valuation method.
 | @class                 		| 0..1 		| String	| Fare class.|
 | @fareBasis             		| 0..1 		| String	| Identifier of the fare.|
 | @avail                 		| 0..1 		| Integer	| Available seats remaining for this class (In flights, the maximum is 9).|
-| Transportation/Fares/Fare/Options/Option/<br>SegmentReferences/SegmentReference/<br>SegmentClasses/SegmentClass/Modifiable | 0..1 || Contains the information of the modifiable fare.|
-| @modifiable                 	| 1 		| Boolean	| If true, the fare allows this modification.|
-| @amountType                 	| 1 		| [Amount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-type)	| Modification amount type.|
-| @Description                 	| 0..1 		| String	| Modification description.|
-| @amount                 		| 0..1 		| Decimal	| Modification amount.|
-| @currency                 	| 0..1 		| String	| Modification currency.|
-| Transportation/Fares/Fare/Options/Option/<br>SegmentReferences/SegmentReference/<br>SegmentClasses/SegmentClass/<br>CancellationPolicies | 0..1 || Contains a list of CancellationPolicies.|
-| Transportation/Fares/Fare/Options/Option/<br>SegmentReferences/SegmentReference/<br>SegmentClasses/SegmentClass/<br>CancellationPolicies/CancellationPolicy | 1..n ||Contains details of the CancelationPolicy.|
-| @refundable                 	| 1 		| Boolean	| If true, the fare allows the refundation.|
-| @fromDate                 	| 0..1 		| Date		| Date of the begining of the policy.|
-| @amount                 		| 0..1 		| Decimal	| Policy amount.|
-| @currency                 	| 0..1 		| String	| Policy currency.|
-| @amountType                 	| 0..1 		| [Amount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-type)	| Policy amount type.|
 | Transportation/Fares/Fare/Options/Option/<br>SegmentReferences/SegmentReference/<br>ReservationTokens | 0..1 || Specific attribute used for each provider.|
 | Transportation/Fares/Fare/Options/Option/<br>SegmentReferences/SegmentReference/<br>ReservationTokens/Attribute | 1..n || Type of attribute.|
 | @key                   		| 1 		| String	| Contains the keyword/ Id to identify a parameter.|
@@ -322,9 +309,6 @@ This method **must** be called **before** the Valuation method.
 | @maxAmountPercentage          | 0..1 		| Decimal| Maximal percentage amount.|
 | @percentage             		| 0..1 		| Decimal| Total percentage amount.|
 | @percentageApplied            | 0..1 		| [Amount Applies To Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-applies-to-type)| The percentage amount application|
-| Transportation/Fares/Fare/Options/Option/<br>Emissions  				| 0..1     	|| Contains a list of Issuances.|
-| Transportation/Fares/Fare/Options/Option/<br>Emissions/Emission  		| 1..n     	|| Contains the key of the Issuance.|
-| @key							| 1			| String	| Key of the Issuance.|
 | Transportation/Fares/Fare/<br>AmountBreakdown  		| 1     	|| Breakdown of the fare amount.|
 | @currency              		| 1 		| String	| Currency code of the fare.|
 | @totalAmount           		| 1 		| Decimal	| Total amount. with taxes and other charges included.|
@@ -349,7 +333,7 @@ This method **must** be called **before** the Valuation method.
 | @paxType               		| 1 		| [Passenger Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#passenger-type)	| Passenger type|
 | @amount                		| 1 		| Decimal	| Total amount, with taxes included, associated to the passenger.|
 | @taxes                 		| 1 		| Decimal	| If they exist, taxes are applied for this passenger type.|
-| @tasaDU                		| 0..1 		| Decimal	| DU taxes.|
+| @duTax                		| 0..1 		| Decimal	| DU taxes.|
 | @fees                			| 0..1 		| Decimal	| Fees.|
 | Transportation/Fares/Fare/<br>AmountBreakdown/PaxBreakdowns/<br>PaxBreakdown/Taxes | 0..1 || Contains a list of Taxes.|
 | Transportation/Fares/Fare/<br>AmountBreakdown/PaxBreakdowns/<br>PaxBreakdown/Taxes/Tax | 1..n || Code and amount of each tax.|
@@ -361,7 +345,7 @@ This method **must** be called **before** the Valuation method.
 | @paxRef                		| 1 		| Integer	| Reference to the passenger Id from the request.|
 | @paxType               		| 1 		| [Passenger Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#passenger-type)	| Passenger type based on the age of the passenger.|
 | @age                   		| 0..1 		| Integer	| Age of the passenger.|
-| @nacionality                  | 0..1 		| String	| Nacionality of the passenger.|
+| @nationality                  | 0..1 		| String	| Nationality of the passenger.|
 | Transportation/Fares/Fare/<br>PaxConfigurations/PaxConfiguration/<br>AppliedBonuses | 0..1 || Applied discounts.|
 | @resident              		| 0..1 		| [Resident Discount Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#resident-discount-type)	| Resident discount type|
 | @largeFamily           		| 0..1 		| [Large Family Discount Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#passenger-type)	| Family discount type|
@@ -373,9 +357,8 @@ This method **must** be called **before** the Valuation method.
 | @code							| 0..1		| String	| Discount card code.|
 | @id							| 0..1		| String	| Unique identifier of discound card.|
 | Fares/Fare/PaxConfigurations<br>/PaxConfiguration/PaxConfiguration/<br>AppliedBonuses/PaxTypeCodes		| 0..1	|| Contains a list of PaxTypeCodes.|
-| Transportation/Fares/Fare/<br>PaxConfigurations/PaxConfiguration/<br>AppliedBonuses/PaxTypeCodes/<br>PaxTypeCode	| 1..n	|| Contains the code type of the passenger.|
+| Transportation/Fares/Fare/<br>PaxConfigurations/PaxConfiguration/<br>AppliedBonuses/PaxTypeCodes/<br>PaxTypeCode	| 1..n	|| Contains the discount code of the passenger.|
 | @code							| 1			| String	| Discounts by passenger type|
-
 
 ### Detailed description
 
@@ -441,7 +424,8 @@ Search for 1 journey with 1 adult (ADT), 1 child (CHD) and 1 infant (INF).
 AvailabilityRQ:
 
 ~~~xml
-<AvailabilityRQ travelType="OW">
+<AvailabilityRQ>
+    <TravelType>OW</TravelType>
 	<Journeys>
 		<Journey id="0" departureDate="18/12/2018" departureTime="" action="N">
 			<OriginLoc type="A" code="PMI" cityCode="false"/>
@@ -532,9 +516,9 @@ AvailabilityRS:
 				<AmountBreakdown currency="EUR" totalAmount="98.23" nonCommissionableAmount="0" commission="-1">
 					<ChargeBreakdowns/>
 					<PaxBreakdowns>
-						<PaxBreakdown paxType="ADT" amount="45.01" taxes="10.01" fees="0" tasaDU="0"/>
-						<PaxBreakdown paxType="CHD" amount="45.01" taxes="10.01" fees="0" tasaDU="0"/>
-						<PaxBreakdown paxType="INF" amount="8.21" taxes="8.21" fees="0" tasaDU="0"/>
+						<PaxBreakdown paxType="ADT" amount="45.01" taxes="10.01" fees="0" duTax="0"/>
+						<PaxBreakdown paxType="CHD" amount="45.01" taxes="10.01" fees="0" duTax="0"/>
+						<PaxBreakdown paxType="INF" amount="8.21" taxes="8.21" fees="0" duTax="0"/>
 					</PaxBreakdowns>
 				</AmountBreakdown>
 				<PaxConfigurations>
@@ -655,9 +639,9 @@ AvailabilityRS:
 				<AmountBreakdown currency="EUR" totalAmount="126.66" nonCommissionableAmount="0" commission="-1">
 					<ChargeBreakdowns/>
 					<PaxBreakdowns>
-						<PaxBreakdown paxType="ADT" amount="51.22" taxes="20.22" fees="0" tasaDU="0"/>
-						<PaxBreakdown paxType="CHD" amount="51.22" taxes="20.22" fees="0" tasaDU="0"/>
-						<PaxBreakdown paxType="INF" amount="24.22" taxes="20.22" fees="0" tasaDU="0"/>
+						<PaxBreakdown paxType="ADT" amount="51.22" taxes="20.22" fees="0" duTax="0"/>
+						<PaxBreakdown paxType="CHD" amount="51.22" taxes="20.22" fees="0" duTax="0"/>
+						<PaxBreakdown paxType="INF" amount="24.22" taxes="20.22" fees="0" duTax="0"/>
 					</PaxBreakdowns>
 				</AmountBreakdown>
 				<PaxConfigurations>
@@ -784,7 +768,7 @@ AvailabilityRS:
         <AmountBreakdown currency="EUR" totalAmount="90.02" nonCommissionableAmount="0" commission="-1">
           <ChargeBreakdowns/>
           <PaxBreakdowns>
-            <PaxBreakdown paxType="ADT" amount="45.01" taxes="10.01" fees="0" tasaDU="0"/>
+            <PaxBreakdown paxType="ADT" amount="45.01" taxes="10.01" fees="0" duTax="0"/>
           </PaxBreakdowns>
         </AmountBreakdown>
         <PaxConfigurations>
@@ -842,7 +826,7 @@ AvailabilityRS:
         <AmountBreakdown currency="EUR" totalAmount="220.64" nonCommissionableAmount="0" commission="-1">
           <ChargeBreakdowns/>
           <PaxBreakdowns>
-            <PaxBreakdown paxType="ADT" amount="110.32" taxes="20.32" fees="0" tasaDU="0"/>
+            <PaxBreakdown paxType="ADT" amount="110.32" taxes="20.32" fees="0" duTax="0"/>
           </PaxBreakdowns>
         </AmountBreakdown>
         <PaxConfigurations>
@@ -984,7 +968,7 @@ AvailabilityRS:
         <AmountBreakdown currency="EUR" totalAmount="196.24" nonCommissionableAmount="0" commission="-1">
           <ChargeBreakdowns/>
           <PaxBreakdowns>
-            <PaxBreakdown paxType="ADT" amount="98.12" taxes="28.12" fees="0" tasaDU="0"/>
+            <PaxBreakdown paxType="ADT" amount="98.12" taxes="28.12" fees="0" duTax="0"/>
           </PaxBreakdowns>
         </AmountBreakdown>
         <PaxConfigurations>

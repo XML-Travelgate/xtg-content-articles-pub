@@ -40,27 +40,27 @@ Not implemented by all suppliers
 | RetrieveReservationListRQ         | 1    		|			| Root node.|
 | ReservationDate                   | 0..1 		| Date		| Reservation date.|
 | DepartureDate                     | 0..1 		| Date		| First journey departure date.|
-| fechaReservaDesde                 | 0..1 		| Date		| .|
-| fechaReservaHasta                 | 0..1 		| Date		| .|
-| fechaSalidaDesde                  | 0..1 		| Date		| .|
-| fechaSalidaHasta                  | 0..1 		| Date		| .|
+| ReservationDateFrom                 | 0..1 		| Date		|Search by reservation date range: form reservation's date. Example: 2019-04-15T18:25:00|
+| ReservationDateTo                 | 0..1 		| Date		| Search by reservation date range: to reservation's date. Example: 2019-04-15T18:25:00|
+| DepartureDateFrom                  | 0..1 		| Date		|Search by departure date range: form departure's date. Example: 2019-04-15T18:25:00|
+| DepartureDateTo                  | 0..1 		| Date		| Search by departure date range: to departure's date. Example: 2019-04-15T18:25:00|
 | ClientEmail                       | 0..1 		| String	| Email.|
-| OriginCode                       	| 0..1 		| String	| First journey origin code.|
-| DestinationCode                   | 0..1 		| String	| First journey destination code.|
+| OriginCode                       	| 0..1 		| String	| First journey origin code (IATA).|
+| DestinationCode                   | 0..1 		| String	| First journey destination code (IATA).|
 | AgencyCode                       	| 0..1 		| String	| Agency code.|
-| numTransporte                     | 0..1 		| String	| .|
+| TransportationId                     | 0..1 		| String	| The id of transportation. Ex: FR2022|
 | Passenger							| 0..1 		|			| Contains information of the Passenger.|
 | @id								| 0..1  	| Integer	| Unique identifier of the passenger.|
 | @title							| 0..1  	|[Title type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#title-type)|Title type|
 | @name								| 1  		| String 	| Name of the Passenger.|
 | @surname        					| 1  		| String 	| Surname/s of the Passenger.|
-| @bithDate							| 0..1  	| Date 		| Date of birth.|
+| @birthDate							| 0..1  	| Date 		| Date of birth. Example: 2019-04-15T18:25:00|
 | @codeDCO     						| 0..1  	| Integer 	| Consolidate document number.|
 | @documentType						| 0..1  	|[Document type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#document-type)|Document type.|
 | @documentId						| 0..1  	| String 	| Unique identifier of the documentation.|
-| @documentExpiration  				| 0..1		| Date 		| Expiration date of the documentation.|
-| @documentExpedition  				| 0..1		| Date 		| Expedition date of the documentation.|
-| @nationality						| 0..1  	| String 	| Nationality.|
+| @documentExpiration  				| 0..1		| Date 		| Expiration date of the documentation. Example: 2019-04-15T18:25:00|
+| @documentExpedition  				| 0..1		| Date 		| Expedition date of the documentation. Example: 2019-04-15T18:25:00|
+| @nationality						| 0..1  	| String 	| Nationality. ISO 3166-1 Alpha-2 Code|
 | @gender							| 0..1  	| Char		| Gender.|
 | @language							| 0..1  	| String 	| Language.|
 

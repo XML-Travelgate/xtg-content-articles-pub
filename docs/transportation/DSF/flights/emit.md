@@ -48,7 +48,7 @@ Not all suppliers need to issue the tickets. For some suppliers, the payment inf
 | @expirationYear           		| 1  		| String 	| Expiration year.|
 | @holder                   		| 0..1  	| String 	| Holder.|
 | @cvv                      		| 0..1  	| String 	| Verification code.|
-| PaymentInfo/PaymentDatas/<br>PaymentData/InstallmentsNumber | 0..1  	|| Number of installments.|
+| PaymentInfo/PaymentDatas/<br>PaymentData/InstalmentsNumber | 0..1  	|| Number of instalments.|
 | PaymentInfo/PaymentDatas/<br>PaymentData/Amount			| 0..1  	|| Contains a list of Amount.|
 | PaymentInfo/PaymentDatas/<br>PaymentData/Amount/<br>Amount| 1..n  	|| Amount by type. It is used to specify for example the Service Fees associated to a credit card.|
 | @currency           				| 1  		| String 	| Currency.|
@@ -68,13 +68,13 @@ Not all suppliers need to issue the tickets. For some suppliers, the payment inf
 | @title							| 1  		|[Title type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#title-type)|Title type|
 | @name								| 1  		| String 	| Name of the Passenger.|
 | @surname        					| 1  		| String 	| Surname/s of the Passenger.|
-| @bithDate							| 1  		| Date 		| Date of birth.|
+| @bithDate							| 1  		| Date 		| Date of birth. Example: 2019-04-15T18:25:00|
 | @codeDCO     						| 0..1  	| Integer 	| Consolidate document number.|
 | @documentType						| 0..1  	|[Document type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#document-type)|Document type.|
 | @documentId						| 0..1  	| String 	| Unique identifier of the documentation.|
-| @documentExpiration  				| 0..1		| Date 		| Expiration date of the documentation.|
-| @documentExpedition  				| 0..1		| Date 		| Expedition date of the documentation.|
-| @nationality						| 0..1  	| String 	| Nationality.|
+| @documentExpiration  				| 0..1		| Date 		| Expiration date of the documentation. Example: 2019-04-15T18:25:00|
+| @documentExpedition  				| 0..1		| Date 		| Expedition date of the documentation. Example: 2019-04-15T18:25:00|
+| @nationality						| 0..1  	| String 	| Nationality. ISO 3166-1 Alpha-2 Code|
 | @gender							| 0..1  	| Char		| Gender.|
 | @language							| 0..1  	| String 	| Language.|
 | Passengers/Passenger/PaxBonusDetails 						| 0..1  || Contains details of the Passenger bonus.|
@@ -225,8 +225,8 @@ Not all suppliers need to issue the tickets. For some suppliers, the payment inf
 | Invoice							| 0..1		|			| Detailed pricing information.|
 | @carrier							| 0..1		| String	| Fare carrier.|
 | @agencyCode						| 0..1		| String	| Agency code.|
-| @installmentsNum					| 0..1		| Integer	| Number of installments in which the amount will be charged to the credit card.|
-| @lastTicketingDateUTC				| 0..1		| Date		| Maximum date allowed to make the ticket emission (in UTC format)|
+| @instalmentsNum					| 0..1		| Integer	| Number of instalments in which the amount will be charged to the credit card.|
+| @lastTicketingDateUTC				| 0..1		| Date		| Maximum date allowed to make the ticket emission (in UTC format if filled)|
 | Invoice/AmountBreakdown			| 1			|			| Breakdown of the fare amount.|
 | @currency              			| 1 		| String	| Currency code of the fare.|
 | @totalAmount           			| 1 		| Decimal	| Total amount. with taxes and other charges included.	|

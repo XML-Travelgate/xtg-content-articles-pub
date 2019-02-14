@@ -45,7 +45,7 @@ Not implemented by all suppliers
 | @carrier							| 0..1		| String	| Carrier applying the condition.|
 | @code								| 0..1		| String	| Code of the condition.|
 | @id								| 0..1		| String	| Unique id of the condition.|
-| @language							| 0..1		| String	| Language in which the condition is written.|
+| @language							| 0..1		| String	| Language in which the condition is written. ISO 639-1: two-letter codes |
 | Itineraries/Itinerary/Conditions/<br>Condition/Text		| 0..1 || Description of the condition.|
 | Itineraries/Itinerary/Conditions/<br>Condition/Paragraph	| 0..n || List of Sentences and titles.|
 | @title							| 0..1		| String	| Title content.|
@@ -55,8 +55,8 @@ Not implemented by all suppliers
 | @id								| 1 		| Integer	| Unique identifier of the Journey in scope.|
 | @duration							| 0..1 		| Integer	| Duration of the Journey in minutes. |
 | @familyFare						| 0..1 		| String	| Family fare name of the Journey.|
-| @checkinStart						| 0..1 		| Date		| Checkin start date.|
-| @checkinEnd						| 0..1 		| Date		| Checkin end date.|
+| @checkinStart						| 0..1 		| Date		| Checkin start date. Example: 2019-04-15T18:25:00|
+| @checkinEnd						| 0..1 		| Date		| Checkin end date. Example: 2019-04-15T18:25:00|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments		| 1 || Contains a list of Segments associated to the Journey.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment | 1..n   || Contains details of the SegmentInfo.|
 | @id								| 1 		| Integer	| Unique SegmentInfo identifier.|
@@ -65,8 +65,8 @@ Not implemented by all suppliers
 | @transportationId					| 1 		| String	| Unique Id of the transportation.|
 | @operatingCarrier      			| 1 		| String	| Company which operates the transportation.|
 | @marketingCarrier      			| 1 		| String	| Company which commercializes the transportation.|
-| @departureDate         			| 1 		| Date		| Departure date.|
-| @arrivalDate           			| 1 		| Date		| Arrival date.|
+| @departureDate         			| 1 		| Date		| Departure date. Example: 2019-04-15T18:25:00|
+| @arrivalDate           			| 1 		| Date		| Arrival date. Example: 2019-04-15T18:25:00|
 | @transportationType    			| 0..1 		| [Transport type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#transportation-type)	| Transport type|
 | @transportationName    			| 0..1 		| String	| Name of the transportation.|
 | @transportationCode				| 0..1		| String	| Code of the transportation.|
@@ -75,7 +75,7 @@ Not implemented by all suppliers
 | @segmentDuration       			| 0..1 		| Integer	| Transport duration ( in minutes ).|
 | @segmentStatus					| 0..1		|[Segment Status type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#segment-status-type)|Segment Status type|
 | @planeType						| 0..1 		| String	| Plane type. Flights parameter.|
-| @maxCheckinDate					| 0..1 		| Date		| Maximum date to make the check-in.|
+| @maxCheckinDate					| 0..1 		| Date		| Maximum date to make the check-in. Not filled from provider's response|
 | @hasTechnicalStop					| 0..1		| Boolean	| If true, the segment has a technical stop.|
 | @electronicTicket      			| 0..1 		| Boolean	| If true, the segment uses a electronic ticket.|
 | @secureFlight          			| 0..1		| Boolean	| If true, the provider requires extra information of the passengers. Flights parameter.|
@@ -107,8 +107,8 @@ Not implemented by all suppliers
 | @totalTechnicalStops				| 1 		| Integer	| Total number of TechnicalStops.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/TechnicalStops/<br>TechnicalStop | 0..n || Contains the details of the TechnicalStop.|
 | @location							| 1 		| String	| TechnicalStop location.|
-| @stopDate							| 1 		| Date		| Approx. stop date and time.|
-| @departureDate					| 1 		| Date		| Approx. departure date and time.|
+| @stopDate							| 1 		| Date		| Approx. stop date and time. Example: 2019-04-15T18:25:00|
+| @departureDate					| 1 		| Date		| Approx. departure date and time. Example: 2019-04-15T18:25:00|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses | 1 | | Contains a list of SegmentClasses.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass | 1..n || Contains details of the SegmentClass.|
 | @cabinClass            			| 1 		|[Cabin Class type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#cabin-class-type)|Cabin class type of the seat|
@@ -126,7 +126,7 @@ Not implemented by all suppliers
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass/CancellationPolicies | 0..1 || Contains a list of CancellationPolicies.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass/CancellationPolicies/<br>CancellationPolicy | 1..n ||Contains details of the CancelationPolicy.	|
 | @refundable                 		| 1 		| Boolean	| If true, the fare allows the refundation.|
-| @fromDate                 		| 0..1 		| Date		| Date of the begining of the policy.|
+| @fromDate                 		| 0..1 		| Date		| Date of the begining of the policy. Example: 2019-04-15T18:25:00|
 | @amount                 			| 0..1 		| Decimal	| Policy amount.|
 | @currency                 		| 0..1 		| String	| Policy currency.|
 | @amountType                 		| 0..1 		| [Amount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-type) 	| Policy amount type|
@@ -135,8 +135,8 @@ Not implemented by all suppliers
 | @key								| 1 		| String	| Contains the keyword/ Id to identify a parameter.|
 | @value							| 1 		| String	| Contains the value of the parameter.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/CheckinInformation | 0..1 || Checkin information.|
-| @openingTime						| 0..1 		| Date		| Checkin opening time.|
-| @closingTime						| 0..1 		| Date		| Checkin closing time.|
+| @openingTime						| 0..1 		| Date		| Checkin opening time. Example: 2019-04-15T18:25:00|
+| @closingTime						| 0..1 		| Date		| Checkin closing time. Example: 2019-04-15T18:25:00|
 | @estimatedCheckinTime				| 0..1 		| Date		| Estimated checkin time.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/CheckinInformation/<br>Status | 0..1 || Status checkin information.|
 | @isAvailable						| 0..1 		| Boolean	| If true, the cheking is available.|
@@ -154,7 +154,7 @@ Not implemented by all suppliers
 | @included							| 0..1		| Boolean	| If true, the charge is included to the total fare amount.|
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakdowns/ChargeBreakdown<br>/Concept | 0..1 || Contains details of the charge.|
 | @id                    			| 0..1 		| String	| Unique id of the Concept.|
-| @language              			| 0..1 		| String	| Language.|
+| @language              			| 0..1 		| String	| Language. ISO 639-1: two-letter codes |
 | @carrier              			| 0..1 		| String	| Carrier.|
 | @code              				| 0..1 		| String	| Concept code.|
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakDowns/ChargeBreakdown<br>/Concept/Text | 0..1 | String | Remarks.|
@@ -178,7 +178,7 @@ Not implemented by all suppliers
 | @paxRef                			| 1 		| Integer	| Reference to the passenger Id from the request.|
 | @paxType               			| 1 		|[Passenger type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#passenger-type)|Passenger type based on the age of the passenger.|
 | @age                   			| 0..1 		| Integer	| Age of the passenger.|
-| @nacionality						| 0..1 		| String	| Nacionality of the passenger.|
+| @nationality						| 0..1 		| String	| Nationality of the passenger.|
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses | 0..1 || Applied discounts.|
 | @resident              			| 0..1 		|[Resident discount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#resident-discount-type)|Resident discount type.|
 | @largeFamily           			| 0..1 		|[Large Family discount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#large-family-discount-type)|Large family discount type|
@@ -201,15 +201,15 @@ Not implemented by all suppliers
 | @title							| 1  		|[Title type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#title-type)|Title type|
 | @name								| 1  		| String 	| Name of the Passenger.|
 | @surname        					| 1  		| String 	| Surname/s of the Passenger.|
-| @bithDate							| 1  		| Date 		| Date of birth.|
+| @bithDate							| 1  		| Date 		| Date of birth. Example: 2019-04-15T18:25:00|
 | @codeDCO     						| 0..1  	| Integer 	| Consolidate document number.|
 | @documentType						| 0..1  	|[Document type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#document-type)|Document type.|
 | @documentId						| 0..1  	| String 	| Unique identifier of the documentation.|
-| @documentExpiration  				| 0..1		| Date 		| Expiration date of the documentation.|
-| @documentExpedition  				| 0..1		| Date 		| Expedition date of the documentation.|
-| @nationality						| 0..1  	| String 	| Nationality.|
+| @documentExpiration  				| 0..1		| Date 		| Expiration date of the documentation. Example: 2019-04-15T18:25:00|
+| @documentExpedition  				| 0..1		| Date 		| Expedition date of the documentation. Example: 2019-04-15T18:25:00|
+| @nationality						| 0..1  	| String 	| Nationality. ISO 3166-1 Alpha-2 Code|
 | @gender							| 0..1  	| Char		| Gender.|
-| @language							| 0..1  	| String 	| Language.|
+| @language							| 0..1  	| String 	| Language.  ISO 639-1: two-letter codes |
 | Passengers/Passenger/PaxBonusDetails 						| 0..1  || Contains details of the Passenger bonus.|
 | Passengers/Passenger/PaxBonusDetails/<br>AppliedBonuses	| 0..1  || Contains details of the applied bonus.|
 | @resident              			| 0..1 		|[Resident discount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#resident-discount-type)|Resident discount type.|
@@ -367,7 +367,7 @@ Not implemented by all suppliers
 | @expirationYear           		| 1  		| String 	| Expiration year.|
 | @holder                   		| 0..1  	| String 	| Holder.|
 | @cvv                      		| 0..1  	| String 	| Verification code.|
-| PaymentInfo/PaymentDatas/<br>PaymentData/InstallmentsNumber | 0..1  	|| Number of installments.|
+| PaymentInfo/PaymentDatas/<br>PaymentData/InstalmentsNumber | 0..1  	|| Number of instalments.|
 | PaymentInfo/PaymentDatas/<br>PaymentData/Amount			| 0..1  	|| Contains a list of Amount.|
 | PaymentInfo/PaymentDatas/<br>PaymentData/Amount/<br>Amount| 1..n  	|| Amount by type. It is used to specify for example the Service Fees associated to a credit card.|
 | @currency           				| 1  		| String 	| Currency.|
@@ -404,8 +404,8 @@ Not implemented by all suppliers
 | Invoice							| 1			|			| Detailed pricing information.|
 | @carrier							| 0..1		| String	| Fare carrier.|
 | @agencyCode						| 0..1		| String	| Agency code.|
-| @installmentsNum					| 0..1		| Integer	| Number of installments in which the amount will be charged to the credit card.|
-| @lastTicketingDateUTC				| 0..1		| Date		| Maximum date allowed to make the ticket emission (in UTC format)|
+| @instalmentsNum					| 0..1		| Integer	| Number of instalments in which the amount will be charged to the credit card.|
+| @lastTicketingDateUTC				| 0..1		| Date		| Maximum date allowed to make the ticket emission (in UTC format if filled) Example: 2019-04-15T18:25:00+04:00|
 | Invoice/AmountBreakdown			| 1			|			| Breakdown of the fare amount.|
 | @currency              			| 1 		| String	| Currency code of the fare.|
 | @totalAmount           			| 1 		| Decimal	| Total amount. with taxes and other charges included.	|
@@ -418,7 +418,7 @@ Not implemented by all suppliers
 | @included							| 0..1		| Boolean	| If true, the charge is included to the total fare amount.|
 | Invoice/AmountBreakdown/<br>ChargeBreakdowns/<br>ChargeBreakdown/Concept | 0..1 || Contains details of the charge.|
 | @id                    			| 0..1 		| String	| Unique id of the Concept.|
-| @language              			| 0..1 		| String	| Language.|
+| @language              			| 0..1 		| String	| Language. ISO 639-1: two-letter codes |
 | @carrier              			| 0..1 		| String	| Carrier.|
 | @code              				| 0..1 		| String	| Concept code.|
 | Invoice/AmountBreakdown/<br>ChargeBreakDowns/<br>ChargeBreakdown/Concept/Text | 0..1 | String | Remarks|

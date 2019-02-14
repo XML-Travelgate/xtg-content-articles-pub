@@ -124,7 +124,7 @@ permalink: /docs/transportation/enum
 | RETURN | Inbound |
 | DEPARTURE_RETURN | Outbound and Inbound|
 
-##### Status response type
+##### Response Status type
 
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |

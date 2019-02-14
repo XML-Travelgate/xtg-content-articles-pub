@@ -86,8 +86,8 @@ the selected Option.
 | @id								| 1 		| Integer	| Unique identifier of the Journey in scope.|
 | @duration							| 0..1 		| Integer	| Duration of the Journey in minutes. |
 | @familyFare						| 0..1 		| String	| Family fare name of the Journey.|
-| @checkinStart						| 0..1 		| Date		| Checkin start date.|
-| @checkinEnd						| 0..1 		| Date		| Checkin end date.|
+| @checkinStart						| 0..1 		| Date		| Checkin start date. Example: 2019-04-15T18:25:00|
+| @checkinEnd						| 0..1 		| Date		| Checkin end date. Example: 2019-04-15T18:25:00|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments		| 1 || Contains a list of Segments associated to the Journey.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment | 1..n   || Contains details of the SegmentInfo.|
 | @id								| 1 		| Integer	| Unique SegmentInfo identifier.|
@@ -96,8 +96,8 @@ the selected Option.
 | @transportationId					| 1 		| String	| Unique Id of the transportation.|
 | @operatingCarrier      			| 1 		| String	| Company which operates the transportation.|
 | @marketingCarrier      			| 1 		| String	| Company which commercializes the transportation.|
-| @departureDate         			| 1 		| Date		| Departure date.|
-| @arrivalDate           			| 1 		| Date		| Arrival date.|
+| @departureDate         			| 1 		| Date		| Departure date. Example: 2019-04-15T18:25:00|
+| @arrivalDate           			| 1 		| Date		| Arrival date. Example: 2019-04-15T18:25:00|
 | @transportationType    			| 0..1 		| [Transport type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#transportation-type)	| Transport type|
 | @transportationName    			| 0..1 		| String	| Name of the transportation.|
 | @transportationCode				| 0..1		| String	| Code of the transportation.|
@@ -106,7 +106,7 @@ the selected Option.
 | @segmentDuration       			| 0..1 		| Integer	| Transport duration ( in minutes ).|
 | @segmentStatus					| 0..1		| [Segment Status type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#segment-status-type)	| Segment Status|
 | @planeType						| 0..1 		| String	| Plane type. Flights parameter.|
-| @maxCheckinDate					| 0..1 		| Date		| Maximum date to make the check-in.|
+| @maxCheckinDate					| 0..1 		| Date		| Maximum date to make the check-in. Not filled by integrations|
 | @hasTechnicalStop					| 0..1		| Boolean	| If true, the segment has a technical stop.|
 | @electronicTicket      			| 0..1 		| Boolean	| If true, the segment uses a electronic ticket.|
 | @secureFlight          			| 0..1		| Boolean	| If true, the provider requires extra information of the passengers. Flights parameter.|
@@ -138,8 +138,8 @@ the selected Option.
 | @totalTechnicalStops				| 1 		| Integer	| Total number of TechnicalStops.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/TechnicalStops/<br>TechnicalStop | 0..n || Contains the details of the TechnicalStop.|
 | @location							| 1 		| String	| TechnicalStop location.|
-| @stopDate							| 1 		| Date		| Approx. stop date and time.|
-| @departureDate					| 1 		| Date		| Approx. departure date and time.|
+| @stopDate							| 1 		| Date		| Approx. stop date and time. Example: 2019-04-15T18:25:00|
+| @departureDate					| 1 		| Date		| Approx. departure date and time. Example: 2019-04-15T18:25:00|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses | 1 | | Contains a list of SegmentClasses.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass | 1..n || Contains details of the SegmentClass.|
 | @cabinClass            			| 1 		| [Cabin Class type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#cabin-class-type)	| Cabin class of the seat|
@@ -157,7 +157,7 @@ the selected Option.
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass/CancellationPolicies | 0..1 || Contains a list of CancellationPolicies.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass/CancellationPolicies/<br>CancellationPolicy | 1..n ||Contains details of the CancelationPolicy.	|
 | @refundable                 		| 1 		| Boolean	| If true, the fare allows the refundation.|
-| @fromDate                 		| 0..1 		| Date		| Date of the begining of the policy.|
+| @fromDate                 		| 0..1 		| Date		| Date of the begining of the policy. Example: 2019-04-15T18:25:00|
 | @amount                 			| 0..1 		| Decimal	| Policy amount.|
 | @currency                 		| 0..1 		| String	| Policy currency.|
 | @amountType                 		| 0..1 		| [Amount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-type)	| Policy amount type|
@@ -166,8 +166,8 @@ the selected Option.
 | @key								| 1 		| String	| Contains the keyword/ Id to identify a parameter.|
 | @value							| 1 		| String	| Contains the value of the parameter.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/CheckinInformation | 0..1 || Checkin information.|
-| @openingTime						| 0..1 		| Date		| Checkin opening time.|
-| @closingTime						| 0..1 		| Date		| Checkin closing time.|
+| @openingTime						| 0..1 		| Date		| Checkin opening time. Example: 2019-04-15T18:25:00|
+| @closingTime						| 0..1 		| Date		| Checkin closing time. Example: 2019-04-15T18:25:00|
 | @estimatedCheckinTime				| 0..1 		| Date		| Estimated checkin time.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/CheckinInformation/<br>Status | 0..1 || Status checkin information.|
 | @isAvailable						| 0..1 		| Boolean	| If true, the cheking is available.|
@@ -209,7 +209,7 @@ the selected Option.
 | @paxRef                			| 1 		| Integer	| Reference to the passenger Id from the request.|
 | @paxType               			| 1 		| [Passenger type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#passenger-type)	| Passenger type based on the age of the passenger.|
 | @age                   			| 0..1 		| Integer	| Age of the passenger.|
-| @nacionality						| 0..1 		| String	| Nacionality of the passenger.|
+| @nationality						| 0..1 		| String	| Nationality of the passenger.|
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses | 0..1 || Applied discounts.|
 | @resident              			| 0..1 		| [Resident discount type.](#reservation-enumerate-description)	| Resident discount type|
 | @largeFamily           			| 0..1 		| [Large Family discount type.](#reservation-enumerate-description)	| Family discount type.|
@@ -233,7 +233,7 @@ the selected Option.
 | @extendedFareRules				| 0..1		| Boolean	| If true, the Valuation will return a list of detailed fare rules of the Itineraries.|
 | @summarizedFareRules				| 0..1		| Boolean	| If true, the Valuation will return a list of summarired fare rules of the Itineraries.|
 | @seating							| 0..1		| Boolean	| If true, the Valuation will return the list of seats available in the plane.|
-| @installments						| 0..1		| Boolean	| If true, the Valuation will return the list of partial payment rules (installments) available for the Itineraries.|
+| @paymentByInstalments| 0..1		| Boolean	| If true, the Valuation will return the list of partial payment rules (instalments) available for the Itineraries.|
 
 
 
@@ -265,8 +265,8 @@ the selected Option.
 | @id								| 1 		| Integer	| Unique identifier of the Journey in scope.|
 | @duration							| 0..1 		| Integer	| Duration of the Journey in minutes. |
 | @familyFare						| 0..1 		| String	| Family fare name of the Journey.|
-| @checkinStart						| 0..1 		| Date		| Checkin start date.|
-| @checkinEnd						| 0..1 		| Date		| Checkin end date.|
+| @checkinStart						| 0..1 		| Date		| Checkin start date. Example: 2019-04-15T18:25:00|
+| @checkinEnd						| 0..1 		| Date		| Checkin end date. Example: 2019-04-15T18:25:00|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments		| 1 || Contains a list of Segments associated to the Journey.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment | 1..n   || Contains details of the SegmentInfo.|
 | @id								| 1 		| Integer	| Unique SegmentInfo identifier.|
@@ -275,8 +275,8 @@ the selected Option.
 | @transportationId					| 1 		| String	| Unique Id of the transportation.|
 | @operatingCarrier      			| 1 		| String	| Company which operates the transportation.|
 | @marketingCarrier      			| 1 		| String	| Company which commercializes the transportation.|
-| @departureDate         			| 1 		| Date		| Departure date.|
-| @arrivalDate           			| 1 		| Date		| Arrival date.|
+| @departureDate         			| 1 		| Date		| Departure date. Example: 2019-04-15T18:25:00|
+| @arrivalDate           			| 1 		| Date		| Arrival date. Example: 2019-04-15T18:25:00|
 | @transportationType    			| 0..1 		| [Transport type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#transport-type)	| Transport type.|
 | @transportationName    			| 0..1 		| String	| Name of the transportation.|
 | @transportationCode				| 0..1		| String	| Code of the transportation.|
@@ -285,7 +285,7 @@ the selected Option.
 | @segmentDuration       			| 0..1 		| Integer	| Transport duration ( in minutes ).|
 | @segmentStatus					| 0..1		| [Segment Status type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#status-segment-type)	| Segment status.|
 | @planeType						| 0..1 		| String	| Plane type. Flights parameter.|
-| @maxCheckinDate					| 0..1 		| Date		| Maximum date to make the check-in.|
+| @maxCheckinDate					| 0..1 		| Date		| Maximum date to make the check-in. Not filled from provider's response|
 | @hasTechnicalStop					| 0..1		| Boolean	| If true, the segment has a technical stop.|
 | @electronicTicket      			| 0..1 		| Boolean	| If true, the segment uses a electronic ticket.|
 | @secureFlight          			| 0..1		| Boolean	| If true, the provider requires extra information of the passengers. Flights parameter.|
@@ -317,8 +317,8 @@ the selected Option.
 | @totalTechnicalStops				| 1 		| Integer	| Total number of TechnicalStops.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/TechnicalStops/<br>TechnicalStop | 0..n || Contains the details of the TechnicalStop.|
 | @location							| 1 		| String	| TechnicalStop location.|
-| @stopDate							| 1 		| Date		| Approx. stop date and time.|
-| @departureDate					| 1 		| Date		| Approx. departure date and time.|
+| @stopDate							| 1 		| Date		| Approx. stop date and time. Example: 2019-04-15T18:25:00|
+| @departureDate					| 1 		| Date		| Approx. departure date and time. Example: 2019-04-15T18:25:00|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses | 1 | | Contains a list of SegmentClasses.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass | 1..n || Contains details of the SegmentClass.|
 | @cabinClass            			| 1 		| [Cabin Class type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#cabin-class-type)	| Cabin class of the seat|
@@ -336,7 +336,7 @@ the selected Option.
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass/CancellationPolicies | 0..1 || Contains a list of CancellationPolicies.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/SegmentClasses/<br>SegmentClass/CancellationPolicies/<br>CancellationPolicy | 1..n ||Contains details of the CancelationPolicy.	|
 | @refundable                 		| 1 		| Boolean	| If true, the fare allows the refundation.|
-| @fromDate                 		| 0..1 		| Date		| Date of the begining of the policy.|
+| @fromDate                 		| 0..1 		| Date		| Date of the begining of the policy. Example: 2019-04-15T18:25:00|
 | @amount                 			| 0..1 		| Decimal	| Policy amount.|
 | @currency                 		| 0..1 		| String	| Policy currency.|
 | @amountType                 		| 0..1 		| [Amount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-type)	| Policy amount type|
@@ -345,9 +345,9 @@ the selected Option.
 | @key								| 1 		| String	| Contains the keyword/ Id to identify a parameter.|
 | @value							| 1 		| String	| Contains the value of the parameter.|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/CheckinInformation | 0..1 || Checkin information.|
-| @openingTime						| 0..1 		| Date		| Checkin opening time.|
-| @closingTime						| 0..1 		| Date		| Checkin closing time.|
-| @estimatedCheckinTime				| 0..1 		| Date		| Estimated checkin time.|
+| @openingTime						| 0..1 		| Date		| Checkin opening time. Example: 2019-04-15T18:25:00|
+| @closingTime						| 0..1 		| Date		| Checkin closing time. Example: 2019-04-15T18:25:00|
+| @estimatedCheckinTime				| 0..1 		| Date		| Estimated checkin time. Example: 2019-04-15T18:25:00|
 | Itineraries/Itinerary/Journeys/Journey/<br>Segments/Segment/CheckinInformation/<br>Status | 0..1 || Status checkin information.|
 | @isAvailable						| 0..1 		| Boolean	| If true, the cheking is available.|
 | @direction						| 0..1 		| [Direction type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#direction-type)	| Direction of the journey about to checkin.|
@@ -388,7 +388,7 @@ the selected Option.
 | @paxRef                			| 1 		| Integer	| Reference to the passenger Id from the request.|
 | @paxType               			| 1 		| [Passenger type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#passenger-type)	| Passenger type based on the age of the passenger.|
 | @age                   			| 0..1 		| Integer	| Age of the passenger.|
-| @nacionality						| 0..1 		| String	| Nacionality of the passenger.|
+| @nationality						| 0..1 		| String	| Nationality of the passenger.|
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses | 0..1 || Applied discounts.|
 | @resident              			| 0..1 		| [Resident Discount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#resident-discount-type)	| Resident discount type|
 | @largeFamily           			| 0..1 		| [Large Family Discount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#large-family-discount-type)	| Family discount type.|
@@ -564,28 +564,28 @@ This option is only shown when requested in Preferences node. The functionality 
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/TicketingRules/<br>DatesTypes | 0..n || Contains a list of Date type elements.|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/TicketingRules/<br>DatesTypes/DatesType | 1..n || Date details.|
 | @type								| 0..1		| String	| Date type.|
-| @date								| 1			| Date		| Ticketing date.|
+| @date								| 1			| Date		| Ticketing date. Example: 2019-04-15T18:25:00|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/MinimumStayRules | 0..1 || Minimum stay rules details.|
 | @location							| 1			| String	| Location concerning the minimum stay.|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/MinimumStayRules/<br>DatesTypes | 0..n || Contains a list of Date type elements.|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/MinimumStayRules/<br>DatesTypes/DatesType | 1..n || Date details.|
 | @type								| 0..1		| String	| Date type.|
-| @date								| 1			| Date		| Date.|
+| @date								| 1			| Date		| Date. Example: 2019-04-15T18:25:00|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/MaximumStayRules | 0..1 || Maximum stay rules details.|
 | @location							| 1			| String	| Location concerning the maximum stay.|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/MaximumStayRules/<br>DatesTypes | 0..n || Contains a list of Date type elements.|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/MaximumStayRules/<br>DatesTypes/DatesType | 1..n || Date details.|
 | @type								| 0..1		| String	| Date type.|
-| @date								| 1			| Date		| Date.|
+| @date								| 1			| Date		| Date. Example: 2019-04-15T18:25:00|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/Penalty | 0..1 || Penaly rules details.|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/Penalty/<br>DatesTypes | 0..n || Contains a list of Date type elements.|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/Penalty/<br>DatesTypes/DatesType | 1..n || Date details.|
 | @type								| 0..1		| String	| Date type.|
-| @date								| 1			| Date		| Date.|
+| @date								| 1			| Date		| Date. Example: 2019-04-15T18:25:00|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/Penalty/AmountTypes | 0..n || Contains a list of amount types.|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/Penalty/AmountTypes/<br>AmountType | 1..n || Amount details.|
 | @type								| 0..1		| String	| Date type.|
-| @date								| 0..1		| Date		| Date.|
+| @date								| 0..1		| Date		| Date. Example: 2019-04-15T18:25:00|
 | @currency							| 0..1		| String	| Currency.|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/Penalty/RestrictionTypes | 0..n || Contains a list of restriction types.|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/Penalty/RestrictionTypes/<br>RestrictionType | 1..n || Restriction details.|
@@ -595,11 +595,11 @@ This option is only shown when requested in Preferences node. The functionality 
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/ReissueRules/<br>DatesTypes | 0..n || Contains a list of Date type elements.|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/ReissueRules/<br>DatesTypes/DatesType | 1..n || Date details.|
 | @type								| 0..1		| String	| Date type.|
-| @date								| 1			| Date		| Date.|
+| @date								| 1			| Date		| Date. Example: 2019-04-15T18:25:00|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/ReissueRules/AmountTypes | 0..n || Contains a list of amount types.|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/ReissueRules/AmountTypes/<br>AmountType | 1..n || Amount details.|
 | @type								| 0..1		| String	| Date type.|
-| @date								| 0..1		| Date		| Date.|
+| @date								| 0..1		| Date		| Date. Example: 2019-04-15T18:25:00|
 | @currency							| 0..1		| String	| Currency.|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/ReissueRules/RestrictionTypes | 0..n || Contains a list of restriction types.|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/ReissueRules/RestrictionTypes/<br>RestrictionType | 1..n || Restriction details.|
@@ -609,11 +609,11 @@ This option is only shown when requested in Preferences node. The functionality 
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/RefundRules/<br>DatesTypes | 0..n || Contains a list of Date type elements.|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/RefundRules/<br>DatesTypes/DatesType | 1..n || Date details.|
 | @type								| 0..1		| String	| Date type.|
-| @date								| 1			| Date		| Date.|
+| @date								| 1			| Date		| Date. Example: 2019-04-15T18:25:00|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/RefundRules/AmountTypes | 0..n || Contains a list of amount types.|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/RefundRules/AmountTypes/<br>AmountType | 1..n || Amount details.|
 | @type								| 0..1		| String	| Date type.|
-| @date								| 0..1		| Date		| Date.|
+| @date								| 0..1		| Date		| Date. Example: 2019-04-15T18:25:00|
 | @currency							| 0..1		| String	| Currency.|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/RefundRules/RestrictionTypes | 0..n || Contains a list of restriction types.|
 | SummarizedConditions/FareRuleTypes/<br>FareRuleType/RefundRules/RestrictionTypes/<br>RestrictionType | 1..n || Restriction details.|
@@ -631,14 +631,14 @@ This option is only shown when requested in Preferences node. The functionality 
 | SummarizedConditions/FareRuleApplicabilities/<br>FareRulesApplicability/FareRulesReferences | 0..1 || Contains a list of fare rules.|
 | SummarizedConditions/FareRuleApplicabilities/<br>FareRulesApplicability/FareRulesReferences/<br>FareRulesReference| 1..n || List of references to fare rules.|
 | @FareRulesRefType					| 1			| String	| Reference to a fare rule.|
-| Installments						| 0..1		|			| Contains a list of Installments.|
-| Installments/Installment			| 1..n		|			| Installment details.|
-| @number							| 1			| Integer	| Number of installments.|
+| PaymentByInstalments						| 0..1		|			| Contains a list of Installments.|
+| PaymentByInstalments/PaymentByInstalment			| 1..n		|			| Installment details.|
+| @number							| 1			| Integer	| Number of instalments.|
 | @currency							| 0..1		| String	| Currency.|
-| Installments/Installment/PaymentCharge					| 0..1 || First installment amount.|
-| Installments/Installment/InterestRate						| 0..1 || Interest rate.|
-| Installments/Installment/<br>RemainingInstallmentAmount	| 0..1 || Remaining installment amount.|
-| Installments/Installment/<br>RemainingInstallmentTotalAmount | 0..1 || Remaining installment total amount.|
+| PaymentByInstalments/PaymentByInstalment/PaymentCharge					| 0..1 || First instalment amount.|
+| PaymentByInstalments/PaymentByInstalment/InterestRate						| 0..1 || Interest rate.|
+| PaymentByInstalments/PaymentByInstalment/<br>RemainingInstallmentAmount	| 0..1 || Remaining instalment amount.|
+| PaymentByInstalments/PaymentByInstalment/<br>RemainingInstallmentTotalAmount | 0..1 || Remaining instalment total amount.|
 
 ### Possible Operations (Examples)
 
@@ -687,9 +687,9 @@ ValuationRQ:
 			<AmountBreakdown currency="EUR" totalAmount="98.23" nonCommissionableAmount="0" commission="-1">
 				<ChargeBreakdowns/>
 				<PaxBreakdowns>
-					<PaxBreakdown paxType="ADT" amount="45.01" taxes="10.01" fees="0" tasaDU="0"/>
-					<PaxBreakdown paxType="CHD" amount="45.01" taxes="10.01" fees="0" tasaDU="0"/>
-					<PaxBreakdown paxType="INF" amount="8.21" taxes="8.21" fees="0" tasaDU="0"/>
+					<PaxBreakdown paxType="ADT" amount="45.01" taxes="10.01" fees="0" duTax="0"/>
+					<PaxBreakdown paxType="CHD" amount="45.01" taxes="10.01" fees="0" duTax="0"/>
+					<PaxBreakdown paxType="INF" amount="8.21" taxes="8.21" fees="0" duTax="0"/>
 				</PaxBreakdowns>
 			</AmountBreakdown>
 			<PaxConfigurations>
@@ -752,9 +752,9 @@ ValuationRS:
 			<AmountBreakdown currency="EUR" totalAmount="98.23" nonCommissionableAmount="0" commission="-1">
 				<ChargeBreakdowns/>
 				<PaxBreakdowns>
-					<PaxBreakdown paxType="ADT" amount="45.01" taxes="10.01" fees="0" tasaDU="0"/>
-					<PaxBreakdown paxType="CHD" amount="45.01" taxes="10.01" fees="0" tasaDU="0"/>
-					<PaxBreakdown paxType="INF" amount="8.21" taxes="8.21" fees="0" tasaDU="0"/>
+					<PaxBreakdown paxType="ADT" amount="45.01" taxes="10.01" fees="0" duTax="0"/>
+					<PaxBreakdown paxType="CHD" amount="45.01" taxes="10.01" fees="0" duTax="0"/>
+					<PaxBreakdown paxType="INF" amount="8.21" taxes="8.21" fees="0" duTax="0"/>
 				</PaxBreakdowns>
 			</AmountBreakdown>
 			<PaxConfigurations>

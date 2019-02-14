@@ -73,7 +73,7 @@ The data structure will always have common elements in all objects and the speci
 | @businessLine						| 0..1   	| String	| Business line.|
 | @accessLevel						| 0..1   	| String	| Access level.|
 | @mean      						| 0..1   	| String	| Mean.|
-| @accessType						| 0..1   	| String	| Access type: WEB (Web) and WS (WebService).|
+| @accessType						| 0..1   	| [Access Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#access-type)	| Access type.|
 
 
 ### Common RS Structure Description
@@ -82,16 +82,16 @@ The data structure will always have common elements in all objects and the speci
 | --------------------------------- | --------- | ----------|------------------------------------------------------------------	|
 | auditData 					    | 0..1		|			| Returns the provider transaction logs if filterAuditData/registerTransactions has been set to true.|
 | auditData/processTimeMilliseconds | 1		    | Integer	| Time spend in the operation.|
-| auditData/timeStamp 				| 1		    | Date		| Timestamp when the operation begins.|
+| auditData/timeStamp 				| 1		    | Date		| Timestamp when the operation begins. Example: 2019-02-12T07:38:14.4137201+01:00|
 | auditData/transactions 			| 1		    |			| Contains the RQ and RS of the provider transaction.|
 | auditData/transactions/RQ 		| 1		    | String	| Provider's request transaction.|
 | auditData/transactions/RS 		| 0..1		| String	| Provider's response transaction. In case of timeout/server communication failure with the provider, this field may not be returned.|
-| auditData/transactions/timeStamp 	| 1		    | Date		| Timestamp when the provider transaction begins.|
+| auditData/transactions/timeStamp 	| 1		    | Date		| Timestamp when the provider transaction begins. Example: 2019-02-12T07:38:14.4137201+01:00|
 | operationImplemented 				| 1		    | Boolean	| If true, the operation requested is implemented. Some suppliers does not have all the operations implemented. In that case, this filed will return false.|
 | ResponseStatus 					| 0..1		|			| Contains information regarding the operation executed.|
-| @direction 					    | 0..1		| String	| Direction of the journey about to checkin: OUTBOUND, INBOUND, OUTBOUND_INBOUND (Outbound and Inbound).|
-| @tripType 					    | 0..1		| String	| Indicates the travel type: one way (OW), round trip (RT), open jaw (OJ) and circle trip (CT).|
-| @status 					        | 1		    | String	| OK, ERROR, TIMEOUT.|
+| @direction 					    | 0..1		| [Direction type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#direction-type)	| Direction of the journey about to checkin.|
+| @tripType 					    | 0..1		| [Trip type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#trip-type)|Trip type|
+| @status 					        | 1		    | [Response Status type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#response-status-type)| Response Status type|
 | applicationErrors 				| 0..n		|			| List of errors occurred during the operation execution.|
 | applicationErrors/code 			| 0..1		| String			| Provider error code.|
 | applicationErrors/description 	| 0..1		| String			| Error description.|
@@ -101,6 +101,30 @@ The data structure will always have common elements in all objects and the speci
 | @code 					        | 0..1		| [Error types](/docs/transportation/error)			| API Warning code.|
 | Warnings/Warning/text 			| 1		    | String	| Warning description.|
 
+### Date format
+
+The date format depends to the element where it is placed. Two formats can be returned in RS:
+
+|**Timezone specified**| **Format**						| **Example**|
+|----------------------| ------------------------------------------- | --------- |
+| Yes | YYYY-MM-ddTHH:mm:ss.fffffff+kk:kk <br> YYYY-MM-ddTHH:mm:ss.fffffffZ	 | 	2019-02-12T07:38:14.4137201+01:00 (UTC+1)<br> 2019-02-12T09:59:17.6756432Z (UTC)	|
+| No | 	YYYY-MM-ddTHH:mm:ss.fffffff | 	  2019-04-15T18:25:00	|
+
+
+
+*Date fields in RQ must be filled with same format that has been received from previous operation (if applicable) in same elements. Ex: if in RS's segment you receive YYYY-MM-dd, you must send same format in the segments from next request.*
+
+| **Field**						| **Explanation**|Mandatory|
+| ------------------------- | --------- |----|
+| YYYY	 | 	Year 	|Yes|
+| MM	 | 	Month 	|Yes|
+| dd	 | 	Day 	|Yes|
+| T	 | 	Time separator 	|Yes|
+| HH	 | 	24-hour clock hour, with a leading 0 (e.g. 22) 	|Yes|
+| mm	 | 	Minutes |Yes|
+| ss	 | 	Seconds 	|Yes|
+| fffffff	 | 	Represents the seven most significant digits of the seconds fraction; that is, it represents the ten millionths of a second in a date and time value. 	|No|
+| +kk:kk	 | 	Represents the time zone information of a date and time value (e.g. +05:00) 	|No|
 
 
 ### Enumerate values
