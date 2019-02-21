@@ -63,7 +63,7 @@ information the client had provided to the provider, such as direction, phone nu
 | @carrier							| 0..1		| String	| Carrier applying the condition.|
 | @code								| 0..1		| String	| Code of the condition.|
 | @id								| 0..1		| String	| Unique id of the condition.|
-| @language							| 0..1		| String	| Language in which the condition is written. ISO 639-1: two-letter codes |
+| @language							| 0..1		| String	| Language in which the condition is written. ISO 3166-1 alpha-2 format lowercase. |
 | Itineraries/Itinerary/Conditions/<br>Condition/Text		| 0..1 || Description of the condition.|
 | Itineraries/Itinerary/Conditions/<br>Condition/Paragraph	| 0..n || List of Sentences and titles.|
 | @title							| 0..1		| String	| Title content.|
@@ -172,7 +172,7 @@ information the client had provided to the provider, such as direction, phone nu
 | @included							| 0..1		| Boolean	| If true, the charge is included to the total fare amount.|
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakdowns/ChargeBreakdown<br>/Concept | 0..1 || Contains details of the charge.|
 | @id                    			| 0..1 		| String	| Unique id of the Concept.|
-| @language              			| 0..1 		| String	| Language. ISO 639-1: two-letter codes |
+| @language              			| 0..1 		| String	| Language. ISO 3166-1 alpha-2 format lowercase. |
 | @carrier              			| 0..1 		| String	| Carrier.|
 | @code              				| 0..1 		| String	| Concept code.|
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakDowns/ChargeBreakdown<br>/Concept/Text | 0..1 | String | Remarks.|
@@ -210,9 +210,41 @@ information the client had provided to the provider, such as direction, phone nu
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>PaxTypeCodes		| 0..1	|| Contains a list of PaxTypeCodes.|
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>PaxTypeCodes/PaxTypeCode	| 1..n	|| Contains the Discounts by passenger type|
 | @code								| 1			| String	| Discounts by passenger type|
-| Itineraries/Itinerary/Emissions							| 0..1	|| Contains a list of Issuances.|
-| Itineraries/Itinerary/Emissions/<br>Emission				| 1..n	|| Contains the key of the Issuance.|
-| @key								| 1			| String	| Key of the Issuance.|
+| Itineraries/Itinerary/BaggageTypes                 		| 0..1    	|			| Contains a list of Baggage information.|
+| Itineraries/Itinerary/BaggageTypes/BaggageType			| 1..n    	|			| Baggage information.|
+| @checkInType						| 1  		| [Checkin Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#checkin-type)		| Check-in type.|
+| @appliesSegments        			| 1  		| [Segment Applies To Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#segment-applies-to-type)		| Segments in which is applied.|
+| Itineraries/Itinerary/BaggageTypes/BaggageType/<br>References					| 0..1		||	References for the Baggage Type.|
+| Itineraries/Itinerary/BaggageTypes/BaggageType/<br>References/SegmentReferences	| 0..1		||	Contains a list of segment references for the Baggage Type.|
+| Itineraries/Itinerary/BaggageTypes/BaggageType/<br>References/SegmentReferences/<br>SegmentReference		| 1..n	||	Segment reference.|
+| @itineraryRef						| 1 		| Integer	| Unique identifier of the Itinerary.|
+| @journeyRef						| 1 		| Integer	| Unique identifier of the Journey.|
+| @segmentRef						| 1 		| Integer	| Unique identifier of the Segment.|
+| Itineraries/Itinerary/BaggageTypes/BaggageType/<br>References/PaxReferences		| 0..1	||	Contains a list of passenger references for the Baggage Type.|
+| Itineraries/Itinerary/BaggageTypes/BaggageType/<br>References/PaxReferences/<br>PaxReference		| 1..n	||	Passenger reference.|
+| @paxRef							| 1 		| String	| Reference to the passenger.|
+| Itineraries/Itinerary/BaggageTypes/BaggageType/Baggage	| 1..n		|			| Details of the baggage.|
+| @id                    			| 0..1 		| String	| Unique identifier of the Baggage.|
+| @type                  			| 1 		| [Baggage Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#baggage-type)		| Type of baggage.|
+| @quantity              			| 1 		| Integer	| Baggage quantity.|
+| @maxWeightPerUnit					| 0..1 		| Integer	| Maximum weight of the baggage.| 
+| @maxTotalWeight        			| 0..1 		| Integer	| Maximum weight of ALL the baggage.|
+| @paymentInAirpot       			| 0..1 		| Boolean	| Determines whether the pay is in station.|
+| @code								| 0..1 		| String	| Code of the Baggage.|
+| @carrier               			| 0..1 		| String	| Carrier.|
+| @needToken						| 0..1 		| Boolean	| Reserve token mandatory.|
+| @reservationToken             	| 0..1 		| String	| Reserve token.|
+| @description             			| 0..1 		| String	| Baggage description.|
+| Itineraries/Itinerary/BaggageTypes/BaggageType/Baggage/<br>BaggageCharge		| 0..1 || Details of the baggage charge.|
+| @fixAmount             			| 0..1 		| Decimal	| Total fixed amount.|
+| @appliesFixAmount             	| 0..1 		| [Amount Applies To Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-applies-to-type)	| The fixed amount application.|
+| @minFixAmount             		| 0..1 		| Decimal	| Minimal fixed amount.|
+| @maxFixAmount             		| 0..1 		| Decimal	| Maximal fixed amount.|
+| @minAmountPercentage             	| 0..1 		| Decimal	| Minimal percentage amount.|
+| @maxAmountPercentage             	| 0..1 		| Decimal	| Maximal percentage amount.|
+| @currency             			| 1 		| String	| Currency.|
+| @percentage             			| 0..1 		| Decimal	| Total percentage amount.|
+| @percentageApplied             	| 0..1 		|  [Amount Applies To Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-applies-to-type)	| The percentage amount application.|
 | Passengers						| 1  		|    		| Contains a list of Passengers.|
 | Passengers/Passenger				| 1..n 		|			| Contains information of the Passenger.|
 | @id								| 1  		| Integer	| Unique identifier of the passenger.|
@@ -227,7 +259,7 @@ information the client had provided to the provider, such as direction, phone nu
 | @documentExpedition  				| 0..1		| Date 		| Expedition date of the documentation. Example: 2019-04-15T18:25:00|
 | @nationality						| 0..1  	| String 	| Nationality. ISO 3166-1 Alpha-2 Code|
 | @gender							| 0..1  	| Char		| Gender.|
-| @language							| 0..1  	| String 	| Language. ISO 639-1: two-letter codes |
+| @language							| 0..1  	| String 	| Language. ISO 3166-1 alpha-2 format lowercase. |
 | Passengers/Passenger/PaxBonusDetails 						| 0..1  || Contains details of the Passenger bonus.|
 | Passengers/Passenger/PaxBonusDetails/<br>AppliedBonuses	| 0..1  || Contains details of the applied bonus.|
 | @resident              			| 0..1 		|[Resident discount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#resident-discount-type)|Resident discount type.|

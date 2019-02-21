@@ -62,7 +62,7 @@ Not implemented by all suppliers
 | @documentExpedition  				| 0..1		| Date 		| Expedition date of the documentation. Example: 2019-04-15T18:25:00|
 | @nationality						| 0..1  	| String 	| Nationality. ISO 3166-1 Alpha-2 Code|
 | @gender							| 0..1  	| Char		| Gender.|
-| @language							| 0..1  	| String 	| Language.|
+| @language							| 0..1  	| String 	| Language. ISO 3166-1 alpha-2 format lowercase.|
 
 
 

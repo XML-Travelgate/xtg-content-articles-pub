@@ -45,7 +45,7 @@ Not implemented by all suppliers
 | @carrier							| 0..1		| String	| Carrier applying the condition.|
 | @code								| 0..1		| String	| Code of the condition.|
 | @id								| 0..1		| String	| Unique id of the condition.|
-| @language							| 0..1		| String	| Language in which the condition is written. ISO 639-1: two-letter codes |
+| @language							| 0..1		| String	| Language in which the condition is written. ISO 3166-1 alpha-2 format lowercase. |
 | Itineraries/Itinerary/Conditions/<br>Condition/Text		| 0..1 || Description of the condition.|
 | Itineraries/Itinerary/Conditions/<br>Condition/Paragraph	| 0..n || List of Sentences and titles.|
 | @title							| 0..1		| String	| Title content.|
@@ -154,7 +154,7 @@ Not implemented by all suppliers
 | @included							| 0..1		| Boolean	| If true, the charge is included to the total fare amount.|
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakdowns/ChargeBreakdown<br>/Concept | 0..1 || Contains details of the charge.|
 | @id                    			| 0..1 		| String	| Unique id of the Concept.|
-| @language              			| 0..1 		| String	| Language. ISO 639-1: two-letter codes |
+| @language              			| 0..1 		| String	| Language. ISO 3166-1 alpha-2 format lowercase. |
 | @carrier              			| 0..1 		| String	| Carrier.|
 | @code              				| 0..1 		| String	| Concept code.|
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakDowns/ChargeBreakdown<br>/Concept/Text | 0..1 | String | Remarks.|
@@ -192,9 +192,6 @@ Not implemented by all suppliers
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>PaxTypeCodes		| 0..1	|| Contains a list of PaxTypeCodes.|
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>PaxTypeCodes/PaxTypeCode	| 1..n	|| Contains the code type of the passenger.|
 | @code								| 1			| String	| Code type of the passenger.|
-| Itineraries/Itinerary/Emissions							| 0..1	|| Contains a list of Issuances.|
-| Itineraries/Itinerary/Emissions/<br>Emission				| 1..n	|| Contains the key of the Issuance.|
-| @key								| 1			| String	| Key of the Issuance.|
 | Passengers						| 1  		|    		| Contains a list of Passengers.|
 | Passengers/Passenger				| 1..n 		|			| Contains information of the Passenger.|
 | @id								| 1  		| Integer	| Unique identifier of the passenger.|
@@ -209,7 +206,7 @@ Not implemented by all suppliers
 | @documentExpedition  				| 0..1		| Date 		| Expedition date of the documentation. Example: 2019-04-15T18:25:00|
 | @nationality						| 0..1  	| String 	| Nationality. ISO 3166-1 Alpha-2 Code|
 | @gender							| 0..1  	| Char		| Gender.|
-| @language							| 0..1  	| String 	| Language.  ISO 639-1: two-letter codes |
+| @language							| 0..1  	| String 	| Language.  ISO 3166-1 alpha-2 format lowercase. |
 | Passengers/Passenger/PaxBonusDetails 						| 0..1  || Contains details of the Passenger bonus.|
 | Passengers/Passenger/PaxBonusDetails/<br>AppliedBonuses	| 0..1  || Contains details of the applied bonus.|
 | @resident              			| 0..1 		|[Resident discount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#resident-discount-type)|Resident discount type.|
@@ -378,7 +375,6 @@ Not implemented by all suppliers
 | Locators/Locator/Id            	| 1  		| String 	| Unique identifier of the locator.|
 | Locators/Locator/Type          	| 1  		| [Locator type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#locator-type)| The locator's type	| 
 | Email								| 0..1     	| String	| Client's email.|
-| PreValuation						| 0..1     	| Boolean	| DEPRECATED.|
 | DeltaPrice						| 0..1     	| Decimal	| Maximum amount increasement allowed between valuation and reservation.|
 
 
@@ -418,7 +414,7 @@ Not implemented by all suppliers
 | @included							| 0..1		| Boolean	| If true, the charge is included to the total fare amount.|
 | Invoice/AmountBreakdown/<br>ChargeBreakdowns/<br>ChargeBreakdown/Concept | 0..1 || Contains details of the charge.|
 | @id                    			| 0..1 		| String	| Unique id of the Concept.|
-| @language              			| 0..1 		| String	| Language. ISO 639-1: two-letter codes |
+| @language              			| 0..1 		| String	| Language. ISO 3166-1 alpha-2 format lowercase. |
 | @carrier              			| 0..1 		| String	| Carrier.|
 | @code              				| 0..1 		| String	| Concept code.|
 | Invoice/AmountBreakdown/<br>ChargeBreakDowns/<br>ChargeBreakdown/Concept/Text | 0..1 | String | Remarks|

@@ -40,7 +40,7 @@ For some suppliers the tickets must be refunded one by one (only one ticket woul
 | **Element**						| **Number**| **Type**	| **Description**													|
 | --------------------------------- | --------- | ----------|------------------------------------------------------------------	|
 | RefundRQ              			| 1     	|			| Root node.|
-| @penaltyAmount					| 0..1     	| Decimal	| Penalty amount.|
+| PenaltyAmount					    | 0..1     	| Decimal	| Penalty amount.|
 | RefundProcess						| 1     	|			| Contains the operation process.|
 | @process							| 1     	| [Refund Process Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#refund-process-type)	| Refund process type|
 | RefundType						| 1     	|			| Contains the refund type.|
@@ -82,7 +82,7 @@ For some suppliers the tickets must be refunded one by one (only one ticket woul
 | @included							| 0..1		| Boolean	| If true, the charge is included to the total fare amount.|
 | AmountBreakdown/<br>ChargeBreakdowns/<br>ChargeBreakdown/Concept | 0..1 || Contains details of the charge.|
 | @id                    			| 0..1 		| String	| Unique id of the Concept.|
-| @language              			| 0..1 		| String	| Language.|
+| @language              			| 0..1 		| String	| Language. ISO 3166-1 alpha-2 format lowercase.|
 | @carrier              			| 0..1 		| String	| Carrier.|
 | @code              				| 0..1 		| String	| Concept code.|
 | AmountBreakdown/<br>ChargeBreakDowns/<br>ChargeBreakdown/Concept/Text | 0..1 | String | Remarks|

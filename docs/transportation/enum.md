@@ -387,7 +387,7 @@ permalink: /docs/transportation/enum
 | SEAT                              ||
 | UPPERCABIN                         |Upper deck in double-deck aircraft|
 
-### Logical Operation Type
+### Logical Operator Type
 
 | **Possible Values**	| **Description**	|
 | --------------------- | ------------------ |

@@ -137,9 +137,32 @@ This method **must** be called **before** the Valuation method.
 | @mode            			| 1  		|  [Filter Mode type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#filter-mode-type)	| Filter mode. Allows to include or exclude companies|
 | Preferences/ConnexionCompanies/<br>ConnexionCompany/Attributes	| 0..1	|| List of attributes.|
 | Preferences/ConnexionCompanies/<br>ConnexionCompany/Attributes/Attribute	| 1..n	|| Additional information key-value.|
-| @key						| 1			| String	| Attribute key.|
-| @value					| 1			| String	| Attribute value.|
-
+| @key						                        | 1			| String	| Attribute key.|
+| @value					                        | 1			| String	| Attribute value.|
+| Preferences/FareTypes                             |1..n       | String | List of fare types. Ex: public, private,...|
+|Preferences/FaresFamilies                          |0..1       ||Custom fare families|
+|Preferences/FaresFamilies/FaresFamily              |1..n       ||List of custom fares family|
+|@name                                              |1          |String     |Custom FareFamily's name|
+|@ranking                                           |0..1       |FareFamily's ranking in the FareFamilies's list|
+|Preferences/FaresFamilies/FaresFamily/<br>CriteriaGroups|0..1||The criteria groups of custom FareFamily|
+|Preferences/FaresFamilies/FaresFamily/<br>CriteriaGroups/CriteriaGroup|1..n||A criteria group|
+|@logicalOperator                                   |0..1|[Logical Operator type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#logical-operator-type)|Logical operator applied between group criteria in FareFamily|
+|Preferences/FaresFamilies/FaresFamily/<br>CriteriaGroups/CriteriaGroup/Companies|0..1||List of carriers whom applies this criteria group|
+|Preferences/FaresFamilies/FaresFamily/<br>CriteriaGroups/CriteriaGroup/Companies/<br>Company|1..n||Carrier|
+|@id                                                |1  |String     |Carrier id|
+|Preferences/FaresFamilies/FaresFamily/<br>CriteriaGroups/CriteriaGroup/FareTypes|0..1||List of criteria group's fare types|
+|Preferences/FaresFamilies/FaresFamily/<br>CriteriaGroups/CriteriaGroup/FareTypes/<br>FareType|1..n||A fare type|
+|@value|1|String|FareType's identifier|
+|Preferences/FaresFamilies/FaresFamily/<br>CriteriaGroups/CriteriaGroup/CorporateCodes|0..1||List of criteria group's corporate codes|
+|Preferences/FaresFamilies/FaresFamily/<br>CriteriaGroups/CriteriaGroup/CorporateCodes/<br>CorporateCode|1..n||A corporate code|
+|@value|1|String|Corporate code's identifier|
+|Preferences/FaresFamilies/FaresFamily/<br>CriteriaGroups/CriteriaGroup/Classes|0..1||List of criteria group's classes|
+|Preferences/FaresFamilies/FaresFamily/<br>CriteriaGroups/CriteriaGroup/Classes/<br>Class|1..n||A criteria group's class|
+|@value|1|String|Class identifier|
+|Preferences/FaresFamilies/FaresFamily/<br>CriteriaGroups/CriteriaGroup/ExtendedParameters|0..1||List of criteria group's extended parameters|
+|Preferences/FaresFamilies/FaresFamily/<br>CriteriaGroups/CriteriaGroup/ExtendedParameters/<br>ExtendedParameter|1..n||An extended parameter|
+|@key|1|String| Parameter's key|
+|@value|1|String| Parameter's value|
 
 
 ### AvailabilityRS Description
@@ -321,7 +344,7 @@ This method **must** be called **before** the Valuation method.
 | @included						| 0..1		| Boolean	| If true, the charge is included to the total fare amount.|
 | Transportation/Fares/Fare/<br>AmountBreakdown/ChargeBreakdowns/<br>ChargeBreakdown/Concept | 0..1 | | Contains details of the charge.|
 | @id                    		| 0..1 		| String	| Unique id of the Concept.|
-| @language              		| 0..1 		| String	| Language.|
+| @language              		| 0..1 		| String	| Language. ISO 3166-1 alpha-2 format lowercase.|
 | @carrier              		| 0..1 		| String	| Carrier.|
 | @code              			| 0..1 		| String	| Concept code.|
 | Transportation/Fares/Fare/<br>AmountBreakdown/ChargeBreakDowns/<br>ChargeBreakdown/Concept/Text		| 0..1 | String | Remarks.|

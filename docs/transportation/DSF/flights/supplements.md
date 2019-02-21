@@ -162,7 +162,7 @@ Not implemented by all suppliers
 | @included							| 0..1		| Boolean	| If true, the charge is included to the total fare amount.|
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakdowns/ChargeBreakdown<br>/Concept | 0..1 || Contains details of the charge.|
 | @id                    			| 0..1 		| String	| Unique id of the Concept.|
-| @language              			| 0..1 		| String	| Language.|
+| @language              			| 0..1 		| String	| Language. ISO 3166-1 alpha-2 format lowercase.|
 | @carrier              			| 0..1 		| String	| Carrier.|
 | @code              				| 0..1 		| String	| Concept code.|
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakDowns/ChargeBreakdown<br>/Concept/Text | 0..1 | String | Remarks.|
@@ -200,9 +200,6 @@ Not implemented by all suppliers
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>PaxTypeCodes		| 0..1	|| Contains a list of PaxTypeCodes.|
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>PaxTypeCodes/PaxTypeCode	| 1..n	|| Contains the code type of the passenger.|
 | @code								| 1			| String	| Code type of the passenger.|
-| Itineraries/Itinerary/Emissions							| 0..1	|| Contains a list of Issuances.|
-| Itineraries/Itinerary/Emissions/<br>Emission				| 1..n	|| Contains the key of the Issuance.|
-| @key								| 1			| String	| Key of the Issuance.|
 | Locators                       	| 0..1  	|    		| Contains a list of locators.|
 | Locators/Locator               	| 1..n  	|    		| Contains details of the locator.|
 | Locators/Locator/Id            	| 1  		| String 	| Unique identifier of the locator.|
@@ -339,7 +336,7 @@ Not implemented by all suppliers
 | @included							| 0..1		| Boolean	| If true, the charge is included to the total fare amount.|
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakdowns/ChargeBreakdown<br>/Concept | 0..1 || Contains details of the charge.|
 | @id                    			| 0..1 		| String	| Unique id of the Concept.|
-| @language              			| 0..1 		| String	| Language.|
+| @language              			| 0..1 		| String	| Language. ISO 3166-1 alpha-2 format lowercase.|
 | @carrier              			| 0..1 		| String	| Carrier.|
 | @code              				| 0..1 		| String	| Concept code.|
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakDowns/ChargeBreakdown<br>/Concept/Text | 0..1 | String | Remarks.|
@@ -377,9 +374,6 @@ Not implemented by all suppliers
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>PaxTypeCodes		| 0..1	|| Contains a list of PaxTypeCodes.|
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>PaxTypeCodes/PaxTypeCode	| 1..n	|| Contains the code type of the passenger.|
 | @code								| 1			| String	| Code type of the passenger.|
-| Itineraries/Itinerary/Emissions							| 0..1	|| Contains a list of Issuances.|
-| Itineraries/Itinerary/Emissions/<br>Emission				| 1..n	|| Contains the key of the Issuance.|
-| @key								| 1			| String	| Key of the Issuance.|
 | Passengers						| 0..1  	|    		| Contains a list of Passengers.|
 | Passengers/Passenger				| 1..n 		|			| Contains information of the Passenger.|
 | @id								| 1  		| Integer	| Unique identifier of the passenger.|
@@ -394,7 +388,7 @@ Not implemented by all suppliers
 | @documentExpedition  				| 0..1		| Date 		| Expedition date of the documentation.|
 | @nationality						| 0..1  	| String 	| Nationality.|
 | @gender							| 0..1  	| Char		| Gender.|
-| @language							| 0..1  	| String 	| Language.|
+| @language							| 0..1  	| String 	| Language. ISO 3166-1 alpha-2 format lowercase.|
 | Passengers/Passenger/PaxBonusDetails 						| 0..1  || Contains details of the Passenger bonus.|
 | Passengers/Passenger/PaxBonusDetails/<br>AppliedBonuses	| 0..1  || Contains details of the applied bonus.|
 | @resident              			| 0..1 		| String	| [Resident discount type.](#reservation-enumerate-description)|
@@ -543,8 +537,8 @@ Not implemented by all suppliers
 | @percentageApplied             	| 0..1 		| String	| The percentage amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
 | BaggageTypes                 		| 0..1    	|			| Contains a list of Baggage information.|
 | BaggageTypes/BaggageType			| 1..n    	|			| Baggage information.|
-| @checkInType						| 1  		| String	| Check-in type: OnLine & Airport.|
-| @appliesSegments        			| 1  		| String	| Segments in which is applied: All, Departure, Return, Ref (only the segment references indicated in the node SegmentReferences).|
+| @checkInType						| 1  		| [Checkin Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#checkin-type)		| Check-in type.|
+| @appliesSegments        			| 1  		| [Segment Applies To Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#segment-applies-to-type)		| Segments in which is applied.|
 | BaggageTypes/BaggageType/<br>References					| 0..1		||	References for the Baggage Type.|
 | BaggageTypes/BaggageType/<br>References/SegmentReferences	| 0..1		||	Contains a list of segment references for the Baggage Type.|
 | BaggageTypes/BaggageType/<br>References/SegmentReferences/<br>SegmentReference		| 1..n	||	Segment reference.|
@@ -556,7 +550,7 @@ Not implemented by all suppliers
 | @paxRef							| 1 		| String	| Reference to the passenger.|
 | BaggageTypes/BaggageType/Baggage	| 1..n		|			| Details of the baggage.|
 | @id                    			| 0..1 		| String	| Unique identifier of the Baggage.|
-| @type                  			| 1 		| String	| Type of baggage: Bag, Bike, Wheelchair, Skis, BabyTrolley and HandBaggage.|
+| @type                  			| 1 		| [Baggage Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#baggage-type)		| Type of baggage.|
 | @quantity              			| 1 		| Integer	| Baggage quantity.|
 | @maxWeightPerUnit					| 0..1 		| Integer	| Maximum weight of the baggage.| 
 | @maxTotalWeight        			| 0..1 		| Integer	| Maximum weight of ALL the baggage.|
@@ -568,14 +562,14 @@ Not implemented by all suppliers
 | @description             			| 0..1 		| String	| Baggage description.|
 | BaggageTypes/BaggageType/Baggage/<br>BaggageCharge		| 0..1 || Details of the baggage charge.|
 | @fixAmount             			| 0..1 		| Decimal	| Total fixed amount.|
-| @appliesFixAmount             	| 0..1 		| String	| The fixed amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| @appliesFixAmount             	| 0..1 		| [Amount Applies To Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-applies-to-type)	| The fixed amount application.|
 | @minFixAmount             		| 0..1 		| Decimal	| Minimal fixed amount.|
 | @maxFixAmount             		| 0..1 		| Decimal	| Maximal fixed amount.|
 | @minAmountPercentage             	| 0..1 		| Decimal	| Minimal percentage amount.|
 | @maxAmountPercentage             	| 0..1 		| Decimal	| Maximal percentage amount.|
 | @currency             			| 1 		| String	| Currency.|
 | @percentage             			| 0..1 		| Decimal	| Total percentage amount.|
-| @percentageApplied             	| 0..1 		| String	| The percentage amount applies to: PorReserva(Reservation), PorPasajero(Passenger), PorSegmento(Segment), TarifaBase(Base Fare), Tasas(Taxes), ForAdt(Adult passengers), ForChd(Children passengers), ForInf(Infant passengers).|
+| @percentageApplied             	| 0..1 		|  [Amount Applies To Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-applies-to-type)	| The percentage amount application.|
 | SpecialSupplements				| 0..1		|			| Contains a list of SpecialSupplements.|
 | SpecialSupplements/SpecialSupplement						| 1..n	||	Contains information about the Special Supplement.|
 | @id								| 0..1		| String	| Unique identifier of the supplement.|
@@ -742,11 +736,11 @@ Not implemented by all suppliers
 | SummarizedConditions/FareRuleApplicabilities/<br>FareRulesApplicability/FareRulesReferences | 0..1 || Contains a list of fare rules.|
 | SummarizedConditions/FareRuleApplicabilities/<br>FareRulesApplicability/FareRulesReferences/<br>FareRulesReference| 1..n || List of references to fare rules.|
 | @FareRulesRefType					| 1			| String	| Reference to a fare rule.|
-| Installments						| 0..1		|			| Contains a list of Installments.|
-| Installments/Installment			| 1..n		|			| Installment details.|
+| Instalments						| 0..1		|			| Contains a list of Instalments.|
+| Instalments/Instalment			| 1..n		|			| Instalment details.|
 | @number							| 1			| Integer	| Number of installments.|
 | @currency							| 0..1		| String	| Currency.|
-| Installments/Installment/PaymentCharge					| 0..1 || First installment amount.|
-| Installments/Installment/InterestRate						| 0..1 || Interest rate.|
-| Installments/Installment/<br>RemainingInstallmentAmount	| 0..1 || Remaining installment amount.|
-| Installments/Installment/<br>RemainingInstallmentTotalAmount | 0..1 || Remaining installment total amount.|
+| Instalments/Instalment/FirstPaymentAmount					| 0..1 || First installment amount.|
+| Instalments/Instalment/InterestRate						| 0..1 || Interest rate.|
+| Instalments/Instalment/<br>RemainingInstalmentAmount	| 0..1 || Remaining installment amount.|
+| Instalments/Instalment/<br>RemainingInstalmentTotalAmount | 0..1 || Remaining installment total amount.|

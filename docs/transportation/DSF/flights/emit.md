@@ -76,7 +76,7 @@ Not all suppliers need to issue the tickets. For some suppliers, the payment inf
 | @documentExpedition  				| 0..1		| Date 		| Expedition date of the documentation. Example: 2019-04-15T18:25:00|
 | @nationality						| 0..1  	| String 	| Nationality. ISO 3166-1 Alpha-2 Code|
 | @gender							| 0..1  	| Char		| Gender.|
-| @language							| 0..1  	| String 	| Language.|
+| @language							| 0..1  	| String 	| Language. ISO 3166-1 alpha-2 format lowercase.|
 | Passengers/Passenger/PaxBonusDetails 						| 0..1  || Contains details of the Passenger bonus.|
 | Passengers/Passenger/PaxBonusDetails/<br>AppliedBonuses	| 0..1  || Contains details of the applied bonus.|
 | @resident              			| 0..1 		|[Resident discount type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#resident-discount-type)|Resident discount type.|
@@ -239,7 +239,7 @@ Not all suppliers need to issue the tickets. For some suppliers, the payment inf
 | @included							| 0..1		| Boolean	| If true, the charge is included to the total fare amount.|
 | Invoice/AmountBreakdown/<br>ChargeBreakdowns/<br>ChargeBreakdown/Concept | 0..1 || Contains details of the charge.|
 | @id                    			| 0..1 		| String	| Unique id of the Concept.|
-| @language              			| 0..1 		| String	| Language.|
+| @language              			| 0..1 		| String	| Language. ISO 3166-1 alpha-2 format lowercase.|
 | @carrier              			| 0..1 		| String	| Carrier.|
 | @code              				| 0..1 		| String	| Concept code.|
 | Invoice/AmountBreakdown/<br>ChargeBreakDowns/<br>ChargeBreakdown/Concept/Text | 0..1 | String | Remarks|

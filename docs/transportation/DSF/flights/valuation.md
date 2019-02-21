@@ -185,7 +185,7 @@ the selected Option.
 | @included							| 0..1		| Boolean	| If true, the charge is included to the total fare amount.|
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakdowns/ChargeBreakdown<br>/Concept | 0..1 || Contains details of the charge.|
 | @id                    			| 0..1 		| String	| Unique id of the Concept.|
-| @language              			| 0..1 		| String	| Language.|
+| @language              			| 0..1 		| String	| Language. ISO 3166-1 alpha-2 format lowercase.|
 | @carrier              			| 0..1 		| String	| Carrier.|
 | @code              				| 0..1 		| String	| Concept code.|
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakDowns/ChargeBreakdown<br>/Concept/Text | 0..1 | String | Remarks.|
@@ -223,9 +223,6 @@ the selected Option.
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>PaxTypeCodes		| 0..1	|| Contains a list of PaxTypeCodes.|
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>PaxTypeCodes/PaxTypeCode	| 1..n	|| Contains the code type of the passenger.|
 | @code								| 1			| String	| Code type of the passenger.|
-| Itineraries/Itinerary/Emissions							| 0..1	|| Contains a list of Issuances.|
-| Itineraries/Itinerary/Emissions/<br>Emission				| 1..n	|| Contains the key of the Issuance.|
-| @key								| 1			| String	| Key of the Issuance.|
 | Preferences						| 0..1		|			| Valuation preferences.|
 | @paymentMethods					| 0..1		| Boolean	| If true, the Valuation will return the list of payment methods available for the Itineraries.|
 | @baggageTypes						| 0..1		| Boolean	| If true, the Valuation will return the list of baggage allowance available for the Itineraries.|
@@ -364,7 +361,7 @@ the selected Option.
 | @included							| 0..1		| Boolean	| If true, the charge is included to the total fare amount.|
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakdowns/ChargeBreakdown<br>/Concept | 0..1 || Contains details of the charge.|
 | @id                    			| 0..1 		| String	| Unique id of the Concept.|
-| @language              			| 0..1 		| String	| Language.|
+| @language              			| 0..1 		| String	| Language. ISO 3166-1 alpha-2 format lowercase.|
 | @carrier              			| 0..1 		| String	| Carrier.|
 | @code              				| 0..1 		| String	| Concept code.|
 | Itineraries/Itinerary/AmountBreakdown/<br>ChargeBreakDowns/ChargeBreakdown<br>/Concept/Text | 0..1 | String | Remarks.|
@@ -402,9 +399,6 @@ the selected Option.
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>PaxTypeCodes		| 0..1	|| Contains a list of PaxTypeCodes.|
 | Itineraries/Itinerary/PaxConfigurations/<br>PaxConfiguration/AppliedBonuses/<br>PaxTypeCodes/PaxTypeCode	| 1..n	|| Contains the code type of the passenger.|
 | @code								| 1			| String	| Code type of the passenger.|
-| Itineraries/Itinerary/Emissions							| 0..1	|| Contains a list of Issuances.|
-| Itineraries/Itinerary/Emissions/<br>Emission				| 1..n	|| Contains the key of the Issuance.|
-| @key								| 1			| String	| Key of the Issuance.|
 
 
 ### ValuationSupplements
@@ -631,14 +625,14 @@ This option is only shown when requested in Preferences node. The functionality 
 | SummarizedConditions/FareRuleApplicabilities/<br>FareRulesApplicability/FareRulesReferences | 0..1 || Contains a list of fare rules.|
 | SummarizedConditions/FareRuleApplicabilities/<br>FareRulesApplicability/FareRulesReferences/<br>FareRulesReference| 1..n || List of references to fare rules.|
 | @FareRulesRefType					| 1			| String	| Reference to a fare rule.|
-| PaymentByInstalments						| 0..1		|			| Contains a list of Installments.|
-| PaymentByInstalments/PaymentByInstalment			| 1..n		|			| Installment details.|
+| PaymentByInstalments						| 0..1		|			| Contains a list of Instalments.|
+| PaymentByInstalments/PaymentByInstalment			| 1..n		|			| Instalment details.|
 | @number							| 1			| Integer	| Number of instalments.|
 | @currency							| 0..1		| String	| Currency.|
-| PaymentByInstalments/PaymentByInstalment/PaymentCharge					| 0..1 || First instalment amount.|
+| PaymentByInstalments/PaymentByInstalment/FirstPaymentAmount					| 0..1 || First instalment amount.|
 | PaymentByInstalments/PaymentByInstalment/InterestRate						| 0..1 || Interest rate.|
-| PaymentByInstalments/PaymentByInstalment/<br>RemainingInstallmentAmount	| 0..1 || Remaining instalment amount.|
-| PaymentByInstalments/PaymentByInstalment/<br>RemainingInstallmentTotalAmount | 0..1 || Remaining instalment total amount.|
+| PaymentByInstalments/PaymentByInstalment/<br>RemainingInstalmentAmount	| 0..1 || Remaining instalment amount.|
+| PaymentByInstalments/PaymentByInstalment/<br>RemainingInstalmentTotalAmount | 0..1 || Remaining instalment total amount.|
 
 ### Possible Operations (Examples)
 
