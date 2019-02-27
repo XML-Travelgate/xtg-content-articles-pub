@@ -139,7 +139,10 @@ This method **must** be called **before** the Valuation method.
 | Preferences/ConnexionCompanies/<br>ConnexionCompany/Attributes/Attribute	| 1..n	|| Additional information key-value.|
 | @key						                        | 1			| String	| Attribute key.|
 | @value					                        | 1			| String	| Attribute value.|
-| Preferences/FareTypes                             |1..n       | String | List of fare types. Ex: public, private,...|
+| Preferences/FareTypeGroups                        |0..1       || List of fare type group.|
+| Preferences/FareTypeGroups/FareTypeGroup          |1..n       || The fare type group|
+|@type                                              |1|String|The type of the fare group. Public, Private, Corporative. Must be provider codes.
+|Preferences/FareTypeGroups/FareTypeGroup/Code      |0..n       | String| The fare type codes of this group of fare types|
 |Preferences/FaresFamilies                          |0..1       ||Custom fare families|
 |Preferences/FaresFamilies/FaresFamily              |1..n       ||List of custom fares family|
 |@name                                              |1          |String     |Custom FareFamily's name|
@@ -296,7 +299,7 @@ This method **must** be called **before** the Valuation method.
 | @minAmountPercentage          | 0..1 		| Decimal	| Minimal percentage amount.|
 | @maxAmountPercentage          | 0..1 		| Decimal	| Maximal percentage amount.|
 | @percentage             		| 0..1 		| Decimal	| Total percentage amount.|
-| @percentageApplied            | 0..1 		|[Amount Applies To Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-applies-to-type)| Entity which the percentage amount is applied|
+| @percentageApplied             	| 0..1 		| [Amount Applies To type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#amount-applies-to-type)	| The percentage amount application.|
 | Transportation/Fares/Fare/Options/Option/<br>SpecialSupplements	| 0..1	||	Contains a list of SpecialSupplements.|
 | Transportation/Fares/Fare/Options/Option/<br>SpecialSupplements/SpecialSupplement		| 1..n	||	Contains information about the Special Supplement.|
 | @type							| 1			| [Supplement Type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#supplement-type)	| Type of supplement|

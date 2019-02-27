@@ -373,7 +373,7 @@ family code and region code.
 | @telephone						| 1  		| String 	| Telephone number.|
 | @mobilephone						| 1  		| String 	| Mobile number.|
 | @fax								| 0..1  	| String 	| Fax.|
-| @title					| 0..1  	| [Title type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#title-type) 	| The passenger's title|
+| @title					        | 0..1  	| [Title type](https://github.com/XML-Travelgate/xtg-content-articles-pub/blob/master/docs/transportation/enum.md#title-type) 	| The passenger's title|
 | Client/Address 					| 1  		|    		| Contains the client's address.|
 | @zipCode							| 1  		| String 	| Zip code.|
 | @countryCode						| 1  		| String 	| Country code.|
