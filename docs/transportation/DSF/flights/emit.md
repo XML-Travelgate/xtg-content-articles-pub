@@ -225,7 +225,7 @@ Not all suppliers need to issue the tickets. For some suppliers, the payment inf
 | Invoice							| 0..1		|			| Detailed pricing information.|
 | @carrier							| 0..1		| String	| Fare carrier.|
 | @agencyCode						| 0..1		| String	| Agency code.|
-| @instalmentsNum					| 0..1		| Integer	| Number of instalments in which the amount will be charged to the credit card.|
+| @instalmentsNumber					| 0..1		| Integer	| Number of instalments in which the amount will be charged to the credit card.|
 | @lastTicketingDateUTC				| 0..1		| Date		| Maximum date allowed to make the ticket emission (in UTC format if filled)|
 | Invoice/AmountBreakdown			| 1			|			| Breakdown of the fare amount.|
 | @currency              			| 1 		| String	| Currency code of the fare.|

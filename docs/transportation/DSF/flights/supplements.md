@@ -41,7 +41,7 @@ Not implemented by all suppliers
 | @extendedFareRules				| 0..1		| Boolean	| If true, the Valuation will return a list of detailed fare rules of the Itineraries.|
 | @summarizedFareRules				| 0..1		| Boolean	| If true, the Valuation will return a list of summarired fare rules of the Itineraries.|
 | @seating							| 0..1		| Boolean	| If true, the Valuation will return the list of seats available in the plane.|
-| @installments						| 0..1		| Boolean	| If true, the Valuation will return the list of partial payment rules (installments) available for the Itineraries.|
+| @paymentByInstalments						| 0..1		| Boolean	| If true, the Valuation will return the list of partial payment rules (installments) available for the Itineraries.|
 | Itineraries                 		| 0..1     	|			| Contains a list of Itineraries.|
 | Itineraries/Itinerary       		| 1..n    	|			| Details of the Itinerary.|
 | @id                    			| 1 		| Integer	| Unique identifier of the Itinerary.|
