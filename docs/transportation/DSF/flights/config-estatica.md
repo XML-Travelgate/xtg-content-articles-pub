@@ -10,24 +10,24 @@ permalink: /docs/transportation/DSF/flights/config-static
 
 ### Method Goals
 
-
+This method provides the static configuration of a supplier. For example: if the supplier allows the payment with credit/debit card.
 
 
 ### Request Format
 
-
+The request does not require any elements - empty request.
 
 
 
 ### Response Format
 
-
+The XML response contains many elements of the supplier’s configuration: provider type, whether or not the supplier allows RT and OJ trips, frequent flyer, filtering airlines, cabin class, etc.
 
 
 
 ### Remarks
 
-
+Not implemented by all suppliers.
 
 
 
