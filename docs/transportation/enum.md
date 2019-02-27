@@ -468,3 +468,13 @@ permalink: /docs/transportation/enum
 | ON_REQUEST|Booking on request|
 | ON_HOLD|Booking in hold|
 | ON_HOLD_CANCELLED|Booking on hold cancelled|
+
+### Provider Type
+
+| **Possible Values**	| **Description**	|
+| --------------------- | ------------------ |
+| LOWCOST|LowCost|
+| GDS|Global Distribution System|
+| REGULAR|Regular Company|
+| CHARTER|Charter Company|
+| SHIP|Ship Operator|
