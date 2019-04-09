@@ -1091,6 +1091,8 @@
       <xs:element minOccurs="0" maxOccurs="1" name="AreaInfo" type="AreaInfo" />
       <xs:element minOccurs="0" maxOccurs="1" name="Rooms" type="ArrayOfRoom" />
 	  <xs:element minOccurs="0" maxOccurs="1" name="PropertyCategory" type="PropertyCategory" />
+	  <xs:element minOccurs="0" maxOccurs="1" name="addedSupplier" type="xs:dateTime" />		
+	  <xs:element minOccurs="0" maxOccurs="1" name="updatedSupplier" type="xs:dateTime" />				  
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="GiataId">
