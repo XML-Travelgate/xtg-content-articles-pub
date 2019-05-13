@@ -29,7 +29,6 @@ The integration will have the following methods:
 | [RetrieveReservationList](/docs/transportation/DSF/flights/recover-reserve-list) | RetrieveReservationListRQ	| RetrieveReservationListRS	| No			| Return a list of bookings for a given time period being that either booking date or the travelling date, among other filters available.|
 | [Supplements](/docs/transportation/DSF/flights/supplements)			| SupplementsRQ				| SupplementsRS				| No			| Search for supplements (seat, baggage, etc).|
 | [ReservationSupplements](/docs/transportation/DSF/flights/supplementsReservation) | SupplementsReservationRQ	| SupplementsReservationRS	| No			| Add supplements (seats, baggage, etc) to a reservation done previously.|
-| [StaticConfiguration](/docs/transportation/DSF/flights/config-estatica) | StaticConfigurationRQ	| StaticConfigurationRS	| No			| This method provides the static configuration of a supplier. For example: if the supplier allows the payment with credit/debit card.|
 
 
 Each request sent to the **service url** requires a node called rqXML. Inside this node travels the current method's Input object.
